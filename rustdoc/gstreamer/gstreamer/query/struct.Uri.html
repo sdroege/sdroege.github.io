@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Uri` struct in crate `gstreamer`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Uri">
+
+    <title>gstreamer::query::Uri - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Uri</p><div class="block items"><ul><li><a href="#methods">Methods</a></li><li><a href="#deref-methods">Methods from Deref&lt;Target=Uri<&'a QueryRef>&gt;</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>query</a></p><script>window.sidebarCurrent = {name: 'Uri', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>query</a>::<wbr><a class="struct" href=''>Uri</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/gstreamer/query.rs.html#805' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Uri&lt;T&gt;(_);</pre><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="struct" href="../../gstreamer/query/struct.Uri.html" title="struct gstreamer::query::Uri">Uri</a>&lt;&amp;'a <a class="struct" href="../../gstreamer/query/struct.QueryRef.html" title="struct gstreamer::query::QueryRef">QueryRef</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gstreamer/query.rs.html#806-829' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.get_uri' class="method"><span id='get_uri.v' class='invisible'><code>fn <a href='#method.get_uri' class='fnname'>get_uri</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>&gt;</code></span></h4>
+<h4 id='method.get_redirection' class="method"><span id='get_redirection.v' class='invisible'><code>fn <a href='#method.get_redirection' class='fnname'>get_redirection</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>&gt;, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a></code></span></h4>
+<h4 id='method.get_query' class="method"><span id='get_query.v' class='invisible'><code>fn <a href='#method.get_query' class='fnname'>get_query</a>(&amp;self) -&gt; &amp;<a class="struct" href="../../gstreamer/query/struct.QueryRef.html" title="struct gstreamer::query::QueryRef">QueryRef</a></code></span></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="struct" href="../../gstreamer/query/struct.Uri.html" title="struct gstreamer::query::Uri">Uri</a>&lt;&amp;'a mut <a class="struct" href="../../gstreamer/query/struct.QueryRef.html" title="struct gstreamer::query::QueryRef">QueryRef</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gstreamer/query.rs.html#831-850' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.set_uri' class="method"><span id='set_uri.v' class='invisible'><code>fn <a href='#method.set_uri' class='fnname'>set_uri</a>&lt;'b, T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;&amp;'b <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;&gt;(&amp;mut self, uri: T)</code></span></h4>
+<h4 id='method.set_redirection' class="method"><span id='set_redirection.v' class='invisible'><code>fn <a href='#method.set_redirection' class='fnname'>set_redirection</a>&lt;'b, T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;&amp;'b <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;&gt;(&amp;mut self, uri: T, permanent: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h4>
+<h4 id='method.get_mut_query' class="method"><span id='get_mut_query.v' class='invisible'><code>fn <a href='#method.get_mut_query' class='fnname'>get_mut_query</a>(&amp;mut self) -&gt; &amp;mut <a class="struct" href="../../gstreamer/query/struct.QueryRef.html" title="struct gstreamer::query::QueryRef">QueryRef</a></code></span></h4>
+</div><h2 id='deref-methods'>Methods from <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html" title="trait core::ops::Deref">Deref</a>&lt;Target = <a class="struct" href="../../gstreamer/query/struct.Uri.html" title="struct gstreamer::query::Uri">Uri</a>&lt;&amp;'a <a class="struct" href="../../gstreamer/query/struct.QueryRef.html" title="struct gstreamer::query::QueryRef">QueryRef</a>&gt;&gt;</h2><div class='impl-items'><h4 id='method.get_uri-1' class="method"><span id='get_uri.v-1' class='invisible'><code>fn <a href='#method.get_uri-1' class='fnname'>get_uri</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>&gt;</code></span></h4>
+<h4 id='method.get_redirection-1' class="method"><span id='get_redirection.v-1' class='invisible'><code>fn <a href='#method.get_redirection-1' class='fnname'>get_redirection</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>&gt;, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a></code></span></h4>
+<h4 id='method.get_query-1' class="method"><span id='get_query.v-1' class='invisible'><code>fn <a href='#method.get_query-1' class='fnname'>get_query</a>(&amp;self) -&gt; &amp;<a class="struct" href="../../gstreamer/query/struct.QueryRef.html" title="struct gstreamer::query::QueryRef">QueryRef</a></code></span></h4>
+</div><div class='impl-items'></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html" title="trait core::ops::Deref">Deref</a> for <a class="struct" href="../../gstreamer/query/struct.Uri.html" title="struct gstreamer::query::Uri">Uri</a>&lt;&amp;'a mut <a class="struct" href="../../gstreamer/query/struct.QueryRef.html" title="struct gstreamer::query::QueryRef">QueryRef</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gstreamer/query.rs.html#1122-1130' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Target' class="type"><span id='Target.t' class='invisible'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html#associatedtype.Target' class="type">Target</a> = <a class="struct" href="../../gstreamer/query/struct.Uri.html" title="struct gstreamer::query::Uri">Uri</a>&lt;&amp;'a <a class="struct" href="../../gstreamer/query/struct.QueryRef.html" title="struct gstreamer::query::QueryRef">QueryRef</a>&gt;</code></span></h4>
+<div class='docblock'><p>The resulting type after dereferencing</p>
+</div><h4 id='method.deref' class="method"><span id='deref.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html#tymethod.deref' class='fnname'>deref</a>(&amp;self) -&gt; &amp;Self::<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html" title="trait core::ops::Deref">Target</a></code></span></h4>
+<div class='docblock'><p>The method called to dereference a value</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "gstreamer";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

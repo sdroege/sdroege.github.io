@@ -1,0 +1,2082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `gstreamer` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, gstreamer">
+
+    <title>gstreamer - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Crate gstreamer</p><div class="block items"><ul><li><a href="#reexports">Reexports</a></li><li><a href="#modules">Modules</a></li><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#constants">Constants</a></li><li><a href="#traits">Traits</a></li><li><a href="#functions">Functions</a></li><li><a href="#types">Type Definitions</a></li></ul></div><p class='location'></p><script>window.sidebarCurrent = {name: 'gstreamer', ty: 'mod', relpath: '../'};</script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Crate <a class="mod" href=''>gstreamer</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/gstreamer/lib.rs.html#9-173' title='goto source code'>[src]</a></span></h1>
+<h2 id='reexports' class='section-header'><a href="#reexports">Reexports</a></h2>
+<table><tr><td><code>pub use miniobject::<a class="struct" href="../gstreamer/miniobject/struct.GstRc.html" title="struct gstreamer::miniobject::GstRc">GstRc</a>;</code></td></tr><tr><td><code>pub use miniobject::<a class="trait" href="../gstreamer/miniobject/trait.MiniObject.html" title="trait gstreamer::miniobject::MiniObject">MiniObject</a>;</code></td></tr><tr><td><code>pub use message::<a class="type" href="../gstreamer/message/type.Message.html" title="type gstreamer::message::Message">Message</a>;</code></td></tr><tr><td><code>pub use message::<a class="struct" href="../gstreamer/message/struct.MessageRef.html" title="struct gstreamer::message::MessageRef">MessageRef</a>;</code></td></tr><tr><td><code>pub use message::<a class="enum" href="../gstreamer/message/enum.MessageView.html" title="enum gstreamer::message::MessageView">MessageView</a>;</code></td></tr><tr><td><code>pub use structure::<a class="struct" href="../gstreamer/structure/struct.Structure.html" title="struct gstreamer::structure::Structure">Structure</a>;</code></td></tr><tr><td><code>pub use structure::<a class="struct" href="../gstreamer/structure/struct.StructureRef.html" title="struct gstreamer::structure::StructureRef">StructureRef</a>;</code></td></tr><tr><td><code>pub use caps::<a class="type" href="../gstreamer/caps/type.Caps.html" title="type gstreamer::caps::Caps">Caps</a>;</code></td></tr><tr><td><code>pub use caps::<a class="struct" href="../gstreamer/caps/struct.CapsRef.html" title="struct gstreamer::caps::CapsRef">CapsRef</a>;</code></td></tr><tr><td><code>pub use tags::<a class="trait" href="../gstreamer/tags/trait.Tag.html" title="trait gstreamer::tags::Tag">Tag</a>;</code></td></tr><tr><td><code>pub use tags::<a class="type" href="../gstreamer/tags/type.TagList.html" title="type gstreamer::tags::TagList">TagList</a>;</code></td></tr><tr><td><code>pub use tags::<a class="struct" href="../gstreamer/tags/struct.TagListRef.html" title="struct gstreamer::tags::TagListRef">TagListRef</a>;</code></td></tr><tr><td><code>pub use buffer::<a class="type" href="../gstreamer/buffer/type.Buffer.html" title="type gstreamer::buffer::Buffer">Buffer</a>;</code></td></tr><tr><td><code>pub use buffer::<a class="struct" href="../gstreamer/buffer/struct.BufferMap.html" title="struct gstreamer::buffer::BufferMap">BufferMap</a>;</code></td></tr><tr><td><code>pub use buffer::<a class="struct" href="../gstreamer/buffer/struct.BufferRef.html" title="struct gstreamer::buffer::BufferRef">BufferRef</a>;</code></td></tr><tr><td><code>pub use buffer::<a class="struct" href="../gstreamer/buffer/struct.MappedBuffer.html" title="struct gstreamer::buffer::MappedBuffer">MappedBuffer</a>;</code></td></tr><tr><td><code>pub use sample::<a class="type" href="../gstreamer/sample/type.Sample.html" title="type gstreamer::sample::Sample">Sample</a>;</code></td></tr><tr><td><code>pub use sample::<a class="struct" href="../gstreamer/sample/struct.SampleRef.html" title="struct gstreamer::sample::SampleRef">SampleRef</a>;</code></td></tr><tr><td><code>pub use bufferlist::<a class="type" href="../gstreamer/bufferlist/type.BufferList.html" title="type gstreamer::bufferlist::BufferList">BufferList</a>;</code></td></tr><tr><td><code>pub use bufferlist::<a class="struct" href="../gstreamer/bufferlist/struct.BufferListRef.html" title="struct gstreamer::bufferlist::BufferListRef">BufferListRef</a>;</code></td></tr><tr><td><code>pub use query::<a class="type" href="../gstreamer/query/type.Query.html" title="type gstreamer::query::Query">Query</a>;</code></td></tr><tr><td><code>pub use query::<a class="struct" href="../gstreamer/query/struct.QueryRef.html" title="struct gstreamer::query::QueryRef">QueryRef</a>;</code></td></tr><tr><td><code>pub use query::<a class="enum" href="../gstreamer/query/enum.QueryView.html" title="enum gstreamer::query::QueryView">QueryView</a>;</code></td></tr><tr><td><code>pub use event::<a class="type" href="../gstreamer/event/type.Event.html" title="type gstreamer::event::Event">Event</a>;</code></td></tr><tr><td><code>pub use event::<a class="struct" href="../gstreamer/event/struct.EventRef.html" title="struct gstreamer::event::EventRef">EventRef</a>;</code></td></tr><tr><td><code>pub use event::<a class="enum" href="../gstreamer/event/enum.EventView.html" title="enum gstreamer::event::EventView">EventView</a>;</code></td></tr><tr><td><code>pub use context::<a class="type" href="../gstreamer/context/type.Context.html" title="type gstreamer::context::Context">Context</a>;</code></td></tr><tr><td><code>pub use context::<a class="struct" href="../gstreamer/context/struct.ContextRef.html" title="struct gstreamer::context::ContextRef">ContextRef</a>;</code></td></tr><tr><td><code>pub use toc::<a class="type" href="../gstreamer/toc/type.Toc.html" title="type gstreamer::toc::Toc">Toc</a>;</code></td></tr><tr><td><code>pub use toc::<a class="type" href="../gstreamer/toc/type.TocEntry.html" title="type gstreamer::toc::TocEntry">TocEntry</a>;</code></td></tr><tr><td><code>pub use toc::<a class="struct" href="../gstreamer/toc/struct.TocEntryRef.html" title="struct gstreamer::toc::TocEntryRef">TocEntryRef</a>;</code></td></tr><tr><td><code>pub use toc::<a class="struct" href="../gstreamer/toc/struct.TocRef.html" title="struct gstreamer::toc::TocRef">TocRef</a>;</code></td></tr><tr><td><code>pub use <a class="mod" href="../gstreamer/functions/index.html" title="mod gstreamer::functions">functions</a>::*;</code></td></tr></table><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="buffer/index.html"
+                                  title='mod gstreamer::buffer'>buffer</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="bufferlist/index.html"
+                                  title='mod gstreamer::bufferlist'>bufferlist</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="caps/index.html"
+                                  title='mod gstreamer::caps'>caps</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="context/index.html"
+                                  title='mod gstreamer::context'>context</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="event/index.html"
+                                  title='mod gstreamer::event'>event</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="functions/index.html"
+                                  title='mod gstreamer::functions'>functions</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="functions/index.html"
+                                  title='mod gstreamer::functions'>functions</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="message/index.html"
+                                  title='mod gstreamer::message'>message</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="miniobject/index.html"
+                                  title='mod gstreamer::miniobject'>miniobject</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="prelude/index.html"
+                                  title='mod gstreamer::prelude'>prelude</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="query/index.html"
+                                  title='mod gstreamer::query'>query</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="sample/index.html"
+                                  title='mod gstreamer::sample'>sample</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="structure/index.html"
+                                  title='mod gstreamer::structure'>structure</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="tags/index.html"
+                                  title='mod gstreamer::tags'>tags</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="toc/index.html"
+                                  title='mod gstreamer::toc'>toc</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Array.html"
+                                  title='struct gstreamer::Array'>Array</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Bin.html"
+                                  title='struct gstreamer::Bin'>Bin</a></td>
+                           <td class='docblock-short'>
+                                <p><code>Bin</code> is an element that can contain other <code>Element</code>, allowing them to be
+managed as a group.
+Pads from the child elements can be ghosted to the bin, see <code>GhostPad</code>.
+This makes the bin look like any other elements and enables creation of
+higher-level abstraction elements.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Bitmask.html"
+                                  title='struct gstreamer::Bitmask'>Bitmask</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.BufferFlags.html"
+                                  title='struct gstreamer::BufferFlags'>BufferFlags</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Bus.html"
+                                  title='struct gstreamer::Bus'>Bus</a></td>
+                           <td class='docblock-short'>
+                                <p>The <code>Bus</code> is an object responsible for delivering <code>Message</code> packets in
+a first-in first-out way from the streaming threads (see <code>Task</code>) to the
+application.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.BusStream.html"
+                                  title='struct gstreamer::BusStream'>BusStream</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ChildProxy.html"
+                                  title='struct gstreamer::ChildProxy'>ChildProxy</a></td>
+                           <td class='docblock-short'>
+                                <p>This interface abstracts handling of property sets for elements with
+children. Imagine elements such as mixers or polyphonic generators. They all
+have multiple <code>Pad</code> or some kind of voice objects. Another use case are
+container elements like <code>Bin</code>.
+The element implementing the interface acts as a parent for those child
+objects.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Clock.html"
+                                  title='struct gstreamer::Clock'>Clock</a></td>
+                           <td class='docblock-short'>
+                                <p>GStreamer uses a global clock to synchronize the plugins in a pipeline.
+Different clock implementations are possible by implementing this abstract
+base class or, more conveniently, by subclassing <code>SystemClock</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ClockId.html"
+                                  title='struct gstreamer::ClockId'>ClockId</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Continue.html"
+                                  title='struct gstreamer::Continue'>Continue</a></td>
+                           <td class='docblock-short'>
+                                <p>Continue calling the closure in the future iterations or drop it.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DateTime.html"
+                                  title='struct gstreamer::DateTime'>DateTime</a></td>
+                           <td class='docblock-short'>
+                                <p>Struct to store date, time and timezone information altogether.
+<code>DateTime</code> is refcounted and immutable.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DebugGraphDetails.html"
+                                  title='struct gstreamer::DebugGraphDetails'>DebugGraphDetails</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Device.html"
+                                  title='struct gstreamer::Device'>Device</a></td>
+                           <td class='docblock-short'>
+                                <p><code>Device</code> are objects representing a device, they contain
+relevant metadata about the device, such as its class and the <code>Caps</code>
+representing the media types it can produce or handle.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DeviceMonitor.html"
+                                  title='struct gstreamer::DeviceMonitor'>DeviceMonitor</a></td>
+                           <td class='docblock-short'>
+                                <p>Applications should create a <code>DeviceMonitor</code> when they want
+to probe, list and monitor devices of a specific type. The
+<code>DeviceMonitor</code> will create the appropriate
+<code>DeviceProvider</code> objects and manage them. It will then post
+messages on its <code>Bus</code> for devices that have been added and
+removed.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DeviceProvider.html"
+                                  title='struct gstreamer::DeviceProvider'>DeviceProvider</a></td>
+                           <td class='docblock-short'>
+                                <p>A <code>DeviceProvider</code> subclass is provided by a plugin that handles devices
+if there is a way to programatically list connected devices. It can also
+optionally provide updates to the list of connected devices.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DeviceProviderFactory.html"
+                                  title='struct gstreamer::DeviceProviderFactory'>DeviceProviderFactory</a></td>
+                           <td class='docblock-short'>
+                                <p><code>DeviceProviderFactory</code> is used to create instances of device providers. A
+GstDeviceProviderfactory can be added to a <code>Plugin</code> as it is also a
+<code>PluginFeature</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ELEMENT_METADATA_AUTHOR.html"
+                                  title='struct gstreamer::ELEMENT_METADATA_AUTHOR'>ELEMENT_METADATA_AUTHOR</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ELEMENT_METADATA_DESCRIPTION.html"
+                                  title='struct gstreamer::ELEMENT_METADATA_DESCRIPTION'>ELEMENT_METADATA_DESCRIPTION</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ELEMENT_METADATA_DOC_URI.html"
+                                  title='struct gstreamer::ELEMENT_METADATA_DOC_URI'>ELEMENT_METADATA_DOC_URI</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ELEMENT_METADATA_ICON_NAME.html"
+                                  title='struct gstreamer::ELEMENT_METADATA_ICON_NAME'>ELEMENT_METADATA_ICON_NAME</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ELEMENT_METADATA_KLASS.html"
+                                  title='struct gstreamer::ELEMENT_METADATA_KLASS'>ELEMENT_METADATA_KLASS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ELEMENT_METADATA_LONGNAME.html"
+                                  title='struct gstreamer::ELEMENT_METADATA_LONGNAME'>ELEMENT_METADATA_LONGNAME</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Element.html"
+                                  title='struct gstreamer::Element'>Element</a></td>
+                           <td class='docblock-short'>
+                                <p>GstElement is the abstract base class needed to construct an element that
+can be used in a GStreamer pipeline. Please refer to the plugin writers
+guide for more information on creating <code>Element</code> subclasses.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ElementFactory.html"
+                                  title='struct gstreamer::ElementFactory'>ElementFactory</a></td>
+                           <td class='docblock-short'>
+                                <p><code>ElementFactory</code> is used to create instances of elements. A
+GstElementFactory can be added to a <code>Plugin</code> as it is also a
+<code>PluginFeature</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ElementFlags.html"
+                                  title='struct gstreamer::ElementFlags'>ElementFlags</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Error.html"
+                                  title='struct gstreamer::Error'>Error</a></td>
+                           <td class='docblock-short'>
+                                <p>A generic error capable of representing various error domains (types).</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Fraction.html"
+                                  title='struct gstreamer::Fraction'>Fraction</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.FractionRange.html"
+                                  title='struct gstreamer::FractionRange'>FractionRange</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GhostPad.html"
+                                  title='struct gstreamer::GhostPad'>GhostPad</a></td>
+                           <td class='docblock-short'>
+                                <p>GhostPads are useful when organizing pipelines with <code>Bin</code> like elements.
+The idea here is to create hierarchical element graphs. The bin element
+contains a sub-graph. Now one would like to treat the bin-element like any
+other <code>Element</code>. This is where GhostPads come into play. A GhostPad acts as
+a proxy for another pad. Thus the bin can have sink and source ghost-pads
+that are associated with sink and source pads of the child elements.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.IntRange.html"
+                                  title='struct gstreamer::IntRange'>IntRange</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Iterator.html"
+                                  title='struct gstreamer::Iterator'>Iterator</a></td>
+                           <td class='docblock-short'>
+                                <p>A GstIterator is used to retrieve multiple objects from another object in
+a threadsafe way.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.List.html"
+                                  title='struct gstreamer::List'>List</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Object.html"
+                                  title='struct gstreamer::Object'>Object</a></td>
+                           <td class='docblock-short'>
+                                <p><code>Object</code> provides a root for the object hierarchy tree filed in by the
+GStreamer library. It is currently a thin wrapper on top of
+<code>gobject::InitiallyUnowned</code>. It is an abstract class that is not very usable on its own.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Pad.html"
+                                  title='struct gstreamer::Pad'>Pad</a></td>
+                           <td class='docblock-short'>
+                                <p>A <code>Element</code> is linked to other elements via &quot;pads&quot;, which are extremely
+light-weight generic link points.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PadLinkCheck.html"
+                                  title='struct gstreamer::PadLinkCheck'>PadLinkCheck</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PadProbeId.html"
+                                  title='struct gstreamer::PadProbeId'>PadProbeId</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PadProbeInfo.html"
+                                  title='struct gstreamer::PadProbeInfo'>PadProbeInfo</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PadProbeType.html"
+                                  title='struct gstreamer::PadProbeType'>PadProbeType</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PadTemplate.html"
+                                  title='struct gstreamer::PadTemplate'>PadTemplate</a></td>
+                           <td class='docblock-short'>
+                                <p>Padtemplates describe the possible media types a pad or an elementfactory can
+handle. This allows for both inspection of handled types before loading the
+element plugin as well as identifying pads on elements that are not yet
+created (request or sometimes pads).</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ParseContext.html"
+                                  title='struct gstreamer::ParseContext'>ParseContext</a></td>
+                           <td class='docblock-short'>
+                                <p>Opaque structure.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ParseFlags.html"
+                                  title='struct gstreamer::ParseFlags'>ParseFlags</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Pipeline.html"
+                                  title='struct gstreamer::Pipeline'>Pipeline</a></td>
+                           <td class='docblock-short'>
+                                <p>A <code>Pipeline</code> is a special <code>Bin</code> used as the toplevel container for
+the filter graph. The <code>Pipeline</code> will manage the selection and
+distribution of a global <code>Clock</code> as well as provide a <code>Bus</code> to the
+application.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Plugin.html"
+                                  title='struct gstreamer::Plugin'>Plugin</a></td>
+                           <td class='docblock-short'>
+                                <p>GStreamer is extensible, so <code>Element</code> instances can be loaded at runtime.
+A plugin system can provide one or more of the basic
+<code>&lt;application&gt;</code>GStreamer<code>&lt;/application&gt;</code> <code>PluginFeature</code> subclasses.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Preset.html"
+                                  title='struct gstreamer::Preset'>Preset</a></td>
+                           <td class='docblock-short'>
+                                <p>This interface offers methods to query and manipulate parameter preset sets.
+A preset is a bunch of property settings, together with meta data and a name.
+The name of a preset serves as key for subsequent method calls to manipulate
+single presets.
+All instances of one type will share the list of presets. The list is created
+on demand, if presets are not used, the list is not created.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ProxyPad.html"
+                                  title='struct gstreamer::ProxyPad'>ProxyPad</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.SchedulingFlags.html"
+                                  title='struct gstreamer::SchedulingFlags'>SchedulingFlags</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.SeekFlags.html"
+                                  title='struct gstreamer::SeekFlags'>SeekFlags</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Segment.html"
+                                  title='struct gstreamer::Segment'>Segment</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.SegmentFlags.html"
+                                  title='struct gstreamer::SegmentFlags'>SegmentFlags</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.StackTraceFlags.html"
+                                  title='struct gstreamer::StackTraceFlags'>StackTraceFlags</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Stream.html"
+                                  title='struct gstreamer::Stream'>Stream</a></td>
+                           <td class='docblock-short'>
+                                <p>A high-level object representing a single stream. It might be backed, or
+not, by an actual flow of data in a pipeline (<code>Pad</code>).</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.StreamCollection.html"
+                                  title='struct gstreamer::StreamCollection'>StreamCollection</a></td>
+                           <td class='docblock-short'>
+                                <p>A collection of <code>Stream</code> that are available.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.StreamFlags.html"
+                                  title='struct gstreamer::StreamFlags'>StreamFlags</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.StreamType.html"
+                                  title='struct gstreamer::StreamType'>StreamType</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.SystemClock.html"
+                                  title='struct gstreamer::SystemClock'>SystemClock</a></td>
+                           <td class='docblock-short'>
+                                <p>The GStreamer core provides a GstSystemClock based on the system time.
+Asynchronous callbacks are scheduled from an internal thread.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TagSetter.html"
+                                  title='struct gstreamer::TagSetter'>TagSetter</a></td>
+                           <td class='docblock-short'>
+                                <p>Element interface that allows setting of media metadata.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TocSetter.html"
+                                  title='struct gstreamer::TocSetter'>TocSetter</a></td>
+                           <td class='docblock-short'>
+                                <p>Element interface that allows setting of the TOC.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TypedValue.html"
+                                  title='struct gstreamer::TypedValue'>TypedValue</a></td>
+                           <td class='docblock-short'>
+                                <p>A statically typed <a href="struct.Value.html"><code>Value</code></a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.URIHandler.html"
+                                  title='struct gstreamer::URIHandler'>URIHandler</a></td>
+                           <td class='docblock-short'>
+                                <p>The <code>URIHandler</code> is an interface that is implemented by Source and Sink
+<code>Element</code> to unify handling of URI.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Value.html"
+                                  title='struct gstreamer::Value'>Value</a></td>
+                           <td class='docblock-short'>
+                                <p>A generic value capable of carrying various types.</p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.BufferingMode.html"
+                                  title='enum gstreamer::BufferingMode'>BufferingMode</a></td>
+                           <td class='docblock-short'>
+                                <p>The different types of buffering methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.BusSyncReply.html"
+                                  title='enum gstreamer::BusSyncReply'>BusSyncReply</a></td>
+                           <td class='docblock-short'>
+                                <p>The result values for a GstBusSyncHandler.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.CapsIntersectMode.html"
+                                  title='enum gstreamer::CapsIntersectMode'>CapsIntersectMode</a></td>
+                           <td class='docblock-short'>
+                                <p>Modes of caps intersection</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ClockReturn.html"
+                                  title='enum gstreamer::ClockReturn'>ClockReturn</a></td>
+                           <td class='docblock-short'>
+                                <p>The return value of a clock operation.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ClockType.html"
+                                  title='enum gstreamer::ClockType'>ClockType</a></td>
+                           <td class='docblock-short'>
+                                <p>The different kind of clocks.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.CoreError.html"
+                                  title='enum gstreamer::CoreError'>CoreError</a></td>
+                           <td class='docblock-short'>
+                                <p>Core errors are errors inside the core GStreamer library.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.DebugLevel.html"
+                                  title='enum gstreamer::DebugLevel'>DebugLevel</a></td>
+                           <td class='docblock-short'>
+                                <p>The level defines the importance of a debugging message. The more important a
+message is, the greater the probability that the debugging system outputs it.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.EventType.html"
+                                  title='enum gstreamer::EventType'>EventType</a></td>
+                           <td class='docblock-short'>
+                                <p><code>EventType</code> lists the standard event types that can be sent in a pipeline.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.FlowReturn.html"
+                                  title='enum gstreamer::FlowReturn'>FlowReturn</a></td>
+                           <td class='docblock-short'>
+                                <p>The result of passing data to a pad.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.Format.html"
+                                  title='enum gstreamer::Format'>Format</a></td>
+                           <td class='docblock-short'>
+                                <p>Standard predefined formats</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.IteratorResult.html"
+                                  title='enum gstreamer::IteratorResult'>IteratorResult</a></td>
+                           <td class='docblock-short'>
+                                <p>The result of <code>Iterator::next</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.LibraryError.html"
+                                  title='enum gstreamer::LibraryError'>LibraryError</a></td>
+                           <td class='docblock-short'>
+                                <p>Library errors are for errors from the library being used by elements
+(initializing, finalizing, settings, ...)</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.PadDirection.html"
+                                  title='enum gstreamer::PadDirection'>PadDirection</a></td>
+                           <td class='docblock-short'>
+                                <p>The direction of a pad.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.PadLinkReturn.html"
+                                  title='enum gstreamer::PadLinkReturn'>PadLinkReturn</a></td>
+                           <td class='docblock-short'>
+                                <p>Result values from gst_pad_link and friends.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.PadMode.html"
+                                  title='enum gstreamer::PadMode'>PadMode</a></td>
+                           <td class='docblock-short'>
+                                <p>The status of a GstPad. After activating a pad, which usually happens when the
+parent element goes from READY to PAUSED, the GstPadMode defines if the
+pad operates in push or pull mode.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.PadPresence.html"
+                                  title='enum gstreamer::PadPresence'>PadPresence</a></td>
+                           <td class='docblock-short'>
+                                <p>Indicates when this pad will become available.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.PadProbeData.html"
+                                  title='enum gstreamer::PadProbeData'>PadProbeData</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.PadProbeReturn.html"
+                                  title='enum gstreamer::PadProbeReturn'>PadProbeReturn</a></td>
+                           <td class='docblock-short'>
+                                <p>Different return values for the <code>GstPadProbeCallback</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ParseError.html"
+                                  title='enum gstreamer::ParseError'>ParseError</a></td>
+                           <td class='docblock-short'>
+                                <p>The different parsing errors that can occur.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.PluginError.html"
+                                  title='enum gstreamer::PluginError'>PluginError</a></td>
+                           <td class='docblock-short'>
+                                <p>The plugin loading errors</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ProgressType.html"
+                                  title='enum gstreamer::ProgressType'>ProgressType</a></td>
+                           <td class='docblock-short'>
+                                <p>The type of a <code>MessageType::Progress</code>. The progress messages inform the
+application of the status of asynchronous tasks.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.QOSType.html"
+                                  title='enum gstreamer::QOSType'>QOSType</a></td>
+                           <td class='docblock-short'>
+                                <p>The different types of QoS events that can be given to the
+<code>Event::new_qos</code> method.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.Rank.html"
+                                  title='enum gstreamer::Rank'>Rank</a></td>
+                           <td class='docblock-short'>
+                                <p>Element priority ranks. Defines the order in which the autoplugger (or
+similar rank-picking mechanisms, such as e.g. <code>Element::make_from_uri</code>)
+will choose this element over an alternative one with the same function.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ResourceError.html"
+                                  title='enum gstreamer::ResourceError'>ResourceError</a></td>
+                           <td class='docblock-short'>
+                                <p>Resource errors are for any resource used by an element:
+memory, files, network connections, process space, ...
+They&#39;re typically used by source and sink elements.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.SeekType.html"
+                                  title='enum gstreamer::SeekType'>SeekType</a></td>
+                           <td class='docblock-short'>
+                                <p>The different types of seek events. When constructing a seek event with
+<code>Event::new_seek</code> or when doing gst_segment_do_seek ().</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.State.html"
+                                  title='enum gstreamer::State'>State</a></td>
+                           <td class='docblock-short'>
+                                <p>The possible states an element can be in. States can be changed using
+<code>ElementExt::set_state</code> and checked using <code>ElementExt::get_state</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.StateChange.html"
+                                  title='enum gstreamer::StateChange'>StateChange</a></td>
+                           <td class='docblock-short'>
+                                <p>These are the different state changes an element goes through.
+<code>State::Null</code> &rArr; <code>State::Playing</code> is called an upwards state change
+and <code>State::Playing</code> &rArr; <code>State::Null</code> a downwards state change.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.StateChangeReturn.html"
+                                  title='enum gstreamer::StateChangeReturn'>StateChangeReturn</a></td>
+                           <td class='docblock-short'>
+                                <p>The possible return values from a state change function such as
+<code>ElementExt::set_state</code>. Only <code>StateChangeReturn::Failure</code> is a real failure.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.StreamError.html"
+                                  title='enum gstreamer::StreamError'>StreamError</a></td>
+                           <td class='docblock-short'>
+                                <p>Stream errors are for anything related to the stream being processed:
+format errors, media type errors, ...
+They&#39;re typically used by decoders, demuxers, converters, ...</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.StreamStatusType.html"
+                                  title='enum gstreamer::StreamStatusType'>StreamStatusType</a></td>
+                           <td class='docblock-short'>
+                                <p>The type of a <code>MessageType::StreamStatus</code>. The stream status messages inform the
+application of new streaming threads and their status.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.StructureChangeType.html"
+                                  title='enum gstreamer::StructureChangeType'>StructureChangeType</a></td>
+                           <td class='docblock-short'>
+                                <p>The type of a <code>MessageType::StructureChange</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.TagMergeMode.html"
+                                  title='enum gstreamer::TagMergeMode'>TagMergeMode</a></td>
+                           <td class='docblock-short'>
+                                <p>The different tag merging modes are basically replace, overwrite and append,
+but they can be seen from two directions. Given two taglists: (A) the tags
+already in the element and (B) the ones that are supplied to the element (
+e.g. via <code>TagSetter::merge_tags</code> / <code>TagSetter::add_tags</code> or a
+<code>EventType::Tag</code>), how are these tags merged?
+In the table below this is shown for the cases that a tag exists in the list
+(A) or does not exists (!A) and combinations thereof.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.TocEntryType.html"
+                                  title='enum gstreamer::TocEntryType'>TocEntryType</a></td>
+                           <td class='docblock-short'>
+                                <p>The different types of TOC entries (see <code>TocEntry</code>).</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.TocLoopType.html"
+                                  title='enum gstreamer::TocLoopType'>TocLoopType</a></td>
+                           <td class='docblock-short'>
+                                <p>How a <code>TocEntry</code> should be repeated. By default, entries are played a
+single time.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.TocScope.html"
+                                  title='enum gstreamer::TocScope'>TocScope</a></td>
+                           <td class='docblock-short'>
+                                <p>The scope of a TOC.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.Type.html"
+                                  title='enum gstreamer::Type'>Type</a></td>
+                           <td class='docblock-short'>
+                                <p>A GLib or GLib-based library type</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.URIError.html"
+                                  title='enum gstreamer::URIError'>URIError</a></td>
+                           <td class='docblock-short'>
+                                <p>Different URI-related errors that can occur.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.URIType.html"
+                                  title='enum gstreamer::URIType'>URIType</a></td>
+                           <td class='docblock-short'>
+                                <p>The different types of URI direction.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ValueOrder.html"
+                                  title='enum gstreamer::ValueOrder'>ValueOrder</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='constants' class='section-header'><a href="#constants">Constants</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.BUFFER_FLAG_CORRUPTED.html"
+                                  title='constant gstreamer::BUFFER_FLAG_CORRUPTED'>BUFFER_FLAG_CORRUPTED</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.BUFFER_FLAG_DECODE_ONLY.html"
+                                  title='constant gstreamer::BUFFER_FLAG_DECODE_ONLY'>BUFFER_FLAG_DECODE_ONLY</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.BUFFER_FLAG_DELTA_UNIT.html"
+                                  title='constant gstreamer::BUFFER_FLAG_DELTA_UNIT'>BUFFER_FLAG_DELTA_UNIT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.BUFFER_FLAG_DISCONT.html"
+                                  title='constant gstreamer::BUFFER_FLAG_DISCONT'>BUFFER_FLAG_DISCONT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.BUFFER_FLAG_DROPPABLE.html"
+                                  title='constant gstreamer::BUFFER_FLAG_DROPPABLE'>BUFFER_FLAG_DROPPABLE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.BUFFER_FLAG_GAP.html"
+                                  title='constant gstreamer::BUFFER_FLAG_GAP'>BUFFER_FLAG_GAP</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.BUFFER_FLAG_HEADER.html"
+                                  title='constant gstreamer::BUFFER_FLAG_HEADER'>BUFFER_FLAG_HEADER</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.BUFFER_FLAG_LAST.html"
+                                  title='constant gstreamer::BUFFER_FLAG_LAST'>BUFFER_FLAG_LAST</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.BUFFER_FLAG_LIVE.html"
+                                  title='constant gstreamer::BUFFER_FLAG_LIVE'>BUFFER_FLAG_LIVE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.BUFFER_FLAG_MARKER.html"
+                                  title='constant gstreamer::BUFFER_FLAG_MARKER'>BUFFER_FLAG_MARKER</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.BUFFER_FLAG_RESYNC.html"
+                                  title='constant gstreamer::BUFFER_FLAG_RESYNC'>BUFFER_FLAG_RESYNC</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.BUFFER_FLAG_SYNC_AFTER.html"
+                                  title='constant gstreamer::BUFFER_FLAG_SYNC_AFTER'>BUFFER_FLAG_SYNC_AFTER</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.BUFFER_FLAG_TAG_MEMORY.html"
+                                  title='constant gstreamer::BUFFER_FLAG_TAG_MEMORY'>BUFFER_FLAG_TAG_MEMORY</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.BUFFER_OFFSET_NONE.html"
+                                  title='constant gstreamer::BUFFER_OFFSET_NONE'>BUFFER_OFFSET_NONE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.CLOCK_TIME_NONE.html"
+                                  title='constant gstreamer::CLOCK_TIME_NONE'>CLOCK_TIME_NONE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.DEBUG_GRAPH_SHOW_ALL.html"
+                                  title='constant gstreamer::DEBUG_GRAPH_SHOW_ALL'>DEBUG_GRAPH_SHOW_ALL</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.DEBUG_GRAPH_SHOW_CAPS_DETAILS.html"
+                                  title='constant gstreamer::DEBUG_GRAPH_SHOW_CAPS_DETAILS'>DEBUG_GRAPH_SHOW_CAPS_DETAILS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.DEBUG_GRAPH_SHOW_FULL_PARAMS.html"
+                                  title='constant gstreamer::DEBUG_GRAPH_SHOW_FULL_PARAMS'>DEBUG_GRAPH_SHOW_FULL_PARAMS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.DEBUG_GRAPH_SHOW_MEDIA_TYPE.html"
+                                  title='constant gstreamer::DEBUG_GRAPH_SHOW_MEDIA_TYPE'>DEBUG_GRAPH_SHOW_MEDIA_TYPE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.DEBUG_GRAPH_SHOW_NON_DEFAULT_PARAMS.html"
+                                  title='constant gstreamer::DEBUG_GRAPH_SHOW_NON_DEFAULT_PARAMS'>DEBUG_GRAPH_SHOW_NON_DEFAULT_PARAMS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.DEBUG_GRAPH_SHOW_STATES.html"
+                                  title='constant gstreamer::DEBUG_GRAPH_SHOW_STATES'>DEBUG_GRAPH_SHOW_STATES</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.DEBUG_GRAPH_SHOW_VERBOSE.html"
+                                  title='constant gstreamer::DEBUG_GRAPH_SHOW_VERBOSE'>DEBUG_GRAPH_SHOW_VERBOSE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.ELEMENT_FLAG_INDEXABLE.html"
+                                  title='constant gstreamer::ELEMENT_FLAG_INDEXABLE'>ELEMENT_FLAG_INDEXABLE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.ELEMENT_FLAG_LAST.html"
+                                  title='constant gstreamer::ELEMENT_FLAG_LAST'>ELEMENT_FLAG_LAST</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.ELEMENT_FLAG_LOCKED_STATE.html"
+                                  title='constant gstreamer::ELEMENT_FLAG_LOCKED_STATE'>ELEMENT_FLAG_LOCKED_STATE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.ELEMENT_FLAG_PROVIDE_CLOCK.html"
+                                  title='constant gstreamer::ELEMENT_FLAG_PROVIDE_CLOCK'>ELEMENT_FLAG_PROVIDE_CLOCK</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.ELEMENT_FLAG_REQUIRE_CLOCK.html"
+                                  title='constant gstreamer::ELEMENT_FLAG_REQUIRE_CLOCK'>ELEMENT_FLAG_REQUIRE_CLOCK</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.ELEMENT_FLAG_SINK.html"
+                                  title='constant gstreamer::ELEMENT_FLAG_SINK'>ELEMENT_FLAG_SINK</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.ELEMENT_FLAG_SOURCE.html"
+                                  title='constant gstreamer::ELEMENT_FLAG_SOURCE'>ELEMENT_FLAG_SOURCE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.MSECOND.html"
+                                  title='constant gstreamer::MSECOND'>MSECOND</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.NSECOND.html"
+                                  title='constant gstreamer::NSECOND'>NSECOND</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_LINK_CHECK_CAPS.html"
+                                  title='constant gstreamer::PAD_LINK_CHECK_CAPS'>PAD_LINK_CHECK_CAPS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_LINK_CHECK_DEFAULT.html"
+                                  title='constant gstreamer::PAD_LINK_CHECK_DEFAULT'>PAD_LINK_CHECK_DEFAULT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_LINK_CHECK_HIERARCHY.html"
+                                  title='constant gstreamer::PAD_LINK_CHECK_HIERARCHY'>PAD_LINK_CHECK_HIERARCHY</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_LINK_CHECK_NOTHING.html"
+                                  title='constant gstreamer::PAD_LINK_CHECK_NOTHING'>PAD_LINK_CHECK_NOTHING</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_LINK_CHECK_NO_RECONFIGURE.html"
+                                  title='constant gstreamer::PAD_LINK_CHECK_NO_RECONFIGURE'>PAD_LINK_CHECK_NO_RECONFIGURE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_LINK_CHECK_TEMPLATE_CAPS.html"
+                                  title='constant gstreamer::PAD_LINK_CHECK_TEMPLATE_CAPS'>PAD_LINK_CHECK_TEMPLATE_CAPS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_PROBE_ID_INVALID.html"
+                                  title='constant gstreamer::PAD_PROBE_ID_INVALID'>PAD_PROBE_ID_INVALID</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_PROBE_TYPE_ALL_BOTH.html"
+                                  title='constant gstreamer::PAD_PROBE_TYPE_ALL_BOTH'>PAD_PROBE_TYPE_ALL_BOTH</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_PROBE_TYPE_BLOCK.html"
+                                  title='constant gstreamer::PAD_PROBE_TYPE_BLOCK'>PAD_PROBE_TYPE_BLOCK</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_PROBE_TYPE_BLOCKING.html"
+                                  title='constant gstreamer::PAD_PROBE_TYPE_BLOCKING'>PAD_PROBE_TYPE_BLOCKING</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_PROBE_TYPE_BLOCK_DOWNSTREAM.html"
+                                  title='constant gstreamer::PAD_PROBE_TYPE_BLOCK_DOWNSTREAM'>PAD_PROBE_TYPE_BLOCK_DOWNSTREAM</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_PROBE_TYPE_BLOCK_UPSTREAM.html"
+                                  title='constant gstreamer::PAD_PROBE_TYPE_BLOCK_UPSTREAM'>PAD_PROBE_TYPE_BLOCK_UPSTREAM</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_PROBE_TYPE_BUFFER.html"
+                                  title='constant gstreamer::PAD_PROBE_TYPE_BUFFER'>PAD_PROBE_TYPE_BUFFER</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_PROBE_TYPE_BUFFER_LIST.html"
+                                  title='constant gstreamer::PAD_PROBE_TYPE_BUFFER_LIST'>PAD_PROBE_TYPE_BUFFER_LIST</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_PROBE_TYPE_DATA_BOTH.html"
+                                  title='constant gstreamer::PAD_PROBE_TYPE_DATA_BOTH'>PAD_PROBE_TYPE_DATA_BOTH</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_PROBE_TYPE_DATA_DOWNSTREAM.html"
+                                  title='constant gstreamer::PAD_PROBE_TYPE_DATA_DOWNSTREAM'>PAD_PROBE_TYPE_DATA_DOWNSTREAM</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_PROBE_TYPE_DATA_UPSTREAM.html"
+                                  title='constant gstreamer::PAD_PROBE_TYPE_DATA_UPSTREAM'>PAD_PROBE_TYPE_DATA_UPSTREAM</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_PROBE_TYPE_EVENT_BOTH.html"
+                                  title='constant gstreamer::PAD_PROBE_TYPE_EVENT_BOTH'>PAD_PROBE_TYPE_EVENT_BOTH</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_PROBE_TYPE_EVENT_DOWNSTREAM.html"
+                                  title='constant gstreamer::PAD_PROBE_TYPE_EVENT_DOWNSTREAM'>PAD_PROBE_TYPE_EVENT_DOWNSTREAM</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_PROBE_TYPE_EVENT_FLUSH.html"
+                                  title='constant gstreamer::PAD_PROBE_TYPE_EVENT_FLUSH'>PAD_PROBE_TYPE_EVENT_FLUSH</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_PROBE_TYPE_EVENT_UPSTREAM.html"
+                                  title='constant gstreamer::PAD_PROBE_TYPE_EVENT_UPSTREAM'>PAD_PROBE_TYPE_EVENT_UPSTREAM</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_PROBE_TYPE_IDLE.html"
+                                  title='constant gstreamer::PAD_PROBE_TYPE_IDLE'>PAD_PROBE_TYPE_IDLE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_PROBE_TYPE_INVALID.html"
+                                  title='constant gstreamer::PAD_PROBE_TYPE_INVALID'>PAD_PROBE_TYPE_INVALID</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_PROBE_TYPE_PULL.html"
+                                  title='constant gstreamer::PAD_PROBE_TYPE_PULL'>PAD_PROBE_TYPE_PULL</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_PROBE_TYPE_PUSH.html"
+                                  title='constant gstreamer::PAD_PROBE_TYPE_PUSH'>PAD_PROBE_TYPE_PUSH</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_PROBE_TYPE_QUERY_BOTH.html"
+                                  title='constant gstreamer::PAD_PROBE_TYPE_QUERY_BOTH'>PAD_PROBE_TYPE_QUERY_BOTH</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_PROBE_TYPE_QUERY_DOWNSTREAM.html"
+                                  title='constant gstreamer::PAD_PROBE_TYPE_QUERY_DOWNSTREAM'>PAD_PROBE_TYPE_QUERY_DOWNSTREAM</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_PROBE_TYPE_QUERY_UPSTREAM.html"
+                                  title='constant gstreamer::PAD_PROBE_TYPE_QUERY_UPSTREAM'>PAD_PROBE_TYPE_QUERY_UPSTREAM</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAD_PROBE_TYPE_SCHEDULING.html"
+                                  title='constant gstreamer::PAD_PROBE_TYPE_SCHEDULING'>PAD_PROBE_TYPE_SCHEDULING</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PARSE_FLAG_FATAL_ERRORS.html"
+                                  title='constant gstreamer::PARSE_FLAG_FATAL_ERRORS'>PARSE_FLAG_FATAL_ERRORS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PARSE_FLAG_NONE.html"
+                                  title='constant gstreamer::PARSE_FLAG_NONE'>PARSE_FLAG_NONE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PARSE_FLAG_NO_SINGLE_ELEMENT_BINS.html"
+                                  title='constant gstreamer::PARSE_FLAG_NO_SINGLE_ELEMENT_BINS'>PARSE_FLAG_NO_SINGLE_ELEMENT_BINS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PARSE_FLAG_PLACE_IN_BIN.html"
+                                  title='constant gstreamer::PARSE_FLAG_PLACE_IN_BIN'>PARSE_FLAG_PLACE_IN_BIN</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SCHEDULING_FLAG_BANDWIDTH_LIMITED.html"
+                                  title='constant gstreamer::SCHEDULING_FLAG_BANDWIDTH_LIMITED'>SCHEDULING_FLAG_BANDWIDTH_LIMITED</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SCHEDULING_FLAG_SEEKABLE.html"
+                                  title='constant gstreamer::SCHEDULING_FLAG_SEEKABLE'>SCHEDULING_FLAG_SEEKABLE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SCHEDULING_FLAG_SEQUENTIAL.html"
+                                  title='constant gstreamer::SCHEDULING_FLAG_SEQUENTIAL'>SCHEDULING_FLAG_SEQUENTIAL</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SECOND.html"
+                                  title='constant gstreamer::SECOND'>SECOND</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SEEK_FLAG_ACCURATE.html"
+                                  title='constant gstreamer::SEEK_FLAG_ACCURATE'>SEEK_FLAG_ACCURATE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SEEK_FLAG_FLUSH.html"
+                                  title='constant gstreamer::SEEK_FLAG_FLUSH'>SEEK_FLAG_FLUSH</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SEEK_FLAG_KEY_UNIT.html"
+                                  title='constant gstreamer::SEEK_FLAG_KEY_UNIT'>SEEK_FLAG_KEY_UNIT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SEEK_FLAG_NONE.html"
+                                  title='constant gstreamer::SEEK_FLAG_NONE'>SEEK_FLAG_NONE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SEEK_FLAG_SEGMENT.html"
+                                  title='constant gstreamer::SEEK_FLAG_SEGMENT'>SEEK_FLAG_SEGMENT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SEEK_FLAG_SKIP.html"
+                                  title='constant gstreamer::SEEK_FLAG_SKIP'>SEEK_FLAG_SKIP</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SEEK_FLAG_SNAP_AFTER.html"
+                                  title='constant gstreamer::SEEK_FLAG_SNAP_AFTER'>SEEK_FLAG_SNAP_AFTER</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SEEK_FLAG_SNAP_BEFORE.html"
+                                  title='constant gstreamer::SEEK_FLAG_SNAP_BEFORE'>SEEK_FLAG_SNAP_BEFORE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SEEK_FLAG_SNAP_NEAREST.html"
+                                  title='constant gstreamer::SEEK_FLAG_SNAP_NEAREST'>SEEK_FLAG_SNAP_NEAREST</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SEEK_FLAG_TRICKMODE.html"
+                                  title='constant gstreamer::SEEK_FLAG_TRICKMODE'>SEEK_FLAG_TRICKMODE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SEEK_FLAG_TRICKMODE_KEY_UNITS.html"
+                                  title='constant gstreamer::SEEK_FLAG_TRICKMODE_KEY_UNITS'>SEEK_FLAG_TRICKMODE_KEY_UNITS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SEEK_FLAG_TRICKMODE_NO_AUDIO.html"
+                                  title='constant gstreamer::SEEK_FLAG_TRICKMODE_NO_AUDIO'>SEEK_FLAG_TRICKMODE_NO_AUDIO</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SEGMENT_FLAG_NONE.html"
+                                  title='constant gstreamer::SEGMENT_FLAG_NONE'>SEGMENT_FLAG_NONE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SEGMENT_FLAG_RESET.html"
+                                  title='constant gstreamer::SEGMENT_FLAG_RESET'>SEGMENT_FLAG_RESET</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SEGMENT_FLAG_SEGMENT.html"
+                                  title='constant gstreamer::SEGMENT_FLAG_SEGMENT'>SEGMENT_FLAG_SEGMENT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SEGMENT_FLAG_SKIP.html"
+                                  title='constant gstreamer::SEGMENT_FLAG_SKIP'>SEGMENT_FLAG_SKIP</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SEGMENT_FLAG_TRICKMODE.html"
+                                  title='constant gstreamer::SEGMENT_FLAG_TRICKMODE'>SEGMENT_FLAG_TRICKMODE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SEGMENT_FLAG_TRICKMODE_KEY_UNITS.html"
+                                  title='constant gstreamer::SEGMENT_FLAG_TRICKMODE_KEY_UNITS'>SEGMENT_FLAG_TRICKMODE_KEY_UNITS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SEGMENT_FLAG_TRICKMODE_NO_AUDIO.html"
+                                  title='constant gstreamer::SEGMENT_FLAG_TRICKMODE_NO_AUDIO'>SEGMENT_FLAG_TRICKMODE_NO_AUDIO</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.STACK_TRACE_SHOW_FULL.html"
+                                  title='constant gstreamer::STACK_TRACE_SHOW_FULL'>STACK_TRACE_SHOW_FULL</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.STREAM_FLAG_NONE.html"
+                                  title='constant gstreamer::STREAM_FLAG_NONE'>STREAM_FLAG_NONE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.STREAM_FLAG_SELECT.html"
+                                  title='constant gstreamer::STREAM_FLAG_SELECT'>STREAM_FLAG_SELECT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.STREAM_FLAG_SPARSE.html"
+                                  title='constant gstreamer::STREAM_FLAG_SPARSE'>STREAM_FLAG_SPARSE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.STREAM_FLAG_UNSELECT.html"
+                                  title='constant gstreamer::STREAM_FLAG_UNSELECT'>STREAM_FLAG_UNSELECT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.STREAM_TYPE_AUDIO.html"
+                                  title='constant gstreamer::STREAM_TYPE_AUDIO'>STREAM_TYPE_AUDIO</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.STREAM_TYPE_CONTAINER.html"
+                                  title='constant gstreamer::STREAM_TYPE_CONTAINER'>STREAM_TYPE_CONTAINER</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.STREAM_TYPE_TEXT.html"
+                                  title='constant gstreamer::STREAM_TYPE_TEXT'>STREAM_TYPE_TEXT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.STREAM_TYPE_UNKNOWN.html"
+                                  title='constant gstreamer::STREAM_TYPE_UNKNOWN'>STREAM_TYPE_UNKNOWN</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.STREAM_TYPE_VIDEO.html"
+                                  title='constant gstreamer::STREAM_TYPE_VIDEO'>STREAM_TYPE_VIDEO</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.USECOND.html"
+                                  title='constant gstreamer::USECOND'>USECOND</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.BinExt.html"
+                                  title='trait gstreamer::BinExt'>BinExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>Bin</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.BinExtManual.html"
+                                  title='trait gstreamer::BinExtManual'>BinExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.Cast.html"
+                                  title='trait gstreamer::Cast'>Cast</a></td>
+                           <td class='docblock-short'>
+                                <p>Upcasting and downcasting support.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ChildProxyExt.html"
+                                  title='trait gstreamer::ChildProxyExt'>ChildProxyExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>ChildProxy</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ChildProxyExtManual.html"
+                                  title='trait gstreamer::ChildProxyExtManual'>ChildProxyExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ClockExt.html"
+                                  title='trait gstreamer::ClockExt'>ClockExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>Clock</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ClockExtManual.html"
+                                  title='trait gstreamer::ClockExtManual'>ClockExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.DeviceExt.html"
+                                  title='trait gstreamer::DeviceExt'>DeviceExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>Device</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.DeviceMonitorExt.html"
+                                  title='trait gstreamer::DeviceMonitorExt'>DeviceMonitorExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>DeviceMonitor</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.DeviceProviderExt.html"
+                                  title='trait gstreamer::DeviceProviderExt'>DeviceProviderExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>DeviceProvider</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.DeviceProviderExtManual.html"
+                                  title='trait gstreamer::DeviceProviderExtManual'>DeviceProviderExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ElementExt.html"
+                                  title='trait gstreamer::ElementExt'>ElementExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>Element</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ElementExtManual.html"
+                                  title='trait gstreamer::ElementExtManual'>ElementExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.GObjectExtManualGst.html"
+                                  title='trait gstreamer::GObjectExtManualGst'>GObjectExtManualGst</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.GhostPadExt.html"
+                                  title='trait gstreamer::GhostPadExt'>GhostPadExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>GhostPad</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.GstObjectExt.html"
+                                  title='trait gstreamer::GstObjectExt'>GstObjectExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>Object</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.GstValueExt.html"
+                                  title='trait gstreamer::GstValueExt'>GstValueExt</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.IsA.html"
+                                  title='trait gstreamer::IsA'>IsA</a></td>
+                           <td class='docblock-short'>
+                                <p>Declares the &quot;is a&quot; relationship.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PadExt.html"
+                                  title='trait gstreamer::PadExt'>PadExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>Pad</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PadExtManual.html"
+                                  title='trait gstreamer::PadExtManual'>PadExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PipelineExt.html"
+                                  title='trait gstreamer::PipelineExt'>PipelineExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>Pipeline</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PresetExt.html"
+                                  title='trait gstreamer::PresetExt'>PresetExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>Preset</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ProxyPadExt.html"
+                                  title='trait gstreamer::ProxyPadExt'>ProxyPadExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>ProxyPad</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.StaticType.html"
+                                  title='trait gstreamer::StaticType'>StaticType</a></td>
+                           <td class='docblock-short'>
+                                <p>Types that are supported by GLib dynamic typing.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.SystemClockExt.html"
+                                  title='trait gstreamer::SystemClockExt'>SystemClockExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>SystemClock</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.TagSetterExt.html"
+                                  title='trait gstreamer::TagSetterExt'>TagSetterExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>TagSetter</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.TagSetterExtManual.html"
+                                  title='trait gstreamer::TagSetterExtManual'>TagSetterExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ToValue.html"
+                                  title='trait gstreamer::ToValue'>ToValue</a></td>
+                           <td class='docblock-short'>
+                                <p>Converts to <code>Value</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.TocSetterExt.html"
+                                  title='trait gstreamer::TocSetterExt'>TocSetterExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>TocSetter</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.URIHandlerExt.html"
+                                  title='trait gstreamer::URIHandlerExt'>URIHandlerExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>URIHandler</code> methods.</p>
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.debug_bin_to_dot_data.html"
+                                  title='fn gstreamer::debug_bin_to_dot_data'>debug_bin_to_dot_data</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.debug_bin_to_dot_file.html"
+                                  title='fn gstreamer::debug_bin_to_dot_file'>debug_bin_to_dot_file</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.debug_bin_to_dot_file_with_ts.html"
+                                  title='fn gstreamer::debug_bin_to_dot_file_with_ts'>debug_bin_to_dot_file_with_ts</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.debug_get_default_threshold.html"
+                                  title='fn gstreamer::debug_get_default_threshold'>debug_get_default_threshold</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.debug_get_stack_trace.html"
+                                  title='fn gstreamer::debug_get_stack_trace'>debug_get_stack_trace</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.debug_is_active.html"
+                                  title='fn gstreamer::debug_is_active'>debug_is_active</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.debug_is_colored.html"
+                                  title='fn gstreamer::debug_is_colored'>debug_is_colored</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.debug_print_stack_trace.html"
+                                  title='fn gstreamer::debug_print_stack_trace'>debug_print_stack_trace</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.debug_set_active.html"
+                                  title='fn gstreamer::debug_set_active'>debug_set_active</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.debug_set_colored.html"
+                                  title='fn gstreamer::debug_set_colored'>debug_set_colored</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.debug_set_default_threshold.html"
+                                  title='fn gstreamer::debug_set_default_threshold'>debug_set_default_threshold</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.debug_set_threshold_for_name.html"
+                                  title='fn gstreamer::debug_set_threshold_for_name'>debug_set_threshold_for_name</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.debug_set_threshold_from_string.html"
+                                  title='fn gstreamer::debug_set_threshold_from_string'>debug_set_threshold_from_string</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.debug_unset_threshold_for_name.html"
+                                  title='fn gstreamer::debug_unset_threshold_for_name'>debug_unset_threshold_for_name</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.init.html"
+                                  title='fn gstreamer::init'>init</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.parse_bin_from_description.html"
+                                  title='fn gstreamer::parse_bin_from_description'>parse_bin_from_description</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.parse_launch.html"
+                                  title='fn gstreamer::parse_launch'>parse_launch</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.parse_launchv.html"
+                                  title='fn gstreamer::parse_launchv'>parse_launchv</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.update_registry.html"
+                                  title='fn gstreamer::update_registry'>update_registry</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.util_get_timestamp.html"
+                                  title='fn gstreamer::util_get_timestamp'>util_get_timestamp</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.util_group_id_next.html"
+                                  title='fn gstreamer::util_group_id_next'>util_group_id_next</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.util_seqnum_next.html"
+                                  title='fn gstreamer::util_seqnum_next'>util_seqnum_next</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.version.html"
+                                  title='fn gstreamer::version'>version</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.version_string.html"
+                                  title='fn gstreamer::version_string'>version_string</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.ClockTime.html"
+                                  title='type gstreamer::ClockTime'>ClockTime</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.ClockTimeDiff.html"
+                                  title='type gstreamer::ClockTimeDiff'>ClockTimeDiff</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.ElementFactoryListType.html"
+                                  title='type gstreamer::ElementFactoryListType'>ElementFactoryListType</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

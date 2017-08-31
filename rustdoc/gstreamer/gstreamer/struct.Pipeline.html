@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Pipeline` struct in crate `gstreamer`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Pipeline">
+
+    <title>gstreamer::Pipeline - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Pipeline</p><div class="block items"><ul><li><a href="#methods">Methods</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='index.html'>gstreamer</a></p><script>window.sidebarCurrent = {name: 'Pipeline', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>gstreamer</a>::<wbr><a class="struct" href=''>Pipeline</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span></span></h1>
+<pre class='rust struct'>pub struct Pipeline(_, _);</pre><div class='docblock'><p>A <code>Pipeline</code> is a special <code>Bin</code> used as the toplevel container for
+the filter graph. The <code>Pipeline</code> will manage the selection and
+distribution of a global <code>Clock</code> as well as provide a <code>Bus</code> to the
+application.</p>
+
+<p><code>Pipeline::new</code> is used to create a pipeline. when you are done with
+the pipeline, use <code>GstObjectExt::unref</code> to free its resources including all
+added <code>Element</code> objects (if not otherwise referenced).</p>
+
+<p>Elements are added and removed from the pipeline using the <code>Bin</code>
+methods like <code>BinExt::add</code> and <code>BinExt::remove</code> (see <code>Bin</code>).</p>
+
+<p>Before changing the state of the <code>Pipeline</code> (see <code>Element</code>) a <code>Bus</code>
+can be retrieved with <code>Pipeline::get_bus</code>. This bus can then be
+used to receive <code>Message</code> from the elements in the pipeline.</p>
+
+<p>By default, a <code>Pipeline</code> will automatically flush the pending <code>Bus</code>
+messages when going to the NULL state to ensure that no circular
+references exist when no messages are read from the <code>Bus</code>. This
+behaviour can be changed with <code>PipelineExt::set_auto_flush_bus</code>.</p>
+
+<p>When the <code>Pipeline</code> performs the PAUSED to PLAYING state change it will
+select a clock for the elements. The clock selection algorithm will by
+default select a clock provided by an element that is most upstream
+(closest to the source). For live pipelines (ones that return
+<code>StateChangeReturn::NoPreroll</code> from the <code>ElementExt::set_state</code> call) this
+will select the clock provided by the live source. For normal pipelines
+this will select a clock provided by the sinks (most likely the audio
+sink). If no element provides a clock, a default <code>SystemClock</code> is used.</p>
+
+<p>The clock selection can be controlled with the <code>PipelineExt::use_clock</code>
+method, which will enforce a given clock on the pipeline. With
+<code>PipelineExt::auto_clock</code> the default clock selection algorithm can be
+restored.</p>
+
+<p>A <code>Pipeline</code> maintains a running time for the elements. The running
+time is defined as the difference between the current clock time and
+the base time. When the pipeline goes to READY or a flushing seek is
+performed on it, the running time is reset to 0. When the pipeline is
+set from PLAYING to PAUSED, the current clock time is sampled and used to
+configure the base time for the elements when the pipeline is set
+to PLAYING again. The effect is that the running time (as the difference
+between the clock time and the base time) will count how much time was spent
+in the PLAYING state. This default behaviour can be changed with the
+<code>ElementExt::set_start_time</code> method.</p>
+
+<h1 id='implements' class='section-header'><a href='#implements'>Implements</a></h1>
+<p><a href="trait.PipelineExt.html"><code>PipelineExt</code></a>, <a href="trait.BinExt.html"><code>BinExt</code></a>, <a href="trait.ElementExt.html"><code>ElementExt</code></a>, <a href="trait.ObjectExt.html"><code>ObjectExt</code></a>, <a href="trait.ObjectExt.html"><code>ObjectExt</code></a>, <a href="trait.ChildProxyExt.html"><code>ChildProxyExt</code></a></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class="struct" href="../gstreamer/struct.Pipeline.html" title="struct gstreamer::Pipeline">Pipeline</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/pipeline.rs.html#80-98' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>fn <a href='#method.new' class='fnname'>new</a>&lt;'a, P:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;&gt;&gt;(name: P) -&gt; <a class="struct" href="../gstreamer/struct.Pipeline.html" title="struct gstreamer::Pipeline">Pipeline</a></code></span></h4>
+<div class='docblock'><p>Create a new pipeline with the given name.</p>
+
+<h2 id='name' class='section-header'><a href='#name'><code>name</code></a></h2>
+<p>name of new pipeline</p>
+
+<h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
+<p>newly created GstPipeline</p>
+
+<p>MT safe.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../gstreamer/struct.Pipeline.html" title="struct gstreamer::Pipeline">Pipeline</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer/struct.Pipeline.html" title="struct gstreamer::Pipeline">Pipeline</a></code></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../gstreamer/struct.Pipeline.html" title="struct gstreamer::Pipeline">Pipeline</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html" title="trait core::hash::Hash">Hash</a> for <a class="struct" href="../gstreamer/struct.Pipeline.html" title="struct gstreamer::Pipeline">Pipeline</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.hash' class="method"><span id='hash.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash' class='fnname'>hash</a>&lt;__H:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>&gt;(&amp;self, __arg_0: &amp;mut __H)</code></span></h4>
+<div class='docblock'><p>Feeds this value into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash">Read more</a></p>
+</div><h4 id='method.hash_slice' class="method"><span id='hash_slice.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice' class='fnname'>hash_slice</a>&lt;H&gt;(data: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[Self]</a>, state: &amp;mut H) <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;H: <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>,&nbsp;</span></code><div class='since' title='Stable since Rust version 1.3.0'>1.3.0</div></span></h4>
+<div class='docblock'><p>Feeds a slice of this type into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer/trait.StaticType.html" title="trait gstreamer::StaticType">StaticType</a> for <a class="struct" href="../gstreamer/struct.Pipeline.html" title="struct gstreamer::Pipeline">Pipeline</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.static_type' class="method"><span id='static_type.v' class='invisible'><code>fn <a href='../gstreamer/trait.StaticType.html#tymethod.static_type' class='fnname'>static_type</a>() -&gt; <a class="enum" href="../gstreamer/enum.Type.html" title="enum gstreamer::Type">Type</a></code></span></h4>
+<div class='docblock'><p>Returns the type identifier of <code>Self</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt;&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a>&lt;T&gt; for <a class="struct" href="../gstreamer/struct.Pipeline.html" title="struct gstreamer::Pipeline">Pipeline</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, other: &amp;T) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="struct" href="../gstreamer/struct.Pipeline.html" title="struct gstreamer::Pipeline">Pipeline</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/struct.Bin.html" title="struct gstreamer::Bin">Bin</a>&gt; for <a class="struct" href="../gstreamer/struct.Pipeline.html" title="struct gstreamer::Pipeline">Pipeline</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/struct.Element.html" title="struct gstreamer::Element">Element</a>&gt; for <a class="struct" href="../gstreamer/struct.Pipeline.html" title="struct gstreamer::Pipeline">Pipeline</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/struct.Object.html" title="struct gstreamer::Object">Object</a>&gt; for <a class="struct" href="../gstreamer/struct.Pipeline.html" title="struct gstreamer::Pipeline">Pipeline</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/struct.ChildProxy.html" title="struct gstreamer::ChildProxy">ChildProxy</a>&gt; for <a class="struct" href="../gstreamer/struct.Pipeline.html" title="struct gstreamer::Pipeline">Pipeline</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt; for <a class="struct" href="../gstreamer/struct.Pipeline.html" title="struct gstreamer::Pipeline">Pipeline</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> for <a class="struct" href="../gstreamer/struct.Pipeline.html" title="struct gstreamer::Pipeline">Pipeline</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/pipeline.rs.html#100' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> for <a class="struct" href="../gstreamer/struct.Pipeline.html" title="struct gstreamer::Pipeline">Pipeline</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/pipeline.rs.html#101' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

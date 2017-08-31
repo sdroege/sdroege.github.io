@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ProxyPad` struct in crate `gstreamer`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ProxyPad">
+
+    <title>gstreamer::ProxyPad - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct ProxyPad</p><div class="block items"><ul><li><a href="#methods">Methods</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='index.html'>gstreamer</a></p><script>window.sidebarCurrent = {name: 'ProxyPad', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>gstreamer</a>::<wbr><a class="struct" href=''>ProxyPad</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span></span></h1>
+<pre class='rust struct'>pub struct ProxyPad(_, _);</pre><div class='docblock'>
+<h1 id='implements' class='section-header'><a href='#implements'>Implements</a></h1>
+<p><a href="trait.ProxyPadExt.html"><code>ProxyPadExt</code></a>, <a href="trait.PadExt.html"><code>PadExt</code></a>, <a href="trait.ObjectExt.html"><code>ObjectExt</code></a>, <a href="trait.ObjectExt.html"><code>ObjectExt</code></a></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class="struct" href="../gstreamer/struct.ProxyPad.html" title="struct gstreamer::ProxyPad">ProxyPad</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/proxy_pad.rs.html#28-47' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.iterate_internal_links_default' class="method"><span id='iterate_internal_links_default.v' class='invisible'><code>fn <a href='#method.iterate_internal_links_default' class='fnname'>iterate_internal_links_default</a>&lt;'a, P:&nbsp;<a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/struct.Pad.html" title="struct gstreamer::Pad">Pad</a>&gt;, Q:&nbsp;<a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/struct.Object.html" title="struct gstreamer::Object">Object</a>&gt; + 'a, R:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a Q&gt;&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;pad: &amp;P, <br>&nbsp;&nbsp;&nbsp;&nbsp;parent: R<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Iterator.html" title="struct gstreamer::Iterator">Iterator</a>&gt;</code></span></h4>
+<div class='docblock'><p>Invoke the default iterate internal links function of the proxy pad.</p>
+
+<h2 id='pad' class='section-header'><a href='#pad'><code>pad</code></a></h2>
+<p>the <code>Pad</code> to get the internal links of.</p>
+
+<h2 id='parent' class='section-header'><a href='#parent'><code>parent</code></a></h2>
+<p>the parent of <code>pad</code> or <code>None</code></p>
+
+<h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
+<p>a <code>Iterator</code> of <code>Pad</code>, or <code>None</code> if <code>pad</code>
+has no parent. Unref each returned pad with <code>GstObjectExt::unref</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="struct" href="../gstreamer/struct.ProxyPad.html" title="struct gstreamer::ProxyPad">ProxyPad</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/proxy_pad.rs.html#22-120' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.chain_default' class="method"><span id='chain_default.v' class='invisible'><code>fn <a href='#method.chain_default' class='fnname'>chain_default</a>&lt;'a, P:&nbsp;<a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/struct.Pad.html" title="struct gstreamer::Pad">Pad</a>&gt;, Q:&nbsp;<a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/struct.Object.html" title="struct gstreamer::Object">Object</a>&gt; + 'a, R:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a Q&gt;&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;pad: &amp;P, <br>&nbsp;&nbsp;&nbsp;&nbsp;parent: R, <br>&nbsp;&nbsp;&nbsp;&nbsp;buffer: <a class="type" href="../gstreamer/buffer/type.Buffer.html" title="type gstreamer::buffer::Buffer">Buffer</a><br>) -&gt; <a class="enum" href="../gstreamer/enum.FlowReturn.html" title="enum gstreamer::FlowReturn">FlowReturn</a></code></span></h4>
+<div class='docblock'><p>Invoke the default chain function of the proxy pad.</p>
+
+<h2 id='pad-1' class='section-header'><a href='#pad-1'><code>pad</code></a></h2>
+<p>a sink <code>Pad</code>, returns GST_FLOW_ERROR if not.</p>
+
+<h2 id='parent-1' class='section-header'><a href='#parent-1'><code>parent</code></a></h2>
+<p>the parent of <code>pad</code> or <code>None</code></p>
+
+<h2 id='buffer' class='section-header'><a href='#buffer'><code>buffer</code></a></h2>
+<p>the <code>Buffer</code> to send, return GST_FLOW_ERROR
+ if not.</p>
+
+<h1 id='returns-1' class='section-header'><a href='#returns-1'>Returns</a></h1>
+<p>a <code>FlowReturn</code> from the pad.</p>
+</div><h4 id='method.chain_list_default' class="method"><span id='chain_list_default.v' class='invisible'><code>fn <a href='#method.chain_list_default' class='fnname'>chain_list_default</a>&lt;'a, P:&nbsp;<a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/struct.Pad.html" title="struct gstreamer::Pad">Pad</a>&gt;, Q:&nbsp;<a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/struct.Object.html" title="struct gstreamer::Object">Object</a>&gt; + 'a, R:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a Q&gt;&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;pad: &amp;P, <br>&nbsp;&nbsp;&nbsp;&nbsp;parent: R, <br>&nbsp;&nbsp;&nbsp;&nbsp;list: <a class="type" href="../gstreamer/bufferlist/type.BufferList.html" title="type gstreamer::bufferlist::BufferList">BufferList</a><br>) -&gt; <a class="enum" href="../gstreamer/enum.FlowReturn.html" title="enum gstreamer::FlowReturn">FlowReturn</a></code></span></h4>
+<div class='docblock'><p>Invoke the default chain list function of the proxy pad.</p>
+
+<h2 id='pad-2' class='section-header'><a href='#pad-2'><code>pad</code></a></h2>
+<p>a sink <code>Pad</code>, returns GST_FLOW_ERROR if not.</p>
+
+<h2 id='parent-2' class='section-header'><a href='#parent-2'><code>parent</code></a></h2>
+<p>the parent of <code>pad</code> or <code>None</code></p>
+
+<h2 id='list' class='section-header'><a href='#list'><code>list</code></a></h2>
+<p>the <code>BufferList</code> to send, return GST_FLOW_ERROR
+ if not.</p>
+
+<h1 id='returns-2' class='section-header'><a href='#returns-2'>Returns</a></h1>
+<p>a <code>FlowReturn</code> from the pad.</p>
+</div><h4 id='method.getrange_default' class="method"><span id='getrange_default.v' class='invisible'><code>fn <a href='#method.getrange_default' class='fnname'>getrange_default</a>&lt;P:&nbsp;<a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/struct.Pad.html" title="struct gstreamer::Pad">Pad</a>&gt;, Q:&nbsp;<a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/struct.Object.html" title="struct gstreamer::Object">Object</a>&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;pad: &amp;P, <br>&nbsp;&nbsp;&nbsp;&nbsp;parent: &amp;Q, <br>&nbsp;&nbsp;&nbsp;&nbsp;offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;size: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="type" href="../gstreamer/buffer/type.Buffer.html" title="type gstreamer::buffer::Buffer">Buffer</a>, <a class="enum" href="../gstreamer/enum.FlowReturn.html" title="enum gstreamer::FlowReturn">FlowReturn</a>&gt;</code></span></h4>
+<div class='docblock'><p>Invoke the default getrange function of the proxy pad.</p>
+
+<h2 id='pad-3' class='section-header'><a href='#pad-3'><code>pad</code></a></h2>
+<p>a src <code>Pad</code>, returns <code>FlowReturn::Error</code> if not.</p>
+
+<h2 id='parent-3' class='section-header'><a href='#parent-3'><code>parent</code></a></h2>
+<p>the parent of <code>pad</code></p>
+
+<h2 id='offset' class='section-header'><a href='#offset'><code>offset</code></a></h2>
+<p>The start offset of the buffer</p>
+
+<h2 id='size' class='section-header'><a href='#size'><code>size</code></a></h2>
+<p>The length of the buffer</p>
+
+<h2 id='buffer-1' class='section-header'><a href='#buffer-1'><code>buffer</code></a></h2>
+<p>a pointer to hold the <code>Buffer</code>,
+ returns <code>FlowReturn::Error</code> if <code>None</code>.</p>
+
+<h1 id='returns-3' class='section-header'><a href='#returns-3'>Returns</a></h1>
+<p>a <code>FlowReturn</code> from the pad.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../gstreamer/struct.ProxyPad.html" title="struct gstreamer::ProxyPad">ProxyPad</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer/struct.ProxyPad.html" title="struct gstreamer::ProxyPad">ProxyPad</a></code></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../gstreamer/struct.ProxyPad.html" title="struct gstreamer::ProxyPad">ProxyPad</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html" title="trait core::hash::Hash">Hash</a> for <a class="struct" href="../gstreamer/struct.ProxyPad.html" title="struct gstreamer::ProxyPad">ProxyPad</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.hash' class="method"><span id='hash.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash' class='fnname'>hash</a>&lt;__H:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>&gt;(&amp;self, __arg_0: &amp;mut __H)</code></span></h4>
+<div class='docblock'><p>Feeds this value into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash">Read more</a></p>
+</div><h4 id='method.hash_slice' class="method"><span id='hash_slice.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice' class='fnname'>hash_slice</a>&lt;H&gt;(data: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[Self]</a>, state: &amp;mut H) <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;H: <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>,&nbsp;</span></code><div class='since' title='Stable since Rust version 1.3.0'>1.3.0</div></span></h4>
+<div class='docblock'><p>Feeds a slice of this type into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer/trait.StaticType.html" title="trait gstreamer::StaticType">StaticType</a> for <a class="struct" href="../gstreamer/struct.ProxyPad.html" title="struct gstreamer::ProxyPad">ProxyPad</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.static_type' class="method"><span id='static_type.v' class='invisible'><code>fn <a href='../gstreamer/trait.StaticType.html#tymethod.static_type' class='fnname'>static_type</a>() -&gt; <a class="enum" href="../gstreamer/enum.Type.html" title="enum gstreamer::Type">Type</a></code></span></h4>
+<div class='docblock'><p>Returns the type identifier of <code>Self</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt;&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a>&lt;T&gt; for <a class="struct" href="../gstreamer/struct.ProxyPad.html" title="struct gstreamer::ProxyPad">ProxyPad</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, other: &amp;T) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="struct" href="../gstreamer/struct.ProxyPad.html" title="struct gstreamer::ProxyPad">ProxyPad</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/struct.Pad.html" title="struct gstreamer::Pad">Pad</a>&gt; for <a class="struct" href="../gstreamer/struct.ProxyPad.html" title="struct gstreamer::ProxyPad">ProxyPad</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/struct.Object.html" title="struct gstreamer::Object">Object</a>&gt; for <a class="struct" href="../gstreamer/struct.ProxyPad.html" title="struct gstreamer::ProxyPad">ProxyPad</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt; for <a class="struct" href="../gstreamer/struct.ProxyPad.html" title="struct gstreamer::ProxyPad">ProxyPad</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> for <a class="struct" href="../gstreamer/struct.ProxyPad.html" title="struct gstreamer::ProxyPad">ProxyPad</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/proxy_pad.rs.html#49' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> for <a class="struct" href="../gstreamer/struct.ProxyPad.html" title="struct gstreamer::ProxyPad">ProxyPad</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/proxy_pad.rs.html#50' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `gstreamer_audio` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, gstreamer_audio">
+
+    <title>gstreamer_audio - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Crate gstreamer_audio</p><div class="block items"><ul><li><a href="#modules">Modules</a></li><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#constants">Constants</a></li><li><a href="#traits">Traits</a></li><li><a href="#functions">Functions</a></li></ul></div><p class='location'></p><script>window.sidebarCurrent = {name: 'gstreamer_audio', ty: 'mod', relpath: '../'};</script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Crate <a class="mod" href=''>gstreamer_audio</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/gstreamer_audio/lib.rs.html#9-85' title='goto source code'>[src]</a></span></h1>
+<h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="prelude/index.html"
+                                  title='mod gstreamer_audio::prelude'>prelude</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.AudioFlags.html"
+                                  title='struct gstreamer_audio::AudioFlags'>AudioFlags</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.AudioFormatFlags.html"
+                                  title='struct gstreamer_audio::AudioFormatFlags'>AudioFormatFlags</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.AudioFormatInfo.html"
+                                  title='struct gstreamer_audio::AudioFormatInfo'>AudioFormatInfo</a></td>
+                           <td class='docblock-short'>
+                                <p>Information for an audio format.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.AudioInfo.html"
+                                  title='struct gstreamer_audio::AudioInfo'>AudioInfo</a></td>
+                           <td class='docblock-short'>
+                                <p>Information describing audio properties. This information can be filled
+in from GstCaps with <code>AudioInfo::from_caps</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.AudioInfoBuilder.html"
+                                  title='struct gstreamer_audio::AudioInfoBuilder'>AudioInfoBuilder</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.AudioPackFlags.html"
+                                  title='struct gstreamer_audio::AudioPackFlags'>AudioPackFlags</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Continue.html"
+                                  title='struct gstreamer_audio::Continue'>Continue</a></td>
+                           <td class='docblock-short'>
+                                <p>Continue calling the closure in the future iterations or drop it.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Error.html"
+                                  title='struct gstreamer_audio::Error'>Error</a></td>
+                           <td class='docblock-short'>
+                                <p>A generic error capable of representing various error domains (types).</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.StreamVolume.html"
+                                  title='struct gstreamer_audio::StreamVolume'>StreamVolume</a></td>
+                           <td class='docblock-short'>
+                                <p>This interface is implemented by elements that provide a stream volume. Examples for
+such elements are <code>volume</code> and <code>playbin</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TypedValue.html"
+                                  title='struct gstreamer_audio::TypedValue'>TypedValue</a></td>
+                           <td class='docblock-short'>
+                                <p>A statically typed <a href="struct.Value.html"><code>Value</code></a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Value.html"
+                                  title='struct gstreamer_audio::Value'>Value</a></td>
+                           <td class='docblock-short'>
+                                <p>A generic value capable of carrying various types.</p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.AudioChannelPosition.html"
+                                  title='enum gstreamer_audio::AudioChannelPosition'>AudioChannelPosition</a></td>
+                           <td class='docblock-short'>
+                                <p>Audio channel positions.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.AudioEndianness.html"
+                                  title='enum gstreamer_audio::AudioEndianness'>AudioEndianness</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.AudioFormat.html"
+                                  title='enum gstreamer_audio::AudioFormat'>AudioFormat</a></td>
+                           <td class='docblock-short'>
+                                <p>Enum value describing the most common audio formats.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.AudioLayout.html"
+                                  title='enum gstreamer_audio::AudioLayout'>AudioLayout</a></td>
+                           <td class='docblock-short'>
+                                <p>Layout of the audio samples for the different channels.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.StreamVolumeFormat.html"
+                                  title='enum gstreamer_audio::StreamVolumeFormat'>StreamVolumeFormat</a></td>
+                           <td class='docblock-short'>
+                                <p>Different representations of a stream volume. <code>StreamVolume::convert_volume</code>
+allows to convert between the different representations.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.Type.html"
+                                  title='enum gstreamer_audio::Type'>Type</a></td>
+                           <td class='docblock-short'>
+                                <p>A GLib or GLib-based library type</p>
+                           </td>
+                       </tr></table><h2 id='constants' class='section-header'><a href="#constants">Constants</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.AUDIO_FLAG_NONE.html"
+                                  title='constant gstreamer_audio::AUDIO_FLAG_NONE'>AUDIO_FLAG_NONE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.AUDIO_FLAG_UNPOSITIONED.html"
+                                  title='constant gstreamer_audio::AUDIO_FLAG_UNPOSITIONED'>AUDIO_FLAG_UNPOSITIONED</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.AUDIO_FORMAT_F32.html"
+                                  title='constant gstreamer_audio::AUDIO_FORMAT_F32'>AUDIO_FORMAT_F32</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.AUDIO_FORMAT_F64.html"
+                                  title='constant gstreamer_audio::AUDIO_FORMAT_F64'>AUDIO_FORMAT_F64</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.AUDIO_FORMAT_FLAG_COMPLEX.html"
+                                  title='constant gstreamer_audio::AUDIO_FORMAT_FLAG_COMPLEX'>AUDIO_FORMAT_FLAG_COMPLEX</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.AUDIO_FORMAT_FLAG_FLOAT.html"
+                                  title='constant gstreamer_audio::AUDIO_FORMAT_FLAG_FLOAT'>AUDIO_FORMAT_FLAG_FLOAT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.AUDIO_FORMAT_FLAG_INTEGER.html"
+                                  title='constant gstreamer_audio::AUDIO_FORMAT_FLAG_INTEGER'>AUDIO_FORMAT_FLAG_INTEGER</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.AUDIO_FORMAT_FLAG_SIGNED.html"
+                                  title='constant gstreamer_audio::AUDIO_FORMAT_FLAG_SIGNED'>AUDIO_FORMAT_FLAG_SIGNED</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.AUDIO_FORMAT_FLAG_UNPACK.html"
+                                  title='constant gstreamer_audio::AUDIO_FORMAT_FLAG_UNPACK'>AUDIO_FORMAT_FLAG_UNPACK</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.AUDIO_FORMAT_S16.html"
+                                  title='constant gstreamer_audio::AUDIO_FORMAT_S16'>AUDIO_FORMAT_S16</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.AUDIO_FORMAT_S18.html"
+                                  title='constant gstreamer_audio::AUDIO_FORMAT_S18'>AUDIO_FORMAT_S18</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.AUDIO_FORMAT_S20.html"
+                                  title='constant gstreamer_audio::AUDIO_FORMAT_S20'>AUDIO_FORMAT_S20</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.AUDIO_FORMAT_S24.html"
+                                  title='constant gstreamer_audio::AUDIO_FORMAT_S24'>AUDIO_FORMAT_S24</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.AUDIO_FORMAT_S32.html"
+                                  title='constant gstreamer_audio::AUDIO_FORMAT_S32'>AUDIO_FORMAT_S32</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.AUDIO_FORMAT_S2432.html"
+                                  title='constant gstreamer_audio::AUDIO_FORMAT_S2432'>AUDIO_FORMAT_S2432</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.AUDIO_FORMAT_U16.html"
+                                  title='constant gstreamer_audio::AUDIO_FORMAT_U16'>AUDIO_FORMAT_U16</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.AUDIO_FORMAT_U18.html"
+                                  title='constant gstreamer_audio::AUDIO_FORMAT_U18'>AUDIO_FORMAT_U18</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.AUDIO_FORMAT_U20.html"
+                                  title='constant gstreamer_audio::AUDIO_FORMAT_U20'>AUDIO_FORMAT_U20</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.AUDIO_FORMAT_U24.html"
+                                  title='constant gstreamer_audio::AUDIO_FORMAT_U24'>AUDIO_FORMAT_U24</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.AUDIO_FORMAT_U32.html"
+                                  title='constant gstreamer_audio::AUDIO_FORMAT_U32'>AUDIO_FORMAT_U32</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.AUDIO_FORMAT_U2432.html"
+                                  title='constant gstreamer_audio::AUDIO_FORMAT_U2432'>AUDIO_FORMAT_U2432</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.AUDIO_PACK_FLAG_NONE.html"
+                                  title='constant gstreamer_audio::AUDIO_PACK_FLAG_NONE'>AUDIO_PACK_FLAG_NONE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.AUDIO_PACK_FLAG_TRUNCATE_RANGE.html"
+                                  title='constant gstreamer_audio::AUDIO_PACK_FLAG_TRUNCATE_RANGE'>AUDIO_PACK_FLAG_TRUNCATE_RANGE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.Cast.html"
+                                  title='trait gstreamer_audio::Cast'>Cast</a></td>
+                           <td class='docblock-short'>
+                                <p>Upcasting and downcasting support.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.IsA.html"
+                                  title='trait gstreamer_audio::IsA'>IsA</a></td>
+                           <td class='docblock-short'>
+                                <p>Declares the &quot;is a&quot; relationship.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.StaticType.html"
+                                  title='trait gstreamer_audio::StaticType'>StaticType</a></td>
+                           <td class='docblock-short'>
+                                <p>Types that are supported by GLib dynamic typing.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.StreamVolumeExt.html"
+                                  title='trait gstreamer_audio::StreamVolumeExt'>StreamVolumeExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>StreamVolume</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ToValue.html"
+                                  title='trait gstreamer_audio::ToValue'>ToValue</a></td>
+                           <td class='docblock-short'>
+                                <p>Converts to <code>Value</code>.</p>
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.audio_buffer_clip.html"
+                                  title='fn gstreamer_audio::audio_buffer_clip'>audio_buffer_clip</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.buffer_reorder_channels.html"
+                                  title='fn gstreamer_audio::buffer_reorder_channels'>buffer_reorder_channels</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.get_channel_reorder_map.html"
+                                  title='fn gstreamer_audio::get_channel_reorder_map'>get_channel_reorder_map</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.reorder_channels.html"
+                                  title='fn gstreamer_audio::reorder_channels'>reorder_channels</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer_audio";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

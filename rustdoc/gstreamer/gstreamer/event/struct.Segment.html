@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Segment` struct in crate `gstreamer`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Segment">
+
+    <title>gstreamer::event::Segment - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Segment</p><div class="block items"><ul><li><a href="#methods">Methods</a></li></ul></div><p class='location'><a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>event</a></p><script>window.sidebarCurrent = {name: 'Segment', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>event</a>::<wbr><a class="struct" href=''>Segment</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/gstreamer/event.rs.html#959' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Segment&lt;'a&gt;(_);</pre><div class='docblock'><p>This helper structure holds the relevant values for tracking the region of
+interest in a media file, called a segment.</p>
+
+<p>The structure can be used for two purposes:</p>
+
+<ul>
+<li>performing seeks (handling seek events)</li>
+<li>tracking playback regions (handling newsegment events)</li>
+</ul>
+
+<p>The segment is usually configured by the application with a seek event which
+is propagated upstream and eventually handled by an element that performs the seek.</p>
+
+<p>The configured segment is then propagated back downstream with a newsegment event.
+This information is then used to clip media to the segment boundaries.</p>
+
+<p>A segment structure is initialized with <code>Segment::init</code>, which takes a <code>Format</code>
+that will be used as the format of the segment values. The segment will be configured
+with a start value of 0 and a stop/duration of -1, which is undefined. The default
+rate and applied_rate is 1.0.</p>
+
+<p>The public duration field contains the duration of the segment. When using
+the segment for seeking, the start and time members should normally be left
+to their default 0 value. The stop position is left to -1 unless explicitly
+configured to a different value after a seek event.</p>
+
+<p>The current position in the segment should be set by changing the position
+member in the structure.</p>
+
+<p>For elements that perform seeks, the current segment should be updated with the
+<code>Segment::do_seek</code> and the values from the seek event. This method will update
+all the segment fields. The position field will contain the new playback position.
+If the start_type was different from GST_SEEK_TYPE_NONE, playback continues from
+the position position, possibly with updated flags or rate.</p>
+
+<p>For elements that want to use <code>Segment</code> to track the playback region,
+update the segment fields with the information from the newsegment event.
+The <code>Segment::clip</code> method can be used to check and clip
+the media data to the segment boundaries.</p>
+
+<p>For elements that want to synchronize to the pipeline clock, <code>Segment::to_running_time</code>
+can be used to convert a timestamp to a value that can be used to synchronize
+to the clock. This function takes into account the base as well as
+any rate or applied_rate conversions.</p>
+
+<p>For elements that need to perform operations on media data in stream_time,
+<code>Segment::to_stream_time</code> can be used to convert a timestamp and the segment
+info to stream time (which is always between 0 and the duration of the stream).</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="struct" href="../../gstreamer/event/struct.Segment.html" title="struct gstreamer::event::Segment">Segment</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gstreamer/event.rs.html#960-969' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.get_segment' class="method"><span id='get_segment.v' class='invisible'><code>fn <a href='#method.get_segment' class='fnname'>get_segment</a>(&amp;self) -&gt; <a class="struct" href="../../gstreamer/struct.Segment.html" title="struct gstreamer::Segment">Segment</a></code></span></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "gstreamer";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["PlayerSignalDispatcherExt","Trait containing all `PlayerSignalDispatcher` methods."],["PlayerStreamInfoExt","Trait containing all `PlayerStreamInfo` methods."],["PlayerVideoOverlayVideoRendererExtManual",""],["PlayerVideoRendererExt","Trait containing all `PlayerVideoRenderer` methods."]]});

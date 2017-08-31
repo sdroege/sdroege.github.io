@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `BinExt` trait in crate `gstreamer`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, BinExt">
+
+    <title>gstreamer::BinExt - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Trait BinExt</p><div class="block items"><ul><li><a href="#required-methods">Required Methods</a></li><li><a href="#implementors">Implementors</a></li></ul></div><p class='location'><a href='index.html'>gstreamer</a></p><script>window.sidebarCurrent = {name: 'BinExt', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='index.html'>gstreamer</a>::<wbr><a class="trait" href=''>BinExt</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/gstreamer/auto/bin.rs.html#160-414' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait BinExt {
+    fn <a href='#tymethod.add' class='fnname'>add</a>&lt;P:&nbsp;<a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/struct.Element.html" title="struct gstreamer::Element">Element</a>&gt;&gt;(&amp;self, element: &amp;P) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>, <a class="struct" href="../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;;
+    fn <a href='#tymethod.find_unlinked_pad' class='fnname'>find_unlinked_pad</a>(&amp;self, direction: <a class="enum" href="../gstreamer/enum.PadDirection.html" title="enum gstreamer::PadDirection">PadDirection</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Pad.html" title="struct gstreamer::Pad">Pad</a>&gt;;
+    fn <a href='#tymethod.get_by_interface' class='fnname'>get_by_interface</a>(&amp;self, iface: <a class="enum" href="../gstreamer/enum.Type.html" title="enum gstreamer::Type">Type</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Element.html" title="struct gstreamer::Element">Element</a>&gt;;
+    fn <a href='#tymethod.get_by_name' class='fnname'>get_by_name</a>(&amp;self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Element.html" title="struct gstreamer::Element">Element</a>&gt;;
+    fn <a href='#tymethod.get_by_name_recurse_up' class='fnname'>get_by_name_recurse_up</a>(&amp;self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Element.html" title="struct gstreamer::Element">Element</a>&gt;;
+    fn <a href='#tymethod.get_suppressed_flags' class='fnname'>get_suppressed_flags</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer/struct.ElementFlags.html" title="struct gstreamer::ElementFlags">ElementFlags</a>;
+    fn <a href='#tymethod.iterate_all_by_interface' class='fnname'>iterate_all_by_interface</a>(&amp;self, iface: <a class="enum" href="../gstreamer/enum.Type.html" title="enum gstreamer::Type">Type</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Iterator.html" title="struct gstreamer::Iterator">Iterator</a>&gt;;
+    fn <a href='#tymethod.iterate_elements' class='fnname'>iterate_elements</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Iterator.html" title="struct gstreamer::Iterator">Iterator</a>&gt;;
+    fn <a href='#tymethod.iterate_recurse' class='fnname'>iterate_recurse</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Iterator.html" title="struct gstreamer::Iterator">Iterator</a>&gt;;
+    fn <a href='#tymethod.iterate_sinks' class='fnname'>iterate_sinks</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Iterator.html" title="struct gstreamer::Iterator">Iterator</a>&gt;;
+    fn <a href='#tymethod.iterate_sorted' class='fnname'>iterate_sorted</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Iterator.html" title="struct gstreamer::Iterator">Iterator</a>&gt;;
+    fn <a href='#tymethod.iterate_sources' class='fnname'>iterate_sources</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Iterator.html" title="struct gstreamer::Iterator">Iterator</a>&gt;;
+    fn <a href='#tymethod.recalculate_latency' class='fnname'>recalculate_latency</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>, <a class="struct" href="../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;;
+    fn <a href='#tymethod.remove' class='fnname'>remove</a>&lt;P:&nbsp;<a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/struct.Element.html" title="struct gstreamer::Element">Element</a>&gt;&gt;(&amp;self, element: &amp;P) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>, <a class="struct" href="../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;;
+    fn <a href='#tymethod.set_suppressed_flags' class='fnname'>set_suppressed_flags</a>(&amp;self, flags: <a class="struct" href="../gstreamer/struct.ElementFlags.html" title="struct gstreamer::ElementFlags">ElementFlags</a>);
+    fn <a href='#tymethod.sync_children_states' class='fnname'>sync_children_states</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>, <a class="struct" href="../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;;
+    fn <a href='#tymethod.get_property_async_handling' class='fnname'>get_property_async_handling</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+    fn <a href='#tymethod.set_property_async_handling' class='fnname'>set_property_async_handling</a>(&amp;self, async_handling: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
+    fn <a href='#tymethod.get_property_message_forward' class='fnname'>get_property_message_forward</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+    fn <a href='#tymethod.set_property_message_forward' class='fnname'>set_property_message_forward</a>(&amp;self, message_forward: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
+    fn <a href='#tymethod.connect_deep_element_added' class='fnname'>connect_deep_element_added</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;Self, &amp;<a class="struct" href="../gstreamer/struct.Bin.html" title="struct gstreamer::Bin">Bin</a>, &amp;<a class="struct" href="../gstreamer/struct.Element.html" title="struct gstreamer::Element">Element</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>;
+    fn <a href='#tymethod.connect_deep_element_removed' class='fnname'>connect_deep_element_removed</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;Self, &amp;<a class="struct" href="../gstreamer/struct.Bin.html" title="struct gstreamer::Bin">Bin</a>, &amp;<a class="struct" href="../gstreamer/struct.Element.html" title="struct gstreamer::Element">Element</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>;
+    fn <a href='#tymethod.connect_do_latency' class='fnname'>connect_do_latency</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;Self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>;
+    fn <a href='#tymethod.connect_element_added' class='fnname'>connect_element_added</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;Self, &amp;<a class="struct" href="../gstreamer/struct.Element.html" title="struct gstreamer::Element">Element</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>;
+    fn <a href='#tymethod.connect_element_removed' class='fnname'>connect_element_removed</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;Self, &amp;<a class="struct" href="../gstreamer/struct.Element.html" title="struct gstreamer::Element">Element</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>;
+    fn <a href='#tymethod.connect_property_async_handling_notify' class='fnname'>connect_property_async_handling_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>;
+    fn <a href='#tymethod.connect_property_message_forward_notify' class='fnname'>connect_property_message_forward_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>;
+}</pre><div class='docblock'><p>Trait containing all <code>Bin</code> methods.</p>
+
+<h1 id='implementors-1' class='section-header'><a href='#implementors-1'>Implementors</a></h1>
+<p><a href="struct.Bin.html"><code>Bin</code></a>, <a href="struct.Pipeline.html"><code>Pipeline</code></a></p>
+</div>
+            <h2 id='required-methods'>Required Methods</h2>
+            <div class='methods'>
+        <h3 id='tymethod.add' class='method'><span id='add.v' class='invisible'><code>fn <a href='#tymethod.add' class='fnname'>add</a>&lt;P:&nbsp;<a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/struct.Element.html" title="struct gstreamer::Element">Element</a>&gt;&gt;(&amp;self, element: &amp;P) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>, <a class="struct" href="../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;</code></span></h3><div class='docblock'><p>Adds the given element to the bin. Sets the element&#39;s parent, and thus
+takes ownership of the element. An element can only be added to one bin.</p>
+
+<p>If the element&#39;s pads are linked to other pads, the pads will be unlinked
+before the element is added to the bin.</p>
+
+<blockquote>
+<p>When you add an element to an already-running pipeline, you will have to
+take care to set the state of the newly-added element to the desired
+state (usually PLAYING or PAUSED, same you set the pipeline to originally)
+with <code>ElementExt::set_state</code>, or use <code>ElementExt::sync_state_with_parent</code>.
+The bin or pipeline will not take care of this for you.</p>
+</blockquote>
+
+<p>MT safe.</p>
+
+<h2 id='element' class='section-header'><a href='#element'><code>element</code></a></h2>
+<p>the <code>Element</code> to add</p>
+
+<h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
+<p><code>true</code> if the element could be added, <code>false</code> if
+the bin does not want to accept the element.</p>
+</div><h3 id='tymethod.find_unlinked_pad' class='method'><span id='find_unlinked_pad.v' class='invisible'><code>fn <a href='#tymethod.find_unlinked_pad' class='fnname'>find_unlinked_pad</a>(&amp;self, direction: <a class="enum" href="../gstreamer/enum.PadDirection.html" title="enum gstreamer::PadDirection">PadDirection</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Pad.html" title="struct gstreamer::Pad">Pad</a>&gt;</code></span></h3><div class='docblock'><p>Recursively looks for elements with an unlinked pad of the given
+direction within the specified bin and returns an unlinked pad
+if one is found, or <code>None</code> otherwise. If a pad is found, the caller
+owns a reference to it and should use <code>GstObjectExt::unref</code> on the
+pad when it is not needed any longer.</p>
+
+<h2 id='direction' class='section-header'><a href='#direction'><code>direction</code></a></h2>
+<p>whether to look for an unlinked source or sink pad</p>
+
+<h1 id='returns-1' class='section-header'><a href='#returns-1'>Returns</a></h1>
+<p>unlinked pad of the given
+direction, <code>None</code>.</p>
+</div><h3 id='tymethod.get_by_interface' class='method'><span id='get_by_interface.v' class='invisible'><code>fn <a href='#tymethod.get_by_interface' class='fnname'>get_by_interface</a>(&amp;self, iface: <a class="enum" href="../gstreamer/enum.Type.html" title="enum gstreamer::Type">Type</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Element.html" title="struct gstreamer::Element">Element</a>&gt;</code></span></h3><div class='docblock'><p>Looks for an element inside the bin that implements the given
+interface. If such an element is found, it returns the element.
+You can cast this element to the given interface afterwards. If you want
+all elements that implement the interface, use
+<code>BinExt::iterate_all_by_interface</code>. This function recurses into child bins.</p>
+
+<p>MT safe. Caller owns returned reference.</p>
+
+<h2 id='iface' class='section-header'><a href='#iface'><code>iface</code></a></h2>
+<p>the <code>glib::Type</code> of an interface</p>
+
+<h1 id='returns-2' class='section-header'><a href='#returns-2'>Returns</a></h1>
+<p>A <code>Element</code> inside the bin implementing the interface</p>
+</div><h3 id='tymethod.get_by_name' class='method'><span id='get_by_name.v' class='invisible'><code>fn <a href='#tymethod.get_by_name' class='fnname'>get_by_name</a>(&amp;self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Element.html" title="struct gstreamer::Element">Element</a>&gt;</code></span></h3><div class='docblock'><p>Gets the element with the given name from a bin. This
+function recurses into child bins.</p>
+
+<p>Returns <code>None</code> if no element with the given name is found in the bin.</p>
+
+<p>MT safe. Caller owns returned reference.</p>
+
+<h2 id='name' class='section-header'><a href='#name'><code>name</code></a></h2>
+<p>the element name to search for</p>
+
+<h1 id='returns-3' class='section-header'><a href='#returns-3'>Returns</a></h1>
+<p>the <code>Element</code> with the given
+name, or <code>None</code></p>
+</div><h3 id='tymethod.get_by_name_recurse_up' class='method'><span id='get_by_name_recurse_up.v' class='invisible'><code>fn <a href='#tymethod.get_by_name_recurse_up' class='fnname'>get_by_name_recurse_up</a>(&amp;self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Element.html" title="struct gstreamer::Element">Element</a>&gt;</code></span></h3><div class='docblock'><p>Gets the element with the given name from this bin. If the
+element is not found, a recursion is performed on the parent bin.</p>
+
+<p>Returns <code>None</code> if:
+- no element with the given name is found in the bin</p>
+
+<p>MT safe. Caller owns returned reference.</p>
+
+<h2 id='name-1' class='section-header'><a href='#name-1'><code>name</code></a></h2>
+<p>the element name to search for</p>
+
+<h1 id='returns-4' class='section-header'><a href='#returns-4'>Returns</a></h1>
+<p>the <code>Element</code> with the given
+name, or <code>None</code></p>
+</div><h3 id='tymethod.get_suppressed_flags' class='method'><span id='get_suppressed_flags.v' class='invisible'><code>fn <a href='#tymethod.get_suppressed_flags' class='fnname'>get_suppressed_flags</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer/struct.ElementFlags.html" title="struct gstreamer::ElementFlags">ElementFlags</a></code></span></h3><div class='docblock'><p>Return the suppressed flags of the bin.</p>
+
+<p>MT safe.</p>
+
+<p>Feature: <code>v1_10</code></p>
+
+<h1 id='returns-5' class='section-header'><a href='#returns-5'>Returns</a></h1>
+<p>the bin&#39;s suppressed <code>ElementFlags</code>.</p>
+</div><h3 id='tymethod.iterate_all_by_interface' class='method'><span id='iterate_all_by_interface.v' class='invisible'><code>fn <a href='#tymethod.iterate_all_by_interface' class='fnname'>iterate_all_by_interface</a>(&amp;self, iface: <a class="enum" href="../gstreamer/enum.Type.html" title="enum gstreamer::Type">Type</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Iterator.html" title="struct gstreamer::Iterator">Iterator</a>&gt;</code></span></h3><div class='docblock'><p>Looks for all elements inside the bin that implements the given
+interface. You can safely cast all returned elements to the given interface.
+The function recurses inside child bins. The iterator will yield a series
+of <code>Element</code> that should be unreffed after use.</p>
+
+<p>MT safe. Caller owns returned value.</p>
+
+<h2 id='iface-1' class='section-header'><a href='#iface-1'><code>iface</code></a></h2>
+<p>the <code>glib::Type</code> of an interface</p>
+
+<h1 id='returns-6' class='section-header'><a href='#returns-6'>Returns</a></h1>
+<p>a <code>Iterator</code> of <code>Element</code>
+ for all elements in the bin implementing the given interface,
+ or <code>None</code></p>
+</div><h3 id='tymethod.iterate_elements' class='method'><span id='iterate_elements.v' class='invisible'><code>fn <a href='#tymethod.iterate_elements' class='fnname'>iterate_elements</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Iterator.html" title="struct gstreamer::Iterator">Iterator</a>&gt;</code></span></h3><div class='docblock'><p>Gets an iterator for the elements in this bin.</p>
+
+<p>MT safe. Caller owns returned value.</p>
+
+<h1 id='returns-7' class='section-header'><a href='#returns-7'>Returns</a></h1>
+<p>a <code>Iterator</code> of <code>Element</code>,
+or <code>None</code></p>
+</div><h3 id='tymethod.iterate_recurse' class='method'><span id='iterate_recurse.v' class='invisible'><code>fn <a href='#tymethod.iterate_recurse' class='fnname'>iterate_recurse</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Iterator.html" title="struct gstreamer::Iterator">Iterator</a>&gt;</code></span></h3><div class='docblock'><p>Gets an iterator for the elements in this bin.
+This iterator recurses into GstBin children.</p>
+
+<p>MT safe. Caller owns returned value.</p>
+
+<h1 id='returns-8' class='section-header'><a href='#returns-8'>Returns</a></h1>
+<p>a <code>Iterator</code> of <code>Element</code>,
+or <code>None</code></p>
+</div><h3 id='tymethod.iterate_sinks' class='method'><span id='iterate_sinks.v' class='invisible'><code>fn <a href='#tymethod.iterate_sinks' class='fnname'>iterate_sinks</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Iterator.html" title="struct gstreamer::Iterator">Iterator</a>&gt;</code></span></h3><div class='docblock'><p>Gets an iterator for all elements in the bin that have the
+<code>ElementFlags::Sink</code> flag set.</p>
+
+<p>MT safe. Caller owns returned value.</p>
+
+<h1 id='returns-9' class='section-header'><a href='#returns-9'>Returns</a></h1>
+<p>a <code>Iterator</code> of <code>Element</code>,
+or <code>None</code></p>
+</div><h3 id='tymethod.iterate_sorted' class='method'><span id='iterate_sorted.v' class='invisible'><code>fn <a href='#tymethod.iterate_sorted' class='fnname'>iterate_sorted</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Iterator.html" title="struct gstreamer::Iterator">Iterator</a>&gt;</code></span></h3><div class='docblock'><p>Gets an iterator for the elements in this bin in topologically
+sorted order. This means that the elements are returned from
+the most downstream elements (sinks) to the sources.</p>
+
+<p>This function is used internally to perform the state changes
+of the bin elements and for clock selection.</p>
+
+<p>MT safe. Caller owns returned value.</p>
+
+<h1 id='returns-10' class='section-header'><a href='#returns-10'>Returns</a></h1>
+<p>a <code>Iterator</code> of <code>Element</code>,
+or <code>None</code></p>
+</div><h3 id='tymethod.iterate_sources' class='method'><span id='iterate_sources.v' class='invisible'><code>fn <a href='#tymethod.iterate_sources' class='fnname'>iterate_sources</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Iterator.html" title="struct gstreamer::Iterator">Iterator</a>&gt;</code></span></h3><div class='docblock'><p>Gets an iterator for all elements in the bin that have the
+<code>ElementFlags::Source</code> flag set.</p>
+
+<p>MT safe. Caller owns returned value.</p>
+
+<h1 id='returns-11' class='section-header'><a href='#returns-11'>Returns</a></h1>
+<p>a <code>Iterator</code> of <code>Element</code>,
+or <code>None</code></p>
+</div><h3 id='tymethod.recalculate_latency' class='method'><span id='recalculate_latency.v' class='invisible'><code>fn <a href='#tymethod.recalculate_latency' class='fnname'>recalculate_latency</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>, <a class="struct" href="../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;</code></span></h3><div class='docblock'><p>Query <code>self</code> for the current latency using and reconfigures this latency to all the
+elements with a LATENCY event.</p>
+
+<p>This method is typically called on the pipeline when a <code>MessageType::Latency</code>
+is posted on the bus.</p>
+
+<p>This function simply emits the &#39;do-latency&#39; signal so any custom latency
+calculations will be performed.</p>
+
+<h1 id='returns-12' class='section-header'><a href='#returns-12'>Returns</a></h1>
+<p><code>true</code> if the latency could be queried and reconfigured.</p>
+</div><h3 id='tymethod.remove' class='method'><span id='remove.v' class='invisible'><code>fn <a href='#tymethod.remove' class='fnname'>remove</a>&lt;P:&nbsp;<a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/struct.Element.html" title="struct gstreamer::Element">Element</a>&gt;&gt;(&amp;self, element: &amp;P) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>, <a class="struct" href="../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;</code></span></h3><div class='docblock'><p>Removes the element from the bin, unparenting it as well.
+Unparenting the element means that the element will be dereferenced,
+so if the bin holds the only reference to the element, the element
+will be freed in the process of removing it from the bin. If you
+want the element to still exist after removing, you need to call
+<code>GstObjectExt::ref</code> before removing it from the bin.</p>
+
+<p>If the element&#39;s pads are linked to other pads, the pads will be unlinked
+before the element is removed from the bin.</p>
+
+<p>MT safe.</p>
+
+<h2 id='element-1' class='section-header'><a href='#element-1'><code>element</code></a></h2>
+<p>the <code>Element</code> to remove</p>
+
+<h1 id='returns-13' class='section-header'><a href='#returns-13'>Returns</a></h1>
+<p><code>true</code> if the element could be removed, <code>false</code> if
+the bin does not want to remove the element.</p>
+</div><h3 id='tymethod.set_suppressed_flags' class='method'><span id='set_suppressed_flags.v' class='invisible'><code>fn <a href='#tymethod.set_suppressed_flags' class='fnname'>set_suppressed_flags</a>(&amp;self, flags: <a class="struct" href="../gstreamer/struct.ElementFlags.html" title="struct gstreamer::ElementFlags">ElementFlags</a>)</code></span></h3><div class='docblock'><p>Suppress the given flags on the bin. <code>ElementFlags</code> of a
+child element are propagated when it is added to the bin.
+When suppressed flags are set, those specified flags will
+not be propagated to the bin.</p>
+
+<p>MT safe.</p>
+
+<p>Feature: <code>v1_10</code></p>
+
+<h2 id='flags' class='section-header'><a href='#flags'><code>flags</code></a></h2>
+<p>the <code>ElementFlags</code> to suppress</p>
+</div><h3 id='tymethod.sync_children_states' class='method'><span id='sync_children_states.v' class='invisible'><code>fn <a href='#tymethod.sync_children_states' class='fnname'>sync_children_states</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>, <a class="struct" href="../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;</code></span></h3><div class='docblock'><p>Synchronizes the state of every child of <code>self</code> with the state
+of <code>self</code>. See also <code>ElementExt::sync_state_with_parent</code>.</p>
+
+<h1 id='returns-14' class='section-header'><a href='#returns-14'>Returns</a></h1>
+<p><code>true</code> if syncing the state was successful for all children,
+ otherwise <code>false</code>.</p>
+</div><h3 id='tymethod.get_property_async_handling' class='method'><span id='get_property_async_handling.v' class='invisible'><code>fn <a href='#tymethod.get_property_async_handling' class='fnname'>get_property_async_handling</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><h3 id='tymethod.set_property_async_handling' class='method'><span id='set_property_async_handling.v' class='invisible'><code>fn <a href='#tymethod.set_property_async_handling' class='fnname'>set_property_async_handling</a>(&amp;self, async_handling: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><h3 id='tymethod.get_property_message_forward' class='method'><span id='get_property_message_forward.v' class='invisible'><code>fn <a href='#tymethod.get_property_message_forward' class='fnname'>get_property_message_forward</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><h3 id='tymethod.set_property_message_forward' class='method'><span id='set_property_message_forward.v' class='invisible'><code>fn <a href='#tymethod.set_property_message_forward' class='fnname'>set_property_message_forward</a>(&amp;self, message_forward: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><h3 id='tymethod.connect_deep_element_added' class='method'><span id='connect_deep_element_added.v' class='invisible'><code>fn <a href='#tymethod.connect_deep_element_added' class='fnname'>connect_deep_element_added</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;Self, &amp;<a class="struct" href="../gstreamer/struct.Bin.html" title="struct gstreamer::Bin">Bin</a>, &amp;<a class="struct" href="../gstreamer/struct.Element.html" title="struct gstreamer::Element">Element</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h3><h3 id='tymethod.connect_deep_element_removed' class='method'><span id='connect_deep_element_removed.v' class='invisible'><code>fn <a href='#tymethod.connect_deep_element_removed' class='fnname'>connect_deep_element_removed</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;Self, &amp;<a class="struct" href="../gstreamer/struct.Bin.html" title="struct gstreamer::Bin">Bin</a>, &amp;<a class="struct" href="../gstreamer/struct.Element.html" title="struct gstreamer::Element">Element</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h3><h3 id='tymethod.connect_do_latency' class='method'><span id='connect_do_latency.v' class='invisible'><code>fn <a href='#tymethod.connect_do_latency' class='fnname'>connect_do_latency</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;Self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h3><h3 id='tymethod.connect_element_added' class='method'><span id='connect_element_added.v' class='invisible'><code>fn <a href='#tymethod.connect_element_added' class='fnname'>connect_element_added</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;Self, &amp;<a class="struct" href="../gstreamer/struct.Element.html" title="struct gstreamer::Element">Element</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h3><h3 id='tymethod.connect_element_removed' class='method'><span id='connect_element_removed.v' class='invisible'><code>fn <a href='#tymethod.connect_element_removed' class='fnname'>connect_element_removed</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;Self, &amp;<a class="struct" href="../gstreamer/struct.Element.html" title="struct gstreamer::Element">Element</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h3><h3 id='tymethod.connect_property_async_handling_notify' class='method'><span id='connect_property_async_handling_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_async_handling_notify' class='fnname'>connect_property_async_handling_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h3><h3 id='tymethod.connect_property_message_forward_notify' class='method'><span id='connect_property_message_forward_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_message_forward_notify' class='fnname'>connect_property_message_forward_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h3></div>
+        <h2 id='implementors'>Implementors</h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><code>impl&lt;O:&nbsp;<a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/struct.Bin.html" title="struct gstreamer::Bin">Bin</a>&gt; + <a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt;&gt; BinExt for O</code></li>
+</ul><script type="text/javascript" async
+                         src="../implementors/gstreamer/trait.BinExt.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

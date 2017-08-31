@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `DateTime` struct in crate `gstreamer`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, DateTime">
+
+    <title>gstreamer::DateTime - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct DateTime</p><div class="block items"><ul><li><a href="#methods">Methods</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='index.html'>gstreamer</a></p><script>window.sidebarCurrent = {name: 'DateTime', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>gstreamer</a>::<wbr><a class="struct" href=''>DateTime</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span></span></h1>
+<pre class='rust struct'>pub struct DateTime(_);</pre><div class='docblock'><p>Struct to store date, time and timezone information altogether.
+<code>DateTime</code> is refcounted and immutable.</p>
+
+<p>Date information is handled using the proleptic Gregorian calendar.</p>
+
+<p>Provides basic creation functions and accessor functions to its fields.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class="struct" href="../gstreamer/struct.DateTime.html" title="struct gstreamer::DateTime">DateTime</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/date_time.rs.html#28-470' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>fn <a href='#method.new' class='fnname'>new</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;tzoffset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;year: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;month: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;day: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;hour: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;minute: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;seconds: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a><br>) -&gt; <a class="struct" href="../gstreamer/struct.DateTime.html" title="struct gstreamer::DateTime">DateTime</a></code></span></h4>
+<div class='docblock'><p>Creates a new <code>DateTime</code> using the date and times in the gregorian calendar
+in the supplied timezone.</p>
+
+<p><code>year</code> should be from 1 to 9999, <code>month</code> should be from 1 to 12, <code>day</code> from
+1 to 31, <code>hour</code> from 0 to 23, <code>minutes</code> and <code>seconds</code> from 0 to 59.</p>
+
+<p>Note that <code>tzoffset</code> is a float and was chosen so for being able to handle
+some fractional timezones, while it still keeps the readability of
+representing it in hours for most timezones.</p>
+
+<p>If value is -1 then all over value will be ignored. For example
+if <code>month</code> == -1, then <code>DateTime</code> will created only for <code>year</code>. If
+<code>day</code> == -1, then <code>DateTime</code> will created for <code>year</code> and <code>month</code> and
+so on.</p>
+
+<p>Free-function: gst_date_time_unref</p>
+
+<h2 id='tzoffset' class='section-header'><a href='#tzoffset'><code>tzoffset</code></a></h2>
+<p>Offset from UTC in hours.</p>
+
+<h2 id='year' class='section-header'><a href='#year'><code>year</code></a></h2>
+<p>the gregorian year</p>
+
+<h2 id='month' class='section-header'><a href='#month'><code>month</code></a></h2>
+<p>the gregorian month</p>
+
+<h2 id='day' class='section-header'><a href='#day'><code>day</code></a></h2>
+<p>the day of the gregorian month</p>
+
+<h2 id='hour' class='section-header'><a href='#hour'><code>hour</code></a></h2>
+<p>the hour of the day</p>
+
+<h2 id='minute' class='section-header'><a href='#minute'><code>minute</code></a></h2>
+<p>the minute of the hour</p>
+
+<h2 id='seconds' class='section-header'><a href='#seconds'><code>seconds</code></a></h2>
+<p>the second of the minute</p>
+
+<h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
+<p>the newly created <code>DateTime</code></p>
+</div><h4 id='method.new_from_g_date_time' class="method"><span id='new_from_g_date_time.v' class='invisible'><code>fn <a href='#method.new_from_g_date_time' class='fnname'>new_from_g_date_time</a>(dt: &amp;<a class="struct" href="../glib/auto/date_time/struct.DateTime.html" title="struct glib::auto::date_time::DateTime">DateTime</a>) -&gt; <a class="struct" href="../gstreamer/struct.DateTime.html" title="struct gstreamer::DateTime">DateTime</a></code></span></h4>
+<div class='docblock'><p>Creates a new <code>DateTime</code> from a <code>glib::DateTime</code> object.</p>
+
+<p>Free-function: gst_date_time_unref</p>
+
+<h2 id='dt' class='section-header'><a href='#dt'><code>dt</code></a></h2>
+<p>the <code>glib::DateTime</code>. The new <code>DateTime</code> takes ownership.</p>
+
+<h1 id='returns-1' class='section-header'><a href='#returns-1'>Returns</a></h1>
+<p>a newly created <code>DateTime</code>,
+or <code>None</code> on error</p>
+</div><h4 id='method.new_from_iso8601_string' class="method"><span id='new_from_iso8601_string.v' class='invisible'><code>fn <a href='#method.new_from_iso8601_string' class='fnname'>new_from_iso8601_string</a>(string: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="struct" href="../gstreamer/struct.DateTime.html" title="struct gstreamer::DateTime">DateTime</a></code></span></h4>
+<div class='docblock'><p>Tries to parse common variants of ISO-8601 datetime strings into a
+<code>DateTime</code>. Possible input formats are (for example):
+2012-06-30T22:46:43Z, 2012, 2012-06, 2012-06-30, 2012-06-30T22:46:43-0430,
+2012-06-30T22:46Z, 2012-06-30T22:46-0430, 2012-06-30 22:46,
+2012-06-30 22:46:43, 2012-06-00, 2012-00-00, 2012-00-30, 22:46:43Z, 22:46Z,
+22:46:43-0430, 22:46-0430, 22:46:30, 22:46
+If no date is provided, it is assumed to be &quot;today&quot; in the timezone
+provided (if any), otherwise UTC.</p>
+
+<p>Free-function: gst_date_time_unref</p>
+
+<h2 id='string' class='section-header'><a href='#string'><code>string</code></a></h2>
+<p>ISO 8601-formatted datetime string.</p>
+
+<h1 id='returns-2' class='section-header'><a href='#returns-2'>Returns</a></h1>
+<p>a newly created <code>DateTime</code>,
+or <code>None</code> on error</p>
+</div><h4 id='method.new_from_unix_epoch_local_time' class="method"><span id='new_from_unix_epoch_local_time.v' class='invisible'><code>fn <a href='#method.new_from_unix_epoch_local_time' class='fnname'>new_from_unix_epoch_local_time</a>(secs: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a>) -&gt; <a class="struct" href="../gstreamer/struct.DateTime.html" title="struct gstreamer::DateTime">DateTime</a></code></span></h4>
+<div class='docblock'><p>Creates a new <code>DateTime</code> using the time since Jan 1, 1970 specified by
+<code>secs</code>. The <code>DateTime</code> is in the local timezone.</p>
+
+<p>Free-function: gst_date_time_unref</p>
+
+<h2 id='secs' class='section-header'><a href='#secs'><code>secs</code></a></h2>
+<p>seconds from the Unix epoch</p>
+
+<h1 id='returns-3' class='section-header'><a href='#returns-3'>Returns</a></h1>
+<p>the newly created <code>DateTime</code></p>
+</div><h4 id='method.new_from_unix_epoch_utc' class="method"><span id='new_from_unix_epoch_utc.v' class='invisible'><code>fn <a href='#method.new_from_unix_epoch_utc' class='fnname'>new_from_unix_epoch_utc</a>(secs: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a>) -&gt; <a class="struct" href="../gstreamer/struct.DateTime.html" title="struct gstreamer::DateTime">DateTime</a></code></span></h4>
+<div class='docblock'><p>Creates a new <code>DateTime</code> using the time since Jan 1, 1970 specified by
+<code>secs</code>. The <code>DateTime</code> is in the UTC timezone.</p>
+
+<p>Free-function: gst_date_time_unref</p>
+
+<h2 id='secs-1' class='section-header'><a href='#secs-1'><code>secs</code></a></h2>
+<p>seconds from the Unix epoch</p>
+
+<h1 id='returns-4' class='section-header'><a href='#returns-4'>Returns</a></h1>
+<p>the newly created <code>DateTime</code></p>
+</div><h4 id='method.new_local_time' class="method"><span id='new_local_time.v' class='invisible'><code>fn <a href='#method.new_local_time' class='fnname'>new_local_time</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;year: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;month: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;day: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;hour: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;minute: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;seconds: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a><br>) -&gt; <a class="struct" href="../gstreamer/struct.DateTime.html" title="struct gstreamer::DateTime">DateTime</a></code></span></h4>
+<div class='docblock'><p>Creates a new <code>DateTime</code> using the date and times in the gregorian calendar
+in the local timezone.</p>
+
+<p><code>year</code> should be from 1 to 9999, <code>month</code> should be from 1 to 12, <code>day</code> from
+1 to 31, <code>hour</code> from 0 to 23, <code>minutes</code> and <code>seconds</code> from 0 to 59.</p>
+
+<p>If <code>month</code> is -1, then the <code>DateTime</code> created will only contain <code>year</code>,
+and all other fields will be considered not set.</p>
+
+<p>If <code>day</code> is -1, then the <code>DateTime</code> created will only contain <code>year</code> and
+<code>month</code> and all other fields will be considered not set.</p>
+
+<p>If <code>hour</code> is -1, then the <code>DateTime</code> created will only contain <code>year</code> and
+<code>month</code> and <code>day</code>, and the time fields will be considered not set. In this
+case <code>minute</code> and <code>seconds</code> should also be -1.</p>
+
+<p>Free-function: gst_date_time_unref</p>
+
+<h2 id='year-1' class='section-header'><a href='#year-1'><code>year</code></a></h2>
+<p>the gregorian year</p>
+
+<h2 id='month-1' class='section-header'><a href='#month-1'><code>month</code></a></h2>
+<p>the gregorian month, or -1</p>
+
+<h2 id='day-1' class='section-header'><a href='#day-1'><code>day</code></a></h2>
+<p>the day of the gregorian month, or -1</p>
+
+<h2 id='hour-1' class='section-header'><a href='#hour-1'><code>hour</code></a></h2>
+<p>the hour of the day, or -1</p>
+
+<h2 id='minute-1' class='section-header'><a href='#minute-1'><code>minute</code></a></h2>
+<p>the minute of the hour, or -1</p>
+
+<h2 id='seconds-1' class='section-header'><a href='#seconds-1'><code>seconds</code></a></h2>
+<p>the second of the minute, or -1</p>
+
+<h1 id='returns-5' class='section-header'><a href='#returns-5'>Returns</a></h1>
+<p>the newly created <code>DateTime</code></p>
+</div><h4 id='method.new_now_local_time' class="method"><span id='new_now_local_time.v' class='invisible'><code>fn <a href='#method.new_now_local_time' class='fnname'>new_now_local_time</a>() -&gt; <a class="struct" href="../gstreamer/struct.DateTime.html" title="struct gstreamer::DateTime">DateTime</a></code></span></h4>
+<div class='docblock'><p>Creates a new <code>DateTime</code> representing the current date and time.</p>
+
+<p>Free-function: gst_date_time_unref</p>
+
+<h1 id='returns-6' class='section-header'><a href='#returns-6'>Returns</a></h1>
+<p>the newly created <code>DateTime</code> which should
+ be freed with <code>DateTime::unref</code>.</p>
+</div><h4 id='method.new_now_utc' class="method"><span id='new_now_utc.v' class='invisible'><code>fn <a href='#method.new_now_utc' class='fnname'>new_now_utc</a>() -&gt; <a class="struct" href="../gstreamer/struct.DateTime.html" title="struct gstreamer::DateTime">DateTime</a></code></span></h4>
+<div class='docblock'><p>Creates a new <code>DateTime</code> that represents the current instant at Universal
+coordinated time.</p>
+
+<p>Free-function: gst_date_time_unref</p>
+
+<h1 id='returns-7' class='section-header'><a href='#returns-7'>Returns</a></h1>
+<p>the newly created <code>DateTime</code> which should
+ be freed with <code>DateTime::unref</code>.</p>
+</div><h4 id='method.new_y' class="method"><span id='new_y.v' class='invisible'><code>fn <a href='#method.new_y' class='fnname'>new_y</a>(year: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>) -&gt; <a class="struct" href="../gstreamer/struct.DateTime.html" title="struct gstreamer::DateTime">DateTime</a></code></span></h4>
+<div class='docblock'><p>Creates a new <code>DateTime</code> using the date and times in the gregorian calendar
+in the local timezone.</p>
+
+<p><code>year</code> should be from 1 to 9999.</p>
+
+<p>Free-function: gst_date_time_unref</p>
+
+<h2 id='year-2' class='section-header'><a href='#year-2'><code>year</code></a></h2>
+<p>the gregorian year</p>
+
+<h1 id='returns-8' class='section-header'><a href='#returns-8'>Returns</a></h1>
+<p>the newly created <code>DateTime</code></p>
+</div><h4 id='method.new_ym' class="method"><span id='new_ym.v' class='invisible'><code>fn <a href='#method.new_ym' class='fnname'>new_ym</a>(year: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, month: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>) -&gt; <a class="struct" href="../gstreamer/struct.DateTime.html" title="struct gstreamer::DateTime">DateTime</a></code></span></h4>
+<div class='docblock'><p>Creates a new <code>DateTime</code> using the date and times in the gregorian calendar
+in the local timezone.</p>
+
+<p><code>year</code> should be from 1 to 9999, <code>month</code> should be from 1 to 12.</p>
+
+<p>If value is -1 then all over value will be ignored. For example
+if <code>month</code> == -1, then <code>DateTime</code> will created only for <code>year</code>.</p>
+
+<p>Free-function: gst_date_time_unref</p>
+
+<h2 id='year-3' class='section-header'><a href='#year-3'><code>year</code></a></h2>
+<p>the gregorian year</p>
+
+<h2 id='month-2' class='section-header'><a href='#month-2'><code>month</code></a></h2>
+<p>the gregorian month</p>
+
+<h1 id='returns-9' class='section-header'><a href='#returns-9'>Returns</a></h1>
+<p>the newly created <code>DateTime</code></p>
+</div><h4 id='method.new_ymd' class="method"><span id='new_ymd.v' class='invisible'><code>fn <a href='#method.new_ymd' class='fnname'>new_ymd</a>(year: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, month: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, day: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>) -&gt; <a class="struct" href="../gstreamer/struct.DateTime.html" title="struct gstreamer::DateTime">DateTime</a></code></span></h4>
+<div class='docblock'><p>Creates a new <code>DateTime</code> using the date and times in the gregorian calendar
+in the local timezone.</p>
+
+<p><code>year</code> should be from 1 to 9999, <code>month</code> should be from 1 to 12, <code>day</code> from
+1 to 31.</p>
+
+<p>If value is -1 then all over value will be ignored. For example
+if <code>month</code> == -1, then <code>DateTime</code> will created only for <code>year</code>. If
+<code>day</code> == -1, then <code>DateTime</code> will created for <code>year</code> and <code>month</code> and
+so on.</p>
+
+<p>Free-function: gst_date_time_unref</p>
+
+<h2 id='year-4' class='section-header'><a href='#year-4'><code>year</code></a></h2>
+<p>the gregorian year</p>
+
+<h2 id='month-3' class='section-header'><a href='#month-3'><code>month</code></a></h2>
+<p>the gregorian month</p>
+
+<h2 id='day-2' class='section-header'><a href='#day-2'><code>day</code></a></h2>
+<p>the day of the gregorian month</p>
+
+<h1 id='returns-10' class='section-header'><a href='#returns-10'>Returns</a></h1>
+<p>the newly created <code>DateTime</code></p>
+</div><h4 id='method.get_day' class="method"><span id='get_day.v' class='invisible'><code>fn <a href='#method.get_day' class='fnname'>get_day</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code></span></h4>
+<div class='docblock'><p>Returns the day of the month of this <code>DateTime</code>.
+Call gst_date_time_has_day before, to avoid warnings.</p>
+
+<h1 id='returns-11' class='section-header'><a href='#returns-11'>Returns</a></h1>
+<p>The day of this <code>DateTime</code></p>
+</div><h4 id='method.get_hour' class="method"><span id='get_hour.v' class='invisible'><code>fn <a href='#method.get_hour' class='fnname'>get_hour</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code></span></h4>
+<div class='docblock'><p>Retrieves the hour of the day represented by <code>self</code> in the gregorian
+calendar. The return is in the range of 0 to 23.
+Call gst_date_time_has_haur before, to avoid warnings.</p>
+
+<h1 id='returns-12' class='section-header'><a href='#returns-12'>Returns</a></h1>
+<p>the hour of the day</p>
+</div><h4 id='method.get_microsecond' class="method"><span id='get_microsecond.v' class='invisible'><code>fn <a href='#method.get_microsecond' class='fnname'>get_microsecond</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code></span></h4>
+<div class='docblock'><p>Retrieves the fractional part of the seconds in microseconds represented by
+<code>self</code> in the gregorian calendar.</p>
+
+<h1 id='returns-13' class='section-header'><a href='#returns-13'>Returns</a></h1>
+<p>the microsecond of the second</p>
+</div><h4 id='method.get_minute' class="method"><span id='get_minute.v' class='invisible'><code>fn <a href='#method.get_minute' class='fnname'>get_minute</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code></span></h4>
+<div class='docblock'><p>Retrieves the minute of the hour represented by <code>self</code> in the gregorian
+calendar.
+Call gst_date_time_has_minute before, to avoid warnings.</p>
+
+<h1 id='returns-14' class='section-header'><a href='#returns-14'>Returns</a></h1>
+<p>the minute of the hour</p>
+</div><h4 id='method.get_month' class="method"><span id='get_month.v' class='invisible'><code>fn <a href='#method.get_month' class='fnname'>get_month</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code></span></h4>
+<div class='docblock'><p>Returns the month of this <code>DateTime</code>. January is 1, February is 2, etc..
+Call gst_date_time_has_month before, to avoid warnings.</p>
+
+<h1 id='returns-15' class='section-header'><a href='#returns-15'>Returns</a></h1>
+<p>The month of this <code>DateTime</code></p>
+</div><h4 id='method.get_second' class="method"><span id='get_second.v' class='invisible'><code>fn <a href='#method.get_second' class='fnname'>get_second</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code></span></h4>
+<div class='docblock'><p>Retrieves the second of the minute represented by <code>self</code> in the gregorian
+calendar.
+Call gst_date_time_has_second before, to avoid warnings.</p>
+
+<h1 id='returns-16' class='section-header'><a href='#returns-16'>Returns</a></h1>
+<p>the second represented by <code>self</code></p>
+</div><h4 id='method.get_time_zone_offset' class="method"><span id='get_time_zone_offset.v' class='invisible'><code>fn <a href='#method.get_time_zone_offset' class='fnname'>get_time_zone_offset</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a></code></span></h4>
+<div class='docblock'><p>Retrieves the offset from UTC in hours that the timezone specified
+by <code>self</code> represents. Timezones ahead (to the east) of UTC have positive
+values, timezones before (to the west) of UTC have negative values.
+If <code>self</code> represents UTC time, then the offset is zero.</p>
+
+<h1 id='returns-17' class='section-header'><a href='#returns-17'>Returns</a></h1>
+<p>the offset from UTC in hours</p>
+</div><h4 id='method.get_year' class="method"><span id='get_year.v' class='invisible'><code>fn <a href='#method.get_year' class='fnname'>get_year</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code></span></h4>
+<div class='docblock'><p>Returns the year of this <code>DateTime</code>
+Call gst_date_time_has_year before, to avoid warnings.</p>
+
+<h1 id='returns-18' class='section-header'><a href='#returns-18'>Returns</a></h1>
+<p>The year of this <code>DateTime</code></p>
+</div><h4 id='method.has_day' class="method"><span id='has_day.v' class='invisible'><code>fn <a href='#method.has_day' class='fnname'>has_day</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'>
+<h1 id='returns-19' class='section-header'><a href='#returns-19'>Returns</a></h1>
+<p><code>true</code> if <code>self</code><!-- -->&#39;s day field is set, otherwise <code>false</code></p>
+</div><h4 id='method.has_month' class="method"><span id='has_month.v' class='invisible'><code>fn <a href='#method.has_month' class='fnname'>has_month</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'>
+<h1 id='returns-20' class='section-header'><a href='#returns-20'>Returns</a></h1>
+<p><code>true</code> if <code>self</code><!-- -->&#39;s month field is set, otherwise <code>false</code></p>
+</div><h4 id='method.has_second' class="method"><span id='has_second.v' class='invisible'><code>fn <a href='#method.has_second' class='fnname'>has_second</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'>
+<h1 id='returns-21' class='section-header'><a href='#returns-21'>Returns</a></h1>
+<p><code>true</code> if <code>self</code><!-- -->&#39;s second field is set, otherwise <code>false</code></p>
+</div><h4 id='method.has_time' class="method"><span id='has_time.v' class='invisible'><code>fn <a href='#method.has_time' class='fnname'>has_time</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'>
+<h1 id='returns-22' class='section-header'><a href='#returns-22'>Returns</a></h1>
+<p><code>true</code> if <code>self</code><!-- -->&#39;s hour and minute fields are set,
+ otherwise <code>false</code></p>
+</div><h4 id='method.has_year' class="method"><span id='has_year.v' class='invisible'><code>fn <a href='#method.has_year' class='fnname'>has_year</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'>
+<h1 id='returns-23' class='section-header'><a href='#returns-23'>Returns</a></h1>
+<p><code>true</code> if <code>self</code><!-- -->&#39;s year field is set (which should always
+ be the case), otherwise <code>false</code></p>
+</div><h4 id='method.to_g_date_time' class="method"><span id='to_g_date_time.v' class='invisible'><code>fn <a href='#method.to_g_date_time' class='fnname'>to_g_date_time</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../glib/auto/date_time/struct.DateTime.html" title="struct glib::auto::date_time::DateTime">DateTime</a>&gt;</code></span></h4>
+<div class='docblock'><p>Creates a new <code>glib::DateTime</code> from a fully defined <code>DateTime</code> object.</p>
+
+<p>Free-function: g_date_time_unref</p>
+
+<h1 id='returns-24' class='section-header'><a href='#returns-24'>Returns</a></h1>
+<p>a newly created <code>glib::DateTime</code>, or
+<code>None</code> on error</p>
+</div><h4 id='method.to_iso8601_string' class="method"><span id='to_iso8601_string.v' class='invisible'><code>fn <a href='#method.to_iso8601_string' class='fnname'>to_iso8601_string</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>&gt;</code></span></h4>
+<div class='docblock'><p>Create a minimal string compatible with ISO-8601. Possible output formats
+are (for example): 2012, 2012-06, 2012-06-23, 2012-06-23T23:30Z,
+2012-06-23T23:30+0100, 2012-06-23T23:30:59Z, 2012-06-23T23:30:59+0100</p>
+
+<h1 id='returns-25' class='section-header'><a href='#returns-25'>Returns</a></h1>
+<p>a newly allocated string formatted according
+ to ISO 8601 and only including the datetime fields that are
+ valid, or <code>None</code> in case there was an error. The string should
+ be freed with <code>g_free</code>.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../gstreamer/struct.DateTime.html" title="struct gstreamer::DateTime">DateTime</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer/struct.DateTime.html" title="struct gstreamer::DateTime">DateTime</a></code></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer/trait.StaticType.html" title="trait gstreamer::StaticType">StaticType</a> for <a class="struct" href="../gstreamer/struct.DateTime.html" title="struct gstreamer::DateTime">DateTime</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.static_type' class="method"><span id='static_type.v' class='invisible'><code>fn <a href='../gstreamer/trait.StaticType.html#tymethod.static_type' class='fnname'>static_type</a>() -&gt; <a class="enum" href="../gstreamer/enum.Type.html" title="enum gstreamer::Type">Type</a></code></span></h4>
+<div class='docblock'><p>Returns the type identifier of <code>Self</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> for <a class="struct" href="../gstreamer/struct.DateTime.html" title="struct gstreamer::DateTime">DateTime</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/date_time.rs.html#472' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

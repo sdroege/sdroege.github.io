@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `QueryView` enum in crate `gstreamer`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, QueryView">
+
+    <title>gstreamer::query::QueryView - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum QueryView</p><div class="block items"><ul><li><a href="#variants">Variants</a></li></ul></div><p class='location'><a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>query</a></p><script>window.sidebarCurrent = {name: 'QueryView', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>query</a>::<wbr><a class="enum" href=''>QueryView</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/gstreamer/query.rs.html#365-386' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum QueryView&lt;T&gt; {
+    Position(<a class="struct" href="../../gstreamer/query/struct.Position.html" title="struct gstreamer::query::Position">Position</a>&lt;T&gt;),
+    Duration(<a class="struct" href="../../gstreamer/query/struct.Duration.html" title="struct gstreamer::query::Duration">Duration</a>&lt;T&gt;),
+    Latency(<a class="struct" href="../../gstreamer/query/struct.Latency.html" title="struct gstreamer::query::Latency">Latency</a>&lt;T&gt;),
+    Jitter(<a class="struct" href="../../gstreamer/query/struct.Jitter.html" title="struct gstreamer::query::Jitter">Jitter</a>&lt;T&gt;),
+    Rate(<a class="struct" href="../../gstreamer/query/struct.Rate.html" title="struct gstreamer::query::Rate">Rate</a>&lt;T&gt;),
+    Seeking(<a class="struct" href="../../gstreamer/query/struct.Seeking.html" title="struct gstreamer::query::Seeking">Seeking</a>&lt;T&gt;),
+    Segment(<a class="struct" href="../../gstreamer/query/struct.Segment.html" title="struct gstreamer::query::Segment">Segment</a>&lt;T&gt;),
+    Convert(<a class="struct" href="../../gstreamer/query/struct.Convert.html" title="struct gstreamer::query::Convert">Convert</a>&lt;T&gt;),
+    Formats(<a class="struct" href="../../gstreamer/query/struct.Formats.html" title="struct gstreamer::query::Formats">Formats</a>&lt;T&gt;),
+    Buffering(<a class="struct" href="../../gstreamer/query/struct.Buffering.html" title="struct gstreamer::query::Buffering">Buffering</a>&lt;T&gt;),
+    Custom(<a class="struct" href="../../gstreamer/query/struct.Custom.html" title="struct gstreamer::query::Custom">Custom</a>&lt;T&gt;),
+    Uri(<a class="struct" href="../../gstreamer/query/struct.Uri.html" title="struct gstreamer::query::Uri">Uri</a>&lt;T&gt;),
+    Allocation(<a class="struct" href="../../gstreamer/query/struct.Allocation.html" title="struct gstreamer::query::Allocation">Allocation</a>&lt;T&gt;),
+    Scheduling(<a class="struct" href="../../gstreamer/query/struct.Scheduling.html" title="struct gstreamer::query::Scheduling">Scheduling</a>&lt;T&gt;),
+    AcceptCaps(<a class="struct" href="../../gstreamer/query/struct.AcceptCaps.html" title="struct gstreamer::query::AcceptCaps">AcceptCaps</a>&lt;T&gt;),
+    Caps(<a class="struct" href="../../gstreamer/query/struct.Caps.html" title="struct gstreamer::query::Caps">Caps</a>&lt;T&gt;),
+    Drain(<a class="struct" href="../../gstreamer/query/struct.Drain.html" title="struct gstreamer::query::Drain">Drain</a>&lt;T&gt;),
+    Context(<a class="struct" href="../../gstreamer/query/struct.Context.html" title="struct gstreamer::query::Context">Context</a>&lt;T&gt;),
+    Other(<a class="struct" href="../../gstreamer/query/struct.Other.html" title="struct gstreamer::query::Other">Other</a>&lt;T&gt;),
+    __NonExhaustive,
+}</pre><h2 id='variants' class='variants'>Variants</h2>
+<span id='variant.Position' class='variant'><span id='Position.v' class='invisible'><code>Position(<a class="struct" href="../../gstreamer/query/struct.Position.html" title="struct gstreamer::query::Position">Position</a>&lt;T&gt;)</code></span></span><span id='variant.Duration' class='variant'><span id='Duration.v' class='invisible'><code>Duration(<a class="struct" href="../../gstreamer/query/struct.Duration.html" title="struct gstreamer::query::Duration">Duration</a>&lt;T&gt;)</code></span></span><span id='variant.Latency' class='variant'><span id='Latency.v' class='invisible'><code>Latency(<a class="struct" href="../../gstreamer/query/struct.Latency.html" title="struct gstreamer::query::Latency">Latency</a>&lt;T&gt;)</code></span></span><span id='variant.Jitter' class='variant'><span id='Jitter.v' class='invisible'><code>Jitter(<a class="struct" href="../../gstreamer/query/struct.Jitter.html" title="struct gstreamer::query::Jitter">Jitter</a>&lt;T&gt;)</code></span></span><span id='variant.Rate' class='variant'><span id='Rate.v' class='invisible'><code>Rate(<a class="struct" href="../../gstreamer/query/struct.Rate.html" title="struct gstreamer::query::Rate">Rate</a>&lt;T&gt;)</code></span></span><span id='variant.Seeking' class='variant'><span id='Seeking.v' class='invisible'><code>Seeking(<a class="struct" href="../../gstreamer/query/struct.Seeking.html" title="struct gstreamer::query::Seeking">Seeking</a>&lt;T&gt;)</code></span></span><span id='variant.Segment' class='variant'><span id='Segment.v' class='invisible'><code>Segment(<a class="struct" href="../../gstreamer/query/struct.Segment.html" title="struct gstreamer::query::Segment">Segment</a>&lt;T&gt;)</code></span></span><span id='variant.Convert' class='variant'><span id='Convert.v' class='invisible'><code>Convert(<a class="struct" href="../../gstreamer/query/struct.Convert.html" title="struct gstreamer::query::Convert">Convert</a>&lt;T&gt;)</code></span></span><span id='variant.Formats' class='variant'><span id='Formats.v' class='invisible'><code>Formats(<a class="struct" href="../../gstreamer/query/struct.Formats.html" title="struct gstreamer::query::Formats">Formats</a>&lt;T&gt;)</code></span></span><span id='variant.Buffering' class='variant'><span id='Buffering.v' class='invisible'><code>Buffering(<a class="struct" href="../../gstreamer/query/struct.Buffering.html" title="struct gstreamer::query::Buffering">Buffering</a>&lt;T&gt;)</code></span></span><span id='variant.Custom' class='variant'><span id='Custom.v' class='invisible'><code>Custom(<a class="struct" href="../../gstreamer/query/struct.Custom.html" title="struct gstreamer::query::Custom">Custom</a>&lt;T&gt;)</code></span></span><span id='variant.Uri' class='variant'><span id='Uri.v' class='invisible'><code>Uri(<a class="struct" href="../../gstreamer/query/struct.Uri.html" title="struct gstreamer::query::Uri">Uri</a>&lt;T&gt;)</code></span></span><span id='variant.Allocation' class='variant'><span id='Allocation.v' class='invisible'><code>Allocation(<a class="struct" href="../../gstreamer/query/struct.Allocation.html" title="struct gstreamer::query::Allocation">Allocation</a>&lt;T&gt;)</code></span></span><span id='variant.Scheduling' class='variant'><span id='Scheduling.v' class='invisible'><code>Scheduling(<a class="struct" href="../../gstreamer/query/struct.Scheduling.html" title="struct gstreamer::query::Scheduling">Scheduling</a>&lt;T&gt;)</code></span></span><span id='variant.AcceptCaps' class='variant'><span id='AcceptCaps.v' class='invisible'><code>AcceptCaps(<a class="struct" href="../../gstreamer/query/struct.AcceptCaps.html" title="struct gstreamer::query::AcceptCaps">AcceptCaps</a>&lt;T&gt;)</code></span></span><span id='variant.Caps' class='variant'><span id='Caps.v' class='invisible'><code>Caps(<a class="struct" href="../../gstreamer/query/struct.Caps.html" title="struct gstreamer::query::Caps">Caps</a>&lt;T&gt;)</code></span></span><span id='variant.Drain' class='variant'><span id='Drain.v' class='invisible'><code>Drain(<a class="struct" href="../../gstreamer/query/struct.Drain.html" title="struct gstreamer::query::Drain">Drain</a>&lt;T&gt;)</code></span></span><span id='variant.Context' class='variant'><span id='Context.v' class='invisible'><code>Context(<a class="struct" href="../../gstreamer/query/struct.Context.html" title="struct gstreamer::query::Context">Context</a>&lt;T&gt;)</code></span></span><span id='variant.Other' class='variant'><span id='Other.v' class='invisible'><code>Other(<a class="struct" href="../../gstreamer/query/struct.Other.html" title="struct gstreamer::query::Other">Other</a>&lt;T&gt;)</code></span></span><span id='variant.__NonExhaustive' class='variant'><span id='__NonExhaustive.v' class='invisible'><code>__NonExhaustive</code></span></span></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "gstreamer";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

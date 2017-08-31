@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `StructureRef` struct in crate `gstreamer`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, StructureRef">
+
+    <title>gstreamer::structure::StructureRef - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct StructureRef</p><div class="block items"><ul><li><a href="#methods">Methods</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>structure</a></p><script>window.sidebarCurrent = {name: 'StructureRef', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>structure</a>::<wbr><a class="struct" href=''>StructureRef</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/gstreamer/structure.rs.html#333' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct StructureRef(_);</pre><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class="struct" href="../../gstreamer/structure/struct.StructureRef.html" title="struct gstreamer::structure::StructureRef">StructureRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gstreamer/structure.rs.html#335-546' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from_glib_borrow' class="method"><span id='from_glib_borrow.v' class='invisible'><code>unsafe fn <a href='#method.from_glib_borrow' class='fnname'>from_glib_borrow</a>&lt;'a&gt;(ptr: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="../../gstreamer_sys/struct.GstStructure.html" title="struct gstreamer_sys::GstStructure">GstStructure</a>) -&gt; &amp;'a <a class="struct" href="../../gstreamer/structure/struct.StructureRef.html" title="struct gstreamer::structure::StructureRef">StructureRef</a></code></span></h4>
+<h4 id='method.from_glib_borrow_mut' class="method"><span id='from_glib_borrow_mut.v' class='invisible'><code>unsafe fn <a href='#method.from_glib_borrow_mut' class='fnname'>from_glib_borrow_mut</a>&lt;'a&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;ptr: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../gstreamer_sys/struct.GstStructure.html" title="struct gstreamer_sys::GstStructure">GstStructure</a><br>) -&gt; &amp;'a mut <a class="struct" href="../../gstreamer/structure/struct.StructureRef.html" title="struct gstreamer::structure::StructureRef">StructureRef</a></code></span></h4>
+<h4 id='method.as_ptr' class="method"><span id='as_ptr.v' class='invisible'><code>unsafe fn <a href='#method.as_ptr' class='fnname'>as_ptr</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="../../gstreamer_sys/struct.GstStructure.html" title="struct gstreamer_sys::GstStructure">GstStructure</a></code></span></h4>
+<h4 id='method.as_mut_ptr' class="method"><span id='as_mut_ptr.v' class='invisible'><code>unsafe fn <a href='#method.as_mut_ptr' class='fnname'>as_mut_ptr</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../../gstreamer_sys/struct.GstStructure.html" title="struct gstreamer_sys::GstStructure">GstStructure</a></code></span></h4>
+<h4 id='method.to_string' class="method"><span id='to_string.v' class='invisible'><code>fn <a href='#method.to_string' class='fnname'>to_string</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a></code></span></h4>
+<h4 id='method.get' class="method"><span id='get.v' class='invisible'><code>fn <a href='#method.get' class='fnname'>get</a>&lt;'a, T:&nbsp;<a class="trait" href="../../glib/value/trait.FromValueOptional.html" title="trait glib::value::FromValueOptional">FromValueOptional</a>&lt;'a&gt;&gt;(&amp;'a self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;T&gt;</code></span></h4>
+<h4 id='method.get_value' class="method"><span id='get_value.v' class='invisible'><code>fn <a href='#method.get_value' class='fnname'>get_value</a>&lt;'a&gt;(&amp;'a self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../gstreamer/struct.Value.html" title="struct gstreamer::Value">Value</a>&gt;</code></span></h4>
+<h4 id='method.set' class="method"><span id='set.v' class='invisible'><code>fn <a href='#method.set' class='fnname'>set</a>&lt;T:&nbsp;<a class="trait" href="../../gstreamer/trait.ToValue.html" title="trait gstreamer::ToValue">ToValue</a>&gt;(&amp;mut self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, value: T)</code></span></h4>
+<h4 id='method.set_value' class="method"><span id='set_value.v' class='invisible'><code>fn <a href='#method.set_value' class='fnname'>set_value</a>(&amp;mut self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, value: <a class="struct" href="../../gstreamer/struct.Value.html" title="struct gstreamer::Value">Value</a>)</code></span></h4>
+<h4 id='method.get_name' class="method"><span id='get_name.v' class='invisible'><code>fn <a href='#method.get_name' class='fnname'>get_name</a>(&amp;self) -&gt; &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a></code></span></h4>
+<h4 id='method.set_name' class="method"><span id='set_name.v' class='invisible'><code>fn <a href='#method.set_name' class='fnname'>set_name</a>(&amp;mut self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></h4>
+<h4 id='method.has_field' class="method"><span id='has_field.v' class='invisible'><code>fn <a href='#method.has_field' class='fnname'>has_field</a>(&amp;self, field: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<h4 id='method.has_field_with_type' class="method"><span id='has_field_with_type.v' class='invisible'><code>fn <a href='#method.has_field_with_type' class='fnname'>has_field_with_type</a>(&amp;self, field: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, type_: <a class="enum" href="../../gstreamer/enum.Type.html" title="enum gstreamer::Type">Type</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<h4 id='method.remove_field' class="method"><span id='remove_field.v' class='invisible'><code>fn <a href='#method.remove_field' class='fnname'>remove_field</a>(&amp;mut self, field: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></h4>
+<h4 id='method.remove_fields' class="method"><span id='remove_fields.v' class='invisible'><code>fn <a href='#method.remove_fields' class='fnname'>remove_fields</a>(&amp;mut self, fields: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a>&amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>)</code></span></h4>
+<h4 id='method.remove_all_fields' class="method"><span id='remove_all_fields.v' class='invisible'><code>fn <a href='#method.remove_all_fields' class='fnname'>remove_all_fields</a>(&amp;mut self)</code></span></h4>
+<h4 id='method.fields' class="method"><span id='fields.v' class='invisible'><code>fn <a href='#method.fields' class='fnname'>fields</a>(&amp;self) -&gt; <a class="struct" href="../../gstreamer/structure/struct.FieldIterator.html" title="struct gstreamer::structure::FieldIterator">FieldIterator</a></code></span></h4>
+<h4 id='method.iter' class="method"><span id='iter.v' class='invisible'><code>fn <a href='#method.iter' class='fnname'>iter</a>(&amp;self) -&gt; <a class="struct" href="../../gstreamer/structure/struct.Iter.html" title="struct gstreamer::structure::Iter">Iter</a></code></span></h4>
+<h4 id='method.get_nth_field_name' class="method"><span id='get_nth_field_name.v' class='invisible'><code>fn <a href='#method.get_nth_field_name' class='fnname'>get_nth_field_name</a>(&amp;self, idx: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;</code></span></h4>
+<h4 id='method.n_fields' class="method"><span id='n_fields.v' class='invisible'><code>fn <a href='#method.n_fields' class='fnname'>n_fields</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span></h4>
+<h4 id='method.can_intersect' class="method"><span id='can_intersect.v' class='invisible'><code>fn <a href='#method.can_intersect' class='fnname'>can_intersect</a>(&amp;self, other: &amp;<a class="struct" href="../../gstreamer/structure/struct.StructureRef.html" title="struct gstreamer::structure::StructureRef">StructureRef</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<h4 id='method.intersect' class="method"><span id='intersect.v' class='invisible'><code>fn <a href='#method.intersect' class='fnname'>intersect</a>(&amp;self, other: &amp;<a class="struct" href="../../gstreamer/structure/struct.StructureRef.html" title="struct gstreamer::structure::StructureRef">StructureRef</a>) -&gt; <a class="struct" href="../../gstreamer/structure/struct.Structure.html" title="struct gstreamer::structure::Structure">Structure</a></code></span></h4>
+<h4 id='method.is_subset' class="method"><span id='is_subset.v' class='invisible'><code>fn <a href='#method.is_subset' class='fnname'>is_subset</a>(&amp;self, superset: &amp;<a class="struct" href="../../gstreamer/structure/struct.StructureRef.html" title="struct gstreamer::structure::StructureRef">StructureRef</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<h4 id='method.fixate' class="method"><span id='fixate.v' class='invisible'><code>fn <a href='#method.fixate' class='fnname'>fixate</a>(&amp;mut self)</code></span></h4>
+<h4 id='method.fixate_field' class="method"><span id='fixate_field.v' class='invisible'><code>fn <a href='#method.fixate_field' class='fnname'>fixate_field</a>(&amp;mut self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<h4 id='method.fixate_field_bool' class="method"><span id='fixate_field_bool.v' class='invisible'><code>fn <a href='#method.fixate_field_bool' class='fnname'>fixate_field_bool</a>(&amp;mut self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, target: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<h4 id='method.fixate_field_str' class="method"><span id='fixate_field_str.v' class='invisible'><code>fn <a href='#method.fixate_field_str' class='fnname'>fixate_field_str</a>(&amp;mut self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, target: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<h4 id='method.fixate_field_nearest_double' class="method"><span id='fixate_field_nearest_double.v' class='invisible'><code>fn <a href='#method.fixate_field_nearest_double' class='fnname'>fixate_field_nearest_double</a>(&amp;mut self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, target: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<h4 id='method.fixate_field_nearest_fraction' class="method"><span id='fixate_field_nearest_fraction.v' class='invisible'><code>fn <a href='#method.fixate_field_nearest_fraction' class='fnname'>fixate_field_nearest_fraction</a>&lt;T:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="struct" href="../../gstreamer/struct.Fraction.html" title="struct gstreamer::Fraction">Fraction</a>&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;target: T<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<h4 id='method.fixate_field_nearest_int' class="method"><span id='fixate_field_nearest_int.v' class='invisible'><code>fn <a href='#method.fixate_field_nearest_int' class='fnname'>fixate_field_nearest_int</a>(&amp;mut self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, target: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/collections/borrow/trait.ToOwned.html" title="trait collections::borrow::ToOwned">ToOwned</a> for <a class="struct" href="../../gstreamer/structure/struct.StructureRef.html" title="struct gstreamer::structure::StructureRef">StructureRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gstreamer/structure.rs.html#226-235' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Owned' class="type"><span id='Owned.t' class='invisible'><code>type <a href='https://doc.rust-lang.org/nightly/collections/borrow/trait.ToOwned.html#associatedtype.Owned' class="type">Owned</a> = <a class="struct" href="../../gstreamer/structure/struct.Structure.html" title="struct gstreamer::structure::Structure">Structure</a></code></span></h4>
+<h4 id='method.to_owned' class="method"><span id='to_owned.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/collections/borrow/trait.ToOwned.html#tymethod.to_owned' class='fnname'>to_owned</a>(&amp;self) -&gt; <a class="struct" href="../../gstreamer/structure/struct.Structure.html" title="struct gstreamer::structure::Structure">Structure</a></code></span></h4>
+<div class='docblock'><p>Creates owned data from borrowed data, usually by cloning. <a href="https://doc.rust-lang.org/nightly/collections/borrow/trait.ToOwned.html#tymethod.to_owned">Read more</a></p>
+</div><h4 id='method.clone_into' class="method"><span id='clone_into.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/collections/borrow/trait.ToOwned.html#method.clone_into' class='fnname'>clone_into</a>(&amp;self, target: &amp;mut Self::<a class="trait" href="https://doc.rust-lang.org/nightly/collections/borrow/trait.ToOwned.html" title="trait collections::borrow::ToOwned">Owned</a>)</code></span></h4>
+<div class='stability'><div class='stab unstable'><details><summary><span class=microscope>🔬</span> This is a nightly-only experimental API.  (<code>toowned_clone_into</code>)</summary><p>recently added</p>
+</details></div></div><div class='docblock'><p>Uses borrowed data to replace owned data, usually by cloning. <a href="https://doc.rust-lang.org/nightly/collections/borrow/trait.ToOwned.html#method.clone_into">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../gstreamer/structure/struct.StructureRef.html" title="struct gstreamer::structure::StructureRef">StructureRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gstreamer/structure.rs.html#548-552' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="struct" href="../../gstreamer/structure/struct.StructureRef.html" title="struct gstreamer::structure::StructureRef">StructureRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gstreamer/structure.rs.html#554-558' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, other: &amp;<a class="struct" href="../../gstreamer/structure/struct.StructureRef.html" title="struct gstreamer::structure::StructureRef">StructureRef</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="struct" href="../../gstreamer/structure/struct.StructureRef.html" title="struct gstreamer::structure::StructureRef">StructureRef</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gstreamer/structure.rs.html#560' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "gstreamer";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

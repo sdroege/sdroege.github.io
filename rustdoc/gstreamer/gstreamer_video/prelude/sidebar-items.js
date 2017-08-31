@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["VideoOverlayExt","Trait containing all `VideoOverlay` methods."],["VideoOverlayExtManual",""]]});

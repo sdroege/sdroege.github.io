@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `PlayerVideoOverlayVideoRenderer` struct in crate `gstreamer_player`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, PlayerVideoOverlayVideoRenderer">
+
+    <title>gstreamer_player::PlayerVideoOverlayVideoRenderer - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct PlayerVideoOverlayVideoRenderer</p><div class="block items"><ul><li><a href="#methods">Methods</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='index.html'>gstreamer_player</a></p><script>window.sidebarCurrent = {name: 'PlayerVideoOverlayVideoRenderer', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>gstreamer_player</a>::<wbr><a class="struct" href=''>PlayerVideoOverlayVideoRenderer</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span></span></h1>
+<pre class='rust struct'>pub struct PlayerVideoOverlayVideoRenderer(_, _);</pre><div class='docblock'>
+<h1 id='implements' class='section-header'><a href='#implements'>Implements</a></h1>
+<p><a href="trait.ObjectExt.html"><code>ObjectExt</code></a>, <a href="trait.PlayerVideoRendererExt.html"><code>PlayerVideoRendererExt</code></a></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class="struct" href="../gstreamer_player/struct.PlayerVideoOverlayVideoRenderer.html" title="struct gstreamer_player::PlayerVideoOverlayVideoRenderer">PlayerVideoOverlayVideoRenderer</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_player/auto/player_video_overlay_video_renderer.rs.html#32-131' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.expose' class="method"><span id='expose.v' class='invisible'><code>fn <a href='#method.expose' class='fnname'>expose</a>(&amp;self)</code></span></h4>
+<div class='docblock'><p>Tell an overlay that it has been exposed. This will redraw the current frame
+in the drawable even if the pipeline is PAUSED.</p>
+</div><h4 id='method.get_render_rectangle' class="method"><span id='get_render_rectangle.v' class='invisible'><code>fn <a href='#method.get_render_rectangle' class='fnname'>get_render_rectangle</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a></code></span></h4>
+<div class='docblock'><p>Return the currently configured render rectangle. See <code>PlayerVideoOverlayVideoRenderer::set_render_rectangle</code>
+for details.</p>
+
+<h2 id='x' class='section-header'><a href='#x'><code>x</code></a></h2>
+<p>the horizontal offset of the render area inside the window</p>
+
+<h2 id='y' class='section-header'><a href='#y'><code>y</code></a></h2>
+<p>the vertical offset of the render area inside the window</p>
+
+<h2 id='width' class='section-header'><a href='#width'><code>width</code></a></h2>
+<p>the width of the render area inside the window</p>
+
+<h2 id='height' class='section-header'><a href='#height'><code>height</code></a></h2>
+<p>the height of the render area inside the window</p>
+</div><h4 id='method.set_render_rectangle' class="method"><span id='set_render_rectangle.v' class='invisible'><code>fn <a href='#method.set_render_rectangle' class='fnname'>set_render_rectangle</a>(&amp;self, x: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, y: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, width: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, height: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>)</code></span></h4>
+<div class='docblock'><p>Configure a subregion as a video target within the window set by
+<code>PlayerVideoOverlayVideoRenderer::set_window_handle</code>. If this is not
+used or not supported the video will fill the area of the window set as the
+overlay to 100%. By specifying the rectangle, the video can be overlaid to
+a specific region of that window only. After setting the new rectangle one
+should call <code>PlayerVideoOverlayVideoRenderer::expose</code> to force a
+redraw. To unset the region pass -1 for the <code>width</code> and <code>height</code> parameters.</p>
+
+<p>This method is needed for non fullscreen video overlay in UI toolkits that
+do not support subwindows.</p>
+
+<h2 id='x-1' class='section-header'><a href='#x-1'><code>x</code></a></h2>
+<p>the horizontal offset of the render area inside the window</p>
+
+<h2 id='y-1' class='section-header'><a href='#y-1'><code>y</code></a></h2>
+<p>the vertical offset of the render area inside the window</p>
+
+<h2 id='width-1' class='section-header'><a href='#width-1'><code>width</code></a></h2>
+<p>the width of the render area inside the window</p>
+
+<h2 id='height-1' class='section-header'><a href='#height-1'><code>height</code></a></h2>
+<p>the height of the render area inside the window</p>
+</div><h4 id='method.get_property_video_sink' class="method"><span id='get_property_video_sink.v' class='invisible'><code>fn <a href='#method.get_property_video_sink' class='fnname'>get_property_video_sink</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>&gt;</code></span></h4>
+<h4 id='method.set_property_video_sink' class="method"><span id='set_property_video_sink.v' class='invisible'><code>fn <a href='#method.set_property_video_sink' class='fnname'>set_property_video_sink</a>&lt;P:&nbsp;<a class="trait" href="../gstreamer_player/trait.IsA.html" title="trait gstreamer_player::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>&gt; + <a class="trait" href="../gstreamer_player/trait.IsA.html" title="trait gstreamer_player::IsA">IsA</a>&lt;<a class="struct" href="../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt; + <a class="trait" href="../glib/value/trait.SetValueOptional.html" title="trait glib::value::SetValueOptional">SetValueOptional</a>&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;video_sink: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;P&gt;<br>)</code></span></h4>
+<h4 id='method.connect_property_video_sink_notify' class="method"><span id='connect_property_video_sink_notify.v' class='invisible'><code>fn <a href='#method.connect_property_video_sink_notify' class='fnname'>connect_property_video_sink_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;<a class="struct" href="../gstreamer_player/struct.PlayerVideoOverlayVideoRenderer.html" title="struct gstreamer_player::PlayerVideoOverlayVideoRenderer">PlayerVideoOverlayVideoRenderer</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<h4 id='method.connect_property_window_handle_notify' class="method"><span id='connect_property_window_handle_notify.v' class='invisible'><code>fn <a href='#method.connect_property_window_handle_notify' class='fnname'>connect_property_window_handle_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;<a class="struct" href="../gstreamer_player/struct.PlayerVideoOverlayVideoRenderer.html" title="struct gstreamer_player::PlayerVideoOverlayVideoRenderer">PlayerVideoOverlayVideoRenderer</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class="struct" href="../gstreamer_player/struct.PlayerVideoOverlayVideoRenderer.html" title="struct gstreamer_player::PlayerVideoOverlayVideoRenderer">PlayerVideoOverlayVideoRenderer</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_player/player_video_overlay_video_renderer.rs.html#20-65' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>unsafe fn <a href='#method.new' class='fnname'>new</a>(window_handle: <a class="type" href="../libc/type.uintptr_t.html" title="type libc::uintptr_t">uintptr_t</a>) -&gt; <a class="struct" href="../gstreamer_player/struct.PlayerVideoOverlayVideoRenderer.html" title="struct gstreamer_player::PlayerVideoOverlayVideoRenderer">PlayerVideoOverlayVideoRenderer</a></code></span></h4>
+<div class='docblock'>
+<h2 id='window_handle' class='section-header'><a href='#window_handle'><code>window_handle</code></a></h2>
+<p>Window handle to use or <code>None</code></p>
+</div><h4 id='method.new_with_handle_and_sink' class="method"><span id='new_with_handle_and_sink.v' class='invisible'><code>unsafe fn <a href='#method.new_with_handle_and_sink' class='fnname'>new_with_handle_and_sink</a>&lt;P:&nbsp;<a class="trait" href="../gstreamer_player/trait.IsA.html" title="trait gstreamer_player::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;window_handle: <a class="type" href="../libc/type.uintptr_t.html" title="type libc::uintptr_t">uintptr_t</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;video_sink: &amp;P<br>) -&gt; <a class="struct" href="../gstreamer_player/struct.PlayerVideoOverlayVideoRenderer.html" title="struct gstreamer_player::PlayerVideoOverlayVideoRenderer">PlayerVideoOverlayVideoRenderer</a></code></span></h4>
+<h4 id='method.new_with_sink' class="method"><span id='new_with_sink.v' class='invisible'><code>fn <a href='#method.new_with_sink' class='fnname'>new_with_sink</a>&lt;P:&nbsp;<a class="trait" href="../gstreamer_player/trait.IsA.html" title="trait gstreamer_player::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;video_sink: &amp;P<br>) -&gt; <a class="struct" href="../gstreamer_player/struct.PlayerVideoOverlayVideoRenderer.html" title="struct gstreamer_player::PlayerVideoOverlayVideoRenderer">PlayerVideoOverlayVideoRenderer</a></code></span></h4>
+<div class='docblock'>
+<h2 id='window_handle-1' class='section-header'><a href='#window_handle-1'><code>window_handle</code></a></h2>
+<p>Window handle to use or <code>None</code></p>
+
+<h2 id='video_sink' class='section-header'><a href='#video_sink'><code>video_sink</code></a></h2>
+<p>the custom video_sink element to be set for the video renderer</p>
+
+<h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
+<p>Since 1.12</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../gstreamer_player/struct.PlayerVideoOverlayVideoRenderer.html" title="struct gstreamer_player::PlayerVideoOverlayVideoRenderer">PlayerVideoOverlayVideoRenderer</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer_player/struct.PlayerVideoOverlayVideoRenderer.html" title="struct gstreamer_player::PlayerVideoOverlayVideoRenderer">PlayerVideoOverlayVideoRenderer</a></code></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../gstreamer_player/struct.PlayerVideoOverlayVideoRenderer.html" title="struct gstreamer_player::PlayerVideoOverlayVideoRenderer">PlayerVideoOverlayVideoRenderer</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html" title="trait core::hash::Hash">Hash</a> for <a class="struct" href="../gstreamer_player/struct.PlayerVideoOverlayVideoRenderer.html" title="struct gstreamer_player::PlayerVideoOverlayVideoRenderer">PlayerVideoOverlayVideoRenderer</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.hash' class="method"><span id='hash.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash' class='fnname'>hash</a>&lt;__H:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>&gt;(&amp;self, __arg_0: &amp;mut __H)</code></span></h4>
+<div class='docblock'><p>Feeds this value into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash">Read more</a></p>
+</div><h4 id='method.hash_slice' class="method"><span id='hash_slice.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice' class='fnname'>hash_slice</a>&lt;H&gt;(data: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[Self]</a>, state: &amp;mut H) <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;H: <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>,&nbsp;</span></code><div class='since' title='Stable since Rust version 1.3.0'>1.3.0</div></span></h4>
+<div class='docblock'><p>Feeds a slice of this type into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer_player/trait.StaticType.html" title="trait gstreamer_player::StaticType">StaticType</a> for <a class="struct" href="../gstreamer_player/struct.PlayerVideoOverlayVideoRenderer.html" title="struct gstreamer_player::PlayerVideoOverlayVideoRenderer">PlayerVideoOverlayVideoRenderer</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.static_type' class="method"><span id='static_type.v' class='invisible'><code>fn <a href='../gstreamer_player/trait.StaticType.html#tymethod.static_type' class='fnname'>static_type</a>() -&gt; <a class="enum" href="../gstreamer_player/enum.Type.html" title="enum gstreamer_player::Type">Type</a></code></span></h4>
+<div class='docblock'><p>Returns the type identifier of <code>Self</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="../gstreamer_player/trait.IsA.html" title="trait gstreamer_player::IsA">IsA</a>&lt;<a class="struct" href="../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt;&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a>&lt;T&gt; for <a class="struct" href="../gstreamer_player/struct.PlayerVideoOverlayVideoRenderer.html" title="struct gstreamer_player::PlayerVideoOverlayVideoRenderer">PlayerVideoOverlayVideoRenderer</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, other: &amp;T) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="struct" href="../gstreamer_player/struct.PlayerVideoOverlayVideoRenderer.html" title="struct gstreamer_player::PlayerVideoOverlayVideoRenderer">PlayerVideoOverlayVideoRenderer</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer_player/trait.IsA.html" title="trait gstreamer_player::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer_player/struct.PlayerVideoRenderer.html" title="struct gstreamer_player::PlayerVideoRenderer">PlayerVideoRenderer</a>&gt; for <a class="struct" href="../gstreamer_player/struct.PlayerVideoOverlayVideoRenderer.html" title="struct gstreamer_player::PlayerVideoOverlayVideoRenderer">PlayerVideoOverlayVideoRenderer</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer_player/trait.IsA.html" title="trait gstreamer_player::IsA">IsA</a>&lt;<a class="struct" href="../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt; for <a class="struct" href="../gstreamer_player/struct.PlayerVideoOverlayVideoRenderer.html" title="struct gstreamer_player::PlayerVideoOverlayVideoRenderer">PlayerVideoOverlayVideoRenderer</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> for <a class="struct" href="../gstreamer_player/struct.PlayerVideoOverlayVideoRenderer.html" title="struct gstreamer_player::PlayerVideoOverlayVideoRenderer">PlayerVideoOverlayVideoRenderer</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_player/auto/player_video_overlay_video_renderer.rs.html#133' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> for <a class="struct" href="../gstreamer_player/struct.PlayerVideoOverlayVideoRenderer.html" title="struct gstreamer_player::PlayerVideoOverlayVideoRenderer">PlayerVideoOverlayVideoRenderer</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_player/auto/player_video_overlay_video_renderer.rs.html#134' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer_player";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

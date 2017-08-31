@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `VideoOverlay` struct in crate `gstreamer_video`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, VideoOverlay">
+
+    <title>gstreamer_video::VideoOverlay - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct VideoOverlay</p><div class="block items"><ul><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='index.html'>gstreamer_video</a></p><script>window.sidebarCurrent = {name: 'VideoOverlay', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>gstreamer_video</a>::<wbr><a class="struct" href=''>VideoOverlay</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span></span></h1>
+<pre class='rust struct'>pub struct VideoOverlay(_, _);</pre><div class='docblock'><p>The <code>VideoOverlay</code> interface is used for 2 main purposes :</p>
+
+<ul>
+<li>To get a grab on the Window where the video sink element is going to render.
+This is achieved by either being informed about the Window identifier that
+the video sink element generated, or by forcing the video sink element to use
+a specific Window identifier for rendering.</li>
+<li>To force a redrawing of the latest video frame the video sink element
+displayed on the Window. Indeed if the <code>gst::Pipeline</code> is in <code>gst::State::Paused</code>
+state, moving the Window around will damage its content. Application
+developers will want to handle the Expose events themselves and force the
+video sink element to refresh the Window&#39;s content.</li>
+</ul>
+
+<p>Using the Window created by the video sink is probably the simplest scenario,
+in some cases, though, it might not be flexible enough for application
+developers if they need to catch events such as mouse moves and button
+clicks.</p>
+
+<p>Setting a specific Window identifier on the video sink element is the most
+flexible solution but it has some issues. Indeed the application needs to set
+its Window identifier at the right time to avoid internal Window creation
+from the video sink element. To solve this issue a <code>gst::Message</code> is posted on
+the bus to inform the application that it should set the Window identifier
+immediately. Here is an example on how to do that correctly:</p>
+
+<pre><code class="language-text">static GstBusSyncReply
+create_window (GstBus * bus, GstMessage * message, GstPipeline * pipeline)
+{
+ // ignore anything but &#39;prepare-window-handle&#39; element messages
+ if (!gst_is_video_overlay_prepare_window_handle_message (message))
+   return GST_BUS_PASS;
+
+ win = XCreateSimpleWindow (disp, root, 0, 0, 320, 240, 0, 0, 0);
+
+ XSetWindowBackgroundPixmap (disp, win, None);
+
+ XMapRaised (disp, win);
+
+ XSync (disp, FALSE);
+
+ gst_video_overlay_set_window_handle (GST_VIDEO_OVERLAY (GST_MESSAGE_SRC (message)),
+     win);
+
+ gst_message_unref (message);
+
+ return GST_BUS_DROP;
+}
+...
+int
+main (int argc, char **argv)
+{
+...
+ bus = gst_pipeline_get_bus (GST_PIPELINE (pipeline));
+ gst_bus_set_sync_handler (bus, (GstBusSyncHandler) create_window, pipeline,
+        NULL);
+...
+}
+</code></pre>
+
+<h2 id='two-basic-usage-scenarios' class='section-header'><a href='#two-basic-usage-scenarios'>Two basic usage scenarios</a></h2>
+<p>There are two basic usage scenarios: in the simplest case, the application
+uses <code>playbin</code> or <code>plasink</code> or knows exactly what particular element is used
+for video output, which is usually the case when the application creates
+the videosink to use (e.g. <code>xvimagesink</code>, <code>ximagesink</code>, etc.) itself; in this
+case, the application can just create the videosink element, create and
+realize the window to render the video on and then
+call <code>VideoOverlay::set_window_handle</code> directly with the XID or native
+window handle, before starting up the pipeline.
+As <code>playbin</code> and <code>playsink</code> implement the video overlay interface and proxy
+it transparently to the actual video sink even if it is created later, this
+case also applies when using these elements.</p>
+
+<p>In the other and more common case, the application does not know in advance
+what GStreamer video sink element will be used for video output. This is
+usually the case when an element such as <code>autovideosink</code> is used.
+In this case, the video sink element itself is created
+asynchronously from a GStreamer streaming thread some time after the
+pipeline has been started up. When that happens, however, the video sink
+will need to know right then whether to render onto an already existing
+application window or whether to create its own window. This is when it
+posts a prepare-window-handle message, and that is also why this message needs
+to be handled in a sync bus handler which will be called from the streaming
+thread directly (because the video sink will need an answer right then).</p>
+
+<p>As response to the prepare-window-handle element message in the bus sync
+handler, the application may use <code>VideoOverlay::set_window_handle</code> to tell
+the video sink to render onto an existing window surface. At this point the
+application should already have obtained the window handle / XID, so it
+just needs to set it. It is generally not advisable to call any GUI toolkit
+functions or window system functions from the streaming thread in which the
+prepare-window-handle message is handled, because most GUI toolkits and
+windowing systems are not thread-safe at all and a lot of care would be
+required to co-ordinate the toolkit and window system calls of the
+different threads (Gtk+ users please note: prior to Gtk+ 2.18
+GDK_WINDOW_XID() was just a simple structure access, so generally fine to do
+within the bus sync handler; this macro was changed to a function call in
+Gtk+ 2.18 and later, which is likely to cause problems when called from a
+sync handler; see below for a better approach without GDK_WINDOW_XID()
+used in the callback).</p>
+
+<h2 id='gstvideooverlay-and-gtk' class='section-header'><a href='#gstvideooverlay-and-gtk'>GstVideoOverlay and Gtk+</a></h2>
+<pre><code class="language-text">#include &amp;lt;gst/video/videooverlay.h&amp;gt;
+#include &amp;lt;gtk/gtk.h&amp;gt;
+#ifdef GDK_WINDOWING_X11
+#include &amp;lt;gdk/gdkx.h&amp;gt;  // for GDK_WINDOW_XID
+#endif
+#ifdef GDK_WINDOWING_WIN32
+#include &amp;lt;gdk/gdkwin32.h&amp;gt;  // for GDK_WINDOW_HWND
+#endif
+...
+static guintptr video_window_handle = 0;
+...
+static GstBusSyncReply
+bus_sync_handler (GstBus * bus, GstMessage * message, gpointer user_data)
+{
+ // ignore anything but &#39;prepare-window-handle&#39; element messages
+ if (!gst_is_video_overlay_prepare_window_handle_message (message))
+   return GST_BUS_PASS;
+
+ if (video_window_handle != 0) {
+   GstVideoOverlay *overlay;
+
+   // GST_MESSAGE_SRC (message) will be the video sink element
+   overlay = GST_VIDEO_OVERLAY (GST_MESSAGE_SRC (message));
+   gst_video_overlay_set_window_handle (overlay, video_window_handle);
+ } else {
+   g_warning (&quot;Should have obtained video_window_handle by now!&quot;);
+ }
+
+ gst_message_unref (message);
+ return GST_BUS_DROP;
+}
+...
+static void
+video_widget_realize_cb (GtkWidget * widget, gpointer data)
+{
+#if GTK_CHECK_VERSION(2,18,0)
+  // Tell Gtk+/Gdk to create a native window for this widget instead of
+  // drawing onto the parent widget.
+  // This is here just for pedagogical purposes, GDK_WINDOW_XID will call
+  // it as well in newer Gtk versions
+  if (!gdk_window_ensure_native (widget-&gt;window))
+    g_error (&quot;Couldn&#39;t create native window needed for GstVideoOverlay!&quot;);
+#endif
+
+#ifdef GDK_WINDOWING_X11
+  {
+    gulong xid = GDK_WINDOW_XID (gtk_widget_get_window (video_window));
+    video_window_handle = xid;
+  }
+#endif
+#ifdef GDK_WINDOWING_WIN32
+  {
+    HWND wnd = GDK_WINDOW_HWND (gtk_widget_get_window (video_window));
+    video_window_handle = (guintptr) wnd;
+  }
+#endif
+}
+...
+int
+main (int argc, char **argv)
+{
+  GtkWidget *video_window;
+  GtkWidget *app_window;
+  ...
+  app_window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+  ...
+  video_window = gtk_drawing_area_new ();
+  g_signal_connect (video_window, &quot;realize&quot;,
+      G_CALLBACK (video_widget_realize_cb), NULL);
+  gtk_widget_set_double_buffered (video_window, FALSE);
+  ...
+  // usually the video_window will not be directly embedded into the
+  // application window like this, but there will be many other widgets
+  // and the video window will be embedded in one of them instead
+  gtk_container_add (GTK_CONTAINER (ap_window), video_window);
+  ...
+  // show the GUI
+  gtk_widget_show_all (app_window);
+
+  // realize window now so that the video window gets created and we can
+  // obtain its XID/HWND before the pipeline is started up and the videosink
+  // asks for the XID/HWND of the window to render onto
+  gtk_widget_realize (video_window);
+
+  // we should have the XID/HWND now
+  g_assert (video_window_handle != 0);
+  ...
+  // set up sync handler for setting the xid once the pipeline is started
+  bus = gst_pipeline_get_bus (GST_PIPELINE (pipeline));
+  gst_bus_set_sync_handler (bus, (GstBusSyncHandler) bus_sync_handler, NULL,
+      NULL);
+  gst_object_unref (bus);
+  ...
+  gst_element_set_state (pipeline, GST_STATE_PLAYING);
+  ...
+}
+</code></pre>
+
+<h2 id='gstvideooverlay-and-qt' class='section-header'><a href='#gstvideooverlay-and-qt'>GstVideoOverlay and Qt</a></h2>
+<pre><code class="language-text">#include &amp;lt;glib.h&amp;gt;
+#include &amp;lt;gst/gst.h&amp;gt;
+#include &amp;lt;gst/video/videooverlay.h&amp;gt;
+
+#include &amp;lt;QApplication&amp;gt;
+#include &amp;lt;QTimer&amp;gt;
+#include &amp;lt;QWidget&amp;gt;
+
+int main(int argc, char *argv[])
+{
+  if (!g_thread_supported ())
+    g_thread_init (NULL);
+
+  gst_init (&amp;argc, &amp;argv);
+  QApplication app(argc, argv);
+  app.connect(&amp;app, SIGNAL(lastWindowClosed()), &amp;app, SLOT(quit ()));
+
+  // prepare the pipeline
+
+  GstElement *pipeline = gst_pipeline_new (&quot;xvoverlay&quot;);
+  GstElement *src = gst_element_factory_make (&quot;videotestsrc&quot;, NULL);
+  GstElement *sink = gst_element_factory_make (&quot;xvimagesink&quot;, NULL);
+  gst_bin_add_many (GST_BIN (pipeline), src, sink, NULL);
+  gst_element_link (src, sink);
+
+  // prepare the ui
+
+  QWidget window;
+  window.resize(320, 240);
+  window.show();
+
+  WId xwinid = window.winId();
+  gst_video_overlay_set_window_handle (GST_VIDEO_OVERLAY (sink), xwinid);
+
+  // run the pipeline
+
+  GstStateChangeReturn sret = gst_element_set_state (pipeline,
+      GST_STATE_PLAYING);
+  if (sret == GST_STATE_CHANGE_FAILURE) {
+    gst_element_set_state (pipeline, GST_STATE_NULL);
+    gst_object_unref (pipeline);
+    // Exit application
+    QTimer::singleShot(0, QApplication::activeWindow(), SLOT(quit()));
+  }
+
+  int ret = app.exec();
+
+  window.hide();
+  gst_element_set_state (pipeline, GST_STATE_NULL);
+  gst_object_unref (pipeline);
+
+  return ret;
+}
+</code></pre>
+
+<h1 id='implements' class='section-header'><a href='#implements'>Implements</a></h1>
+<p><a href="trait.VideoOverlayExt.html"><code>VideoOverlayExt</code></a></p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../gstreamer_video/struct.VideoOverlay.html" title="struct gstreamer_video::VideoOverlay">VideoOverlay</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer_video/struct.VideoOverlay.html" title="struct gstreamer_video::VideoOverlay">VideoOverlay</a></code></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../gstreamer_video/struct.VideoOverlay.html" title="struct gstreamer_video::VideoOverlay">VideoOverlay</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html" title="trait core::hash::Hash">Hash</a> for <a class="struct" href="../gstreamer_video/struct.VideoOverlay.html" title="struct gstreamer_video::VideoOverlay">VideoOverlay</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.hash' class="method"><span id='hash.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash' class='fnname'>hash</a>&lt;__H:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>&gt;(&amp;self, __arg_0: &amp;mut __H)</code></span></h4>
+<div class='docblock'><p>Feeds this value into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash">Read more</a></p>
+</div><h4 id='method.hash_slice' class="method"><span id='hash_slice.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice' class='fnname'>hash_slice</a>&lt;H&gt;(data: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[Self]</a>, state: &amp;mut H) <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;H: <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>,&nbsp;</span></code><div class='since' title='Stable since Rust version 1.3.0'>1.3.0</div></span></h4>
+<div class='docblock'><p>Feeds a slice of this type into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer_video/trait.StaticType.html" title="trait gstreamer_video::StaticType">StaticType</a> for <a class="struct" href="../gstreamer_video/struct.VideoOverlay.html" title="struct gstreamer_video::VideoOverlay">VideoOverlay</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.static_type' class="method"><span id='static_type.v' class='invisible'><code>fn <a href='../gstreamer_video/trait.StaticType.html#tymethod.static_type' class='fnname'>static_type</a>() -&gt; <a class="enum" href="../gstreamer_video/enum.Type.html" title="enum gstreamer_video::Type">Type</a></code></span></h4>
+<div class='docblock'><p>Returns the type identifier of <code>Self</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="../gstreamer_video/trait.IsA.html" title="trait gstreamer_video::IsA">IsA</a>&lt;<a class="struct" href="../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt;&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a>&lt;T&gt; for <a class="struct" href="../gstreamer_video/struct.VideoOverlay.html" title="struct gstreamer_video::VideoOverlay">VideoOverlay</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, other: &amp;T) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="struct" href="../gstreamer_video/struct.VideoOverlay.html" title="struct gstreamer_video::VideoOverlay">VideoOverlay</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer_video/trait.IsA.html" title="trait gstreamer_video::IsA">IsA</a>&lt;<a class="struct" href="../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt; for <a class="struct" href="../gstreamer_video/struct.VideoOverlay.html" title="struct gstreamer_video::VideoOverlay">VideoOverlay</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> for <a class="struct" href="../gstreamer_video/struct.VideoOverlay.html" title="struct gstreamer_video::VideoOverlay">VideoOverlay</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_video/auto/video_overlay.rs.html#286' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> for <a class="struct" href="../gstreamer_video/struct.VideoOverlay.html" title="struct gstreamer_video::VideoOverlay">VideoOverlay</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_video/auto/video_overlay.rs.html#287' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer_video";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

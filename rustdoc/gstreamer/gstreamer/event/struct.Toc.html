@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Toc` struct in crate `gstreamer`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Toc">
+
+    <title>gstreamer::event::Toc - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Toc</p><div class="block items"><ul><li><a href="#methods">Methods</a></li></ul></div><p class='location'><a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>event</a></p><script>window.sidebarCurrent = {name: 'Toc', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>event</a>::<wbr><a class="struct" href=''>Toc</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/gstreamer/event.rs.html#1090' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Toc&lt;'a&gt;(_);</pre><div class='docblock'><p><code>Toc</code> functions are used to create/free <code>Toc</code> and <code>TocEntry</code> structures.
+Also they are used to convert <code>Toc</code> into <code>Structure</code> and vice versa.</p>
+
+<p><code>Toc</code> lets you to inform other elements in pipeline or application that playing
+source has some kind of table of contents (TOC). These may be chapters, editions,
+angles or other types. For example: DVD chapters, Matroska chapters or cue sheet
+TOC. Such TOC will be useful for applications to display instead of just a
+playlist.</p>
+
+<p>Using TOC is very easy. Firstly, create <code>Toc</code> structure which represents root
+contents of the source. You can also attach TOC-specific tags to it. Then fill
+it with <code>TocEntry</code> entries by appending them to the <code>Toc</code> using
+<code>Toc::append_entry</code>, and appending subentries to a <code>TocEntry</code> using
+<code>TocEntry::append_sub_entry</code>.</p>
+
+<p>Note that root level of the TOC can contain only either editions or chapters. You
+should not mix them together at the same level. Otherwise you will get serialization
+/deserialization errors. Make sure that no one of the entries has negative start and
+ stop values.</p>
+
+<p>Use <code>Event::new_toc</code> to create a new TOC <code>Event</code>, and <code>Event::parse_toc</code> to
+parse received TOC event. Use <code>Event::new_toc_select</code> to create a new TOC select <code>Event</code>,
+and <code>Event::parse_toc_select</code> to parse received TOC select event. The same rule for
+the <code>Message</code>: <code>Message::new_toc</code> to create new TOC <code>Message</code>, and
+<code>Message::parse_toc</code> to parse received TOC message.</p>
+
+<p>TOCs can have global scope or current scope. Global scope TOCs contain
+all entries that can possibly be selected using a toc select event, and
+are what an application is usually interested in. TOCs with current scope
+only contain the parts of the TOC relevant to the currently selected/playing
+stream; the current scope TOC is used by downstream elements such as muxers
+to write correct TOC entries when transcoding files, for example. When
+playing a DVD, the global TOC would contain a hierarchy of all titles,
+chapters and angles, for example, while the current TOC would only contain
+the chapters for the currently playing title if playback of a specific
+title was requested.</p>
+
+<p>Applications and plugins should not rely on TOCs having a certain kind of
+structure, but should allow for different alternatives. For example, a
+simple CUE sheet embedded in a file may be presented as a flat list of
+track entries, or could have a top-level edition node (or some other
+alternative type entry) with track entries underneath that node; or even
+multiple top-level edition nodes (or some other alternative type entries)
+each with track entries underneath, in case the source file has extracted
+a track listing from different sources).</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="struct" href="../../gstreamer/event/struct.Toc.html" title="struct gstreamer::event::Toc">Toc</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gstreamer/event.rs.html#1091-1101' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.get_toc' class="method"><span id='get_toc.v' class='invisible'><code>fn <a href='#method.get_toc' class='fnname'>get_toc</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a>&amp;'a <a class="struct" href="../../gstreamer/toc/struct.TocRef.html" title="struct gstreamer::toc::TocRef">TocRef</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a></code></span></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "gstreamer";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

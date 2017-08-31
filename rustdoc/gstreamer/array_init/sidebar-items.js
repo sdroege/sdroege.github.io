@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["array_init","Initialize an array given an initializer expression"],["array_init_copy","Initialize an array of `Copy` elements given an initializer expression"],["from_iter","Initialize an array given an iterator"],["from_iter_copy","Initialize an array given an iterator"]],"trait":[["IsArray","Trait for things which are actually arrays"]]});

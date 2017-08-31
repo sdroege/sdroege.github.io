@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `DeviceMonitorExt` trait in crate `gstreamer`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, DeviceMonitorExt">
+
+    <title>gstreamer::prelude::DeviceMonitorExt - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Trait DeviceMonitorExt</p><div class="block items"><ul><li><a href="#required-methods">Required Methods</a></li><li><a href="#implementors">Implementors</a></li></ul></div><p class='location'><a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>prelude</a></p><script>window.sidebarCurrent = {name: 'DeviceMonitorExt', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>prelude</a>::<wbr><a class="trait" href=''>DeviceMonitorExt</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/gstreamer/auto/device_monitor.rs.html#124-215' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait DeviceMonitorExt {
+    fn <a href='#tymethod.add_filter' class='fnname'>add_filter</a>&lt;'a, 'b, P:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;&gt;, Q:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'b <a class="type" href="../../gstreamer/caps/type.Caps.html" title="type gstreamer::caps::Caps">Caps</a>&gt;&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;classes: P, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;caps: Q<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>;
+    fn <a href='#tymethod.get_bus' class='fnname'>get_bus</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../gstreamer/struct.Bus.html" title="struct gstreamer::Bus">Bus</a>&gt;;
+    fn <a href='#tymethod.get_devices' class='fnname'>get_devices</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="struct" href="../../gstreamer/struct.Device.html" title="struct gstreamer::Device">Device</a>&gt;;
+    fn <a href='#tymethod.get_providers' class='fnname'>get_providers</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>&gt;;
+    fn <a href='#tymethod.get_show_all_devices' class='fnname'>get_show_all_devices</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+    fn <a href='#tymethod.remove_filter' class='fnname'>remove_filter</a>(&amp;self, filter_id: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+    fn <a href='#tymethod.set_show_all_devices' class='fnname'>set_show_all_devices</a>(&amp;self, show_all: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
+    fn <a href='#tymethod.start' class='fnname'>start</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+    fn <a href='#tymethod.stop' class='fnname'>stop</a>(&amp;self);
+    fn <a href='#tymethod.get_property_show_all' class='fnname'>get_property_show_all</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+    fn <a href='#tymethod.set_property_show_all' class='fnname'>set_property_show_all</a>(&amp;self, show_all: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
+    fn <a href='#tymethod.connect_property_show_all_notify' class='fnname'>connect_property_show_all_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>;
+}</pre><div class='docblock'><p>Trait containing all <code>DeviceMonitor</code> methods.</p>
+
+<h1 id='implementors-1' class='section-header'><a href='#implementors-1'>Implementors</a></h1>
+<p><a href="struct.DeviceMonitor.html"><code>DeviceMonitor</code></a></p>
+</div>
+            <h2 id='required-methods'>Required Methods</h2>
+            <div class='methods'>
+        <h3 id='tymethod.add_filter' class='method'><span id='add_filter.v' class='invisible'><code>fn <a href='#tymethod.add_filter' class='fnname'>add_filter</a>&lt;'a, 'b, P:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;&gt;, Q:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'b <a class="type" href="../../gstreamer/caps/type.Caps.html" title="type gstreamer::caps::Caps">Caps</a>&gt;&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;classes: P, <br>&nbsp;&nbsp;&nbsp;&nbsp;caps: Q<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span></h3><div class='docblock'><p>Adds a filter for which <code>Device</code> will be monitored, any device that matches
+all these classes and the <code>Caps</code> will be returned.</p>
+
+<p>If this function is called multiple times to add more filters, each will be
+matched independently. That is, adding more filters will not further restrict
+what devices are matched.</p>
+
+<p>The <code>Caps</code> supported by the device as returned by <code>DeviceExt::get_caps</code> are
+not intersected with caps filters added using this function.</p>
+
+<p>Filters must be added before the <code>DeviceMonitor</code> is started.</p>
+
+<h2 id='classes' class='section-header'><a href='#classes'><code>classes</code></a></h2>
+<p>device classes to use as filter or <code>None</code> for any class</p>
+
+<h2 id='caps' class='section-header'><a href='#caps'><code>caps</code></a></h2>
+<p>the <code>Caps</code> to filter or <code>None</code> for ANY</p>
+
+<h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
+<p>The id of the new filter or 0 if no provider matched the filter&#39;s
+ classes.</p>
+</div><h3 id='tymethod.get_bus' class='method'><span id='get_bus.v' class='invisible'><code>fn <a href='#tymethod.get_bus' class='fnname'>get_bus</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../gstreamer/struct.Bus.html" title="struct gstreamer::Bus">Bus</a>&gt;</code></span></h3><div class='docblock'><p>Gets the <code>Bus</code> of this <code>DeviceMonitor</code></p>
+
+<h1 id='returns-1' class='section-header'><a href='#returns-1'>Returns</a></h1>
+<p>a <code>Bus</code></p>
+</div><h3 id='tymethod.get_devices' class='method'><span id='get_devices.v' class='invisible'><code>fn <a href='#tymethod.get_devices' class='fnname'>get_devices</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="struct" href="../../gstreamer/struct.Device.html" title="struct gstreamer::Device">Device</a>&gt;</code></span></h3><div class='docblock'><p>Gets a list of devices from all of the relevant monitors. This may actually
+probe the hardware if the monitor is not currently started.</p>
+
+<h1 id='returns-2' class='section-header'><a href='#returns-2'>Returns</a></h1>
+<p>a <code>glib::List</code> of
+ <code>Device</code></p>
+</div><h3 id='tymethod.get_providers' class='method'><span id='get_providers.v' class='invisible'><code>fn <a href='#tymethod.get_providers' class='fnname'>get_providers</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>&gt;</code></span></h3><div class='docblock'><p>Get a list of the currently selected device provider factories.</p>
+
+<p>This</p>
+
+<h1 id='returns-3' class='section-header'><a href='#returns-3'>Returns</a></h1>
+<p>A list of device provider factory names that are currently being
+ monitored by <code>self</code> or <code>None</code> when nothing is being monitored.</p>
+</div><h3 id='tymethod.get_show_all_devices' class='method'><span id='get_show_all_devices.v' class='invisible'><code>fn <a href='#tymethod.get_show_all_devices' class='fnname'>get_show_all_devices</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Get if <code>self</code> is curretly showing all devices, even those from hidden
+providers.</p>
+
+<h1 id='returns-4' class='section-header'><a href='#returns-4'>Returns</a></h1>
+<p><code>true</code> when all devices will be shown.</p>
+</div><h3 id='tymethod.remove_filter' class='method'><span id='remove_filter.v' class='invisible'><code>fn <a href='#tymethod.remove_filter' class='fnname'>remove_filter</a>(&amp;self, filter_id: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Removes a filter from the <code>DeviceMonitor</code> using the id that was returned
+by <code>DeviceMonitorExt::add_filter</code>.</p>
+
+<h2 id='filter_id' class='section-header'><a href='#filter_id'><code>filter_id</code></a></h2>
+<p>the id of the filter</p>
+
+<h1 id='returns-5' class='section-header'><a href='#returns-5'>Returns</a></h1>
+<p><code>true</code> of the filter id was valid, <code>false</code> otherwise</p>
+</div><h3 id='tymethod.set_show_all_devices' class='method'><span id='set_show_all_devices.v' class='invisible'><code>fn <a href='#tymethod.set_show_all_devices' class='fnname'>set_show_all_devices</a>(&amp;self, show_all: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><div class='docblock'><p>Set if all devices should be visible, even those devices from hidden
+providers. Setting <code>show_all</code> to true might show some devices multiple times.</p>
+
+<h2 id='show_all' class='section-header'><a href='#show_all'><code>show_all</code></a></h2>
+<p>show all devices</p>
+</div><h3 id='tymethod.start' class='method'><span id='start.v' class='invisible'><code>fn <a href='#tymethod.start' class='fnname'>start</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Starts monitoring the devices, one this has succeeded, the
+<code>MessageType::DeviceAdded</code> and <code>MessageType::DeviceRemoved</code> messages
+will be emitted on the bus when the list of devices changes.</p>
+
+<h1 id='returns-6' class='section-header'><a href='#returns-6'>Returns</a></h1>
+<p><code>true</code> if the device monitoring could be started</p>
+</div><h3 id='tymethod.stop' class='method'><span id='stop.v' class='invisible'><code>fn <a href='#tymethod.stop' class='fnname'>stop</a>(&amp;self)</code></span></h3><div class='docblock'><p>Stops monitoring the devices.</p>
+</div><h3 id='tymethod.get_property_show_all' class='method'><span id='get_property_show_all.v' class='invisible'><code>fn <a href='#tymethod.get_property_show_all' class='fnname'>get_property_show_all</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><h3 id='tymethod.set_property_show_all' class='method'><span id='set_property_show_all.v' class='invisible'><code>fn <a href='#tymethod.set_property_show_all' class='fnname'>set_property_show_all</a>(&amp;self, show_all: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><h3 id='tymethod.connect_property_show_all_notify' class='method'><span id='connect_property_show_all_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_show_all_notify' class='fnname'>connect_property_show_all_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h3></div>
+        <h2 id='implementors'>Implementors</h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><code>impl&lt;O:&nbsp;<a class="trait" href="../../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/struct.DeviceMonitor.html" title="struct gstreamer::DeviceMonitor">DeviceMonitor</a>&gt; + <a class="trait" href="../../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt;&gt; DeviceMonitorExt for O</code></li>
+</ul><script type="text/javascript" async
+                         src="../../implementors/gstreamer/prelude/trait.DeviceMonitorExt.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "gstreamer";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

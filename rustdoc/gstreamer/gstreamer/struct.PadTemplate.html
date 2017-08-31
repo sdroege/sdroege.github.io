@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `PadTemplate` struct in crate `gstreamer`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, PadTemplate">
+
+    <title>gstreamer::PadTemplate - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct PadTemplate</p><div class="block items"><ul><li><a href="#methods">Methods</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='index.html'>gstreamer</a></p><script>window.sidebarCurrent = {name: 'PadTemplate', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>gstreamer</a>::<wbr><a class="struct" href=''>PadTemplate</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span></span></h1>
+<pre class='rust struct'>pub struct PadTemplate(_, _);</pre><div class='docblock'><p>Padtemplates describe the possible media types a pad or an elementfactory can
+handle. This allows for both inspection of handled types before loading the
+element plugin as well as identifying pads on elements that are not yet
+created (request or sometimes pads).</p>
+
+<p>Pad and PadTemplates have <code>Caps</code> attached to it to describe the media type
+they are capable of dealing with. <code>PadTemplate::get_caps</code> or
+GST_PAD_TEMPLATE_CAPS() are used to get the caps of a padtemplate. It&#39;s not
+possible to modify the caps of a padtemplate after creation.</p>
+
+<p>PadTemplates have a <code>PadPresence</code> property which identifies the lifetime
+of the pad and that can be retrieved with GST_PAD_TEMPLATE_PRESENCE(). Also
+the direction of the pad can be retrieved from the <code>PadTemplate</code> with
+GST_PAD_TEMPLATE_DIRECTION().</p>
+
+<p>The GST_PAD_TEMPLATE_NAME_TEMPLATE () is important for GST_PAD_REQUEST pads
+because it has to be used as the name in the <code>ElementExt::get_request_pad</code>
+call to instantiate a pad from this template.</p>
+
+<p>Padtemplates can be created with <code>PadTemplate::new</code> or with
+gst_static_pad_template_get (), which creates a <code>PadTemplate</code> from a
+<code>StaticPadTemplate</code> that can be filled with the
+convenient GST_STATIC_PAD_TEMPLATE() macro.</p>
+
+<p>A padtemplate can be used to create a pad (see <code>Pad::new_from_template</code>
+or gst_pad_new_from_static_template ()) or to add to an element class
+(see gst_element_class_add_static_pad_template ()).</p>
+
+<p>The following code example shows the code to create a pad from a padtemplate.</p>
+
+<pre><code class="language-C">  GstStaticPadTemplate my_template =
+  GST_STATIC_PAD_TEMPLATE (
+    &quot;sink&quot;,          // the name of the pad
+    GST_PAD_SINK,    // the direction of the pad
+    GST_PAD_ALWAYS,  // when this pad will be present
+    GST_STATIC_CAPS (        // the capabilities of the padtemplate
+      &quot;audio/x-raw, &quot;
+        &quot;channels = (int) [ 1, 6 ]&quot;
+    )
+  );
+  void
+  my_method (void)
+  {
+    GstPad *pad;
+    pad = gst_pad_new_from_static_template (&amp;amp;my_template, &quot;sink&quot;);
+    ...
+  }
+</code></pre>
+
+<p>The following example shows you how to add the padtemplate to an
+element class, this is usually done in the class_init of the class:</p>
+
+<pre><code class="language-C">  static void
+  my_element_class_init (GstMyElementClass *klass)
+  {
+    GstElementClass *gstelement_class = GST_ELEMENT_CLASS (klass);
+
+    gst_element_class_add_static_pad_template (gstelement_class, &amp;amp;my_template);
+  }
+</code></pre>
+
+<h1 id='implements' class='section-header'><a href='#implements'>Implements</a></h1>
+<p><a href="trait.ObjectExt.html"><code>ObjectExt</code></a>, <a href="trait.ObjectExt.html"><code>ObjectExt</code></a></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class="struct" href="../gstreamer/struct.PadTemplate.html" title="struct gstreamer::PadTemplate">PadTemplate</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/pad_template.rs.html#95-201' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>fn <a href='#method.new' class='fnname'>new</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;name_template: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;direction: <a class="enum" href="../gstreamer/enum.PadDirection.html" title="enum gstreamer::PadDirection">PadDirection</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;presence: <a class="enum" href="../gstreamer/enum.PadPresence.html" title="enum gstreamer::PadPresence">PadPresence</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;caps: &amp;<a class="type" href="../gstreamer/caps/type.Caps.html" title="type gstreamer::caps::Caps">Caps</a><br>) -&gt; <a class="struct" href="../gstreamer/struct.PadTemplate.html" title="struct gstreamer::PadTemplate">PadTemplate</a></code></span></h4>
+<div class='docblock'><p>Creates a new pad template with a name according to the given template
+and with the given arguments.</p>
+
+<h2 id='name_template' class='section-header'><a href='#name_template'><code>name_template</code></a></h2>
+<p>the name template.</p>
+
+<h2 id='direction' class='section-header'><a href='#direction'><code>direction</code></a></h2>
+<p>the <code>PadDirection</code> of the template.</p>
+
+<h2 id='presence' class='section-header'><a href='#presence'><code>presence</code></a></h2>
+<p>the <code>PadPresence</code> of the pad.</p>
+
+<h2 id='caps' class='section-header'><a href='#caps'><code>caps</code></a></h2>
+<p>a <code>Caps</code> set for the template.</p>
+
+<h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
+<p>a new <code>PadTemplate</code>.</p>
+</div><h4 id='method.get_caps' class="method"><span id='get_caps.v' class='invisible'><code>fn <a href='#method.get_caps' class='fnname'>get_caps</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../gstreamer/caps/type.Caps.html" title="type gstreamer::caps::Caps">Caps</a>&gt;</code></span></h4>
+<div class='docblock'><p>Gets the capabilities of the pad template.</p>
+
+<h1 id='returns-1' class='section-header'><a href='#returns-1'>Returns</a></h1>
+<p>the <code>Caps</code> of the pad template.
+Unref after usage.</p>
+</div><h4 id='method.pad_created' class="method"><span id='pad_created.v' class='invisible'><code>fn <a href='#method.pad_created' class='fnname'>pad_created</a>&lt;P:&nbsp;<a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/struct.Pad.html" title="struct gstreamer::Pad">Pad</a>&gt;&gt;(&amp;self, pad: &amp;P)</code></span></h4>
+<div class='docblock'><p>Emit the pad-created signal for this template when created by this pad.</p>
+
+<h2 id='pad' class='section-header'><a href='#pad'><code>pad</code></a></h2>
+<p>the <code>Pad</code> that created it</p>
+</div><h4 id='method.get_property_direction' class="method"><span id='get_property_direction.v' class='invisible'><code>fn <a href='#method.get_property_direction' class='fnname'>get_property_direction</a>(&amp;self) -&gt; <a class="enum" href="../gstreamer/enum.PadDirection.html" title="enum gstreamer::PadDirection">PadDirection</a></code></span></h4>
+<h4 id='method.get_property_name_template' class="method"><span id='get_property_name_template.v' class='invisible'><code>fn <a href='#method.get_property_name_template' class='fnname'>get_property_name_template</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>&gt;</code></span></h4>
+<h4 id='method.get_property_presence' class="method"><span id='get_property_presence.v' class='invisible'><code>fn <a href='#method.get_property_presence' class='fnname'>get_property_presence</a>(&amp;self) -&gt; <a class="enum" href="../gstreamer/enum.PadPresence.html" title="enum gstreamer::PadPresence">PadPresence</a></code></span></h4>
+<h4 id='method.connect_pad_created' class="method"><span id='connect_pad_created.v' class='invisible'><code>fn <a href='#method.connect_pad_created' class='fnname'>connect_pad_created</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;<a class="struct" href="../gstreamer/struct.PadTemplate.html" title="struct gstreamer::PadTemplate">PadTemplate</a>, &amp;<a class="struct" href="../gstreamer/struct.Pad.html" title="struct gstreamer::Pad">Pad</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<h4 id='method.connect_property_caps_notify' class="method"><span id='connect_property_caps_notify.v' class='invisible'><code>fn <a href='#method.connect_property_caps_notify' class='fnname'>connect_property_caps_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;<a class="struct" href="../gstreamer/struct.PadTemplate.html" title="struct gstreamer::PadTemplate">PadTemplate</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<h4 id='method.connect_property_direction_notify' class="method"><span id='connect_property_direction_notify.v' class='invisible'><code>fn <a href='#method.connect_property_direction_notify' class='fnname'>connect_property_direction_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;<a class="struct" href="../gstreamer/struct.PadTemplate.html" title="struct gstreamer::PadTemplate">PadTemplate</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<h4 id='method.connect_property_name_template_notify' class="method"><span id='connect_property_name_template_notify.v' class='invisible'><code>fn <a href='#method.connect_property_name_template_notify' class='fnname'>connect_property_name_template_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;<a class="struct" href="../gstreamer/struct.PadTemplate.html" title="struct gstreamer::PadTemplate">PadTemplate</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<h4 id='method.connect_property_presence_notify' class="method"><span id='connect_property_presence_notify.v' class='invisible'><code>fn <a href='#method.connect_property_presence_notify' class='fnname'>connect_property_presence_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;<a class="struct" href="../gstreamer/struct.PadTemplate.html" title="struct gstreamer::PadTemplate">PadTemplate</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../gstreamer/struct.PadTemplate.html" title="struct gstreamer::PadTemplate">PadTemplate</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer/struct.PadTemplate.html" title="struct gstreamer::PadTemplate">PadTemplate</a></code></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../gstreamer/struct.PadTemplate.html" title="struct gstreamer::PadTemplate">PadTemplate</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html" title="trait core::hash::Hash">Hash</a> for <a class="struct" href="../gstreamer/struct.PadTemplate.html" title="struct gstreamer::PadTemplate">PadTemplate</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.hash' class="method"><span id='hash.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash' class='fnname'>hash</a>&lt;__H:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>&gt;(&amp;self, __arg_0: &amp;mut __H)</code></span></h4>
+<div class='docblock'><p>Feeds this value into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash">Read more</a></p>
+</div><h4 id='method.hash_slice' class="method"><span id='hash_slice.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice' class='fnname'>hash_slice</a>&lt;H&gt;(data: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[Self]</a>, state: &amp;mut H) <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;H: <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>,&nbsp;</span></code><div class='since' title='Stable since Rust version 1.3.0'>1.3.0</div></span></h4>
+<div class='docblock'><p>Feeds a slice of this type into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer/trait.StaticType.html" title="trait gstreamer::StaticType">StaticType</a> for <a class="struct" href="../gstreamer/struct.PadTemplate.html" title="struct gstreamer::PadTemplate">PadTemplate</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.static_type' class="method"><span id='static_type.v' class='invisible'><code>fn <a href='../gstreamer/trait.StaticType.html#tymethod.static_type' class='fnname'>static_type</a>() -&gt; <a class="enum" href="../gstreamer/enum.Type.html" title="enum gstreamer::Type">Type</a></code></span></h4>
+<div class='docblock'><p>Returns the type identifier of <code>Self</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt;&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a>&lt;T&gt; for <a class="struct" href="../gstreamer/struct.PadTemplate.html" title="struct gstreamer::PadTemplate">PadTemplate</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, other: &amp;T) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="struct" href="../gstreamer/struct.PadTemplate.html" title="struct gstreamer::PadTemplate">PadTemplate</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/struct.Object.html" title="struct gstreamer::Object">Object</a>&gt; for <a class="struct" href="../gstreamer/struct.PadTemplate.html" title="struct gstreamer::PadTemplate">PadTemplate</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt; for <a class="struct" href="../gstreamer/struct.PadTemplate.html" title="struct gstreamer::PadTemplate">PadTemplate</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> for <a class="struct" href="../gstreamer/struct.PadTemplate.html" title="struct gstreamer::PadTemplate">PadTemplate</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/pad_template.rs.html#203' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> for <a class="struct" href="../gstreamer/struct.PadTemplate.html" title="struct gstreamer::PadTemplate">PadTemplate</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/pad_template.rs.html#204' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

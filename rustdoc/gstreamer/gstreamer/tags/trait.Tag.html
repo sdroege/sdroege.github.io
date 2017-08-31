@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Tag` trait in crate `gstreamer`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Tag">
+
+    <title>gstreamer::tags::Tag - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Trait Tag</p><div class="block items"><ul><li><a href="#associated-types">Associated Types</a></li><li><a href="#required-methods">Required Methods</a></li><li><a href="#implementors">Implementors</a></li></ul></div><p class='location'><a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>tags</a></p><script>window.sidebarCurrent = {name: 'Tag', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>tags</a>::<wbr><a class="trait" href=''>Tag</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/gstreamer/tags.rs.html#25-28' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait Tag&lt;'a&gt; {
+    type <a href='#associatedtype.TagType' class="type">TagType</a>: <a class="trait" href="../../glib/value/trait.FromValueOptional.html" title="trait glib::value::FromValueOptional">FromValueOptional</a>&lt;'a&gt; + <a class="trait" href="../../glib/value/trait.SetValue.html" title="trait glib::value::SetValue">SetValue</a>;
+    fn <a href='#tymethod.tag_name' class='fnname'>tag_name</a>() -&gt; &amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>;
+}</pre>
+            <h2 id='associated-types'>Associated Types</h2>
+            <div class='methods'>
+        <h3 id='associatedtype.TagType' class='method'><span id='TagType.t' class='invisible'><code>type <a href='#associatedtype.TagType' class="type">TagType</a>: <a class="trait" href="../../glib/value/trait.FromValueOptional.html" title="trait glib::value::FromValueOptional">FromValueOptional</a>&lt;'a&gt; + <a class="trait" href="../../glib/value/trait.SetValue.html" title="trait glib::value::SetValue">SetValue</a></code></span></h3></div>
+            <h2 id='required-methods'>Required Methods</h2>
+            <div class='methods'>
+        <h3 id='tymethod.tag_name' class='method'><span id='tag_name.v' class='invisible'><code>fn <a href='#tymethod.tag_name' class='fnname'>tag_name</a>() -&gt; &amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a></code></span></h3></div>
+        <h2 id='implementors'>Implementors</h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Title.html" title="struct gstreamer::tags::Title">Title</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.TitleSortname.html" title="struct gstreamer::tags::TitleSortname">TitleSortname</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Artist.html" title="struct gstreamer::tags::Artist">Artist</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.ArtistSortname.html" title="struct gstreamer::tags::ArtistSortname">ArtistSortname</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Album.html" title="struct gstreamer::tags::Album">Album</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.AlbumSortname.html" title="struct gstreamer::tags::AlbumSortname">AlbumSortname</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.AlbumArtist.html" title="struct gstreamer::tags::AlbumArtist">AlbumArtist</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.AlbumArtistSortname.html" title="struct gstreamer::tags::AlbumArtistSortname">AlbumArtistSortname</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Date.html" title="struct gstreamer::tags::Date">Date</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.DateTime.html" title="struct gstreamer::tags::DateTime">DateTime</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Genre.html" title="struct gstreamer::tags::Genre">Genre</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Comment.html" title="struct gstreamer::tags::Comment">Comment</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.ExtendedComment.html" title="struct gstreamer::tags::ExtendedComment">ExtendedComment</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.TrackNumber.html" title="struct gstreamer::tags::TrackNumber">TrackNumber</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.TrackCount.html" title="struct gstreamer::tags::TrackCount">TrackCount</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.AlbumVolumeNumber.html" title="struct gstreamer::tags::AlbumVolumeNumber">AlbumVolumeNumber</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.AlbumVolumeCount.html" title="struct gstreamer::tags::AlbumVolumeCount">AlbumVolumeCount</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Location.html" title="struct gstreamer::tags::Location">Location</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Homepage.html" title="struct gstreamer::tags::Homepage">Homepage</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Description.html" title="struct gstreamer::tags::Description">Description</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Version.html" title="struct gstreamer::tags::Version">Version</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.ISRC.html" title="struct gstreamer::tags::ISRC">ISRC</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Organization.html" title="struct gstreamer::tags::Organization">Organization</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Copyright.html" title="struct gstreamer::tags::Copyright">Copyright</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.CopyrightUri.html" title="struct gstreamer::tags::CopyrightUri">CopyrightUri</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.EncodedBy.html" title="struct gstreamer::tags::EncodedBy">EncodedBy</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Composer.html" title="struct gstreamer::tags::Composer">Composer</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Conductor.html" title="struct gstreamer::tags::Conductor">Conductor</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Contact.html" title="struct gstreamer::tags::Contact">Contact</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.License.html" title="struct gstreamer::tags::License">License</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.LicenseUri.html" title="struct gstreamer::tags::LicenseUri">LicenseUri</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Performer.html" title="struct gstreamer::tags::Performer">Performer</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Duration.html" title="struct gstreamer::tags::Duration">Duration</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Codec.html" title="struct gstreamer::tags::Codec">Codec</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.VideoCodec.html" title="struct gstreamer::tags::VideoCodec">VideoCodec</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.AudioCodec.html" title="struct gstreamer::tags::AudioCodec">AudioCodec</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.SubtitleCodec.html" title="struct gstreamer::tags::SubtitleCodec">SubtitleCodec</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.ContainerFormat.html" title="struct gstreamer::tags::ContainerFormat">ContainerFormat</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Bitrate.html" title="struct gstreamer::tags::Bitrate">Bitrate</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.NominalBitrate.html" title="struct gstreamer::tags::NominalBitrate">NominalBitrate</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.MinimumBitrate.html" title="struct gstreamer::tags::MinimumBitrate">MinimumBitrate</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.MaximumBitrate.html" title="struct gstreamer::tags::MaximumBitrate">MaximumBitrate</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Serial.html" title="struct gstreamer::tags::Serial">Serial</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Encoder.html" title="struct gstreamer::tags::Encoder">Encoder</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.EncoderVersion.html" title="struct gstreamer::tags::EncoderVersion">EncoderVersion</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.TrackGain.html" title="struct gstreamer::tags::TrackGain">TrackGain</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.TrackPeak.html" title="struct gstreamer::tags::TrackPeak">TrackPeak</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.AlbumGain.html" title="struct gstreamer::tags::AlbumGain">AlbumGain</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.AlbumPeak.html" title="struct gstreamer::tags::AlbumPeak">AlbumPeak</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.ReferenceLevel.html" title="struct gstreamer::tags::ReferenceLevel">ReferenceLevel</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.LanguageCode.html" title="struct gstreamer::tags::LanguageCode">LanguageCode</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.LanguageName.html" title="struct gstreamer::tags::LanguageName">LanguageName</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Image.html" title="struct gstreamer::tags::Image">Image</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.PreviewImage.html" title="struct gstreamer::tags::PreviewImage">PreviewImage</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Attachment.html" title="struct gstreamer::tags::Attachment">Attachment</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.BeatsPerMinute.html" title="struct gstreamer::tags::BeatsPerMinute">BeatsPerMinute</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Keywords.html" title="struct gstreamer::tags::Keywords">Keywords</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.GeoLocationName.html" title="struct gstreamer::tags::GeoLocationName">GeoLocationName</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.GeoLocationLatitude.html" title="struct gstreamer::tags::GeoLocationLatitude">GeoLocationLatitude</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.GeoLocationLongitute.html" title="struct gstreamer::tags::GeoLocationLongitute">GeoLocationLongitute</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.GeoLocationElevation.html" title="struct gstreamer::tags::GeoLocationElevation">GeoLocationElevation</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.GeoLocationCity.html" title="struct gstreamer::tags::GeoLocationCity">GeoLocationCity</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.GeoLocationCountry.html" title="struct gstreamer::tags::GeoLocationCountry">GeoLocationCountry</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.GeoLocationSublocation.html" title="struct gstreamer::tags::GeoLocationSublocation">GeoLocationSublocation</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.GeoLocationHorizontalError.html" title="struct gstreamer::tags::GeoLocationHorizontalError">GeoLocationHorizontalError</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.GeoLocationMovementDirection.html" title="struct gstreamer::tags::GeoLocationMovementDirection">GeoLocationMovementDirection</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.GeoLocationMovementSpeed.html" title="struct gstreamer::tags::GeoLocationMovementSpeed">GeoLocationMovementSpeed</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.GeoLocationCaptureDirection.html" title="struct gstreamer::tags::GeoLocationCaptureDirection">GeoLocationCaptureDirection</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.ShowName.html" title="struct gstreamer::tags::ShowName">ShowName</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.ShowSortname.html" title="struct gstreamer::tags::ShowSortname">ShowSortname</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.ShowEpisodeNumber.html" title="struct gstreamer::tags::ShowEpisodeNumber">ShowEpisodeNumber</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.ShowSeasonNumber.html" title="struct gstreamer::tags::ShowSeasonNumber">ShowSeasonNumber</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Lyrics.html" title="struct gstreamer::tags::Lyrics">Lyrics</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.ComposerSortname.html" title="struct gstreamer::tags::ComposerSortname">ComposerSortname</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Grouping.html" title="struct gstreamer::tags::Grouping">Grouping</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.UserRating.html" title="struct gstreamer::tags::UserRating">UserRating</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.DeviceManufacturer.html" title="struct gstreamer::tags::DeviceManufacturer">DeviceManufacturer</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.DeviceModel.html" title="struct gstreamer::tags::DeviceModel">DeviceModel</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.ApplicationName.html" title="struct gstreamer::tags::ApplicationName">ApplicationName</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.ApplicationData.html" title="struct gstreamer::tags::ApplicationData">ApplicationData</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.ImageOrientation.html" title="struct gstreamer::tags::ImageOrientation">ImageOrientation</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Publisher.html" title="struct gstreamer::tags::Publisher">Publisher</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.InterpretedBy.html" title="struct gstreamer::tags::InterpretedBy">InterpretedBy</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.MidiBaseNote.html" title="struct gstreamer::tags::MidiBaseNote">MidiBaseNote</a></code></li>
+<li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.PrivateData.html" title="struct gstreamer::tags::PrivateData">PrivateData</a></code></li>
+</ul><script type="text/javascript" async
+                         src="../../implementors/gstreamer/tags/trait.Tag.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "gstreamer";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `GstClockEntry` struct in crate `gstreamer_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, GstClockEntry">
+
+    <title>gstreamer_sys::GstClockEntry - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct GstClockEntry</p><div class="block items"><ul><li><a href="#fields">Fields</a></li></ul></div><p class='location'><a href='index.html'>gstreamer_sys</a></p><script>window.sidebarCurrent = {name: 'GstClockEntry', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>gstreamer_sys</a>::<wbr><a class="struct" href=''>GstClockEntry</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/gstreamer_sys/lib.rs.html#1664-1677' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct GstClockEntry {
+    pub refcount: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a>,
+    pub clock: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstClock.html" title="struct gstreamer_sys::GstClock">GstClock</a>,
+    pub type_: <a class="enum" href="../gstreamer_sys/enum.GstClockEntryType.html" title="enum gstreamer_sys::GstClockEntryType">GstClockEntryType</a>,
+    pub time: <a class="type" href="../gstreamer_sys/type.GstClockTime.html" title="type gstreamer_sys::GstClockTime">GstClockTime</a>,
+    pub interval: <a class="type" href="../gstreamer_sys/type.GstClockTime.html" title="type gstreamer_sys::GstClockTime">GstClockTime</a>,
+    pub status: <a class="enum" href="../gstreamer_sys/enum.GstClockReturn.html" title="enum gstreamer_sys::GstClockReturn">GstClockReturn</a>,
+    pub func: <a class="type" href="../gstreamer_sys/type.GstClockCallback.html" title="type gstreamer_sys::GstClockCallback">GstClockCallback</a>,
+    pub user_data: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a>,
+    pub destroy_data: <a class="type" href="../glib_sys/type.GDestroyNotify.html" title="type glib_sys::GDestroyNotify">GDestroyNotify</a>,
+    pub unscheduled: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>,
+    pub woken_up: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>,
+    pub _gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a>,
+}</pre><h2 id='fields' class='fields'>Fields</h2><span id='structfield.refcount' class="structfield">
+                           <span id='refcount.v' class='invisible'>
+                           <code>refcount: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a></code>
+                           </span></span><span id='structfield.clock' class="structfield">
+                           <span id='clock.v' class='invisible'>
+                           <code>clock: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstClock.html" title="struct gstreamer_sys::GstClock">GstClock</a></code>
+                           </span></span><span id='structfield.type_' class="structfield">
+                           <span id='type_.v' class='invisible'>
+                           <code>type_: <a class="enum" href="../gstreamer_sys/enum.GstClockEntryType.html" title="enum gstreamer_sys::GstClockEntryType">GstClockEntryType</a></code>
+                           </span></span><span id='structfield.time' class="structfield">
+                           <span id='time.v' class='invisible'>
+                           <code>time: <a class="type" href="../gstreamer_sys/type.GstClockTime.html" title="type gstreamer_sys::GstClockTime">GstClockTime</a></code>
+                           </span></span><span id='structfield.interval' class="structfield">
+                           <span id='interval.v' class='invisible'>
+                           <code>interval: <a class="type" href="../gstreamer_sys/type.GstClockTime.html" title="type gstreamer_sys::GstClockTime">GstClockTime</a></code>
+                           </span></span><span id='structfield.status' class="structfield">
+                           <span id='status.v' class='invisible'>
+                           <code>status: <a class="enum" href="../gstreamer_sys/enum.GstClockReturn.html" title="enum gstreamer_sys::GstClockReturn">GstClockReturn</a></code>
+                           </span></span><span id='structfield.func' class="structfield">
+                           <span id='func.v' class='invisible'>
+                           <code>func: <a class="type" href="../gstreamer_sys/type.GstClockCallback.html" title="type gstreamer_sys::GstClockCallback">GstClockCallback</a></code>
+                           </span></span><span id='structfield.user_data' class="structfield">
+                           <span id='user_data.v' class='invisible'>
+                           <code>user_data: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a></code>
+                           </span></span><span id='structfield.destroy_data' class="structfield">
+                           <span id='destroy_data.v' class='invisible'>
+                           <code>destroy_data: <a class="type" href="../glib_sys/type.GDestroyNotify.html" title="type glib_sys::GDestroyNotify">GDestroyNotify</a></code>
+                           </span></span><span id='structfield.unscheduled' class="structfield">
+                           <span id='unscheduled.v' class='invisible'>
+                           <code>unscheduled: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a></code>
+                           </span></span><span id='structfield.woken_up' class="structfield">
+                           <span id='woken_up.v' class='invisible'>
+                           <code>woken_up: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a></code>
+                           </span></span><span id='structfield._gst_reserved' class="structfield">
+                           <span id='_gst_reserved.v' class='invisible'>
+                           <code>_gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a></code>
+                           </span></span></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer_sys";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

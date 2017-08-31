@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `gstreamer_player` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, gstreamer_player">
+
+    <title>gstreamer_player - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Crate gstreamer_player</p><div class="block items"><ul><li><a href="#modules">Modules</a></li><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#traits">Traits</a></li></ul></div><p class='location'></p><script>window.sidebarCurrent = {name: 'gstreamer_player', ty: 'mod', relpath: '../'};</script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Crate <a class="mod" href=''>gstreamer_player</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/gstreamer_player/lib.rs.html#9-58' title='goto source code'>[src]</a></span></h1>
+<h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="prelude/index.html"
+                                  title='mod gstreamer_player::prelude'>prelude</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Continue.html"
+                                  title='struct gstreamer_player::Continue'>Continue</a></td>
+                           <td class='docblock-short'>
+                                <p>Continue calling the closure in the future iterations or drop it.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Error.html"
+                                  title='struct gstreamer_player::Error'>Error</a></td>
+                           <td class='docblock-short'>
+                                <p>A generic error capable of representing various error domains (types).</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Player.html"
+                                  title='struct gstreamer_player::Player'>Player</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PlayerAudioInfo.html"
+                                  title='struct gstreamer_player::PlayerAudioInfo'>PlayerAudioInfo</a></td>
+                           <td class='docblock-short'>
+                                <p><code>PlayerStreamInfo</code> specific to audio streams.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PlayerGMainContextSignalDispatcher.html"
+                                  title='struct gstreamer_player::PlayerGMainContextSignalDispatcher'>PlayerGMainContextSignalDispatcher</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PlayerMediaInfo.html"
+                                  title='struct gstreamer_player::PlayerMediaInfo'>PlayerMediaInfo</a></td>
+                           <td class='docblock-short'>
+                                <p>Structure containing the media information of a URI.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PlayerSignalDispatcher.html"
+                                  title='struct gstreamer_player::PlayerSignalDispatcher'>PlayerSignalDispatcher</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PlayerStreamInfo.html"
+                                  title='struct gstreamer_player::PlayerStreamInfo'>PlayerStreamInfo</a></td>
+                           <td class='docblock-short'>
+                                <p>Base structure for information concering a media stream. Depending on
+the stream type, one can find more media-specific information in
+<code>PlayerVideoInfo</code>, <code>PlayerAudioInfo</code>, <code>PlayerSubtitleInfo</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PlayerSubtitleInfo.html"
+                                  title='struct gstreamer_player::PlayerSubtitleInfo'>PlayerSubtitleInfo</a></td>
+                           <td class='docblock-short'>
+                                <p><code>PlayerStreamInfo</code> specific to subtitle streams.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PlayerVideoInfo.html"
+                                  title='struct gstreamer_player::PlayerVideoInfo'>PlayerVideoInfo</a></td>
+                           <td class='docblock-short'>
+                                <p><code>PlayerStreamInfo</code> specific to video streams.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PlayerVideoOverlayVideoRenderer.html"
+                                  title='struct gstreamer_player::PlayerVideoOverlayVideoRenderer'>PlayerVideoOverlayVideoRenderer</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PlayerVideoRenderer.html"
+                                  title='struct gstreamer_player::PlayerVideoRenderer'>PlayerVideoRenderer</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PlayerVisualization.html"
+                                  title='struct gstreamer_player::PlayerVisualization'>PlayerVisualization</a></td>
+                           <td class='docblock-short'>
+                                <p>A <code>PlayerVisualization</code> descriptor.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TypedValue.html"
+                                  title='struct gstreamer_player::TypedValue'>TypedValue</a></td>
+                           <td class='docblock-short'>
+                                <p>A statically typed <a href="struct.Value.html"><code>Value</code></a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Value.html"
+                                  title='struct gstreamer_player::Value'>Value</a></td>
+                           <td class='docblock-short'>
+                                <p>A generic value capable of carrying various types.</p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.PlayerColorBalanceType.html"
+                                  title='enum gstreamer_player::PlayerColorBalanceType'>PlayerColorBalanceType</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.PlayerError.html"
+                                  title='enum gstreamer_player::PlayerError'>PlayerError</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.PlayerSnapshotFormat.html"
+                                  title='enum gstreamer_player::PlayerSnapshotFormat'>PlayerSnapshotFormat</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.PlayerState.html"
+                                  title='enum gstreamer_player::PlayerState'>PlayerState</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.Type.html"
+                                  title='enum gstreamer_player::Type'>Type</a></td>
+                           <td class='docblock-short'>
+                                <p>A GLib or GLib-based library type</p>
+                           </td>
+                       </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.Cast.html"
+                                  title='trait gstreamer_player::Cast'>Cast</a></td>
+                           <td class='docblock-short'>
+                                <p>Upcasting and downcasting support.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.IsA.html"
+                                  title='trait gstreamer_player::IsA'>IsA</a></td>
+                           <td class='docblock-short'>
+                                <p>Declares the &quot;is a&quot; relationship.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PlayerSignalDispatcherExt.html"
+                                  title='trait gstreamer_player::PlayerSignalDispatcherExt'>PlayerSignalDispatcherExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>PlayerSignalDispatcher</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PlayerStreamInfoExt.html"
+                                  title='trait gstreamer_player::PlayerStreamInfoExt'>PlayerStreamInfoExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>PlayerStreamInfo</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PlayerVideoOverlayVideoRendererExtManual.html"
+                                  title='trait gstreamer_player::PlayerVideoOverlayVideoRendererExtManual'>PlayerVideoOverlayVideoRendererExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PlayerVideoRendererExt.html"
+                                  title='trait gstreamer_player::PlayerVideoRendererExt'>PlayerVideoRendererExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>PlayerVideoRenderer</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.StaticType.html"
+                                  title='trait gstreamer_player::StaticType'>StaticType</a></td>
+                           <td class='docblock-short'>
+                                <p>Types that are supported by GLib dynamic typing.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ToValue.html"
+                                  title='trait gstreamer_player::ToValue'>ToValue</a></td>
+                           <td class='docblock-short'>
+                                <p>Converts to <code>Value</code>.</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer_player";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `GstAudioRingBuffer` struct in crate `gstreamer_audio_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, GstAudioRingBuffer">
+
+    <title>gstreamer_audio_sys::GstAudioRingBuffer - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct GstAudioRingBuffer</p><div class="block items"><ul><li><a href="#fields">Fields</a></li></ul></div><p class='location'><a href='index.html'>gstreamer_audio_sys</a></p><script>window.sidebarCurrent = {name: 'GstAudioRingBuffer', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>gstreamer_audio_sys</a>::<wbr><a class="struct" href=''>GstAudioRingBuffer</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/gstreamer_audio_sys/lib.rs.html#774-798' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct GstAudioRingBuffer {
+    pub object: <a class="struct" href="../gstreamer_sys/struct.GstObject.html" title="struct gstreamer_sys::GstObject">GstObject</a>,
+    pub cond: <a class="struct" href="../glib_sys/struct.GCond.html" title="struct glib_sys::GCond">GCond</a>,
+    pub open: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>,
+    pub acquired: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>,
+    pub memory: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub size: <a class="type" href="../libc/type.size_t.html" title="type libc::size_t">size_t</a>,
+    pub timestamps: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../gstreamer_sys/type.GstClockTime.html" title="type gstreamer_sys::GstClockTime">GstClockTime</a>,
+    pub spec: <a class="struct" href="../gstreamer_audio_sys/struct.GstAudioRingBufferSpec.html" title="struct gstreamer_audio_sys::GstAudioRingBufferSpec">GstAudioRingBufferSpec</a>,
+    pub samples_per_seg: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a>,
+    pub empty_seg: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>,
+    pub state: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a>,
+    pub segdone: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a>,
+    pub segbase: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a>,
+    pub waiting: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a>,
+    pub callback: <a class="type" href="../gstreamer_audio_sys/type.GstAudioRingBufferCallback.html" title="type gstreamer_audio_sys::GstAudioRingBufferCallback">GstAudioRingBufferCallback</a>,
+    pub cb_data: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a>,
+    pub need_reorder: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>,
+    pub channel_reorder_map: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 64]</a>,
+    pub flushing: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>,
+    pub may_start: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a>,
+    pub active: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>,
+    pub cb_data_notify: <a class="type" href="../glib_sys/type.GDestroyNotify.html" title="type glib_sys::GDestroyNotify">GDestroyNotify</a>,
+    pub _gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 3]</a>,
+}</pre><h2 id='fields' class='fields'>Fields</h2><span id='structfield.object' class="structfield">
+                           <span id='object.v' class='invisible'>
+                           <code>object: <a class="struct" href="../gstreamer_sys/struct.GstObject.html" title="struct gstreamer_sys::GstObject">GstObject</a></code>
+                           </span></span><span id='structfield.cond' class="structfield">
+                           <span id='cond.v' class='invisible'>
+                           <code>cond: <a class="struct" href="../glib_sys/struct.GCond.html" title="struct glib_sys::GCond">GCond</a></code>
+                           </span></span><span id='structfield.open' class="structfield">
+                           <span id='open.v' class='invisible'>
+                           <code>open: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a></code>
+                           </span></span><span id='structfield.acquired' class="structfield">
+                           <span id='acquired.v' class='invisible'>
+                           <code>acquired: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a></code>
+                           </span></span><span id='structfield.memory' class="structfield">
+                           <span id='memory.v' class='invisible'>
+                           <code>memory: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id='structfield.size' class="structfield">
+                           <span id='size.v' class='invisible'>
+                           <code>size: <a class="type" href="../libc/type.size_t.html" title="type libc::size_t">size_t</a></code>
+                           </span></span><span id='structfield.timestamps' class="structfield">
+                           <span id='timestamps.v' class='invisible'>
+                           <code>timestamps: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../gstreamer_sys/type.GstClockTime.html" title="type gstreamer_sys::GstClockTime">GstClockTime</a></code>
+                           </span></span><span id='structfield.spec' class="structfield">
+                           <span id='spec.v' class='invisible'>
+                           <code>spec: <a class="struct" href="../gstreamer_audio_sys/struct.GstAudioRingBufferSpec.html" title="struct gstreamer_audio_sys::GstAudioRingBufferSpec">GstAudioRingBufferSpec</a></code>
+                           </span></span><span id='structfield.samples_per_seg' class="structfield">
+                           <span id='samples_per_seg.v' class='invisible'>
+                           <code>samples_per_seg: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a></code>
+                           </span></span><span id='structfield.empty_seg' class="structfield">
+                           <span id='empty_seg.v' class='invisible'>
+                           <code>empty_seg: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a></code>
+                           </span></span><span id='structfield.state' class="structfield">
+                           <span id='state.v' class='invisible'>
+                           <code>state: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a></code>
+                           </span></span><span id='structfield.segdone' class="structfield">
+                           <span id='segdone.v' class='invisible'>
+                           <code>segdone: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a></code>
+                           </span></span><span id='structfield.segbase' class="structfield">
+                           <span id='segbase.v' class='invisible'>
+                           <code>segbase: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a></code>
+                           </span></span><span id='structfield.waiting' class="structfield">
+                           <span id='waiting.v' class='invisible'>
+                           <code>waiting: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a></code>
+                           </span></span><span id='structfield.callback' class="structfield">
+                           <span id='callback.v' class='invisible'>
+                           <code>callback: <a class="type" href="../gstreamer_audio_sys/type.GstAudioRingBufferCallback.html" title="type gstreamer_audio_sys::GstAudioRingBufferCallback">GstAudioRingBufferCallback</a></code>
+                           </span></span><span id='structfield.cb_data' class="structfield">
+                           <span id='cb_data.v' class='invisible'>
+                           <code>cb_data: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a></code>
+                           </span></span><span id='structfield.need_reorder' class="structfield">
+                           <span id='need_reorder.v' class='invisible'>
+                           <code>need_reorder: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a></code>
+                           </span></span><span id='structfield.channel_reorder_map' class="structfield">
+                           <span id='channel_reorder_map.v' class='invisible'>
+                           <code>channel_reorder_map: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 64]</a></code>
+                           </span></span><span id='structfield.flushing' class="structfield">
+                           <span id='flushing.v' class='invisible'>
+                           <code>flushing: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a></code>
+                           </span></span><span id='structfield.may_start' class="structfield">
+                           <span id='may_start.v' class='invisible'>
+                           <code>may_start: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a></code>
+                           </span></span><span id='structfield.active' class="structfield">
+                           <span id='active.v' class='invisible'>
+                           <code>active: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a></code>
+                           </span></span><span id='structfield.cb_data_notify' class="structfield">
+                           <span id='cb_data_notify.v' class='invisible'>
+                           <code>cb_data_notify: <a class="type" href="../glib_sys/type.GDestroyNotify.html" title="type glib_sys::GDestroyNotify">GDestroyNotify</a></code>
+                           </span></span><span id='structfield._gst_reserved' class="structfield">
+                           <span id='_gst_reserved.v' class='invisible'>
+                           <code>_gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 3]</a></code>
+                           </span></span></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer_audio_sys";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

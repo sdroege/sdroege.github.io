@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `gstreamer_video` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, gstreamer_video">
+
+    <title>gstreamer_video - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Crate gstreamer_video</p><div class="block items"><ul><li><a href="#modules">Modules</a></li><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#constants">Constants</a></li><li><a href="#traits">Traits</a></li></ul></div><p class='location'></p><script>window.sidebarCurrent = {name: 'gstreamer_video', ty: 'mod', relpath: '../'};</script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Crate <a class="mod" href=''>gstreamer_video</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/gstreamer_video/lib.rs.html#9-62' title='goto source code'>[src]</a></span></h1>
+<h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="prelude/index.html"
+                                  title='mod gstreamer_video::prelude'>prelude</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Continue.html"
+                                  title='struct gstreamer_video::Continue'>Continue</a></td>
+                           <td class='docblock-short'>
+                                <p>Continue calling the closure in the future iterations or drop it.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Error.html"
+                                  title='struct gstreamer_video::Error'>Error</a></td>
+                           <td class='docblock-short'>
+                                <p>A generic error capable of representing various error domains (types).</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TypedValue.html"
+                                  title='struct gstreamer_video::TypedValue'>TypedValue</a></td>
+                           <td class='docblock-short'>
+                                <p>A statically typed <a href="struct.Value.html"><code>Value</code></a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Value.html"
+                                  title='struct gstreamer_video::Value'>Value</a></td>
+                           <td class='docblock-short'>
+                                <p>A generic value capable of carrying various types.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.VideoChromaSite.html"
+                                  title='struct gstreamer_video::VideoChromaSite'>VideoChromaSite</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.VideoColorimetry.html"
+                                  title='struct gstreamer_video::VideoColorimetry'>VideoColorimetry</a></td>
+                           <td class='docblock-short'>
+                                <p>Structure describing the color info.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.VideoFlags.html"
+                                  title='struct gstreamer_video::VideoFlags'>VideoFlags</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.VideoFormatFlags.html"
+                                  title='struct gstreamer_video::VideoFormatFlags'>VideoFormatFlags</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.VideoFormatInfo.html"
+                                  title='struct gstreamer_video::VideoFormatInfo'>VideoFormatInfo</a></td>
+                           <td class='docblock-short'>
+                                <p>Information for a video format.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.VideoFrame.html"
+                                  title='struct gstreamer_video::VideoFrame'>VideoFrame</a></td>
+                           <td class='docblock-short'>
+                                <p>A video frame obtained from <code>VideoFrame::map</code></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.VideoFrameFlags.html"
+                                  title='struct gstreamer_video::VideoFrameFlags'>VideoFrameFlags</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.VideoInfo.html"
+                                  title='struct gstreamer_video::VideoInfo'>VideoInfo</a></td>
+                           <td class='docblock-short'>
+                                <p>Information describing image properties. This information can be filled
+in from GstCaps with <code>VideoInfo::from_caps</code>. The information is also used
+to store the specific video info when mapping a video frame with
+<code>VideoFrame::map</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.VideoInfoBuilder.html"
+                                  title='struct gstreamer_video::VideoInfoBuilder'>VideoInfoBuilder</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.VideoMultiviewFlags.html"
+                                  title='struct gstreamer_video::VideoMultiviewFlags'>VideoMultiviewFlags</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.VideoOverlay.html"
+                                  title='struct gstreamer_video::VideoOverlay'>VideoOverlay</a></td>
+                           <td class='docblock-short'>
+                                <p>The <code>VideoOverlay</code> interface is used for 2 main purposes :</p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.Type.html"
+                                  title='enum gstreamer_video::Type'>Type</a></td>
+                           <td class='docblock-short'>
+                                <p>A GLib or GLib-based library type</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.VideoColorMatrix.html"
+                                  title='enum gstreamer_video::VideoColorMatrix'>VideoColorMatrix</a></td>
+                           <td class='docblock-short'>
+                                <p>The color matrix is used to convert between Y&#39;PbPr and
+non-linear RGB (R&#39;G&#39;B&#39;)</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.VideoColorPrimaries.html"
+                                  title='enum gstreamer_video::VideoColorPrimaries'>VideoColorPrimaries</a></td>
+                           <td class='docblock-short'>
+                                <p>The color primaries define the how to transform linear RGB values to and from
+the CIE XYZ colorspace.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.VideoColorRange.html"
+                                  title='enum gstreamer_video::VideoColorRange'>VideoColorRange</a></td>
+                           <td class='docblock-short'>
+                                <p>Possible color range values. These constants are defined for 8 bit color
+values and can be scaled for other bit depths.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.VideoEndianness.html"
+                                  title='enum gstreamer_video::VideoEndianness'>VideoEndianness</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.VideoFieldOrder.html"
+                                  title='enum gstreamer_video::VideoFieldOrder'>VideoFieldOrder</a></td>
+                           <td class='docblock-short'>
+                                <p>Field order of interlaced content. This is only valid for
+interlace-mode=interleaved and not interlace-mode=mixed. In the case of
+mixed or GST_VIDEO_FIELD_ORDER_UNKOWN, the field order is signalled via
+buffer flags.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.VideoFormat.html"
+                                  title='enum gstreamer_video::VideoFormat'>VideoFormat</a></td>
+                           <td class='docblock-short'>
+                                <p>Enum value describing the most common video formats.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.VideoInterlaceMode.html"
+                                  title='enum gstreamer_video::VideoInterlaceMode'>VideoInterlaceMode</a></td>
+                           <td class='docblock-short'>
+                                <p>The possible values of the <code>VideoInterlaceMode</code> describing the interlace
+mode of the stream.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.VideoMultiviewMode.html"
+                                  title='enum gstreamer_video::VideoMultiviewMode'>VideoMultiviewMode</a></td>
+                           <td class='docblock-short'>
+                                <p>All possible stereoscopic 3D and multiview representations.
+In conjunction with <code>VideoMultiviewFlags</code>, describes how
+multiview content is being transported in the stream.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.VideoTileMode.html"
+                                  title='enum gstreamer_video::VideoTileMode'>VideoTileMode</a></td>
+                           <td class='docblock-short'>
+                                <p>Enum value describing the available tiling modes.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.VideoTransferFunction.html"
+                                  title='enum gstreamer_video::VideoTransferFunction'>VideoTransferFunction</a></td>
+                           <td class='docblock-short'>
+                                <p>The video transfer function defines the formula for converting between
+non-linear RGB (R&#39;G&#39;B&#39;) and linear RGB</p>
+                           </td>
+                       </tr></table><h2 id='constants' class='section-header'><a href="#constants">Constants</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_CHROMA_SITE_ALT_LINE.html"
+                                  title='constant gstreamer_video::VIDEO_CHROMA_SITE_ALT_LINE'>VIDEO_CHROMA_SITE_ALT_LINE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_CHROMA_SITE_COSITED.html"
+                                  title='constant gstreamer_video::VIDEO_CHROMA_SITE_COSITED'>VIDEO_CHROMA_SITE_COSITED</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_CHROMA_SITE_DV.html"
+                                  title='constant gstreamer_video::VIDEO_CHROMA_SITE_DV'>VIDEO_CHROMA_SITE_DV</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_CHROMA_SITE_H_COSITED.html"
+                                  title='constant gstreamer_video::VIDEO_CHROMA_SITE_H_COSITED'>VIDEO_CHROMA_SITE_H_COSITED</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_CHROMA_SITE_JPEG.html"
+                                  title='constant gstreamer_video::VIDEO_CHROMA_SITE_JPEG'>VIDEO_CHROMA_SITE_JPEG</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_CHROMA_SITE_MPEG2.html"
+                                  title='constant gstreamer_video::VIDEO_CHROMA_SITE_MPEG2'>VIDEO_CHROMA_SITE_MPEG2</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_CHROMA_SITE_NONE.html"
+                                  title='constant gstreamer_video::VIDEO_CHROMA_SITE_NONE'>VIDEO_CHROMA_SITE_NONE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_CHROMA_SITE_UNKNOWN.html"
+                                  title='constant gstreamer_video::VIDEO_CHROMA_SITE_UNKNOWN'>VIDEO_CHROMA_SITE_UNKNOWN</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_CHROMA_SITE_V_COSITED.html"
+                                  title='constant gstreamer_video::VIDEO_CHROMA_SITE_V_COSITED'>VIDEO_CHROMA_SITE_V_COSITED</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_FLAG_NONE.html"
+                                  title='constant gstreamer_video::VIDEO_FLAG_NONE'>VIDEO_FLAG_NONE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_FLAG_PREMULTIPLIED_ALPHA.html"
+                                  title='constant gstreamer_video::VIDEO_FLAG_PREMULTIPLIED_ALPHA'>VIDEO_FLAG_PREMULTIPLIED_ALPHA</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_FLAG_VARIABLE_FPS.html"
+                                  title='constant gstreamer_video::VIDEO_FLAG_VARIABLE_FPS'>VIDEO_FLAG_VARIABLE_FPS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_FORMAT_FLAG_ALPHA.html"
+                                  title='constant gstreamer_video::VIDEO_FORMAT_FLAG_ALPHA'>VIDEO_FORMAT_FLAG_ALPHA</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_FORMAT_FLAG_COMPLEX.html"
+                                  title='constant gstreamer_video::VIDEO_FORMAT_FLAG_COMPLEX'>VIDEO_FORMAT_FLAG_COMPLEX</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_FORMAT_FLAG_GRAY.html"
+                                  title='constant gstreamer_video::VIDEO_FORMAT_FLAG_GRAY'>VIDEO_FORMAT_FLAG_GRAY</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_FORMAT_FLAG_LE.html"
+                                  title='constant gstreamer_video::VIDEO_FORMAT_FLAG_LE'>VIDEO_FORMAT_FLAG_LE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_FORMAT_FLAG_PALETTE.html"
+                                  title='constant gstreamer_video::VIDEO_FORMAT_FLAG_PALETTE'>VIDEO_FORMAT_FLAG_PALETTE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_FORMAT_FLAG_RGB.html"
+                                  title='constant gstreamer_video::VIDEO_FORMAT_FLAG_RGB'>VIDEO_FORMAT_FLAG_RGB</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_FORMAT_FLAG_TILED.html"
+                                  title='constant gstreamer_video::VIDEO_FORMAT_FLAG_TILED'>VIDEO_FORMAT_FLAG_TILED</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_FORMAT_FLAG_UNPACK.html"
+                                  title='constant gstreamer_video::VIDEO_FORMAT_FLAG_UNPACK'>VIDEO_FORMAT_FLAG_UNPACK</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_FORMAT_FLAG_YUV.html"
+                                  title='constant gstreamer_video::VIDEO_FORMAT_FLAG_YUV'>VIDEO_FORMAT_FLAG_YUV</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_FRAME_FLAG_FIRST_IN_BUNDLE.html"
+                                  title='constant gstreamer_video::VIDEO_FRAME_FLAG_FIRST_IN_BUNDLE'>VIDEO_FRAME_FLAG_FIRST_IN_BUNDLE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_FRAME_FLAG_INTERLACED.html"
+                                  title='constant gstreamer_video::VIDEO_FRAME_FLAG_INTERLACED'>VIDEO_FRAME_FLAG_INTERLACED</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_FRAME_FLAG_MULTIPLE_VIEW.html"
+                                  title='constant gstreamer_video::VIDEO_FRAME_FLAG_MULTIPLE_VIEW'>VIDEO_FRAME_FLAG_MULTIPLE_VIEW</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_FRAME_FLAG_NONE.html"
+                                  title='constant gstreamer_video::VIDEO_FRAME_FLAG_NONE'>VIDEO_FRAME_FLAG_NONE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_FRAME_FLAG_ONEFIELD.html"
+                                  title='constant gstreamer_video::VIDEO_FRAME_FLAG_ONEFIELD'>VIDEO_FRAME_FLAG_ONEFIELD</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_FRAME_FLAG_RFF.html"
+                                  title='constant gstreamer_video::VIDEO_FRAME_FLAG_RFF'>VIDEO_FRAME_FLAG_RFF</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_FRAME_FLAG_TFF.html"
+                                  title='constant gstreamer_video::VIDEO_FRAME_FLAG_TFF'>VIDEO_FRAME_FLAG_TFF</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_MULTIVIEW_FLAGS_HALF_ASPECT.html"
+                                  title='constant gstreamer_video::VIDEO_MULTIVIEW_FLAGS_HALF_ASPECT'>VIDEO_MULTIVIEW_FLAGS_HALF_ASPECT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_MULTIVIEW_FLAGS_LEFT_FLIPPED.html"
+                                  title='constant gstreamer_video::VIDEO_MULTIVIEW_FLAGS_LEFT_FLIPPED'>VIDEO_MULTIVIEW_FLAGS_LEFT_FLIPPED</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_MULTIVIEW_FLAGS_LEFT_FLOPPED.html"
+                                  title='constant gstreamer_video::VIDEO_MULTIVIEW_FLAGS_LEFT_FLOPPED'>VIDEO_MULTIVIEW_FLAGS_LEFT_FLOPPED</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_MULTIVIEW_FLAGS_MIXED_MONO.html"
+                                  title='constant gstreamer_video::VIDEO_MULTIVIEW_FLAGS_MIXED_MONO'>VIDEO_MULTIVIEW_FLAGS_MIXED_MONO</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_MULTIVIEW_FLAGS_NONE.html"
+                                  title='constant gstreamer_video::VIDEO_MULTIVIEW_FLAGS_NONE'>VIDEO_MULTIVIEW_FLAGS_NONE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_MULTIVIEW_FLAGS_RIGHT_FLIPPED.html"
+                                  title='constant gstreamer_video::VIDEO_MULTIVIEW_FLAGS_RIGHT_FLIPPED'>VIDEO_MULTIVIEW_FLAGS_RIGHT_FLIPPED</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_MULTIVIEW_FLAGS_RIGHT_FLOPPED.html"
+                                  title='constant gstreamer_video::VIDEO_MULTIVIEW_FLAGS_RIGHT_FLOPPED'>VIDEO_MULTIVIEW_FLAGS_RIGHT_FLOPPED</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.VIDEO_MULTIVIEW_FLAGS_RIGHT_VIEW_FIRST.html"
+                                  title='constant gstreamer_video::VIDEO_MULTIVIEW_FLAGS_RIGHT_VIEW_FIRST'>VIDEO_MULTIVIEW_FLAGS_RIGHT_VIEW_FIRST</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.Cast.html"
+                                  title='trait gstreamer_video::Cast'>Cast</a></td>
+                           <td class='docblock-short'>
+                                <p>Upcasting and downcasting support.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.IsA.html"
+                                  title='trait gstreamer_video::IsA'>IsA</a></td>
+                           <td class='docblock-short'>
+                                <p>Declares the &quot;is a&quot; relationship.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.StaticType.html"
+                                  title='trait gstreamer_video::StaticType'>StaticType</a></td>
+                           <td class='docblock-short'>
+                                <p>Types that are supported by GLib dynamic typing.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ToValue.html"
+                                  title='trait gstreamer_video::ToValue'>ToValue</a></td>
+                           <td class='docblock-short'>
+                                <p>Converts to <code>Value</code>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.VideoOverlayExt.html"
+                                  title='trait gstreamer_video::VideoOverlayExt'>VideoOverlayExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>VideoOverlay</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.VideoOverlayExtManual.html"
+                                  title='trait gstreamer_video::VideoOverlayExtManual'>VideoOverlayExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer_video";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

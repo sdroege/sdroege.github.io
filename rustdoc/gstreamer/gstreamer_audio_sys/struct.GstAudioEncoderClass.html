@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `GstAudioEncoderClass` struct in crate `gstreamer_audio_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, GstAudioEncoderClass">
+
+    <title>gstreamer_audio_sys::GstAudioEncoderClass - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct GstAudioEncoderClass</p><div class="block items"><ul><li><a href="#fields">Fields</a></li></ul></div><p class='location'><a href='index.html'>gstreamer_audio_sys</a></p><script>window.sidebarCurrent = {name: 'GstAudioEncoderClass', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>gstreamer_audio_sys</a>::<wbr><a class="struct" href=''>GstAudioEncoderClass</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/gstreamer_audio_sys/lib.rs.html#568-588' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct GstAudioEncoderClass {
+    pub element_class: <a class="struct" href="../gstreamer_sys/struct.GstElementClass.html" title="struct gstreamer_sys::GstElementClass">GstElementClass</a>,
+    pub start: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;,
+    pub stop: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;,
+    pub set_format: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioInfo.html" title="struct gstreamer_audio_sys::GstAudioInfo">GstAudioInfo</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;,
+    pub handle_frame: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstBuffer.html" title="struct gstreamer_sys::GstBuffer">GstBuffer</a>) -&gt; <a class="enum" href="../gstreamer_sys/enum.GstFlowReturn.html" title="enum gstreamer_sys::GstFlowReturn">GstFlowReturn</a>&gt;,
+    pub flush: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>)&gt;,
+    pub pre_push: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstBuffer.html" title="struct gstreamer_sys::GstBuffer">GstBuffer</a>) -&gt; <a class="enum" href="../gstreamer_sys/enum.GstFlowReturn.html" title="enum gstreamer_sys::GstFlowReturn">GstFlowReturn</a>&gt;,
+    pub sink_event: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstEvent.html" title="struct gstreamer_sys::GstEvent">GstEvent</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;,
+    pub src_event: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstEvent.html" title="struct gstreamer_sys::GstEvent">GstEvent</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;,
+    pub getcaps: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstCaps.html" title="struct gstreamer_sys::GstCaps">GstCaps</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstCaps.html" title="struct gstreamer_sys::GstCaps">GstCaps</a>&gt;,
+    pub open: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;,
+    pub close: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;,
+    pub negotiate: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;,
+    pub decide_allocation: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstQuery.html" title="struct gstreamer_sys::GstQuery">GstQuery</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;,
+    pub propose_allocation: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstQuery.html" title="struct gstreamer_sys::GstQuery">GstQuery</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;,
+    pub transform_meta: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstBuffer.html" title="struct gstreamer_sys::GstBuffer">GstBuffer</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstMeta.html" title="struct gstreamer_sys::GstMeta">GstMeta</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstBuffer.html" title="struct gstreamer_sys::GstBuffer">GstBuffer</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;,
+    pub sink_query: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstQuery.html" title="struct gstreamer_sys::GstQuery">GstQuery</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;,
+    pub src_query: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstQuery.html" title="struct gstreamer_sys::GstQuery">GstQuery</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;,
+    pub _gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 17]</a>,
+}</pre><h2 id='fields' class='fields'>Fields</h2><span id='structfield.element_class' class="structfield">
+                           <span id='element_class.v' class='invisible'>
+                           <code>element_class: <a class="struct" href="../gstreamer_sys/struct.GstElementClass.html" title="struct gstreamer_sys::GstElementClass">GstElementClass</a></code>
+                           </span></span><span id='structfield.start' class="structfield">
+                           <span id='start.v' class='invisible'>
+                           <code>start: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;</code>
+                           </span></span><span id='structfield.stop' class="structfield">
+                           <span id='stop.v' class='invisible'>
+                           <code>stop: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;</code>
+                           </span></span><span id='structfield.set_format' class="structfield">
+                           <span id='set_format.v' class='invisible'>
+                           <code>set_format: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioInfo.html" title="struct gstreamer_audio_sys::GstAudioInfo">GstAudioInfo</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;</code>
+                           </span></span><span id='structfield.handle_frame' class="structfield">
+                           <span id='handle_frame.v' class='invisible'>
+                           <code>handle_frame: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstBuffer.html" title="struct gstreamer_sys::GstBuffer">GstBuffer</a>) -&gt; <a class="enum" href="../gstreamer_sys/enum.GstFlowReturn.html" title="enum gstreamer_sys::GstFlowReturn">GstFlowReturn</a>&gt;</code>
+                           </span></span><span id='structfield.flush' class="structfield">
+                           <span id='flush.v' class='invisible'>
+                           <code>flush: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>)&gt;</code>
+                           </span></span><span id='structfield.pre_push' class="structfield">
+                           <span id='pre_push.v' class='invisible'>
+                           <code>pre_push: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstBuffer.html" title="struct gstreamer_sys::GstBuffer">GstBuffer</a>) -&gt; <a class="enum" href="../gstreamer_sys/enum.GstFlowReturn.html" title="enum gstreamer_sys::GstFlowReturn">GstFlowReturn</a>&gt;</code>
+                           </span></span><span id='structfield.sink_event' class="structfield">
+                           <span id='sink_event.v' class='invisible'>
+                           <code>sink_event: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstEvent.html" title="struct gstreamer_sys::GstEvent">GstEvent</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;</code>
+                           </span></span><span id='structfield.src_event' class="structfield">
+                           <span id='src_event.v' class='invisible'>
+                           <code>src_event: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstEvent.html" title="struct gstreamer_sys::GstEvent">GstEvent</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;</code>
+                           </span></span><span id='structfield.getcaps' class="structfield">
+                           <span id='getcaps.v' class='invisible'>
+                           <code>getcaps: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstCaps.html" title="struct gstreamer_sys::GstCaps">GstCaps</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstCaps.html" title="struct gstreamer_sys::GstCaps">GstCaps</a>&gt;</code>
+                           </span></span><span id='structfield.open' class="structfield">
+                           <span id='open.v' class='invisible'>
+                           <code>open: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;</code>
+                           </span></span><span id='structfield.close' class="structfield">
+                           <span id='close.v' class='invisible'>
+                           <code>close: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;</code>
+                           </span></span><span id='structfield.negotiate' class="structfield">
+                           <span id='negotiate.v' class='invisible'>
+                           <code>negotiate: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;</code>
+                           </span></span><span id='structfield.decide_allocation' class="structfield">
+                           <span id='decide_allocation.v' class='invisible'>
+                           <code>decide_allocation: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstQuery.html" title="struct gstreamer_sys::GstQuery">GstQuery</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;</code>
+                           </span></span><span id='structfield.propose_allocation' class="structfield">
+                           <span id='propose_allocation.v' class='invisible'>
+                           <code>propose_allocation: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstQuery.html" title="struct gstreamer_sys::GstQuery">GstQuery</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;</code>
+                           </span></span><span id='structfield.transform_meta' class="structfield">
+                           <span id='transform_meta.v' class='invisible'>
+                           <code>transform_meta: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstBuffer.html" title="struct gstreamer_sys::GstBuffer">GstBuffer</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstMeta.html" title="struct gstreamer_sys::GstMeta">GstMeta</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstBuffer.html" title="struct gstreamer_sys::GstBuffer">GstBuffer</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;</code>
+                           </span></span><span id='structfield.sink_query' class="structfield">
+                           <span id='sink_query.v' class='invisible'>
+                           <code>sink_query: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstQuery.html" title="struct gstreamer_sys::GstQuery">GstQuery</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;</code>
+                           </span></span><span id='structfield.src_query' class="structfield">
+                           <span id='src_query.v' class='invisible'>
+                           <code>src_query: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioEncoder.html" title="struct gstreamer_audio_sys::GstAudioEncoder">GstAudioEncoder</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstQuery.html" title="struct gstreamer_sys::GstQuery">GstQuery</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;</code>
+                           </span></span><span id='structfield._gst_reserved' class="structfield">
+                           <span id='_gst_reserved.v' class='invisible'>
+                           <code>_gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 17]</a></code>
+                           </span></span></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer_audio_sys";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

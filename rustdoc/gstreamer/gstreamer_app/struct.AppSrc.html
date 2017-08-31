@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `AppSrc` struct in crate `gstreamer_app`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, AppSrc">
+
+    <title>gstreamer_app::AppSrc - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct AppSrc</p><div class="block items"><ul><li><a href="#methods">Methods</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='index.html'>gstreamer_app</a></p><script>window.sidebarCurrent = {name: 'AppSrc', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>gstreamer_app</a>::<wbr><a class="struct" href=''>AppSrc</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span></span></h1>
+<pre class='rust struct'>pub struct AppSrc(_, _);</pre><div class='docblock'><p>The appsrc element can be used by applications to insert data into a
+GStreamer pipeline. Unlike most GStreamer elements, appsrc provides
+external API functions.</p>
+
+<p>appsrc can be used by linking with the libgstapp library to access the
+methods directly or by using the appsrc action signals.</p>
+
+<p>Before operating appsrc, the caps property must be set to fixed caps
+describing the format of the data that will be pushed with appsrc. An
+exception to this is when pushing buffers with unknown caps, in which case no
+caps should be set. This is typically true of file-like sources that push raw
+byte buffers. If you don&#39;t want to explicitly set the caps, you can use
+gst_app_src_push_sample. This method gets the caps associated with the
+sample and sets them on the appsrc replacing any previously set caps (if
+different from sample&#39;s caps).</p>
+
+<p>The main way of handing data to the appsrc element is by calling the
+<code>AppSrc::push_buffer</code> method or by emitting the push-buffer action signal.
+This will put the buffer onto a queue from which appsrc will read from in its
+streaming thread. It is important to note that data transport will not happen
+from the thread that performed the push-buffer call.</p>
+
+<p>The &quot;max-bytes&quot; property controls how much data can be queued in appsrc
+before appsrc considers the queue full. A filled internal queue will always
+signal the &quot;enough-data&quot; signal, which signals the application that it should
+stop pushing data into appsrc. The &quot;block&quot; property will cause appsrc to
+block the push-buffer method until free data becomes available again.</p>
+
+<p>When the internal queue is running out of data, the &quot;need-data&quot; signal is
+emitted, which signals the application that it should start pushing more data
+into appsrc.</p>
+
+<p>In addition to the &quot;need-data&quot; and &quot;enough-data&quot; signals, appsrc can emit the
+&quot;seek-data&quot; signal when the &quot;stream-mode&quot; property is set to &quot;seekable&quot; or
+&quot;random-access&quot;. The signal argument will contain the new desired position in
+the stream expressed in the unit set with the &quot;format&quot; property. After
+receiving the seek-data signal, the application should push-buffers from the
+new position.</p>
+
+<p>These signals allow the application to operate the appsrc in two different
+ways:</p>
+
+<p>The push mode, in which the application repeatedly calls the push-buffer/push-sample
+method with a new buffer/sample. Optionally, the queue size in the appsrc
+can be controlled with the enough-data and need-data signals by respectively
+stopping/starting the push-buffer/push-sample calls. This is a typical
+mode of operation for the stream-type &quot;stream&quot; and &quot;seekable&quot;. Use this
+mode when implementing various network protocols or hardware devices.</p>
+
+<p>The pull mode, in which the need-data signal triggers the next push-buffer call.
+This mode is typically used in the &quot;random-access&quot; stream-type. Use this
+mode for file access or other randomly accessable sources. In this mode, a
+buffer of exactly the amount of bytes given by the need-data signal should be
+pushed into appsrc.</p>
+
+<p>In all modes, the size property on appsrc should contain the total stream
+size in bytes. Setting this property is mandatory in the random-access mode.
+For the stream and seekable modes, setting this property is optional but
+recommended.</p>
+
+<p>When the application has finished pushing data into appsrc, it should call
+<code>AppSrc::end_of_stream</code> or emit the end-of-stream action signal. After
+this call, no more buffers can be pushed into appsrc until a flushing seek
+occurs or the state of the appsrc has gone through READY.</p>
+
+<h1 id='implements' class='section-header'><a href='#implements'>Implements</a></h1>
+<p><a href="trait.ElementExt.html"><code>ElementExt</code></a>, <a href="trait.ObjectExt.html"><code>ObjectExt</code></a>, <a href="trait.ObjectExt.html"><code>ObjectExt</code></a></p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_app/auto/app_src.rs.html#98-553' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.end_of_stream' class="method"><span id='end_of_stream.v' class='invisible'><code>fn <a href='#method.end_of_stream' class='fnname'>end_of_stream</a>(&amp;self) -&gt; <a class="enum" href="../gstreamer/auto/enums/enum.FlowReturn.html" title="enum gstreamer::auto::enums::FlowReturn">FlowReturn</a></code></span></h4>
+<div class='docblock'><p>Indicates to the appsrc element that the last buffer queued in the
+element is the last buffer of the stream.</p>
+
+<h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
+<p><code>gst::FlowReturn::Ok</code> when the EOS was successfuly queued.
+<code>gst::FlowReturn::Flushing</code> when <code>self</code> is not PAUSED or PLAYING.</p>
+</div><h4 id='method.get_caps' class="method"><span id='get_caps.v' class='invisible'><code>fn <a href='#method.get_caps' class='fnname'>get_caps</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../gstreamer/caps/type.Caps.html" title="type gstreamer::caps::Caps">Caps</a>&gt;</code></span></h4>
+<div class='docblock'><p>Get the configured caps on <code>self</code>.</p>
+
+<h1 id='returns-1' class='section-header'><a href='#returns-1'>Returns</a></h1>
+<p>the <code>gst::Caps</code> produced by the source. <code>gst_caps_unref</code> after usage.</p>
+</div><h4 id='method.get_current_level_bytes' class="method"><span id='get_current_level_bytes.v' class='invisible'><code>fn <a href='#method.get_current_level_bytes' class='fnname'>get_current_level_bytes</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<div class='docblock'><p>Get the number of currently queued bytes inside <code>self</code>.</p>
+
+<h1 id='returns-2' class='section-header'><a href='#returns-2'>Returns</a></h1>
+<p>The number of currently queued bytes.</p>
+</div><h4 id='method.get_duration' class="method"><span id='get_duration.v' class='invisible'><code>fn <a href='#method.get_duration' class='fnname'>get_duration</a>(&amp;self) -&gt; <a class="type" href="../gstreamer/auto/alias/type.ClockTime.html" title="type gstreamer::auto::alias::ClockTime">ClockTime</a></code></span></h4>
+<div class='docblock'><p>Get the duration of the stream in nanoseconds. A value of GST_CLOCK_TIME_NONE means that the duration is
+not known.</p>
+
+<p>Feature: <code>v1_10</code></p>
+
+<h1 id='returns-3' class='section-header'><a href='#returns-3'>Returns</a></h1>
+<p>the duration of the stream previously set with <code>AppSrc::set_duration</code>;</p>
+</div><h4 id='method.get_emit_signals' class="method"><span id='get_emit_signals.v' class='invisible'><code>fn <a href='#method.get_emit_signals' class='fnname'>get_emit_signals</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'><p>Check if appsrc will emit the &quot;new-preroll&quot; and &quot;new-buffer&quot; signals.</p>
+
+<h1 id='returns-4' class='section-header'><a href='#returns-4'>Returns</a></h1>
+<p><code>true</code> if <code>self</code> is emitting the &quot;new-preroll&quot; and &quot;new-buffer&quot;
+signals.</p>
+</div><h4 id='method.get_latency' class="method"><span id='get_latency.v' class='invisible'><code>fn <a href='#method.get_latency' class='fnname'>get_latency</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a></code></span></h4>
+<div class='docblock'><p>Retrieve the min and max latencies in <code>min</code> and <code>max</code> respectively.</p>
+
+<h2 id='min' class='section-header'><a href='#min'><code>min</code></a></h2>
+<p>the min latency</p>
+
+<h2 id='max' class='section-header'><a href='#max'><code>max</code></a></h2>
+<p>the min latency</p>
+</div><h4 id='method.get_max_bytes' class="method"><span id='get_max_bytes.v' class='invisible'><code>fn <a href='#method.get_max_bytes' class='fnname'>get_max_bytes</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<div class='docblock'><p>Get the maximum amount of bytes that can be queued in <code>self</code>.</p>
+
+<h1 id='returns-5' class='section-header'><a href='#returns-5'>Returns</a></h1>
+<p>The maximum amount of bytes that can be queued.</p>
+</div><h4 id='method.get_size' class="method"><span id='get_size.v' class='invisible'><code>fn <a href='#method.get_size' class='fnname'>get_size</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a></code></span></h4>
+<div class='docblock'><p>Get the size of the stream in bytes. A value of -1 means that the size is
+not known.</p>
+
+<h1 id='returns-6' class='section-header'><a href='#returns-6'>Returns</a></h1>
+<p>the size of the stream previously set with <code>AppSrc::set_size</code>;</p>
+</div><h4 id='method.get_stream_type' class="method"><span id='get_stream_type.v' class='invisible'><code>fn <a href='#method.get_stream_type' class='fnname'>get_stream_type</a>(&amp;self) -&gt; <a class="enum" href="../gstreamer_app/enum.AppStreamType.html" title="enum gstreamer_app::AppStreamType">AppStreamType</a></code></span></h4>
+<div class='docblock'><p>Get the stream type. Control the stream type of <code>self</code>
+with <code>AppSrc::set_stream_type</code>.</p>
+
+<h1 id='returns-7' class='section-header'><a href='#returns-7'>Returns</a></h1>
+<p>the stream type.</p>
+</div><h4 id='method.push_sample' class="method"><span id='push_sample.v' class='invisible'><code>fn <a href='#method.push_sample' class='fnname'>push_sample</a>(&amp;self, sample: &amp;<a class="type" href="../gstreamer/sample/type.Sample.html" title="type gstreamer::sample::Sample">Sample</a>) -&gt; <a class="enum" href="../gstreamer/auto/enums/enum.FlowReturn.html" title="enum gstreamer::auto::enums::FlowReturn">FlowReturn</a></code></span></h4>
+<div class='docblock'><p>Extract a buffer from the provided sample and adds it to the queue of
+buffers that the appsrc element will push to its source pad. Any
+previous caps that were set on appsrc will be replaced by the caps
+associated with the sample if not equal.</p>
+
+<p>When the block property is TRUE, this function can block until free
+space becomes available in the queue.</p>
+
+<h2 id='sample' class='section-header'><a href='#sample'><code>sample</code></a></h2>
+<p>a <code>gst::Sample</code> from which buffer and caps may be
+extracted</p>
+
+<h1 id='returns-8' class='section-header'><a href='#returns-8'>Returns</a></h1>
+<p><code>gst::FlowReturn::Ok</code> when the buffer was successfuly queued.
+<code>gst::FlowReturn::Flushing</code> when <code>self</code> is not PAUSED or PLAYING.
+<code>gst::FlowReturn::Eos</code> when EOS occured.</p>
+</div><h4 id='method.set_caps' class="method"><span id='set_caps.v' class='invisible'><code>fn <a href='#method.set_caps' class='fnname'>set_caps</a>(&amp;self, caps: &amp;<a class="type" href="../gstreamer/caps/type.Caps.html" title="type gstreamer::caps::Caps">Caps</a>)</code></span></h4>
+<div class='docblock'><p>Set the capabilities on the appsrc element. This function takes
+a copy of the caps structure. After calling this method, the source will
+only produce caps that match <code>caps</code>. <code>caps</code> must be fixed and the caps on the
+buffers must match the caps or left NULL.</p>
+
+<h2 id='caps' class='section-header'><a href='#caps'><code>caps</code></a></h2>
+<p>caps to set</p>
+</div><h4 id='method.set_duration' class="method"><span id='set_duration.v' class='invisible'><code>fn <a href='#method.set_duration' class='fnname'>set_duration</a>(&amp;self, duration: <a class="type" href="../gstreamer/auto/alias/type.ClockTime.html" title="type gstreamer::auto::alias::ClockTime">ClockTime</a>)</code></span></h4>
+<div class='docblock'><p>Set the duration of the stream in nanoseconds. A value of GST_CLOCK_TIME_NONE means that the duration is
+not known.</p>
+
+<p>Feature: <code>v1_10</code></p>
+
+<h2 id='duration' class='section-header'><a href='#duration'><code>duration</code></a></h2>
+<p>the duration to set</p>
+</div><h4 id='method.set_emit_signals' class="method"><span id='set_emit_signals.v' class='invisible'><code>fn <a href='#method.set_emit_signals' class='fnname'>set_emit_signals</a>(&amp;self, emit: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h4>
+<div class='docblock'><p>Make appsrc emit the &quot;new-preroll&quot; and &quot;new-buffer&quot; signals. This option is
+by default disabled because signal emission is expensive and unneeded when
+the application prefers to operate in pull mode.</p>
+
+<h2 id='emit' class='section-header'><a href='#emit'><code>emit</code></a></h2>
+<p>the new state</p>
+</div><h4 id='method.set_latency' class="method"><span id='set_latency.v' class='invisible'><code>fn <a href='#method.set_latency' class='fnname'>set_latency</a>(&amp;self, min: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>, max: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>)</code></span></h4>
+<div class='docblock'><p>Configure the <code>min</code> and <code>max</code> latency in <code>src</code>. If <code>min</code> is set to -1, the
+default latency calculations for pseudo-live sources will be used.</p>
+
+<h2 id='min-1' class='section-header'><a href='#min-1'><code>min</code></a></h2>
+<p>the min latency</p>
+
+<h2 id='max-1' class='section-header'><a href='#max-1'><code>max</code></a></h2>
+<p>the min latency</p>
+</div><h4 id='method.set_max_bytes' class="method"><span id='set_max_bytes.v' class='invisible'><code>fn <a href='#method.set_max_bytes' class='fnname'>set_max_bytes</a>(&amp;self, max: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>)</code></span></h4>
+<div class='docblock'><p>Set the maximum amount of bytes that can be queued in <code>self</code>.
+After the maximum amount of bytes are queued, <code>self</code> will emit the
+&quot;enough-data&quot; signal.</p>
+
+<h2 id='max-2' class='section-header'><a href='#max-2'><code>max</code></a></h2>
+<p>the maximum number of bytes to queue</p>
+</div><h4 id='method.set_size' class="method"><span id='set_size.v' class='invisible'><code>fn <a href='#method.set_size' class='fnname'>set_size</a>(&amp;self, size: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a>)</code></span></h4>
+<div class='docblock'><p>Set the size of the stream in bytes. A value of -1 means that the size is
+not known.</p>
+
+<h2 id='size' class='section-header'><a href='#size'><code>size</code></a></h2>
+<p>the size to set</p>
+</div><h4 id='method.set_stream_type' class="method"><span id='set_stream_type.v' class='invisible'><code>fn <a href='#method.set_stream_type' class='fnname'>set_stream_type</a>(&amp;self, type_: <a class="enum" href="../gstreamer_app/enum.AppStreamType.html" title="enum gstreamer_app::AppStreamType">AppStreamType</a>)</code></span></h4>
+<div class='docblock'><p>Set the stream type on <code>self</code>. For seekable streams, the &quot;seek&quot; signal must
+be connected to.</p>
+
+<p>A stream_type stream</p>
+
+<h2 id='type_' class='section-header'><a href='#type_'><code>type_</code></a></h2>
+<p>the new state</p>
+</div><h4 id='method.get_property_block' class="method"><span id='get_property_block.v' class='invisible'><code>fn <a href='#method.get_property_block' class='fnname'>get_property_block</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<h4 id='method.set_property_block' class="method"><span id='set_property_block.v' class='invisible'><code>fn <a href='#method.set_property_block' class='fnname'>set_property_block</a>(&amp;self, block: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h4>
+<h4 id='method.get_property_current_level_bytes' class="method"><span id='get_property_current_level_bytes.v' class='invisible'><code>fn <a href='#method.get_property_current_level_bytes' class='fnname'>get_property_current_level_bytes</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<h4 id='method.get_property_duration' class="method"><span id='get_property_duration.v' class='invisible'><code>fn <a href='#method.get_property_duration' class='fnname'>get_property_duration</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<h4 id='method.set_property_duration' class="method"><span id='set_property_duration.v' class='invisible'><code>fn <a href='#method.set_property_duration' class='fnname'>set_property_duration</a>(&amp;self, duration: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>)</code></span></h4>
+<h4 id='method.get_property_format' class="method"><span id='get_property_format.v' class='invisible'><code>fn <a href='#method.get_property_format' class='fnname'>get_property_format</a>(&amp;self) -&gt; <a class="enum" href="../gstreamer/auto/enums/enum.Format.html" title="enum gstreamer::auto::enums::Format">Format</a></code></span></h4>
+<h4 id='method.set_property_format' class="method"><span id='set_property_format.v' class='invisible'><code>fn <a href='#method.set_property_format' class='fnname'>set_property_format</a>(&amp;self, format: <a class="enum" href="../gstreamer/auto/enums/enum.Format.html" title="enum gstreamer::auto::enums::Format">Format</a>)</code></span></h4>
+<h4 id='method.get_property_is_live' class="method"><span id='get_property_is_live.v' class='invisible'><code>fn <a href='#method.get_property_is_live' class='fnname'>get_property_is_live</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<h4 id='method.set_property_is_live' class="method"><span id='set_property_is_live.v' class='invisible'><code>fn <a href='#method.set_property_is_live' class='fnname'>set_property_is_live</a>(&amp;self, is_live: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h4>
+<h4 id='method.get_property_max_latency' class="method"><span id='get_property_max_latency.v' class='invisible'><code>fn <a href='#method.get_property_max_latency' class='fnname'>get_property_max_latency</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a></code></span></h4>
+<h4 id='method.set_property_max_latency' class="method"><span id='set_property_max_latency.v' class='invisible'><code>fn <a href='#method.set_property_max_latency' class='fnname'>set_property_max_latency</a>(&amp;self, max_latency: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a>)</code></span></h4>
+<h4 id='method.get_property_min_latency' class="method"><span id='get_property_min_latency.v' class='invisible'><code>fn <a href='#method.get_property_min_latency' class='fnname'>get_property_min_latency</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a></code></span></h4>
+<h4 id='method.set_property_min_latency' class="method"><span id='set_property_min_latency.v' class='invisible'><code>fn <a href='#method.set_property_min_latency' class='fnname'>set_property_min_latency</a>(&amp;self, min_latency: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a>)</code></span></h4>
+<h4 id='method.get_property_min_percent' class="method"><span id='get_property_min_percent.v' class='invisible'><code>fn <a href='#method.get_property_min_percent' class='fnname'>get_property_min_percent</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span></h4>
+<h4 id='method.set_property_min_percent' class="method"><span id='set_property_min_percent.v' class='invisible'><code>fn <a href='#method.set_property_min_percent' class='fnname'>set_property_min_percent</a>(&amp;self, min_percent: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></h4>
+<h4 id='method.connect_enough_data' class="method"><span id='connect_enough_data.v' class='invisible'><code>fn <a href='#method.connect_enough_data' class='fnname'>connect_enough_data</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;<a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<h4 id='method.connect_need_data' class="method"><span id='connect_need_data.v' class='invisible'><code>fn <a href='#method.connect_need_data' class='fnname'>connect_need_data</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;<a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<h4 id='method.connect_seek_data' class="method"><span id='connect_seek_data.v' class='invisible'><code>fn <a href='#method.connect_seek_data' class='fnname'>connect_seek_data</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;<a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<h4 id='method.connect_property_block_notify' class="method"><span id='connect_property_block_notify.v' class='invisible'><code>fn <a href='#method.connect_property_block_notify' class='fnname'>connect_property_block_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;<a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<h4 id='method.connect_property_caps_notify' class="method"><span id='connect_property_caps_notify.v' class='invisible'><code>fn <a href='#method.connect_property_caps_notify' class='fnname'>connect_property_caps_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;<a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<h4 id='method.connect_property_current_level_bytes_notify' class="method"><span id='connect_property_current_level_bytes_notify.v' class='invisible'><code>fn <a href='#method.connect_property_current_level_bytes_notify' class='fnname'>connect_property_current_level_bytes_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;<a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<h4 id='method.connect_property_duration_notify' class="method"><span id='connect_property_duration_notify.v' class='invisible'><code>fn <a href='#method.connect_property_duration_notify' class='fnname'>connect_property_duration_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;<a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<h4 id='method.connect_property_emit_signals_notify' class="method"><span id='connect_property_emit_signals_notify.v' class='invisible'><code>fn <a href='#method.connect_property_emit_signals_notify' class='fnname'>connect_property_emit_signals_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;<a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<h4 id='method.connect_property_format_notify' class="method"><span id='connect_property_format_notify.v' class='invisible'><code>fn <a href='#method.connect_property_format_notify' class='fnname'>connect_property_format_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;<a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<h4 id='method.connect_property_is_live_notify' class="method"><span id='connect_property_is_live_notify.v' class='invisible'><code>fn <a href='#method.connect_property_is_live_notify' class='fnname'>connect_property_is_live_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;<a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<h4 id='method.connect_property_max_bytes_notify' class="method"><span id='connect_property_max_bytes_notify.v' class='invisible'><code>fn <a href='#method.connect_property_max_bytes_notify' class='fnname'>connect_property_max_bytes_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;<a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<h4 id='method.connect_property_max_latency_notify' class="method"><span id='connect_property_max_latency_notify.v' class='invisible'><code>fn <a href='#method.connect_property_max_latency_notify' class='fnname'>connect_property_max_latency_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;<a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<h4 id='method.connect_property_min_latency_notify' class="method"><span id='connect_property_min_latency_notify.v' class='invisible'><code>fn <a href='#method.connect_property_min_latency_notify' class='fnname'>connect_property_min_latency_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;<a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<h4 id='method.connect_property_min_percent_notify' class="method"><span id='connect_property_min_percent_notify.v' class='invisible'><code>fn <a href='#method.connect_property_min_percent_notify' class='fnname'>connect_property_min_percent_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;<a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<h4 id='method.connect_property_size_notify' class="method"><span id='connect_property_size_notify.v' class='invisible'><code>fn <a href='#method.connect_property_size_notify' class='fnname'>connect_property_size_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;<a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+<h4 id='method.connect_property_stream_type_notify' class="method"><span id='connect_property_stream_type_notify.v' class='invisible'><code>fn <a href='#method.connect_property_stream_type_notify' class='fnname'>connect_property_stream_type_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html" title="trait core::ops::Fn">Fn</a>(&amp;<a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_app/app_src.rs.html#86-132' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.push_buffer' class="method"><span id='push_buffer.v' class='invisible'><code>fn <a href='#method.push_buffer' class='fnname'>push_buffer</a>(&amp;self, buffer: <a class="type" href="../gstreamer/buffer/type.Buffer.html" title="type gstreamer::buffer::Buffer">Buffer</a>) -&gt; <a class="enum" href="../gstreamer/auto/enums/enum.FlowReturn.html" title="enum gstreamer::auto::enums::FlowReturn">FlowReturn</a></code></span></h4>
+<div class='docblock'><p>Adds a buffer to the queue of buffers that the appsrc element will
+push to its source pad. This function takes ownership of the buffer.</p>
+
+<p>When the block property is TRUE, this function can block until free
+space becomes available in the queue.</p>
+
+<h2 id='buffer' class='section-header'><a href='#buffer'><code>buffer</code></a></h2>
+<p>a <code>gst::Buffer</code> to push</p>
+
+<h1 id='returns-9' class='section-header'><a href='#returns-9'>Returns</a></h1>
+<p><code>gst::FlowReturn::Ok</code> when the buffer was successfuly queued.
+<code>gst::FlowReturn::Flushing</code> when <code>self</code> is not PAUSED or PLAYING.
+<code>gst::FlowReturn::Eos</code> when EOS occured.</p>
+</div><h4 id='method.set_callbacks' class="method"><span id='set_callbacks.v' class='invisible'><code>fn <a href='#method.set_callbacks' class='fnname'>set_callbacks</a>(&amp;self, callbacks: <a class="struct" href="../gstreamer_app/struct.AppSrcCallbacks.html" title="struct gstreamer_app::AppSrcCallbacks">AppSrcCallbacks</a>)</code></span></h4>
+<div class='docblock'><p>Set callbacks which will be executed when data is needed, enough data has
+been collected or when a seek should be performed.
+This is an alternative to using the signals, it has lower overhead and is thus
+less expensive, but also less flexible.</p>
+
+<p>If callbacks are installed, no signals will be emitted for performance
+reasons.</p>
+
+<h2 id='callbacks' class='section-header'><a href='#callbacks'><code>callbacks</code></a></h2>
+<p>the callbacks</p>
+
+<h2 id='user_data' class='section-header'><a href='#user_data'><code>user_data</code></a></h2>
+<p>a user_data argument for the callbacks</p>
+
+<h2 id='notify' class='section-header'><a href='#notify'><code>notify</code></a></h2>
+<p>a destroy notify function</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a></code></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html" title="trait core::hash::Hash">Hash</a> for <a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.hash' class="method"><span id='hash.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash' class='fnname'>hash</a>&lt;__H:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>&gt;(&amp;self, __arg_0: &amp;mut __H)</code></span></h4>
+<div class='docblock'><p>Feeds this value into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash">Read more</a></p>
+</div><h4 id='method.hash_slice' class="method"><span id='hash_slice.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice' class='fnname'>hash_slice</a>&lt;H&gt;(data: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[Self]</a>, state: &amp;mut H) <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;H: <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>,&nbsp;</span></code><div class='since' title='Stable since Rust version 1.3.0'>1.3.0</div></span></h4>
+<div class='docblock'><p>Feeds a slice of this type into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer_app/trait.StaticType.html" title="trait gstreamer_app::StaticType">StaticType</a> for <a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.static_type' class="method"><span id='static_type.v' class='invisible'><code>fn <a href='../gstreamer_app/trait.StaticType.html#tymethod.static_type' class='fnname'>static_type</a>() -&gt; <a class="enum" href="../gstreamer_app/enum.Type.html" title="enum gstreamer_app::Type">Type</a></code></span></h4>
+<div class='docblock'><p>Returns the type identifier of <code>Self</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="../gstreamer_app/trait.IsA.html" title="trait gstreamer_app::IsA">IsA</a>&lt;<a class="struct" href="../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt;&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a>&lt;T&gt; for <a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, other: &amp;T) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: &amp;Rhs) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer_app/trait.IsA.html" title="trait gstreamer_app::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>&gt; for <a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer_app/trait.IsA.html" title="trait gstreamer_app::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/auto/object/struct.Object.html" title="struct gstreamer::auto::object::Object">Object</a>&gt; for <a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer_app/trait.IsA.html" title="trait gstreamer_app::IsA">IsA</a>&lt;<a class="struct" href="../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt; for <a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a></code></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> for <a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_app/auto/app_src.rs.html#555' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> for <a class="struct" href="../gstreamer_app/struct.AppSrc.html" title="struct gstreamer_app::AppSrc">AppSrc</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_app/auto/app_src.rs.html#556' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer_app";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `EventView` enum in crate `gstreamer`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, EventView">
+
+    <title>gstreamer::event::EventView - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum EventView</p><div class="block items"><ul><li><a href="#variants">Variants</a></li></ul></div><p class='location'><a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>event</a></p><script>window.sidebarCurrent = {name: 'EventView', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>event</a>::<wbr><a class="enum" href=''>EventView</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/gstreamer/event.rs.html#781-813' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum EventView&lt;'a&gt; {
+    FlushStart(<a class="struct" href="../../gstreamer/event/struct.FlushStart.html" title="struct gstreamer::event::FlushStart">FlushStart</a>&lt;'a&gt;),
+    FlushStop(<a class="struct" href="../../gstreamer/event/struct.FlushStop.html" title="struct gstreamer::event::FlushStop">FlushStop</a>&lt;'a&gt;),
+    StreamStart(<a class="struct" href="../../gstreamer/event/struct.StreamStart.html" title="struct gstreamer::event::StreamStart">StreamStart</a>&lt;'a&gt;),
+    Caps(<a class="struct" href="../../gstreamer/event/struct.Caps.html" title="struct gstreamer::event::Caps">Caps</a>&lt;'a&gt;),
+    Segment(<a class="struct" href="../../gstreamer/event/struct.Segment.html" title="struct gstreamer::event::Segment">Segment</a>&lt;'a&gt;),
+    StreamCollection(<a class="struct" href="../../gstreamer/event/struct.StreamCollection.html" title="struct gstreamer::event::StreamCollection">StreamCollection</a>&lt;'a&gt;),
+    Tag(<a class="struct" href="../../gstreamer/event/struct.Tag.html" title="struct gstreamer::event::Tag">Tag</a>&lt;'a&gt;),
+    BufferSize(<a class="struct" href="../../gstreamer/event/struct.BufferSize.html" title="struct gstreamer::event::BufferSize">BufferSize</a>&lt;'a&gt;),
+    SinkMessage(<a class="struct" href="../../gstreamer/event/struct.SinkMessage.html" title="struct gstreamer::event::SinkMessage">SinkMessage</a>&lt;'a&gt;),
+    StreamGroupDone(<a class="struct" href="../../gstreamer/event/struct.StreamGroupDone.html" title="struct gstreamer::event::StreamGroupDone">StreamGroupDone</a>&lt;'a&gt;),
+    Eos(<a class="struct" href="../../gstreamer/event/struct.Eos.html" title="struct gstreamer::event::Eos">Eos</a>&lt;'a&gt;),
+    Toc(<a class="struct" href="../../gstreamer/event/struct.Toc.html" title="struct gstreamer::event::Toc">Toc</a>&lt;'a&gt;),
+    Protection(<a class="struct" href="../../gstreamer/event/struct.Protection.html" title="struct gstreamer::event::Protection">Protection</a>&lt;'a&gt;),
+    SegmentDone(<a class="struct" href="../../gstreamer/event/struct.SegmentDone.html" title="struct gstreamer::event::SegmentDone">SegmentDone</a>&lt;'a&gt;),
+    Gap(<a class="struct" href="../../gstreamer/event/struct.Gap.html" title="struct gstreamer::event::Gap">Gap</a>&lt;'a&gt;),
+    Qos(<a class="struct" href="../../gstreamer/event/struct.Qos.html" title="struct gstreamer::event::Qos">Qos</a>&lt;'a&gt;),
+    Seek(<a class="struct" href="../../gstreamer/event/struct.Seek.html" title="struct gstreamer::event::Seek">Seek</a>&lt;'a&gt;),
+    Navigation(<a class="struct" href="../../gstreamer/event/struct.Navigation.html" title="struct gstreamer::event::Navigation">Navigation</a>&lt;'a&gt;),
+    Latency(<a class="struct" href="../../gstreamer/event/struct.Latency.html" title="struct gstreamer::event::Latency">Latency</a>&lt;'a&gt;),
+    Step(<a class="struct" href="../../gstreamer/event/struct.Step.html" title="struct gstreamer::event::Step">Step</a>&lt;'a&gt;),
+    Reconfigure(<a class="struct" href="../../gstreamer/event/struct.Reconfigure.html" title="struct gstreamer::event::Reconfigure">Reconfigure</a>&lt;'a&gt;),
+    TocSelect(<a class="struct" href="../../gstreamer/event/struct.TocSelect.html" title="struct gstreamer::event::TocSelect">TocSelect</a>&lt;'a&gt;),
+    SelectStreams(<a class="struct" href="../../gstreamer/event/struct.SelectStreams.html" title="struct gstreamer::event::SelectStreams">SelectStreams</a>&lt;'a&gt;),
+    CustomUpstream(<a class="struct" href="../../gstreamer/event/struct.CustomUpstream.html" title="struct gstreamer::event::CustomUpstream">CustomUpstream</a>&lt;'a&gt;),
+    CustomDownstream(<a class="struct" href="../../gstreamer/event/struct.CustomDownstream.html" title="struct gstreamer::event::CustomDownstream">CustomDownstream</a>&lt;'a&gt;),
+    CustomDownstreamOob(<a class="struct" href="../../gstreamer/event/struct.CustomDownstreamOob.html" title="struct gstreamer::event::CustomDownstreamOob">CustomDownstreamOob</a>&lt;'a&gt;),
+    CustomDownstreamSticky(<a class="struct" href="../../gstreamer/event/struct.CustomDownstreamSticky.html" title="struct gstreamer::event::CustomDownstreamSticky">CustomDownstreamSticky</a>&lt;'a&gt;),
+    CustomBoth(<a class="struct" href="../../gstreamer/event/struct.CustomBoth.html" title="struct gstreamer::event::CustomBoth">CustomBoth</a>&lt;'a&gt;),
+    CustomBothOob(<a class="struct" href="../../gstreamer/event/struct.CustomBothOob.html" title="struct gstreamer::event::CustomBothOob">CustomBothOob</a>&lt;'a&gt;),
+    Other,
+    __NonExhaustive,
+}</pre><h2 id='variants' class='variants'>Variants</h2>
+<span id='variant.FlushStart' class='variant'><span id='FlushStart.v' class='invisible'><code>FlushStart(<a class="struct" href="../../gstreamer/event/struct.FlushStart.html" title="struct gstreamer::event::FlushStart">FlushStart</a>&lt;'a&gt;)</code></span></span><span id='variant.FlushStop' class='variant'><span id='FlushStop.v' class='invisible'><code>FlushStop(<a class="struct" href="../../gstreamer/event/struct.FlushStop.html" title="struct gstreamer::event::FlushStop">FlushStop</a>&lt;'a&gt;)</code></span></span><span id='variant.StreamStart' class='variant'><span id='StreamStart.v' class='invisible'><code>StreamStart(<a class="struct" href="../../gstreamer/event/struct.StreamStart.html" title="struct gstreamer::event::StreamStart">StreamStart</a>&lt;'a&gt;)</code></span></span><span id='variant.Caps' class='variant'><span id='Caps.v' class='invisible'><code>Caps(<a class="struct" href="../../gstreamer/event/struct.Caps.html" title="struct gstreamer::event::Caps">Caps</a>&lt;'a&gt;)</code></span></span><span id='variant.Segment' class='variant'><span id='Segment.v' class='invisible'><code>Segment(<a class="struct" href="../../gstreamer/event/struct.Segment.html" title="struct gstreamer::event::Segment">Segment</a>&lt;'a&gt;)</code></span></span><span id='variant.StreamCollection' class='variant'><span id='StreamCollection.v' class='invisible'><code>StreamCollection(<a class="struct" href="../../gstreamer/event/struct.StreamCollection.html" title="struct gstreamer::event::StreamCollection">StreamCollection</a>&lt;'a&gt;)</code></span></span><span id='variant.Tag' class='variant'><span id='Tag.v' class='invisible'><code>Tag(<a class="struct" href="../../gstreamer/event/struct.Tag.html" title="struct gstreamer::event::Tag">Tag</a>&lt;'a&gt;)</code></span></span><span id='variant.BufferSize' class='variant'><span id='BufferSize.v' class='invisible'><code>BufferSize(<a class="struct" href="../../gstreamer/event/struct.BufferSize.html" title="struct gstreamer::event::BufferSize">BufferSize</a>&lt;'a&gt;)</code></span></span><span id='variant.SinkMessage' class='variant'><span id='SinkMessage.v' class='invisible'><code>SinkMessage(<a class="struct" href="../../gstreamer/event/struct.SinkMessage.html" title="struct gstreamer::event::SinkMessage">SinkMessage</a>&lt;'a&gt;)</code></span></span><span id='variant.StreamGroupDone' class='variant'><span id='StreamGroupDone.v' class='invisible'><code>StreamGroupDone(<a class="struct" href="../../gstreamer/event/struct.StreamGroupDone.html" title="struct gstreamer::event::StreamGroupDone">StreamGroupDone</a>&lt;'a&gt;)</code></span></span><span id='variant.Eos' class='variant'><span id='Eos.v' class='invisible'><code>Eos(<a class="struct" href="../../gstreamer/event/struct.Eos.html" title="struct gstreamer::event::Eos">Eos</a>&lt;'a&gt;)</code></span></span><span id='variant.Toc' class='variant'><span id='Toc.v' class='invisible'><code>Toc(<a class="struct" href="../../gstreamer/event/struct.Toc.html" title="struct gstreamer::event::Toc">Toc</a>&lt;'a&gt;)</code></span></span><span id='variant.Protection' class='variant'><span id='Protection.v' class='invisible'><code>Protection(<a class="struct" href="../../gstreamer/event/struct.Protection.html" title="struct gstreamer::event::Protection">Protection</a>&lt;'a&gt;)</code></span></span><span id='variant.SegmentDone' class='variant'><span id='SegmentDone.v' class='invisible'><code>SegmentDone(<a class="struct" href="../../gstreamer/event/struct.SegmentDone.html" title="struct gstreamer::event::SegmentDone">SegmentDone</a>&lt;'a&gt;)</code></span></span><span id='variant.Gap' class='variant'><span id='Gap.v' class='invisible'><code>Gap(<a class="struct" href="../../gstreamer/event/struct.Gap.html" title="struct gstreamer::event::Gap">Gap</a>&lt;'a&gt;)</code></span></span><span id='variant.Qos' class='variant'><span id='Qos.v' class='invisible'><code>Qos(<a class="struct" href="../../gstreamer/event/struct.Qos.html" title="struct gstreamer::event::Qos">Qos</a>&lt;'a&gt;)</code></span></span><span id='variant.Seek' class='variant'><span id='Seek.v' class='invisible'><code>Seek(<a class="struct" href="../../gstreamer/event/struct.Seek.html" title="struct gstreamer::event::Seek">Seek</a>&lt;'a&gt;)</code></span></span><span id='variant.Navigation' class='variant'><span id='Navigation.v' class='invisible'><code>Navigation(<a class="struct" href="../../gstreamer/event/struct.Navigation.html" title="struct gstreamer::event::Navigation">Navigation</a>&lt;'a&gt;)</code></span></span><span id='variant.Latency' class='variant'><span id='Latency.v' class='invisible'><code>Latency(<a class="struct" href="../../gstreamer/event/struct.Latency.html" title="struct gstreamer::event::Latency">Latency</a>&lt;'a&gt;)</code></span></span><span id='variant.Step' class='variant'><span id='Step.v' class='invisible'><code>Step(<a class="struct" href="../../gstreamer/event/struct.Step.html" title="struct gstreamer::event::Step">Step</a>&lt;'a&gt;)</code></span></span><span id='variant.Reconfigure' class='variant'><span id='Reconfigure.v' class='invisible'><code>Reconfigure(<a class="struct" href="../../gstreamer/event/struct.Reconfigure.html" title="struct gstreamer::event::Reconfigure">Reconfigure</a>&lt;'a&gt;)</code></span></span><span id='variant.TocSelect' class='variant'><span id='TocSelect.v' class='invisible'><code>TocSelect(<a class="struct" href="../../gstreamer/event/struct.TocSelect.html" title="struct gstreamer::event::TocSelect">TocSelect</a>&lt;'a&gt;)</code></span></span><span id='variant.SelectStreams' class='variant'><span id='SelectStreams.v' class='invisible'><code>SelectStreams(<a class="struct" href="../../gstreamer/event/struct.SelectStreams.html" title="struct gstreamer::event::SelectStreams">SelectStreams</a>&lt;'a&gt;)</code></span></span><span id='variant.CustomUpstream' class='variant'><span id='CustomUpstream.v' class='invisible'><code>CustomUpstream(<a class="struct" href="../../gstreamer/event/struct.CustomUpstream.html" title="struct gstreamer::event::CustomUpstream">CustomUpstream</a>&lt;'a&gt;)</code></span></span><span id='variant.CustomDownstream' class='variant'><span id='CustomDownstream.v' class='invisible'><code>CustomDownstream(<a class="struct" href="../../gstreamer/event/struct.CustomDownstream.html" title="struct gstreamer::event::CustomDownstream">CustomDownstream</a>&lt;'a&gt;)</code></span></span><span id='variant.CustomDownstreamOob' class='variant'><span id='CustomDownstreamOob.v' class='invisible'><code>CustomDownstreamOob(<a class="struct" href="../../gstreamer/event/struct.CustomDownstreamOob.html" title="struct gstreamer::event::CustomDownstreamOob">CustomDownstreamOob</a>&lt;'a&gt;)</code></span></span><span id='variant.CustomDownstreamSticky' class='variant'><span id='CustomDownstreamSticky.v' class='invisible'><code>CustomDownstreamSticky(<a class="struct" href="../../gstreamer/event/struct.CustomDownstreamSticky.html" title="struct gstreamer::event::CustomDownstreamSticky">CustomDownstreamSticky</a>&lt;'a&gt;)</code></span></span><span id='variant.CustomBoth' class='variant'><span id='CustomBoth.v' class='invisible'><code>CustomBoth(<a class="struct" href="../../gstreamer/event/struct.CustomBoth.html" title="struct gstreamer::event::CustomBoth">CustomBoth</a>&lt;'a&gt;)</code></span></span><span id='variant.CustomBothOob' class='variant'><span id='CustomBothOob.v' class='invisible'><code>CustomBothOob(<a class="struct" href="../../gstreamer/event/struct.CustomBothOob.html" title="struct gstreamer::event::CustomBothOob">CustomBothOob</a>&lt;'a&gt;)</code></span></span><span id='variant.Other' class='variant'><span id='Other.v' class='invisible'><code>Other</code></span></span><span id='variant.__NonExhaustive' class='variant'><span id='__NonExhaustive.v' class='invisible'><code>__NonExhaustive</code></span></span></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "gstreamer";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

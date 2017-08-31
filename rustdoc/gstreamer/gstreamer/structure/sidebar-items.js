@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["FieldIterator",""],["Iter",""],["Structure","A `Structure` is a collection of key/value pairs. The keys are expressed as GQuarks and the values can be of any GType."],["StructureRef",""]]});

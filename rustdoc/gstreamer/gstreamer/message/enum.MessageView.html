@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `MessageView` enum in crate `gstreamer`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, MessageView">
+
+    <title>gstreamer::message::MessageView - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum MessageView</p><div class="block items"><ul><li><a href="#variants">Variants</a></li></ul></div><p class='location'><a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>message</a></p><script>window.sidebarCurrent = {name: 'MessageView', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>message</a>::<wbr><a class="enum" href=''>MessageView</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/gstreamer/message.rs.html#913-953' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum MessageView&lt;'a&gt; {
+    Eos(<a class="struct" href="../../gstreamer/message/struct.Eos.html" title="struct gstreamer::message::Eos">Eos</a>&lt;'a&gt;),
+    Error(<a class="struct" href="../../gstreamer/message/struct.Error.html" title="struct gstreamer::message::Error">Error</a>&lt;'a&gt;),
+    Warning(<a class="struct" href="../../gstreamer/message/struct.Warning.html" title="struct gstreamer::message::Warning">Warning</a>&lt;'a&gt;),
+    Info(<a class="struct" href="../../gstreamer/message/struct.Info.html" title="struct gstreamer::message::Info">Info</a>&lt;'a&gt;),
+    Tag(<a class="struct" href="../../gstreamer/message/struct.Tag.html" title="struct gstreamer::message::Tag">Tag</a>&lt;'a&gt;),
+    Buffering(<a class="struct" href="../../gstreamer/message/struct.Buffering.html" title="struct gstreamer::message::Buffering">Buffering</a>&lt;'a&gt;),
+    StateChanged(<a class="struct" href="../../gstreamer/message/struct.StateChanged.html" title="struct gstreamer::message::StateChanged">StateChanged</a>&lt;'a&gt;),
+    StateDirty(<a class="struct" href="../../gstreamer/message/struct.StateDirty.html" title="struct gstreamer::message::StateDirty">StateDirty</a>&lt;'a&gt;),
+    StepDone(<a class="struct" href="../../gstreamer/message/struct.StepDone.html" title="struct gstreamer::message::StepDone">StepDone</a>&lt;'a&gt;),
+    ClockProvide(<a class="struct" href="../../gstreamer/message/struct.ClockProvide.html" title="struct gstreamer::message::ClockProvide">ClockProvide</a>&lt;'a&gt;),
+    ClockLost(<a class="struct" href="../../gstreamer/message/struct.ClockLost.html" title="struct gstreamer::message::ClockLost">ClockLost</a>&lt;'a&gt;),
+    NewClock(<a class="struct" href="../../gstreamer/message/struct.NewClock.html" title="struct gstreamer::message::NewClock">NewClock</a>&lt;'a&gt;),
+    StructureChange(<a class="struct" href="../../gstreamer/message/struct.StructureChange.html" title="struct gstreamer::message::StructureChange">StructureChange</a>&lt;'a&gt;),
+    StreamStatus(<a class="struct" href="../../gstreamer/message/struct.StreamStatus.html" title="struct gstreamer::message::StreamStatus">StreamStatus</a>&lt;'a&gt;),
+    Application(<a class="struct" href="../../gstreamer/message/struct.Application.html" title="struct gstreamer::message::Application">Application</a>&lt;'a&gt;),
+    Element(<a class="struct" href="../../gstreamer/message/struct.Element.html" title="struct gstreamer::message::Element">Element</a>&lt;'a&gt;),
+    SegmentStart(<a class="struct" href="../../gstreamer/message/struct.SegmentStart.html" title="struct gstreamer::message::SegmentStart">SegmentStart</a>&lt;'a&gt;),
+    SegmentDone(<a class="struct" href="../../gstreamer/message/struct.SegmentDone.html" title="struct gstreamer::message::SegmentDone">SegmentDone</a>&lt;'a&gt;),
+    DurationChanged(<a class="struct" href="../../gstreamer/message/struct.DurationChanged.html" title="struct gstreamer::message::DurationChanged">DurationChanged</a>&lt;'a&gt;),
+    Latency(<a class="struct" href="../../gstreamer/message/struct.Latency.html" title="struct gstreamer::message::Latency">Latency</a>&lt;'a&gt;),
+    AsyncStart(<a class="struct" href="../../gstreamer/message/struct.AsyncStart.html" title="struct gstreamer::message::AsyncStart">AsyncStart</a>&lt;'a&gt;),
+    AsyncDone(<a class="struct" href="../../gstreamer/message/struct.AsyncDone.html" title="struct gstreamer::message::AsyncDone">AsyncDone</a>&lt;'a&gt;),
+    RequestState(<a class="struct" href="../../gstreamer/message/struct.RequestState.html" title="struct gstreamer::message::RequestState">RequestState</a>&lt;'a&gt;),
+    StepStart(<a class="struct" href="../../gstreamer/message/struct.StepStart.html" title="struct gstreamer::message::StepStart">StepStart</a>&lt;'a&gt;),
+    Qos(<a class="struct" href="../../gstreamer/message/struct.Qos.html" title="struct gstreamer::message::Qos">Qos</a>&lt;'a&gt;),
+    Progress(<a class="struct" href="../../gstreamer/message/struct.Progress.html" title="struct gstreamer::message::Progress">Progress</a>&lt;'a&gt;),
+    Toc(<a class="struct" href="../../gstreamer/message/struct.Toc.html" title="struct gstreamer::message::Toc">Toc</a>&lt;'a&gt;),
+    ResetTime(<a class="struct" href="../../gstreamer/message/struct.ResetTime.html" title="struct gstreamer::message::ResetTime">ResetTime</a>&lt;'a&gt;),
+    StreamStart(<a class="struct" href="../../gstreamer/message/struct.StreamStart.html" title="struct gstreamer::message::StreamStart">StreamStart</a>&lt;'a&gt;),
+    NeedContext(<a class="struct" href="../../gstreamer/message/struct.NeedContext.html" title="struct gstreamer::message::NeedContext">NeedContext</a>&lt;'a&gt;),
+    HaveContext(<a class="struct" href="../../gstreamer/message/struct.HaveContext.html" title="struct gstreamer::message::HaveContext">HaveContext</a>&lt;'a&gt;),
+    DeviceAdded(<a class="struct" href="../../gstreamer/message/struct.DeviceAdded.html" title="struct gstreamer::message::DeviceAdded">DeviceAdded</a>&lt;'a&gt;),
+    DeviceRemoved(<a class="struct" href="../../gstreamer/message/struct.DeviceRemoved.html" title="struct gstreamer::message::DeviceRemoved">DeviceRemoved</a>&lt;'a&gt;),
+    PropertyNotify(<a class="struct" href="../../gstreamer/message/struct.PropertyNotify.html" title="struct gstreamer::message::PropertyNotify">PropertyNotify</a>&lt;'a&gt;),
+    StreamCollection(<a class="struct" href="../../gstreamer/message/struct.StreamCollection.html" title="struct gstreamer::message::StreamCollection">StreamCollection</a>&lt;'a&gt;),
+    StreamsSelected(<a class="struct" href="../../gstreamer/message/struct.StreamsSelected.html" title="struct gstreamer::message::StreamsSelected">StreamsSelected</a>&lt;'a&gt;),
+    Redirect(<a class="struct" href="../../gstreamer/message/struct.Redirect.html" title="struct gstreamer::message::Redirect">Redirect</a>&lt;'a&gt;),
+    Other,
+    __NonExhaustive,
+}</pre><h2 id='variants' class='variants'>Variants</h2>
+<span id='variant.Eos' class='variant'><span id='Eos.v' class='invisible'><code>Eos(<a class="struct" href="../../gstreamer/message/struct.Eos.html" title="struct gstreamer::message::Eos">Eos</a>&lt;'a&gt;)</code></span></span><span id='variant.Error' class='variant'><span id='Error.v' class='invisible'><code>Error(<a class="struct" href="../../gstreamer/message/struct.Error.html" title="struct gstreamer::message::Error">Error</a>&lt;'a&gt;)</code></span></span><span id='variant.Warning' class='variant'><span id='Warning.v' class='invisible'><code>Warning(<a class="struct" href="../../gstreamer/message/struct.Warning.html" title="struct gstreamer::message::Warning">Warning</a>&lt;'a&gt;)</code></span></span><span id='variant.Info' class='variant'><span id='Info.v' class='invisible'><code>Info(<a class="struct" href="../../gstreamer/message/struct.Info.html" title="struct gstreamer::message::Info">Info</a>&lt;'a&gt;)</code></span></span><span id='variant.Tag' class='variant'><span id='Tag.v' class='invisible'><code>Tag(<a class="struct" href="../../gstreamer/message/struct.Tag.html" title="struct gstreamer::message::Tag">Tag</a>&lt;'a&gt;)</code></span></span><span id='variant.Buffering' class='variant'><span id='Buffering.v' class='invisible'><code>Buffering(<a class="struct" href="../../gstreamer/message/struct.Buffering.html" title="struct gstreamer::message::Buffering">Buffering</a>&lt;'a&gt;)</code></span></span><span id='variant.StateChanged' class='variant'><span id='StateChanged.v' class='invisible'><code>StateChanged(<a class="struct" href="../../gstreamer/message/struct.StateChanged.html" title="struct gstreamer::message::StateChanged">StateChanged</a>&lt;'a&gt;)</code></span></span><span id='variant.StateDirty' class='variant'><span id='StateDirty.v' class='invisible'><code>StateDirty(<a class="struct" href="../../gstreamer/message/struct.StateDirty.html" title="struct gstreamer::message::StateDirty">StateDirty</a>&lt;'a&gt;)</code></span></span><span id='variant.StepDone' class='variant'><span id='StepDone.v' class='invisible'><code>StepDone(<a class="struct" href="../../gstreamer/message/struct.StepDone.html" title="struct gstreamer::message::StepDone">StepDone</a>&lt;'a&gt;)</code></span></span><span id='variant.ClockProvide' class='variant'><span id='ClockProvide.v' class='invisible'><code>ClockProvide(<a class="struct" href="../../gstreamer/message/struct.ClockProvide.html" title="struct gstreamer::message::ClockProvide">ClockProvide</a>&lt;'a&gt;)</code></span></span><span id='variant.ClockLost' class='variant'><span id='ClockLost.v' class='invisible'><code>ClockLost(<a class="struct" href="../../gstreamer/message/struct.ClockLost.html" title="struct gstreamer::message::ClockLost">ClockLost</a>&lt;'a&gt;)</code></span></span><span id='variant.NewClock' class='variant'><span id='NewClock.v' class='invisible'><code>NewClock(<a class="struct" href="../../gstreamer/message/struct.NewClock.html" title="struct gstreamer::message::NewClock">NewClock</a>&lt;'a&gt;)</code></span></span><span id='variant.StructureChange' class='variant'><span id='StructureChange.v' class='invisible'><code>StructureChange(<a class="struct" href="../../gstreamer/message/struct.StructureChange.html" title="struct gstreamer::message::StructureChange">StructureChange</a>&lt;'a&gt;)</code></span></span><span id='variant.StreamStatus' class='variant'><span id='StreamStatus.v' class='invisible'><code>StreamStatus(<a class="struct" href="../../gstreamer/message/struct.StreamStatus.html" title="struct gstreamer::message::StreamStatus">StreamStatus</a>&lt;'a&gt;)</code></span></span><span id='variant.Application' class='variant'><span id='Application.v' class='invisible'><code>Application(<a class="struct" href="../../gstreamer/message/struct.Application.html" title="struct gstreamer::message::Application">Application</a>&lt;'a&gt;)</code></span></span><span id='variant.Element' class='variant'><span id='Element.v' class='invisible'><code>Element(<a class="struct" href="../../gstreamer/message/struct.Element.html" title="struct gstreamer::message::Element">Element</a>&lt;'a&gt;)</code></span></span><span id='variant.SegmentStart' class='variant'><span id='SegmentStart.v' class='invisible'><code>SegmentStart(<a class="struct" href="../../gstreamer/message/struct.SegmentStart.html" title="struct gstreamer::message::SegmentStart">SegmentStart</a>&lt;'a&gt;)</code></span></span><span id='variant.SegmentDone' class='variant'><span id='SegmentDone.v' class='invisible'><code>SegmentDone(<a class="struct" href="../../gstreamer/message/struct.SegmentDone.html" title="struct gstreamer::message::SegmentDone">SegmentDone</a>&lt;'a&gt;)</code></span></span><span id='variant.DurationChanged' class='variant'><span id='DurationChanged.v' class='invisible'><code>DurationChanged(<a class="struct" href="../../gstreamer/message/struct.DurationChanged.html" title="struct gstreamer::message::DurationChanged">DurationChanged</a>&lt;'a&gt;)</code></span></span><span id='variant.Latency' class='variant'><span id='Latency.v' class='invisible'><code>Latency(<a class="struct" href="../../gstreamer/message/struct.Latency.html" title="struct gstreamer::message::Latency">Latency</a>&lt;'a&gt;)</code></span></span><span id='variant.AsyncStart' class='variant'><span id='AsyncStart.v' class='invisible'><code>AsyncStart(<a class="struct" href="../../gstreamer/message/struct.AsyncStart.html" title="struct gstreamer::message::AsyncStart">AsyncStart</a>&lt;'a&gt;)</code></span></span><span id='variant.AsyncDone' class='variant'><span id='AsyncDone.v' class='invisible'><code>AsyncDone(<a class="struct" href="../../gstreamer/message/struct.AsyncDone.html" title="struct gstreamer::message::AsyncDone">AsyncDone</a>&lt;'a&gt;)</code></span></span><span id='variant.RequestState' class='variant'><span id='RequestState.v' class='invisible'><code>RequestState(<a class="struct" href="../../gstreamer/message/struct.RequestState.html" title="struct gstreamer::message::RequestState">RequestState</a>&lt;'a&gt;)</code></span></span><span id='variant.StepStart' class='variant'><span id='StepStart.v' class='invisible'><code>StepStart(<a class="struct" href="../../gstreamer/message/struct.StepStart.html" title="struct gstreamer::message::StepStart">StepStart</a>&lt;'a&gt;)</code></span></span><span id='variant.Qos' class='variant'><span id='Qos.v' class='invisible'><code>Qos(<a class="struct" href="../../gstreamer/message/struct.Qos.html" title="struct gstreamer::message::Qos">Qos</a>&lt;'a&gt;)</code></span></span><span id='variant.Progress' class='variant'><span id='Progress.v' class='invisible'><code>Progress(<a class="struct" href="../../gstreamer/message/struct.Progress.html" title="struct gstreamer::message::Progress">Progress</a>&lt;'a&gt;)</code></span></span><span id='variant.Toc' class='variant'><span id='Toc.v' class='invisible'><code>Toc(<a class="struct" href="../../gstreamer/message/struct.Toc.html" title="struct gstreamer::message::Toc">Toc</a>&lt;'a&gt;)</code></span></span><span id='variant.ResetTime' class='variant'><span id='ResetTime.v' class='invisible'><code>ResetTime(<a class="struct" href="../../gstreamer/message/struct.ResetTime.html" title="struct gstreamer::message::ResetTime">ResetTime</a>&lt;'a&gt;)</code></span></span><span id='variant.StreamStart' class='variant'><span id='StreamStart.v' class='invisible'><code>StreamStart(<a class="struct" href="../../gstreamer/message/struct.StreamStart.html" title="struct gstreamer::message::StreamStart">StreamStart</a>&lt;'a&gt;)</code></span></span><span id='variant.NeedContext' class='variant'><span id='NeedContext.v' class='invisible'><code>NeedContext(<a class="struct" href="../../gstreamer/message/struct.NeedContext.html" title="struct gstreamer::message::NeedContext">NeedContext</a>&lt;'a&gt;)</code></span></span><span id='variant.HaveContext' class='variant'><span id='HaveContext.v' class='invisible'><code>HaveContext(<a class="struct" href="../../gstreamer/message/struct.HaveContext.html" title="struct gstreamer::message::HaveContext">HaveContext</a>&lt;'a&gt;)</code></span></span><span id='variant.DeviceAdded' class='variant'><span id='DeviceAdded.v' class='invisible'><code>DeviceAdded(<a class="struct" href="../../gstreamer/message/struct.DeviceAdded.html" title="struct gstreamer::message::DeviceAdded">DeviceAdded</a>&lt;'a&gt;)</code></span></span><span id='variant.DeviceRemoved' class='variant'><span id='DeviceRemoved.v' class='invisible'><code>DeviceRemoved(<a class="struct" href="../../gstreamer/message/struct.DeviceRemoved.html" title="struct gstreamer::message::DeviceRemoved">DeviceRemoved</a>&lt;'a&gt;)</code></span></span><span id='variant.PropertyNotify' class='variant'><span id='PropertyNotify.v' class='invisible'><code>PropertyNotify(<a class="struct" href="../../gstreamer/message/struct.PropertyNotify.html" title="struct gstreamer::message::PropertyNotify">PropertyNotify</a>&lt;'a&gt;)</code></span></span><span id='variant.StreamCollection' class='variant'><span id='StreamCollection.v' class='invisible'><code>StreamCollection(<a class="struct" href="../../gstreamer/message/struct.StreamCollection.html" title="struct gstreamer::message::StreamCollection">StreamCollection</a>&lt;'a&gt;)</code></span></span><span id='variant.StreamsSelected' class='variant'><span id='StreamsSelected.v' class='invisible'><code>StreamsSelected(<a class="struct" href="../../gstreamer/message/struct.StreamsSelected.html" title="struct gstreamer::message::StreamsSelected">StreamsSelected</a>&lt;'a&gt;)</code></span></span><span id='variant.Redirect' class='variant'><span id='Redirect.v' class='invisible'><code>Redirect(<a class="struct" href="../../gstreamer/message/struct.Redirect.html" title="struct gstreamer::message::Redirect">Redirect</a>&lt;'a&gt;)</code></span></span><span id='variant.Other' class='variant'><span id='Other.v' class='invisible'><code>Other</code></span></span><span id='variant.__NonExhaustive' class='variant'><span id='__NonExhaustive.v' class='invisible'><code>__NonExhaustive</code></span></span></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "gstreamer";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

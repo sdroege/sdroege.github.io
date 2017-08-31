@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `VideoFormat` enum in crate `gstreamer_video`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, VideoFormat">
+
+    <title>gstreamer_video::VideoFormat - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum VideoFormat</p><div class="block items"><ul><li><a href="#variants">Variants</a></li><li><a href="#methods">Methods</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='index.html'>gstreamer_video</a></p><script>window.sidebarCurrent = {name: 'VideoFormat', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='index.html'>gstreamer_video</a>::<wbr><a class="enum" href=''>VideoFormat</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/gstreamer_video/auto/enums.rs.html#239-320' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum VideoFormat {
+    Unknown,
+    Encoded,
+    I420,
+    Yv12,
+    Yuy2,
+    Uyvy,
+    Ayuv,
+    Rgbx,
+    Bgrx,
+    Xrgb,
+    Xbgr,
+    Rgba,
+    Bgra,
+    Argb,
+    Abgr,
+    Rgb,
+    Bgr,
+    Y41b,
+    Y42b,
+    Yvyu,
+    Y444,
+    V210,
+    V216,
+    Nv12,
+    Nv21,
+    Gray8,
+    Gray16Be,
+    Gray16Le,
+    V308,
+    Rgb16,
+    Bgr16,
+    Rgb15,
+    Bgr15,
+    Uyvp,
+    A420,
+    Rgb8p,
+    Yuv9,
+    Yvu9,
+    Iyu1,
+    Argb64,
+    Ayuv64,
+    R210,
+    I42010be,
+    I42010le,
+    I42210be,
+    I42210le,
+    Y44410be,
+    Y44410le,
+    Gbr,
+    Gbr10be,
+    Gbr10le,
+    Nv16,
+    Nv24,
+    Nv1264z32,
+    A42010be,
+    A42010le,
+    A42210be,
+    A42210le,
+    A44410be,
+    A44410le,
+    Nv61,
+    P01010be,
+    P01010le,
+    Iyu2,
+    Vyuy,
+    Gbra,
+    Gbra10be,
+    Gbra10le,
+    Gbr12be,
+    Gbr12le,
+    Gbra12be,
+    Gbra12le,
+    I42012be,
+    I42012le,
+    I42212be,
+    I42212le,
+    Y44412be,
+    Y44412le,
+    // some variants omitted
+}</pre><div class='docblock'><p>Enum value describing the most common video formats.</p>
+</div><h2 id='variants' class='variants'>Variants</h2>
+<span id='variant.Unknown' class='variant'><span id='Unknown.v' class='invisible'><code>Unknown</code></span></span><span id='variant.Encoded' class='variant'><span id='Encoded.v' class='invisible'><code>Encoded</code></span></span><span id='variant.I420' class='variant'><span id='I420.v' class='invisible'><code>I420</code></span></span><span id='variant.Yv12' class='variant'><span id='Yv12.v' class='invisible'><code>Yv12</code></span></span><span id='variant.Yuy2' class='variant'><span id='Yuy2.v' class='invisible'><code>Yuy2</code></span></span><span id='variant.Uyvy' class='variant'><span id='Uyvy.v' class='invisible'><code>Uyvy</code></span></span><span id='variant.Ayuv' class='variant'><span id='Ayuv.v' class='invisible'><code>Ayuv</code></span></span><span id='variant.Rgbx' class='variant'><span id='Rgbx.v' class='invisible'><code>Rgbx</code></span></span><span id='variant.Bgrx' class='variant'><span id='Bgrx.v' class='invisible'><code>Bgrx</code></span></span><span id='variant.Xrgb' class='variant'><span id='Xrgb.v' class='invisible'><code>Xrgb</code></span></span><span id='variant.Xbgr' class='variant'><span id='Xbgr.v' class='invisible'><code>Xbgr</code></span></span><span id='variant.Rgba' class='variant'><span id='Rgba.v' class='invisible'><code>Rgba</code></span></span><span id='variant.Bgra' class='variant'><span id='Bgra.v' class='invisible'><code>Bgra</code></span></span><span id='variant.Argb' class='variant'><span id='Argb.v' class='invisible'><code>Argb</code></span></span><span id='variant.Abgr' class='variant'><span id='Abgr.v' class='invisible'><code>Abgr</code></span></span><span id='variant.Rgb' class='variant'><span id='Rgb.v' class='invisible'><code>Rgb</code></span></span><span id='variant.Bgr' class='variant'><span id='Bgr.v' class='invisible'><code>Bgr</code></span></span><span id='variant.Y41b' class='variant'><span id='Y41b.v' class='invisible'><code>Y41b</code></span></span><span id='variant.Y42b' class='variant'><span id='Y42b.v' class='invisible'><code>Y42b</code></span></span><span id='variant.Yvyu' class='variant'><span id='Yvyu.v' class='invisible'><code>Yvyu</code></span></span><span id='variant.Y444' class='variant'><span id='Y444.v' class='invisible'><code>Y444</code></span></span><span id='variant.V210' class='variant'><span id='V210.v' class='invisible'><code>V210</code></span></span><span id='variant.V216' class='variant'><span id='V216.v' class='invisible'><code>V216</code></span></span><span id='variant.Nv12' class='variant'><span id='Nv12.v' class='invisible'><code>Nv12</code></span></span><span id='variant.Nv21' class='variant'><span id='Nv21.v' class='invisible'><code>Nv21</code></span></span><span id='variant.Gray8' class='variant'><span id='Gray8.v' class='invisible'><code>Gray8</code></span></span><span id='variant.Gray16Be' class='variant'><span id='Gray16Be.v' class='invisible'><code>Gray16Be</code></span></span><span id='variant.Gray16Le' class='variant'><span id='Gray16Le.v' class='invisible'><code>Gray16Le</code></span></span><span id='variant.V308' class='variant'><span id='V308.v' class='invisible'><code>V308</code></span></span><span id='variant.Rgb16' class='variant'><span id='Rgb16.v' class='invisible'><code>Rgb16</code></span></span><span id='variant.Bgr16' class='variant'><span id='Bgr16.v' class='invisible'><code>Bgr16</code></span></span><span id='variant.Rgb15' class='variant'><span id='Rgb15.v' class='invisible'><code>Rgb15</code></span></span><span id='variant.Bgr15' class='variant'><span id='Bgr15.v' class='invisible'><code>Bgr15</code></span></span><span id='variant.Uyvp' class='variant'><span id='Uyvp.v' class='invisible'><code>Uyvp</code></span></span><span id='variant.A420' class='variant'><span id='A420.v' class='invisible'><code>A420</code></span></span><span id='variant.Rgb8p' class='variant'><span id='Rgb8p.v' class='invisible'><code>Rgb8p</code></span></span><span id='variant.Yuv9' class='variant'><span id='Yuv9.v' class='invisible'><code>Yuv9</code></span></span><span id='variant.Yvu9' class='variant'><span id='Yvu9.v' class='invisible'><code>Yvu9</code></span></span><span id='variant.Iyu1' class='variant'><span id='Iyu1.v' class='invisible'><code>Iyu1</code></span></span><span id='variant.Argb64' class='variant'><span id='Argb64.v' class='invisible'><code>Argb64</code></span></span><span id='variant.Ayuv64' class='variant'><span id='Ayuv64.v' class='invisible'><code>Ayuv64</code></span></span><span id='variant.R210' class='variant'><span id='R210.v' class='invisible'><code>R210</code></span></span><span id='variant.I42010be' class='variant'><span id='I42010be.v' class='invisible'><code>I42010be</code></span></span><span id='variant.I42010le' class='variant'><span id='I42010le.v' class='invisible'><code>I42010le</code></span></span><span id='variant.I42210be' class='variant'><span id='I42210be.v' class='invisible'><code>I42210be</code></span></span><span id='variant.I42210le' class='variant'><span id='I42210le.v' class='invisible'><code>I42210le</code></span></span><span id='variant.Y44410be' class='variant'><span id='Y44410be.v' class='invisible'><code>Y44410be</code></span></span><span id='variant.Y44410le' class='variant'><span id='Y44410le.v' class='invisible'><code>Y44410le</code></span></span><span id='variant.Gbr' class='variant'><span id='Gbr.v' class='invisible'><code>Gbr</code></span></span><span id='variant.Gbr10be' class='variant'><span id='Gbr10be.v' class='invisible'><code>Gbr10be</code></span></span><span id='variant.Gbr10le' class='variant'><span id='Gbr10le.v' class='invisible'><code>Gbr10le</code></span></span><span id='variant.Nv16' class='variant'><span id='Nv16.v' class='invisible'><code>Nv16</code></span></span><span id='variant.Nv24' class='variant'><span id='Nv24.v' class='invisible'><code>Nv24</code></span></span><span id='variant.Nv1264z32' class='variant'><span id='Nv1264z32.v' class='invisible'><code>Nv1264z32</code></span></span><span id='variant.A42010be' class='variant'><span id='A42010be.v' class='invisible'><code>A42010be</code></span></span><span id='variant.A42010le' class='variant'><span id='A42010le.v' class='invisible'><code>A42010le</code></span></span><span id='variant.A42210be' class='variant'><span id='A42210be.v' class='invisible'><code>A42210be</code></span></span><span id='variant.A42210le' class='variant'><span id='A42210le.v' class='invisible'><code>A42210le</code></span></span><span id='variant.A44410be' class='variant'><span id='A44410be.v' class='invisible'><code>A44410be</code></span></span><span id='variant.A44410le' class='variant'><span id='A44410le.v' class='invisible'><code>A44410le</code></span></span><span id='variant.Nv61' class='variant'><span id='Nv61.v' class='invisible'><code>Nv61</code></span></span><span id='variant.P01010be' class='variant'><span id='P01010be.v' class='invisible'><code>P01010be</code></span></span><span id='variant.P01010le' class='variant'><span id='P01010le.v' class='invisible'><code>P01010le</code></span></span><span id='variant.Iyu2' class='variant'><span id='Iyu2.v' class='invisible'><code>Iyu2</code></span></span><span id='variant.Vyuy' class='variant'><span id='Vyuy.v' class='invisible'><code>Vyuy</code></span></span><span id='variant.Gbra' class='variant'><span id='Gbra.v' class='invisible'><code>Gbra</code></span></span><span id='variant.Gbra10be' class='variant'><span id='Gbra10be.v' class='invisible'><code>Gbra10be</code></span></span><span id='variant.Gbra10le' class='variant'><span id='Gbra10le.v' class='invisible'><code>Gbra10le</code></span></span><span id='variant.Gbr12be' class='variant'><span id='Gbr12be.v' class='invisible'><code>Gbr12be</code></span></span><span id='variant.Gbr12le' class='variant'><span id='Gbr12le.v' class='invisible'><code>Gbr12le</code></span></span><span id='variant.Gbra12be' class='variant'><span id='Gbra12be.v' class='invisible'><code>Gbra12be</code></span></span><span id='variant.Gbra12le' class='variant'><span id='Gbra12le.v' class='invisible'><code>Gbra12le</code></span></span><span id='variant.I42012be' class='variant'><span id='I42012be.v' class='invisible'><code>I42012be</code></span></span><span id='variant.I42012le' class='variant'><span id='I42012le.v' class='invisible'><code>I42012le</code></span></span><span id='variant.I42212be' class='variant'><span id='I42212be.v' class='invisible'><code>I42212be</code></span></span><span id='variant.I42212le' class='variant'><span id='I42212le.v' class='invisible'><code>I42212le</code></span></span><span id='variant.Y44412be' class='variant'><span id='Y44412be.v' class='invisible'><code>Y44412be</code></span></span><span id='variant.Y44412le' class='variant'><span id='Y44412le.v' class='invisible'><code>Y44412le</code></span></span><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class="enum" href="../gstreamer_video/enum.VideoFormat.html" title="enum gstreamer_video::VideoFormat">VideoFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_video/video_format.rs.html#48-92' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from_string' class="method"><span id='from_string.v' class='invisible'><code>fn <a href='#method.from_string' class='fnname'>from_string</a>(s: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="enum" href="../gstreamer_video/enum.VideoFormat.html" title="enum gstreamer_video::VideoFormat">VideoFormat</a></code></span></h4>
+<h4 id='method.from_fourcc' class="method"><span id='from_fourcc.v' class='invisible'><code>fn <a href='#method.from_fourcc' class='fnname'>from_fourcc</a>(fourcc: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="enum" href="../gstreamer_video/enum.VideoFormat.html" title="enum gstreamer_video::VideoFormat">VideoFormat</a></code></span></h4>
+<h4 id='method.from_masks' class="method"><span id='from_masks.v' class='invisible'><code>fn <a href='#method.from_masks' class='fnname'>from_masks</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;depth: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;bpp: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;endianness: <a class="enum" href="../gstreamer_video/enum.VideoEndianness.html" title="enum gstreamer_video::VideoEndianness">VideoEndianness</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;red_mask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;blue_mask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;green_mask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;alpha_mask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><br>) -&gt; <a class="enum" href="../gstreamer_video/enum.VideoFormat.html" title="enum gstreamer_video::VideoFormat">VideoFormat</a></code></span></h4>
+<h4 id='method.to_string' class="method"><span id='to_string.v' class='invisible'><code>fn <a href='#method.to_string' class='fnname'>to_string</a>(&amp;self) -&gt; &amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a></code></span></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="enum" href="../gstreamer_video/enum.VideoFormat.html" title="enum gstreamer_video::VideoFormat">VideoFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_video/auto/enums.rs.html#238' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="enum" href="../gstreamer_video/enum.VideoFormat.html" title="enum gstreamer_video::VideoFormat">VideoFormat</a></code></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="enum" href="../gstreamer_video/enum.VideoFormat.html" title="enum gstreamer_video::VideoFormat">VideoFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_video/auto/enums.rs.html#238' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../gstreamer_video/enum.VideoFormat.html" title="enum gstreamer_video::VideoFormat">VideoFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_video/auto/enums.rs.html#238' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="enum" href="../gstreamer_video/enum.VideoFormat.html" title="enum gstreamer_video::VideoFormat">VideoFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_video/auto/enums.rs.html#238' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="enum" href="../gstreamer_video/enum.VideoFormat.html" title="enum gstreamer_video::VideoFormat">VideoFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_video/auto/enums.rs.html#238' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../gstreamer_video/enum.VideoFormat.html" title="enum gstreamer_video::VideoFormat">VideoFormat</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../gstreamer_video/enum.VideoFormat.html" title="enum gstreamer_video::VideoFormat">VideoFormat</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html" title="trait core::hash::Hash">Hash</a> for <a class="enum" href="../gstreamer_video/enum.VideoFormat.html" title="enum gstreamer_video::VideoFormat">VideoFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_video/auto/enums.rs.html#238' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.hash' class="method"><span id='hash.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash' class='fnname'>hash</a>&lt;__H:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>&gt;(&amp;self, __arg_0: &amp;mut __H)</code></span></h4>
+<div class='docblock'><p>Feeds this value into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash">Read more</a></p>
+</div><h4 id='method.hash_slice' class="method"><span id='hash_slice.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice' class='fnname'>hash_slice</a>&lt;H&gt;(data: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[Self]</a>, state: &amp;mut H) <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;H: <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>,&nbsp;</span></code><div class='since' title='Stable since Rust version 1.3.0'>1.3.0</div></span></h4>
+<div class='docblock'><p>Feeds a slice of this type into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer_video/trait.StaticType.html" title="trait gstreamer_video::StaticType">StaticType</a> for <a class="enum" href="../gstreamer_video/enum.VideoFormat.html" title="enum gstreamer_video::VideoFormat">VideoFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_video/auto/enums.rs.html#499-503' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.static_type' class="method"><span id='static_type.v' class='invisible'><code>fn <a href='../gstreamer_video/trait.StaticType.html#tymethod.static_type' class='fnname'>static_type</a>() -&gt; <a class="enum" href="../gstreamer_video/enum.Type.html" title="enum gstreamer_video::Type">Type</a></code></span></h4>
+<div class='docblock'><p>Returns the type identifier of <code>Self</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="trait" href="../glib/value/trait.FromValueOptional.html" title="trait glib::value::FromValueOptional">FromValueOptional</a>&lt;'a&gt; for <a class="enum" href="../gstreamer_video/enum.VideoFormat.html" title="enum gstreamer_video::VideoFormat">VideoFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_video/auto/enums.rs.html#505-509' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from_value_optional' class="method"><span id='from_value_optional.v' class='invisible'><code>unsafe fn <a href='../glib/value/trait.FromValueOptional.html#tymethod.from_value_optional' class='fnname'>from_value_optional</a>(value: &amp;<a class="struct" href="../gstreamer_video/struct.Value.html" title="struct gstreamer_video::Value">Value</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;Self&gt;</code></span></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="trait" href="../glib/value/trait.FromValue.html" title="trait glib::value::FromValue">FromValue</a>&lt;'a&gt; for <a class="enum" href="../gstreamer_video/enum.VideoFormat.html" title="enum gstreamer_video::VideoFormat">VideoFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_video/auto/enums.rs.html#511-515' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from_value' class="method"><span id='from_value.v' class='invisible'><code>unsafe fn <a href='../glib/value/trait.FromValue.html#tymethod.from_value' class='fnname'>from_value</a>(value: &amp;<a class="struct" href="../gstreamer_video/struct.Value.html" title="struct gstreamer_video::Value">Value</a>) -&gt; Self</code></span></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../glib/value/trait.SetValue.html" title="trait glib::value::SetValue">SetValue</a> for <a class="enum" href="../gstreamer_video/enum.VideoFormat.html" title="enum gstreamer_video::VideoFormat">VideoFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_video/auto/enums.rs.html#517-521' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.set_value' class="method"><span id='set_value.v' class='invisible'><code>unsafe fn <a href='../glib/value/trait.SetValue.html#tymethod.set_value' class='fnname'>set_value</a>(value: &amp;mut <a class="struct" href="../gstreamer_video/struct.Value.html" title="struct gstreamer_video::Value">Value</a>, this: &amp;Self)</code></span></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/str/trait.FromStr.html" title="trait core::str::FromStr">FromStr</a> for <a class="enum" href="../gstreamer_video/enum.VideoFormat.html" title="enum gstreamer_video::VideoFormat">VideoFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_video/video_format.rs.html#94-107' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Err' class="type"><span id='Err.t' class='invisible'><code>type <a href='https://doc.rust-lang.org/nightly/core/str/trait.FromStr.html#associatedtype.Err' class="type">Err</a> = <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a></code></span></h4>
+<div class='docblock'><p>The associated error which can be returned from parsing.</p>
+</div><h4 id='method.from_str' class="method"><span id='from_str.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/str/trait.FromStr.html#tymethod.from_str' class='fnname'>from_str</a>(s: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;Self, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>&gt;</code></span></h4>
+<div class='docblock'><p>Parses a string <code>s</code> to return a value of this type. <a href="https://doc.rust-lang.org/nightly/core/str/trait.FromStr.html#tymethod.from_str">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html" title="trait core::fmt::Display">Display</a> for <a class="enum" href="../gstreamer_video/enum.VideoFormat.html" title="enum gstreamer_video::VideoFormat">VideoFormat</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_video/video_format.rs.html#109-113' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt-1' class="method"><span id='fmt.v-1' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>, <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Error.html" title="struct core::fmt::Error">Error</a>&gt;</code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer_video";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

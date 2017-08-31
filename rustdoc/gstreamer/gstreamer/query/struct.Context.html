@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Context` struct in crate `gstreamer`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Context">
+
+    <title>gstreamer::query::Context - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct Context</p><div class="block items"><ul><li><a href="#methods">Methods</a></li><li><a href="#deref-methods">Methods from Deref&lt;Target=Context<&'a QueryRef>&gt;</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>query</a></p><script>window.sidebarCurrent = {name: 'Context', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>query</a>::<wbr><a class="struct" href=''>Context</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/gstreamer/query.rs.html#1068' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Context&lt;T&gt;(_);</pre><div class='docblock'><p><code>Context</code> is a container object used to store contexts like a device
+context, a display server connection and similar concepts that should
+be shared between multiple elements.</p>
+
+<p>Applications can set a context on a complete pipeline by using
+<code>ElementExt::set_context</code>, which will then be propagated to all
+child elements. Elements can handle these in <code>ElementClass.set_context</code>()
+and merge them with the context information they already have.</p>
+
+<p>When an element needs a context it will do the following actions in this
+order until one step succeeds:
+1. Check if the element already has a context
+2. Query downstream with GST_QUERY_CONTEXT for the context
+3. Query upstream with GST_QUERY_CONTEXT for the context
+4. Post a GST_MESSAGE_NEED_CONTEXT message on the bus with the required
+ context types and afterwards check if a usable context was set now
+5. Create a context by itself and post a GST_MESSAGE_HAVE_CONTEXT message
+ on the bus.</p>
+
+<p>Bins will catch GST_MESSAGE_NEED_CONTEXT messages and will set any previously
+known context on the element that asks for it if possible. Otherwise the
+application should provide one if it can.</p>
+
+<p><code>Context</code><!-- -->s can be persistent.
+A persistent <code>Context</code> is kept in elements when they reach
+<code>State::Null</code>, non-persistent ones will be removed.
+Also, a non-persistent context won&#39;t override a previous persistent
+context set to an element.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="struct" href="../../gstreamer/query/struct.Context.html" title="struct gstreamer::query::Context">Context</a>&lt;&amp;'a <a class="struct" href="../../gstreamer/query/struct.QueryRef.html" title="struct gstreamer::query::QueryRef">QueryRef</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gstreamer/query.rs.html#1069-1093' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.get_context' class="method"><span id='get_context.v' class='invisible'><code>fn <a href='#method.get_context' class='fnname'>get_context</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../gstreamer/context/struct.ContextRef.html" title="struct gstreamer::context::ContextRef">ContextRef</a>&gt;</code></span></h4>
+<h4 id='method.get_context_type' class="method"><span id='get_context_type.v' class='invisible'><code>fn <a href='#method.get_context_type' class='fnname'>get_context_type</a>(&amp;self) -&gt; &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a></code></span></h4>
+<h4 id='method.get_query' class="method"><span id='get_query.v' class='invisible'><code>fn <a href='#method.get_query' class='fnname'>get_query</a>(&amp;self) -&gt; &amp;<a class="struct" href="../../gstreamer/query/struct.QueryRef.html" title="struct gstreamer::query::QueryRef">QueryRef</a></code></span></h4>
+</div><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="struct" href="../../gstreamer/query/struct.Context.html" title="struct gstreamer::query::Context">Context</a>&lt;&amp;'a mut <a class="struct" href="../../gstreamer/query/struct.QueryRef.html" title="struct gstreamer::query::QueryRef">QueryRef</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gstreamer/query.rs.html#1095-1105' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.set_context' class="method"><span id='set_context.v' class='invisible'><code>fn <a href='#method.set_context' class='fnname'>set_context</a>(&amp;mut self, context: &amp;<a class="type" href="../../gstreamer/context/type.Context.html" title="type gstreamer::context::Context">Context</a>)</code></span></h4>
+<h4 id='method.get_mut_query' class="method"><span id='get_mut_query.v' class='invisible'><code>fn <a href='#method.get_mut_query' class='fnname'>get_mut_query</a>(&amp;mut self) -&gt; &amp;mut <a class="struct" href="../../gstreamer/query/struct.QueryRef.html" title="struct gstreamer::query::QueryRef">QueryRef</a></code></span></h4>
+</div><h2 id='deref-methods'>Methods from <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html" title="trait core::ops::Deref">Deref</a>&lt;Target = <a class="struct" href="../../gstreamer/query/struct.Context.html" title="struct gstreamer::query::Context">Context</a>&lt;&amp;'a <a class="struct" href="../../gstreamer/query/struct.QueryRef.html" title="struct gstreamer::query::QueryRef">QueryRef</a>&gt;&gt;</h2><div class='impl-items'><h4 id='method.get_context-1' class="method"><span id='get_context.v-1' class='invisible'><code>fn <a href='#method.get_context-1' class='fnname'>get_context</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../gstreamer/context/struct.ContextRef.html" title="struct gstreamer::context::ContextRef">ContextRef</a>&gt;</code></span></h4>
+<h4 id='method.get_context_type-1' class="method"><span id='get_context_type.v-1' class='invisible'><code>fn <a href='#method.get_context_type-1' class='fnname'>get_context_type</a>(&amp;self) -&gt; &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a></code></span></h4>
+<h4 id='method.get_query-1' class="method"><span id='get_query.v-1' class='invisible'><code>fn <a href='#method.get_query-1' class='fnname'>get_query</a>(&amp;self) -&gt; &amp;<a class="struct" href="../../gstreamer/query/struct.QueryRef.html" title="struct gstreamer::query::QueryRef">QueryRef</a></code></span></h4>
+</div><div class='impl-items'></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html" title="trait core::ops::Deref">Deref</a> for <a class="struct" href="../../gstreamer/query/struct.Context.html" title="struct gstreamer::query::Context">Context</a>&lt;&amp;'a mut <a class="struct" href="../../gstreamer/query/struct.QueryRef.html" title="struct gstreamer::query::QueryRef">QueryRef</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gstreamer/query.rs.html#1122-1130' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Target' class="type"><span id='Target.t' class='invisible'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html#associatedtype.Target' class="type">Target</a> = <a class="struct" href="../../gstreamer/query/struct.Context.html" title="struct gstreamer::query::Context">Context</a>&lt;&amp;'a <a class="struct" href="../../gstreamer/query/struct.QueryRef.html" title="struct gstreamer::query::QueryRef">QueryRef</a>&gt;</code></span></h4>
+<div class='docblock'><p>The resulting type after dereferencing</p>
+</div><h4 id='method.deref' class="method"><span id='deref.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html#tymethod.deref' class='fnname'>deref</a>(&amp;self) -&gt; &amp;Self::<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/trait.Deref.html" title="trait core::ops::Deref">Target</a></code></span></h4>
+<div class='docblock'><p>The method called to dereference a value</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "gstreamer";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>
