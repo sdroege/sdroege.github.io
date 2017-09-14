@@ -5,6 +5,7 @@ implementors["gstreamer_app"] = [];
 implementors["gstreamer_audio"] = [];
 implementors["gstreamer_player"] = [];
 implementors["gstreamer_video"] = [];
+implementors["tokio_core"] = [];
 
             if (window.register_implementors) {
                 window.register_implementors(implementors);

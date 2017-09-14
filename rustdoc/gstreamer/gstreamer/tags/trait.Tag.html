@@ -51,14 +51,14 @@
                </span><a class='srclink' href='../../src/gstreamer/tags.rs.html#25-28' title='goto source code'>[src]</a></span></h1>
 <pre class='rust trait'>pub trait Tag&lt;'a&gt; {
     type <a href='#associatedtype.TagType' class="type">TagType</a>: <a class="trait" href="../../glib/value/trait.FromValueOptional.html" title="trait glib::value::FromValueOptional">FromValueOptional</a>&lt;'a&gt; + <a class="trait" href="../../glib/value/trait.SetValue.html" title="trait glib::value::SetValue">SetValue</a>;
-    fn <a href='#tymethod.tag_name' class='fnname'>tag_name</a>() -&gt; &amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>;
+    fn <a href='#tymethod.tag_name' class='fnname'>tag_name</a>&lt;'b&gt;() -&gt; &amp;'b <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>;
 }</pre>
             <h2 id='associated-types'>Associated Types</h2>
             <div class='methods'>
         <h3 id='associatedtype.TagType' class='method'><span id='TagType.t' class='invisible'><code>type <a href='#associatedtype.TagType' class="type">TagType</a>: <a class="trait" href="../../glib/value/trait.FromValueOptional.html" title="trait glib::value::FromValueOptional">FromValueOptional</a>&lt;'a&gt; + <a class="trait" href="../../glib/value/trait.SetValue.html" title="trait glib::value::SetValue">SetValue</a></code></span></h3></div>
             <h2 id='required-methods'>Required Methods</h2>
             <div class='methods'>
-        <h3 id='tymethod.tag_name' class='method'><span id='tag_name.v' class='invisible'><code>fn <a href='#tymethod.tag_name' class='fnname'>tag_name</a>() -&gt; &amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a></code></span></h3></div>
+        <h3 id='tymethod.tag_name' class='method'><span id='tag_name.v' class='invisible'><code>fn <a href='#tymethod.tag_name' class='fnname'>tag_name</a>&lt;'b&gt;() -&gt; &amp;'b <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a></code></span></h3></div>
         <h2 id='implementors'>Implementors</h2>
         <ul class='item-list' id='implementors-list'>
     <li><code>impl&lt;'a&gt; Tag&lt;'a&gt; for <a class="struct" href="../../gstreamer/tags/struct.Title.html" title="struct gstreamer::tags::Title">Title</a></code></li>

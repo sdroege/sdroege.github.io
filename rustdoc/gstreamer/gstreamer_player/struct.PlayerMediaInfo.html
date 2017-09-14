@@ -54,12 +54,12 @@
 <h1 id='implements' class='section-header'><a href='#implements'>Implements</a></h1>
 <p><a href="trait.ObjectExt.html"><code>ObjectExt</code></a></p>
 </div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class="struct" href="../gstreamer_player/struct.PlayerMediaInfo.html" title="struct gstreamer_player::PlayerMediaInfo">PlayerMediaInfo</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_player/auto/player_media_info.rs.html#29-195' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.get_audio_streams' class="method"><span id='get_audio_streams.v' class='invisible'><code>fn <a href='#method.get_audio_streams' class='fnname'>get_audio_streams</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer_player/struct.PlayerAudioInfo.html" title="struct gstreamer_player::PlayerAudioInfo">PlayerAudioInfo</a>&gt;</code></span></h4>
+<div class='impl-items'><h4 id='method.get_audio_streams' class="method"><span id='get_audio_streams.v' class='invisible'><code>fn <a href='#method.get_audio_streams' class='fnname'>get_audio_streams</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer_player/struct.PlayerAudioInfo.html" title="struct gstreamer_player::PlayerAudioInfo">PlayerAudioInfo</a>&gt;</code></span></h4>
 <div class='docblock'>
 <h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
 <p>A <code>glib::List</code> of
 matching <code>PlayerAudioInfo</code>.</p>
-</div><h4 id='method.get_container_format' class="method"><span id='get_container_format.v' class='invisible'><code>fn <a href='#method.get_container_format' class='fnname'>get_container_format</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>&gt;</code></span></h4>
+</div><h4 id='method.get_container_format' class="method"><span id='get_container_format.v' class='invisible'><code>fn <a href='#method.get_container_format' class='fnname'>get_container_format</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span></h4>
 <div class='docblock'>
 <h1 id='returns-1' class='section-header'><a href='#returns-1'>Returns</a></h1>
 <p>the container format.</p>
@@ -89,12 +89,12 @@ Application can use gst_sample_*<code>_</code> API&#39;s to get caps, buffer etc
 <div class='docblock'>
 <h1 id='returns-7' class='section-header'><a href='#returns-7'>Returns</a></h1>
 <p>number of video streams.</p>
-</div><h4 id='method.get_stream_list' class="method"><span id='get_stream_list.v' class='invisible'><code>fn <a href='#method.get_stream_list' class='fnname'>get_stream_list</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer_player/struct.PlayerStreamInfo.html" title="struct gstreamer_player::PlayerStreamInfo">PlayerStreamInfo</a>&gt;</code></span></h4>
+</div><h4 id='method.get_stream_list' class="method"><span id='get_stream_list.v' class='invisible'><code>fn <a href='#method.get_stream_list' class='fnname'>get_stream_list</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer_player/struct.PlayerStreamInfo.html" title="struct gstreamer_player::PlayerStreamInfo">PlayerStreamInfo</a>&gt;</code></span></h4>
 <div class='docblock'>
 <h1 id='returns-8' class='section-header'><a href='#returns-8'>Returns</a></h1>
 <p>A <code>glib::List</code> of
 matching <code>PlayerStreamInfo</code>.</p>
-</div><h4 id='method.get_subtitle_streams' class="method"><span id='get_subtitle_streams.v' class='invisible'><code>fn <a href='#method.get_subtitle_streams' class='fnname'>get_subtitle_streams</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer_player/struct.PlayerSubtitleInfo.html" title="struct gstreamer_player::PlayerSubtitleInfo">PlayerSubtitleInfo</a>&gt;</code></span></h4>
+</div><h4 id='method.get_subtitle_streams' class="method"><span id='get_subtitle_streams.v' class='invisible'><code>fn <a href='#method.get_subtitle_streams' class='fnname'>get_subtitle_streams</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer_player/struct.PlayerSubtitleInfo.html" title="struct gstreamer_player::PlayerSubtitleInfo">PlayerSubtitleInfo</a>&gt;</code></span></h4>
 <div class='docblock'>
 <h1 id='returns-9' class='section-header'><a href='#returns-9'>Returns</a></h1>
 <p>A <code>glib::List</code> of
@@ -103,15 +103,15 @@ matching <code>PlayerSubtitleInfo</code>.</p>
 <div class='docblock'>
 <h1 id='returns-10' class='section-header'><a href='#returns-10'>Returns</a></h1>
 <p>the tags contained in media info.</p>
-</div><h4 id='method.get_title' class="method"><span id='get_title.v' class='invisible'><code>fn <a href='#method.get_title' class='fnname'>get_title</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>&gt;</code></span></h4>
+</div><h4 id='method.get_title' class="method"><span id='get_title.v' class='invisible'><code>fn <a href='#method.get_title' class='fnname'>get_title</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span></h4>
 <div class='docblock'>
 <h1 id='returns-11' class='section-header'><a href='#returns-11'>Returns</a></h1>
 <p>the media title.</p>
-</div><h4 id='method.get_uri' class="method"><span id='get_uri.v' class='invisible'><code>fn <a href='#method.get_uri' class='fnname'>get_uri</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>&gt;</code></span></h4>
+</div><h4 id='method.get_uri' class="method"><span id='get_uri.v' class='invisible'><code>fn <a href='#method.get_uri' class='fnname'>get_uri</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span></h4>
 <div class='docblock'>
 <h1 id='returns-12' class='section-header'><a href='#returns-12'>Returns</a></h1>
 <p>the URI associated with <code>PlayerMediaInfo</code>.</p>
-</div><h4 id='method.get_video_streams' class="method"><span id='get_video_streams.v' class='invisible'><code>fn <a href='#method.get_video_streams' class='fnname'>get_video_streams</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer_player/struct.PlayerVideoInfo.html" title="struct gstreamer_player::PlayerVideoInfo">PlayerVideoInfo</a>&gt;</code></span></h4>
+</div><h4 id='method.get_video_streams' class="method"><span id='get_video_streams.v' class='invisible'><code>fn <a href='#method.get_video_streams' class='fnname'>get_video_streams</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer_player/struct.PlayerVideoInfo.html" title="struct gstreamer_player::PlayerVideoInfo">PlayerVideoInfo</a>&gt;</code></span></h4>
 <div class='docblock'>
 <h1 id='returns-13' class='section-header'><a href='#returns-13'>Returns</a></h1>
 <p>A <code>glib::List</code> of

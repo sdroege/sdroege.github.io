@@ -50,7 +50,7 @@
                    </a>
                </span></span></h1>
 <pre class='rust struct'>pub struct ParseContext(_);</pre><div class='docblock'><p>Opaque structure.</p>
-</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class="struct" href="../gstreamer/struct.ParseContext.html" title="struct gstreamer::ParseContext">ParseContext</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/parse_context.rs.html#32-64' title='goto source code'>[src]</a></span></h3>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class="struct" href="../gstreamer/struct.ParseContext.html" title="struct gstreamer::ParseContext">ParseContext</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/parse_context.rs.html#32-62' title='goto source code'>[src]</a></span></h3>
 <div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>fn <a href='#method.new' class='fnname'>new</a>() -&gt; Self</code></span></h4>
 <div class='docblock'><p>Allocates a parse context for use with <code>gst_parse_launch_full</code> or
 <code>gst_parse_launchv_full</code>.</p>
@@ -60,7 +60,7 @@
 <h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
 <p>a newly-allocated parse context. Free with
  <code>ParseContext::free</code> when no longer needed.</p>
-</div><h4 id='method.get_missing_elements' class="method"><span id='get_missing_elements.v' class='invisible'><code>fn <a href='#method.get_missing_elements' class='fnname'>get_missing_elements</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>&gt;</code></span></h4>
+</div><h4 id='method.get_missing_elements' class="method"><span id='get_missing_elements.v' class='invisible'><code>fn <a href='#method.get_missing_elements' class='fnname'>get_missing_elements</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span></h4>
 <div class='docblock'><p>Retrieve missing elements from a previous run of <code>gst_parse_launch_full</code>
 or <code>gst_parse_launchv_full</code>. Will only return results if an error code
 of <code>ParseError::NoSuchElement</code> was returned.</p>
@@ -80,6 +80,9 @@ of <code>ParseError::NoSuchElement</code> was returned.</p>
 </div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer/trait.StaticType.html" title="trait gstreamer::StaticType">StaticType</a> for <a class="struct" href="../gstreamer/struct.ParseContext.html" title="struct gstreamer::ParseContext">ParseContext</a></code></span><span class='out-of-band'></span></h3>
 <div class='impl-items'><h4 id='method.static_type' class="method"><span id='static_type.v' class='invisible'><code>fn <a href='../gstreamer/trait.StaticType.html#tymethod.static_type' class='fnname'>static_type</a>() -&gt; <a class="enum" href="../gstreamer/enum.Type.html" title="enum gstreamer::Type">Type</a></code></span></h4>
 <div class='docblock'><p>Returns the type identifier of <code>Self</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html" title="trait core::default::Default">Default</a> for <a class="struct" href="../gstreamer/struct.ParseContext.html" title="struct gstreamer::ParseContext">ParseContext</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/parse_context.rs.html#64-68' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.default' class="method"><span id='default.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default' class='fnname'>default</a>() -&gt; Self</code></span></h4>
+<div class='docblock'><p>Returns the &quot;default value&quot; for a type. <a href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default">Read more</a></p>
 </div></div></section>
     <section id='search' class="content hidden"></section>
 

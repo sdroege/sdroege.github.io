@@ -211,11 +211,6 @@
 <span id="166">166</span>
 <span id="167">167</span>
 <span id="168">168</span>
-<span id="169">169</span>
-<span id="170">170</span>
-<span id="171">171</span>
-<span id="172">172</span>
-<span id="173">173</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -228,9 +223,9 @@
 <span class="attribute">#<span class="op">!</span>[<span class="ident">recursion_limit</span> <span class="op">=</span> <span class="string">&quot;256&quot;</span>]</span>
 <span class="attribute">#[<span class="ident">macro_use</span>]</span>
 <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">bitflags</span>;
-<span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">libc</span>;
 <span class="attribute">#[<span class="ident">macro_use</span>]</span>
 <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">lazy_static</span>;
+<span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">libc</span>;
 
 <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">glib_sys</span> <span class="kw">as</span> <span class="ident">glib_ffi</span>;
 <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">gobject_sys</span> <span class="kw">as</span> <span class="ident">gobject_ffi</span>;
@@ -271,6 +266,7 @@
 <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;cargo-clippy&quot;</span>, <span class="ident">allow</span>(<span class="ident">transmute_ptr_to_ref</span>))]</span>
 <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;cargo-clippy&quot;</span>, <span class="ident">allow</span>(<span class="ident">too_many_arguments</span>))]</span>
 <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;cargo-clippy&quot;</span>, <span class="ident">allow</span>(<span class="ident">match_same_arms</span>))]</span>
+<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;cargo-clippy&quot;</span>, <span class="ident">allow</span>(<span class="ident">type_complexity</span>))]</span>
 <span class="kw">mod</span> <span class="ident">auto</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">auto</span>::<span class="kw-2">*</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">auto</span>::<span class="ident">functions</span>::<span class="kw-2">*</span>;
@@ -311,14 +307,8 @@
 <span class="kw">mod</span> <span class="ident">device_provider</span>;
 <span class="kw">mod</span> <span class="ident">parse_context</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">element</span>::<span class="ident">ElementExtManual</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">element</span>::{
-    <span class="ident">ELEMENT_METADATA_AUTHOR</span>,
-    <span class="ident">ELEMENT_METADATA_DESCRIPTION</span>,
-    <span class="ident">ELEMENT_METADATA_DOC_URI</span>,
-    <span class="ident">ELEMENT_METADATA_ICON_NAME</span>,
-    <span class="ident">ELEMENT_METADATA_KLASS</span>,
-    <span class="ident">ELEMENT_METADATA_LONGNAME</span>,
-};
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">element</span>::{<span class="ident">ELEMENT_METADATA_AUTHOR</span>, <span class="ident">ELEMENT_METADATA_DESCRIPTION</span>, <span class="ident">ELEMENT_METADATA_DOC_URI</span>,
+                  <span class="ident">ELEMENT_METADATA_ICON_NAME</span>, <span class="ident">ELEMENT_METADATA_KLASS</span>, <span class="ident">ELEMENT_METADATA_LONGNAME</span>};
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">bin</span>::<span class="ident">BinExtManual</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">pad</span>::{<span class="ident">PadExtManual</span>, <span class="ident">PadProbeData</span>, <span class="ident">PadProbeId</span>, <span class="ident">PadProbeInfo</span>, <span class="ident">PAD_PROBE_ID_INVALID</span>};
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">gobject</span>::<span class="ident">GObjectExtManualGst</span>;
@@ -340,7 +330,7 @@
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">toc</span>::{<span class="ident">Toc</span>, <span class="ident">TocEntry</span>, <span class="ident">TocEntryRef</span>, <span class="ident">TocRef</span>};
 
 <span class="kw">mod</span> <span class="ident">clock</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">clock</span>::{<span class="ident">ClockId</span>, <span class="ident">ClockExtManual</span>};
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">clock</span>::{<span class="ident">ClockExtManual</span>, <span class="ident">ClockId</span>};
 
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">functions</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">functions</span>::<span class="kw-2">*</span>;

@@ -878,10 +878,6 @@
 <span id="833">833</span>
 <span id="834">834</span>
 <span id="835">835</span>
-<span id="836">836</span>
-<span id="837">837</span>
-<span id="838">838</span>
-<span id="839">839</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -913,8 +909,7 @@
     <span class="ident">Unknown</span>,
     <span class="ident">Range0255</span>,
     <span class="ident">Range16235</span>,
-    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
-    <span class="ident">__Unknown</span>(<span class="ident">i32</span>),
+    <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span> <span class="ident">__Unknown</span>(<span class="ident">i32</span>),
 }
 
 <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
@@ -1090,8 +1085,7 @@
     <span class="ident">stride</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> [<span class="ident">i32</span>]<span class="op">&gt;</span>,
     <span class="ident">multiview_mode</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span>::<span class="ident">VideoMultiviewMode</span><span class="op">&gt;</span>,
     <span class="ident">multiview_flags</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span>::<span class="ident">VideoMultiviewFlags</span><span class="op">&gt;</span>,
-    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_12&quot;</span>)]</span>
-    <span class="ident">field_order</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span>::<span class="ident">VideoFieldOrder</span><span class="op">&gt;</span>,
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_12&quot;</span>)]</span> <span class="ident">field_order</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span>::<span class="ident">VideoFieldOrder</span><span class="op">&gt;</span>,
 }
 
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">VideoInfoBuilder</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> {
@@ -1149,9 +1143,8 @@
                     <span class="kw">return</span> <span class="prelude-val">None</span>;
                 }
 
-                <span class="kw">for</span> <span class="ident">i</span> <span class="kw">in</span> <span class="number">0</span>..((<span class="kw-2">*</span><span class="ident">info</span>.<span class="ident">finfo</span>).<span class="ident">n_planes</span> <span class="kw">as</span> <span class="ident">usize</span>) {
-                    <span class="ident">info</span>.<span class="ident">offset</span>[<span class="ident">i</span>] <span class="op">=</span> <span class="ident">offset</span>[<span class="ident">i</span>];
-                }
+                <span class="kw">let</span> <span class="ident">n_planes</span> <span class="op">=</span> (<span class="kw-2">*</span><span class="ident">info</span>.<span class="ident">finfo</span>).<span class="ident">n_planes</span> <span class="kw">as</span> <span class="ident">usize</span>;
+                <span class="ident">info</span>.<span class="ident">offset</span>[..<span class="ident">n_planes</span>].<span class="ident">copy_from_slice</span>(<span class="kw-2">&amp;</span><span class="ident">offset</span>[..<span class="ident">n_planes</span>]);
             }
 
             <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="ident">stride</span>) <span class="op">=</span> <span class="self">self</span>.<span class="ident">stride</span> {
@@ -1159,9 +1152,8 @@
                     <span class="kw">return</span> <span class="prelude-val">None</span>;
                 }
 
-                <span class="kw">for</span> <span class="ident">i</span> <span class="kw">in</span> <span class="number">0</span>..((<span class="kw-2">*</span><span class="ident">info</span>.<span class="ident">finfo</span>).<span class="ident">n_planes</span> <span class="kw">as</span> <span class="ident">usize</span>) {
-                    <span class="ident">info</span>.<span class="ident">stride</span>[<span class="ident">i</span>] <span class="op">=</span> <span class="ident">stride</span>[<span class="ident">i</span>];
-                }
+                <span class="kw">let</span> <span class="ident">n_planes</span> <span class="op">=</span> (<span class="kw-2">*</span><span class="ident">info</span>.<span class="ident">finfo</span>).<span class="ident">n_planes</span> <span class="kw">as</span> <span class="ident">usize</span>;
+                <span class="ident">info</span>.<span class="ident">stride</span>[..<span class="ident">n_planes</span>].<span class="ident">copy_from_slice</span>(<span class="kw-2">&amp;</span><span class="ident">stride</span>[..<span class="ident">n_planes</span>]);
             }
 
             <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="ident">multiview_mode</span>) <span class="op">=</span> <span class="self">self</span>.<span class="ident">multiview_mode</span> {

@@ -560,6 +560,12 @@
 <span id="515">515</span>
 <span id="516">516</span>
 <span id="517">517</span>
+<span id="518">518</span>
+<span id="519">519</span>
+<span id="520">520</span>
+<span id="521">521</span>
+<span id="522">522</span>
+<span id="523">523</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2016-2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -718,6 +724,12 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">append</span>(<span class="ident">buffer</span>: <span class="self">Self</span>, <span class="ident">other</span>: <span class="self">Self</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
         <span class="macro">skip_assert_initialized</span><span class="macro">!</span>();
         <span class="kw">unsafe</span> { <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_buffer_append</span>(<span class="ident">buffer</span>.<span class="ident">into_ptr</span>(), <span class="ident">other</span>.<span class="ident">into_ptr</span>())) }
+    }
+}
+
+<span class="kw">impl</span> <span class="ident">Default</span> <span class="kw">for</span> <span class="ident">GstRc</span><span class="op">&lt;</span><span class="ident">BufferRef</span><span class="op">&gt;</span> {
+    <span class="kw">fn</span> <span class="ident">default</span>() <span class="op">-&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span>::<span class="ident">new</span>()
     }
 }
 

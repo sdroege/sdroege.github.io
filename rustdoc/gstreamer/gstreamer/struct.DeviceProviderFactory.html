@@ -75,7 +75,7 @@ assured with <code>PluginFeature::load</code>.</p>
 
 <h1 id='returns-1' class='section-header'><a href='#returns-1'>Returns</a></h1>
 <p>the <code>glib::Type</code> for device providers managed by this factory.</p>
-</div><h4 id='method.get_metadata' class="method"><span id='get_metadata.v' class='invisible'><code>fn <a href='#method.get_metadata' class='fnname'>get_metadata</a>(&amp;self, key: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>&gt;</code></span></h4>
+</div><h4 id='method.get_metadata' class="method"><span id='get_metadata.v' class='invisible'><code>fn <a href='#method.get_metadata' class='fnname'>get_metadata</a>(&amp;self, key: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span></h4>
 <div class='docblock'><p>Get the metadata on <code>self</code> with <code>key</code>.</p>
 
 <h2 id='key' class='section-header'><a href='#key'><code>key</code></a></h2>
@@ -84,7 +84,7 @@ assured with <code>PluginFeature::load</code>.</p>
 <h1 id='returns-2' class='section-header'><a href='#returns-2'>Returns</a></h1>
 <p>the metadata with <code>key</code> on <code>self</code> or <code>None</code>
 when there was no metadata with the given <code>key</code>.</p>
-</div><h4 id='method.get_metadata_keys' class="method"><span id='get_metadata_keys.v' class='invisible'><code>fn <a href='#method.get_metadata_keys' class='fnname'>get_metadata_keys</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>&gt;</code></span></h4>
+</div><h4 id='method.get_metadata_keys' class="method"><span id='get_metadata_keys.v' class='invisible'><code>fn <a href='#method.get_metadata_keys' class='fnname'>get_metadata_keys</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span></h4>
 <div class='docblock'><p>Get the available keys for the metadata on <code>self</code>.</p>
 
 <h1 id='returns-3' class='section-header'><a href='#returns-3'>Returns</a></h1>
@@ -128,7 +128,7 @@ provider factory.</p>
 <h1 id='returns-7' class='section-header'><a href='#returns-7'>Returns</a></h1>
 <p>a <code>DeviceProvider</code> or <code>None</code>
 if unable to create device provider</p>
-</div><h4 id='method.list_get_device_providers' class="method"><span id='list_get_device_providers.v' class='invisible'><code>fn <a href='#method.list_get_device_providers' class='fnname'>list_get_device_providers</a>(minrank: <a class="enum" href="../gstreamer/enum.Rank.html" title="enum gstreamer::Rank">Rank</a>) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer/struct.DeviceProviderFactory.html" title="struct gstreamer::DeviceProviderFactory">DeviceProviderFactory</a>&gt;</code></span></h4>
+</div><h4 id='method.list_get_device_providers' class="method"><span id='list_get_device_providers.v' class='invisible'><code>fn <a href='#method.list_get_device_providers' class='fnname'>list_get_device_providers</a>(minrank: <a class="enum" href="../gstreamer/enum.Rank.html" title="enum gstreamer::Rank">Rank</a>) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer/struct.DeviceProviderFactory.html" title="struct gstreamer::DeviceProviderFactory">DeviceProviderFactory</a>&gt;</code></span></h4>
 <div class='docblock'><p>Get a list of factories with a rank greater or equal to <code>minrank</code>.
 The list of factories is returned by decreasing rank.</p>
 

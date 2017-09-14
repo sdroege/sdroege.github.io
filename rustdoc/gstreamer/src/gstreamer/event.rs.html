@@ -2047,28 +2047,6 @@
 <span id="2002">2002</span>
 <span id="2003">2003</span>
 <span id="2004">2004</span>
-<span id="2005">2005</span>
-<span id="2006">2006</span>
-<span id="2007">2007</span>
-<span id="2008">2008</span>
-<span id="2009">2009</span>
-<span id="2010">2010</span>
-<span id="2011">2011</span>
-<span id="2012">2012</span>
-<span id="2013">2013</span>
-<span id="2014">2014</span>
-<span id="2015">2015</span>
-<span id="2016">2016</span>
-<span id="2017">2017</span>
-<span id="2018">2018</span>
-<span id="2019">2019</span>
-<span id="2020">2020</span>
-<span id="2021">2021</span>
-<span id="2022">2022</span>
-<span id="2023">2023</span>
-<span id="2024">2024</span>
-<span id="2025">2025</span>
-<span id="2026">2026</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -2096,6 +2074,9 @@
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">EventRef</span>(<span class="ident">ffi</span>::<span class="ident">GstEvent</span>);
 
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">Event</span> <span class="op">=</span> <span class="ident">GstRc</span><span class="op">&lt;</span><span class="ident">EventRef</span><span class="op">&gt;</span>;
+
+<span class="kw">unsafe</span> <span class="kw">impl</span> <span class="ident">Sync</span> <span class="kw">for</span> <span class="ident">EventRef</span> {}
+<span class="kw">unsafe</span> <span class="kw">impl</span> <span class="ident">Send</span> <span class="kw">for</span> <span class="ident">EventRef</span> {}
 
 <span class="kw">unsafe</span> <span class="kw">impl</span> <span class="ident">MiniObject</span> <span class="kw">for</span> <span class="ident">EventRef</span> {
     <span class="kw">type</span> <span class="ident">GstType</span> <span class="op">=</span> <span class="ident">ffi</span>::<span class="ident">GstEvent</span>;
@@ -2141,66 +2122,41 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">view</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">EventView</span> {
         <span class="kw">let</span> <span class="ident">type_</span> <span class="op">=</span> <span class="kw">unsafe</span> { (<span class="kw-2">*</span><span class="self">self</span>.<span class="ident">as_ptr</span>()).<span class="ident">type_</span> };
 
-        <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_FLUSH_START</span> {
-            <span class="ident">EventView</span>::<span class="ident">FlushStart</span>(<span class="ident">FlushStart</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_FLUSH_STOP</span> {
-            <span class="ident">EventView</span>::<span class="ident">FlushStop</span>(<span class="ident">FlushStop</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_STREAM_START</span> {
-            <span class="ident">EventView</span>::<span class="ident">StreamStart</span>(<span class="ident">StreamStart</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_CAPS</span> {
-            <span class="ident">EventView</span>::<span class="ident">Caps</span>(<span class="ident">Caps</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_SEGMENT</span> {
-            <span class="ident">EventView</span>::<span class="ident">Segment</span>(<span class="ident">Segment</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_STREAM_COLLECTION</span> {
-            <span class="ident">EventView</span>::<span class="ident">StreamCollection</span>(<span class="ident">StreamCollection</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_TAG</span> {
-            <span class="ident">EventView</span>::<span class="ident">Tag</span>(<span class="ident">Tag</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_BUFFERSIZE</span> {
-            <span class="ident">EventView</span>::<span class="ident">BufferSize</span>(<span class="ident">BufferSize</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_SINK_MESSAGE</span> {
-            <span class="ident">EventView</span>::<span class="ident">SinkMessage</span>(<span class="ident">SinkMessage</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_STREAM_GROUP_DONE</span> {
-            <span class="ident">EventView</span>::<span class="ident">StreamGroupDone</span>(<span class="ident">StreamGroupDone</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_EOS</span> {
-            <span class="ident">EventView</span>::<span class="ident">Eos</span>(<span class="ident">Eos</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_TOC</span> {
-            <span class="ident">EventView</span>::<span class="ident">Toc</span>(<span class="ident">Toc</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_PROTECTION</span> {
-            <span class="ident">EventView</span>::<span class="ident">Protection</span>(<span class="ident">Protection</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_SEGMENT_DONE</span> {
-            <span class="ident">EventView</span>::<span class="ident">SegmentDone</span>(<span class="ident">SegmentDone</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_GAP</span> {
-            <span class="ident">EventView</span>::<span class="ident">Gap</span>(<span class="ident">Gap</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_QOS</span> {
-            <span class="ident">EventView</span>::<span class="ident">Qos</span>(<span class="ident">Qos</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_SEEK</span> {
-            <span class="ident">EventView</span>::<span class="ident">Seek</span>(<span class="ident">Seek</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_NAVIGATION</span> {
-            <span class="ident">EventView</span>::<span class="ident">Navigation</span>(<span class="ident">Navigation</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_LATENCY</span> {
-            <span class="ident">EventView</span>::<span class="ident">Latency</span>(<span class="ident">Latency</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_STEP</span> {
-            <span class="ident">EventView</span>::<span class="ident">Step</span>(<span class="ident">Step</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_RECONFIGURE</span> {
-            <span class="ident">EventView</span>::<span class="ident">Reconfigure</span>(<span class="ident">Reconfigure</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_TOC_SELECT</span> {
-            <span class="ident">EventView</span>::<span class="ident">TocSelect</span>(<span class="ident">TocSelect</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_SELECT_STREAMS</span> {
-            <span class="ident">EventView</span>::<span class="ident">SelectStreams</span>(<span class="ident">SelectStreams</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_CUSTOM_UPSTREAM</span> {
-            <span class="ident">EventView</span>::<span class="ident">CustomUpstream</span>(<span class="ident">CustomUpstream</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_CUSTOM_DOWNSTREAM</span> {
-            <span class="ident">EventView</span>::<span class="ident">CustomDownstream</span>(<span class="ident">CustomDownstream</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_CUSTOM_DOWNSTREAM_OOB</span> {
-            <span class="ident">EventView</span>::<span class="ident">CustomDownstreamOob</span>(<span class="ident">CustomDownstreamOob</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_CUSTOM_DOWNSTREAM_STICKY</span> {
-            <span class="ident">EventView</span>::<span class="ident">CustomDownstreamSticky</span>(<span class="ident">CustomDownstreamSticky</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_CUSTOM_BOTH</span> {
-            <span class="ident">EventView</span>::<span class="ident">CustomBoth</span>(<span class="ident">CustomBoth</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">type_</span> <span class="op">==</span> <span class="ident">ffi</span>::<span class="ident">GST_EVENT_CUSTOM_BOTH_OOB</span> {
-            <span class="ident">EventView</span>::<span class="ident">CustomBothOob</span>(<span class="ident">CustomBothOob</span>(<span class="self">self</span>))
-        } <span class="kw">else</span> {
-            <span class="ident">EventView</span>::<span class="ident">Other</span>
+        <span class="kw">match</span> <span class="ident">type_</span> {
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_FLUSH_START</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">FlushStart</span>(<span class="ident">FlushStart</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_FLUSH_STOP</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">FlushStop</span>(<span class="ident">FlushStop</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_STREAM_START</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">StreamStart</span>(<span class="ident">StreamStart</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_CAPS</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">Caps</span>(<span class="ident">Caps</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_SEGMENT</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">Segment</span>(<span class="ident">Segment</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_STREAM_COLLECTION</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">StreamCollection</span>(<span class="ident">StreamCollection</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_TAG</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">Tag</span>(<span class="ident">Tag</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_BUFFERSIZE</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">BufferSize</span>(<span class="ident">BufferSize</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_SINK_MESSAGE</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">SinkMessage</span>(<span class="ident">SinkMessage</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_STREAM_GROUP_DONE</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">StreamGroupDone</span>(<span class="ident">StreamGroupDone</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_EOS</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">Eos</span>(<span class="ident">Eos</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_TOC</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">Toc</span>(<span class="ident">Toc</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_PROTECTION</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">Protection</span>(<span class="ident">Protection</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_SEGMENT_DONE</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">SegmentDone</span>(<span class="ident">SegmentDone</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_GAP</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">Gap</span>(<span class="ident">Gap</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_QOS</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">Qos</span>(<span class="ident">Qos</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_SEEK</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">Seek</span>(<span class="ident">Seek</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_NAVIGATION</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">Navigation</span>(<span class="ident">Navigation</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_LATENCY</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">Latency</span>(<span class="ident">Latency</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_STEP</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">Step</span>(<span class="ident">Step</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_RECONFIGURE</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">Reconfigure</span>(<span class="ident">Reconfigure</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_TOC_SELECT</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">TocSelect</span>(<span class="ident">TocSelect</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_SELECT_STREAMS</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">SelectStreams</span>(<span class="ident">SelectStreams</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_CUSTOM_UPSTREAM</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">CustomUpstream</span>(<span class="ident">CustomUpstream</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_CUSTOM_DOWNSTREAM</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">CustomDownstream</span>(<span class="ident">CustomDownstream</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_CUSTOM_DOWNSTREAM_OOB</span> <span class="op">=&gt;</span> {
+                <span class="ident">EventView</span>::<span class="ident">CustomDownstreamOob</span>(<span class="ident">CustomDownstreamOob</span>(<span class="self">self</span>))
+            }
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_CUSTOM_DOWNSTREAM_STICKY</span> <span class="op">=&gt;</span> {
+                <span class="ident">EventView</span>::<span class="ident">CustomDownstreamSticky</span>(<span class="ident">CustomDownstreamSticky</span>(<span class="self">self</span>))
+            }
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_CUSTOM_BOTH</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">CustomBoth</span>(<span class="ident">CustomBoth</span>(<span class="self">self</span>)),
+            <span class="ident">ffi</span>::<span class="ident">GST_EVENT_CUSTOM_BOTH_OOB</span> <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">CustomBothOob</span>(<span class="ident">CustomBothOob</span>(<span class="self">self</span>)),
+            _ <span class="op">=&gt;</span> <span class="ident">EventView</span>::<span class="ident">Other</span>,
         }
     }
 }

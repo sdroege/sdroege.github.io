@@ -128,8 +128,6 @@
 <span id="83">83</span>
 <span id="84">84</span>
 <span id="85">85</span>
-<span id="86">86</span>
-<span id="87">87</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -156,9 +154,9 @@
     <span class="kw">pub</span> <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">new</span>(<span class="ident">window_handle</span>: <span class="ident">uintptr_t</span>) <span class="op">-&gt;</span> <span class="ident">PlayerVideoOverlayVideoRenderer</span> {
         <span class="macro">assert_initialized_main_thread</span><span class="macro">!</span>();
 
-        <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_player_video_overlay_video_renderer_new</span>(
-            <span class="ident">window_handle</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> _,
-        ) <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> _)
+        <span class="ident">from_glib_full</span>(
+            <span class="ident">ffi</span>::<span class="ident">gst_player_video_overlay_video_renderer_new</span>(<span class="ident">window_handle</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> _) <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> _,
+        )
     }
 
     <span class="kw">pub</span> <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">new_with_handle_and_sink</span><span class="op">&lt;</span><span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">gst</span>::<span class="ident">Element</span><span class="op">&gt;&gt;</span>(
@@ -170,8 +168,7 @@
         <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_player_video_overlay_video_renderer_new_with_sink</span>(
             <span class="ident">window_handle</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> _,
             <span class="ident">video_sink</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
-        ) <span class="kw">as</span>
-            <span class="kw-2">*</span><span class="kw-2">mut</span> _)
+        ) <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> _)
     }
 
     <span class="doccomment">/// ## `window_handle`</span>
@@ -191,8 +188,7 @@
             <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_player_video_overlay_video_renderer_new_with_sink</span>(
                 <span class="ident">ptr</span>::<span class="ident">null_mut</span>(),
                 <span class="ident">video_sink</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
-            ) <span class="kw">as</span>
-                <span class="kw-2">*</span><span class="kw-2">mut</span> _)
+            ) <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> _)
         }
     }
 }
