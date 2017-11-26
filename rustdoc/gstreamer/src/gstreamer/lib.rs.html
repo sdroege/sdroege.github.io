@@ -242,6 +242,7 @@
 <span id="197">197</span>
 <span id="198">198</span>
 <span id="199">199</span>
+<span id="200">200</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -365,7 +366,8 @@
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">parse_context</span>::<span class="ident">ParseContext</span>;
 <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;futures&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">bus</span>::<span class="ident">BusStream</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">enums</span>::{<span class="ident">StateChangeError</span>, <span class="ident">StateChangeSuccess</span>};
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">enums</span>::{<span class="ident">ClockError</span>, <span class="ident">ClockSuccess</span>, <span class="ident">FlowError</span>, <span class="ident">FlowSuccess</span>, <span class="ident">PadLinkError</span>, <span class="ident">PadLinkSuccess</span>,
+                <span class="ident">StateChangeError</span>, <span class="ident">StateChangeSuccess</span>};
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">clock_time</span>::<span class="ident">ClockTime</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">format</span>::<span class="ident">FormatValue</span>;
 
