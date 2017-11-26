@@ -29,7 +29,7 @@
 
     <nav class="sidebar">
         
-        <p class='location'>Struct GstAppSrcCallbacks</p><div class="block items"><ul><li><a href="#fields">Fields</a></li></ul></div><p class='location'><a href='index.html'>gstreamer_app_sys</a></p><script>window.sidebarCurrent = {name: 'GstAppSrcCallbacks', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct GstAppSrcCallbacks</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.need_data">need_data</a><a href="#structfield.enough_data">enough_data</a><a href="#structfield.seek_data">seek_data</a><a href="#structfield._gst_reserved">_gst_reserved</a></div></div><p class='location'><a href='index.html'>gstreamer_app_sys</a></p><script>window.sidebarCurrent = {name: 'GstAppSrcCallbacks', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </nav>
 
     <nav class="sub">
@@ -48,24 +48,29 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/gstreamer_app_sys/lib.rs.html#59-64' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/gstreamer_app_sys/lib.rs.html#51-56' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'><div class="docblock attributes">#[repr(C)]
 </div>pub struct GstAppSrcCallbacks {
-    pub need_data: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_app_sys/struct.GstAppSrc.html" title="struct gstreamer_app_sys::GstAppSrc">GstAppSrc</a>, _: <a class="type" href="../libc/type.c_uint.html" title="type libc::c_uint">c_uint</a>, _: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a>)&gt;,
-    pub enough_data: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_app_sys/struct.GstAppSrc.html" title="struct gstreamer_app_sys::GstAppSrc">GstAppSrc</a>, _: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a>)&gt;,
-    pub seek_data: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_app_sys/struct.GstAppSrc.html" title="struct gstreamer_app_sys::GstAppSrc">GstAppSrc</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>, _: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;,
+    pub need_data: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.fn.html">fn</a>(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_app_sys/struct.GstAppSrc.html" title="struct gstreamer_app_sys::GstAppSrc">GstAppSrc</a>, _: <a class="type" href="../libc/type.c_uint.html" title="type libc::c_uint">c_uint</a>, _: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a>)&gt;,
+    pub enough_data: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.fn.html">fn</a>(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_app_sys/struct.GstAppSrc.html" title="struct gstreamer_app_sys::GstAppSrc">GstAppSrc</a>, _: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a>)&gt;,
+    pub seek_data: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.fn.html">fn</a>(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_app_sys/struct.GstAppSrc.html" title="struct gstreamer_app_sys::GstAppSrc">GstAppSrc</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>, _: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;,
     pub _gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a>,
-}</pre><h2 id='fields' class='fields'>Fields</h2><span id='structfield.need_data' class="structfield">
-                           <span id='need_data.v' class='invisible'>
-                           <code>need_data: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_app_sys/struct.GstAppSrc.html" title="struct gstreamer_app_sys::GstAppSrc">GstAppSrc</a>, _: <a class="type" href="../libc/type.c_uint.html" title="type libc::c_uint">c_uint</a>, _: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a>)&gt;</code>
-                           </span></span><span id='structfield.enough_data' class="structfield">
-                           <span id='enough_data.v' class='invisible'>
-                           <code>enough_data: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_app_sys/struct.GstAppSrc.html" title="struct gstreamer_app_sys::GstAppSrc">GstAppSrc</a>, _: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a>)&gt;</code>
-                           </span></span><span id='structfield.seek_data' class="structfield">
-                           <span id='seek_data.v' class='invisible'>
-                           <code>seek_data: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_app_sys/struct.GstAppSrc.html" title="struct gstreamer_app_sys::GstAppSrc">GstAppSrc</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>, _: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;</code>
-                           </span></span><span id='structfield._gst_reserved' class="structfield">
-                           <span id='_gst_reserved.v' class='invisible'>
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.need_data" class="structfield small-section-header">
+                           <a href="#structfield.need_data" class="anchor field"></a>
+                           <span id="need_data.v" class='invisible'>
+                           <code>need_data: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.fn.html">fn</a>(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_app_sys/struct.GstAppSrc.html" title="struct gstreamer_app_sys::GstAppSrc">GstAppSrc</a>, _: <a class="type" href="../libc/type.c_uint.html" title="type libc::c_uint">c_uint</a>, _: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a>)&gt;</code>
+                           </span></span><span id="structfield.enough_data" class="structfield small-section-header">
+                           <a href="#structfield.enough_data" class="anchor field"></a>
+                           <span id="enough_data.v" class='invisible'>
+                           <code>enough_data: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.fn.html">fn</a>(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_app_sys/struct.GstAppSrc.html" title="struct gstreamer_app_sys::GstAppSrc">GstAppSrc</a>, _: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a>)&gt;</code>
+                           </span></span><span id="structfield.seek_data" class="structfield small-section-header">
+                           <a href="#structfield.seek_data" class="anchor field"></a>
+                           <span id="seek_data.v" class='invisible'>
+                           <code>seek_data: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.fn.html">fn</a>(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_app_sys/struct.GstAppSrc.html" title="struct gstreamer_app_sys::GstAppSrc">GstAppSrc</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>, _: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;</code>
+                           </span></span><span id="structfield._gst_reserved" class="structfield small-section-header">
+                           <a href="#structfield._gst_reserved" class="anchor field"></a>
+                           <span id="_gst_reserved.v" class='invisible'>
                            <code>_gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a></code>
                            </span></span></section>
     <section id='search' class="content hidden"></section>
@@ -84,13 +89,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>

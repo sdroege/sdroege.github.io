@@ -29,7 +29,7 @@
 
     <nav class="sidebar">
         
-        <p class='location'>Trait TagSetterExtManual</p><div class="block items"><ul><li><a href="#required-methods">Required Methods</a></li><li><a href="#implementors">Implementors</a></li></ul></div><p class='location'><a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>prelude</a></p><script>window.sidebarCurrent = {name: 'TagSetterExtManual', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Trait TagSetterExtManual</p><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.add">add</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>prelude</a></p><script>window.sidebarCurrent = {name: 'TagSetterExtManual', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </nav>
 
     <nav class="sub">
@@ -50,12 +50,16 @@
                    </a>
                </span><a class='srclink' href='../../src/gstreamer/tag_setter.rs.html#17-21' title='goto source code'>[src]</a></span></h1>
 <pre class='rust trait'>pub trait TagSetterExtManual {
-    fn <a href='#tymethod.add' class='fnname'>add</a>&lt;'a, T:&nbsp;<a class="trait" href="../../gstreamer/tags/trait.Tag.html" title="trait gstreamer::tags::Tag">Tag</a>&lt;'a&gt;&gt;(&amp;mut self, value: T::<a class="type" href="../../gstreamer/tags/trait.Tag.html#associatedtype.TagType" title="type gstreamer::tags::Tag::TagType">TagType</a>, mode: <a class="enum" href="../../gstreamer/enum.TagMergeMode.html" title="enum gstreamer::TagMergeMode">TagMergeMode</a>)<br>&nbsp;&nbsp;&nbsp; <span class="where">where<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T::<a class="type" href="../../gstreamer/tags/trait.Tag.html#associatedtype.TagType" title="type gstreamer::tags::Tag::TagType">TagType</a>: <a class="trait" href="../../gstreamer/trait.ToValue.html" title="trait gstreamer::ToValue">ToValue</a></span>;
+    fn <a href='#tymethod.add' class='fnname'>add</a>&lt;'a, T:&nbsp;<a class="trait" href="../../gstreamer/tags/trait.Tag.html" title="trait gstreamer::tags::Tag">Tag</a>&lt;'a&gt;&gt;(&amp;mut self, value: T::<a class="type" href="../../gstreamer/tags/trait.Tag.html#associatedtype.TagType" title="type gstreamer::tags::Tag::TagType">TagType</a>, mode: <a class="enum" href="../../gstreamer/enum.TagMergeMode.html" title="enum gstreamer::TagMergeMode">TagMergeMode</a>)<br>&nbsp;&nbsp;&nbsp; <span class="where">where<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T::<a class="type" href="../../gstreamer/tags/trait.Tag.html#associatedtype.TagType" title="type gstreamer::tags::Tag::TagType">TagType</a>: <a class="trait" href="../../glib/value/trait.ToSendValue.html" title="trait glib::value::ToSendValue">ToSendValue</a></span>;
 }</pre>
-            <h2 id='required-methods'>Required Methods</h2>
+            <h2 id='required-methods' class='small-section-header'>
+              Required Methods<a href='#required-methods' class='anchor'></a>
+            </h2>
             <div class='methods'>
-        <h3 id='tymethod.add' class='method'><span id='add.v' class='invisible'><code>fn <a href='#tymethod.add' class='fnname'>add</a>&lt;'a, T:&nbsp;<a class="trait" href="../../gstreamer/tags/trait.Tag.html" title="trait gstreamer::tags::Tag">Tag</a>&lt;'a&gt;&gt;(&amp;mut self, value: T::<a class="type" href="../../gstreamer/tags/trait.Tag.html#associatedtype.TagType" title="type gstreamer::tags::Tag::TagType">TagType</a>, mode: <a class="enum" href="../../gstreamer/enum.TagMergeMode.html" title="enum gstreamer::TagMergeMode">TagMergeMode</a>) <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T::<a class="type" href="../../gstreamer/tags/trait.Tag.html#associatedtype.TagType" title="type gstreamer::tags::Tag::TagType">TagType</a>: <a class="trait" href="../../gstreamer/trait.ToValue.html" title="trait gstreamer::ToValue">ToValue</a>,&nbsp;</span></code></span></h3></div>
-        <h2 id='implementors'>Implementors</h2>
+        <h3 id='tymethod.add' class='method'><span id='add.v' class='invisible'><code>fn <a href='#tymethod.add' class='fnname'>add</a>&lt;'a, T:&nbsp;<a class="trait" href="../../gstreamer/tags/trait.Tag.html" title="trait gstreamer::tags::Tag">Tag</a>&lt;'a&gt;&gt;(&amp;mut self, value: T::<a class="type" href="../../gstreamer/tags/trait.Tag.html#associatedtype.TagType" title="type gstreamer::tags::Tag::TagType">TagType</a>, mode: <a class="enum" href="../../gstreamer/enum.TagMergeMode.html" title="enum gstreamer::TagMergeMode">TagMergeMode</a>) <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;T::<a class="type" href="../../gstreamer/tags/trait.Tag.html#associatedtype.TagType" title="type gstreamer::tags::Tag::TagType">TagType</a>: <a class="trait" href="../../glib/value/trait.ToSendValue.html" title="trait glib::value::ToSendValue">ToSendValue</a>,&nbsp;</span></code></span></h3></div>
+        <h2 id='implementors' class='small-section-header'>
+          Implementors<a href='#implementors' class='anchor'></a>
+        </h2>
         <ul class='item-list' id='implementors-list'>
     <li><code>impl&lt;O:&nbsp;<a class="trait" href="../../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/struct.TagSetter.html" title="struct gstreamer::TagSetter">TagSetter</a>&gt;&gt; TagSetterExtManual for O</code></li>
 </ul><script type="text/javascript" async
@@ -77,13 +81,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>

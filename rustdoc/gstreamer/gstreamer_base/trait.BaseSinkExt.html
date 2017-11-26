@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `BaseSinkExt` trait in crate `gstreamer_base`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, BaseSinkExt">
+
+    <title>gstreamer_base::BaseSinkExt - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Trait BaseSinkExt</p><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.get_blocksize">get_blocksize</a><a href="#tymethod.get_drop_out_of_segment">get_drop_out_of_segment</a><a href="#tymethod.get_last_sample">get_last_sample</a><a href="#tymethod.get_latency">get_latency</a><a href="#tymethod.get_max_bitrate">get_max_bitrate</a><a href="#tymethod.get_max_lateness">get_max_lateness</a><a href="#tymethod.get_render_delay">get_render_delay</a><a href="#tymethod.get_sync">get_sync</a><a href="#tymethod.get_throttle_time">get_throttle_time</a><a href="#tymethod.get_ts_offset">get_ts_offset</a><a href="#tymethod.is_async_enabled">is_async_enabled</a><a href="#tymethod.is_last_sample_enabled">is_last_sample_enabled</a><a href="#tymethod.is_qos_enabled">is_qos_enabled</a><a href="#tymethod.query_latency">query_latency</a><a href="#tymethod.set_async_enabled">set_async_enabled</a><a href="#tymethod.set_blocksize">set_blocksize</a><a href="#tymethod.set_drop_out_of_segment">set_drop_out_of_segment</a><a href="#tymethod.set_last_sample_enabled">set_last_sample_enabled</a><a href="#tymethod.set_max_bitrate">set_max_bitrate</a><a href="#tymethod.set_max_lateness">set_max_lateness</a><a href="#tymethod.set_qos_enabled">set_qos_enabled</a><a href="#tymethod.set_render_delay">set_render_delay</a><a href="#tymethod.set_sync">set_sync</a><a href="#tymethod.set_throttle_time">set_throttle_time</a><a href="#tymethod.set_ts_offset">set_ts_offset</a><a href="#tymethod.wait">wait</a><a href="#tymethod.wait_clock">wait_clock</a><a href="#tymethod.wait_preroll">wait_preroll</a><a href="#tymethod.get_property_async">get_property_async</a><a href="#tymethod.set_property_async">set_property_async</a><a href="#tymethod.get_property_enable_last_sample">get_property_enable_last_sample</a><a href="#tymethod.set_property_enable_last_sample">set_property_enable_last_sample</a><a href="#tymethod.get_property_qos">get_property_qos</a><a href="#tymethod.set_property_qos">set_property_qos</a><a href="#tymethod.connect_property_async_notify">connect_property_async_notify</a><a href="#tymethod.connect_property_blocksize_notify">connect_property_blocksize_notify</a><a href="#tymethod.connect_property_enable_last_sample_notify">connect_property_enable_last_sample_notify</a><a href="#tymethod.connect_property_last_sample_notify">connect_property_last_sample_notify</a><a href="#tymethod.connect_property_max_bitrate_notify">connect_property_max_bitrate_notify</a><a href="#tymethod.connect_property_max_lateness_notify">connect_property_max_lateness_notify</a><a href="#tymethod.connect_property_qos_notify">connect_property_qos_notify</a><a href="#tymethod.connect_property_render_delay_notify">connect_property_render_delay_notify</a><a href="#tymethod.connect_property_sync_notify">connect_property_sync_notify</a><a href="#tymethod.connect_property_throttle_time_notify">connect_property_throttle_time_notify</a><a href="#tymethod.connect_property_ts_offset_notify">connect_property_ts_offset_notify</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='index.html'>gstreamer_base</a></p><script>window.sidebarCurrent = {name: 'BaseSinkExt', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='index.html'>gstreamer_base</a>::<wbr><a class="trait" href=''>BaseSinkExt</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/gstreamer_base/auto/base_sink.rs.html#158-496' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait BaseSinkExt {
+    fn <a href='#tymethod.get_blocksize' class='fnname'>get_blocksize</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.get_drop_out_of_segment' class='fnname'>get_drop_out_of_segment</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.get_last_sample' class='fnname'>get_last_sample</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../gstreamer/sample/type.Sample.html" title="type gstreamer::sample::Sample">Sample</a>&gt;;
+<div class='item-spacer'></div>    fn <a href='#tymethod.get_latency' class='fnname'>get_latency</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer/clock_time/struct.ClockTime.html" title="struct gstreamer::clock_time::ClockTime">ClockTime</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.get_max_bitrate' class='fnname'>get_max_bitrate</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.get_max_lateness' class='fnname'>get_max_lateness</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.get_render_delay' class='fnname'>get_render_delay</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer/clock_time/struct.ClockTime.html" title="struct gstreamer::clock_time::ClockTime">ClockTime</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.get_sync' class='fnname'>get_sync</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.get_throttle_time' class='fnname'>get_throttle_time</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.get_ts_offset' class='fnname'>get_ts_offset</a>(&amp;self) -&gt; <a class="type" href="../gstreamer/auto/alias/type.ClockTimeDiff.html" title="type gstreamer::auto::alias::ClockTimeDiff">ClockTimeDiff</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.is_async_enabled' class='fnname'>is_async_enabled</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.is_last_sample_enabled' class='fnname'>is_last_sample_enabled</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.is_qos_enabled' class='fnname'>is_qos_enabled</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.query_latency' class='fnname'>query_latency</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>, <a class="struct" href="../gstreamer/clock_time/struct.ClockTime.html" title="struct gstreamer::clock_time::ClockTime">ClockTime</a>, <a class="struct" href="../gstreamer/clock_time/struct.ClockTime.html" title="struct gstreamer::clock_time::ClockTime">ClockTime</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>&gt;;
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_async_enabled' class='fnname'>set_async_enabled</a>(&amp;self, enabled: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_blocksize' class='fnname'>set_blocksize</a>(&amp;self, blocksize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>);
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_drop_out_of_segment' class='fnname'>set_drop_out_of_segment</a>(&amp;self, drop_out_of_segment: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_last_sample_enabled' class='fnname'>set_last_sample_enabled</a>(&amp;self, enabled: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_max_bitrate' class='fnname'>set_max_bitrate</a>(&amp;self, max_bitrate: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>);
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_max_lateness' class='fnname'>set_max_lateness</a>(&amp;self, max_lateness: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a>);
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_qos_enabled' class='fnname'>set_qos_enabled</a>(&amp;self, enabled: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_render_delay' class='fnname'>set_render_delay</a>(&amp;self, delay: <a class="struct" href="../gstreamer/clock_time/struct.ClockTime.html" title="struct gstreamer::clock_time::ClockTime">ClockTime</a>);
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_sync' class='fnname'>set_sync</a>(&amp;self, sync: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_throttle_time' class='fnname'>set_throttle_time</a>(&amp;self, throttle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>);
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_ts_offset' class='fnname'>set_ts_offset</a>(&amp;self, offset: <a class="type" href="../gstreamer/auto/alias/type.ClockTimeDiff.html" title="type gstreamer::auto::alias::ClockTimeDiff">ClockTimeDiff</a>);
+<div class='item-spacer'></div>    fn <a href='#tymethod.wait' class='fnname'>wait</a>(&amp;self, time: <a class="struct" href="../gstreamer/clock_time/struct.ClockTime.html" title="struct gstreamer::clock_time::ClockTime">ClockTime</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="enum" href="../gstreamer/auto/enums/enum.FlowReturn.html" title="enum gstreamer::auto::enums::FlowReturn">FlowReturn</a>, <a class="type" href="../gstreamer/auto/alias/type.ClockTimeDiff.html" title="type gstreamer::auto::alias::ClockTimeDiff">ClockTimeDiff</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.wait_clock' class='fnname'>wait_clock</a>(&amp;self, time: <a class="struct" href="../gstreamer/clock_time/struct.ClockTime.html" title="struct gstreamer::clock_time::ClockTime">ClockTime</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="enum" href="../gstreamer/auto/enums/enum.ClockReturn.html" title="enum gstreamer::auto::enums::ClockReturn">ClockReturn</a>, <a class="type" href="../gstreamer/auto/alias/type.ClockTimeDiff.html" title="type gstreamer::auto::alias::ClockTimeDiff">ClockTimeDiff</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.wait_preroll' class='fnname'>wait_preroll</a>(&amp;self) -&gt; <a class="enum" href="../gstreamer/auto/enums/enum.FlowReturn.html" title="enum gstreamer::auto::enums::FlowReturn">FlowReturn</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.get_property_async' class='fnname'>get_property_async</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_property_async' class='fnname'>set_property_async</a>(&amp;self, async: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
+<div class='item-spacer'></div>    fn <a href='#tymethod.get_property_enable_last_sample' class='fnname'>get_property_enable_last_sample</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_property_enable_last_sample' class='fnname'>set_property_enable_last_sample</a>(&amp;self, enable_last_sample: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
+<div class='item-spacer'></div>    fn <a href='#tymethod.get_property_qos' class='fnname'>get_property_qos</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_property_qos' class='fnname'>set_property_qos</a>(&amp;self, qos: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
+<div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_async_notify' class='fnname'>connect_property_async_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_blocksize_notify' class='fnname'>connect_property_blocksize_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_enable_last_sample_notify' class='fnname'>connect_property_enable_last_sample_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_last_sample_notify' class='fnname'>connect_property_last_sample_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_max_bitrate_notify' class='fnname'>connect_property_max_bitrate_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_max_lateness_notify' class='fnname'>connect_property_max_lateness_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_qos_notify' class='fnname'>connect_property_qos_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_render_delay_notify' class='fnname'>connect_property_render_delay_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_sync_notify' class='fnname'>connect_property_sync_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_throttle_time_notify' class='fnname'>connect_property_throttle_time_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_ts_offset_notify' class='fnname'>connect_property_ts_offset_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
+}</pre><div class='docblock'><p>Trait containing all <code>BaseSink</code> methods.</p>
+
+<h1 id='implementors-1' class='section-header'><a href='#implementors-1'>Implementors</a></h1>
+<p><a href="struct.BaseSink.html"><code>BaseSink</code></a></p>
+</div>
+            <h2 id='required-methods' class='small-section-header'>
+              Required Methods<a href='#required-methods' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='tymethod.get_blocksize' class='method'><span id='get_blocksize.v' class='invisible'><code>fn <a href='#tymethod.get_blocksize' class='fnname'>get_blocksize</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span></h3><div class='docblock'><p>Get the number of bytes that the sink will pull when it is operating in pull
+mode.</p>
+
+<h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
+<p>the number of bytes <code>self</code> will pull in pull mode.</p>
+</div><h3 id='tymethod.get_drop_out_of_segment' class='method'><span id='get_drop_out_of_segment.v' class='invisible'><code>fn <a href='#tymethod.get_drop_out_of_segment' class='fnname'>get_drop_out_of_segment</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Checks if <code>self</code> is currently configured to drop buffers which are outside
+the current segment</p>
+
+<p>Feature: <code>v1_12</code></p>
+
+<h1 id='returns-1' class='section-header'><a href='#returns-1'>Returns</a></h1>
+<p><code>true</code> if the sink is configured to drop buffers outside the
+current segment.</p>
+</div><h3 id='tymethod.get_last_sample' class='method'><span id='get_last_sample.v' class='invisible'><code>fn <a href='#tymethod.get_last_sample' class='fnname'>get_last_sample</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../gstreamer/sample/type.Sample.html" title="type gstreamer::sample::Sample">Sample</a>&gt;</code></span></h3><div class='docblock'><p>Get the last sample that arrived in the sink and was used for preroll or for
+rendering. This property can be used to generate thumbnails.</p>
+
+<p>The <code>gst::Caps</code> on the sample can be used to determine the type of the buffer.</p>
+
+<p>Free-function: gst_sample_unref</p>
+
+<h1 id='returns-2' class='section-header'><a href='#returns-2'>Returns</a></h1>
+<p>a <code>gst::Sample</code>. <code>gst_sample_unref</code> after
+ usage. This function returns <code>None</code> when no buffer has arrived in the
+ sink yet or when the sink is not in PAUSED or PLAYING.</p>
+</div><h3 id='tymethod.get_latency' class='method'><span id='get_latency.v' class='invisible'><code>fn <a href='#tymethod.get_latency' class='fnname'>get_latency</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer/clock_time/struct.ClockTime.html" title="struct gstreamer::clock_time::ClockTime">ClockTime</a></code></span></h3><div class='docblock'><p>Get the currently configured latency.</p>
+
+<h1 id='returns-3' class='section-header'><a href='#returns-3'>Returns</a></h1>
+<p>The configured latency.</p>
+</div><h3 id='tymethod.get_max_bitrate' class='method'><span id='get_max_bitrate.v' class='invisible'><code>fn <a href='#tymethod.get_max_bitrate' class='fnname'>get_max_bitrate</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h3><div class='docblock'><p>Get the maximum amount of bits per second that the sink will render.</p>
+
+<h1 id='returns-4' class='section-header'><a href='#returns-4'>Returns</a></h1>
+<p>the maximum number of bits per second <code>self</code> will render.</p>
+</div><h3 id='tymethod.get_max_lateness' class='method'><span id='get_max_lateness.v' class='invisible'><code>fn <a href='#tymethod.get_max_lateness' class='fnname'>get_max_lateness</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a></code></span></h3><div class='docblock'><p>Gets the max lateness value. See <code>BaseSinkExt::set_max_lateness</code> for
+more details.</p>
+
+<h1 id='returns-5' class='section-header'><a href='#returns-5'>Returns</a></h1>
+<p>The maximum time in nanoseconds that a buffer can be late
+before it is dropped and not rendered. A value of -1 means an
+unlimited time.</p>
+</div><h3 id='tymethod.get_render_delay' class='method'><span id='get_render_delay.v' class='invisible'><code>fn <a href='#tymethod.get_render_delay' class='fnname'>get_render_delay</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer/clock_time/struct.ClockTime.html" title="struct gstreamer::clock_time::ClockTime">ClockTime</a></code></span></h3><div class='docblock'><p>Get the render delay of <code>self</code>. see <code>BaseSinkExt::set_render_delay</code> for more
+information about the render delay.</p>
+
+<h1 id='returns-6' class='section-header'><a href='#returns-6'>Returns</a></h1>
+<p>the render delay of <code>self</code>.</p>
+</div><h3 id='tymethod.get_sync' class='method'><span id='get_sync.v' class='invisible'><code>fn <a href='#tymethod.get_sync' class='fnname'>get_sync</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Checks if <code>self</code> is currently configured to synchronize against the
+clock.</p>
+
+<h1 id='returns-7' class='section-header'><a href='#returns-7'>Returns</a></h1>
+<p><code>true</code> if the sink is configured to synchronize against the clock.</p>
+</div><h3 id='tymethod.get_throttle_time' class='method'><span id='get_throttle_time.v' class='invisible'><code>fn <a href='#tymethod.get_throttle_time' class='fnname'>get_throttle_time</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code></span></h3><div class='docblock'><p>Get the time that will be inserted between frames to control the
+maximum buffers per second.</p>
+
+<h1 id='returns-8' class='section-header'><a href='#returns-8'>Returns</a></h1>
+<p>the number of nanoseconds <code>self</code> will put between frames.</p>
+</div><h3 id='tymethod.get_ts_offset' class='method'><span id='get_ts_offset.v' class='invisible'><code>fn <a href='#tymethod.get_ts_offset' class='fnname'>get_ts_offset</a>(&amp;self) -&gt; <a class="type" href="../gstreamer/auto/alias/type.ClockTimeDiff.html" title="type gstreamer::auto::alias::ClockTimeDiff">ClockTimeDiff</a></code></span></h3><div class='docblock'><p>Get the synchronisation offset of <code>self</code>.</p>
+
+<h1 id='returns-9' class='section-header'><a href='#returns-9'>Returns</a></h1>
+<p>The synchronisation offset.</p>
+</div><h3 id='tymethod.is_async_enabled' class='method'><span id='is_async_enabled.v' class='invisible'><code>fn <a href='#tymethod.is_async_enabled' class='fnname'>is_async_enabled</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Checks if <code>self</code> is currently configured to perform asynchronous state
+changes to PAUSED.</p>
+
+<h1 id='returns-10' class='section-header'><a href='#returns-10'>Returns</a></h1>
+<p><code>true</code> if the sink is configured to perform asynchronous state
+changes.</p>
+</div><h3 id='tymethod.is_last_sample_enabled' class='method'><span id='is_last_sample_enabled.v' class='invisible'><code>fn <a href='#tymethod.is_last_sample_enabled' class='fnname'>is_last_sample_enabled</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Checks if <code>self</code> is currently configured to store the last received sample in
+the last-sample property.</p>
+
+<h1 id='returns-11' class='section-header'><a href='#returns-11'>Returns</a></h1>
+<p><code>true</code> if the sink is configured to store the last received sample.</p>
+</div><h3 id='tymethod.is_qos_enabled' class='method'><span id='is_qos_enabled.v' class='invisible'><code>fn <a href='#tymethod.is_qos_enabled' class='fnname'>is_qos_enabled</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Checks if <code>self</code> is currently configured to send Quality-of-Service events
+upstream.</p>
+
+<h1 id='returns-12' class='section-header'><a href='#returns-12'>Returns</a></h1>
+<p><code>true</code> if the sink is configured to perform Quality-of-Service.</p>
+</div><h3 id='tymethod.query_latency' class='method'><span id='query_latency.v' class='invisible'><code>fn <a href='#tymethod.query_latency' class='fnname'>query_latency</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>, <a class="struct" href="../gstreamer/clock_time/struct.ClockTime.html" title="struct gstreamer::clock_time::ClockTime">ClockTime</a>, <a class="struct" href="../gstreamer/clock_time/struct.ClockTime.html" title="struct gstreamer::clock_time::ClockTime">ClockTime</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>&gt;</code></span></h3><div class='docblock'><p>Query the sink for the latency parameters. The latency will be queried from
+the upstream elements. <code>live</code> will be <code>true</code> if <code>self</code> is configured to
+synchronize against the clock. <code>upstream_live</code> will be <code>true</code> if an upstream
+element is live.</p>
+
+<p>If both <code>live</code> and <code>upstream_live</code> are <code>true</code>, the sink will want to compensate
+for the latency introduced by the upstream elements by setting the
+<code>min_latency</code> to a strictly positive value.</p>
+
+<p>This function is mostly used by subclasses.</p>
+
+<h2 id='live' class='section-header'><a href='#live'><code>live</code></a></h2>
+<p>if the sink is live</p>
+
+<h2 id='upstream_live' class='section-header'><a href='#upstream_live'><code>upstream_live</code></a></h2>
+<p>if an upstream element is live</p>
+
+<h2 id='min_latency' class='section-header'><a href='#min_latency'><code>min_latency</code></a></h2>
+<p>the min latency of the upstream elements</p>
+
+<h2 id='max_latency' class='section-header'><a href='#max_latency'><code>max_latency</code></a></h2>
+<p>the max latency of the upstream elements</p>
+
+<h1 id='returns-13' class='section-header'><a href='#returns-13'>Returns</a></h1>
+<p><code>true</code> if the query succeeded.</p>
+</div><h3 id='tymethod.set_async_enabled' class='method'><span id='set_async_enabled.v' class='invisible'><code>fn <a href='#tymethod.set_async_enabled' class='fnname'>set_async_enabled</a>(&amp;self, enabled: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><div class='docblock'><p>Configures <code>self</code> to perform all state changes asynchronously. When async is
+disabled, the sink will immediately go to PAUSED instead of waiting for a
+preroll buffer. This feature is useful if the sink does not synchronize
+against the clock or when it is dealing with sparse streams.</p>
+
+<h2 id='enabled' class='section-header'><a href='#enabled'><code>enabled</code></a></h2>
+<p>the new async value.</p>
+</div><h3 id='tymethod.set_blocksize' class='method'><span id='set_blocksize.v' class='invisible'><code>fn <a href='#tymethod.set_blocksize' class='fnname'>set_blocksize</a>(&amp;self, blocksize: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></h3><div class='docblock'><p>Set the number of bytes that the sink will pull when it is operating in pull
+mode.</p>
+
+<h2 id='blocksize' class='section-header'><a href='#blocksize'><code>blocksize</code></a></h2>
+<p>the blocksize in bytes</p>
+</div><h3 id='tymethod.set_drop_out_of_segment' class='method'><span id='set_drop_out_of_segment.v' class='invisible'><code>fn <a href='#tymethod.set_drop_out_of_segment' class='fnname'>set_drop_out_of_segment</a>(&amp;self, drop_out_of_segment: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><div class='docblock'><p>Configure <code>self</code> to drop buffers which are outside the current segment</p>
+
+<p>Feature: <code>v1_12</code></p>
+
+<h2 id='drop_out_of_segment' class='section-header'><a href='#drop_out_of_segment'><code>drop_out_of_segment</code></a></h2>
+<p>drop buffers outside the segment</p>
+</div><h3 id='tymethod.set_last_sample_enabled' class='method'><span id='set_last_sample_enabled.v' class='invisible'><code>fn <a href='#tymethod.set_last_sample_enabled' class='fnname'>set_last_sample_enabled</a>(&amp;self, enabled: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><div class='docblock'><p>Configures <code>self</code> to store the last received sample in the last-sample
+property.</p>
+
+<h2 id='enabled-1' class='section-header'><a href='#enabled-1'><code>enabled</code></a></h2>
+<p>the new enable-last-sample value.</p>
+</div><h3 id='tymethod.set_max_bitrate' class='method'><span id='set_max_bitrate.v' class='invisible'><code>fn <a href='#tymethod.set_max_bitrate' class='fnname'>set_max_bitrate</a>(&amp;self, max_bitrate: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>)</code></span></h3><div class='docblock'><p>Set the maximum amount of bits per second that the sink will render.</p>
+
+<h2 id='max_bitrate' class='section-header'><a href='#max_bitrate'><code>max_bitrate</code></a></h2>
+<p>the max_bitrate in bits per second</p>
+</div><h3 id='tymethod.set_max_lateness' class='method'><span id='set_max_lateness.v' class='invisible'><code>fn <a href='#tymethod.set_max_lateness' class='fnname'>set_max_lateness</a>(&amp;self, max_lateness: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a>)</code></span></h3><div class='docblock'><p>Sets the new max lateness value to <code>max_lateness</code>. This value is
+used to decide if a buffer should be dropped or not based on the
+buffer timestamp and the current clock time. A value of -1 means
+an unlimited time.</p>
+
+<h2 id='max_lateness' class='section-header'><a href='#max_lateness'><code>max_lateness</code></a></h2>
+<p>the new max lateness value.</p>
+</div><h3 id='tymethod.set_qos_enabled' class='method'><span id='set_qos_enabled.v' class='invisible'><code>fn <a href='#tymethod.set_qos_enabled' class='fnname'>set_qos_enabled</a>(&amp;self, enabled: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><div class='docblock'><p>Configures <code>self</code> to send Quality-of-Service events upstream.</p>
+
+<h2 id='enabled-2' class='section-header'><a href='#enabled-2'><code>enabled</code></a></h2>
+<p>the new qos value.</p>
+</div><h3 id='tymethod.set_render_delay' class='method'><span id='set_render_delay.v' class='invisible'><code>fn <a href='#tymethod.set_render_delay' class='fnname'>set_render_delay</a>(&amp;self, delay: <a class="struct" href="../gstreamer/clock_time/struct.ClockTime.html" title="struct gstreamer::clock_time::ClockTime">ClockTime</a>)</code></span></h3><div class='docblock'><p>Set the render delay in <code>self</code> to <code>delay</code>. The render delay is the time
+between actual rendering of a buffer and its synchronisation time. Some
+devices might delay media rendering which can be compensated for with this
+function.</p>
+
+<p>After calling this function, this sink will report additional latency and
+other sinks will adjust their latency to delay the rendering of their media.</p>
+
+<p>This function is usually called by subclasses.</p>
+
+<h2 id='delay' class='section-header'><a href='#delay'><code>delay</code></a></h2>
+<p>the new delay</p>
+</div><h3 id='tymethod.set_sync' class='method'><span id='set_sync.v' class='invisible'><code>fn <a href='#tymethod.set_sync' class='fnname'>set_sync</a>(&amp;self, sync: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><div class='docblock'><p>Configures <code>self</code> to synchronize on the clock or not. When
+<code>sync</code> is <code>false</code>, incoming samples will be played as fast as
+possible. If <code>sync</code> is <code>true</code>, the timestamps of the incoming
+buffers will be used to schedule the exact render time of its
+contents.</p>
+
+<h2 id='sync' class='section-header'><a href='#sync'><code>sync</code></a></h2>
+<p>the new sync value.</p>
+</div><h3 id='tymethod.set_throttle_time' class='method'><span id='set_throttle_time.v' class='invisible'><code>fn <a href='#tymethod.set_throttle_time' class='fnname'>set_throttle_time</a>(&amp;self, throttle: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>)</code></span></h3><div class='docblock'><p>Set the time that will be inserted between rendered buffers. This
+can be used to control the maximum buffers per second that the sink
+will render.</p>
+
+<h2 id='throttle' class='section-header'><a href='#throttle'><code>throttle</code></a></h2>
+<p>the throttle time in nanoseconds</p>
+</div><h3 id='tymethod.set_ts_offset' class='method'><span id='set_ts_offset.v' class='invisible'><code>fn <a href='#tymethod.set_ts_offset' class='fnname'>set_ts_offset</a>(&amp;self, offset: <a class="type" href="../gstreamer/auto/alias/type.ClockTimeDiff.html" title="type gstreamer::auto::alias::ClockTimeDiff">ClockTimeDiff</a>)</code></span></h3><div class='docblock'><p>Adjust the synchronisation of <code>self</code> with <code>offset</code>. A negative value will
+render buffers earlier than their timestamp. A positive value will delay
+rendering. This function can be used to fix playback of badly timestamped
+buffers.</p>
+
+<h2 id='offset' class='section-header'><a href='#offset'><code>offset</code></a></h2>
+<p>the new offset</p>
+</div><h3 id='tymethod.wait' class='method'><span id='wait.v' class='invisible'><code>fn <a href='#tymethod.wait' class='fnname'>wait</a>(&amp;self, time: <a class="struct" href="../gstreamer/clock_time/struct.ClockTime.html" title="struct gstreamer::clock_time::ClockTime">ClockTime</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="enum" href="../gstreamer/auto/enums/enum.FlowReturn.html" title="enum gstreamer::auto::enums::FlowReturn">FlowReturn</a>, <a class="type" href="../gstreamer/auto/alias/type.ClockTimeDiff.html" title="type gstreamer::auto::alias::ClockTimeDiff">ClockTimeDiff</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a></code></span></h3><div class='docblock'><p>This function will wait for preroll to complete and will then block until <code>time</code>
+is reached. It is usually called by subclasses that use their own internal
+synchronisation but want to let some synchronization (like EOS) be handled
+by the base class.</p>
+
+<p>This function should only be called with the PREROLL_LOCK held (like when
+receiving an EOS event in the ::event vmethod or when handling buffers in
+::render).</p>
+
+<p>The <code>time</code> argument should be the running_time of when the timeout should happen
+and will be adjusted with any latency and offset configured in the sink.</p>
+
+<h2 id='time' class='section-header'><a href='#time'><code>time</code></a></h2>
+<p>the running_time to be reached</p>
+
+<h2 id='jitter' class='section-header'><a href='#jitter'><code>jitter</code></a></h2>
+<p>the jitter to be filled with time diff, or <code>None</code></p>
+
+<h1 id='returns-14' class='section-header'><a href='#returns-14'>Returns</a></h1>
+<p><code>gst::FlowReturn</code></p>
+</div><h3 id='tymethod.wait_clock' class='method'><span id='wait_clock.v' class='invisible'><code>fn <a href='#tymethod.wait_clock' class='fnname'>wait_clock</a>(&amp;self, time: <a class="struct" href="../gstreamer/clock_time/struct.ClockTime.html" title="struct gstreamer::clock_time::ClockTime">ClockTime</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="enum" href="../gstreamer/auto/enums/enum.ClockReturn.html" title="enum gstreamer::auto::enums::ClockReturn">ClockReturn</a>, <a class="type" href="../gstreamer/auto/alias/type.ClockTimeDiff.html" title="type gstreamer::auto::alias::ClockTimeDiff">ClockTimeDiff</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a></code></span></h3><div class='docblock'><p>This function will block until <code>time</code> is reached. It is usually called by
+subclasses that use their own internal synchronisation.</p>
+
+<p>If <code>time</code> is not valid, no synchronisation is done and <code>gst::ClockReturn::Badtime</code> is
+returned. Likewise, if synchronisation is disabled in the element or there
+is no clock, no synchronisation is done and <code>gst::ClockReturn::Badtime</code> is returned.</p>
+
+<p>This function should only be called with the PREROLL_LOCK held, like when
+receiving an EOS event in the <code>BaseSinkClass.event</code>() vmethod or when
+receiving a buffer in
+the <code>BaseSinkClass.render</code>() vmethod.</p>
+
+<p>The <code>time</code> argument should be the running_time of when this method should
+return and is not adjusted with any latency or offset configured in the
+sink.</p>
+
+<h2 id='time-1' class='section-header'><a href='#time-1'><code>time</code></a></h2>
+<p>the running_time to be reached</p>
+
+<h2 id='jitter-1' class='section-header'><a href='#jitter-1'><code>jitter</code></a></h2>
+<p>the jitter to be filled with time diff, or <code>None</code></p>
+
+<h1 id='returns-15' class='section-header'><a href='#returns-15'>Returns</a></h1>
+<p><code>gst::ClockReturn</code></p>
+</div><h3 id='tymethod.wait_preroll' class='method'><span id='wait_preroll.v' class='invisible'><code>fn <a href='#tymethod.wait_preroll' class='fnname'>wait_preroll</a>(&amp;self) -&gt; <a class="enum" href="../gstreamer/auto/enums/enum.FlowReturn.html" title="enum gstreamer::auto::enums::FlowReturn">FlowReturn</a></code></span></h3><div class='docblock'><p>If the <code>BaseSinkClass.render</code>() method performs its own synchronisation
+against the clock it must unblock when going from PLAYING to the PAUSED state
+and call this method before continuing to render the remaining data.</p>
+
+<p>If the <code>BaseSinkClass.render</code>() method can block on something else than
+the clock, it must also be ready to unblock immediately on
+the <code>BaseSinkClass.unlock</code>() method and cause the
+<code>BaseSinkClass.render</code>() method to immediately call this function.
+In this case, the subclass must be prepared to continue rendering where it
+left off if this function returns <code>gst::FlowReturn::Ok</code>.</p>
+
+<p>This function will block until a state change to PLAYING happens (in which
+case this function returns <code>gst::FlowReturn::Ok</code>) or the processing must be stopped due
+to a state change to READY or a FLUSH event (in which case this function
+returns <code>gst::FlowReturn::Flushing</code>).</p>
+
+<p>This function should only be called with the PREROLL_LOCK held, like in the
+render function.</p>
+
+<h1 id='returns-16' class='section-header'><a href='#returns-16'>Returns</a></h1>
+<p><code>gst::FlowReturn::Ok</code> if the preroll completed and processing can
+continue. Any other return value should be returned from the render vmethod.</p>
+</div><h3 id='tymethod.get_property_async' class='method'><span id='get_property_async.v' class='invisible'><code>fn <a href='#tymethod.get_property_async' class='fnname'>get_property_async</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>If set to <code>true</code>, the basesink will perform asynchronous state changes.
+When set to <code>false</code>, the sink will not signal the parent when it prerolls.
+Use this option when dealing with sparse streams or when synchronisation is
+not required.</p>
+</div><h3 id='tymethod.set_property_async' class='method'><span id='set_property_async.v' class='invisible'><code>fn <a href='#tymethod.set_property_async' class='fnname'>set_property_async</a>(&amp;self, async: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><div class='docblock'><p>If set to <code>true</code>, the basesink will perform asynchronous state changes.
+When set to <code>false</code>, the sink will not signal the parent when it prerolls.
+Use this option when dealing with sparse streams or when synchronisation is
+not required.</p>
+</div><h3 id='tymethod.get_property_enable_last_sample' class='method'><span id='get_property_enable_last_sample.v' class='invisible'><code>fn <a href='#tymethod.get_property_enable_last_sample' class='fnname'>get_property_enable_last_sample</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><h3 id='tymethod.set_property_enable_last_sample' class='method'><span id='set_property_enable_last_sample.v' class='invisible'><code>fn <a href='#tymethod.set_property_enable_last_sample' class='fnname'>set_property_enable_last_sample</a>(&amp;self, enable_last_sample: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><h3 id='tymethod.get_property_qos' class='method'><span id='get_property_qos.v' class='invisible'><code>fn <a href='#tymethod.get_property_qos' class='fnname'>get_property_qos</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><h3 id='tymethod.set_property_qos' class='method'><span id='set_property_qos.v' class='invisible'><code>fn <a href='#tymethod.set_property_qos' class='fnname'>set_property_qos</a>(&amp;self, qos: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><h3 id='tymethod.connect_property_async_notify' class='method'><span id='connect_property_async_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_async_notify' class='fnname'>connect_property_async_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_property_blocksize_notify' class='method'><span id='connect_property_blocksize_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_blocksize_notify' class='fnname'>connect_property_blocksize_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_property_enable_last_sample_notify' class='method'><span id='connect_property_enable_last_sample_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_enable_last_sample_notify' class='fnname'>connect_property_enable_last_sample_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_property_last_sample_notify' class='method'><span id='connect_property_last_sample_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_last_sample_notify' class='fnname'>connect_property_last_sample_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_property_max_bitrate_notify' class='method'><span id='connect_property_max_bitrate_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_max_bitrate_notify' class='fnname'>connect_property_max_bitrate_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_property_max_lateness_notify' class='method'><span id='connect_property_max_lateness_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_max_lateness_notify' class='fnname'>connect_property_max_lateness_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_property_qos_notify' class='method'><span id='connect_property_qos_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_qos_notify' class='fnname'>connect_property_qos_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_property_render_delay_notify' class='method'><span id='connect_property_render_delay_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_render_delay_notify' class='fnname'>connect_property_render_delay_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_property_sync_notify' class='method'><span id='connect_property_sync_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_sync_notify' class='fnname'>connect_property_sync_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_property_throttle_time_notify' class='method'><span id='connect_property_throttle_time_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_throttle_time_notify' class='fnname'>connect_property_throttle_time_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_property_ts_offset_notify' class='method'><span id='connect_property_ts_offset_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_ts_offset_notify' class='fnname'>connect_property_ts_offset_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3></div>
+        <h2 id='implementors' class='small-section-header'>
+          Implementors<a href='#implementors' class='anchor'></a>
+        </h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><code>impl&lt;O:&nbsp;<a class="trait" href="../gstreamer_base/trait.IsA.html" title="trait gstreamer_base::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer_base/struct.BaseSink.html" title="struct gstreamer_base::BaseSink">BaseSink</a>&gt; + <a class="trait" href="../gstreamer_base/trait.IsA.html" title="trait gstreamer_base::IsA">IsA</a>&lt;<a class="struct" href="../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt;&gt; BaseSinkExt for O</code></li>
+</ul><script type="text/javascript" async
+                         src="../implementors/gstreamer_base/trait.BaseSinkExt.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer_base";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

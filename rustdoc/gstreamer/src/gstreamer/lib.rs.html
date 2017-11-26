@@ -211,6 +211,37 @@
 <span id="166">166</span>
 <span id="167">167</span>
 <span id="168">168</span>
+<span id="169">169</span>
+<span id="170">170</span>
+<span id="171">171</span>
+<span id="172">172</span>
+<span id="173">173</span>
+<span id="174">174</span>
+<span id="175">175</span>
+<span id="176">176</span>
+<span id="177">177</span>
+<span id="178">178</span>
+<span id="179">179</span>
+<span id="180">180</span>
+<span id="181">181</span>
+<span id="182">182</span>
+<span id="183">183</span>
+<span id="184">184</span>
+<span id="185">185</span>
+<span id="186">186</span>
+<span id="187">187</span>
+<span id="188">188</span>
+<span id="189">189</span>
+<span id="190">190</span>
+<span id="191">191</span>
+<span id="192">192</span>
+<span id="193">193</span>
+<span id="194">194</span>
+<span id="195">195</span>
+<span id="196">196</span>
+<span id="197">197</span>
+<span id="198">198</span>
+<span id="199">199</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -220,7 +251,7 @@
 <span class="comment">// option. This file may not be copied, modified, or distributed</span>
 <span class="comment">// except according to those terms.</span>
 
-<span class="attribute">#<span class="op">!</span>[<span class="ident">recursion_limit</span> <span class="op">=</span> <span class="string">&quot;256&quot;</span>]</span>
+<span class="attribute">#![<span class="ident">recursion_limit</span> <span class="op">=</span> <span class="string">&quot;256&quot;</span>]</span>
 <span class="attribute">#[<span class="ident">macro_use</span>]</span>
 <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">bitflags</span>;
 <span class="attribute">#[<span class="ident">macro_use</span>]</span>
@@ -236,8 +267,10 @@
 
 <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">num_rational</span>;
 
-<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;futures&quot;</span>)]</span>
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;futures&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
 <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">futures</span>;
+
+<span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">muldiv</span>;
 
 <span class="kw">use</span> <span class="ident">glib</span>::<span class="ident">translate</span>::{<span class="ident">from_glib</span>, <span class="ident">from_glib_full</span>};
 
@@ -271,10 +304,14 @@
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">auto</span>::<span class="kw-2">*</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">auto</span>::<span class="ident">functions</span>::<span class="kw-2">*</span>;
 
+<span class="attribute">#[<span class="ident">macro_use</span>]</span>
+<span class="kw">mod</span> <span class="ident">log</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">log</span>::<span class="kw-2">*</span>;
+
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">miniobject</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">miniobject</span>::{<span class="ident">GstRc</span>, <span class="ident">MiniObject</span>};
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">message</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">message</span>::{<span class="ident">Message</span>, <span class="ident">MessageRef</span>, <span class="ident">MessageView</span>};
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">message</span>::{<span class="ident">Message</span>, <span class="ident">MessageErrorDomain</span>, <span class="ident">MessageRef</span>, <span class="ident">MessageView</span>};
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">structure</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">structure</span>::{<span class="ident">Structure</span>, <span class="ident">StructureRef</span>};
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">caps</span>;
@@ -293,11 +330,16 @@
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">event</span>::{<span class="ident">Event</span>, <span class="ident">EventRef</span>, <span class="ident">EventView</span>};
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">context</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">context</span>::{<span class="ident">Context</span>, <span class="ident">ContextRef</span>};
+<span class="kw">mod</span> <span class="ident">static_caps</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">static_caps</span>::<span class="kw-2">*</span>;
+<span class="kw">mod</span> <span class="ident">static_pad_template</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">static_pad_template</span>::<span class="kw-2">*</span>;
 
 <span class="kw">mod</span> <span class="ident">element</span>;
 <span class="kw">mod</span> <span class="ident">bin</span>;
 <span class="kw">mod</span> <span class="ident">bus</span>;
 <span class="kw">mod</span> <span class="ident">pad</span>;
+<span class="kw">mod</span> <span class="ident">object</span>;
 <span class="kw">mod</span> <span class="ident">gobject</span>;
 <span class="kw">mod</span> <span class="ident">proxy_pad</span>;
 <span class="kw">mod</span> <span class="ident">ghost_pad</span>;
@@ -306,7 +348,11 @@
 <span class="kw">mod</span> <span class="ident">iterator</span>;
 <span class="kw">mod</span> <span class="ident">device_provider</span>;
 <span class="kw">mod</span> <span class="ident">parse_context</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">element</span>::<span class="ident">ElementExtManual</span>;
+<span class="kw">mod</span> <span class="ident">enums</span>;
+<span class="kw">mod</span> <span class="ident">clock_time</span>;
+<span class="kw">mod</span> <span class="ident">format</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">object</span>::<span class="ident">GstObjectExtManual</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">element</span>::{<span class="ident">ElementExtManual</span>, <span class="ident">ElementMessageType</span>, <span class="ident">NotifyWatchId</span>};
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">element</span>::{<span class="ident">ELEMENT_METADATA_AUTHOR</span>, <span class="ident">ELEMENT_METADATA_DESCRIPTION</span>, <span class="ident">ELEMENT_METADATA_DOC_URI</span>,
                   <span class="ident">ELEMENT_METADATA_ICON_NAME</span>, <span class="ident">ELEMENT_METADATA_KLASS</span>, <span class="ident">ELEMENT_METADATA_LONGNAME</span>};
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">bin</span>::<span class="ident">BinExtManual</span>;
@@ -314,11 +360,14 @@
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">gobject</span>::<span class="ident">GObjectExtManualGst</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">child_proxy</span>::<span class="ident">ChildProxyExtManual</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">tag_setter</span>::<span class="ident">TagSetterExtManual</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="self">self</span>::<span class="ident">iterator</span>::<span class="ident">Iterator</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="self">self</span>::<span class="ident">iterator</span>::{<span class="ident">Iterator</span>, <span class="ident">IteratorError</span>, <span class="ident">IteratorImpl</span>};
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">device_provider</span>::<span class="ident">DeviceProviderExtManual</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">parse_context</span>::<span class="ident">ParseContext</span>;
-<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;futures&quot;</span>)]</span>
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;futures&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">bus</span>::<span class="ident">BusStream</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">enums</span>::{<span class="ident">StateChangeError</span>, <span class="ident">StateChangeSuccess</span>};
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">clock_time</span>::<span class="ident">ClockTime</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">format</span>::<span class="ident">FormatValue</span>;
 
 <span class="kw">mod</span> <span class="ident">value</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">value</span>::<span class="kw-2">*</span>;
@@ -353,12 +402,20 @@
 }
 
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">BUFFER_OFFSET_NONE</span>: <span class="ident">u64</span> <span class="op">=</span> <span class="ident">ffi</span>::<span class="ident">GST_BUFFER_OFFSET_NONE</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">CLOCK_TIME_NONE</span>: <span class="ident">ClockTime</span> <span class="op">=</span> <span class="ident">ffi</span>::<span class="ident">GST_CLOCK_TIME_NONE</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">CLOCK_TIME_NONE</span>: <span class="ident">ClockTime</span> <span class="op">=</span> <span class="ident">ClockTime</span>(<span class="prelude-val">None</span>);
 
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">SECOND</span>: <span class="ident">ClockTime</span> <span class="op">=</span> <span class="number">1_000_000_000</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">MSECOND</span>: <span class="ident">ClockTime</span> <span class="op">=</span> <span class="number">1_000_000</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">USECOND</span>: <span class="ident">ClockTime</span> <span class="op">=</span> <span class="number">1_000</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">NSECOND</span>: <span class="ident">ClockTime</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">SECOND</span>: <span class="ident">ClockTime</span> <span class="op">=</span> <span class="ident">ClockTime</span>(<span class="prelude-val">Some</span>(<span class="number">1_000_000_000</span>));
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">MSECOND</span>: <span class="ident">ClockTime</span> <span class="op">=</span> <span class="ident">ClockTime</span>(<span class="prelude-val">Some</span>(<span class="number">1_000_000</span>));
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">USECOND</span>: <span class="ident">ClockTime</span> <span class="op">=</span> <span class="ident">ClockTime</span>(<span class="prelude-val">Some</span>(<span class="number">1_000</span>));
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">NSECOND</span>: <span class="ident">ClockTime</span> <span class="op">=</span> <span class="ident">ClockTime</span>(<span class="prelude-val">Some</span>(<span class="number">1</span>));
+
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">SECOND_VAL</span>: <span class="ident">u64</span> <span class="op">=</span> <span class="number">1_000_000_000</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">MSECOND_VAL</span>: <span class="ident">u64</span> <span class="op">=</span> <span class="number">1_000_000</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">USECOND_VAL</span>: <span class="ident">u64</span> <span class="op">=</span> <span class="number">1_000</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">NSECOND_VAL</span>: <span class="ident">u64</span> <span class="op">=</span> <span class="number">1</span>;
+
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">FORMAT_PERCENT_MAX</span>: <span class="ident">u32</span> <span class="op">=</span> <span class="ident">ffi</span>::<span class="ident">GST_FORMAT_PERCENT_MAX</span> <span class="kw">as</span> <span class="ident">u32</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">FORMAT_PERCENT_SCALE</span>: <span class="ident">u32</span> <span class="op">=</span> <span class="ident">ffi</span>::<span class="ident">GST_FORMAT_PERCENT_SCALE</span> <span class="kw">as</span> <span class="ident">u32</span>;
 
 <span class="comment">// Re-export all the traits in a prelude module, so that applications</span>
 <span class="comment">// can always &quot;use gst::prelude::*&quot; without getting conflicts</span>
@@ -370,6 +427,7 @@
     <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">element</span>::<span class="ident">ElementExtManual</span>;
     <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">bin</span>::<span class="ident">BinExtManual</span>;
     <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">pad</span>::<span class="ident">PadExtManual</span>;
+    <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">object</span>::<span class="ident">GstObjectExtManual</span>;
     <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">gobject</span>::<span class="ident">GObjectExtManualGst</span>;
     <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">child_proxy</span>::<span class="ident">ChildProxyExtManual</span>;
     <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">tag_setter</span>::<span class="ident">TagSetterExtManual</span>;
@@ -379,7 +437,11 @@
 
     <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">tags</span>::<span class="ident">Tag</span>;
     <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">miniobject</span>::<span class="ident">MiniObject</span>;
+
+    <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">muldiv</span>::<span class="ident">MulDiv</span>;
 }
+
+<span class="kw">mod</span> <span class="ident">utils</span>;
 </pre>
 </section>
     <section id='search' class="content hidden"></section>
@@ -398,13 +460,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>

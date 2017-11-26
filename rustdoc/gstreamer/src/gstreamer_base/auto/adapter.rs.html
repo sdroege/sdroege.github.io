@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="Source to the Rust file `gstreamer-base/src/auto/adapter.rs`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang">
+
+    <title>adapter.rs.html -- source</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc source">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content"><pre class="line-numbers"><span id="1">  1</span>
+<span id="2">  2</span>
+<span id="3">  3</span>
+<span id="4">  4</span>
+<span id="5">  5</span>
+<span id="6">  6</span>
+<span id="7">  7</span>
+<span id="8">  8</span>
+<span id="9">  9</span>
+<span id="10"> 10</span>
+<span id="11"> 11</span>
+<span id="12"> 12</span>
+<span id="13"> 13</span>
+<span id="14"> 14</span>
+<span id="15"> 15</span>
+<span id="16"> 16</span>
+<span id="17"> 17</span>
+<span id="18"> 18</span>
+<span id="19"> 19</span>
+<span id="20"> 20</span>
+<span id="21"> 21</span>
+<span id="22"> 22</span>
+<span id="23"> 23</span>
+<span id="24"> 24</span>
+<span id="25"> 25</span>
+<span id="26"> 26</span>
+<span id="27"> 27</span>
+<span id="28"> 28</span>
+<span id="29"> 29</span>
+<span id="30"> 30</span>
+<span id="31"> 31</span>
+<span id="32"> 32</span>
+<span id="33"> 33</span>
+<span id="34"> 34</span>
+<span id="35"> 35</span>
+<span id="36"> 36</span>
+<span id="37"> 37</span>
+<span id="38"> 38</span>
+<span id="39"> 39</span>
+<span id="40"> 40</span>
+<span id="41"> 41</span>
+<span id="42"> 42</span>
+<span id="43"> 43</span>
+<span id="44"> 44</span>
+<span id="45"> 45</span>
+<span id="46"> 46</span>
+<span id="47"> 47</span>
+<span id="48"> 48</span>
+<span id="49"> 49</span>
+<span id="50"> 50</span>
+<span id="51"> 51</span>
+<span id="52"> 52</span>
+<span id="53"> 53</span>
+<span id="54"> 54</span>
+<span id="55"> 55</span>
+<span id="56"> 56</span>
+<span id="57"> 57</span>
+<span id="58"> 58</span>
+<span id="59"> 59</span>
+<span id="60"> 60</span>
+<span id="61"> 61</span>
+<span id="62"> 62</span>
+<span id="63"> 63</span>
+<span id="64"> 64</span>
+<span id="65"> 65</span>
+<span id="66"> 66</span>
+<span id="67"> 67</span>
+<span id="68"> 68</span>
+<span id="69"> 69</span>
+<span id="70"> 70</span>
+<span id="71"> 71</span>
+<span id="72"> 72</span>
+<span id="73"> 73</span>
+<span id="74"> 74</span>
+<span id="75"> 75</span>
+<span id="76"> 76</span>
+<span id="77"> 77</span>
+<span id="78"> 78</span>
+<span id="79"> 79</span>
+<span id="80"> 80</span>
+<span id="81"> 81</span>
+<span id="82"> 82</span>
+<span id="83"> 83</span>
+<span id="84"> 84</span>
+<span id="85"> 85</span>
+<span id="86"> 86</span>
+<span id="87"> 87</span>
+<span id="88"> 88</span>
+<span id="89"> 89</span>
+<span id="90"> 90</span>
+<span id="91"> 91</span>
+<span id="92"> 92</span>
+<span id="93"> 93</span>
+<span id="94"> 94</span>
+<span id="95"> 95</span>
+<span id="96"> 96</span>
+<span id="97"> 97</span>
+<span id="98"> 98</span>
+<span id="99"> 99</span>
+<span id="100">100</span>
+<span id="101">101</span>
+<span id="102">102</span>
+<span id="103">103</span>
+<span id="104">104</span>
+<span id="105">105</span>
+<span id="106">106</span>
+<span id="107">107</span>
+<span id="108">108</span>
+<span id="109">109</span>
+<span id="110">110</span>
+<span id="111">111</span>
+<span id="112">112</span>
+<span id="113">113</span>
+<span id="114">114</span>
+<span id="115">115</span>
+<span id="116">116</span>
+<span id="117">117</span>
+<span id="118">118</span>
+<span id="119">119</span>
+<span id="120">120</span>
+<span id="121">121</span>
+<span id="122">122</span>
+<span id="123">123</span>
+<span id="124">124</span>
+<span id="125">125</span>
+<span id="126">126</span>
+<span id="127">127</span>
+<span id="128">128</span>
+<span id="129">129</span>
+<span id="130">130</span>
+<span id="131">131</span>
+<span id="132">132</span>
+<span id="133">133</span>
+<span id="134">134</span>
+<span id="135">135</span>
+<span id="136">136</span>
+<span id="137">137</span>
+<span id="138">138</span>
+<span id="139">139</span>
+<span id="140">140</span>
+<span id="141">141</span>
+<span id="142">142</span>
+<span id="143">143</span>
+<span id="144">144</span>
+<span id="145">145</span>
+<span id="146">146</span>
+<span id="147">147</span>
+<span id="148">148</span>
+<span id="149">149</span>
+<span id="150">150</span>
+<span id="151">151</span>
+<span id="152">152</span>
+<span id="153">153</span>
+<span id="154">154</span>
+<span id="155">155</span>
+<span id="156">156</span>
+<span id="157">157</span>
+<span id="158">158</span>
+<span id="159">159</span>
+<span id="160">160</span>
+<span id="161">161</span>
+<span id="162">162</span>
+<span id="163">163</span>
+<span id="164">164</span>
+<span id="165">165</span>
+<span id="166">166</span>
+<span id="167">167</span>
+<span id="168">168</span>
+<span id="169">169</span>
+<span id="170">170</span>
+<span id="171">171</span>
+<span id="172">172</span>
+<span id="173">173</span>
+<span id="174">174</span>
+<span id="175">175</span>
+<span id="176">176</span>
+<span id="177">177</span>
+<span id="178">178</span>
+<span id="179">179</span>
+<span id="180">180</span>
+<span id="181">181</span>
+<span id="182">182</span>
+<span id="183">183</span>
+<span id="184">184</span>
+<span id="185">185</span>
+<span id="186">186</span>
+<span id="187">187</span>
+<span id="188">188</span>
+<span id="189">189</span>
+<span id="190">190</span>
+<span id="191">191</span>
+<span id="192">192</span>
+<span id="193">193</span>
+<span id="194">194</span>
+<span id="195">195</span>
+<span id="196">196</span>
+<span id="197">197</span>
+<span id="198">198</span>
+<span id="199">199</span>
+<span id="200">200</span>
+<span id="201">201</span>
+<span id="202">202</span>
+<span id="203">203</span>
+<span id="204">204</span>
+<span id="205">205</span>
+<span id="206">206</span>
+<span id="207">207</span>
+<span id="208">208</span>
+<span id="209">209</span>
+<span id="210">210</span>
+<span id="211">211</span>
+<span id="212">212</span>
+<span id="213">213</span>
+<span id="214">214</span>
+<span id="215">215</span>
+<span id="216">216</span>
+<span id="217">217</span>
+<span id="218">218</span>
+<span id="219">219</span>
+<span id="220">220</span>
+<span id="221">221</span>
+<span id="222">222</span>
+<span id="223">223</span>
+<span id="224">224</span>
+<span id="225">225</span>
+<span id="226">226</span>
+<span id="227">227</span>
+<span id="228">228</span>
+<span id="229">229</span>
+<span id="230">230</span>
+<span id="231">231</span>
+<span id="232">232</span>
+<span id="233">233</span>
+<span id="234">234</span>
+<span id="235">235</span>
+<span id="236">236</span>
+<span id="237">237</span>
+<span id="238">238</span>
+<span id="239">239</span>
+<span id="240">240</span>
+<span id="241">241</span>
+<span id="242">242</span>
+<span id="243">243</span>
+<span id="244">244</span>
+<span id="245">245</span>
+<span id="246">246</span>
+<span id="247">247</span>
+<span id="248">248</span>
+<span id="249">249</span>
+<span id="250">250</span>
+<span id="251">251</span>
+<span id="252">252</span>
+<span id="253">253</span>
+<span id="254">254</span>
+<span id="255">255</span>
+<span id="256">256</span>
+<span id="257">257</span>
+<span id="258">258</span>
+<span id="259">259</span>
+<span id="260">260</span>
+<span id="261">261</span>
+<span id="262">262</span>
+<span id="263">263</span>
+<span id="264">264</span>
+<span id="265">265</span>
+<span id="266">266</span>
+<span id="267">267</span>
+<span id="268">268</span>
+<span id="269">269</span>
+<span id="270">270</span>
+<span id="271">271</span>
+<span id="272">272</span>
+<span id="273">273</span>
+<span id="274">274</span>
+<span id="275">275</span>
+<span id="276">276</span>
+<span id="277">277</span>
+<span id="278">278</span>
+<span id="279">279</span>
+<span id="280">280</span>
+<span id="281">281</span>
+<span id="282">282</span>
+<span id="283">283</span>
+<span id="284">284</span>
+<span id="285">285</span>
+<span id="286">286</span>
+<span id="287">287</span>
+<span id="288">288</span>
+<span id="289">289</span>
+<span id="290">290</span>
+<span id="291">291</span>
+<span id="292">292</span>
+<span id="293">293</span>
+<span id="294">294</span>
+<span id="295">295</span>
+<span id="296">296</span>
+<span id="297">297</span>
+<span id="298">298</span>
+<span id="299">299</span>
+<span id="300">300</span>
+<span id="301">301</span>
+<span id="302">302</span>
+<span id="303">303</span>
+<span id="304">304</span>
+<span id="305">305</span>
+<span id="306">306</span>
+<span id="307">307</span>
+<span id="308">308</span>
+<span id="309">309</span>
+<span id="310">310</span>
+<span id="311">311</span>
+<span id="312">312</span>
+<span id="313">313</span>
+<span id="314">314</span>
+<span id="315">315</span>
+<span id="316">316</span>
+<span id="317">317</span>
+<span id="318">318</span>
+<span id="319">319</span>
+<span id="320">320</span>
+<span id="321">321</span>
+<span id="322">322</span>
+<span id="323">323</span>
+<span id="324">324</span>
+<span id="325">325</span>
+<span id="326">326</span>
+<span id="327">327</span>
+<span id="328">328</span>
+<span id="329">329</span>
+<span id="330">330</span>
+<span id="331">331</span>
+<span id="332">332</span>
+<span id="333">333</span>
+<span id="334">334</span>
+<span id="335">335</span>
+<span id="336">336</span>
+<span id="337">337</span>
+<span id="338">338</span>
+<span id="339">339</span>
+<span id="340">340</span>
+<span id="341">341</span>
+<span id="342">342</span>
+<span id="343">343</span>
+<span id="344">344</span>
+<span id="345">345</span>
+<span id="346">346</span>
+<span id="347">347</span>
+<span id="348">348</span>
+<span id="349">349</span>
+<span id="350">350</span>
+<span id="351">351</span>
+<span id="352">352</span>
+<span id="353">353</span>
+<span id="354">354</span>
+<span id="355">355</span>
+<span id="356">356</span>
+<span id="357">357</span>
+<span id="358">358</span>
+<span id="359">359</span>
+<span id="360">360</span>
+<span id="361">361</span>
+<span id="362">362</span>
+<span id="363">363</span>
+<span id="364">364</span>
+<span id="365">365</span>
+<span id="366">366</span>
+<span id="367">367</span>
+<span id="368">368</span>
+<span id="369">369</span>
+<span id="370">370</span>
+<span id="371">371</span>
+<span id="372">372</span>
+<span id="373">373</span>
+<span id="374">374</span>
+<span id="375">375</span>
+<span id="376">376</span>
+<span id="377">377</span>
+<span id="378">378</span>
+<span id="379">379</span>
+<span id="380">380</span>
+<span id="381">381</span>
+<span id="382">382</span>
+<span id="383">383</span>
+<span id="384">384</span>
+<span id="385">385</span>
+<span id="386">386</span>
+<span id="387">387</span>
+<span id="388">388</span>
+<span id="389">389</span>
+<span id="390">390</span>
+<span id="391">391</span>
+<span id="392">392</span>
+<span id="393">393</span>
+<span id="394">394</span>
+<span id="395">395</span>
+<span id="396">396</span>
+<span id="397">397</span>
+<span id="398">398</span>
+<span id="399">399</span>
+<span id="400">400</span>
+<span id="401">401</span>
+<span id="402">402</span>
+<span id="403">403</span>
+<span id="404">404</span>
+<span id="405">405</span>
+<span id="406">406</span>
+<span id="407">407</span>
+<span id="408">408</span>
+<span id="409">409</span>
+<span id="410">410</span>
+<span id="411">411</span>
+<span id="412">412</span>
+<span id="413">413</span>
+<span id="414">414</span>
+<span id="415">415</span>
+<span id="416">416</span>
+<span id="417">417</span>
+<span id="418">418</span>
+<span id="419">419</span>
+<span id="420">420</span>
+<span id="421">421</span>
+<span id="422">422</span>
+<span id="423">423</span>
+<span id="424">424</span>
+<span id="425">425</span>
+<span id="426">426</span>
+<span id="427">427</span>
+<span id="428">428</span>
+<span id="429">429</span>
+<span id="430">430</span>
+<span id="431">431</span>
+<span id="432">432</span>
+<span id="433">433</span>
+<span id="434">434</span>
+<span id="435">435</span>
+<span id="436">436</span>
+<span id="437">437</span>
+<span id="438">438</span>
+<span id="439">439</span>
+<span id="440">440</span>
+<span id="441">441</span>
+<span id="442">442</span>
+<span id="443">443</span>
+<span id="444">444</span>
+<span id="445">445</span>
+<span id="446">446</span>
+<span id="447">447</span>
+<span id="448">448</span>
+<span id="449">449</span>
+<span id="450">450</span>
+<span id="451">451</span>
+<span id="452">452</span>
+<span id="453">453</span>
+<span id="454">454</span>
+<span id="455">455</span>
+<span id="456">456</span>
+<span id="457">457</span>
+<span id="458">458</span>
+<span id="459">459</span>
+<span id="460">460</span>
+<span id="461">461</span>
+<span id="462">462</span>
+<span id="463">463</span>
+<span id="464">464</span>
+<span id="465">465</span>
+<span id="466">466</span>
+<span id="467">467</span>
+<span id="468">468</span>
+<span id="469">469</span>
+<span id="470">470</span>
+<span id="471">471</span>
+<span id="472">472</span>
+<span id="473">473</span>
+<span id="474">474</span>
+<span id="475">475</span>
+<span id="476">476</span>
+<span id="477">477</span>
+<span id="478">478</span>
+<span id="479">479</span>
+<span id="480">480</span>
+<span id="481">481</span>
+<span id="482">482</span>
+<span id="483">483</span>
+<span id="484">484</span>
+<span id="485">485</span>
+<span id="486">486</span>
+<span id="487">487</span>
+<span id="488">488</span>
+<span id="489">489</span>
+<span id="490">490</span>
+<span id="491">491</span>
+<span id="492">492</span>
+<span id="493">493</span>
+<span id="494">494</span>
+<span id="495">495</span>
+<span id="496">496</span>
+<span id="497">497</span>
+<span id="498">498</span>
+<span id="499">499</span>
+<span id="500">500</span>
+<span id="501">501</span>
+<span id="502">502</span>
+<span id="503">503</span>
+<span id="504">504</span>
+<span id="505">505</span>
+<span id="506">506</span>
+<span id="507">507</span>
+<span id="508">508</span>
+<span id="509">509</span>
+<span id="510">510</span>
+<span id="511">511</span>
+<span id="512">512</span>
+<span id="513">513</span>
+<span id="514">514</span>
+<span id="515">515</span>
+<span id="516">516</span>
+<span id="517">517</span>
+<span id="518">518</span>
+<span id="519">519</span>
+<span id="520">520</span>
+<span id="521">521</span>
+<span id="522">522</span>
+<span id="523">523</span>
+<span id="524">524</span>
+<span id="525">525</span>
+<span id="526">526</span>
+<span id="527">527</span>
+<span id="528">528</span>
+<span id="529">529</span>
+<span id="530">530</span>
+<span id="531">531</span>
+<span id="532">532</span>
+<span id="533">533</span>
+<span id="534">534</span>
+<span id="535">535</span>
+<span id="536">536</span>
+<span id="537">537</span>
+<span id="538">538</span>
+<span id="539">539</span>
+<span id="540">540</span>
+<span id="541">541</span>
+<span id="542">542</span>
+<span id="543">543</span>
+<span id="544">544</span>
+<span id="545">545</span>
+<span id="546">546</span>
+<span id="547">547</span>
+<span id="548">548</span>
+<span id="549">549</span>
+<span id="550">550</span>
+<span id="551">551</span>
+<span id="552">552</span>
+<span id="553">553</span>
+<span id="554">554</span>
+<span id="555">555</span>
+<span id="556">556</span>
+<span id="557">557</span>
+<span id="558">558</span>
+<span id="559">559</span>
+<span id="560">560</span>
+<span id="561">561</span>
+<span id="562">562</span>
+<span id="563">563</span>
+<span id="564">564</span>
+<span id="565">565</span>
+<span id="566">566</span>
+<span id="567">567</span>
+<span id="568">568</span>
+<span id="569">569</span>
+<span id="570">570</span>
+<span id="571">571</span>
+<span id="572">572</span>
+<span id="573">573</span>
+<span id="574">574</span>
+<span id="575">575</span>
+<span id="576">576</span>
+<span id="577">577</span>
+<span id="578">578</span>
+<span id="579">579</span>
+<span id="580">580</span>
+<span id="581">581</span>
+<span id="582">582</span>
+<span id="583">583</span>
+<span id="584">584</span>
+<span id="585">585</span>
+<span id="586">586</span>
+<span id="587">587</span>
+<span id="588">588</span>
+<span id="589">589</span>
+<span id="590">590</span>
+<span id="591">591</span>
+<span id="592">592</span>
+<span id="593">593</span>
+<span id="594">594</span>
+<span id="595">595</span>
+<span id="596">596</span>
+<span id="597">597</span>
+<span id="598">598</span>
+<span id="599">599</span>
+<span id="600">600</span>
+<span id="601">601</span>
+<span id="602">602</span>
+<span id="603">603</span>
+<span id="604">604</span>
+<span id="605">605</span>
+<span id="606">606</span>
+<span id="607">607</span>
+<span id="608">608</span>
+<span id="609">609</span>
+<span id="610">610</span>
+<span id="611">611</span>
+<span id="612">612</span>
+<span id="613">613</span>
+<span id="614">614</span>
+<span id="615">615</span>
+<span id="616">616</span>
+<span id="617">617</span>
+<span id="618">618</span>
+<span id="619">619</span>
+<span id="620">620</span>
+<span id="621">621</span>
+<span id="622">622</span>
+<span id="623">623</span>
+<span id="624">624</span>
+<span id="625">625</span>
+<span id="626">626</span>
+<span id="627">627</span>
+<span id="628">628</span>
+<span id="629">629</span>
+<span id="630">630</span>
+<span id="631">631</span>
+<span id="632">632</span>
+<span id="633">633</span>
+<span id="634">634</span>
+<span id="635">635</span>
+<span id="636">636</span>
+<span id="637">637</span>
+<span id="638">638</span>
+<span id="639">639</span>
+<span id="640">640</span>
+<span id="641">641</span>
+<span id="642">642</span>
+<span id="643">643</span>
+<span id="644">644</span>
+<span id="645">645</span>
+<span id="646">646</span>
+<span id="647">647</span>
+<span id="648">648</span>
+<span id="649">649</span>
+<span id="650">650</span>
+<span id="651">651</span>
+<span id="652">652</span>
+<span id="653">653</span>
+<span id="654">654</span>
+<span id="655">655</span>
+<span id="656">656</span>
+<span id="657">657</span>
+<span id="658">658</span>
+<span id="659">659</span>
+<span id="660">660</span>
+</pre><pre class="rust ">
+<span class="comment">// This file was generated by gir (0409d73) from gir-files (???)</span>
+<span class="comment">// DO NOT EDIT</span>
+
+<span class="kw">use</span> <span class="ident">ffi</span>;
+<span class="kw">use</span> <span class="ident">glib</span>;
+<span class="kw">use</span> <span class="ident">glib</span>::<span class="ident">translate</span>::<span class="kw-2">*</span>;
+<span class="kw">use</span> <span class="ident">glib_ffi</span>;
+<span class="kw">use</span> <span class="ident">gobject_ffi</span>;
+<span class="kw">use</span> <span class="ident">gst</span>;
+<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">mem</span>;
+<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">ptr</span>;
+
+<span class="macro">glib_wrapper</span><span class="macro">!</span> {
+    <span class="doccomment">/// This class is for elements that receive buffers in an undesired size.</span>
+    <span class="doccomment">/// While for example raw video contains one image per buffer, the same is not</span>
+    <span class="doccomment">/// true for a lot of other formats, especially those that come directly from</span>
+    <span class="doccomment">/// a file. So if you have undefined buffer sizes and require a specific size,</span>
+    <span class="doccomment">/// this object is for you.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// An adapter is created with `Adapter::new`. It can be freed again with</span>
+    <span class="doccomment">/// `gobject::ObjectExt::unref`.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// The theory of operation is like this: All buffers received are put</span>
+    <span class="doccomment">/// into the adapter using `Adapter::push` and the data is then read back</span>
+    <span class="doccomment">/// in chunks of the desired size using `Adapter::map`/`Adapter::unmap`</span>
+    <span class="doccomment">/// and/or `Adapter::copy`. After the data has been processed, it is freed</span>
+    <span class="doccomment">/// using `Adapter::unmap`.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Other methods such as `Adapter::take` and `Adapter::take_buffer`</span>
+    <span class="doccomment">/// combine `Adapter::map` and `Adapter::unmap` in one method and are</span>
+    <span class="doccomment">/// potentially more convenient for some use cases.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// For example, a sink pad&#39;s chain function that needs to pass data to a library</span>
+    <span class="doccomment">/// in 512-byte chunks could be implemented like this:</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// ```C</span>
+    <span class="doccomment">/// static GstFlowReturn</span>
+    <span class="doccomment">/// sink_pad_chain (GstPad *pad, GstObject *parent, GstBuffer *buffer)</span>
+    <span class="doccomment">/// {</span>
+    <span class="doccomment">///   MyElement *this;</span>
+    <span class="doccomment">///   GstAdapter *adapter;</span>
+    <span class="doccomment">///   GstFlowReturn ret = GST_FLOW_OK;</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">///   this = MY_ELEMENT (parent);</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">///   adapter = this-&gt;adapter;</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">///   // put buffer into adapter</span>
+    <span class="doccomment">///   gst_adapter_push (adapter, buffer);</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">///   // while we can read out 512 bytes, process them</span>
+    <span class="doccomment">///   while (gst_adapter_available (adapter) &gt;= 512 &amp;&amp; ret == GST_FLOW_OK) {</span>
+    <span class="doccomment">///     const guint8 *data = gst_adapter_map (adapter, 512);</span>
+    <span class="doccomment">///     // use flowreturn as an error value</span>
+    <span class="doccomment">///     ret = my_library_foo (data);</span>
+    <span class="doccomment">///     gst_adapter_unmap (adapter);</span>
+    <span class="doccomment">///     gst_adapter_flush (adapter, 512);</span>
+    <span class="doccomment">///   }</span>
+    <span class="doccomment">///   return ret;</span>
+    <span class="doccomment">/// }</span>
+    <span class="doccomment">/// ```</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// For another example, a simple element inside GStreamer that uses `Adapter`</span>
+    <span class="doccomment">/// is the libvisual element.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// An element using `Adapter` in its sink pad chain function should ensure that</span>
+    <span class="doccomment">/// when the FLUSH_STOP event is received, that any queued data is cleared using</span>
+    <span class="doccomment">/// `Adapter::clear`. Data should also be cleared or processed on EOS and</span>
+    <span class="doccomment">/// when changing state from `gst::State::Paused` to `gst::State::Ready`.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Also check the GST_BUFFER_FLAG_DISCONT flag on the buffer. Some elements might</span>
+    <span class="doccomment">/// need to clear the adapter after a discontinuity.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// The adapter will keep track of the timestamps of the buffers</span>
+    <span class="doccomment">/// that were pushed. The last seen timestamp before the current position</span>
+    <span class="doccomment">/// can be queried with `Adapter::prev_pts`. This function can</span>
+    <span class="doccomment">/// optionally return the number of bytes between the start of the buffer that</span>
+    <span class="doccomment">/// carried the timestamp and the current adapter position. The distance is</span>
+    <span class="doccomment">/// useful when dealing with, for example, raw audio samples because it allows</span>
+    <span class="doccomment">/// you to calculate the timestamp of the current adapter position by using the</span>
+    <span class="doccomment">/// last seen timestamp and the amount of bytes since. Additionally, the</span>
+    <span class="doccomment">/// `Adapter::prev_pts_at_offset` can be used to determine the last</span>
+    <span class="doccomment">/// seen timestamp at a particular offset in the adapter.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// The adapter will also keep track of the offset of the buffers</span>
+    <span class="doccomment">/// (`GST_BUFFER_OFFSET`) that were pushed. The last seen offset before the</span>
+    <span class="doccomment">/// current position can be queried with `Adapter::prev_offset`. This function</span>
+    <span class="doccomment">/// can optionally return the number of bytes between the start of the buffer</span>
+    <span class="doccomment">/// that carried the offset and the current adapter position.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Additionally the adapter also keeps track of the PTS, DTS and buffer offset</span>
+    <span class="doccomment">/// at the last discontinuity, which can be retrieved with</span>
+    <span class="doccomment">/// `Adapter::pts_at_discont`, `Adapter::dts_at_discont` and</span>
+    <span class="doccomment">/// `Adapter::offset_at_discont`. The number of bytes that were consumed</span>
+    <span class="doccomment">/// since then can be queried with `Adapter::distance_from_discont`.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// A last thing to note is that while `Adapter` is pretty optimized,</span>
+    <span class="doccomment">/// merging buffers still might be an operation that requires a `malloc` and</span>
+    <span class="doccomment">/// `memcpy` operation, and these operations are not the fastest. Because of</span>
+    <span class="doccomment">/// this, some functions like `Adapter::available_fast` are provided to help</span>
+    <span class="doccomment">/// speed up such cases should you want to. To avoid repeated memory allocations,</span>
+    <span class="doccomment">/// `Adapter::copy` can be used to copy data into a (statically allocated)</span>
+    <span class="doccomment">/// user provided buffer.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// `Adapter` is not MT safe. All operations on an adapter must be serialized by</span>
+    <span class="doccomment">/// the caller. This is not normally a problem, however, as the normal use case</span>
+    <span class="doccomment">/// of `Adapter` is inside one pad&#39;s chain function, in which case access is</span>
+    <span class="doccomment">/// serialized via the pad&#39;s STREAM_LOCK.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Note that `Adapter::push` takes ownership of the buffer passed. Use</span>
+    <span class="doccomment">/// `gst_buffer_ref` before pushing it into the adapter if you still want to</span>
+    <span class="doccomment">/// access the buffer later. The adapter will never modify the data in the</span>
+    <span class="doccomment">/// buffer pushed in it.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Implements</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// [`ObjectExt`](trait.ObjectExt.html)</span>
+    <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">Adapter</span>(<span class="ident">Object</span><span class="op">&lt;</span><span class="ident">ffi</span>::<span class="ident">GstAdapter</span>, <span class="ident">ffi</span>::<span class="ident">GstAdapterClass</span><span class="op">&gt;</span>);
+
+    <span class="kw">match</span> <span class="kw">fn</span> {
+        <span class="ident">get_type</span> <span class="op">=&gt;</span> <span class="op">||</span> <span class="ident">ffi</span>::<span class="ident">gst_adapter_get_type</span>(),
+    }
+}
+
+<span class="kw">impl</span> <span class="ident">Adapter</span> {
+    <span class="doccomment">/// Creates a new `Adapter`. Free with `gobject::ObjectExt::unref`.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// a new `Adapter`</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-&gt;</span> <span class="ident">Adapter</span> {
+        <span class="macro">assert_initialized_main_thread</span><span class="macro">!</span>();
+        <span class="kw">unsafe</span> {
+            <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_adapter_new</span>())
+        }
+    }
+
+    <span class="doccomment">/// Gets the maximum amount of bytes available, that is it returns the maximum</span>
+    <span class="doccomment">/// value that can be supplied to `Adapter::map` without that function</span>
+    <span class="doccomment">/// returning `None`.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// number of bytes available in `self`</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">available</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">usize</span> {
+        <span class="kw">unsafe</span> {
+            <span class="ident">ffi</span>::<span class="ident">gst_adapter_available</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>)
+        }
+    }
+
+    <span class="doccomment">/// Gets the maximum number of bytes that are immediately available without</span>
+    <span class="doccomment">/// requiring any expensive operations (like copying the data into a</span>
+    <span class="doccomment">/// temporary buffer).</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// number of bytes that are available in `self` without expensive</span>
+    <span class="doccomment">/// operations</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">available_fast</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">usize</span> {
+        <span class="kw">unsafe</span> {
+            <span class="ident">ffi</span>::<span class="ident">gst_adapter_available_fast</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>)
+        }
+    }
+
+    <span class="doccomment">/// Removes all buffers from `self`.</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">clear</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) {
+        <span class="kw">unsafe</span> {
+            <span class="ident">ffi</span>::<span class="ident">gst_adapter_clear</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>);
+        }
+    }
+
+    <span class="doccomment">/// Similar to gst_adapter_copy, but more suitable for language bindings. `size`</span>
+    <span class="doccomment">/// bytes of data starting at `offset` will be copied out of the buffers contained</span>
+    <span class="doccomment">/// in `self` and into a new `glib::Bytes` structure which is returned. Depending on</span>
+    <span class="doccomment">/// the value of the `size` argument an empty `glib::Bytes` structure may be returned.</span>
+    <span class="doccomment">/// ## `offset`</span>
+    <span class="doccomment">/// the bytes offset in the adapter to start from</span>
+    <span class="doccomment">/// ## `size`</span>
+    <span class="doccomment">/// the number of bytes to copy</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// A new `glib::Bytes` structure containing the copied data.</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">copy_bytes</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">offset</span>: <span class="ident">usize</span>, <span class="ident">size</span>: <span class="ident">usize</span>) <span class="op">-&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">glib</span>::<span class="ident">Bytes</span><span class="op">&gt;</span> {
+        <span class="kw">unsafe</span> {
+            <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_adapter_copy_bytes</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="ident">offset</span>, <span class="ident">size</span>))
+        }
+    }
+
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">distance_from_discont</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">u64</span> {
+        <span class="kw">unsafe</span> {
+            <span class="ident">ffi</span>::<span class="ident">gst_adapter_distance_from_discont</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>)
+        }
+    }
+
+    <span class="doccomment">/// Get the DTS that was on the last buffer with the GST_BUFFER_FLAG_DISCONT</span>
+    <span class="doccomment">/// flag, or GST_CLOCK_TIME_NONE.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Feature: `v1_10`</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// The DTS at the last discont or GST_CLOCK_TIME_NONE.</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_10&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">dts_at_discont</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">gst</span>::<span class="ident">ClockTime</span> {
+        <span class="kw">unsafe</span> {
+            <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_adapter_dts_at_discont</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>))
+        }
+    }
+
+    <span class="doccomment">/// Flushes the first `flush` bytes in the `self`. The caller must ensure that</span>
+    <span class="doccomment">/// at least this many bytes are available.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// See also: `Adapter::map`, `Adapter::unmap`</span>
+    <span class="doccomment">/// ## `flush`</span>
+    <span class="doccomment">/// the number of bytes to flush</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">flush</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">flush</span>: <span class="ident">usize</span>) {
+        <span class="kw">unsafe</span> {
+            <span class="ident">ffi</span>::<span class="ident">gst_adapter_flush</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="ident">flush</span>);
+        }
+    }
+
+    <span class="doccomment">/// Returns a `gst::Buffer` containing the first `nbytes` of the `self`, but</span>
+    <span class="doccomment">/// does not flush them from the adapter. See `Adapter::take_buffer`</span>
+    <span class="doccomment">/// for details.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Caller owns a reference to the returned buffer. `gst_buffer_unref` after</span>
+    <span class="doccomment">/// usage.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Free-function: gst_buffer_unref</span>
+    <span class="doccomment">/// ## `nbytes`</span>
+    <span class="doccomment">/// the number of bytes to get</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// a `gst::Buffer` containing the first</span>
+    <span class="doccomment">///  `nbytes` of the adapter, or `None` if `nbytes` bytes are not available.</span>
+    <span class="doccomment">///  `gst_buffer_unref` when no longer needed.</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_buffer</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">nbytes</span>: <span class="ident">usize</span>) <span class="op">-&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">gst</span>::<span class="ident">Buffer</span><span class="op">&gt;</span> {
+        <span class="kw">unsafe</span> {
+            <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_adapter_get_buffer</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="ident">nbytes</span>))
+        }
+    }
+
+    <span class="doccomment">/// Returns a `gst::Buffer` containing the first `nbytes` of the `self`, but</span>
+    <span class="doccomment">/// does not flush them from the adapter. See `Adapter::take_buffer_fast`</span>
+    <span class="doccomment">/// for details.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Caller owns a reference to the returned buffer. `gst_buffer_unref` after</span>
+    <span class="doccomment">/// usage.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Free-function: gst_buffer_unref</span>
+    <span class="doccomment">/// ## `nbytes`</span>
+    <span class="doccomment">/// the number of bytes to get</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// a `gst::Buffer` containing the first</span>
+    <span class="doccomment">///  `nbytes` of the adapter, or `None` if `nbytes` bytes are not available.</span>
+    <span class="doccomment">///  `gst_buffer_unref` when no longer needed.</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_buffer_fast</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">nbytes</span>: <span class="ident">usize</span>) <span class="op">-&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">gst</span>::<span class="ident">Buffer</span><span class="op">&gt;</span> {
+        <span class="kw">unsafe</span> {
+            <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_adapter_get_buffer_fast</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="ident">nbytes</span>))
+        }
+    }
+
+    <span class="doccomment">/// Returns a `gst::BufferList` of buffers containing the first `nbytes` bytes of</span>
+    <span class="doccomment">/// the `self` but does not flush them from the adapter. See</span>
+    <span class="doccomment">/// `Adapter::take_buffer_list` for details.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Caller owns the returned list. Call `gst_buffer_list_unref` to free</span>
+    <span class="doccomment">/// the list after usage.</span>
+    <span class="doccomment">/// ## `nbytes`</span>
+    <span class="doccomment">/// the number of bytes to get</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// a `gst::BufferList` of buffers containing</span>
+    <span class="doccomment">///  the first `nbytes` of the adapter, or `None` if `nbytes` bytes are not</span>
+    <span class="doccomment">///  available</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_buffer_list</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">nbytes</span>: <span class="ident">usize</span>) <span class="op">-&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">gst</span>::<span class="ident">BufferList</span><span class="op">&gt;</span> {
+        <span class="kw">unsafe</span> {
+            <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_adapter_get_buffer_list</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="ident">nbytes</span>))
+        }
+    }
+
+    <span class="doccomment">/// Returns a `glib::List` of buffers containing the first `nbytes` bytes of the</span>
+    <span class="doccomment">/// `self`, but does not flush them from the adapter. See</span>
+    <span class="doccomment">/// `Adapter::take_list` for details.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Caller owns returned list and contained buffers. `gst_buffer_unref` each</span>
+    <span class="doccomment">/// buffer in the list before freeing the list after usage.</span>
+    <span class="doccomment">/// ## `nbytes`</span>
+    <span class="doccomment">/// the number of bytes to get</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// a `glib::List` of</span>
+    <span class="doccomment">///  buffers containing the first `nbytes` of the adapter, or `None` if `nbytes`</span>
+    <span class="doccomment">///  bytes are not available</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_list</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">nbytes</span>: <span class="ident">usize</span>) <span class="op">-&gt;</span> <span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">gst</span>::<span class="ident">Buffer</span><span class="op">&gt;</span> {
+        <span class="kw">unsafe</span> {
+            <span class="ident">FromGlibPtrContainer</span>::<span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_adapter_get_list</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="ident">nbytes</span>))
+        }
+    }
+
+    <span class="doccomment">/// Scan for pattern `pattern` with applied mask `mask` in the adapter data,</span>
+    <span class="doccomment">/// starting from offset `offset`.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// The bytes in `pattern` and `mask` are interpreted left-to-right, regardless</span>
+    <span class="doccomment">/// of endianness. All four bytes of the pattern must be present in the</span>
+    <span class="doccomment">/// adapter for it to match, even if the first or last bytes are masked out.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// It is an error to call this function without making sure that there is</span>
+    <span class="doccomment">/// enough data (offset+size bytes) in the adapter.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// This function calls `Adapter::masked_scan_uint32_peek` passing `None`</span>
+    <span class="doccomment">/// for value.</span>
+    <span class="doccomment">/// ## `mask`</span>
+    <span class="doccomment">/// mask to apply to data before matching against `pattern`</span>
+    <span class="doccomment">/// ## `pattern`</span>
+    <span class="doccomment">/// pattern to match (after mask is applied)</span>
+    <span class="doccomment">/// ## `offset`</span>
+    <span class="doccomment">/// offset into the adapter data from which to start scanning, returns</span>
+    <span class="doccomment">///  the last scanned position.</span>
+    <span class="doccomment">/// ## `size`</span>
+    <span class="doccomment">/// number of bytes to scan from offset</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// offset of the first match, or -1 if no match was found.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Example:</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// ```text</span>
+    <span class="doccomment">/// // Assume the adapter contains 0x00 0x01 0x02 ... 0xfe 0xff</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// gst_adapter_masked_scan_uint32 (adapter, 0xffffffff, 0x00010203, 0, 256);</span>
+    <span class="doccomment">/// // -&gt; returns 0</span>
+    <span class="doccomment">/// gst_adapter_masked_scan_uint32 (adapter, 0xffffffff, 0x00010203, 1, 255);</span>
+    <span class="doccomment">/// // -&gt; returns -1</span>
+    <span class="doccomment">/// gst_adapter_masked_scan_uint32 (adapter, 0xffffffff, 0x01020304, 1, 255);</span>
+    <span class="doccomment">/// // -&gt; returns 1</span>
+    <span class="doccomment">/// gst_adapter_masked_scan_uint32 (adapter, 0xffff, 0x0001, 0, 256);</span>
+    <span class="doccomment">/// // -&gt; returns -1</span>
+    <span class="doccomment">/// gst_adapter_masked_scan_uint32 (adapter, 0xffff, 0x0203, 0, 256);</span>
+    <span class="doccomment">/// // -&gt; returns 0</span>
+    <span class="doccomment">/// gst_adapter_masked_scan_uint32 (adapter, 0xffff0000, 0x02030000, 0, 256);</span>
+    <span class="doccomment">/// // -&gt; returns 2</span>
+    <span class="doccomment">/// gst_adapter_masked_scan_uint32 (adapter, 0xffff0000, 0x02030000, 0, 4);</span>
+    <span class="doccomment">/// // -&gt; returns -1</span>
+    <span class="doccomment">/// ```</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">masked_scan_uint32</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">mask</span>: <span class="ident">u32</span>, <span class="ident">pattern</span>: <span class="ident">u32</span>, <span class="ident">offset</span>: <span class="ident">usize</span>, <span class="ident">size</span>: <span class="ident">usize</span>) <span class="op">-&gt;</span> <span class="ident">isize</span> {
+        <span class="kw">unsafe</span> {
+            <span class="ident">ffi</span>::<span class="ident">gst_adapter_masked_scan_uint32</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="ident">mask</span>, <span class="ident">pattern</span>, <span class="ident">offset</span>, <span class="ident">size</span>)
+        }
+    }
+
+    <span class="doccomment">/// Scan for pattern `pattern` with applied mask `mask` in the adapter data,</span>
+    <span class="doccomment">/// starting from offset `offset`. If a match is found, the value that matched</span>
+    <span class="doccomment">/// is returned through `value`, otherwise `value` is left untouched.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// The bytes in `pattern` and `mask` are interpreted left-to-right, regardless</span>
+    <span class="doccomment">/// of endianness. All four bytes of the pattern must be present in the</span>
+    <span class="doccomment">/// adapter for it to match, even if the first or last bytes are masked out.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// It is an error to call this function without making sure that there is</span>
+    <span class="doccomment">/// enough data (offset+size bytes) in the adapter.</span>
+    <span class="doccomment">/// ## `mask`</span>
+    <span class="doccomment">/// mask to apply to data before matching against `pattern`</span>
+    <span class="doccomment">/// ## `pattern`</span>
+    <span class="doccomment">/// pattern to match (after mask is applied)</span>
+    <span class="doccomment">/// ## `offset`</span>
+    <span class="doccomment">/// offset into the adapter data from which to start scanning, returns</span>
+    <span class="doccomment">///  the last scanned position.</span>
+    <span class="doccomment">/// ## `size`</span>
+    <span class="doccomment">/// number of bytes to scan from offset</span>
+    <span class="doccomment">/// ## `value`</span>
+    <span class="doccomment">/// pointer to uint32 to return matching data</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// offset of the first match, or -1 if no match was found.</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">masked_scan_uint32_peek</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">mask</span>: <span class="ident">u32</span>, <span class="ident">pattern</span>: <span class="ident">u32</span>, <span class="ident">offset</span>: <span class="ident">usize</span>, <span class="ident">size</span>: <span class="ident">usize</span>) <span class="op">-&gt;</span> (<span class="ident">isize</span>, <span class="ident">u32</span>) {
+        <span class="kw">unsafe</span> {
+            <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">value</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
+            <span class="kw">let</span> <span class="ident">ret</span> <span class="op">=</span> <span class="ident">ffi</span>::<span class="ident">gst_adapter_masked_scan_uint32_peek</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="ident">mask</span>, <span class="ident">pattern</span>, <span class="ident">offset</span>, <span class="ident">size</span>, <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">value</span>);
+            (<span class="ident">ret</span>, <span class="ident">value</span>)
+        }
+    }
+
+    <span class="doccomment">/// Get the offset that was on the last buffer with the GST_BUFFER_FLAG_DISCONT</span>
+    <span class="doccomment">/// flag, or GST_BUFFER_OFFSET_NONE.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Feature: `v1_10`</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// The offset at the last discont or GST_BUFFER_OFFSET_NONE.</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_10&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">offset_at_discont</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">u64</span> {
+        <span class="kw">unsafe</span> {
+            <span class="ident">ffi</span>::<span class="ident">gst_adapter_offset_at_discont</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>)
+        }
+    }
+
+    <span class="doccomment">/// Get the dts that was before the current byte in the adapter. When</span>
+    <span class="doccomment">/// `distance` is given, the amount of bytes between the dts and the current</span>
+    <span class="doccomment">/// position is returned.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// The dts is reset to GST_CLOCK_TIME_NONE and the distance is set to 0 when</span>
+    <span class="doccomment">/// the adapter is first created or when it is cleared. This also means that before</span>
+    <span class="doccomment">/// the first byte with a dts is removed from the adapter, the dts</span>
+    <span class="doccomment">/// and distance returned are GST_CLOCK_TIME_NONE and 0 respectively.</span>
+    <span class="doccomment">/// ## `distance`</span>
+    <span class="doccomment">/// pointer to location for distance, or `None`</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// The previously seen dts.</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">prev_dts</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> (<span class="ident">gst</span>::<span class="ident">ClockTime</span>, <span class="ident">u64</span>) {
+        <span class="kw">unsafe</span> {
+            <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">distance</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
+            <span class="kw">let</span> <span class="ident">ret</span> <span class="op">=</span> <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_adapter_prev_dts</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">distance</span>));
+            (<span class="ident">ret</span>, <span class="ident">distance</span>)
+        }
+    }
+
+    <span class="doccomment">/// Get the dts that was before the byte at offset `offset` in the adapter. When</span>
+    <span class="doccomment">/// `distance` is given, the amount of bytes between the dts and the current</span>
+    <span class="doccomment">/// position is returned.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// The dts is reset to GST_CLOCK_TIME_NONE and the distance is set to 0 when</span>
+    <span class="doccomment">/// the adapter is first created or when it is cleared. This also means that before</span>
+    <span class="doccomment">/// the first byte with a dts is removed from the adapter, the dts</span>
+    <span class="doccomment">/// and distance returned are GST_CLOCK_TIME_NONE and 0 respectively.</span>
+    <span class="doccomment">/// ## `offset`</span>
+    <span class="doccomment">/// the offset in the adapter at which to get timestamp</span>
+    <span class="doccomment">/// ## `distance`</span>
+    <span class="doccomment">/// pointer to location for distance, or `None`</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// The previously seen dts at given offset.</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">prev_dts_at_offset</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">offset</span>: <span class="ident">usize</span>) <span class="op">-&gt;</span> (<span class="ident">gst</span>::<span class="ident">ClockTime</span>, <span class="ident">u64</span>) {
+        <span class="kw">unsafe</span> {
+            <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">distance</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
+            <span class="kw">let</span> <span class="ident">ret</span> <span class="op">=</span> <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_adapter_prev_dts_at_offset</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="ident">offset</span>, <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">distance</span>));
+            (<span class="ident">ret</span>, <span class="ident">distance</span>)
+        }
+    }
+
+    <span class="doccomment">/// Get the offset that was before the current byte in the adapter. When</span>
+    <span class="doccomment">/// `distance` is given, the amount of bytes between the offset and the current</span>
+    <span class="doccomment">/// position is returned.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// The offset is reset to GST_BUFFER_OFFSET_NONE and the distance is set to 0</span>
+    <span class="doccomment">/// when the adapter is first created or when it is cleared. This also means that</span>
+    <span class="doccomment">/// before the first byte with an offset is removed from the adapter, the offset</span>
+    <span class="doccomment">/// and distance returned are GST_BUFFER_OFFSET_NONE and 0 respectively.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Feature: `v1_10`</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// ## `distance`</span>
+    <span class="doccomment">/// pointer to a location for distance, or `None`</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// The previous seen offset.</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_10&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">prev_offset</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> (<span class="ident">u64</span>, <span class="ident">u64</span>) {
+        <span class="kw">unsafe</span> {
+            <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">distance</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
+            <span class="kw">let</span> <span class="ident">ret</span> <span class="op">=</span> <span class="ident">ffi</span>::<span class="ident">gst_adapter_prev_offset</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">distance</span>);
+            (<span class="ident">ret</span>, <span class="ident">distance</span>)
+        }
+    }
+
+    <span class="doccomment">/// Get the pts that was before the current byte in the adapter. When</span>
+    <span class="doccomment">/// `distance` is given, the amount of bytes between the pts and the current</span>
+    <span class="doccomment">/// position is returned.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// The pts is reset to GST_CLOCK_TIME_NONE and the distance is set to 0 when</span>
+    <span class="doccomment">/// the adapter is first created or when it is cleared. This also means that before</span>
+    <span class="doccomment">/// the first byte with a pts is removed from the adapter, the pts</span>
+    <span class="doccomment">/// and distance returned are GST_CLOCK_TIME_NONE and 0 respectively.</span>
+    <span class="doccomment">/// ## `distance`</span>
+    <span class="doccomment">/// pointer to location for distance, or `None`</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// The previously seen pts.</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">prev_pts</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> (<span class="ident">gst</span>::<span class="ident">ClockTime</span>, <span class="ident">u64</span>) {
+        <span class="kw">unsafe</span> {
+            <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">distance</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
+            <span class="kw">let</span> <span class="ident">ret</span> <span class="op">=</span> <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_adapter_prev_pts</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">distance</span>));
+            (<span class="ident">ret</span>, <span class="ident">distance</span>)
+        }
+    }
+
+    <span class="doccomment">/// Get the pts that was before the byte at offset `offset` in the adapter. When</span>
+    <span class="doccomment">/// `distance` is given, the amount of bytes between the pts and the current</span>
+    <span class="doccomment">/// position is returned.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// The pts is reset to GST_CLOCK_TIME_NONE and the distance is set to 0 when</span>
+    <span class="doccomment">/// the adapter is first created or when it is cleared. This also means that before</span>
+    <span class="doccomment">/// the first byte with a pts is removed from the adapter, the pts</span>
+    <span class="doccomment">/// and distance returned are GST_CLOCK_TIME_NONE and 0 respectively.</span>
+    <span class="doccomment">/// ## `offset`</span>
+    <span class="doccomment">/// the offset in the adapter at which to get timestamp</span>
+    <span class="doccomment">/// ## `distance`</span>
+    <span class="doccomment">/// pointer to location for distance, or `None`</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// The previously seen pts at given offset.</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">prev_pts_at_offset</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">offset</span>: <span class="ident">usize</span>) <span class="op">-&gt;</span> (<span class="ident">gst</span>::<span class="ident">ClockTime</span>, <span class="ident">u64</span>) {
+        <span class="kw">unsafe</span> {
+            <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">distance</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
+            <span class="kw">let</span> <span class="ident">ret</span> <span class="op">=</span> <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_adapter_prev_pts_at_offset</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="ident">offset</span>, <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">distance</span>));
+            (<span class="ident">ret</span>, <span class="ident">distance</span>)
+        }
+    }
+
+    <span class="doccomment">/// Get the PTS that was on the last buffer with the GST_BUFFER_FLAG_DISCONT</span>
+    <span class="doccomment">/// flag, or GST_CLOCK_TIME_NONE.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Feature: `v1_10`</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// The PTS at the last discont or GST_CLOCK_TIME_NONE.</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_10&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">pts_at_discont</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">gst</span>::<span class="ident">ClockTime</span> {
+        <span class="kw">unsafe</span> {
+            <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_adapter_pts_at_discont</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>))
+        }
+    }
+
+    <span class="doccomment">/// Returns a `gst::Buffer` containing the first `nbytes` bytes of the</span>
+    <span class="doccomment">/// `self`. The returned bytes will be flushed from the adapter.</span>
+    <span class="doccomment">/// This function is potentially more performant than</span>
+    <span class="doccomment">/// `Adapter::take` since it can reuse the memory in pushed buffers</span>
+    <span class="doccomment">/// by subbuffering or merging. This function will always return a</span>
+    <span class="doccomment">/// buffer with a single memory region.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Note that no assumptions should be made as to whether certain buffer</span>
+    <span class="doccomment">/// flags such as the DISCONT flag are set on the returned buffer, or not.</span>
+    <span class="doccomment">/// The caller needs to explicitly set or unset flags that should be set or</span>
+    <span class="doccomment">/// unset.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Since 1.6 this will also copy over all GstMeta of the input buffers except</span>
+    <span class="doccomment">/// for meta with the `gst::MetaFlags::Pooled` flag or with the &quot;memory&quot; tag.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Caller owns a reference to the returned buffer. `gst_buffer_unref` after</span>
+    <span class="doccomment">/// usage.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Free-function: gst_buffer_unref</span>
+    <span class="doccomment">/// ## `nbytes`</span>
+    <span class="doccomment">/// the number of bytes to take</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// a `gst::Buffer` containing the first</span>
+    <span class="doccomment">///  `nbytes` of the adapter, or `None` if `nbytes` bytes are not available.</span>
+    <span class="doccomment">///  `gst_buffer_unref` when no longer needed.</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">take_buffer</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">nbytes</span>: <span class="ident">usize</span>) <span class="op">-&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">gst</span>::<span class="ident">Buffer</span><span class="op">&gt;</span> {
+        <span class="kw">unsafe</span> {
+            <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_adapter_take_buffer</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="ident">nbytes</span>))
+        }
+    }
+
+    <span class="doccomment">/// Returns a `gst::Buffer` containing the first `nbytes` of the `self`.</span>
+    <span class="doccomment">/// The returned bytes will be flushed from the adapter. This function</span>
+    <span class="doccomment">/// is potentially more performant than `Adapter::take_buffer` since</span>
+    <span class="doccomment">/// it can reuse the memory in pushed buffers by subbuffering or</span>
+    <span class="doccomment">/// merging. Unlike `Adapter::take_buffer`, the returned buffer may</span>
+    <span class="doccomment">/// be composed of multiple non-contiguous `gst::Memory` objects, no</span>
+    <span class="doccomment">/// copies are made.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Note that no assumptions should be made as to whether certain buffer</span>
+    <span class="doccomment">/// flags such as the DISCONT flag are set on the returned buffer, or not.</span>
+    <span class="doccomment">/// The caller needs to explicitly set or unset flags that should be set or</span>
+    <span class="doccomment">/// unset.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// This will also copy over all GstMeta of the input buffers except</span>
+    <span class="doccomment">/// for meta with the `gst::MetaFlags::Pooled` flag or with the &quot;memory&quot; tag.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// This function can return buffer up to the return value of</span>
+    <span class="doccomment">/// `Adapter::available` without making copies if possible.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Caller owns a reference to the returned buffer. `gst_buffer_unref` after</span>
+    <span class="doccomment">/// usage.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Free-function: gst_buffer_unref</span>
+    <span class="doccomment">/// ## `nbytes`</span>
+    <span class="doccomment">/// the number of bytes to take</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// a `gst::Buffer` containing the first</span>
+    <span class="doccomment">///  `nbytes` of the adapter, or `None` if `nbytes` bytes are not available.</span>
+    <span class="doccomment">///  `gst_buffer_unref` when no longer needed.</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">take_buffer_fast</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">nbytes</span>: <span class="ident">usize</span>) <span class="op">-&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">gst</span>::<span class="ident">Buffer</span><span class="op">&gt;</span> {
+        <span class="kw">unsafe</span> {
+            <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_adapter_take_buffer_fast</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="ident">nbytes</span>))
+        }
+    }
+
+    <span class="doccomment">/// Returns a `gst::BufferList` of buffers containing the first `nbytes` bytes of</span>
+    <span class="doccomment">/// the `self`. The returned bytes will be flushed from the adapter.</span>
+    <span class="doccomment">/// When the caller can deal with individual buffers, this function is more</span>
+    <span class="doccomment">/// performant because no memory should be copied.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Caller owns the returned list. Call `gst_buffer_list_unref` to free</span>
+    <span class="doccomment">/// the list after usage.</span>
+    <span class="doccomment">/// ## `nbytes`</span>
+    <span class="doccomment">/// the number of bytes to take</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// a `gst::BufferList` of buffers containing</span>
+    <span class="doccomment">///  the first `nbytes` of the adapter, or `None` if `nbytes` bytes are not</span>
+    <span class="doccomment">///  available</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">take_buffer_list</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">nbytes</span>: <span class="ident">usize</span>) <span class="op">-&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">gst</span>::<span class="ident">BufferList</span><span class="op">&gt;</span> {
+        <span class="kw">unsafe</span> {
+            <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_adapter_take_buffer_list</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="ident">nbytes</span>))
+        }
+    }
+
+    <span class="doccomment">/// Returns a `glib::List` of buffers containing the first `nbytes` bytes of the</span>
+    <span class="doccomment">/// `self`. The returned bytes will be flushed from the adapter.</span>
+    <span class="doccomment">/// When the caller can deal with individual buffers, this function is more</span>
+    <span class="doccomment">/// performant because no memory should be copied.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Caller owns returned list and contained buffers. `gst_buffer_unref` each</span>
+    <span class="doccomment">/// buffer in the list before freeing the list after usage.</span>
+    <span class="doccomment">/// ## `nbytes`</span>
+    <span class="doccomment">/// the number of bytes to take</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// a `glib::List` of</span>
+    <span class="doccomment">///  buffers containing the first `nbytes` of the adapter, or `None` if `nbytes`</span>
+    <span class="doccomment">///  bytes are not available</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">take_list</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">nbytes</span>: <span class="ident">usize</span>) <span class="op">-&gt;</span> <span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">gst</span>::<span class="ident">Buffer</span><span class="op">&gt;</span> {
+        <span class="kw">unsafe</span> {
+            <span class="ident">FromGlibPtrContainer</span>::<span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_adapter_take_list</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="ident">nbytes</span>))
+        }
+    }
+}
+
+<span class="kw">impl</span> <span class="ident">Default</span> <span class="kw">for</span> <span class="ident">Adapter</span> {
+    <span class="kw">fn</span> <span class="ident">default</span>() <span class="op">-&gt;</span> <span class="self">Self</span> {
+        <span class="self">Self</span>::<span class="ident">new</span>()
+    }
+}
+</pre>
+</section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "gstreamer_base";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

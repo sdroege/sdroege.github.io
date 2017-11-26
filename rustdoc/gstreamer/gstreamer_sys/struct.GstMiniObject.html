@@ -29,7 +29,7 @@
 
     <nav class="sidebar">
         
-        <p class='location'>Struct GstMiniObject</p><div class="block items"><ul><li><a href="#fields">Fields</a></li></ul></div><p class='location'><a href='index.html'>gstreamer_sys</a></p><script>window.sidebarCurrent = {name: 'GstMiniObject', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct GstMiniObject</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.type_">type_</a><a href="#structfield.refcount">refcount</a><a href="#structfield.lockstate">lockstate</a><a href="#structfield.flags">flags</a><a href="#structfield.copy">copy</a><a href="#structfield.dispose">dispose</a><a href="#structfield.free">free</a><a href="#structfield.n_qdata">n_qdata</a><a href="#structfield.qdata">qdata</a></div></div><p class='location'><a href='index.html'>gstreamer_sys</a></p><script>window.sidebarCurrent = {name: 'GstMiniObject', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </nav>
 
     <nav class="sub">
@@ -48,7 +48,7 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/gstreamer_sys/lib.rs.html#1886-1896' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/gstreamer_sys/lib.rs.html#1685-1695' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'><div class="docblock attributes">#[repr(C)]
 </div>pub struct GstMiniObject {
     pub type_: <a class="type" href="../glib_sys/type.GType.html" title="type glib_sys::GType">GType</a>,
@@ -60,32 +60,42 @@
     pub free: <a class="type" href="../gstreamer_sys/type.GstMiniObjectFreeFunction.html" title="type gstreamer_sys::GstMiniObjectFreeFunction">GstMiniObjectFreeFunction</a>,
     pub n_qdata: <a class="type" href="../libc/type.c_uint.html" title="type libc::c_uint">c_uint</a>,
     pub qdata: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a>,
-}</pre><h2 id='fields' class='fields'>Fields</h2><span id='structfield.type_' class="structfield">
-                           <span id='type_.v' class='invisible'>
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.type_" class="structfield small-section-header">
+                           <a href="#structfield.type_" class="anchor field"></a>
+                           <span id="type_.v" class='invisible'>
                            <code>type_: <a class="type" href="../glib_sys/type.GType.html" title="type glib_sys::GType">GType</a></code>
-                           </span></span><span id='structfield.refcount' class="structfield">
-                           <span id='refcount.v' class='invisible'>
+                           </span></span><span id="structfield.refcount" class="structfield small-section-header">
+                           <a href="#structfield.refcount" class="anchor field"></a>
+                           <span id="refcount.v" class='invisible'>
                            <code>refcount: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a></code>
-                           </span></span><span id='structfield.lockstate' class="structfield">
-                           <span id='lockstate.v' class='invisible'>
+                           </span></span><span id="structfield.lockstate" class="structfield small-section-header">
+                           <a href="#structfield.lockstate" class="anchor field"></a>
+                           <span id="lockstate.v" class='invisible'>
                            <code>lockstate: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a></code>
-                           </span></span><span id='structfield.flags' class="structfield">
-                           <span id='flags.v' class='invisible'>
+                           </span></span><span id="structfield.flags" class="structfield small-section-header">
+                           <a href="#structfield.flags" class="anchor field"></a>
+                           <span id="flags.v" class='invisible'>
                            <code>flags: <a class="type" href="../libc/type.c_uint.html" title="type libc::c_uint">c_uint</a></code>
-                           </span></span><span id='structfield.copy' class="structfield">
-                           <span id='copy.v' class='invisible'>
+                           </span></span><span id="structfield.copy" class="structfield small-section-header">
+                           <a href="#structfield.copy" class="anchor field"></a>
+                           <span id="copy.v" class='invisible'>
                            <code>copy: <a class="type" href="../gstreamer_sys/type.GstMiniObjectCopyFunction.html" title="type gstreamer_sys::GstMiniObjectCopyFunction">GstMiniObjectCopyFunction</a></code>
-                           </span></span><span id='structfield.dispose' class="structfield">
-                           <span id='dispose.v' class='invisible'>
+                           </span></span><span id="structfield.dispose" class="structfield small-section-header">
+                           <a href="#structfield.dispose" class="anchor field"></a>
+                           <span id="dispose.v" class='invisible'>
                            <code>dispose: <a class="type" href="../gstreamer_sys/type.GstMiniObjectDisposeFunction.html" title="type gstreamer_sys::GstMiniObjectDisposeFunction">GstMiniObjectDisposeFunction</a></code>
-                           </span></span><span id='structfield.free' class="structfield">
-                           <span id='free.v' class='invisible'>
+                           </span></span><span id="structfield.free" class="structfield small-section-header">
+                           <a href="#structfield.free" class="anchor field"></a>
+                           <span id="free.v" class='invisible'>
                            <code>free: <a class="type" href="../gstreamer_sys/type.GstMiniObjectFreeFunction.html" title="type gstreamer_sys::GstMiniObjectFreeFunction">GstMiniObjectFreeFunction</a></code>
-                           </span></span><span id='structfield.n_qdata' class="structfield">
-                           <span id='n_qdata.v' class='invisible'>
+                           </span></span><span id="structfield.n_qdata" class="structfield small-section-header">
+                           <a href="#structfield.n_qdata" class="anchor field"></a>
+                           <span id="n_qdata.v" class='invisible'>
                            <code>n_qdata: <a class="type" href="../libc/type.c_uint.html" title="type libc::c_uint">c_uint</a></code>
-                           </span></span><span id='structfield.qdata' class="structfield">
-                           <span id='qdata.v' class='invisible'>
+                           </span></span><span id="structfield.qdata" class="structfield small-section-header">
+                           <a href="#structfield.qdata" class="anchor field"></a>
+                           <span id="qdata.v" class='invisible'>
                            <code>qdata: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a></code>
                            </span></span></section>
     <section id='search' class="content hidden"></section>
@@ -104,13 +114,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>

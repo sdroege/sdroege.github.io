@@ -1,1 +1,0 @@
-initSidebarItems({"trait":[["AppLaunchContextExt",""],["ContextExt",""],["CursorExt",""],["DeviceExt",""],["DeviceExtManual",""],["DeviceManagerExt",""],["DeviceManagerExtManual",""],["DisplayExt",""],["DisplayManagerExt",""],["DragContextExt",""],["DragContextExtManual",""],["ScreenExt",""],["VisualExt",""],["VisualExtManual",""],["WindowExt",""],["WindowExtManual",""]]});

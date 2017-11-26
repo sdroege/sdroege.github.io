@@ -29,7 +29,7 @@
 
     <nav class="sidebar">
         
-        <p class='location'>Struct GstPad</p><div class="block items"><ul><li><a href="#fields">Fields</a></li></ul></div><p class='location'><a href='index.html'>gstreamer_sys</a></p><script>window.sidebarCurrent = {name: 'GstPad', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct GstPad</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.object">object</a><a href="#structfield.element_private">element_private</a><a href="#structfield.padtemplate">padtemplate</a><a href="#structfield.direction">direction</a><a href="#structfield.stream_rec_lock">stream_rec_lock</a><a href="#structfield.task">task</a><a href="#structfield.block_cond">block_cond</a><a href="#structfield.probes">probes</a><a href="#structfield.mode">mode</a><a href="#structfield.activatefunc">activatefunc</a><a href="#structfield.activatedata">activatedata</a><a href="#structfield.activatenotify">activatenotify</a><a href="#structfield.activatemodefunc">activatemodefunc</a><a href="#structfield.activatemodedata">activatemodedata</a><a href="#structfield.activatemodenotify">activatemodenotify</a><a href="#structfield.peer">peer</a><a href="#structfield.linkfunc">linkfunc</a><a href="#structfield.linkdata">linkdata</a><a href="#structfield.linknotify">linknotify</a><a href="#structfield.unlinkfunc">unlinkfunc</a><a href="#structfield.unlinkdata">unlinkdata</a><a href="#structfield.unlinknotify">unlinknotify</a><a href="#structfield.chainfunc">chainfunc</a><a href="#structfield.chaindata">chaindata</a><a href="#structfield.chainnotify">chainnotify</a><a href="#structfield.chainlistfunc">chainlistfunc</a><a href="#structfield.chainlistdata">chainlistdata</a><a href="#structfield.chainlistnotify">chainlistnotify</a><a href="#structfield.getrangefunc">getrangefunc</a><a href="#structfield.getrangedata">getrangedata</a><a href="#structfield.getrangenotify">getrangenotify</a><a href="#structfield.eventfunc">eventfunc</a><a href="#structfield.eventdata">eventdata</a><a href="#structfield.eventnotify">eventnotify</a><a href="#structfield.offset">offset</a><a href="#structfield.queryfunc">queryfunc</a><a href="#structfield.querydata">querydata</a><a href="#structfield.querynotify">querynotify</a><a href="#structfield.iterintlinkfunc">iterintlinkfunc</a><a href="#structfield.iterintlinkdata">iterintlinkdata</a><a href="#structfield.iterintlinknotify">iterintlinknotify</a><a href="#structfield.num_probes">num_probes</a><a href="#structfield.num_blocked">num_blocked</a><a href="#structfield.priv_">priv_</a><a href="#structfield._gst_reserved">_gst_reserved</a></div></div><p class='location'><a href='index.html'>gstreamer_sys</a></p><script>window.sidebarCurrent = {name: 'GstPad', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </nav>
 
     <nav class="sub">
@@ -48,18 +48,18 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/gstreamer_sys/lib.rs.html#2377-2423' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/gstreamer_sys/lib.rs.html#2176-2222' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'><div class="docblock attributes">#[repr(C)]
 </div>pub struct GstPad {
     pub object: <a class="struct" href="../gstreamer_sys/struct.GstObject.html" title="struct gstreamer_sys::GstObject">GstObject</a>,
     pub element_private: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a>,
     pub padtemplate: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstPadTemplate.html" title="struct gstreamer_sys::GstPadTemplate">GstPadTemplate</a>,
-    pub direction: <a class="enum" href="../gstreamer_sys/enum.GstPadDirection.html" title="enum gstreamer_sys::GstPadDirection">GstPadDirection</a>,
+    pub direction: <a class="type" href="../gstreamer_sys/type.GstPadDirection.html" title="type gstreamer_sys::GstPadDirection">GstPadDirection</a>,
     pub stream_rec_lock: <a class="struct" href="../glib_sys/struct.GRecMutex.html" title="struct glib_sys::GRecMutex">GRecMutex</a>,
     pub task: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstTask.html" title="struct gstreamer_sys::GstTask">GstTask</a>,
     pub block_cond: <a class="struct" href="../glib_sys/struct.GCond.html" title="struct glib_sys::GCond">GCond</a>,
     pub probes: <a class="struct" href="../glib_sys/struct.GHookList.html" title="struct glib_sys::GHookList">GHookList</a>,
-    pub mode: <a class="enum" href="../gstreamer_sys/enum.GstPadMode.html" title="enum gstreamer_sys::GstPadMode">GstPadMode</a>,
+    pub mode: <a class="type" href="../gstreamer_sys/type.GstPadMode.html" title="type gstreamer_sys::GstPadMode">GstPadMode</a>,
     pub activatefunc: <a class="type" href="../gstreamer_sys/type.GstPadActivateFunction.html" title="type gstreamer_sys::GstPadActivateFunction">GstPadActivateFunction</a>,
     pub activatedata: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a>,
     pub activatenotify: <a class="type" href="../glib_sys/type.GDestroyNotify.html" title="type glib_sys::GDestroyNotify">GDestroyNotify</a>,
@@ -96,140 +96,186 @@
     pub num_blocked: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a>,
     pub priv_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstPadPrivate.html" title="struct gstreamer_sys::GstPadPrivate">GstPadPrivate</a>,
     pub _gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a>,
-}</pre><h2 id='fields' class='fields'>Fields</h2><span id='structfield.object' class="structfield">
-                           <span id='object.v' class='invisible'>
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.object" class="structfield small-section-header">
+                           <a href="#structfield.object" class="anchor field"></a>
+                           <span id="object.v" class='invisible'>
                            <code>object: <a class="struct" href="../gstreamer_sys/struct.GstObject.html" title="struct gstreamer_sys::GstObject">GstObject</a></code>
-                           </span></span><span id='structfield.element_private' class="structfield">
-                           <span id='element_private.v' class='invisible'>
+                           </span></span><span id="structfield.element_private" class="structfield small-section-header">
+                           <a href="#structfield.element_private" class="anchor field"></a>
+                           <span id="element_private.v" class='invisible'>
                            <code>element_private: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a></code>
-                           </span></span><span id='structfield.padtemplate' class="structfield">
-                           <span id='padtemplate.v' class='invisible'>
+                           </span></span><span id="structfield.padtemplate" class="structfield small-section-header">
+                           <a href="#structfield.padtemplate" class="anchor field"></a>
+                           <span id="padtemplate.v" class='invisible'>
                            <code>padtemplate: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstPadTemplate.html" title="struct gstreamer_sys::GstPadTemplate">GstPadTemplate</a></code>
-                           </span></span><span id='structfield.direction' class="structfield">
-                           <span id='direction.v' class='invisible'>
-                           <code>direction: <a class="enum" href="../gstreamer_sys/enum.GstPadDirection.html" title="enum gstreamer_sys::GstPadDirection">GstPadDirection</a></code>
-                           </span></span><span id='structfield.stream_rec_lock' class="structfield">
-                           <span id='stream_rec_lock.v' class='invisible'>
+                           </span></span><span id="structfield.direction" class="structfield small-section-header">
+                           <a href="#structfield.direction" class="anchor field"></a>
+                           <span id="direction.v" class='invisible'>
+                           <code>direction: <a class="type" href="../gstreamer_sys/type.GstPadDirection.html" title="type gstreamer_sys::GstPadDirection">GstPadDirection</a></code>
+                           </span></span><span id="structfield.stream_rec_lock" class="structfield small-section-header">
+                           <a href="#structfield.stream_rec_lock" class="anchor field"></a>
+                           <span id="stream_rec_lock.v" class='invisible'>
                            <code>stream_rec_lock: <a class="struct" href="../glib_sys/struct.GRecMutex.html" title="struct glib_sys::GRecMutex">GRecMutex</a></code>
-                           </span></span><span id='structfield.task' class="structfield">
-                           <span id='task.v' class='invisible'>
+                           </span></span><span id="structfield.task" class="structfield small-section-header">
+                           <a href="#structfield.task" class="anchor field"></a>
+                           <span id="task.v" class='invisible'>
                            <code>task: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstTask.html" title="struct gstreamer_sys::GstTask">GstTask</a></code>
-                           </span></span><span id='structfield.block_cond' class="structfield">
-                           <span id='block_cond.v' class='invisible'>
+                           </span></span><span id="structfield.block_cond" class="structfield small-section-header">
+                           <a href="#structfield.block_cond" class="anchor field"></a>
+                           <span id="block_cond.v" class='invisible'>
                            <code>block_cond: <a class="struct" href="../glib_sys/struct.GCond.html" title="struct glib_sys::GCond">GCond</a></code>
-                           </span></span><span id='structfield.probes' class="structfield">
-                           <span id='probes.v' class='invisible'>
+                           </span></span><span id="structfield.probes" class="structfield small-section-header">
+                           <a href="#structfield.probes" class="anchor field"></a>
+                           <span id="probes.v" class='invisible'>
                            <code>probes: <a class="struct" href="../glib_sys/struct.GHookList.html" title="struct glib_sys::GHookList">GHookList</a></code>
-                           </span></span><span id='structfield.mode' class="structfield">
-                           <span id='mode.v' class='invisible'>
-                           <code>mode: <a class="enum" href="../gstreamer_sys/enum.GstPadMode.html" title="enum gstreamer_sys::GstPadMode">GstPadMode</a></code>
-                           </span></span><span id='structfield.activatefunc' class="structfield">
-                           <span id='activatefunc.v' class='invisible'>
+                           </span></span><span id="structfield.mode" class="structfield small-section-header">
+                           <a href="#structfield.mode" class="anchor field"></a>
+                           <span id="mode.v" class='invisible'>
+                           <code>mode: <a class="type" href="../gstreamer_sys/type.GstPadMode.html" title="type gstreamer_sys::GstPadMode">GstPadMode</a></code>
+                           </span></span><span id="structfield.activatefunc" class="structfield small-section-header">
+                           <a href="#structfield.activatefunc" class="anchor field"></a>
+                           <span id="activatefunc.v" class='invisible'>
                            <code>activatefunc: <a class="type" href="../gstreamer_sys/type.GstPadActivateFunction.html" title="type gstreamer_sys::GstPadActivateFunction">GstPadActivateFunction</a></code>
-                           </span></span><span id='structfield.activatedata' class="structfield">
-                           <span id='activatedata.v' class='invisible'>
+                           </span></span><span id="structfield.activatedata" class="structfield small-section-header">
+                           <a href="#structfield.activatedata" class="anchor field"></a>
+                           <span id="activatedata.v" class='invisible'>
                            <code>activatedata: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a></code>
-                           </span></span><span id='structfield.activatenotify' class="structfield">
-                           <span id='activatenotify.v' class='invisible'>
+                           </span></span><span id="structfield.activatenotify" class="structfield small-section-header">
+                           <a href="#structfield.activatenotify" class="anchor field"></a>
+                           <span id="activatenotify.v" class='invisible'>
                            <code>activatenotify: <a class="type" href="../glib_sys/type.GDestroyNotify.html" title="type glib_sys::GDestroyNotify">GDestroyNotify</a></code>
-                           </span></span><span id='structfield.activatemodefunc' class="structfield">
-                           <span id='activatemodefunc.v' class='invisible'>
+                           </span></span><span id="structfield.activatemodefunc" class="structfield small-section-header">
+                           <a href="#structfield.activatemodefunc" class="anchor field"></a>
+                           <span id="activatemodefunc.v" class='invisible'>
                            <code>activatemodefunc: <a class="type" href="../gstreamer_sys/type.GstPadActivateModeFunction.html" title="type gstreamer_sys::GstPadActivateModeFunction">GstPadActivateModeFunction</a></code>
-                           </span></span><span id='structfield.activatemodedata' class="structfield">
-                           <span id='activatemodedata.v' class='invisible'>
+                           </span></span><span id="structfield.activatemodedata" class="structfield small-section-header">
+                           <a href="#structfield.activatemodedata" class="anchor field"></a>
+                           <span id="activatemodedata.v" class='invisible'>
                            <code>activatemodedata: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a></code>
-                           </span></span><span id='structfield.activatemodenotify' class="structfield">
-                           <span id='activatemodenotify.v' class='invisible'>
+                           </span></span><span id="structfield.activatemodenotify" class="structfield small-section-header">
+                           <a href="#structfield.activatemodenotify" class="anchor field"></a>
+                           <span id="activatemodenotify.v" class='invisible'>
                            <code>activatemodenotify: <a class="type" href="../glib_sys/type.GDestroyNotify.html" title="type glib_sys::GDestroyNotify">GDestroyNotify</a></code>
-                           </span></span><span id='structfield.peer' class="structfield">
-                           <span id='peer.v' class='invisible'>
+                           </span></span><span id="structfield.peer" class="structfield small-section-header">
+                           <a href="#structfield.peer" class="anchor field"></a>
+                           <span id="peer.v" class='invisible'>
                            <code>peer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstPad.html" title="struct gstreamer_sys::GstPad">GstPad</a></code>
-                           </span></span><span id='structfield.linkfunc' class="structfield">
-                           <span id='linkfunc.v' class='invisible'>
+                           </span></span><span id="structfield.linkfunc" class="structfield small-section-header">
+                           <a href="#structfield.linkfunc" class="anchor field"></a>
+                           <span id="linkfunc.v" class='invisible'>
                            <code>linkfunc: <a class="type" href="../gstreamer_sys/type.GstPadLinkFunction.html" title="type gstreamer_sys::GstPadLinkFunction">GstPadLinkFunction</a></code>
-                           </span></span><span id='structfield.linkdata' class="structfield">
-                           <span id='linkdata.v' class='invisible'>
+                           </span></span><span id="structfield.linkdata" class="structfield small-section-header">
+                           <a href="#structfield.linkdata" class="anchor field"></a>
+                           <span id="linkdata.v" class='invisible'>
                            <code>linkdata: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a></code>
-                           </span></span><span id='structfield.linknotify' class="structfield">
-                           <span id='linknotify.v' class='invisible'>
+                           </span></span><span id="structfield.linknotify" class="structfield small-section-header">
+                           <a href="#structfield.linknotify" class="anchor field"></a>
+                           <span id="linknotify.v" class='invisible'>
                            <code>linknotify: <a class="type" href="../glib_sys/type.GDestroyNotify.html" title="type glib_sys::GDestroyNotify">GDestroyNotify</a></code>
-                           </span></span><span id='structfield.unlinkfunc' class="structfield">
-                           <span id='unlinkfunc.v' class='invisible'>
+                           </span></span><span id="structfield.unlinkfunc" class="structfield small-section-header">
+                           <a href="#structfield.unlinkfunc" class="anchor field"></a>
+                           <span id="unlinkfunc.v" class='invisible'>
                            <code>unlinkfunc: <a class="type" href="../gstreamer_sys/type.GstPadUnlinkFunction.html" title="type gstreamer_sys::GstPadUnlinkFunction">GstPadUnlinkFunction</a></code>
-                           </span></span><span id='structfield.unlinkdata' class="structfield">
-                           <span id='unlinkdata.v' class='invisible'>
+                           </span></span><span id="structfield.unlinkdata" class="structfield small-section-header">
+                           <a href="#structfield.unlinkdata" class="anchor field"></a>
+                           <span id="unlinkdata.v" class='invisible'>
                            <code>unlinkdata: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a></code>
-                           </span></span><span id='structfield.unlinknotify' class="structfield">
-                           <span id='unlinknotify.v' class='invisible'>
+                           </span></span><span id="structfield.unlinknotify" class="structfield small-section-header">
+                           <a href="#structfield.unlinknotify" class="anchor field"></a>
+                           <span id="unlinknotify.v" class='invisible'>
                            <code>unlinknotify: <a class="type" href="../glib_sys/type.GDestroyNotify.html" title="type glib_sys::GDestroyNotify">GDestroyNotify</a></code>
-                           </span></span><span id='structfield.chainfunc' class="structfield">
-                           <span id='chainfunc.v' class='invisible'>
+                           </span></span><span id="structfield.chainfunc" class="structfield small-section-header">
+                           <a href="#structfield.chainfunc" class="anchor field"></a>
+                           <span id="chainfunc.v" class='invisible'>
                            <code>chainfunc: <a class="type" href="../gstreamer_sys/type.GstPadChainFunction.html" title="type gstreamer_sys::GstPadChainFunction">GstPadChainFunction</a></code>
-                           </span></span><span id='structfield.chaindata' class="structfield">
-                           <span id='chaindata.v' class='invisible'>
+                           </span></span><span id="structfield.chaindata" class="structfield small-section-header">
+                           <a href="#structfield.chaindata" class="anchor field"></a>
+                           <span id="chaindata.v" class='invisible'>
                            <code>chaindata: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a></code>
-                           </span></span><span id='structfield.chainnotify' class="structfield">
-                           <span id='chainnotify.v' class='invisible'>
+                           </span></span><span id="structfield.chainnotify" class="structfield small-section-header">
+                           <a href="#structfield.chainnotify" class="anchor field"></a>
+                           <span id="chainnotify.v" class='invisible'>
                            <code>chainnotify: <a class="type" href="../glib_sys/type.GDestroyNotify.html" title="type glib_sys::GDestroyNotify">GDestroyNotify</a></code>
-                           </span></span><span id='structfield.chainlistfunc' class="structfield">
-                           <span id='chainlistfunc.v' class='invisible'>
+                           </span></span><span id="structfield.chainlistfunc" class="structfield small-section-header">
+                           <a href="#structfield.chainlistfunc" class="anchor field"></a>
+                           <span id="chainlistfunc.v" class='invisible'>
                            <code>chainlistfunc: <a class="type" href="../gstreamer_sys/type.GstPadChainListFunction.html" title="type gstreamer_sys::GstPadChainListFunction">GstPadChainListFunction</a></code>
-                           </span></span><span id='structfield.chainlistdata' class="structfield">
-                           <span id='chainlistdata.v' class='invisible'>
+                           </span></span><span id="structfield.chainlistdata" class="structfield small-section-header">
+                           <a href="#structfield.chainlistdata" class="anchor field"></a>
+                           <span id="chainlistdata.v" class='invisible'>
                            <code>chainlistdata: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a></code>
-                           </span></span><span id='structfield.chainlistnotify' class="structfield">
-                           <span id='chainlistnotify.v' class='invisible'>
+                           </span></span><span id="structfield.chainlistnotify" class="structfield small-section-header">
+                           <a href="#structfield.chainlistnotify" class="anchor field"></a>
+                           <span id="chainlistnotify.v" class='invisible'>
                            <code>chainlistnotify: <a class="type" href="../glib_sys/type.GDestroyNotify.html" title="type glib_sys::GDestroyNotify">GDestroyNotify</a></code>
-                           </span></span><span id='structfield.getrangefunc' class="structfield">
-                           <span id='getrangefunc.v' class='invisible'>
+                           </span></span><span id="structfield.getrangefunc" class="structfield small-section-header">
+                           <a href="#structfield.getrangefunc" class="anchor field"></a>
+                           <span id="getrangefunc.v" class='invisible'>
                            <code>getrangefunc: <a class="type" href="../gstreamer_sys/type.GstPadGetRangeFunction.html" title="type gstreamer_sys::GstPadGetRangeFunction">GstPadGetRangeFunction</a></code>
-                           </span></span><span id='structfield.getrangedata' class="structfield">
-                           <span id='getrangedata.v' class='invisible'>
+                           </span></span><span id="structfield.getrangedata" class="structfield small-section-header">
+                           <a href="#structfield.getrangedata" class="anchor field"></a>
+                           <span id="getrangedata.v" class='invisible'>
                            <code>getrangedata: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a></code>
-                           </span></span><span id='structfield.getrangenotify' class="structfield">
-                           <span id='getrangenotify.v' class='invisible'>
+                           </span></span><span id="structfield.getrangenotify" class="structfield small-section-header">
+                           <a href="#structfield.getrangenotify" class="anchor field"></a>
+                           <span id="getrangenotify.v" class='invisible'>
                            <code>getrangenotify: <a class="type" href="../glib_sys/type.GDestroyNotify.html" title="type glib_sys::GDestroyNotify">GDestroyNotify</a></code>
-                           </span></span><span id='structfield.eventfunc' class="structfield">
-                           <span id='eventfunc.v' class='invisible'>
+                           </span></span><span id="structfield.eventfunc" class="structfield small-section-header">
+                           <a href="#structfield.eventfunc" class="anchor field"></a>
+                           <span id="eventfunc.v" class='invisible'>
                            <code>eventfunc: <a class="type" href="../gstreamer_sys/type.GstPadEventFunction.html" title="type gstreamer_sys::GstPadEventFunction">GstPadEventFunction</a></code>
-                           </span></span><span id='structfield.eventdata' class="structfield">
-                           <span id='eventdata.v' class='invisible'>
+                           </span></span><span id="structfield.eventdata" class="structfield small-section-header">
+                           <a href="#structfield.eventdata" class="anchor field"></a>
+                           <span id="eventdata.v" class='invisible'>
                            <code>eventdata: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a></code>
-                           </span></span><span id='structfield.eventnotify' class="structfield">
-                           <span id='eventnotify.v' class='invisible'>
+                           </span></span><span id="structfield.eventnotify" class="structfield small-section-header">
+                           <a href="#structfield.eventnotify" class="anchor field"></a>
+                           <span id="eventnotify.v" class='invisible'>
                            <code>eventnotify: <a class="type" href="../glib_sys/type.GDestroyNotify.html" title="type glib_sys::GDestroyNotify">GDestroyNotify</a></code>
-                           </span></span><span id='structfield.offset' class="structfield">
-                           <span id='offset.v' class='invisible'>
+                           </span></span><span id="structfield.offset" class="structfield small-section-header">
+                           <a href="#structfield.offset" class="anchor field"></a>
+                           <span id="offset.v" class='invisible'>
                            <code>offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a></code>
-                           </span></span><span id='structfield.queryfunc' class="structfield">
-                           <span id='queryfunc.v' class='invisible'>
+                           </span></span><span id="structfield.queryfunc" class="structfield small-section-header">
+                           <a href="#structfield.queryfunc" class="anchor field"></a>
+                           <span id="queryfunc.v" class='invisible'>
                            <code>queryfunc: <a class="type" href="../gstreamer_sys/type.GstPadQueryFunction.html" title="type gstreamer_sys::GstPadQueryFunction">GstPadQueryFunction</a></code>
-                           </span></span><span id='structfield.querydata' class="structfield">
-                           <span id='querydata.v' class='invisible'>
+                           </span></span><span id="structfield.querydata" class="structfield small-section-header">
+                           <a href="#structfield.querydata" class="anchor field"></a>
+                           <span id="querydata.v" class='invisible'>
                            <code>querydata: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a></code>
-                           </span></span><span id='structfield.querynotify' class="structfield">
-                           <span id='querynotify.v' class='invisible'>
+                           </span></span><span id="structfield.querynotify" class="structfield small-section-header">
+                           <a href="#structfield.querynotify" class="anchor field"></a>
+                           <span id="querynotify.v" class='invisible'>
                            <code>querynotify: <a class="type" href="../glib_sys/type.GDestroyNotify.html" title="type glib_sys::GDestroyNotify">GDestroyNotify</a></code>
-                           </span></span><span id='structfield.iterintlinkfunc' class="structfield">
-                           <span id='iterintlinkfunc.v' class='invisible'>
+                           </span></span><span id="structfield.iterintlinkfunc" class="structfield small-section-header">
+                           <a href="#structfield.iterintlinkfunc" class="anchor field"></a>
+                           <span id="iterintlinkfunc.v" class='invisible'>
                            <code>iterintlinkfunc: <a class="type" href="../gstreamer_sys/type.GstPadIterIntLinkFunction.html" title="type gstreamer_sys::GstPadIterIntLinkFunction">GstPadIterIntLinkFunction</a></code>
-                           </span></span><span id='structfield.iterintlinkdata' class="structfield">
-                           <span id='iterintlinkdata.v' class='invisible'>
+                           </span></span><span id="structfield.iterintlinkdata" class="structfield small-section-header">
+                           <a href="#structfield.iterintlinkdata" class="anchor field"></a>
+                           <span id="iterintlinkdata.v" class='invisible'>
                            <code>iterintlinkdata: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a></code>
-                           </span></span><span id='structfield.iterintlinknotify' class="structfield">
-                           <span id='iterintlinknotify.v' class='invisible'>
+                           </span></span><span id="structfield.iterintlinknotify" class="structfield small-section-header">
+                           <a href="#structfield.iterintlinknotify" class="anchor field"></a>
+                           <span id="iterintlinknotify.v" class='invisible'>
                            <code>iterintlinknotify: <a class="type" href="../glib_sys/type.GDestroyNotify.html" title="type glib_sys::GDestroyNotify">GDestroyNotify</a></code>
-                           </span></span><span id='structfield.num_probes' class="structfield">
-                           <span id='num_probes.v' class='invisible'>
+                           </span></span><span id="structfield.num_probes" class="structfield small-section-header">
+                           <a href="#structfield.num_probes" class="anchor field"></a>
+                           <span id="num_probes.v" class='invisible'>
                            <code>num_probes: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a></code>
-                           </span></span><span id='structfield.num_blocked' class="structfield">
-                           <span id='num_blocked.v' class='invisible'>
+                           </span></span><span id="structfield.num_blocked" class="structfield small-section-header">
+                           <a href="#structfield.num_blocked" class="anchor field"></a>
+                           <span id="num_blocked.v" class='invisible'>
                            <code>num_blocked: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a></code>
-                           </span></span><span id='structfield.priv_' class="structfield">
-                           <span id='priv_.v' class='invisible'>
+                           </span></span><span id="structfield.priv_" class="structfield small-section-header">
+                           <a href="#structfield.priv_" class="anchor field"></a>
+                           <span id="priv_.v" class='invisible'>
                            <code>priv_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstPadPrivate.html" title="struct gstreamer_sys::GstPadPrivate">GstPadPrivate</a></code>
-                           </span></span><span id='structfield._gst_reserved' class="structfield">
-                           <span id='_gst_reserved.v' class='invisible'>
+                           </span></span><span id="structfield._gst_reserved" class="structfield small-section-header">
+                           <a href="#structfield._gst_reserved" class="anchor field"></a>
+                           <span id="_gst_reserved.v" class='invisible'>
                            <code>_gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a></code>
                            </span></span></section>
     <section id='search' class="content hidden"></section>
@@ -248,13 +294,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>

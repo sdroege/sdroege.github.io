@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["CapsRef",""],["Iter",""],["IterMut",""]],"type":[["Caps",""]]});
+initSidebarItems({"struct":[["Builder",""],["CapsRef",""],["Iter",""],["IterMut",""]],"type":[["Caps",""]]});

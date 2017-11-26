@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `BaseTransformExt` trait in crate `gstreamer_base`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, BaseTransformExt">
+
+    <title>gstreamer_base::BaseTransformExt - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Trait BaseTransformExt</p><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.is_in_place">is_in_place</a><a href="#tymethod.is_passthrough">is_passthrough</a><a href="#tymethod.is_qos_enabled">is_qos_enabled</a><a href="#tymethod.reconfigure_sink">reconfigure_sink</a><a href="#tymethod.reconfigure_src">reconfigure_src</a><a href="#tymethod.set_gap_aware">set_gap_aware</a><a href="#tymethod.set_in_place">set_in_place</a><a href="#tymethod.set_passthrough">set_passthrough</a><a href="#tymethod.set_prefer_passthrough">set_prefer_passthrough</a><a href="#tymethod.set_qos_enabled">set_qos_enabled</a><a href="#tymethod.update_qos">update_qos</a><a href="#tymethod.update_src_caps">update_src_caps</a><a href="#tymethod.get_property_qos">get_property_qos</a><a href="#tymethod.set_property_qos">set_property_qos</a><a href="#tymethod.connect_property_qos_notify">connect_property_qos_notify</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='index.html'>gstreamer_base</a></p><script>window.sidebarCurrent = {name: 'BaseTransformExt', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='index.html'>gstreamer_base</a>::<wbr><a class="trait" href=''>BaseTransformExt</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/gstreamer_base/auto/base_transform.rs.html#148-280' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait BaseTransformExt {
+    fn <a href='#tymethod.is_in_place' class='fnname'>is_in_place</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.is_passthrough' class='fnname'>is_passthrough</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.is_qos_enabled' class='fnname'>is_qos_enabled</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.reconfigure_sink' class='fnname'>reconfigure_sink</a>(&amp;self);
+<div class='item-spacer'></div>    fn <a href='#tymethod.reconfigure_src' class='fnname'>reconfigure_src</a>(&amp;self);
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_gap_aware' class='fnname'>set_gap_aware</a>(&amp;self, gap_aware: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_in_place' class='fnname'>set_in_place</a>(&amp;self, in_place: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_passthrough' class='fnname'>set_passthrough</a>(&amp;self, passthrough: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_prefer_passthrough' class='fnname'>set_prefer_passthrough</a>(&amp;self, prefer_passthrough: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_qos_enabled' class='fnname'>set_qos_enabled</a>(&amp;self, enabled: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
+<div class='item-spacer'></div>    fn <a href='#tymethod.update_qos' class='fnname'>update_qos</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;proportion: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;diff: <a class="type" href="../gstreamer/auto/alias/type.ClockTimeDiff.html" title="type gstreamer::auto::alias::ClockTimeDiff">ClockTimeDiff</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timestamp: <a class="struct" href="../gstreamer/clock_time/struct.ClockTime.html" title="struct gstreamer::clock_time::ClockTime">ClockTime</a><br>&nbsp;&nbsp;&nbsp;&nbsp;);
+<div class='item-spacer'></div>    fn <a href='#tymethod.update_src_caps' class='fnname'>update_src_caps</a>(&amp;self, updated_caps: &amp;<a class="type" href="../gstreamer/caps/type.Caps.html" title="type gstreamer::caps::Caps">Caps</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.get_property_qos' class='fnname'>get_property_qos</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_property_qos' class='fnname'>set_property_qos</a>(&amp;self, qos: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
+<div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_qos_notify' class='fnname'>connect_property_qos_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
+}</pre><div class='docblock'><p>Trait containing all <code>BaseTransform</code> methods.</p>
+
+<h1 id='implementors-1' class='section-header'><a href='#implementors-1'>Implementors</a></h1>
+<p><a href="struct.BaseTransform.html"><code>BaseTransform</code></a></p>
+</div>
+            <h2 id='required-methods' class='small-section-header'>
+              Required Methods<a href='#required-methods' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='tymethod.is_in_place' class='method'><span id='is_in_place.v' class='invisible'><code>fn <a href='#tymethod.is_in_place' class='fnname'>is_in_place</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>See if <code>self</code> is configured as a in_place transform.</p>
+
+<h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
+<p><code>true</code> is the transform is configured in in_place mode.</p>
+
+<p>MT safe.</p>
+</div><h3 id='tymethod.is_passthrough' class='method'><span id='is_passthrough.v' class='invisible'><code>fn <a href='#tymethod.is_passthrough' class='fnname'>is_passthrough</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>See if <code>self</code> is configured as a passthrough transform.</p>
+
+<h1 id='returns-1' class='section-header'><a href='#returns-1'>Returns</a></h1>
+<p><code>true</code> is the transform is configured in passthrough mode.</p>
+
+<p>MT safe.</p>
+</div><h3 id='tymethod.is_qos_enabled' class='method'><span id='is_qos_enabled.v' class='invisible'><code>fn <a href='#tymethod.is_qos_enabled' class='fnname'>is_qos_enabled</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Queries if the transform will handle QoS.</p>
+
+<h1 id='returns-2' class='section-header'><a href='#returns-2'>Returns</a></h1>
+<p><code>true</code> if QoS is enabled.</p>
+
+<p>MT safe.</p>
+</div><h3 id='tymethod.reconfigure_sink' class='method'><span id='reconfigure_sink.v' class='invisible'><code>fn <a href='#tymethod.reconfigure_sink' class='fnname'>reconfigure_sink</a>(&amp;self)</code></span></h3><div class='docblock'><p>Instructs <code>self</code> to request renegotiation upstream. This function is
+typically called after properties on the transform were set that
+influence the input format.</p>
+</div><h3 id='tymethod.reconfigure_src' class='method'><span id='reconfigure_src.v' class='invisible'><code>fn <a href='#tymethod.reconfigure_src' class='fnname'>reconfigure_src</a>(&amp;self)</code></span></h3><div class='docblock'><p>Instructs <code>self</code> to renegotiate a new downstream transform on the next
+buffer. This function is typically called after properties on the transform
+were set that influence the output format.</p>
+</div><h3 id='tymethod.set_gap_aware' class='method'><span id='set_gap_aware.v' class='invisible'><code>fn <a href='#tymethod.set_gap_aware' class='fnname'>set_gap_aware</a>(&amp;self, gap_aware: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><div class='docblock'><p>If <code>gap_aware</code> is <code>false</code> (the default), output buffers will have the
+<code>gst::BufferFlags::Gap</code> flag unset.</p>
+
+<p>If set to <code>true</code>, the element must handle output buffers with this flag set
+correctly, i.e. it can assume that the buffer contains neutral data but must
+unset the flag if the output is no neutral data.</p>
+
+<p>MT safe.</p>
+
+<h2 id='gap_aware' class='section-header'><a href='#gap_aware'><code>gap_aware</code></a></h2>
+<p>New state</p>
+</div><h3 id='tymethod.set_in_place' class='method'><span id='set_in_place.v' class='invisible'><code>fn <a href='#tymethod.set_in_place' class='fnname'>set_in_place</a>(&amp;self, in_place: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><div class='docblock'><p>Determines whether a non-writable buffer will be copied before passing
+to the transform_ip function.</p>
+
+<ul>
+<li>Always <code>true</code> if no transform function is implemented.</li>
+<li>Always <code>false</code> if ONLY transform function is implemented.</li>
+</ul>
+
+<p>MT safe.</p>
+
+<h2 id='in_place' class='section-header'><a href='#in_place'><code>in_place</code></a></h2>
+<p>Boolean value indicating that we would like to operate
+on in_place buffers.</p>
+</div><h3 id='tymethod.set_passthrough' class='method'><span id='set_passthrough.v' class='invisible'><code>fn <a href='#tymethod.set_passthrough' class='fnname'>set_passthrough</a>(&amp;self, passthrough: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><div class='docblock'><p>Set passthrough mode for this filter by default. This is mostly
+useful for filters that do not care about negotiation.</p>
+
+<p>Always <code>true</code> for filters which don&#39;t implement either a transform
+or transform_ip method.</p>
+
+<p>MT safe.</p>
+
+<h2 id='passthrough' class='section-header'><a href='#passthrough'><code>passthrough</code></a></h2>
+<p>boolean indicating passthrough mode.</p>
+</div><h3 id='tymethod.set_prefer_passthrough' class='method'><span id='set_prefer_passthrough.v' class='invisible'><code>fn <a href='#tymethod.set_prefer_passthrough' class='fnname'>set_prefer_passthrough</a>(&amp;self, prefer_passthrough: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><div class='docblock'><p>If <code>prefer_passthrough</code> is <code>true</code> (the default), <code>self</code> will check and
+prefer passthrough caps from the list of caps returned by the
+transform_caps vmethod.</p>
+
+<p>If set to <code>false</code>, the element must order the caps returned from the
+transform_caps function in such a way that the preferred format is
+first in the list. This can be interesting for transforms that can do
+passthrough transforms but prefer to do something else, like a
+capsfilter.</p>
+
+<p>MT safe.</p>
+
+<h2 id='prefer_passthrough' class='section-header'><a href='#prefer_passthrough'><code>prefer_passthrough</code></a></h2>
+<p>New state</p>
+</div><h3 id='tymethod.set_qos_enabled' class='method'><span id='set_qos_enabled.v' class='invisible'><code>fn <a href='#tymethod.set_qos_enabled' class='fnname'>set_qos_enabled</a>(&amp;self, enabled: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><div class='docblock'><p>Enable or disable QoS handling in the transform.</p>
+
+<p>MT safe.</p>
+
+<h2 id='enabled' class='section-header'><a href='#enabled'><code>enabled</code></a></h2>
+<p>new state</p>
+</div><h3 id='tymethod.update_qos' class='method'><span id='update_qos.v' class='invisible'><code>fn <a href='#tymethod.update_qos' class='fnname'>update_qos</a>(&amp;self, proportion: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>, diff: <a class="type" href="../gstreamer/auto/alias/type.ClockTimeDiff.html" title="type gstreamer::auto::alias::ClockTimeDiff">ClockTimeDiff</a>, timestamp: <a class="struct" href="../gstreamer/clock_time/struct.ClockTime.html" title="struct gstreamer::clock_time::ClockTime">ClockTime</a>)</code></span></h3><div class='docblock'><p>Set the QoS parameters in the transform. This function is called internally
+when a QOS event is received but subclasses can provide custom information
+when needed.</p>
+
+<p>MT safe.</p>
+
+<h2 id='proportion' class='section-header'><a href='#proportion'><code>proportion</code></a></h2>
+<p>the proportion</p>
+
+<h2 id='diff' class='section-header'><a href='#diff'><code>diff</code></a></h2>
+<p>the diff against the clock</p>
+
+<h2 id='timestamp' class='section-header'><a href='#timestamp'><code>timestamp</code></a></h2>
+<p>the timestamp of the buffer generating the QoS expressed in
+running_time.</p>
+</div><h3 id='tymethod.update_src_caps' class='method'><span id='update_src_caps.v' class='invisible'><code>fn <a href='#tymethod.update_src_caps' class='fnname'>update_src_caps</a>(&amp;self, updated_caps: &amp;<a class="type" href="../gstreamer/caps/type.Caps.html" title="type gstreamer::caps::Caps">Caps</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Updates the srcpad caps and send the caps downstream. This function
+can be used by subclasses when they have already negotiated their caps
+but found a change in them (or computed new informations). This way,
+they can notify downstream about that change without loosing any
+buffer.</p>
+
+<h2 id='updated_caps' class='section-header'><a href='#updated_caps'><code>updated_caps</code></a></h2>
+<p>An updated version of the srcpad caps to be pushed
+downstream</p>
+
+<h1 id='returns-3' class='section-header'><a href='#returns-3'>Returns</a></h1>
+<p><code>true</code> if the caps could be send downstream <code>false</code> otherwise</p>
+</div><h3 id='tymethod.get_property_qos' class='method'><span id='get_property_qos.v' class='invisible'><code>fn <a href='#tymethod.get_property_qos' class='fnname'>get_property_qos</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><h3 id='tymethod.set_property_qos' class='method'><span id='set_property_qos.v' class='invisible'><code>fn <a href='#tymethod.set_property_qos' class='fnname'>set_property_qos</a>(&amp;self, qos: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><h3 id='tymethod.connect_property_qos_notify' class='method'><span id='connect_property_qos_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_qos_notify' class='fnname'>connect_property_qos_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3></div>
+        <h2 id='implementors' class='small-section-header'>
+          Implementors<a href='#implementors' class='anchor'></a>
+        </h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><code>impl&lt;O:&nbsp;<a class="trait" href="../gstreamer_base/trait.IsA.html" title="trait gstreamer_base::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer_base/struct.BaseTransform.html" title="struct gstreamer_base::BaseTransform">BaseTransform</a>&gt; + <a class="trait" href="../gstreamer_base/trait.IsA.html" title="trait gstreamer_base::IsA">IsA</a>&lt;<a class="struct" href="../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt;&gt; BaseTransformExt for O</code></li>
+</ul><script type="text/javascript" async
+                         src="../implementors/gstreamer_base/trait.BaseTransformExt.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer_base";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

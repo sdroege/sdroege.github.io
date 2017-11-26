@@ -29,7 +29,7 @@
 
     <nav class="sidebar">
         
-        <p class='location'>Struct GstAudioInfo</p><div class="block items"><ul><li><a href="#fields">Fields</a></li></ul></div><p class='location'><a href='index.html'>gstreamer_audio_sys</a></p><script>window.sidebarCurrent = {name: 'GstAudioInfo', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct GstAudioInfo</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.finfo">finfo</a><a href="#structfield.flags">flags</a><a href="#structfield.layout">layout</a><a href="#structfield.rate">rate</a><a href="#structfield.channels">channels</a><a href="#structfield.bpf">bpf</a><a href="#structfield.position">position</a><a href="#structfield._gst_reserved">_gst_reserved</a></div></div><p class='location'><a href='index.html'>gstreamer_audio_sys</a></p><script>window.sidebarCurrent = {name: 'GstAudioInfo', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </nav>
 
     <nav class="sub">
@@ -48,40 +48,49 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/gstreamer_audio_sys/lib.rs.html#617-626' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/gstreamer_audio_sys/lib.rs.html#457-466' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'><div class="docblock attributes">#[repr(C)]
 </div>pub struct GstAudioInfo {
     pub finfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioFormatInfo.html" title="struct gstreamer_audio_sys::GstAudioFormatInfo">GstAudioFormatInfo</a>,
     pub flags: <a class="struct" href="../gstreamer_audio_sys/struct.GstAudioFlags.html" title="struct gstreamer_audio_sys::GstAudioFlags">GstAudioFlags</a>,
-    pub layout: <a class="enum" href="../gstreamer_audio_sys/enum.GstAudioLayout.html" title="enum gstreamer_audio_sys::GstAudioLayout">GstAudioLayout</a>,
+    pub layout: <a class="type" href="../gstreamer_audio_sys/type.GstAudioLayout.html" title="type gstreamer_audio_sys::GstAudioLayout">GstAudioLayout</a>,
     pub rate: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a>,
     pub channels: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a>,
     pub bpf: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a>,
-    pub position: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="enum" href="../gstreamer_audio_sys/enum.GstAudioChannelPosition.html" title="enum gstreamer_audio_sys::GstAudioChannelPosition">GstAudioChannelPosition</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 64]</a>,
+    pub position: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../gstreamer_audio_sys/type.GstAudioChannelPosition.html" title="type gstreamer_audio_sys::GstAudioChannelPosition">GstAudioChannelPosition</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 64]</a>,
     pub _gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a>,
-}</pre><h2 id='fields' class='fields'>Fields</h2><span id='structfield.finfo' class="structfield">
-                           <span id='finfo.v' class='invisible'>
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.finfo" class="structfield small-section-header">
+                           <a href="#structfield.finfo" class="anchor field"></a>
+                           <span id="finfo.v" class='invisible'>
                            <code>finfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="../gstreamer_audio_sys/struct.GstAudioFormatInfo.html" title="struct gstreamer_audio_sys::GstAudioFormatInfo">GstAudioFormatInfo</a></code>
-                           </span></span><span id='structfield.flags' class="structfield">
-                           <span id='flags.v' class='invisible'>
+                           </span></span><span id="structfield.flags" class="structfield small-section-header">
+                           <a href="#structfield.flags" class="anchor field"></a>
+                           <span id="flags.v" class='invisible'>
                            <code>flags: <a class="struct" href="../gstreamer_audio_sys/struct.GstAudioFlags.html" title="struct gstreamer_audio_sys::GstAudioFlags">GstAudioFlags</a></code>
-                           </span></span><span id='structfield.layout' class="structfield">
-                           <span id='layout.v' class='invisible'>
-                           <code>layout: <a class="enum" href="../gstreamer_audio_sys/enum.GstAudioLayout.html" title="enum gstreamer_audio_sys::GstAudioLayout">GstAudioLayout</a></code>
-                           </span></span><span id='structfield.rate' class="structfield">
-                           <span id='rate.v' class='invisible'>
+                           </span></span><span id="structfield.layout" class="structfield small-section-header">
+                           <a href="#structfield.layout" class="anchor field"></a>
+                           <span id="layout.v" class='invisible'>
+                           <code>layout: <a class="type" href="../gstreamer_audio_sys/type.GstAudioLayout.html" title="type gstreamer_audio_sys::GstAudioLayout">GstAudioLayout</a></code>
+                           </span></span><span id="structfield.rate" class="structfield small-section-header">
+                           <a href="#structfield.rate" class="anchor field"></a>
+                           <span id="rate.v" class='invisible'>
                            <code>rate: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a></code>
-                           </span></span><span id='structfield.channels' class="structfield">
-                           <span id='channels.v' class='invisible'>
+                           </span></span><span id="structfield.channels" class="structfield small-section-header">
+                           <a href="#structfield.channels" class="anchor field"></a>
+                           <span id="channels.v" class='invisible'>
                            <code>channels: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a></code>
-                           </span></span><span id='structfield.bpf' class="structfield">
-                           <span id='bpf.v' class='invisible'>
+                           </span></span><span id="structfield.bpf" class="structfield small-section-header">
+                           <a href="#structfield.bpf" class="anchor field"></a>
+                           <span id="bpf.v" class='invisible'>
                            <code>bpf: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a></code>
-                           </span></span><span id='structfield.position' class="structfield">
-                           <span id='position.v' class='invisible'>
-                           <code>position: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="enum" href="../gstreamer_audio_sys/enum.GstAudioChannelPosition.html" title="enum gstreamer_audio_sys::GstAudioChannelPosition">GstAudioChannelPosition</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 64]</a></code>
-                           </span></span><span id='structfield._gst_reserved' class="structfield">
-                           <span id='_gst_reserved.v' class='invisible'>
+                           </span></span><span id="structfield.position" class="structfield small-section-header">
+                           <a href="#structfield.position" class="anchor field"></a>
+                           <span id="position.v" class='invisible'>
+                           <code>position: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../gstreamer_audio_sys/type.GstAudioChannelPosition.html" title="type gstreamer_audio_sys::GstAudioChannelPosition">GstAudioChannelPosition</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 64]</a></code>
+                           </span></span><span id="structfield._gst_reserved" class="structfield small-section-header">
+                           <a href="#structfield._gst_reserved" class="anchor field"></a>
+                           <span id="_gst_reserved.v" class='invisible'>
                            <code>_gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a></code>
                            </span></span></section>
     <section id='search' class="content hidden"></section>
@@ -100,13 +109,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>

@@ -29,7 +29,7 @@
 
     <nav class="sidebar">
         
-        <p class='location'>Trait VideoOverlayExt</p><div class="block items"><ul><li><a href="#required-methods">Required Methods</a></li><li><a href="#implementors">Implementors</a></li></ul></div><p class='location'><a href='../index.html'>gstreamer_video</a>::<wbr><a href='index.html'>prelude</a></p><script>window.sidebarCurrent = {name: 'VideoOverlayExt', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Trait VideoOverlayExt</p><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.expose">expose</a><a href="#tymethod.handle_events">handle_events</a><a href="#tymethod.set_render_rectangle">set_render_rectangle</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='../index.html'>gstreamer_video</a>::<wbr><a href='index.html'>prelude</a></p><script>window.sidebarCurrent = {name: 'VideoOverlayExt', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </nav>
 
     <nav class="sub">
@@ -52,13 +52,15 @@
 <pre class='rust trait'>pub trait VideoOverlayExt {
     fn <a href='#tymethod.expose' class='fnname'>expose</a>(&amp;self);
 <div class='item-spacer'></div>    fn <a href='#tymethod.handle_events' class='fnname'>handle_events</a>(&amp;self, handle_events: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
-<div class='item-spacer'></div>    fn <a href='#tymethod.set_render_rectangle' class='fnname'>set_render_rectangle</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a><br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>, <a class="struct" href="../../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;;
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_render_rectangle' class='fnname'>set_render_rectangle</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;height: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a><br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="struct" href="../../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;;
 }</pre><div class='docblock'><p>Trait containing all <code>VideoOverlay</code> methods.</p>
 
 <h1 id='implementors-1' class='section-header'><a href='#implementors-1'>Implementors</a></h1>
 <p><a href="struct.VideoOverlay.html"><code>VideoOverlay</code></a></p>
 </div>
-            <h2 id='required-methods'>Required Methods</h2>
+            <h2 id='required-methods' class='small-section-header'>
+              Required Methods<a href='#required-methods' class='anchor'></a>
+            </h2>
             <div class='methods'>
         <h3 id='tymethod.expose' class='method'><span id='expose.v' class='invisible'><code>fn <a href='#tymethod.expose' class='fnname'>expose</a>(&amp;self)</code></span></h3><div class='docblock'><p>Tell an overlay that it has been exposed. This will redraw the current frame
 in the drawable even if the pipeline is PAUSED.</p>
@@ -70,7 +72,7 @@ from the <code>VideoOverlay</code>.</p>
 
 <h2 id='handle_events' class='section-header'><a href='#handle_events'><code>handle_events</code></a></h2>
 <p>a <code>gboolean</code> indicating if events should be handled or not.</p>
-</div><h3 id='tymethod.set_render_rectangle' class='method'><span id='set_render_rectangle.v' class='invisible'><code>fn <a href='#tymethod.set_render_rectangle' class='fnname'>set_render_rectangle</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;x: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;y: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;width: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;height: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>, <a class="struct" href="../../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;</code></span></h3><div class='docblock'><p>Configure a subregion as a video target within the window set by
+</div><h3 id='tymethod.set_render_rectangle' class='method'><span id='set_render_rectangle.v' class='invisible'><code>fn <a href='#tymethod.set_render_rectangle' class='fnname'>set_render_rectangle</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;x: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;y: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;width: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;height: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="struct" href="../../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;</code></span></h3><div class='docblock'><p>Configure a subregion as a video target within the window set by
 <code>VideoOverlay::set_window_handle</code>. If this is not used or not supported
 the video will fill the area of the window set as the overlay to 100%.
 By specifying the rectangle, the video can be overlayed to a specific region
@@ -96,7 +98,9 @@ do not support subwindows.</p>
 <h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
 <p><code>false</code> if not supported by the sink.</p>
 </div></div>
-        <h2 id='implementors'>Implementors</h2>
+        <h2 id='implementors' class='small-section-header'>
+          Implementors<a href='#implementors' class='anchor'></a>
+        </h2>
         <ul class='item-list' id='implementors-list'>
     <li><code>impl&lt;O:&nbsp;<a class="trait" href="../../gstreamer_video/trait.IsA.html" title="trait gstreamer_video::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer_video/struct.VideoOverlay.html" title="struct gstreamer_video::VideoOverlay">VideoOverlay</a>&gt;&gt; VideoOverlayExt for O</code></li>
 </ul><script type="text/javascript" async
@@ -118,13 +122,15 @@ do not support subwindows.</p>
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>

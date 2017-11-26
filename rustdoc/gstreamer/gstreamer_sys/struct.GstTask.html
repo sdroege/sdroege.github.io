@@ -29,7 +29,7 @@
 
     <nav class="sidebar">
         
-        <p class='location'>Struct GstTask</p><div class="block items"><ul><li><a href="#fields">Fields</a></li></ul></div><p class='location'><a href='index.html'>gstreamer_sys</a></p><script>window.sidebarCurrent = {name: 'GstTask', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct GstTask</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.object">object</a><a href="#structfield.state">state</a><a href="#structfield.cond">cond</a><a href="#structfield.lock">lock</a><a href="#structfield.func">func</a><a href="#structfield.user_data">user_data</a><a href="#structfield.notify">notify</a><a href="#structfield.running">running</a><a href="#structfield.thread">thread</a><a href="#structfield.priv_">priv_</a><a href="#structfield._gst_reserved">_gst_reserved</a></div></div><p class='location'><a href='index.html'>gstreamer_sys</a></p><script>window.sidebarCurrent = {name: 'GstTask', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </nav>
 
     <nav class="sub">
@@ -48,11 +48,11 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/gstreamer_sys/lib.rs.html#2493-2505' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/gstreamer_sys/lib.rs.html#2292-2304' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'><div class="docblock attributes">#[repr(C)]
 </div>pub struct GstTask {
     pub object: <a class="struct" href="../gstreamer_sys/struct.GstObject.html" title="struct gstreamer_sys::GstObject">GstObject</a>,
-    pub state: <a class="enum" href="../gstreamer_sys/enum.GstTaskState.html" title="enum gstreamer_sys::GstTaskState">GstTaskState</a>,
+    pub state: <a class="type" href="../gstreamer_sys/type.GstTaskState.html" title="type gstreamer_sys::GstTaskState">GstTaskState</a>,
     pub cond: <a class="struct" href="../glib_sys/struct.GCond.html" title="struct glib_sys::GCond">GCond</a>,
     pub lock: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../glib_sys/struct.GRecMutex.html" title="struct glib_sys::GRecMutex">GRecMutex</a>,
     pub func: <a class="type" href="../gstreamer_sys/type.GstTaskFunction.html" title="type gstreamer_sys::GstTaskFunction">GstTaskFunction</a>,
@@ -62,38 +62,50 @@
     pub thread: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../glib_sys/struct.GThread.html" title="struct glib_sys::GThread">GThread</a>,
     pub priv_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstTaskPrivate.html" title="struct gstreamer_sys::GstTaskPrivate">GstTaskPrivate</a>,
     pub _gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a>,
-}</pre><h2 id='fields' class='fields'>Fields</h2><span id='structfield.object' class="structfield">
-                           <span id='object.v' class='invisible'>
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.object" class="structfield small-section-header">
+                           <a href="#structfield.object" class="anchor field"></a>
+                           <span id="object.v" class='invisible'>
                            <code>object: <a class="struct" href="../gstreamer_sys/struct.GstObject.html" title="struct gstreamer_sys::GstObject">GstObject</a></code>
-                           </span></span><span id='structfield.state' class="structfield">
-                           <span id='state.v' class='invisible'>
-                           <code>state: <a class="enum" href="../gstreamer_sys/enum.GstTaskState.html" title="enum gstreamer_sys::GstTaskState">GstTaskState</a></code>
-                           </span></span><span id='structfield.cond' class="structfield">
-                           <span id='cond.v' class='invisible'>
+                           </span></span><span id="structfield.state" class="structfield small-section-header">
+                           <a href="#structfield.state" class="anchor field"></a>
+                           <span id="state.v" class='invisible'>
+                           <code>state: <a class="type" href="../gstreamer_sys/type.GstTaskState.html" title="type gstreamer_sys::GstTaskState">GstTaskState</a></code>
+                           </span></span><span id="structfield.cond" class="structfield small-section-header">
+                           <a href="#structfield.cond" class="anchor field"></a>
+                           <span id="cond.v" class='invisible'>
                            <code>cond: <a class="struct" href="../glib_sys/struct.GCond.html" title="struct glib_sys::GCond">GCond</a></code>
-                           </span></span><span id='structfield.lock' class="structfield">
-                           <span id='lock.v' class='invisible'>
+                           </span></span><span id="structfield.lock" class="structfield small-section-header">
+                           <a href="#structfield.lock" class="anchor field"></a>
+                           <span id="lock.v" class='invisible'>
                            <code>lock: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../glib_sys/struct.GRecMutex.html" title="struct glib_sys::GRecMutex">GRecMutex</a></code>
-                           </span></span><span id='structfield.func' class="structfield">
-                           <span id='func.v' class='invisible'>
+                           </span></span><span id="structfield.func" class="structfield small-section-header">
+                           <a href="#structfield.func" class="anchor field"></a>
+                           <span id="func.v" class='invisible'>
                            <code>func: <a class="type" href="../gstreamer_sys/type.GstTaskFunction.html" title="type gstreamer_sys::GstTaskFunction">GstTaskFunction</a></code>
-                           </span></span><span id='structfield.user_data' class="structfield">
-                           <span id='user_data.v' class='invisible'>
+                           </span></span><span id="structfield.user_data" class="structfield small-section-header">
+                           <a href="#structfield.user_data" class="anchor field"></a>
+                           <span id="user_data.v" class='invisible'>
                            <code>user_data: <a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a></code>
-                           </span></span><span id='structfield.notify' class="structfield">
-                           <span id='notify.v' class='invisible'>
+                           </span></span><span id="structfield.notify" class="structfield small-section-header">
+                           <a href="#structfield.notify" class="anchor field"></a>
+                           <span id="notify.v" class='invisible'>
                            <code>notify: <a class="type" href="../glib_sys/type.GDestroyNotify.html" title="type glib_sys::GDestroyNotify">GDestroyNotify</a></code>
-                           </span></span><span id='structfield.running' class="structfield">
-                           <span id='running.v' class='invisible'>
+                           </span></span><span id="structfield.running" class="structfield small-section-header">
+                           <a href="#structfield.running" class="anchor field"></a>
+                           <span id="running.v" class='invisible'>
                            <code>running: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a></code>
-                           </span></span><span id='structfield.thread' class="structfield">
-                           <span id='thread.v' class='invisible'>
+                           </span></span><span id="structfield.thread" class="structfield small-section-header">
+                           <a href="#structfield.thread" class="anchor field"></a>
+                           <span id="thread.v" class='invisible'>
                            <code>thread: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../glib_sys/struct.GThread.html" title="struct glib_sys::GThread">GThread</a></code>
-                           </span></span><span id='structfield.priv_' class="structfield">
-                           <span id='priv_.v' class='invisible'>
+                           </span></span><span id="structfield.priv_" class="structfield small-section-header">
+                           <a href="#structfield.priv_" class="anchor field"></a>
+                           <span id="priv_.v" class='invisible'>
                            <code>priv_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstTaskPrivate.html" title="struct gstreamer_sys::GstTaskPrivate">GstTaskPrivate</a></code>
-                           </span></span><span id='structfield._gst_reserved' class="structfield">
-                           <span id='_gst_reserved.v' class='invisible'>
+                           </span></span><span id="structfield._gst_reserved" class="structfield small-section-header">
+                           <a href="#structfield._gst_reserved" class="anchor field"></a>
+                           <span id="_gst_reserved.v" class='invisible'>
                            <code>_gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a></code>
                            </span></span></section>
     <section id='search' class="content hidden"></section>
@@ -112,13 +124,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>

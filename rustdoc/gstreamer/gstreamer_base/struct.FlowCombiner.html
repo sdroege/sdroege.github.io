@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `FlowCombiner` struct in crate `gstreamer_base`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, FlowCombiner">
+
+    <title>gstreamer_base::FlowCombiner - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct FlowCombiner</p><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.new">new</a><a href="#method.add_pad">add_pad</a><a href="#method.clear">clear</a><a href="#method.remove_pad">remove_pad</a><a href="#method.reset">reset</a><a href="#method.update_flow">update_flow</a><a href="#method.update_pad_flow">update_pad_flow</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-StaticType">StaticType</a><a href="#impl-Default">Default</a></div></div><p class='location'><a href='index.html'>gstreamer_base</a></p><script>window.sidebarCurrent = {name: 'FlowCombiner', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>gstreamer_base</a>::<wbr><a class="struct" href=''>FlowCombiner</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span></span></h1>
+<pre class='rust struct'>pub struct FlowCombiner(_);</pre><div class='docblock'><p>Utility struct to help handling <code>gst::FlowReturn</code> combination. Useful for
+<code>gst::Element</code><!-- -->s that have multiple source pads and need to combine
+the different <code>gst::FlowReturn</code> for those pads.</p>
+
+<p><code>FlowCombiner</code> works by using the last <code>gst::FlowReturn</code> for all <code>gst::Pad</code>
+it has in its list and computes the combined return value and provides
+it to the caller.</p>
+
+<p>To add a new pad to the <code>FlowCombiner</code> use <code>FlowCombiner::add_pad</code>.
+The new <code>gst::Pad</code> is stored with a default value of <code>gst::FlowReturn::Ok</code>.</p>
+
+<p>In case you want a <code>gst::Pad</code> to be removed, use <code>FlowCombiner::remove_pad</code>.</p>
+
+<p>Please be aware that this struct isn&#39;t thread safe as its designed to be
+ used by demuxers, those usually will have a single thread operating it.</p>
+
+<p>These functions will take refs on the passed <code>gst::Pad</code><!-- -->s.</p>
+
+<p>Aside from reducing the user&#39;s code size, the main advantage of using this
+helper struct is to follow the standard rules for <code>gst::FlowReturn</code> combination.
+These rules are:</p>
+
+<ul>
+<li><code>gst::FlowReturn::Eos</code>: only if all returns are EOS too</li>
+<li><code>gst::FlowReturn::NotLinked</code>: only if all returns are NOT_LINKED too</li>
+<li><code>gst::FlowReturn::Error</code> or below: if at least one returns an error return</li>
+<li><code>gst::FlowReturn::NotNegotiated</code>: if at least one returns a not-negotiated return</li>
+<li><code>gst::FlowReturn::Flushing</code>: if at least one returns flushing</li>
+<li><code>gst::FlowReturn::Ok</code>: otherwise</li>
+</ul>
+
+<p><code>gst::FlowReturn::Error</code> or below, GST_FLOW_NOT_NEGOTIATED and GST_FLOW_FLUSHING are
+returned immediatelly from the <code>FlowCombiner::update_flow</code> function.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../gstreamer_base/struct.FlowCombiner.html" title="struct gstreamer_base::FlowCombiner">FlowCombiner</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_base/flow_combiner.rs.html#63-155' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>() -&gt; <a class="struct" href="../gstreamer_base/struct.FlowCombiner.html" title="struct gstreamer_base::FlowCombiner">FlowCombiner</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_base/flow_combiner.rs.html#69-72' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Creates a new <code>FlowCombiner</code>, use <code>FlowCombiner::free</code> to free it.</p>
+
+<h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
+<p>A new <code>FlowCombiner</code></p>
+</div><h4 id='method.add_pad' class="method"><span id='add_pad.v' class='invisible'><code>pub fn <a href='#method.add_pad' class='fnname'>add_pad</a>&lt;P:&nbsp;<a class="trait" href="../gstreamer_base/trait.IsA.html" title="trait gstreamer_base::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/auto/pad/struct.Pad.html" title="struct gstreamer::auto::pad::Pad">Pad</a>&gt;&gt;(&amp;self, pad: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>P)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_base/flow_combiner.rs.html#77-81' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Adds a new <code>gst::Pad</code> to the <code>FlowCombiner</code>.</p>
+
+<h2 id='pad' class='section-header'><a href='#pad'><code>pad</code></a></h2>
+<p>the <code>gst::Pad</code> that is being added</p>
+</div><h4 id='method.clear' class="method"><span id='clear.v' class='invisible'><code>pub fn <a href='#method.clear' class='fnname'>clear</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_base/flow_combiner.rs.html#84-88' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Removes all pads from a <code>FlowCombiner</code> and resets it to its initial state.</p>
+</div><h4 id='method.remove_pad' class="method"><span id='remove_pad.v' class='invisible'><code>pub fn <a href='#method.remove_pad' class='fnname'>remove_pad</a>&lt;P:&nbsp;<a class="trait" href="../gstreamer_base/trait.IsA.html" title="trait gstreamer_base::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/auto/pad/struct.Pad.html" title="struct gstreamer::auto::pad::Pad">Pad</a>&gt;&gt;(&amp;self, pad: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>P)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_base/flow_combiner.rs.html#93-97' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Removes a <code>gst::Pad</code> from the <code>FlowCombiner</code>.</p>
+
+<h2 id='pad-1' class='section-header'><a href='#pad-1'><code>pad</code></a></h2>
+<p>the <code>gst::Pad</code> to remove</p>
+</div><h4 id='method.reset' class="method"><span id='reset.v' class='invisible'><code>pub fn <a href='#method.reset' class='fnname'>reset</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_base/flow_combiner.rs.html#100-104' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Reset flow combiner and all pads to their initial state without removing pads.</p>
+</div><h4 id='method.update_flow' class="method"><span id='update_flow.v' class='invisible'><code>pub fn <a href='#method.update_flow' class='fnname'>update_flow</a>(&amp;self, fret: <a class="enum" href="../gstreamer/auto/enums/enum.FlowReturn.html" title="enum gstreamer::auto::enums::FlowReturn">FlowReturn</a>) -&gt; <a class="enum" href="../gstreamer/auto/enums/enum.FlowReturn.html" title="enum gstreamer::auto::enums::FlowReturn">FlowReturn</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_base/flow_combiner.rs.html#118-125' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Computes the combined flow return for the pads in it.</p>
+
+<p>The <code>gst::FlowReturn</code> parameter should be the last flow return update for a pad
+in this <code>FlowCombiner</code>. It will use this value to be able to shortcut some
+combinations and avoid looking over all pads again. e.g. The last combined
+return is the same as the latest obtained <code>gst::FlowReturn</code>.</p>
+
+<h2 id='fret' class='section-header'><a href='#fret'><code>fret</code></a></h2>
+<p>the latest <code>gst::FlowReturn</code> received for a pad in this <code>FlowCombiner</code></p>
+
+<h1 id='returns-1' class='section-header'><a href='#returns-1'>Returns</a></h1>
+<p>The combined <code>gst::FlowReturn</code></p>
+</div><h4 id='method.update_pad_flow' class="method"><span id='update_pad_flow.v' class='invisible'><code>pub fn <a href='#method.update_pad_flow' class='fnname'>update_pad_flow</a>&lt;P:&nbsp;<a class="trait" href="../gstreamer_base/trait.IsA.html" title="trait gstreamer_base::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/auto/pad/struct.Pad.html" title="struct gstreamer::auto::pad::Pad">Pad</a>&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;pad: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>P, <br>&nbsp;&nbsp;&nbsp;&nbsp;fret: <a class="enum" href="../gstreamer/auto/enums/enum.FlowReturn.html" title="enum gstreamer::auto::enums::FlowReturn">FlowReturn</a><br>) -&gt; <a class="enum" href="../gstreamer/auto/enums/enum.FlowReturn.html" title="enum gstreamer::auto::enums::FlowReturn">FlowReturn</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_base/flow_combiner.rs.html#142-154' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Sets the provided pad&#39;s last flow return to provided value and computes
+the combined flow return for the pads in it.</p>
+
+<p>The <code>gst::FlowReturn</code> parameter should be the last flow return update for a pad
+in this <code>FlowCombiner</code>. It will use this value to be able to shortcut some
+combinations and avoid looking over all pads again. e.g. The last combined
+return is the same as the latest obtained <code>gst::FlowReturn</code>.</p>
+
+<h2 id='pad-2' class='section-header'><a href='#pad-2'><code>pad</code></a></h2>
+<p>the <code>gst::Pad</code> whose <code>gst::FlowReturn</code> to update</p>
+
+<h2 id='fret-1' class='section-header'><a href='#fret-1'><code>fret</code></a></h2>
+<p>the latest <code>gst::FlowReturn</code> received for a pad in this <code>FlowCombiner</code></p>
+
+<h1 id='returns-2' class='section-header'><a href='#returns-2'>Returns</a></h1>
+<p>The combined <code>gst::FlowReturn</code></p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../gstreamer_base/struct.FlowCombiner.html" title="struct gstreamer_base::FlowCombiner">FlowCombiner</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer_base/struct.FlowCombiner.html" title="struct gstreamer_base::FlowCombiner">FlowCombiner</a></code></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-StaticType' class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer_base/trait.StaticType.html" title="trait gstreamer_base::StaticType">StaticType</a> for <a class="struct" href="../gstreamer_base/struct.FlowCombiner.html" title="struct gstreamer_base::FlowCombiner">FlowCombiner</a></code><a href='#impl-StaticType' class='anchor'></a></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.static_type' class="method"><span id='static_type.v' class='invisible'><code>fn <a href='../gstreamer_base/trait.StaticType.html#tymethod.static_type' class='fnname'>static_type</a>() -&gt; <a class="enum" href="../gstreamer_base/enum.Type.html" title="enum gstreamer_base::Type">Type</a></code></span></h4>
+<div class='docblock'><p>Returns the type identifier of <code>Self</code>.</p>
+</div></div><h3 id='impl-Default' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html" title="trait core::default::Default">Default</a> for <a class="struct" href="../gstreamer_base/struct.FlowCombiner.html" title="struct gstreamer_base::FlowCombiner">FlowCombiner</a></code><a href='#impl-Default' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_base/flow_combiner.rs.html#157-161' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.default' class="method"><span id='default.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default' class='fnname'>default</a>() -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_base/flow_combiner.rs.html#158-160' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the &quot;default value&quot; for a type. <a href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer_base";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

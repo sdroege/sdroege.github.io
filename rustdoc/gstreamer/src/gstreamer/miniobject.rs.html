@@ -585,8 +585,8 @@
             }
 
             <span class="self">self</span>.<span class="ident">obj</span> <span class="op">=</span> <span class="ident">T</span>::<span class="ident">from_mut_ptr</span>(
-                <span class="ident">ffi</span>::<span class="ident">gst_mini_object_make_writable</span>(<span class="self">self</span>.<span class="ident">as_mut_ptr</span>() <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi</span>::<span class="ident">GstMiniObject</span>) <span class="kw">as</span>
-                    <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span>,
+                <span class="ident">ffi</span>::<span class="ident">gst_mini_object_make_writable</span>(<span class="self">self</span>.<span class="ident">as_mut_ptr</span>() <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi</span>::<span class="ident">GstMiniObject</span>)
+                    <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span>,
             );
             <span class="macro">assert</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">is_writable</span>());
 
@@ -599,15 +599,6 @@
             <span class="prelude-val">Some</span>(<span class="kw">unsafe</span> { <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="self">self</span>.<span class="ident">obj</span> })
         } <span class="kw">else</span> {
             <span class="prelude-val">None</span>
-        }
-    }
-
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">copy</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
-        <span class="kw">unsafe</span> {
-            <span class="ident">GstRc</span>::<span class="ident">from_glib_full</span>(
-                <span class="ident">ffi</span>::<span class="ident">gst_mini_object_copy</span>(<span class="self">self</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">ffi</span>::<span class="ident">GstMiniObject</span>) <span class="kw">as</span>
-                    <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">T</span>::<span class="ident">GstType</span>,
-            )
         }
     }
 
@@ -717,6 +708,15 @@
         <span class="macro">assert</span><span class="macro">!</span>(<span class="op">!</span><span class="ident">ptr</span>.<span class="ident">is_null</span>());
         <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="self">Self</span>)
     }
+
+    <span class="kw">fn</span> <span class="ident">copy</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">GstRc</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span> {
+        <span class="kw">unsafe</span> {
+            <span class="ident">GstRc</span>::<span class="ident">from_glib_full</span>(
+                <span class="ident">ffi</span>::<span class="ident">gst_mini_object_copy</span>(<span class="self">self</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">ffi</span>::<span class="ident">GstMiniObject</span>)
+                    <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="self">Self</span>::<span class="ident">GstType</span>,
+            )
+        }
+    }
 }
 
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="ident">T</span>: <span class="ident">MiniObject</span> <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span> <span class="ident">ToGlibPtr</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">T</span>::<span class="ident">GstType</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">GstRc</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> {
@@ -779,8 +779,8 @@
         <span class="kw">let</span> <span class="ident">v</span>: <span class="ident">Vec</span><span class="op">&lt;</span>_<span class="op">&gt;</span> <span class="op">=</span> <span class="ident">t</span>.<span class="ident">iter</span>().<span class="ident">map</span>(<span class="op">|</span><span class="ident">s</span><span class="op">|</span> <span class="ident">s</span>.<span class="ident">to_glib_none</span>()).<span class="ident">collect</span>();
 
         <span class="kw">let</span> <span class="ident">v_ptr</span> <span class="op">=</span> <span class="kw">unsafe</span> {
-            <span class="kw">let</span> <span class="ident">v_ptr</span> <span class="op">=</span> <span class="ident">glib_ffi</span>::<span class="ident">g_malloc0</span>(<span class="ident">mem</span>::<span class="ident">size_of</span>::<span class="op">&lt;</span><span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span><span class="op">&gt;</span>() <span class="op">*</span> <span class="ident">t</span>.<span class="ident">len</span>() <span class="op">+</span> <span class="number">1</span>) <span class="kw">as</span>
-                <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span>;
+            <span class="kw">let</span> <span class="ident">v_ptr</span> <span class="op">=</span> <span class="ident">glib_ffi</span>::<span class="ident">g_malloc0</span>(<span class="ident">mem</span>::<span class="ident">size_of</span>::<span class="op">&lt;</span><span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span><span class="op">&gt;</span>() <span class="op">*</span> <span class="ident">t</span>.<span class="ident">len</span>() <span class="op">+</span> <span class="number">1</span>)
+                <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span>;
 
             <span class="kw">for</span> (<span class="ident">i</span>, <span class="ident">s</span>) <span class="kw">in</span> <span class="ident">v</span>.<span class="ident">iter</span>().<span class="ident">enumerate</span>() {
                 <span class="ident">ptr</span>::<span class="ident">write</span>(<span class="ident">v_ptr</span>.<span class="ident">offset</span>(<span class="ident">i</span> <span class="kw">as</span> <span class="ident">isize</span>), <span class="ident">s</span>.<span class="number">0</span>);
@@ -795,8 +795,8 @@
     <span class="kw">fn</span> <span class="ident">to_glib_full_from_slice</span>(<span class="ident">t</span>: <span class="kw-2">&amp;</span>[<span class="ident">GstRc</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>]) <span class="op">-&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span> {
         <span class="macro">skip_assert_initialized</span><span class="macro">!</span>();
         <span class="kw">unsafe</span> {
-            <span class="kw">let</span> <span class="ident">v_ptr</span> <span class="op">=</span> <span class="ident">glib_ffi</span>::<span class="ident">g_malloc0</span>(<span class="ident">mem</span>::<span class="ident">size_of</span>::<span class="op">&lt;</span><span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span><span class="op">&gt;</span>() <span class="op">*</span> <span class="ident">t</span>.<span class="ident">len</span>() <span class="op">+</span> <span class="number">1</span>) <span class="kw">as</span>
-                <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span>;
+            <span class="kw">let</span> <span class="ident">v_ptr</span> <span class="op">=</span> <span class="ident">glib_ffi</span>::<span class="ident">g_malloc0</span>(<span class="ident">mem</span>::<span class="ident">size_of</span>::<span class="op">&lt;</span><span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span><span class="op">&gt;</span>() <span class="op">*</span> <span class="ident">t</span>.<span class="ident">len</span>() <span class="op">+</span> <span class="number">1</span>)
+                <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span>;
 
             <span class="kw">for</span> (<span class="ident">i</span>, <span class="ident">s</span>) <span class="kw">in</span> <span class="ident">t</span>.<span class="ident">iter</span>().<span class="ident">enumerate</span>() {
                 <span class="ident">ptr</span>::<span class="ident">write</span>(<span class="ident">v_ptr</span>.<span class="ident">offset</span>(<span class="ident">i</span> <span class="kw">as</span> <span class="ident">isize</span>), <span class="ident">s</span>.<span class="ident">to_glib_full</span>());
@@ -1006,13 +1006,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>

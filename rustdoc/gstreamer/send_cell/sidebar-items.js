@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["Ref","Wraps a borrowed reference to a value in a `SendCell` box."],["SendCell","An immutable memory location that implements `Send` for types that do not implement it"]]});

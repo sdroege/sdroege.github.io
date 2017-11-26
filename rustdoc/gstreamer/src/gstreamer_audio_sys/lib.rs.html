@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="rustdoc">
-    <meta name="description" content="Source to the Rust file `/home/slomo/.cargo/registry/src/github.com-1ecc6299db9ec823/gstreamer-audio-sys-0.2.1/src/lib.rs`.">
+    <meta name="description" content="Source to the Rust file `/home/slomo/.cargo/registry/src/github.com-1ecc6299db9ec823/gstreamer-audio-sys-0.3.0/src/lib.rs`.">
     <meta name="keywords" content="rust, rustlang, rust-lang">
 
     <title>lib.rs.html -- source</title>
@@ -1097,171 +1097,11 @@
 <span id="1052">1052</span>
 <span id="1053">1053</span>
 <span id="1054">1054</span>
-<span id="1055">1055</span>
-<span id="1056">1056</span>
-<span id="1057">1057</span>
-<span id="1058">1058</span>
-<span id="1059">1059</span>
-<span id="1060">1060</span>
-<span id="1061">1061</span>
-<span id="1062">1062</span>
-<span id="1063">1063</span>
-<span id="1064">1064</span>
-<span id="1065">1065</span>
-<span id="1066">1066</span>
-<span id="1067">1067</span>
-<span id="1068">1068</span>
-<span id="1069">1069</span>
-<span id="1070">1070</span>
-<span id="1071">1071</span>
-<span id="1072">1072</span>
-<span id="1073">1073</span>
-<span id="1074">1074</span>
-<span id="1075">1075</span>
-<span id="1076">1076</span>
-<span id="1077">1077</span>
-<span id="1078">1078</span>
-<span id="1079">1079</span>
-<span id="1080">1080</span>
-<span id="1081">1081</span>
-<span id="1082">1082</span>
-<span id="1083">1083</span>
-<span id="1084">1084</span>
-<span id="1085">1085</span>
-<span id="1086">1086</span>
-<span id="1087">1087</span>
-<span id="1088">1088</span>
-<span id="1089">1089</span>
-<span id="1090">1090</span>
-<span id="1091">1091</span>
-<span id="1092">1092</span>
-<span id="1093">1093</span>
-<span id="1094">1094</span>
-<span id="1095">1095</span>
-<span id="1096">1096</span>
-<span id="1097">1097</span>
-<span id="1098">1098</span>
-<span id="1099">1099</span>
-<span id="1100">1100</span>
-<span id="1101">1101</span>
-<span id="1102">1102</span>
-<span id="1103">1103</span>
-<span id="1104">1104</span>
-<span id="1105">1105</span>
-<span id="1106">1106</span>
-<span id="1107">1107</span>
-<span id="1108">1108</span>
-<span id="1109">1109</span>
-<span id="1110">1110</span>
-<span id="1111">1111</span>
-<span id="1112">1112</span>
-<span id="1113">1113</span>
-<span id="1114">1114</span>
-<span id="1115">1115</span>
-<span id="1116">1116</span>
-<span id="1117">1117</span>
-<span id="1118">1118</span>
-<span id="1119">1119</span>
-<span id="1120">1120</span>
-<span id="1121">1121</span>
-<span id="1122">1122</span>
-<span id="1123">1123</span>
-<span id="1124">1124</span>
-<span id="1125">1125</span>
-<span id="1126">1126</span>
-<span id="1127">1127</span>
-<span id="1128">1128</span>
-<span id="1129">1129</span>
-<span id="1130">1130</span>
-<span id="1131">1131</span>
-<span id="1132">1132</span>
-<span id="1133">1133</span>
-<span id="1134">1134</span>
-<span id="1135">1135</span>
-<span id="1136">1136</span>
-<span id="1137">1137</span>
-<span id="1138">1138</span>
-<span id="1139">1139</span>
-<span id="1140">1140</span>
-<span id="1141">1141</span>
-<span id="1142">1142</span>
-<span id="1143">1143</span>
-<span id="1144">1144</span>
-<span id="1145">1145</span>
-<span id="1146">1146</span>
-<span id="1147">1147</span>
-<span id="1148">1148</span>
-<span id="1149">1149</span>
-<span id="1150">1150</span>
-<span id="1151">1151</span>
-<span id="1152">1152</span>
-<span id="1153">1153</span>
-<span id="1154">1154</span>
-<span id="1155">1155</span>
-<span id="1156">1156</span>
-<span id="1157">1157</span>
-<span id="1158">1158</span>
-<span id="1159">1159</span>
-<span id="1160">1160</span>
-<span id="1161">1161</span>
-<span id="1162">1162</span>
-<span id="1163">1163</span>
-<span id="1164">1164</span>
-<span id="1165">1165</span>
-<span id="1166">1166</span>
-<span id="1167">1167</span>
-<span id="1168">1168</span>
-<span id="1169">1169</span>
-<span id="1170">1170</span>
-<span id="1171">1171</span>
-<span id="1172">1172</span>
-<span id="1173">1173</span>
-<span id="1174">1174</span>
-<span id="1175">1175</span>
-<span id="1176">1176</span>
-<span id="1177">1177</span>
-<span id="1178">1178</span>
-<span id="1179">1179</span>
-<span id="1180">1180</span>
-<span id="1181">1181</span>
-<span id="1182">1182</span>
-<span id="1183">1183</span>
-<span id="1184">1184</span>
-<span id="1185">1185</span>
-<span id="1186">1186</span>
-<span id="1187">1187</span>
-<span id="1188">1188</span>
-<span id="1189">1189</span>
-<span id="1190">1190</span>
-<span id="1191">1191</span>
-<span id="1192">1192</span>
-<span id="1193">1193</span>
-<span id="1194">1194</span>
-<span id="1195">1195</span>
-<span id="1196">1196</span>
-<span id="1197">1197</span>
-<span id="1198">1198</span>
-<span id="1199">1199</span>
-<span id="1200">1200</span>
-<span id="1201">1201</span>
-<span id="1202">1202</span>
-<span id="1203">1203</span>
-<span id="1204">1204</span>
-<span id="1205">1205</span>
-<span id="1206">1206</span>
-<span id="1207">1207</span>
-<span id="1208">1208</span>
-<span id="1209">1209</span>
-<span id="1210">1210</span>
-<span id="1211">1211</span>
-<span id="1212">1212</span>
-<span id="1213">1213</span>
-<span id="1214">1214</span>
 </pre><pre class="rust ">
-<span class="comment">// This file was generated by gir (9bd51ed) from gir-files (???)</span>
+<span class="comment">// This file was generated by gir (94e079d) from gir-files (???)</span>
 <span class="comment">// DO NOT EDIT</span>
 
-<span class="attribute">#<span class="op">!</span>[<span class="ident">allow</span>(<span class="ident">non_camel_case_types</span>, <span class="ident">non_upper_case_globals</span>)]</span>
+<span class="attribute">#![<span class="ident">allow</span>(<span class="ident">non_camel_case_types</span>, <span class="ident">non_upper_case_globals</span>)]</span>
 
 <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">libc</span>;
 <span class="attribute">#[<span class="ident">macro_use</span>]</span> <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">bitflags</span>;
@@ -1269,7 +1109,6 @@
 <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">gobject_sys</span> <span class="kw">as</span> <span class="ident">gobject</span>;
 <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">gstreamer_sys</span> <span class="kw">as</span> <span class="ident">gst</span>;
 <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">gstreamer_base_sys</span> <span class="kw">as</span> <span class="ident">gst_base</span>;
-<span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">gstreamer_tag_sys</span> <span class="kw">as</span> <span class="ident">gst_tag</span>;
 
 <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_imports</span>)]</span>
 <span class="kw">use</span> <span class="ident">libc</span>::{<span class="ident">c_int</span>, <span class="ident">c_char</span>, <span class="ident">c_uchar</span>, <span class="ident">c_float</span>, <span class="ident">c_uint</span>, <span class="ident">c_double</span>,
@@ -1280,340 +1119,158 @@
 <span class="kw">use</span> <span class="ident">glib</span>::{<span class="ident">gboolean</span>, <span class="ident">gconstpointer</span>, <span class="ident">gpointer</span>, <span class="ident">GType</span>, <span class="ident">Volatile</span>};
 
 <span class="comment">// Enums</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>)]</span>
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GstAudioBaseSinkDiscontReason</span> {
-    <span class="ident">NoDiscont</span> <span class="op">=</span> <span class="number">0</span>,
-    <span class="ident">NewCaps</span> <span class="op">=</span> <span class="number">1</span>,
-    <span class="ident">Flush</span> <span class="op">=</span> <span class="number">2</span>,
-    <span class="ident">SyncLatency</span> <span class="op">=</span> <span class="number">3</span>,
-    <span class="ident">Alignment</span> <span class="op">=</span> <span class="number">4</span>,
-    <span class="ident">DeviceFailure</span> <span class="op">=</span> <span class="number">5</span>,
-}
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SINK_DISCONT_REASON_NO_DISCONT</span>: <span class="ident">GstAudioBaseSinkDiscontReason</span> <span class="op">=</span> <span class="ident">GstAudioBaseSinkDiscontReason</span>::<span class="ident">NoDiscont</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SINK_DISCONT_REASON_NEW_CAPS</span>: <span class="ident">GstAudioBaseSinkDiscontReason</span> <span class="op">=</span> <span class="ident">GstAudioBaseSinkDiscontReason</span>::<span class="ident">NewCaps</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SINK_DISCONT_REASON_FLUSH</span>: <span class="ident">GstAudioBaseSinkDiscontReason</span> <span class="op">=</span> <span class="ident">GstAudioBaseSinkDiscontReason</span>::<span class="ident">Flush</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SINK_DISCONT_REASON_SYNC_LATENCY</span>: <span class="ident">GstAudioBaseSinkDiscontReason</span> <span class="op">=</span> <span class="ident">GstAudioBaseSinkDiscontReason</span>::<span class="ident">SyncLatency</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SINK_DISCONT_REASON_ALIGNMENT</span>: <span class="ident">GstAudioBaseSinkDiscontReason</span> <span class="op">=</span> <span class="ident">GstAudioBaseSinkDiscontReason</span>::<span class="ident">Alignment</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SINK_DISCONT_REASON_DEVICE_FAILURE</span>: <span class="ident">GstAudioBaseSinkDiscontReason</span> <span class="op">=</span> <span class="ident">GstAudioBaseSinkDiscontReason</span>::<span class="ident">DeviceFailure</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GstAudioBaseSinkDiscontReason</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SINK_DISCONT_REASON_NO_DISCONT</span>: <span class="ident">GstAudioBaseSinkDiscontReason</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SINK_DISCONT_REASON_NEW_CAPS</span>: <span class="ident">GstAudioBaseSinkDiscontReason</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SINK_DISCONT_REASON_FLUSH</span>: <span class="ident">GstAudioBaseSinkDiscontReason</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SINK_DISCONT_REASON_SYNC_LATENCY</span>: <span class="ident">GstAudioBaseSinkDiscontReason</span> <span class="op">=</span> <span class="number">3</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SINK_DISCONT_REASON_ALIGNMENT</span>: <span class="ident">GstAudioBaseSinkDiscontReason</span> <span class="op">=</span> <span class="number">4</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SINK_DISCONT_REASON_DEVICE_FAILURE</span>: <span class="ident">GstAudioBaseSinkDiscontReason</span> <span class="op">=</span> <span class="number">5</span>;
 
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>)]</span>
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GstAudioBaseSinkSlaveMethod</span> {
-    <span class="ident">Resample</span> <span class="op">=</span> <span class="number">0</span>,
-    <span class="ident">Skew</span> <span class="op">=</span> <span class="number">1</span>,
-    <span class="prelude-val">None</span> <span class="op">=</span> <span class="number">2</span>,
-    <span class="ident">Custom</span> <span class="op">=</span> <span class="number">3</span>,
-}
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SINK_SLAVE_RESAMPLE</span>: <span class="ident">GstAudioBaseSinkSlaveMethod</span> <span class="op">=</span> <span class="ident">GstAudioBaseSinkSlaveMethod</span>::<span class="ident">Resample</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SINK_SLAVE_SKEW</span>: <span class="ident">GstAudioBaseSinkSlaveMethod</span> <span class="op">=</span> <span class="ident">GstAudioBaseSinkSlaveMethod</span>::<span class="ident">Skew</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SINK_SLAVE_NONE</span>: <span class="ident">GstAudioBaseSinkSlaveMethod</span> <span class="op">=</span> <span class="ident">GstAudioBaseSinkSlaveMethod</span>::<span class="prelude-val">None</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SINK_SLAVE_CUSTOM</span>: <span class="ident">GstAudioBaseSinkSlaveMethod</span> <span class="op">=</span> <span class="ident">GstAudioBaseSinkSlaveMethod</span>::<span class="ident">Custom</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GstAudioBaseSinkSlaveMethod</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SINK_SLAVE_RESAMPLE</span>: <span class="ident">GstAudioBaseSinkSlaveMethod</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SINK_SLAVE_SKEW</span>: <span class="ident">GstAudioBaseSinkSlaveMethod</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SINK_SLAVE_NONE</span>: <span class="ident">GstAudioBaseSinkSlaveMethod</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SINK_SLAVE_CUSTOM</span>: <span class="ident">GstAudioBaseSinkSlaveMethod</span> <span class="op">=</span> <span class="number">3</span>;
 
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>)]</span>
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GstAudioBaseSrcSlaveMethod</span> {
-    <span class="ident">Resample</span> <span class="op">=</span> <span class="number">0</span>,
-    <span class="ident">ReTimestamp</span> <span class="op">=</span> <span class="number">1</span>,
-    <span class="ident">Skew</span> <span class="op">=</span> <span class="number">2</span>,
-    <span class="prelude-val">None</span> <span class="op">=</span> <span class="number">3</span>,
-}
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SRC_SLAVE_RESAMPLE</span>: <span class="ident">GstAudioBaseSrcSlaveMethod</span> <span class="op">=</span> <span class="ident">GstAudioBaseSrcSlaveMethod</span>::<span class="ident">Resample</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SRC_SLAVE_RE_TIMESTAMP</span>: <span class="ident">GstAudioBaseSrcSlaveMethod</span> <span class="op">=</span> <span class="ident">GstAudioBaseSrcSlaveMethod</span>::<span class="ident">ReTimestamp</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SRC_SLAVE_SKEW</span>: <span class="ident">GstAudioBaseSrcSlaveMethod</span> <span class="op">=</span> <span class="ident">GstAudioBaseSrcSlaveMethod</span>::<span class="ident">Skew</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SRC_SLAVE_NONE</span>: <span class="ident">GstAudioBaseSrcSlaveMethod</span> <span class="op">=</span> <span class="ident">GstAudioBaseSrcSlaveMethod</span>::<span class="prelude-val">None</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GstAudioBaseSrcSlaveMethod</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SRC_SLAVE_RESAMPLE</span>: <span class="ident">GstAudioBaseSrcSlaveMethod</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SRC_SLAVE_RE_TIMESTAMP</span>: <span class="ident">GstAudioBaseSrcSlaveMethod</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SRC_SLAVE_SKEW</span>: <span class="ident">GstAudioBaseSrcSlaveMethod</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_BASE_SRC_SLAVE_NONE</span>: <span class="ident">GstAudioBaseSrcSlaveMethod</span> <span class="op">=</span> <span class="number">3</span>;
 
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>)]</span>
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GstAudioCdSrcMode</span> {
-    <span class="ident">Normal</span> <span class="op">=</span> <span class="number">0</span>,
-    <span class="ident">Continuous</span> <span class="op">=</span> <span class="number">1</span>,
-}
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CD_SRC_MODE_NORMAL</span>: <span class="ident">GstAudioCdSrcMode</span> <span class="op">=</span> <span class="ident">GstAudioCdSrcMode</span>::<span class="ident">Normal</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CD_SRC_MODE_CONTINUOUS</span>: <span class="ident">GstAudioCdSrcMode</span> <span class="op">=</span> <span class="ident">GstAudioCdSrcMode</span>::<span class="ident">Continuous</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GstAudioCdSrcMode</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CD_SRC_MODE_NORMAL</span>: <span class="ident">GstAudioCdSrcMode</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CD_SRC_MODE_CONTINUOUS</span>: <span class="ident">GstAudioCdSrcMode</span> <span class="op">=</span> <span class="number">1</span>;
 
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>)]</span>
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GstAudioChannelPosition</span> {
-    <span class="prelude-val">None</span> <span class="op">=</span> <span class="op">-</span><span class="number">3</span>,
-    <span class="ident">Mono</span> <span class="op">=</span> <span class="op">-</span><span class="number">2</span>,
-    <span class="ident">Invalid</span> <span class="op">=</span> <span class="op">-</span><span class="number">1</span>,
-    <span class="ident">FrontLeft</span> <span class="op">=</span> <span class="number">0</span>,
-    <span class="ident">FrontRight</span> <span class="op">=</span> <span class="number">1</span>,
-    <span class="ident">FrontCenter</span> <span class="op">=</span> <span class="number">2</span>,
-    <span class="ident">Lfe1</span> <span class="op">=</span> <span class="number">3</span>,
-    <span class="ident">RearLeft</span> <span class="op">=</span> <span class="number">4</span>,
-    <span class="ident">RearRight</span> <span class="op">=</span> <span class="number">5</span>,
-    <span class="ident">FrontLeftOfCenter</span> <span class="op">=</span> <span class="number">6</span>,
-    <span class="ident">FrontRightOfCenter</span> <span class="op">=</span> <span class="number">7</span>,
-    <span class="ident">RearCenter</span> <span class="op">=</span> <span class="number">8</span>,
-    <span class="ident">Lfe2</span> <span class="op">=</span> <span class="number">9</span>,
-    <span class="ident">SideLeft</span> <span class="op">=</span> <span class="number">10</span>,
-    <span class="ident">SideRight</span> <span class="op">=</span> <span class="number">11</span>,
-    <span class="ident">TopFrontLeft</span> <span class="op">=</span> <span class="number">12</span>,
-    <span class="ident">TopFrontRight</span> <span class="op">=</span> <span class="number">13</span>,
-    <span class="ident">TopFrontCenter</span> <span class="op">=</span> <span class="number">14</span>,
-    <span class="ident">TopCenter</span> <span class="op">=</span> <span class="number">15</span>,
-    <span class="ident">TopRearLeft</span> <span class="op">=</span> <span class="number">16</span>,
-    <span class="ident">TopRearRight</span> <span class="op">=</span> <span class="number">17</span>,
-    <span class="ident">TopSideLeft</span> <span class="op">=</span> <span class="number">18</span>,
-    <span class="ident">TopSideRight</span> <span class="op">=</span> <span class="number">19</span>,
-    <span class="ident">TopRearCenter</span> <span class="op">=</span> <span class="number">20</span>,
-    <span class="ident">BottomFrontCenter</span> <span class="op">=</span> <span class="number">21</span>,
-    <span class="ident">BottomFrontLeft</span> <span class="op">=</span> <span class="number">22</span>,
-    <span class="ident">BottomFrontRight</span> <span class="op">=</span> <span class="number">23</span>,
-    <span class="ident">WideLeft</span> <span class="op">=</span> <span class="number">24</span>,
-    <span class="ident">WideRight</span> <span class="op">=</span> <span class="number">25</span>,
-    <span class="ident">SurroundLeft</span> <span class="op">=</span> <span class="number">26</span>,
-    <span class="ident">SurroundRight</span> <span class="op">=</span> <span class="number">27</span>,
-}
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_NONE</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="prelude-val">None</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_MONO</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">Mono</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_INVALID</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">Invalid</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_FRONT_LEFT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">FrontLeft</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_FRONT_RIGHT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">FrontRight</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_FRONT_CENTER</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">FrontCenter</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_LFE1</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">Lfe1</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_REAR_LEFT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">RearLeft</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_REAR_RIGHT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">RearRight</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_FRONT_LEFT_OF_CENTER</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">FrontLeftOfCenter</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_FRONT_RIGHT_OF_CENTER</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">FrontRightOfCenter</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_REAR_CENTER</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">RearCenter</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_LFE2</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">Lfe2</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_SIDE_LEFT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">SideLeft</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_SIDE_RIGHT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">SideRight</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_TOP_FRONT_LEFT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">TopFrontLeft</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_TOP_FRONT_RIGHT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">TopFrontRight</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_TOP_FRONT_CENTER</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">TopFrontCenter</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_TOP_CENTER</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">TopCenter</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_TOP_REAR_LEFT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">TopRearLeft</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_TOP_REAR_RIGHT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">TopRearRight</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_TOP_SIDE_LEFT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">TopSideLeft</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_TOP_SIDE_RIGHT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">TopSideRight</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_TOP_REAR_CENTER</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">TopRearCenter</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_BOTTOM_FRONT_CENTER</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">BottomFrontCenter</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_BOTTOM_FRONT_LEFT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">BottomFrontLeft</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_BOTTOM_FRONT_RIGHT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">BottomFrontRight</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_WIDE_LEFT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">WideLeft</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_WIDE_RIGHT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">WideRight</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_SURROUND_LEFT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">SurroundLeft</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_SURROUND_RIGHT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">GstAudioChannelPosition</span>::<span class="ident">SurroundRight</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_NONE</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="op">-</span><span class="number">3</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_MONO</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="op">-</span><span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_INVALID</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="op">-</span><span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_FRONT_LEFT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_FRONT_RIGHT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_FRONT_CENTER</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_LFE1</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">3</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_REAR_LEFT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">4</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_REAR_RIGHT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">5</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_FRONT_LEFT_OF_CENTER</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">6</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_FRONT_RIGHT_OF_CENTER</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">7</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_REAR_CENTER</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">8</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_LFE2</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">9</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_SIDE_LEFT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">10</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_SIDE_RIGHT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">11</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_TOP_FRONT_LEFT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">12</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_TOP_FRONT_RIGHT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">13</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_TOP_FRONT_CENTER</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">14</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_TOP_CENTER</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">15</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_TOP_REAR_LEFT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">16</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_TOP_REAR_RIGHT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">17</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_TOP_SIDE_LEFT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">18</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_TOP_SIDE_RIGHT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">19</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_TOP_REAR_CENTER</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">20</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_BOTTOM_FRONT_CENTER</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">21</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_BOTTOM_FRONT_LEFT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">22</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_BOTTOM_FRONT_RIGHT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">23</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_WIDE_LEFT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">24</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_WIDE_RIGHT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">25</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_SURROUND_LEFT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">26</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_POSITION_SURROUND_RIGHT</span>: <span class="ident">GstAudioChannelPosition</span> <span class="op">=</span> <span class="number">27</span>;
 
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>)]</span>
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GstAudioDitherMethod</span> {
-    <span class="prelude-val">None</span> <span class="op">=</span> <span class="number">0</span>,
-    <span class="ident">Rpdf</span> <span class="op">=</span> <span class="number">1</span>,
-    <span class="ident">Tpdf</span> <span class="op">=</span> <span class="number">2</span>,
-    <span class="ident">TpdfHf</span> <span class="op">=</span> <span class="number">3</span>,
-}
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_DITHER_NONE</span>: <span class="ident">GstAudioDitherMethod</span> <span class="op">=</span> <span class="ident">GstAudioDitherMethod</span>::<span class="prelude-val">None</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_DITHER_RPDF</span>: <span class="ident">GstAudioDitherMethod</span> <span class="op">=</span> <span class="ident">GstAudioDitherMethod</span>::<span class="ident">Rpdf</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_DITHER_TPDF</span>: <span class="ident">GstAudioDitherMethod</span> <span class="op">=</span> <span class="ident">GstAudioDitherMethod</span>::<span class="ident">Tpdf</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_DITHER_TPDF_HF</span>: <span class="ident">GstAudioDitherMethod</span> <span class="op">=</span> <span class="ident">GstAudioDitherMethod</span>::<span class="ident">TpdfHf</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GstAudioDitherMethod</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_DITHER_NONE</span>: <span class="ident">GstAudioDitherMethod</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_DITHER_RPDF</span>: <span class="ident">GstAudioDitherMethod</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_DITHER_TPDF</span>: <span class="ident">GstAudioDitherMethod</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_DITHER_TPDF_HF</span>: <span class="ident">GstAudioDitherMethod</span> <span class="op">=</span> <span class="number">3</span>;
 
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>)]</span>
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GstAudioFormat</span> {
-    <span class="ident">Unknown</span> <span class="op">=</span> <span class="number">0</span>,
-    <span class="ident">Encoded</span> <span class="op">=</span> <span class="number">1</span>,
-    <span class="ident">S8</span> <span class="op">=</span> <span class="number">2</span>,
-    <span class="ident">U8</span> <span class="op">=</span> <span class="number">3</span>,
-    <span class="ident">S16le</span> <span class="op">=</span> <span class="number">4</span>,
-    <span class="ident">S16be</span> <span class="op">=</span> <span class="number">5</span>,
-    <span class="ident">U16le</span> <span class="op">=</span> <span class="number">6</span>,
-    <span class="ident">U16be</span> <span class="op">=</span> <span class="number">7</span>,
-    <span class="ident">S2432le</span> <span class="op">=</span> <span class="number">8</span>,
-    <span class="ident">S2432be</span> <span class="op">=</span> <span class="number">9</span>,
-    <span class="ident">U2432le</span> <span class="op">=</span> <span class="number">10</span>,
-    <span class="ident">U2432be</span> <span class="op">=</span> <span class="number">11</span>,
-    <span class="ident">S32le</span> <span class="op">=</span> <span class="number">12</span>,
-    <span class="ident">S32be</span> <span class="op">=</span> <span class="number">13</span>,
-    <span class="ident">U32le</span> <span class="op">=</span> <span class="number">14</span>,
-    <span class="ident">U32be</span> <span class="op">=</span> <span class="number">15</span>,
-    <span class="ident">S24le</span> <span class="op">=</span> <span class="number">16</span>,
-    <span class="ident">S24be</span> <span class="op">=</span> <span class="number">17</span>,
-    <span class="ident">U24le</span> <span class="op">=</span> <span class="number">18</span>,
-    <span class="ident">U24be</span> <span class="op">=</span> <span class="number">19</span>,
-    <span class="ident">S20le</span> <span class="op">=</span> <span class="number">20</span>,
-    <span class="ident">S20be</span> <span class="op">=</span> <span class="number">21</span>,
-    <span class="ident">U20le</span> <span class="op">=</span> <span class="number">22</span>,
-    <span class="ident">U20be</span> <span class="op">=</span> <span class="number">23</span>,
-    <span class="ident">S18le</span> <span class="op">=</span> <span class="number">24</span>,
-    <span class="ident">S18be</span> <span class="op">=</span> <span class="number">25</span>,
-    <span class="ident">U18le</span> <span class="op">=</span> <span class="number">26</span>,
-    <span class="ident">U18be</span> <span class="op">=</span> <span class="number">27</span>,
-    <span class="ident">F32le</span> <span class="op">=</span> <span class="number">28</span>,
-    <span class="ident">F32be</span> <span class="op">=</span> <span class="number">29</span>,
-    <span class="ident">F64le</span> <span class="op">=</span> <span class="number">30</span>,
-    <span class="ident">F64be</span> <span class="op">=</span> <span class="number">31</span>,
-}
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_UNKNOWN</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">Unknown</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_ENCODED</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">Encoded</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S8</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">S8</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U8</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">U8</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S16LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">S16le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S16BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">S16be</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U16LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">U16le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U16BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">U16be</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S24_32LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">S2432le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S24_32BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">S2432be</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U24_32LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">U2432le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U24_32BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">U2432be</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S32LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">S32le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S32BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">S32be</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U32LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">U32le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U32BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">U32be</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S24LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">S24le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S24BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">S24be</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U24LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">U24le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U24BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">U24be</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S20LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">S20le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S20BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">S20be</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U20LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">U20le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U20BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">U20be</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S18LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">S18le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S18BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">S18be</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U18LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">U18le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U18BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">U18be</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_F32LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">F32le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_F32BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">F32be</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_F64LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">F64le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_F64BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">F64be</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S16</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">S16le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U16</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">U16le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S24_32</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">S2432le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U24_32</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">U2432le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S32</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">S32le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U32</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">U32le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S24</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">S24le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U24</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">U24le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S20</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">S20le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U20</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">U20le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S18</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">S18le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U18</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">U18le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_F32</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">F32le</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_F64</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">GstAudioFormat</span>::<span class="ident">F64le</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_UNKNOWN</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_ENCODED</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S8</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U8</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">3</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S16LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">4</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S16BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">5</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U16LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">6</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U16BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">7</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S24_32LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">8</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S24_32BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">9</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U24_32LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">10</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U24_32BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">11</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S32LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">12</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S32BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">13</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U32LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">14</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U32BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">15</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S24LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">16</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S24BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">17</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U24LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">18</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U24BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">19</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S20LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">20</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S20BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">21</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U20LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">22</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U20BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">23</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S18LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">24</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_S18BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">25</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U18LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">26</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_U18BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">27</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_F32LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">28</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_F32BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">29</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_F64LE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">30</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_F64BE</span>: <span class="ident">GstAudioFormat</span> <span class="op">=</span> <span class="number">31</span>;
 
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>)]</span>
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GstAudioLayout</span> {
-    <span class="ident">Interleaved</span> <span class="op">=</span> <span class="number">0</span>,
-    <span class="ident">NonInterleaved</span> <span class="op">=</span> <span class="number">1</span>,
-}
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_LAYOUT_INTERLEAVED</span>: <span class="ident">GstAudioLayout</span> <span class="op">=</span> <span class="ident">GstAudioLayout</span>::<span class="ident">Interleaved</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_LAYOUT_NON_INTERLEAVED</span>: <span class="ident">GstAudioLayout</span> <span class="op">=</span> <span class="ident">GstAudioLayout</span>::<span class="ident">NonInterleaved</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GstAudioLayout</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_LAYOUT_INTERLEAVED</span>: <span class="ident">GstAudioLayout</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_LAYOUT_NON_INTERLEAVED</span>: <span class="ident">GstAudioLayout</span> <span class="op">=</span> <span class="number">1</span>;
 
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>)]</span>
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GstAudioNoiseShapingMethod</span> {
-    <span class="prelude-val">None</span> <span class="op">=</span> <span class="number">0</span>,
-    <span class="ident">ErrorFeedback</span> <span class="op">=</span> <span class="number">1</span>,
-    <span class="ident">Simple</span> <span class="op">=</span> <span class="number">2</span>,
-    <span class="ident">Medium</span> <span class="op">=</span> <span class="number">3</span>,
-    <span class="ident">High</span> <span class="op">=</span> <span class="number">4</span>,
-}
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_NOISE_SHAPING_NONE</span>: <span class="ident">GstAudioNoiseShapingMethod</span> <span class="op">=</span> <span class="ident">GstAudioNoiseShapingMethod</span>::<span class="prelude-val">None</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_NOISE_SHAPING_ERROR_FEEDBACK</span>: <span class="ident">GstAudioNoiseShapingMethod</span> <span class="op">=</span> <span class="ident">GstAudioNoiseShapingMethod</span>::<span class="ident">ErrorFeedback</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_NOISE_SHAPING_SIMPLE</span>: <span class="ident">GstAudioNoiseShapingMethod</span> <span class="op">=</span> <span class="ident">GstAudioNoiseShapingMethod</span>::<span class="ident">Simple</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_NOISE_SHAPING_MEDIUM</span>: <span class="ident">GstAudioNoiseShapingMethod</span> <span class="op">=</span> <span class="ident">GstAudioNoiseShapingMethod</span>::<span class="ident">Medium</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_NOISE_SHAPING_HIGH</span>: <span class="ident">GstAudioNoiseShapingMethod</span> <span class="op">=</span> <span class="ident">GstAudioNoiseShapingMethod</span>::<span class="ident">High</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GstAudioNoiseShapingMethod</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_NOISE_SHAPING_NONE</span>: <span class="ident">GstAudioNoiseShapingMethod</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_NOISE_SHAPING_ERROR_FEEDBACK</span>: <span class="ident">GstAudioNoiseShapingMethod</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_NOISE_SHAPING_SIMPLE</span>: <span class="ident">GstAudioNoiseShapingMethod</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_NOISE_SHAPING_MEDIUM</span>: <span class="ident">GstAudioNoiseShapingMethod</span> <span class="op">=</span> <span class="number">3</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_NOISE_SHAPING_HIGH</span>: <span class="ident">GstAudioNoiseShapingMethod</span> <span class="op">=</span> <span class="number">4</span>;
 
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>)]</span>
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GstAudioResamplerFilterInterpolation</span> {
-    <span class="prelude-val">None</span> <span class="op">=</span> <span class="number">0</span>,
-    <span class="ident">Linear</span> <span class="op">=</span> <span class="number">1</span>,
-    <span class="ident">Cubic</span> <span class="op">=</span> <span class="number">2</span>,
-}
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_FILTER_INTERPOLATION_NONE</span>: <span class="ident">GstAudioResamplerFilterInterpolation</span> <span class="op">=</span> <span class="ident">GstAudioResamplerFilterInterpolation</span>::<span class="prelude-val">None</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_FILTER_INTERPOLATION_LINEAR</span>: <span class="ident">GstAudioResamplerFilterInterpolation</span> <span class="op">=</span> <span class="ident">GstAudioResamplerFilterInterpolation</span>::<span class="ident">Linear</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_FILTER_INTERPOLATION_CUBIC</span>: <span class="ident">GstAudioResamplerFilterInterpolation</span> <span class="op">=</span> <span class="ident">GstAudioResamplerFilterInterpolation</span>::<span class="ident">Cubic</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GstAudioResamplerFilterInterpolation</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_FILTER_INTERPOLATION_NONE</span>: <span class="ident">GstAudioResamplerFilterInterpolation</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_FILTER_INTERPOLATION_LINEAR</span>: <span class="ident">GstAudioResamplerFilterInterpolation</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_FILTER_INTERPOLATION_CUBIC</span>: <span class="ident">GstAudioResamplerFilterInterpolation</span> <span class="op">=</span> <span class="number">2</span>;
 
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>)]</span>
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GstAudioResamplerFilterMode</span> {
-    <span class="ident">Interpolated</span> <span class="op">=</span> <span class="number">0</span>,
-    <span class="ident">Full</span> <span class="op">=</span> <span class="number">1</span>,
-    <span class="ident">Auto</span> <span class="op">=</span> <span class="number">2</span>,
-}
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_FILTER_MODE_INTERPOLATED</span>: <span class="ident">GstAudioResamplerFilterMode</span> <span class="op">=</span> <span class="ident">GstAudioResamplerFilterMode</span>::<span class="ident">Interpolated</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_FILTER_MODE_FULL</span>: <span class="ident">GstAudioResamplerFilterMode</span> <span class="op">=</span> <span class="ident">GstAudioResamplerFilterMode</span>::<span class="ident">Full</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_FILTER_MODE_AUTO</span>: <span class="ident">GstAudioResamplerFilterMode</span> <span class="op">=</span> <span class="ident">GstAudioResamplerFilterMode</span>::<span class="ident">Auto</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GstAudioResamplerFilterMode</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_FILTER_MODE_INTERPOLATED</span>: <span class="ident">GstAudioResamplerFilterMode</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_FILTER_MODE_FULL</span>: <span class="ident">GstAudioResamplerFilterMode</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_FILTER_MODE_AUTO</span>: <span class="ident">GstAudioResamplerFilterMode</span> <span class="op">=</span> <span class="number">2</span>;
 
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>)]</span>
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GstAudioResamplerMethod</span> {
-    <span class="ident">Nearest</span> <span class="op">=</span> <span class="number">0</span>,
-    <span class="ident">Linear</span> <span class="op">=</span> <span class="number">1</span>,
-    <span class="ident">Cubic</span> <span class="op">=</span> <span class="number">2</span>,
-    <span class="ident">BlackmanNuttall</span> <span class="op">=</span> <span class="number">3</span>,
-    <span class="ident">Kaiser</span> <span class="op">=</span> <span class="number">4</span>,
-}
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_METHOD_NEAREST</span>: <span class="ident">GstAudioResamplerMethod</span> <span class="op">=</span> <span class="ident">GstAudioResamplerMethod</span>::<span class="ident">Nearest</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_METHOD_LINEAR</span>: <span class="ident">GstAudioResamplerMethod</span> <span class="op">=</span> <span class="ident">GstAudioResamplerMethod</span>::<span class="ident">Linear</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_METHOD_CUBIC</span>: <span class="ident">GstAudioResamplerMethod</span> <span class="op">=</span> <span class="ident">GstAudioResamplerMethod</span>::<span class="ident">Cubic</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_METHOD_BLACKMAN_NUTTALL</span>: <span class="ident">GstAudioResamplerMethod</span> <span class="op">=</span> <span class="ident">GstAudioResamplerMethod</span>::<span class="ident">BlackmanNuttall</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_METHOD_KAISER</span>: <span class="ident">GstAudioResamplerMethod</span> <span class="op">=</span> <span class="ident">GstAudioResamplerMethod</span>::<span class="ident">Kaiser</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GstAudioResamplerMethod</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_METHOD_NEAREST</span>: <span class="ident">GstAudioResamplerMethod</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_METHOD_LINEAR</span>: <span class="ident">GstAudioResamplerMethod</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_METHOD_CUBIC</span>: <span class="ident">GstAudioResamplerMethod</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_METHOD_BLACKMAN_NUTTALL</span>: <span class="ident">GstAudioResamplerMethod</span> <span class="op">=</span> <span class="number">3</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_METHOD_KAISER</span>: <span class="ident">GstAudioResamplerMethod</span> <span class="op">=</span> <span class="number">4</span>;
 
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>)]</span>
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GstAudioRingBufferFormatType</span> {
-    <span class="ident">Raw</span> <span class="op">=</span> <span class="number">0</span>,
-    <span class="ident">MuLaw</span> <span class="op">=</span> <span class="number">1</span>,
-    <span class="ident">ALaw</span> <span class="op">=</span> <span class="number">2</span>,
-    <span class="ident">ImaAdpcm</span> <span class="op">=</span> <span class="number">3</span>,
-    <span class="ident">Mpeg</span> <span class="op">=</span> <span class="number">4</span>,
-    <span class="ident">Gsm</span> <span class="op">=</span> <span class="number">5</span>,
-    <span class="ident">Iec958</span> <span class="op">=</span> <span class="number">6</span>,
-    <span class="ident">Ac3</span> <span class="op">=</span> <span class="number">7</span>,
-    <span class="ident">Eac3</span> <span class="op">=</span> <span class="number">8</span>,
-    <span class="ident">Dts</span> <span class="op">=</span> <span class="number">9</span>,
-    <span class="ident">Mpeg2Aac</span> <span class="op">=</span> <span class="number">10</span>,
-    <span class="ident">Mpeg4Aac</span> <span class="op">=</span> <span class="number">11</span>,
-    <span class="ident">Mpeg2AacRaw</span> <span class="op">=</span> <span class="number">12</span>,
-    <span class="ident">Mpeg4AacRaw</span> <span class="op">=</span> <span class="number">13</span>,
-    <span class="ident">Flac</span> <span class="op">=</span> <span class="number">14</span>,
-}
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_RAW</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="ident">GstAudioRingBufferFormatType</span>::<span class="ident">Raw</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_MU_LAW</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="ident">GstAudioRingBufferFormatType</span>::<span class="ident">MuLaw</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_A_LAW</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="ident">GstAudioRingBufferFormatType</span>::<span class="ident">ALaw</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_IMA_ADPCM</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="ident">GstAudioRingBufferFormatType</span>::<span class="ident">ImaAdpcm</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_MPEG</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="ident">GstAudioRingBufferFormatType</span>::<span class="ident">Mpeg</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_GSM</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="ident">GstAudioRingBufferFormatType</span>::<span class="ident">Gsm</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_IEC958</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="ident">GstAudioRingBufferFormatType</span>::<span class="ident">Iec958</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_AC3</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="ident">GstAudioRingBufferFormatType</span>::<span class="ident">Ac3</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_EAC3</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="ident">GstAudioRingBufferFormatType</span>::<span class="ident">Eac3</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_DTS</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="ident">GstAudioRingBufferFormatType</span>::<span class="ident">Dts</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_MPEG2_AAC</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="ident">GstAudioRingBufferFormatType</span>::<span class="ident">Mpeg2Aac</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_MPEG4_AAC</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="ident">GstAudioRingBufferFormatType</span>::<span class="ident">Mpeg4Aac</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_MPEG2_AAC_RAW</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="ident">GstAudioRingBufferFormatType</span>::<span class="ident">Mpeg2AacRaw</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_MPEG4_AAC_RAW</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="ident">GstAudioRingBufferFormatType</span>::<span class="ident">Mpeg4AacRaw</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_FLAC</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="ident">GstAudioRingBufferFormatType</span>::<span class="ident">Flac</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_RAW</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_MU_LAW</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_A_LAW</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_IMA_ADPCM</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="number">3</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_MPEG</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="number">4</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_GSM</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="number">5</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_IEC958</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="number">6</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_AC3</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="number">7</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_EAC3</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="number">8</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_DTS</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="number">9</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_MPEG2_AAC</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="number">10</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_MPEG4_AAC</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="number">11</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_MPEG2_AAC_RAW</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="number">12</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_MPEG4_AAC_RAW</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="number">13</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_FORMAT_TYPE_FLAC</span>: <span class="ident">GstAudioRingBufferFormatType</span> <span class="op">=</span> <span class="number">14</span>;
 
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>)]</span>
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GstAudioRingBufferState</span> {
-    <span class="ident">Stopped</span> <span class="op">=</span> <span class="number">0</span>,
-    <span class="ident">Paused</span> <span class="op">=</span> <span class="number">1</span>,
-    <span class="ident">Started</span> <span class="op">=</span> <span class="number">2</span>,
-    <span class="ident">Error</span> <span class="op">=</span> <span class="number">3</span>,
-}
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_STATE_STOPPED</span>: <span class="ident">GstAudioRingBufferState</span> <span class="op">=</span> <span class="ident">GstAudioRingBufferState</span>::<span class="ident">Stopped</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_STATE_PAUSED</span>: <span class="ident">GstAudioRingBufferState</span> <span class="op">=</span> <span class="ident">GstAudioRingBufferState</span>::<span class="ident">Paused</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_STATE_STARTED</span>: <span class="ident">GstAudioRingBufferState</span> <span class="op">=</span> <span class="ident">GstAudioRingBufferState</span>::<span class="ident">Started</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_STATE_ERROR</span>: <span class="ident">GstAudioRingBufferState</span> <span class="op">=</span> <span class="ident">GstAudioRingBufferState</span>::<span class="ident">Error</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GstAudioRingBufferState</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_STATE_STOPPED</span>: <span class="ident">GstAudioRingBufferState</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_STATE_PAUSED</span>: <span class="ident">GstAudioRingBufferState</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_STATE_STARTED</span>: <span class="ident">GstAudioRingBufferState</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RING_BUFFER_STATE_ERROR</span>: <span class="ident">GstAudioRingBufferState</span> <span class="op">=</span> <span class="number">3</span>;
 
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Copy</span>, <span class="ident">Debug</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>)]</span>
-<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">GstStreamVolumeFormat</span> {
-    <span class="ident">Linear</span> <span class="op">=</span> <span class="number">0</span>,
-    <span class="ident">Cubic</span> <span class="op">=</span> <span class="number">1</span>,
-    <span class="ident">Db</span> <span class="op">=</span> <span class="number">2</span>,
-}
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_STREAM_VOLUME_FORMAT_LINEAR</span>: <span class="ident">GstStreamVolumeFormat</span> <span class="op">=</span> <span class="ident">GstStreamVolumeFormat</span>::<span class="ident">Linear</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_STREAM_VOLUME_FORMAT_CUBIC</span>: <span class="ident">GstStreamVolumeFormat</span> <span class="op">=</span> <span class="ident">GstStreamVolumeFormat</span>::<span class="ident">Cubic</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_STREAM_VOLUME_FORMAT_DB</span>: <span class="ident">GstStreamVolumeFormat</span> <span class="op">=</span> <span class="ident">GstStreamVolumeFormat</span>::<span class="ident">Db</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GstStreamVolumeFormat</span> <span class="op">=</span> <span class="ident">c_int</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_STREAM_VOLUME_FORMAT_LINEAR</span>: <span class="ident">GstStreamVolumeFormat</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_STREAM_VOLUME_FORMAT_CUBIC</span>: <span class="ident">GstStreamVolumeFormat</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_STREAM_VOLUME_FORMAT_DB</span>: <span class="ident">GstStreamVolumeFormat</span> <span class="op">=</span> <span class="number">2</span>;
 
 <span class="comment">// Constants</span>
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNELS_RANGE</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span> <span class="op">=</span> <span class="string">b&quot;(int) [ 1, max ]\0&quot;</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">u8</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>;
@@ -1653,67 +1310,90 @@
 <span class="macro">bitflags</span><span class="macro">!</span> {
     <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
     <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GstAudioChannelMixerFlags</span>: <span class="ident">c_uint</span> {
-        <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_MIXER_FLAGS_NONE</span> <span class="op">=</span> <span class="number">0</span>;
-        <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_MIXER_FLAGS_NON_INTERLEAVED_IN</span> <span class="op">=</span> <span class="number">1</span>;
-        <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_MIXER_FLAGS_NON_INTERLEAVED_OUT</span> <span class="op">=</span> <span class="number">2</span>;
-        <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_MIXER_FLAGS_UNPOSITIONED_IN</span> <span class="op">=</span> <span class="number">4</span>;
-        <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_MIXER_FLAGS_UNPOSITIONED_OUT</span> <span class="op">=</span> <span class="number">8</span>;
+        <span class="kw">const</span> <span class="ident">NONE</span> <span class="op">=</span> <span class="number">0</span>;
+        <span class="kw">const</span> <span class="ident">NON_INTERLEAVED_IN</span> <span class="op">=</span> <span class="number">1</span>;
+        <span class="kw">const</span> <span class="ident">NON_INTERLEAVED_OUT</span> <span class="op">=</span> <span class="number">2</span>;
+        <span class="kw">const</span> <span class="ident">UNPOSITIONED_IN</span> <span class="op">=</span> <span class="number">4</span>;
+        <span class="kw">const</span> <span class="ident">UNPOSITIONED_OUT</span> <span class="op">=</span> <span class="number">8</span>;
     }
 }
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_MIXER_FLAGS_NONE</span>: <span class="ident">GstAudioChannelMixerFlags</span> <span class="op">=</span> <span class="ident">GstAudioChannelMixerFlags</span>::<span class="ident">NONE</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_MIXER_FLAGS_NON_INTERLEAVED_IN</span>: <span class="ident">GstAudioChannelMixerFlags</span> <span class="op">=</span> <span class="ident">GstAudioChannelMixerFlags</span>::<span class="ident">NON_INTERLEAVED_IN</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_MIXER_FLAGS_NON_INTERLEAVED_OUT</span>: <span class="ident">GstAudioChannelMixerFlags</span> <span class="op">=</span> <span class="ident">GstAudioChannelMixerFlags</span>::<span class="ident">NON_INTERLEAVED_OUT</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_MIXER_FLAGS_UNPOSITIONED_IN</span>: <span class="ident">GstAudioChannelMixerFlags</span> <span class="op">=</span> <span class="ident">GstAudioChannelMixerFlags</span>::<span class="ident">UNPOSITIONED_IN</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CHANNEL_MIXER_FLAGS_UNPOSITIONED_OUT</span>: <span class="ident">GstAudioChannelMixerFlags</span> <span class="op">=</span> <span class="ident">GstAudioChannelMixerFlags</span>::<span class="ident">UNPOSITIONED_OUT</span>;
 
 <span class="macro">bitflags</span><span class="macro">!</span> {
     <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
     <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GstAudioConverterFlags</span>: <span class="ident">c_uint</span> {
-        <span class="kw">const</span> <span class="ident">GST_AUDIO_CONVERTER_FLAG_NONE</span> <span class="op">=</span> <span class="number">0</span>;
-        <span class="kw">const</span> <span class="ident">GST_AUDIO_CONVERTER_FLAG_IN_WRITABLE</span> <span class="op">=</span> <span class="number">1</span>;
-        <span class="kw">const</span> <span class="ident">GST_AUDIO_CONVERTER_FLAG_VARIABLE_RATE</span> <span class="op">=</span> <span class="number">2</span>;
+        <span class="kw">const</span> <span class="ident">NONE</span> <span class="op">=</span> <span class="number">0</span>;
+        <span class="kw">const</span> <span class="ident">IN_WRITABLE</span> <span class="op">=</span> <span class="number">1</span>;
+        <span class="kw">const</span> <span class="ident">VARIABLE_RATE</span> <span class="op">=</span> <span class="number">2</span>;
     }
 }
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CONVERTER_FLAG_NONE</span>: <span class="ident">GstAudioConverterFlags</span> <span class="op">=</span> <span class="ident">GstAudioConverterFlags</span>::<span class="ident">NONE</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CONVERTER_FLAG_IN_WRITABLE</span>: <span class="ident">GstAudioConverterFlags</span> <span class="op">=</span> <span class="ident">GstAudioConverterFlags</span>::<span class="ident">IN_WRITABLE</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_CONVERTER_FLAG_VARIABLE_RATE</span>: <span class="ident">GstAudioConverterFlags</span> <span class="op">=</span> <span class="ident">GstAudioConverterFlags</span>::<span class="ident">VARIABLE_RATE</span>;
 
 <span class="macro">bitflags</span><span class="macro">!</span> {
     <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
     <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GstAudioFlags</span>: <span class="ident">c_uint</span> {
-        <span class="kw">const</span> <span class="ident">GST_AUDIO_FLAG_NONE</span> <span class="op">=</span> <span class="number">0</span>;
-        <span class="kw">const</span> <span class="ident">GST_AUDIO_FLAG_UNPOSITIONED</span> <span class="op">=</span> <span class="number">1</span>;
+        <span class="kw">const</span> <span class="ident">NONE</span> <span class="op">=</span> <span class="number">0</span>;
+        <span class="kw">const</span> <span class="ident">UNPOSITIONED</span> <span class="op">=</span> <span class="number">1</span>;
     }
 }
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FLAG_NONE</span>: <span class="ident">GstAudioFlags</span> <span class="op">=</span> <span class="ident">GstAudioFlags</span>::<span class="ident">NONE</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FLAG_UNPOSITIONED</span>: <span class="ident">GstAudioFlags</span> <span class="op">=</span> <span class="ident">GstAudioFlags</span>::<span class="ident">UNPOSITIONED</span>;
 
 <span class="macro">bitflags</span><span class="macro">!</span> {
     <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
     <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GstAudioFormatFlags</span>: <span class="ident">c_uint</span> {
-        <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_FLAG_INTEGER</span> <span class="op">=</span> <span class="number">1</span>;
-        <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_FLAG_FLOAT</span> <span class="op">=</span> <span class="number">2</span>;
-        <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_FLAG_SIGNED</span> <span class="op">=</span> <span class="number">4</span>;
-        <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_FLAG_COMPLEX</span> <span class="op">=</span> <span class="number">16</span>;
-        <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_FLAG_UNPACK</span> <span class="op">=</span> <span class="number">32</span>;
+        <span class="kw">const</span> <span class="ident">INTEGER</span> <span class="op">=</span> <span class="number">1</span>;
+        <span class="kw">const</span> <span class="ident">FLOAT</span> <span class="op">=</span> <span class="number">2</span>;
+        <span class="kw">const</span> <span class="ident">SIGNED</span> <span class="op">=</span> <span class="number">4</span>;
+        <span class="kw">const</span> <span class="ident">COMPLEX</span> <span class="op">=</span> <span class="number">16</span>;
+        <span class="kw">const</span> <span class="ident">UNPACK</span> <span class="op">=</span> <span class="number">32</span>;
     }
 }
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_FLAG_INTEGER</span>: <span class="ident">GstAudioFormatFlags</span> <span class="op">=</span> <span class="ident">GstAudioFormatFlags</span>::<span class="ident">INTEGER</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_FLAG_FLOAT</span>: <span class="ident">GstAudioFormatFlags</span> <span class="op">=</span> <span class="ident">GstAudioFormatFlags</span>::<span class="ident">FLOAT</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_FLAG_SIGNED</span>: <span class="ident">GstAudioFormatFlags</span> <span class="op">=</span> <span class="ident">GstAudioFormatFlags</span>::<span class="ident">SIGNED</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_FLAG_COMPLEX</span>: <span class="ident">GstAudioFormatFlags</span> <span class="op">=</span> <span class="ident">GstAudioFormatFlags</span>::<span class="ident">COMPLEX</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_FORMAT_FLAG_UNPACK</span>: <span class="ident">GstAudioFormatFlags</span> <span class="op">=</span> <span class="ident">GstAudioFormatFlags</span>::<span class="ident">UNPACK</span>;
 
 <span class="macro">bitflags</span><span class="macro">!</span> {
     <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
     <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GstAudioPackFlags</span>: <span class="ident">c_uint</span> {
-        <span class="kw">const</span> <span class="ident">GST_AUDIO_PACK_FLAG_NONE</span> <span class="op">=</span> <span class="number">0</span>;
-        <span class="kw">const</span> <span class="ident">GST_AUDIO_PACK_FLAG_TRUNCATE_RANGE</span> <span class="op">=</span> <span class="number">1</span>;
+        <span class="kw">const</span> <span class="ident">NONE</span> <span class="op">=</span> <span class="number">0</span>;
+        <span class="kw">const</span> <span class="ident">TRUNCATE_RANGE</span> <span class="op">=</span> <span class="number">1</span>;
     }
 }
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_PACK_FLAG_NONE</span>: <span class="ident">GstAudioPackFlags</span> <span class="op">=</span> <span class="ident">GstAudioPackFlags</span>::<span class="ident">NONE</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_PACK_FLAG_TRUNCATE_RANGE</span>: <span class="ident">GstAudioPackFlags</span> <span class="op">=</span> <span class="ident">GstAudioPackFlags</span>::<span class="ident">TRUNCATE_RANGE</span>;
 
 <span class="macro">bitflags</span><span class="macro">!</span> {
     <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
     <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GstAudioQuantizeFlags</span>: <span class="ident">c_uint</span> {
-        <span class="kw">const</span> <span class="ident">GST_AUDIO_QUANTIZE_FLAG_NONE</span> <span class="op">=</span> <span class="number">0</span>;
-        <span class="kw">const</span> <span class="ident">GST_AUDIO_QUANTIZE_FLAG_NON_INTERLEAVED</span> <span class="op">=</span> <span class="number">1</span>;
+        <span class="kw">const</span> <span class="ident">NONE</span> <span class="op">=</span> <span class="number">0</span>;
+        <span class="kw">const</span> <span class="ident">NON_INTERLEAVED</span> <span class="op">=</span> <span class="number">1</span>;
     }
 }
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_QUANTIZE_FLAG_NONE</span>: <span class="ident">GstAudioQuantizeFlags</span> <span class="op">=</span> <span class="ident">GstAudioQuantizeFlags</span>::<span class="ident">NONE</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_QUANTIZE_FLAG_NON_INTERLEAVED</span>: <span class="ident">GstAudioQuantizeFlags</span> <span class="op">=</span> <span class="ident">GstAudioQuantizeFlags</span>::<span class="ident">NON_INTERLEAVED</span>;
 
 <span class="macro">bitflags</span><span class="macro">!</span> {
     <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
     <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GstAudioResamplerFlags</span>: <span class="ident">c_uint</span> {
-        <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_FLAG_NONE</span> <span class="op">=</span> <span class="number">0</span>;
-        <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_FLAG_NON_INTERLEAVED_IN</span> <span class="op">=</span> <span class="number">1</span>;
-        <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_FLAG_NON_INTERLEAVED_OUT</span> <span class="op">=</span> <span class="number">2</span>;
-        <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_FLAG_VARIABLE_RATE</span> <span class="op">=</span> <span class="number">4</span>;
+        <span class="kw">const</span> <span class="ident">NONE</span> <span class="op">=</span> <span class="number">0</span>;
+        <span class="kw">const</span> <span class="ident">NON_INTERLEAVED_IN</span> <span class="op">=</span> <span class="number">1</span>;
+        <span class="kw">const</span> <span class="ident">NON_INTERLEAVED_OUT</span> <span class="op">=</span> <span class="number">2</span>;
+        <span class="kw">const</span> <span class="ident">VARIABLE_RATE</span> <span class="op">=</span> <span class="number">4</span>;
     }
 }
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_FLAG_NONE</span>: <span class="ident">GstAudioResamplerFlags</span> <span class="op">=</span> <span class="ident">GstAudioResamplerFlags</span>::<span class="ident">NONE</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_FLAG_NON_INTERLEAVED_IN</span>: <span class="ident">GstAudioResamplerFlags</span> <span class="op">=</span> <span class="ident">GstAudioResamplerFlags</span>::<span class="ident">NON_INTERLEAVED_IN</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_FLAG_NON_INTERLEAVED_OUT</span>: <span class="ident">GstAudioResamplerFlags</span> <span class="op">=</span> <span class="ident">GstAudioResamplerFlags</span>::<span class="ident">NON_INTERLEAVED_OUT</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">GST_AUDIO_RESAMPLER_FLAG_VARIABLE_RATE</span>: <span class="ident">GstAudioResamplerFlags</span> <span class="op">=</span> <span class="ident">GstAudioResamplerFlags</span>::<span class="ident">VARIABLE_RATE</span>;
 
 <span class="comment">// Callbacks</span>
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GstAudioBaseSinkCustomSlavingCallback</span> <span class="op">=</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span>(<span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioBaseSink</span>, <span class="ident">gst</span>::<span class="ident">GstClockTime</span>, <span class="ident">gst</span>::<span class="ident">GstClockTime</span>, <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gst</span>::<span class="ident">GstClockTimeDiff</span>, <span class="ident">GstAudioBaseSinkDiscontReason</span>, <span class="ident">gpointer</span>)<span class="op">&gt;</span>;
@@ -2234,7 +1914,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_info_free</span>(<span class="ident">info</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioInfo</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_info_from_caps</span>(<span class="ident">info</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioInfo</span>, <span class="ident">caps</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">gst</span>::<span class="ident">GstCaps</span>) <span class="op">-&gt;</span> <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_info_init</span>(<span class="ident">info</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioInfo</span>);
-    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_2&quot;</span>)]</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_2&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_info_is_equal</span>(<span class="ident">info</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">GstAudioInfo</span>, <span class="ident">other</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">GstAudioInfo</span>) <span class="op">-&gt;</span> <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_info_set_format</span>(<span class="ident">info</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioInfo</span>, <span class="ident">format</span>: <span class="ident">GstAudioFormat</span>, <span class="ident">rate</span>: <span class="ident">c_int</span>, <span class="ident">channels</span>: <span class="ident">c_int</span>, <span class="ident">position</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">GstAudioChannelPosition</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_info_to_caps</span>(<span class="ident">info</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">GstAudioInfo</span>) <span class="op">-&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gst</span>::<span class="ident">GstCaps</span>;
@@ -2250,7 +1930,7 @@
     <span class="comment">//=========================================================================</span>
     <span class="comment">// GstAudioResampler</span>
     <span class="comment">//=========================================================================</span>
-    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_6&quot;</span>)]</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_6&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_resampler_free</span>(<span class="ident">resampler</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioResampler</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_resampler_get_in_frames</span>(<span class="ident">resampler</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioResampler</span>, <span class="ident">out_frames</span>: <span class="ident">size_t</span>) <span class="op">-&gt;</span> <span class="ident">size_t</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_resampler_get_max_latency</span>(<span class="ident">resampler</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioResampler</span>) <span class="op">-&gt;</span> <span class="ident">size_t</span>;
@@ -2258,9 +1938,9 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_resampler_resample</span>(<span class="ident">resampler</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioResampler</span>, <span class="ident">in_</span>: <span class="ident">gpointer</span>, <span class="ident">in_frames</span>: <span class="ident">size_t</span>, <span class="ident">out</span>: <span class="ident">gpointer</span>, <span class="ident">out_frames</span>: <span class="ident">size_t</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_resampler_reset</span>(<span class="ident">resampler</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioResampler</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_resampler_update</span>(<span class="ident">resampler</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioResampler</span>, <span class="ident">in_rate</span>: <span class="ident">c_int</span>, <span class="ident">out_rate</span>: <span class="ident">c_int</span>, <span class="ident">options</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gst</span>::<span class="ident">GstStructure</span>) <span class="op">-&gt;</span> <span class="ident">gboolean</span>;
-    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_6&quot;</span>)]</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_6&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_resampler_new</span>(<span class="ident">method</span>: <span class="ident">GstAudioResamplerMethod</span>, <span class="ident">flags</span>: <span class="ident">GstAudioResamplerFlags</span>, <span class="ident">format</span>: <span class="ident">GstAudioFormat</span>, <span class="ident">channels</span>: <span class="ident">c_int</span>, <span class="ident">in_rate</span>: <span class="ident">c_int</span>, <span class="ident">out_rate</span>: <span class="ident">c_int</span>, <span class="ident">options</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gst</span>::<span class="ident">GstStructure</span>) <span class="op">-&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioResampler</span>;
-    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_6&quot;</span>)]</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_6&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_resampler_options_set_quality</span>(<span class="ident">method</span>: <span class="ident">GstAudioResamplerMethod</span>, <span class="ident">quality</span>: <span class="ident">c_uint</span>, <span class="ident">in_rate</span>: <span class="ident">c_int</span>, <span class="ident">out_rate</span>: <span class="ident">c_int</span>, <span class="ident">options</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gst</span>::<span class="ident">GstStructure</span>);
 
     <span class="comment">//=========================================================================</span>
@@ -2273,10 +1953,10 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_base_sink_get_drift_tolerance</span>(<span class="ident">sink</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioBaseSink</span>) <span class="op">-&gt;</span> <span class="ident">i64</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_base_sink_get_provide_clock</span>(<span class="ident">sink</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioBaseSink</span>) <span class="op">-&gt;</span> <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_base_sink_get_slave_method</span>(<span class="ident">sink</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioBaseSink</span>) <span class="op">-&gt;</span> <span class="ident">GstAudioBaseSinkSlaveMethod</span>;
-    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_6&quot;</span>)]</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_6&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_base_sink_report_device_failure</span>(<span class="ident">sink</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioBaseSink</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_base_sink_set_alignment_threshold</span>(<span class="ident">sink</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioBaseSink</span>, <span class="ident">alignment_threshold</span>: <span class="ident">gst</span>::<span class="ident">GstClockTime</span>);
-    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_6&quot;</span>)]</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_6&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_base_sink_set_custom_slaving_callback</span>(<span class="ident">sink</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioBaseSink</span>, <span class="ident">callback</span>: <span class="ident">GstAudioBaseSinkCustomSlavingCallback</span>, <span class="ident">user_data</span>: <span class="ident">gpointer</span>, <span class="ident">notify</span>: <span class="ident">glib</span>::<span class="ident">GDestroyNotify</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_base_sink_set_discont_wait</span>(<span class="ident">sink</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioBaseSink</span>, <span class="ident">discont_wait</span>: <span class="ident">gst</span>::<span class="ident">GstClockTime</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_base_sink_set_drift_tolerance</span>(<span class="ident">sink</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioBaseSink</span>, <span class="ident">drift_tolerance</span>: <span class="ident">i64</span>);
@@ -2330,9 +2010,9 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_decoder_get_tolerance</span>(<span class="ident">dec</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioDecoder</span>) <span class="op">-&gt;</span> <span class="ident">gst</span>::<span class="ident">GstClockTime</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_decoder_merge_tags</span>(<span class="ident">dec</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioDecoder</span>, <span class="ident">tags</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">gst</span>::<span class="ident">GstTagList</span>, <span class="ident">mode</span>: <span class="ident">gst</span>::<span class="ident">GstTagMergeMode</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_decoder_negotiate</span>(<span class="ident">dec</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioDecoder</span>) <span class="op">-&gt;</span> <span class="ident">gboolean</span>;
-    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_6&quot;</span>)]</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_6&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_decoder_proxy_getcaps</span>(<span class="ident">decoder</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioDecoder</span>, <span class="ident">caps</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gst</span>::<span class="ident">GstCaps</span>, <span class="ident">filter</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gst</span>::<span class="ident">GstCaps</span>) <span class="op">-&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gst</span>::<span class="ident">GstCaps</span>;
-    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_10&quot;</span>)]</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_10&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_decoder_set_allocation_caps</span>(<span class="ident">dec</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioDecoder</span>, <span class="ident">allocation_caps</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gst</span>::<span class="ident">GstCaps</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_decoder_set_drainable</span>(<span class="ident">dec</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioDecoder</span>, <span class="ident">enabled</span>: <span class="ident">gboolean</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_decoder_set_estimate_rate</span>(<span class="ident">dec</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioDecoder</span>, <span class="ident">enabled</span>: <span class="ident">gboolean</span>);
@@ -2344,7 +2024,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_decoder_set_plc</span>(<span class="ident">dec</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioDecoder</span>, <span class="ident">enabled</span>: <span class="ident">gboolean</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_decoder_set_plc_aware</span>(<span class="ident">dec</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioDecoder</span>, <span class="ident">plc</span>: <span class="ident">gboolean</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_decoder_set_tolerance</span>(<span class="ident">dec</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioDecoder</span>, <span class="ident">tolerance</span>: <span class="ident">gst</span>::<span class="ident">GstClockTime</span>);
-    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_6&quot;</span>)]</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_6&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_decoder_set_use_default_pad_acceptcaps</span>(<span class="ident">decoder</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioDecoder</span>, <span class="ident">use_</span>: <span class="ident">gboolean</span>);
 
     <span class="comment">//=========================================================================</span>
@@ -2369,7 +2049,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_encoder_merge_tags</span>(<span class="ident">enc</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioEncoder</span>, <span class="ident">tags</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">gst</span>::<span class="ident">GstTagList</span>, <span class="ident">mode</span>: <span class="ident">gst</span>::<span class="ident">GstTagMergeMode</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_encoder_negotiate</span>(<span class="ident">enc</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioEncoder</span>) <span class="op">-&gt;</span> <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_encoder_proxy_getcaps</span>(<span class="ident">enc</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioEncoder</span>, <span class="ident">caps</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gst</span>::<span class="ident">GstCaps</span>, <span class="ident">filter</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gst</span>::<span class="ident">GstCaps</span>) <span class="op">-&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gst</span>::<span class="ident">GstCaps</span>;
-    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_10&quot;</span>)]</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_10&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_encoder_set_allocation_caps</span>(<span class="ident">enc</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioEncoder</span>, <span class="ident">allocation_caps</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gst</span>::<span class="ident">GstCaps</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_encoder_set_drainable</span>(<span class="ident">enc</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioEncoder</span>, <span class="ident">enabled</span>: <span class="ident">gboolean</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_encoder_set_frame_max</span>(<span class="ident">enc</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioEncoder</span>, <span class="ident">num</span>: <span class="ident">c_int</span>);
@@ -2418,7 +2098,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_ring_buffer_release</span>(<span class="ident">buf</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioRingBuffer</span>) <span class="op">-&gt;</span> <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_ring_buffer_samples_done</span>(<span class="ident">buf</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioRingBuffer</span>) <span class="op">-&gt;</span> <span class="ident">u64</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_ring_buffer_set_callback</span>(<span class="ident">buf</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioRingBuffer</span>, <span class="ident">cb</span>: <span class="ident">GstAudioRingBufferCallback</span>, <span class="ident">user_data</span>: <span class="ident">gpointer</span>);
-    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_12&quot;</span>)]</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_12&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_ring_buffer_set_callback_full</span>(<span class="ident">buf</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioRingBuffer</span>, <span class="ident">cb</span>: <span class="ident">GstAudioRingBufferCallback</span>, <span class="ident">user_data</span>: <span class="ident">gpointer</span>, <span class="ident">notify</span>: <span class="ident">glib</span>::<span class="ident">GDestroyNotify</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_ring_buffer_set_channel_positions</span>(<span class="ident">buf</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioRingBuffer</span>, <span class="ident">position</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">GstAudioChannelPosition</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_ring_buffer_set_flushing</span>(<span class="ident">buf</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioRingBuffer</span>, <span class="ident">flushing</span>: <span class="ident">gboolean</span>);
@@ -2452,7 +2132,7 @@
     <span class="comment">//=========================================================================</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_buffer_clip</span>(<span class="ident">buffer</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gst</span>::<span class="ident">GstBuffer</span>, <span class="ident">segment</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">gst</span>::<span class="ident">GstSegment</span>, <span class="ident">rate</span>: <span class="ident">c_int</span>, <span class="ident">bpf</span>: <span class="ident">c_int</span>) <span class="op">-&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gst</span>::<span class="ident">GstBuffer</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_buffer_reorder_channels</span>(<span class="ident">buffer</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gst</span>::<span class="ident">GstBuffer</span>, <span class="ident">format</span>: <span class="ident">GstAudioFormat</span>, <span class="ident">channels</span>: <span class="ident">c_int</span>, <span class="ident">from</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioChannelPosition</span>, <span class="ident">to</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioChannelPosition</span>) <span class="op">-&gt;</span> <span class="ident">gboolean</span>;
-    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_8&quot;</span>)]</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_8&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_channel_get_fallback_mask</span>(<span class="ident">channels</span>: <span class="ident">c_int</span>) <span class="op">-&gt;</span> <span class="ident">u64</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_channel_positions_from_mask</span>(<span class="ident">channels</span>: <span class="ident">c_int</span>, <span class="ident">channel_mask</span>: <span class="ident">u64</span>, <span class="ident">position</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioChannelPosition</span>) <span class="op">-&gt;</span> <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_channel_positions_to_mask</span>(<span class="ident">position</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioChannelPosition</span>, <span class="ident">channels</span>: <span class="ident">c_int</span>, <span class="ident">force_order</span>: <span class="ident">gboolean</span>, <span class="ident">channel_mask</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">u64</span>) <span class="op">-&gt;</span> <span class="ident">gboolean</span>;
@@ -2466,7 +2146,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_iec61937_frame_size</span>(<span class="ident">spec</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">GstAudioRingBufferSpec</span>) <span class="op">-&gt;</span> <span class="ident">c_uint</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_iec61937_payload</span>(<span class="ident">src</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">u8</span>, <span class="ident">src_n</span>: <span class="ident">c_uint</span>, <span class="ident">dst</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">u8</span>, <span class="ident">dst_n</span>: <span class="ident">c_uint</span>, <span class="ident">spec</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">GstAudioRingBufferSpec</span>, <span class="ident">endianness</span>: <span class="ident">c_int</span>) <span class="op">-&gt;</span> <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_audio_reorder_channels</span>(<span class="ident">data</span>: <span class="ident">gpointer</span>, <span class="ident">size</span>: <span class="ident">size_t</span>, <span class="ident">format</span>: <span class="ident">GstAudioFormat</span>, <span class="ident">channels</span>: <span class="ident">c_int</span>, <span class="ident">from</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioChannelPosition</span>, <span class="ident">to</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioChannelPosition</span>) <span class="op">-&gt;</span> <span class="ident">gboolean</span>;
-    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_8&quot;</span>)]</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_8&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_buffer_add_audio_clipping_meta</span>(<span class="ident">buffer</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gst</span>::<span class="ident">GstBuffer</span>, <span class="ident">format</span>: <span class="ident">gst</span>::<span class="ident">GstFormat</span>, <span class="ident">start</span>: <span class="ident">u64</span>, <span class="ident">end</span>: <span class="ident">u64</span>) <span class="op">-&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioClippingMeta</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_buffer_add_audio_downmix_meta</span>(<span class="ident">buffer</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gst</span>::<span class="ident">GstBuffer</span>, <span class="ident">from_position</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioChannelPosition</span>, <span class="ident">from_channels</span>: <span class="ident">c_int</span>, <span class="ident">to_position</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioChannelPosition</span>, <span class="ident">to_channels</span>: <span class="ident">c_int</span>, <span class="ident">matrix</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_float</span>) <span class="op">-&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioDownmixMeta</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">gst_buffer_get_audio_downmix_meta_for_channels</span>(<span class="ident">buffer</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gst</span>::<span class="ident">GstBuffer</span>, <span class="ident">to_position</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioChannelPosition</span>, <span class="ident">to_channels</span>: <span class="ident">c_int</span>) <span class="op">-&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GstAudioDownmixMeta</span>;
@@ -2490,13 +2170,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>

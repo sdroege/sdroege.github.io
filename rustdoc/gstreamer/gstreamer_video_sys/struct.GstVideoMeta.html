@@ -29,7 +29,7 @@
 
     <nav class="sidebar">
         
-        <p class='location'>Struct GstVideoMeta</p><div class="block items"><ul><li><a href="#fields">Fields</a></li></ul></div><p class='location'><a href='index.html'>gstreamer_video_sys</a></p><script>window.sidebarCurrent = {name: 'GstVideoMeta', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct GstVideoMeta</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.meta">meta</a><a href="#structfield.buffer">buffer</a><a href="#structfield.flags">flags</a><a href="#structfield.format">format</a><a href="#structfield.id">id</a><a href="#structfield.width">width</a><a href="#structfield.height">height</a><a href="#structfield.n_planes">n_planes</a><a href="#structfield.offset">offset</a><a href="#structfield.stride">stride</a><a href="#structfield.map">map</a><a href="#structfield.unmap">unmap</a></div></div><p class='location'><a href='index.html'>gstreamer_video_sys</a></p><script>window.sidebarCurrent = {name: 'GstVideoMeta', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </nav>
 
     <nav class="sub">
@@ -48,57 +48,70 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/gstreamer_video_sys/lib.rs.html#1101-1114' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/gstreamer_video_sys/lib.rs.html#858-871' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'><div class="docblock attributes">#[repr(C)]
 </div>pub struct GstVideoMeta {
     pub meta: <a class="struct" href="../gstreamer_sys/struct.GstMeta.html" title="struct gstreamer_sys::GstMeta">GstMeta</a>,
     pub buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstBuffer.html" title="struct gstreamer_sys::GstBuffer">GstBuffer</a>,
     pub flags: <a class="struct" href="../gstreamer_video_sys/struct.GstVideoFrameFlags.html" title="struct gstreamer_video_sys::GstVideoFrameFlags">GstVideoFrameFlags</a>,
-    pub format: <a class="enum" href="../gstreamer_video_sys/enum.GstVideoFormat.html" title="enum gstreamer_video_sys::GstVideoFormat">GstVideoFormat</a>,
+    pub format: <a class="type" href="../gstreamer_video_sys/type.GstVideoFormat.html" title="type gstreamer_video_sys::GstVideoFormat">GstVideoFormat</a>,
     pub id: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a>,
     pub width: <a class="type" href="../libc/type.c_uint.html" title="type libc::c_uint">c_uint</a>,
     pub height: <a class="type" href="../libc/type.c_uint.html" title="type libc::c_uint">c_uint</a>,
     pub n_planes: <a class="type" href="../libc/type.c_uint.html" title="type libc::c_uint">c_uint</a>,
     pub offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../libc/type.size_t.html" title="type libc::size_t">size_t</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a>,
     pub stride: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a>,
-    pub map: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_video_sys/struct.GstVideoMeta.html" title="struct gstreamer_video_sys::GstVideoMeta">GstVideoMeta</a>, _: <a class="type" href="../libc/type.c_uint.html" title="type libc::c_uint">c_uint</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstMapInfo.html" title="struct gstreamer_sys::GstMapInfo">GstMapInfo</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a>, _: <a class="struct" href="../gstreamer_sys/struct.GstMapFlags.html" title="struct gstreamer_sys::GstMapFlags">GstMapFlags</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;,
-    pub unmap: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_video_sys/struct.GstVideoMeta.html" title="struct gstreamer_video_sys::GstVideoMeta">GstVideoMeta</a>, _: <a class="type" href="../libc/type.c_uint.html" title="type libc::c_uint">c_uint</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstMapInfo.html" title="struct gstreamer_sys::GstMapInfo">GstMapInfo</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;,
-}</pre><h2 id='fields' class='fields'>Fields</h2><span id='structfield.meta' class="structfield">
-                           <span id='meta.v' class='invisible'>
+    pub map: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.fn.html">fn</a>(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_video_sys/struct.GstVideoMeta.html" title="struct gstreamer_video_sys::GstVideoMeta">GstVideoMeta</a>, _: <a class="type" href="../libc/type.c_uint.html" title="type libc::c_uint">c_uint</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstMapInfo.html" title="struct gstreamer_sys::GstMapInfo">GstMapInfo</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a>, _: <a class="struct" href="../gstreamer_sys/struct.GstMapFlags.html" title="struct gstreamer_sys::GstMapFlags">GstMapFlags</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;,
+    pub unmap: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.fn.html">fn</a>(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_video_sys/struct.GstVideoMeta.html" title="struct gstreamer_video_sys::GstVideoMeta">GstVideoMeta</a>, _: <a class="type" href="../libc/type.c_uint.html" title="type libc::c_uint">c_uint</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstMapInfo.html" title="struct gstreamer_sys::GstMapInfo">GstMapInfo</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;,
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.meta" class="structfield small-section-header">
+                           <a href="#structfield.meta" class="anchor field"></a>
+                           <span id="meta.v" class='invisible'>
                            <code>meta: <a class="struct" href="../gstreamer_sys/struct.GstMeta.html" title="struct gstreamer_sys::GstMeta">GstMeta</a></code>
-                           </span></span><span id='structfield.buffer' class="structfield">
-                           <span id='buffer.v' class='invisible'>
+                           </span></span><span id="structfield.buffer" class="structfield small-section-header">
+                           <a href="#structfield.buffer" class="anchor field"></a>
+                           <span id="buffer.v" class='invisible'>
                            <code>buffer: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstBuffer.html" title="struct gstreamer_sys::GstBuffer">GstBuffer</a></code>
-                           </span></span><span id='structfield.flags' class="structfield">
-                           <span id='flags.v' class='invisible'>
+                           </span></span><span id="structfield.flags" class="structfield small-section-header">
+                           <a href="#structfield.flags" class="anchor field"></a>
+                           <span id="flags.v" class='invisible'>
                            <code>flags: <a class="struct" href="../gstreamer_video_sys/struct.GstVideoFrameFlags.html" title="struct gstreamer_video_sys::GstVideoFrameFlags">GstVideoFrameFlags</a></code>
-                           </span></span><span id='structfield.format' class="structfield">
-                           <span id='format.v' class='invisible'>
-                           <code>format: <a class="enum" href="../gstreamer_video_sys/enum.GstVideoFormat.html" title="enum gstreamer_video_sys::GstVideoFormat">GstVideoFormat</a></code>
-                           </span></span><span id='structfield.id' class="structfield">
-                           <span id='id.v' class='invisible'>
+                           </span></span><span id="structfield.format" class="structfield small-section-header">
+                           <a href="#structfield.format" class="anchor field"></a>
+                           <span id="format.v" class='invisible'>
+                           <code>format: <a class="type" href="../gstreamer_video_sys/type.GstVideoFormat.html" title="type gstreamer_video_sys::GstVideoFormat">GstVideoFormat</a></code>
+                           </span></span><span id="structfield.id" class="structfield small-section-header">
+                           <a href="#structfield.id" class="anchor field"></a>
+                           <span id="id.v" class='invisible'>
                            <code>id: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a></code>
-                           </span></span><span id='structfield.width' class="structfield">
-                           <span id='width.v' class='invisible'>
+                           </span></span><span id="structfield.width" class="structfield small-section-header">
+                           <a href="#structfield.width" class="anchor field"></a>
+                           <span id="width.v" class='invisible'>
                            <code>width: <a class="type" href="../libc/type.c_uint.html" title="type libc::c_uint">c_uint</a></code>
-                           </span></span><span id='structfield.height' class="structfield">
-                           <span id='height.v' class='invisible'>
+                           </span></span><span id="structfield.height" class="structfield small-section-header">
+                           <a href="#structfield.height" class="anchor field"></a>
+                           <span id="height.v" class='invisible'>
                            <code>height: <a class="type" href="../libc/type.c_uint.html" title="type libc::c_uint">c_uint</a></code>
-                           </span></span><span id='structfield.n_planes' class="structfield">
-                           <span id='n_planes.v' class='invisible'>
+                           </span></span><span id="structfield.n_planes" class="structfield small-section-header">
+                           <a href="#structfield.n_planes" class="anchor field"></a>
+                           <span id="n_planes.v" class='invisible'>
                            <code>n_planes: <a class="type" href="../libc/type.c_uint.html" title="type libc::c_uint">c_uint</a></code>
-                           </span></span><span id='structfield.offset' class="structfield">
-                           <span id='offset.v' class='invisible'>
+                           </span></span><span id="structfield.offset" class="structfield small-section-header">
+                           <a href="#structfield.offset" class="anchor field"></a>
+                           <span id="offset.v" class='invisible'>
                            <code>offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../libc/type.size_t.html" title="type libc::size_t">size_t</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a></code>
-                           </span></span><span id='structfield.stride' class="structfield">
-                           <span id='stride.v' class='invisible'>
+                           </span></span><span id="structfield.stride" class="structfield small-section-header">
+                           <a href="#structfield.stride" class="anchor field"></a>
+                           <span id="stride.v" class='invisible'>
                            <code>stride: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a></code>
-                           </span></span><span id='structfield.map' class="structfield">
-                           <span id='map.v' class='invisible'>
-                           <code>map: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_video_sys/struct.GstVideoMeta.html" title="struct gstreamer_video_sys::GstVideoMeta">GstVideoMeta</a>, _: <a class="type" href="../libc/type.c_uint.html" title="type libc::c_uint">c_uint</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstMapInfo.html" title="struct gstreamer_sys::GstMapInfo">GstMapInfo</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a>, _: <a class="struct" href="../gstreamer_sys/struct.GstMapFlags.html" title="struct gstreamer_sys::GstMapFlags">GstMapFlags</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;</code>
-                           </span></span><span id='structfield.unmap' class="structfield">
-                           <span id='unmap.v' class='invisible'>
-                           <code>unmap: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_video_sys/struct.GstVideoMeta.html" title="struct gstreamer_video_sys::GstVideoMeta">GstVideoMeta</a>, _: <a class="type" href="../libc/type.c_uint.html" title="type libc::c_uint">c_uint</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstMapInfo.html" title="struct gstreamer_sys::GstMapInfo">GstMapInfo</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;</code>
+                           </span></span><span id="structfield.map" class="structfield small-section-header">
+                           <a href="#structfield.map" class="anchor field"></a>
+                           <span id="map.v" class='invisible'>
+                           <code>map: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.fn.html">fn</a>(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_video_sys/struct.GstVideoMeta.html" title="struct gstreamer_video_sys::GstVideoMeta">GstVideoMeta</a>, _: <a class="type" href="../libc/type.c_uint.html" title="type libc::c_uint">c_uint</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstMapInfo.html" title="struct gstreamer_sys::GstMapInfo">GstMapInfo</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a>, _: <a class="struct" href="../gstreamer_sys/struct.GstMapFlags.html" title="struct gstreamer_sys::GstMapFlags">GstMapFlags</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;</code>
+                           </span></span><span id="structfield.unmap" class="structfield small-section-header">
+                           <a href="#structfield.unmap" class="anchor field"></a>
+                           <span id="unmap.v" class='invisible'>
+                           <code>unmap: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.fn.html">fn</a>(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_video_sys/struct.GstVideoMeta.html" title="struct gstreamer_video_sys::GstVideoMeta">GstVideoMeta</a>, _: <a class="type" href="../libc/type.c_uint.html" title="type libc::c_uint">c_uint</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstMapInfo.html" title="struct gstreamer_sys::GstMapInfo">GstMapInfo</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;</code>
                            </span></span></section>
     <section id='search' class="content hidden"></section>
 
@@ -116,13 +129,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>

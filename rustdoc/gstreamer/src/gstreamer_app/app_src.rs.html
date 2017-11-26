@@ -235,14 +235,14 @@
     <span class="kw">let</span> <span class="ident">_guard</span> <span class="op">=</span> <span class="ident">CallbackGuard</span>::<span class="ident">new</span>();
     <span class="kw">let</span> <span class="ident">callbacks</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">callbacks</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">AppSrcCallbacks</span>);
 
-    (<span class="ident">callbacks</span>.<span class="ident">need_data</span>)(<span class="kw-2">&amp;</span><span class="ident">from_glib_none</span>(<span class="ident">appsrc</span>), <span class="ident">length</span>);
+    (<span class="ident">callbacks</span>.<span class="ident">need_data</span>)(<span class="kw-2">&amp;</span><span class="ident">from_glib_borrow</span>(<span class="ident">appsrc</span>), <span class="ident">length</span>);
 }
 
 <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">trampoline_enough_data</span>(<span class="ident">appsrc</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi</span>::<span class="ident">GstAppSrc</span>, <span class="ident">callbacks</span>: <span class="ident">gpointer</span>) {
     <span class="kw">let</span> <span class="ident">_guard</span> <span class="op">=</span> <span class="ident">CallbackGuard</span>::<span class="ident">new</span>();
     <span class="kw">let</span> <span class="ident">callbacks</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">callbacks</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">AppSrcCallbacks</span>);
 
-    (<span class="ident">callbacks</span>.<span class="ident">enough_data</span>)(<span class="kw-2">&amp;</span><span class="ident">from_glib_none</span>(<span class="ident">appsrc</span>));
+    (<span class="ident">callbacks</span>.<span class="ident">enough_data</span>)(<span class="kw-2">&amp;</span><span class="ident">from_glib_borrow</span>(<span class="ident">appsrc</span>));
 }
 
 <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">trampoline_seek_data</span>(
@@ -253,12 +253,12 @@
     <span class="kw">let</span> <span class="ident">_guard</span> <span class="op">=</span> <span class="ident">CallbackGuard</span>::<span class="ident">new</span>();
     <span class="kw">let</span> <span class="ident">callbacks</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">callbacks</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">AppSrcCallbacks</span>);
 
-    (<span class="ident">callbacks</span>.<span class="ident">seek_data</span>)(<span class="kw-2">&amp;</span><span class="ident">from_glib_none</span>(<span class="ident">appsrc</span>), <span class="ident">offset</span>).<span class="ident">to_glib</span>()
+    (<span class="ident">callbacks</span>.<span class="ident">seek_data</span>)(<span class="kw-2">&amp;</span><span class="ident">from_glib_borrow</span>(<span class="ident">appsrc</span>), <span class="ident">offset</span>).<span class="ident">to_glib</span>()
 }
 
 <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">destroy_callbacks</span>(<span class="ident">ptr</span>: <span class="ident">gpointer</span>) {
     <span class="kw">let</span> <span class="ident">_guard</span> <span class="op">=</span> <span class="ident">CallbackGuard</span>::<span class="ident">new</span>();
-    <span class="ident">Box</span>::<span class="op">&lt;</span><span class="ident">Box</span><span class="op">&lt;</span><span class="ident">AppSrcCallbacks</span><span class="op">&gt;&gt;</span>::<span class="ident">from_raw</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> _);
+    <span class="ident">Box</span>::<span class="op">&lt;</span><span class="ident">AppSrcCallbacks</span><span class="op">&gt;</span>::<span class="ident">from_raw</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> _);
 }
 
 <span class="kw">impl</span> <span class="ident">AppSrc</span> {
@@ -326,13 +326,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>

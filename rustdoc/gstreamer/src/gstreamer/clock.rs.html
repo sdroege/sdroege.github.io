@@ -278,6 +278,10 @@
 <span id="233">233</span>
 <span id="234">234</span>
 <span id="235">235</span>
+<span id="236">236</span>
+<span id="237">237</span>
+<span id="238">238</span>
+<span id="239">239</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -315,14 +319,18 @@
 
 <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">trampoline_wait_async</span>(
     <span class="ident">clock</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi</span>::<span class="ident">GstClock</span>,
-    <span class="ident">time</span>: <span class="ident">ClockTime</span>,
+    <span class="ident">time</span>: <span class="ident">ffi</span>::<span class="ident">GstClockTime</span>,
     <span class="ident">id</span>: <span class="ident">gpointer</span>,
     <span class="ident">func</span>: <span class="ident">gpointer</span>,
 ) <span class="op">-&gt;</span> <span class="ident">gboolean</span> {
     <span class="kw">let</span> <span class="ident">_guard</span> <span class="op">=</span> <span class="ident">CallbackGuard</span>::<span class="ident">new</span>();
     <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;cargo-clippy&quot;</span>, <span class="ident">allow</span>(<span class="ident">transmute_ptr_to_ref</span>))]</span>
     <span class="kw">let</span> <span class="ident">f</span>: <span class="op">&amp;&amp;</span>(<span class="ident">Fn</span>(<span class="kw-2">&amp;</span><span class="ident">Clock</span>, <span class="ident">ClockTime</span>, <span class="kw-2">&amp;</span><span class="ident">ClockId</span>) <span class="op">-&gt;</span> <span class="ident">bool</span> <span class="op">+</span> <span class="ident">Send</span> <span class="op">+</span> <span class="lifetime">&#39;static</span>) <span class="op">=</span> <span class="ident">transmute</span>(<span class="ident">func</span>);
-    <span class="ident">f</span>(<span class="kw-2">&amp;</span><span class="ident">from_glib_none</span>(<span class="ident">clock</span>), <span class="ident">time</span>, <span class="kw-2">&amp;</span><span class="ident">from_glib_none</span>(<span class="ident">id</span>)).<span class="ident">to_glib</span>()
+    <span class="ident">f</span>(
+        <span class="kw-2">&amp;</span><span class="ident">from_glib_borrow</span>(<span class="ident">clock</span>),
+        <span class="ident">from_glib</span>(<span class="ident">time</span>),
+        <span class="kw-2">&amp;</span><span class="ident">from_glib_borrow</span>(<span class="ident">id</span>),
+    ).<span class="ident">to_glib</span>()
 }
 
 <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">destroy_closure_wait_async</span>(<span class="ident">ptr</span>: <span class="ident">gpointer</span>) {
@@ -341,7 +349,7 @@
 
 <span class="kw">impl</span> <span class="ident">ClockId</span> {
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_time</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">ClockTime</span> {
-        <span class="kw">unsafe</span> { <span class="ident">ffi</span>::<span class="ident">gst_clock_id_get_time</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>) }
+        <span class="kw">unsafe</span> { <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_clock_id_get_time</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>)) }
     }
 
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">unschedule</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) {
@@ -423,8 +431,8 @@
         <span class="kw">unsafe</span> {
             <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_clock_new_periodic_id</span>(
                 <span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
-                <span class="ident">start_time</span>,
-                <span class="ident">interval</span>,
+                <span class="ident">start_time</span>.<span class="ident">to_glib</span>(),
+                <span class="ident">interval</span>.<span class="ident">to_glib</span>(),
             ))
         }
     }
@@ -440,8 +448,8 @@
             <span class="kw">let</span> <span class="ident">res</span>: <span class="ident">bool</span> <span class="op">=</span> <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_clock_periodic_id_reinit</span>(
                 <span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
                 <span class="ident">id</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
-                <span class="ident">start_time</span>,
-                <span class="ident">interval</span>,
+                <span class="ident">start_time</span>.<span class="ident">to_glib</span>(),
+                <span class="ident">interval</span>.<span class="ident">to_glib</span>(),
             ));
             <span class="kw">if</span> <span class="ident">res</span> {
                 <span class="prelude-val">Ok</span>(())
@@ -455,7 +463,7 @@
         <span class="kw">unsafe</span> {
             <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_clock_new_single_shot_id</span>(
                 <span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
-                <span class="ident">time</span>,
+                <span class="ident">time</span>.<span class="ident">to_glib</span>(),
             ))
         }
     }
@@ -465,7 +473,7 @@
             <span class="kw">let</span> <span class="ident">res</span>: <span class="ident">bool</span> <span class="op">=</span> <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_clock_single_shot_id_reinit</span>(
                 <span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
                 <span class="ident">id</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
-                <span class="ident">time</span>,
+                <span class="ident">time</span>.<span class="ident">to_glib</span>(),
             ));
             <span class="kw">if</span> <span class="ident">res</span> {
                 <span class="prelude-val">Ok</span>(())
@@ -488,7 +496,7 @@
 
         <span class="kw">let</span> <span class="ident">clock</span> <span class="op">=</span> <span class="ident">SystemClock</span>::<span class="ident">obtain</span>();
         <span class="kw">let</span> <span class="ident">now</span> <span class="op">=</span> <span class="ident">clock</span>.<span class="ident">get_time</span>();
-        <span class="kw">let</span> <span class="ident">id</span> <span class="op">=</span> <span class="ident">clock</span>.<span class="ident">new_single_shot_id</span>(<span class="ident">now</span> <span class="op">+</span> <span class="number">20_000_000</span>).<span class="ident">unwrap</span>();
+        <span class="kw">let</span> <span class="ident">id</span> <span class="op">=</span> <span class="ident">clock</span>.<span class="ident">new_single_shot_id</span>(<span class="ident">now</span> <span class="op">+</span> <span class="number">20</span> <span class="op">*</span> ::<span class="ident">MSECOND</span>).<span class="ident">unwrap</span>();
         <span class="kw">let</span> (<span class="ident">res</span>, _) <span class="op">=</span> <span class="ident">id</span>.<span class="ident">wait</span>();
 
         <span class="macro">assert</span><span class="macro">!</span>(<span class="ident">res</span> <span class="op">==</span> <span class="ident">ClockReturn</span>::<span class="prelude-val">Ok</span> <span class="op">||</span> <span class="ident">res</span> <span class="op">==</span> <span class="ident">ClockReturn</span>::<span class="ident">Early</span>);
@@ -502,7 +510,7 @@
 
         <span class="kw">let</span> <span class="ident">clock</span> <span class="op">=</span> <span class="ident">SystemClock</span>::<span class="ident">obtain</span>();
         <span class="kw">let</span> <span class="ident">now</span> <span class="op">=</span> <span class="ident">clock</span>.<span class="ident">get_time</span>();
-        <span class="kw">let</span> <span class="ident">id</span> <span class="op">=</span> <span class="ident">clock</span>.<span class="ident">new_single_shot_id</span>(<span class="ident">now</span> <span class="op">+</span> <span class="number">20_000_000</span>).<span class="ident">unwrap</span>();
+        <span class="kw">let</span> <span class="ident">id</span> <span class="op">=</span> <span class="ident">clock</span>.<span class="ident">new_single_shot_id</span>(<span class="ident">now</span> <span class="op">+</span> <span class="number">20</span> <span class="op">*</span> ::<span class="ident">MSECOND</span>).<span class="ident">unwrap</span>();
         <span class="kw">let</span> <span class="ident">res</span> <span class="op">=</span> <span class="ident">id</span>.<span class="ident">wait_async</span>(<span class="kw">move</span> <span class="op">|</span>_, _, _<span class="op">|</span> {
             <span class="ident">sender</span>.<span class="ident">send</span>(()).<span class="ident">unwrap</span>();
 
@@ -532,13 +540,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>

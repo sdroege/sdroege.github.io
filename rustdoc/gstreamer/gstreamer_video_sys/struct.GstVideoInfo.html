@@ -29,7 +29,7 @@
 
     <nav class="sidebar">
         
-        <p class='location'>Struct GstVideoInfo</p><div class="block items"><ul><li><a href="#fields">Fields</a></li></ul></div><p class='location'><a href='index.html'>gstreamer_video_sys</a></p><script>window.sidebarCurrent = {name: 'GstVideoInfo', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct GstVideoInfo</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.finfo">finfo</a><a href="#structfield.interlace_mode">interlace_mode</a><a href="#structfield.flags">flags</a><a href="#structfield.width">width</a><a href="#structfield.height">height</a><a href="#structfield.size">size</a><a href="#structfield.views">views</a><a href="#structfield.chroma_site">chroma_site</a><a href="#structfield.colorimetry">colorimetry</a><a href="#structfield.par_n">par_n</a><a href="#structfield.par_d">par_d</a><a href="#structfield.fps_n">fps_n</a><a href="#structfield.fps_d">fps_d</a><a href="#structfield.offset">offset</a><a href="#structfield.stride">stride</a><a href="#structfield._gst_reserved">_gst_reserved</a></div></div><p class='location'><a href='index.html'>gstreamer_video_sys</a></p><script>window.sidebarCurrent = {name: 'GstVideoInfo', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </nav>
 
     <nav class="sub">
@@ -48,11 +48,11 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/gstreamer_video_sys/lib.rs.html#1081-1098' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/gstreamer_video_sys/lib.rs.html#838-855' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'><div class="docblock attributes">#[repr(C)]
 </div>pub struct GstVideoInfo {
     pub finfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="../gstreamer_video_sys/struct.GstVideoFormatInfo.html" title="struct gstreamer_video_sys::GstVideoFormatInfo">GstVideoFormatInfo</a>,
-    pub interlace_mode: <a class="enum" href="../gstreamer_video_sys/enum.GstVideoInterlaceMode.html" title="enum gstreamer_video_sys::GstVideoInterlaceMode">GstVideoInterlaceMode</a>,
+    pub interlace_mode: <a class="type" href="../gstreamer_video_sys/type.GstVideoInterlaceMode.html" title="type gstreamer_video_sys::GstVideoInterlaceMode">GstVideoInterlaceMode</a>,
     pub flags: <a class="struct" href="../gstreamer_video_sys/struct.GstVideoFlags.html" title="struct gstreamer_video_sys::GstVideoFlags">GstVideoFlags</a>,
     pub width: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a>,
     pub height: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a>,
@@ -67,53 +67,70 @@
     pub offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../libc/type.size_t.html" title="type libc::size_t">size_t</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a>,
     pub stride: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a>,
     pub _gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a>,
-}</pre><h2 id='fields' class='fields'>Fields</h2><span id='structfield.finfo' class="structfield">
-                           <span id='finfo.v' class='invisible'>
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.finfo" class="structfield small-section-header">
+                           <a href="#structfield.finfo" class="anchor field"></a>
+                           <span id="finfo.v" class='invisible'>
                            <code>finfo: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="struct" href="../gstreamer_video_sys/struct.GstVideoFormatInfo.html" title="struct gstreamer_video_sys::GstVideoFormatInfo">GstVideoFormatInfo</a></code>
-                           </span></span><span id='structfield.interlace_mode' class="structfield">
-                           <span id='interlace_mode.v' class='invisible'>
-                           <code>interlace_mode: <a class="enum" href="../gstreamer_video_sys/enum.GstVideoInterlaceMode.html" title="enum gstreamer_video_sys::GstVideoInterlaceMode">GstVideoInterlaceMode</a></code>
-                           </span></span><span id='structfield.flags' class="structfield">
-                           <span id='flags.v' class='invisible'>
+                           </span></span><span id="structfield.interlace_mode" class="structfield small-section-header">
+                           <a href="#structfield.interlace_mode" class="anchor field"></a>
+                           <span id="interlace_mode.v" class='invisible'>
+                           <code>interlace_mode: <a class="type" href="../gstreamer_video_sys/type.GstVideoInterlaceMode.html" title="type gstreamer_video_sys::GstVideoInterlaceMode">GstVideoInterlaceMode</a></code>
+                           </span></span><span id="structfield.flags" class="structfield small-section-header">
+                           <a href="#structfield.flags" class="anchor field"></a>
+                           <span id="flags.v" class='invisible'>
                            <code>flags: <a class="struct" href="../gstreamer_video_sys/struct.GstVideoFlags.html" title="struct gstreamer_video_sys::GstVideoFlags">GstVideoFlags</a></code>
-                           </span></span><span id='structfield.width' class="structfield">
-                           <span id='width.v' class='invisible'>
+                           </span></span><span id="structfield.width" class="structfield small-section-header">
+                           <a href="#structfield.width" class="anchor field"></a>
+                           <span id="width.v" class='invisible'>
                            <code>width: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a></code>
-                           </span></span><span id='structfield.height' class="structfield">
-                           <span id='height.v' class='invisible'>
+                           </span></span><span id="structfield.height" class="structfield small-section-header">
+                           <a href="#structfield.height" class="anchor field"></a>
+                           <span id="height.v" class='invisible'>
                            <code>height: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a></code>
-                           </span></span><span id='structfield.size' class="structfield">
-                           <span id='size.v' class='invisible'>
+                           </span></span><span id="structfield.size" class="structfield small-section-header">
+                           <a href="#structfield.size" class="anchor field"></a>
+                           <span id="size.v" class='invisible'>
                            <code>size: <a class="type" href="../libc/type.size_t.html" title="type libc::size_t">size_t</a></code>
-                           </span></span><span id='structfield.views' class="structfield">
-                           <span id='views.v' class='invisible'>
+                           </span></span><span id="structfield.views" class="structfield small-section-header">
+                           <a href="#structfield.views" class="anchor field"></a>
+                           <span id="views.v" class='invisible'>
                            <code>views: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a></code>
-                           </span></span><span id='structfield.chroma_site' class="structfield">
-                           <span id='chroma_site.v' class='invisible'>
+                           </span></span><span id="structfield.chroma_site" class="structfield small-section-header">
+                           <a href="#structfield.chroma_site" class="anchor field"></a>
+                           <span id="chroma_site.v" class='invisible'>
                            <code>chroma_site: <a class="struct" href="../gstreamer_video_sys/struct.GstVideoChromaSite.html" title="struct gstreamer_video_sys::GstVideoChromaSite">GstVideoChromaSite</a></code>
-                           </span></span><span id='structfield.colorimetry' class="structfield">
-                           <span id='colorimetry.v' class='invisible'>
+                           </span></span><span id="structfield.colorimetry" class="structfield small-section-header">
+                           <a href="#structfield.colorimetry" class="anchor field"></a>
+                           <span id="colorimetry.v" class='invisible'>
                            <code>colorimetry: <a class="struct" href="../gstreamer_video_sys/struct.GstVideoColorimetry.html" title="struct gstreamer_video_sys::GstVideoColorimetry">GstVideoColorimetry</a></code>
-                           </span></span><span id='structfield.par_n' class="structfield">
-                           <span id='par_n.v' class='invisible'>
+                           </span></span><span id="structfield.par_n" class="structfield small-section-header">
+                           <a href="#structfield.par_n" class="anchor field"></a>
+                           <span id="par_n.v" class='invisible'>
                            <code>par_n: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a></code>
-                           </span></span><span id='structfield.par_d' class="structfield">
-                           <span id='par_d.v' class='invisible'>
+                           </span></span><span id="structfield.par_d" class="structfield small-section-header">
+                           <a href="#structfield.par_d" class="anchor field"></a>
+                           <span id="par_d.v" class='invisible'>
                            <code>par_d: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a></code>
-                           </span></span><span id='structfield.fps_n' class="structfield">
-                           <span id='fps_n.v' class='invisible'>
+                           </span></span><span id="structfield.fps_n" class="structfield small-section-header">
+                           <a href="#structfield.fps_n" class="anchor field"></a>
+                           <span id="fps_n.v" class='invisible'>
                            <code>fps_n: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a></code>
-                           </span></span><span id='structfield.fps_d' class="structfield">
-                           <span id='fps_d.v' class='invisible'>
+                           </span></span><span id="structfield.fps_d" class="structfield small-section-header">
+                           <a href="#structfield.fps_d" class="anchor field"></a>
+                           <span id="fps_d.v" class='invisible'>
                            <code>fps_d: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a></code>
-                           </span></span><span id='structfield.offset' class="structfield">
-                           <span id='offset.v' class='invisible'>
+                           </span></span><span id="structfield.offset" class="structfield small-section-header">
+                           <a href="#structfield.offset" class="anchor field"></a>
+                           <span id="offset.v" class='invisible'>
                            <code>offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../libc/type.size_t.html" title="type libc::size_t">size_t</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a></code>
-                           </span></span><span id='structfield.stride' class="structfield">
-                           <span id='stride.v' class='invisible'>
+                           </span></span><span id="structfield.stride" class="structfield small-section-header">
+                           <a href="#structfield.stride" class="anchor field"></a>
+                           <span id="stride.v" class='invisible'>
                            <code>stride: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a></code>
-                           </span></span><span id='structfield._gst_reserved' class="structfield">
-                           <span id='_gst_reserved.v' class='invisible'>
+                           </span></span><span id="structfield._gst_reserved" class="structfield small-section-header">
+                           <a href="#structfield._gst_reserved" class="anchor field"></a>
+                           <span id="_gst_reserved.v" class='invisible'>
                            <code>_gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a></code>
                            </span></span></section>
     <section id='search' class="content hidden"></section>
@@ -132,13 +149,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>

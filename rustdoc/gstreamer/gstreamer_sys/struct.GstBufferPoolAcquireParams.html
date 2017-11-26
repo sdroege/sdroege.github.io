@@ -29,7 +29,7 @@
 
     <nav class="sidebar">
         
-        <p class='location'>Struct GstBufferPoolAcquireParams</p><div class="block items"><ul><li><a href="#fields">Fields</a></li></ul></div><p class='location'><a href='index.html'>gstreamer_sys</a></p><script>window.sidebarCurrent = {name: 'GstBufferPoolAcquireParams', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct GstBufferPoolAcquireParams</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.format">format</a><a href="#structfield.start">start</a><a href="#structfield.stop">stop</a><a href="#structfield.flags">flags</a><a href="#structfield._gst_reserved">_gst_reserved</a></div></div><p class='location'><a href='index.html'>gstreamer_sys</a></p><script>window.sidebarCurrent = {name: 'GstBufferPoolAcquireParams', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </nav>
 
     <nav class="sub">
@@ -48,28 +48,34 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/gstreamer_sys/lib.rs.html#1593-1599' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/gstreamer_sys/lib.rs.html#1392-1398' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'><div class="docblock attributes">#[repr(C)]
 </div>pub struct GstBufferPoolAcquireParams {
-    pub format: <a class="enum" href="../gstreamer_sys/enum.GstFormat.html" title="enum gstreamer_sys::GstFormat">GstFormat</a>,
+    pub format: <a class="type" href="../gstreamer_sys/type.GstFormat.html" title="type gstreamer_sys::GstFormat">GstFormat</a>,
     pub start: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a>,
     pub stop: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a>,
     pub flags: <a class="struct" href="../gstreamer_sys/struct.GstBufferPoolAcquireFlags.html" title="struct gstreamer_sys::GstBufferPoolAcquireFlags">GstBufferPoolAcquireFlags</a>,
     pub _gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a>,
-}</pre><h2 id='fields' class='fields'>Fields</h2><span id='structfield.format' class="structfield">
-                           <span id='format.v' class='invisible'>
-                           <code>format: <a class="enum" href="../gstreamer_sys/enum.GstFormat.html" title="enum gstreamer_sys::GstFormat">GstFormat</a></code>
-                           </span></span><span id='structfield.start' class="structfield">
-                           <span id='start.v' class='invisible'>
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.format" class="structfield small-section-header">
+                           <a href="#structfield.format" class="anchor field"></a>
+                           <span id="format.v" class='invisible'>
+                           <code>format: <a class="type" href="../gstreamer_sys/type.GstFormat.html" title="type gstreamer_sys::GstFormat">GstFormat</a></code>
+                           </span></span><span id="structfield.start" class="structfield small-section-header">
+                           <a href="#structfield.start" class="anchor field"></a>
+                           <span id="start.v" class='invisible'>
                            <code>start: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a></code>
-                           </span></span><span id='structfield.stop' class="structfield">
-                           <span id='stop.v' class='invisible'>
+                           </span></span><span id="structfield.stop" class="structfield small-section-header">
+                           <a href="#structfield.stop" class="anchor field"></a>
+                           <span id="stop.v" class='invisible'>
                            <code>stop: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a></code>
-                           </span></span><span id='structfield.flags' class="structfield">
-                           <span id='flags.v' class='invisible'>
+                           </span></span><span id="structfield.flags" class="structfield small-section-header">
+                           <a href="#structfield.flags" class="anchor field"></a>
+                           <span id="flags.v" class='invisible'>
                            <code>flags: <a class="struct" href="../gstreamer_sys/struct.GstBufferPoolAcquireFlags.html" title="struct gstreamer_sys::GstBufferPoolAcquireFlags">GstBufferPoolAcquireFlags</a></code>
-                           </span></span><span id='structfield._gst_reserved' class="structfield">
-                           <span id='_gst_reserved.v' class='invisible'>
+                           </span></span><span id="structfield._gst_reserved" class="structfield small-section-header">
+                           <a href="#structfield._gst_reserved" class="anchor field"></a>
+                           <span id="_gst_reserved.v" class='invisible'>
                            <code>_gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a></code>
                            </span></span></section>
     <section id='search' class="content hidden"></section>
@@ -88,13 +94,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>

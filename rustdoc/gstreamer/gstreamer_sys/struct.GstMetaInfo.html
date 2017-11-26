@@ -29,7 +29,7 @@
 
     <nav class="sidebar">
         
-        <p class='location'>Struct GstMetaInfo</p><div class="block items"><ul><li><a href="#fields">Fields</a></li></ul></div><p class='location'><a href='index.html'>gstreamer_sys</a></p><script>window.sidebarCurrent = {name: 'GstMetaInfo', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct GstMetaInfo</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.api">api</a><a href="#structfield.type_">type_</a><a href="#structfield.size">size</a><a href="#structfield.init_func">init_func</a><a href="#structfield.free_func">free_func</a><a href="#structfield.transform_func">transform_func</a></div></div><p class='location'><a href='index.html'>gstreamer_sys</a></p><script>window.sidebarCurrent = {name: 'GstMetaInfo', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </nav>
 
     <nav class="sub">
@@ -48,7 +48,7 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/gstreamer_sys/lib.rs.html#1869-1876' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/gstreamer_sys/lib.rs.html#1668-1675' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'><div class="docblock attributes">#[repr(C)]
 </div>pub struct GstMetaInfo {
     pub api: <a class="type" href="../glib_sys/type.GType.html" title="type glib_sys::GType">GType</a>,
@@ -57,23 +57,30 @@
     pub init_func: <a class="type" href="../gstreamer_sys/type.GstMetaInitFunction.html" title="type gstreamer_sys::GstMetaInitFunction">GstMetaInitFunction</a>,
     pub free_func: <a class="type" href="../gstreamer_sys/type.GstMetaFreeFunction.html" title="type gstreamer_sys::GstMetaFreeFunction">GstMetaFreeFunction</a>,
     pub transform_func: <a class="type" href="../gstreamer_sys/type.GstMetaTransformFunction.html" title="type gstreamer_sys::GstMetaTransformFunction">GstMetaTransformFunction</a>,
-}</pre><h2 id='fields' class='fields'>Fields</h2><span id='structfield.api' class="structfield">
-                           <span id='api.v' class='invisible'>
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.api" class="structfield small-section-header">
+                           <a href="#structfield.api" class="anchor field"></a>
+                           <span id="api.v" class='invisible'>
                            <code>api: <a class="type" href="../glib_sys/type.GType.html" title="type glib_sys::GType">GType</a></code>
-                           </span></span><span id='structfield.type_' class="structfield">
-                           <span id='type_.v' class='invisible'>
+                           </span></span><span id="structfield.type_" class="structfield small-section-header">
+                           <a href="#structfield.type_" class="anchor field"></a>
+                           <span id="type_.v" class='invisible'>
                            <code>type_: <a class="type" href="../glib_sys/type.GType.html" title="type glib_sys::GType">GType</a></code>
-                           </span></span><span id='structfield.size' class="structfield">
-                           <span id='size.v' class='invisible'>
+                           </span></span><span id="structfield.size" class="structfield small-section-header">
+                           <a href="#structfield.size" class="anchor field"></a>
+                           <span id="size.v" class='invisible'>
                            <code>size: <a class="type" href="../libc/type.size_t.html" title="type libc::size_t">size_t</a></code>
-                           </span></span><span id='structfield.init_func' class="structfield">
-                           <span id='init_func.v' class='invisible'>
+                           </span></span><span id="structfield.init_func" class="structfield small-section-header">
+                           <a href="#structfield.init_func" class="anchor field"></a>
+                           <span id="init_func.v" class='invisible'>
                            <code>init_func: <a class="type" href="../gstreamer_sys/type.GstMetaInitFunction.html" title="type gstreamer_sys::GstMetaInitFunction">GstMetaInitFunction</a></code>
-                           </span></span><span id='structfield.free_func' class="structfield">
-                           <span id='free_func.v' class='invisible'>
+                           </span></span><span id="structfield.free_func" class="structfield small-section-header">
+                           <a href="#structfield.free_func" class="anchor field"></a>
+                           <span id="free_func.v" class='invisible'>
                            <code>free_func: <a class="type" href="../gstreamer_sys/type.GstMetaFreeFunction.html" title="type gstreamer_sys::GstMetaFreeFunction">GstMetaFreeFunction</a></code>
-                           </span></span><span id='structfield.transform_func' class="structfield">
-                           <span id='transform_func.v' class='invisible'>
+                           </span></span><span id="structfield.transform_func" class="structfield small-section-header">
+                           <a href="#structfield.transform_func" class="anchor field"></a>
+                           <span id="transform_func.v" class='invisible'>
                            <code>transform_func: <a class="type" href="../gstreamer_sys/type.GstMetaTransformFunction.html" title="type gstreamer_sys::GstMetaTransformFunction">GstMetaTransformFunction</a></code>
                            </span></span></section>
     <section id='search' class="content hidden"></section>
@@ -92,13 +99,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>

@@ -1214,12 +1214,6 @@
 <span id="1169">1169</span>
 <span id="1170">1170</span>
 <span id="1171">1171</span>
-<span id="1172">1172</span>
-<span id="1173">1173</span>
-<span id="1174">1174</span>
-<span id="1175">1175</span>
-<span id="1176">1176</span>
-<span id="1177">1177</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2016-2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -1254,150 +1248,52 @@
 }
 
 <span class="kw">impl</span> <span class="ident">GstRc</span><span class="op">&lt;</span><span class="ident">QueryRef</span><span class="op">&gt;</span> {
-    <span class="doccomment">/// Constructs a new query stream position query object. Use `gst_query_unref`</span>
-    <span class="doccomment">/// when done with it. A position query is used to query the current position</span>
-    <span class="doccomment">/// of playback in the streams, in some format.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// Free-function: `gst_query_unref`</span>
-    <span class="doccomment">/// ## `format`</span>
-    <span class="doccomment">/// the default `Format` for the new query</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// # Returns</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// a new `Query`</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_position</span>(<span class="ident">fmt</span>: ::<span class="ident">Format</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
         <span class="macro">assert_initialized_main_thread</span><span class="macro">!</span>();
         <span class="kw">unsafe</span> { <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_query_new_position</span>(<span class="ident">fmt</span>.<span class="ident">to_glib</span>())) }
     }
 
-    <span class="doccomment">/// Constructs a new stream duration query object to query in the given format.</span>
-    <span class="doccomment">/// Use `gst_query_unref` when done with it. A duration query will give the</span>
-    <span class="doccomment">/// total length of the stream.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// Free-function: `gst_query_unref`</span>
-    <span class="doccomment">/// ## `format`</span>
-    <span class="doccomment">/// the `Format` for this duration query</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// # Returns</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// a new `Query`</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_duration</span>(<span class="ident">fmt</span>: ::<span class="ident">Format</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
         <span class="macro">assert_initialized_main_thread</span><span class="macro">!</span>();
         <span class="kw">unsafe</span> { <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_query_new_duration</span>(<span class="ident">fmt</span>.<span class="ident">to_glib</span>())) }
     }
 
-    <span class="doccomment">/// Constructs a new latency query object.</span>
-    <span class="doccomment">/// Use `gst_query_unref` when done with it. A latency query is usually performed</span>
-    <span class="doccomment">/// by sinks to compensate for additional latency introduced by elements in the</span>
-    <span class="doccomment">/// pipeline.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// Free-function: `gst_query_unref`</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// # Returns</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// a `Query`</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_latency</span>() <span class="op">-&gt;</span> <span class="self">Self</span> {
         <span class="macro">assert_initialized_main_thread</span><span class="macro">!</span>();
         <span class="kw">unsafe</span> { <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_query_new_latency</span>()) }
     }
 
-    <span class="doccomment">/// Constructs a new query object for querying seeking properties of</span>
-    <span class="doccomment">/// the stream.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// Free-function: `gst_query_unref`</span>
-    <span class="doccomment">/// ## `format`</span>
-    <span class="doccomment">/// the default `Format` for the new query</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// # Returns</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// a new `Query`</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_seeking</span>(<span class="ident">fmt</span>: ::<span class="ident">Format</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
         <span class="macro">assert_initialized_main_thread</span><span class="macro">!</span>();
         <span class="kw">unsafe</span> { <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_query_new_seeking</span>(<span class="ident">fmt</span>.<span class="ident">to_glib</span>())) }
     }
 
-    <span class="doccomment">/// Constructs a new segment query object. Use `gst_query_unref`</span>
-    <span class="doccomment">/// when done with it. A segment query is used to discover information about the</span>
-    <span class="doccomment">/// currently configured segment for playback.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// Free-function: `gst_query_unref`</span>
-    <span class="doccomment">/// ## `format`</span>
-    <span class="doccomment">/// the `Format` for the new query</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// # Returns</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// a new `Query`</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_segment</span>(<span class="ident">fmt</span>: ::<span class="ident">Format</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
         <span class="macro">assert_initialized_main_thread</span><span class="macro">!</span>();
         <span class="kw">unsafe</span> { <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_query_new_segment</span>(<span class="ident">fmt</span>.<span class="ident">to_glib</span>())) }
     }
 
-    <span class="doccomment">/// Constructs a new convert query object. Use `gst_query_unref`</span>
-    <span class="doccomment">/// when done with it. A convert query is used to ask for a conversion between</span>
-    <span class="doccomment">/// one format and another.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// Free-function: `gst_query_unref`</span>
-    <span class="doccomment">/// ## `src_format`</span>
-    <span class="doccomment">/// the source `Format` for the new query</span>
-    <span class="doccomment">/// ## `value`</span>
-    <span class="doccomment">/// the value to convert</span>
-    <span class="doccomment">/// ## `dest_format`</span>
-    <span class="doccomment">/// the target `Format`</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// # Returns</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// a `Query`</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_convert</span>(<span class="ident">src_fmt</span>: ::<span class="ident">Format</span>, <span class="ident">value</span>: <span class="ident">i64</span>, <span class="ident">dest_fmt</span>: ::<span class="ident">Format</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_convert</span>(<span class="ident">value</span>: ::<span class="ident">FormatValue</span>, <span class="ident">dest_fmt</span>: ::<span class="ident">Format</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
         <span class="macro">assert_initialized_main_thread</span><span class="macro">!</span>();
         <span class="kw">unsafe</span> {
             <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_query_new_convert</span>(
-                <span class="ident">src_fmt</span>.<span class="ident">to_glib</span>(),
-                <span class="ident">value</span>,
+                <span class="ident">value</span>.<span class="ident">to_format</span>().<span class="ident">to_glib</span>(),
+                <span class="ident">value</span>.<span class="ident">to_value</span>(),
                 <span class="ident">dest_fmt</span>.<span class="ident">to_glib</span>(),
             ))
         }
     }
 
-    <span class="doccomment">/// Constructs a new query object for querying formats of</span>
-    <span class="doccomment">/// the stream.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// Free-function: `gst_query_unref`</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// # Returns</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// a new `Query`</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_formats</span>() <span class="op">-&gt;</span> <span class="self">Self</span> {
         <span class="macro">assert_initialized_main_thread</span><span class="macro">!</span>();
         <span class="kw">unsafe</span> { <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_query_new_formats</span>()) }
     }
 
-    <span class="doccomment">/// Constructs a new query object for querying the buffering status of</span>
-    <span class="doccomment">/// a stream.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// Free-function: `gst_query_unref`</span>
-    <span class="doccomment">/// ## `format`</span>
-    <span class="doccomment">/// the default `Format` for the new query</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// # Returns</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// a new `Query`</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_buffering</span>(<span class="ident">fmt</span>: ::<span class="ident">Format</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
         <span class="macro">assert_initialized_main_thread</span><span class="macro">!</span>();
         <span class="kw">unsafe</span> { <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_query_new_buffering</span>(<span class="ident">fmt</span>.<span class="ident">to_glib</span>())) }
     }
 
-    <span class="doccomment">/// Constructs a new custom query object. Use `gst_query_unref`</span>
-    <span class="doccomment">/// when done with it.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// Free-function: `gst_query_unref`</span>
-    <span class="doccomment">/// ## `type_`</span>
-    <span class="doccomment">/// the query type</span>
-    <span class="doccomment">/// ## `structure`</span>
-    <span class="doccomment">/// a structure for the query</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// # Returns</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// a new `Query`</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_custom</span>(<span class="ident">structure</span>: ::<span class="ident">Structure</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
         <span class="macro">assert_initialized_main_thread</span><span class="macro">!</span>();
         <span class="kw">unsafe</span> {
@@ -1408,98 +1304,31 @@
         }
     }
 
-    <span class="doccomment">/// Constructs a new query URI query object. Use `gst_query_unref`</span>
-    <span class="doccomment">/// when done with it. An URI query is used to query the current URI</span>
-    <span class="doccomment">/// that is used by the source or sink.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// Free-function: `gst_query_unref`</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// # Returns</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// a new `Query`</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_uri</span>() <span class="op">-&gt;</span> <span class="self">Self</span> {
         <span class="macro">assert_initialized_main_thread</span><span class="macro">!</span>();
         <span class="kw">unsafe</span> { <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_query_new_uri</span>()) }
     }
 
-    <span class="doccomment">/// Constructs a new query object for querying the scheduling properties.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// Free-function: `gst_query_unref`</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// # Returns</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// a new `Query`</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_scheduling</span>() <span class="op">-&gt;</span> <span class="self">Self</span> {
         <span class="macro">assert_initialized_main_thread</span><span class="macro">!</span>();
         <span class="kw">unsafe</span> { <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_query_new_scheduling</span>()) }
     }
 
-    <span class="doccomment">/// Constructs a new query object for querying if `caps` are accepted.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// Free-function: `gst_query_unref`</span>
-    <span class="doccomment">/// ## `caps`</span>
-    <span class="doccomment">/// a fixed `Caps`</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// # Returns</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// a new `Query`</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_accept_caps</span>(<span class="ident">caps</span>: <span class="kw-2">&amp;</span>::<span class="ident">Caps</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
         <span class="macro">assert_initialized_main_thread</span><span class="macro">!</span>();
         <span class="kw">unsafe</span> { <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_query_new_accept_caps</span>(<span class="ident">caps</span>.<span class="ident">as_mut_ptr</span>())) }
     }
 
-    <span class="doccomment">/// Constructs a new query object for querying the caps.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// The CAPS query should return the allowable caps for a pad in the context</span>
-    <span class="doccomment">/// of the element&#39;s state, its link to other elements, and the devices or files</span>
-    <span class="doccomment">/// it has opened. These caps must be a subset of the pad template caps. In the</span>
-    <span class="doccomment">/// NULL state with no links, the CAPS query should ideally return the same caps</span>
-    <span class="doccomment">/// as the pad template. In rare circumstances, an object property can affect</span>
-    <span class="doccomment">/// the caps returned by the CAPS query, but this is discouraged.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// For most filters, the caps returned by CAPS query is directly affected by the</span>
-    <span class="doccomment">/// allowed caps on other pads. For demuxers and decoders, the caps returned by</span>
-    <span class="doccomment">/// the srcpad&#39;s getcaps function is directly related to the stream data. Again,</span>
-    <span class="doccomment">/// the CAPS query should return the most specific caps it reasonably can, since this</span>
-    <span class="doccomment">/// helps with autoplugging.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// The `filter` is used to restrict the result caps, only the caps matching</span>
-    <span class="doccomment">/// `filter` should be returned from the CAPS query. Specifying a filter might</span>
-    <span class="doccomment">/// greatly reduce the amount of processing an element needs to do.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// Free-function: `gst_query_unref`</span>
-    <span class="doccomment">/// ## `filter`</span>
-    <span class="doccomment">/// a filter</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// # Returns</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// a new `Query`</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_caps</span>(<span class="ident">filter</span>: <span class="kw-2">&amp;</span>::<span class="ident">Caps</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
         <span class="macro">assert_initialized_main_thread</span><span class="macro">!</span>();
         <span class="kw">unsafe</span> { <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_query_new_caps</span>(<span class="ident">filter</span>.<span class="ident">as_mut_ptr</span>())) }
     }
 
-    <span class="doccomment">/// Constructs a new query object for querying the drain state.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// Free-function: `gst_query_unref`</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// # Returns</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// a new `Query`</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_drain</span>() <span class="op">-&gt;</span> <span class="self">Self</span> {
         <span class="macro">assert_initialized_main_thread</span><span class="macro">!</span>();
         <span class="kw">unsafe</span> { <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_query_new_drain</span>()) }
     }
 
-    <span class="doccomment">/// Constructs a new query object for querying the pipeline-local context.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// Free-function: `gst_query_unref`</span>
-    <span class="doccomment">/// ## `context_type`</span>
-    <span class="doccomment">/// Context type to query</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// # Returns</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// a new `Query`</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_context</span>(<span class="ident">context_type</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
         <span class="macro">assert_initialized_main_thread</span><span class="macro">!</span>();
         <span class="kw">unsafe</span> { <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_query_new_context</span>(<span class="ident">context_type</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>)) }
@@ -1595,14 +1424,24 @@
 
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">Position</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>(<span class="ident">T</span>);
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">Position</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">QueryRef</span><span class="op">&gt;</span> {
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> (::<span class="ident">Format</span>, <span class="ident">i64</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_result</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> ::<span class="ident">FormatValue</span> {
         <span class="kw">unsafe</span> {
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">fmt</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">pos</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
 
             <span class="ident">ffi</span>::<span class="ident">gst_query_parse_position</span>(<span class="self">self</span>.<span class="number">0</span>.<span class="ident">as_mut_ptr</span>(), <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt</span>, <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">pos</span>);
 
-            (<span class="ident">from_glib</span>(<span class="ident">fmt</span>), <span class="ident">pos</span>)
+            ::<span class="ident">FormatValue</span>::<span class="ident">new</span>(<span class="ident">from_glib</span>(<span class="ident">fmt</span>), <span class="ident">pos</span>)
+        }
+    }
+
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_format</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> ::<span class="ident">Format</span> {
+        <span class="kw">unsafe</span> {
+            <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">fmt</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
+
+            <span class="ident">ffi</span>::<span class="ident">gst_query_parse_position</span>(<span class="self">self</span>.<span class="number">0</span>.<span class="ident">as_mut_ptr</span>(), <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt</span>, <span class="ident">ptr</span>::<span class="ident">null_mut</span>());
+
+            <span class="ident">from_glib</span>(<span class="ident">fmt</span>)
         }
     }
 
@@ -1612,9 +1451,15 @@
 }
 
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">Position</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="kw-2">mut</span> <span class="ident">QueryRef</span><span class="op">&gt;</span> {
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">fmt</span>: ::<span class="ident">Format</span>, <span class="ident">pos</span>: <span class="ident">i64</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span>::<span class="ident">FormatValue</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">pos</span>: <span class="ident">V</span>) {
+        <span class="kw">let</span> <span class="ident">pos</span> <span class="op">=</span> <span class="ident">pos</span>.<span class="ident">into</span>();
+        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">pos</span>.<span class="ident">to_format</span>(), <span class="self">self</span>.<span class="ident">get_format</span>());
         <span class="kw">unsafe</span> {
-            <span class="ident">ffi</span>::<span class="ident">gst_query_set_position</span>(<span class="self">self</span>.<span class="number">0</span>.<span class="ident">as_mut_ptr</span>(), <span class="ident">fmt</span>.<span class="ident">to_glib</span>(), <span class="ident">pos</span>);
+            <span class="ident">ffi</span>::<span class="ident">gst_query_set_position</span>(
+                <span class="self">self</span>.<span class="number">0</span>.<span class="ident">as_mut_ptr</span>(),
+                <span class="ident">pos</span>.<span class="ident">to_format</span>().<span class="ident">to_glib</span>(),
+                <span class="ident">pos</span>.<span class="ident">to_value</span>(),
+            );
         }
     }
 
@@ -1625,14 +1470,24 @@
 
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">Duration</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>(<span class="ident">T</span>);
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">Duration</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">QueryRef</span><span class="op">&gt;</span> {
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> (::<span class="ident">Format</span>, <span class="ident">i64</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_result</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> ::<span class="ident">FormatValue</span> {
         <span class="kw">unsafe</span> {
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">fmt</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">pos</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
 
             <span class="ident">ffi</span>::<span class="ident">gst_query_parse_duration</span>(<span class="self">self</span>.<span class="number">0</span>.<span class="ident">as_mut_ptr</span>(), <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt</span>, <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">pos</span>);
 
-            (<span class="ident">from_glib</span>(<span class="ident">fmt</span>), <span class="ident">pos</span>)
+            ::<span class="ident">FormatValue</span>::<span class="ident">new</span>(<span class="ident">from_glib</span>(<span class="ident">fmt</span>), <span class="ident">pos</span>)
+        }
+    }
+
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_format</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> ::<span class="ident">Format</span> {
+        <span class="kw">unsafe</span> {
+            <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">fmt</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
+
+            <span class="ident">ffi</span>::<span class="ident">gst_query_parse_duration</span>(<span class="self">self</span>.<span class="number">0</span>.<span class="ident">as_mut_ptr</span>(), <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt</span>, <span class="ident">ptr</span>::<span class="ident">null_mut</span>());
+
+            <span class="ident">from_glib</span>(<span class="ident">fmt</span>)
         }
     }
 
@@ -1642,9 +1497,15 @@
 }
 
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">Duration</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="kw-2">mut</span> <span class="ident">QueryRef</span><span class="op">&gt;</span> {
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">fmt</span>: ::<span class="ident">Format</span>, <span class="ident">pos</span>: <span class="ident">i64</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span>::<span class="ident">FormatValue</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">dur</span>: <span class="ident">V</span>) {
+        <span class="kw">let</span> <span class="ident">dur</span> <span class="op">=</span> <span class="ident">dur</span>.<span class="ident">into</span>();
+        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">dur</span>.<span class="ident">to_format</span>(), <span class="self">self</span>.<span class="ident">get_format</span>());
         <span class="kw">unsafe</span> {
-            <span class="ident">ffi</span>::<span class="ident">gst_query_set_duration</span>(<span class="self">self</span>.<span class="number">0</span>.<span class="ident">as_mut_ptr</span>(), <span class="ident">fmt</span>.<span class="ident">to_glib</span>(), <span class="ident">pos</span>);
+            <span class="ident">ffi</span>::<span class="ident">gst_query_set_duration</span>(
+                <span class="self">self</span>.<span class="number">0</span>.<span class="ident">as_mut_ptr</span>(),
+                <span class="ident">dur</span>.<span class="ident">to_format</span>().<span class="ident">to_glib</span>(),
+                <span class="ident">dur</span>.<span class="ident">to_value</span>(),
+            );
         }
     }
 
@@ -1655,7 +1516,7 @@
 
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">Latency</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>(<span class="ident">T</span>);
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">Latency</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">QueryRef</span><span class="op">&gt;</span> {
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> (<span class="ident">bool</span>, <span class="ident">u64</span>, <span class="ident">u64</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_result</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> (<span class="ident">bool</span>, <span class="ident">u64</span>, <span class="ident">u64</span>) {
         <span class="kw">unsafe</span> {
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">live</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">min</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
@@ -1712,7 +1573,7 @@
 
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">Seeking</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>(<span class="ident">T</span>);
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">Seeking</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">QueryRef</span><span class="op">&gt;</span> {
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> (::<span class="ident">Format</span>, <span class="ident">bool</span>, <span class="ident">i64</span>, <span class="ident">i64</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_result</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> (<span class="ident">bool</span>, ::<span class="ident">FormatValue</span>, ::<span class="ident">FormatValue</span>) {
         <span class="kw">unsafe</span> {
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">fmt</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">seekable</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
@@ -1726,7 +1587,26 @@
                 <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">end</span>,
             );
 
-            (<span class="ident">from_glib</span>(<span class="ident">fmt</span>), <span class="ident">from_glib</span>(<span class="ident">seekable</span>), <span class="ident">start</span>, <span class="ident">end</span>)
+            (
+                <span class="ident">from_glib</span>(<span class="ident">seekable</span>),
+                ::<span class="ident">FormatValue</span>::<span class="ident">new</span>(<span class="ident">from_glib</span>(<span class="ident">fmt</span>), <span class="ident">start</span>),
+                ::<span class="ident">FormatValue</span>::<span class="ident">new</span>(<span class="ident">from_glib</span>(<span class="ident">fmt</span>), <span class="ident">end</span>),
+            )
+        }
+    }
+
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_format</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> ::<span class="ident">Format</span> {
+        <span class="kw">unsafe</span> {
+            <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">fmt</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
+            <span class="ident">ffi</span>::<span class="ident">gst_query_parse_seeking</span>(
+                <span class="self">self</span>.<span class="number">0</span>.<span class="ident">as_mut_ptr</span>(),
+                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt</span>,
+                <span class="ident">ptr</span>::<span class="ident">null_mut</span>(),
+                <span class="ident">ptr</span>::<span class="ident">null_mut</span>(),
+                <span class="ident">ptr</span>::<span class="ident">null_mut</span>(),
+            );
+
+            <span class="ident">from_glib</span>(<span class="ident">fmt</span>)
         }
     }
 
@@ -1736,14 +1616,20 @@
 }
 
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">Seeking</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="kw-2">mut</span> <span class="ident">QueryRef</span><span class="op">&gt;</span> {
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">fmt</span>: ::<span class="ident">Format</span>, <span class="ident">seekable</span>: <span class="ident">bool</span>, <span class="ident">start</span>: <span class="ident">i64</span>, <span class="ident">end</span>: <span class="ident">i64</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span>::<span class="ident">FormatValue</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">seekable</span>: <span class="ident">bool</span>, <span class="ident">start</span>: <span class="ident">V</span>, <span class="ident">end</span>: <span class="ident">V</span>) {
+        <span class="kw">let</span> <span class="ident">start</span> <span class="op">=</span> <span class="ident">start</span>.<span class="ident">into</span>();
+        <span class="kw">let</span> <span class="ident">end</span> <span class="op">=</span> <span class="ident">end</span>.<span class="ident">into</span>();
+
+        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">start</span>.<span class="ident">to_format</span>());
+        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">start</span>.<span class="ident">to_format</span>(), <span class="ident">end</span>.<span class="ident">to_format</span>());
+
         <span class="kw">unsafe</span> {
             <span class="ident">ffi</span>::<span class="ident">gst_query_set_seeking</span>(
                 <span class="self">self</span>.<span class="number">0</span>.<span class="ident">as_mut_ptr</span>(),
-                <span class="ident">fmt</span>.<span class="ident">to_glib</span>(),
+                <span class="ident">start</span>.<span class="ident">to_format</span>().<span class="ident">to_glib</span>(),
                 <span class="ident">seekable</span>.<span class="ident">to_glib</span>(),
-                <span class="ident">start</span>,
-                <span class="ident">end</span>,
+                <span class="ident">start</span>.<span class="ident">to_value</span>(),
+                <span class="ident">end</span>.<span class="ident">to_value</span>(),
             );
         }
     }
@@ -1755,7 +1641,7 @@
 
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">Segment</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>(<span class="ident">T</span>);
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">Segment</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">QueryRef</span><span class="op">&gt;</span> {
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> (<span class="ident">f64</span>, ::<span class="ident">Format</span>, <span class="ident">i64</span>, <span class="ident">i64</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_result</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> (<span class="ident">f64</span>, ::<span class="ident">FormatValue</span>, ::<span class="ident">FormatValue</span>) {
         <span class="kw">unsafe</span> {
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">rate</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">fmt</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
@@ -1769,7 +1655,26 @@
                 <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">start</span>,
                 <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">stop</span>,
             );
-            (<span class="ident">rate</span>, <span class="ident">from_glib</span>(<span class="ident">fmt</span>), <span class="ident">start</span>, <span class="ident">stop</span>)
+            (
+                <span class="ident">rate</span>,
+                ::<span class="ident">FormatValue</span>::<span class="ident">new</span>(<span class="ident">from_glib</span>(<span class="ident">fmt</span>), <span class="ident">start</span>),
+                ::<span class="ident">FormatValue</span>::<span class="ident">new</span>(<span class="ident">from_glib</span>(<span class="ident">fmt</span>), <span class="ident">stop</span>),
+            )
+        }
+    }
+
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_format</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> ::<span class="ident">Format</span> {
+        <span class="kw">unsafe</span> {
+            <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">fmt</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
+
+            <span class="ident">ffi</span>::<span class="ident">gst_query_parse_segment</span>(
+                <span class="self">self</span>.<span class="number">0</span>.<span class="ident">as_mut_ptr</span>(),
+                <span class="ident">ptr</span>::<span class="ident">null_mut</span>(),
+                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt</span>,
+                <span class="ident">ptr</span>::<span class="ident">null_mut</span>(),
+                <span class="ident">ptr</span>::<span class="ident">null_mut</span>(),
+            );
+            <span class="ident">from_glib</span>(<span class="ident">fmt</span>)
         }
     }
 
@@ -1779,9 +1684,20 @@
 }
 
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">Segment</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="kw-2">mut</span> <span class="ident">QueryRef</span><span class="op">&gt;</span> {
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">rate</span>: <span class="ident">f64</span>, <span class="ident">fmt</span>: ::<span class="ident">Format</span>, <span class="ident">start</span>: <span class="ident">i64</span>, <span class="ident">stop</span>: <span class="ident">i64</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span>::<span class="ident">FormatValue</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">rate</span>: <span class="ident">f64</span>, <span class="ident">start</span>: <span class="ident">V</span>, <span class="ident">stop</span>: <span class="ident">V</span>) {
+        <span class="kw">let</span> <span class="ident">start</span> <span class="op">=</span> <span class="ident">start</span>.<span class="ident">into</span>();
+        <span class="kw">let</span> <span class="ident">stop</span> <span class="op">=</span> <span class="ident">stop</span>.<span class="ident">into</span>();
+
+        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">start</span>.<span class="ident">to_format</span>(), <span class="ident">stop</span>.<span class="ident">to_format</span>());
+
         <span class="kw">unsafe</span> {
-            <span class="ident">ffi</span>::<span class="ident">gst_query_set_segment</span>(<span class="self">self</span>.<span class="number">0</span>.<span class="ident">as_mut_ptr</span>(), <span class="ident">rate</span>, <span class="ident">fmt</span>.<span class="ident">to_glib</span>(), <span class="ident">start</span>, <span class="ident">stop</span>);
+            <span class="ident">ffi</span>::<span class="ident">gst_query_set_segment</span>(
+                <span class="self">self</span>.<span class="number">0</span>.<span class="ident">as_mut_ptr</span>(),
+                <span class="ident">rate</span>,
+                <span class="ident">start</span>.<span class="ident">to_format</span>().<span class="ident">to_glib</span>(),
+                <span class="ident">start</span>.<span class="ident">to_value</span>(),
+                <span class="ident">stop</span>.<span class="ident">to_value</span>(),
+            );
         }
     }
 
@@ -1792,7 +1708,7 @@
 
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">Convert</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>(<span class="ident">T</span>);
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">Convert</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">QueryRef</span><span class="op">&gt;</span> {
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> (::<span class="ident">Format</span>, <span class="ident">i64</span>, ::<span class="ident">Format</span>, <span class="ident">i64</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_result</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> (::<span class="ident">FormatValue</span>, ::<span class="ident">FormatValue</span>) {
         <span class="kw">unsafe</span> {
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">src_fmt</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">src</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
@@ -1806,7 +1722,30 @@
                 <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">dest_fmt</span>,
                 <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">dest</span>,
             );
-            (<span class="ident">from_glib</span>(<span class="ident">src_fmt</span>), <span class="ident">src</span>, <span class="ident">from_glib</span>(<span class="ident">dest_fmt</span>), <span class="ident">dest</span>)
+            (
+                ::<span class="ident">FormatValue</span>::<span class="ident">new</span>(<span class="ident">from_glib</span>(<span class="ident">src_fmt</span>), <span class="ident">src</span>),
+                ::<span class="ident">FormatValue</span>::<span class="ident">new</span>(<span class="ident">from_glib</span>(<span class="ident">dest_fmt</span>), <span class="ident">dest</span>),
+            )
+        }
+    }
+
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> (::<span class="ident">FormatValue</span>, ::<span class="ident">Format</span>) {
+        <span class="kw">unsafe</span> {
+            <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">src_fmt</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
+            <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">src</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
+            <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">dest_fmt</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
+
+            <span class="ident">ffi</span>::<span class="ident">gst_query_parse_convert</span>(
+                <span class="self">self</span>.<span class="number">0</span>.<span class="ident">as_mut_ptr</span>(),
+                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">src_fmt</span>,
+                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">src</span>,
+                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">dest_fmt</span>,
+                <span class="ident">ptr</span>::<span class="ident">null_mut</span>(),
+            );
+            (
+                ::<span class="ident">FormatValue</span>::<span class="ident">new</span>(<span class="ident">from_glib</span>(<span class="ident">src_fmt</span>), <span class="ident">src</span>),
+                <span class="ident">from_glib</span>(<span class="ident">dest_fmt</span>),
+            )
         }
     }
 
@@ -1816,14 +1755,17 @@
 }
 
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">Convert</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="kw-2">mut</span> <span class="ident">QueryRef</span><span class="op">&gt;</span> {
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">src_fmt</span>: ::<span class="ident">Format</span>, <span class="ident">src</span>: <span class="ident">i64</span>, <span class="ident">dest_fmt</span>: ::<span class="ident">Format</span>, <span class="ident">dest</span>: <span class="ident">i64</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span>::<span class="ident">FormatValue</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">src</span>: <span class="ident">V</span>, <span class="ident">dest</span>: <span class="ident">V</span>) {
+        <span class="kw">let</span> <span class="ident">src</span> <span class="op">=</span> <span class="ident">src</span>.<span class="ident">into</span>();
+        <span class="kw">let</span> <span class="ident">dest</span> <span class="op">=</span> <span class="ident">dest</span>.<span class="ident">into</span>();
+
         <span class="kw">unsafe</span> {
             <span class="ident">ffi</span>::<span class="ident">gst_query_set_convert</span>(
                 <span class="self">self</span>.<span class="number">0</span>.<span class="ident">as_mut_ptr</span>(),
-                <span class="ident">src_fmt</span>.<span class="ident">to_glib</span>(),
-                <span class="ident">src</span>,
-                <span class="ident">dest_fmt</span>.<span class="ident">to_glib</span>(),
-                <span class="ident">dest</span>,
+                <span class="ident">src</span>.<span class="ident">to_format</span>().<span class="ident">to_glib</span>(),
+                <span class="ident">src</span>.<span class="ident">to_value</span>(),
+                <span class="ident">dest</span>.<span class="ident">to_format</span>().<span class="ident">to_glib</span>(),
+                <span class="ident">dest</span>.<span class="ident">to_value</span>(),
             );
         }
     }
@@ -1835,7 +1777,7 @@
 
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">Formats</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>(<span class="ident">T</span>);
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">Formats</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">QueryRef</span><span class="op">&gt;</span> {
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">Vec</span><span class="op">&lt;</span>::<span class="ident">Format</span><span class="op">&gt;</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_result</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">Vec</span><span class="op">&lt;</span>::<span class="ident">Format</span><span class="op">&gt;</span> {
         <span class="kw">unsafe</span> {
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">n</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
             <span class="ident">ffi</span>::<span class="ident">gst_query_parse_n_formats</span>(<span class="self">self</span>.<span class="number">0</span>.<span class="ident">as_mut_ptr</span>(), <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">n</span>);
@@ -1871,6 +1813,22 @@
 
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">Buffering</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>(<span class="ident">T</span>);
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">Buffering</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">QueryRef</span><span class="op">&gt;</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_format</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> ::<span class="ident">Format</span> {
+        <span class="kw">unsafe</span> {
+            <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">fmt</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
+
+            <span class="ident">ffi</span>::<span class="ident">gst_query_parse_buffering_range</span>(
+                <span class="self">self</span>.<span class="number">0</span>.<span class="ident">as_mut_ptr</span>(),
+                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt</span>,
+                <span class="ident">ptr</span>::<span class="ident">null_mut</span>(),
+                <span class="ident">ptr</span>::<span class="ident">null_mut</span>(),
+                <span class="ident">ptr</span>::<span class="ident">null_mut</span>(),
+            );
+
+            <span class="ident">from_glib</span>(<span class="ident">fmt</span>)
+        }
+    }
+
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_percent</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> (<span class="ident">bool</span>, <span class="ident">i32</span>) {
         <span class="kw">unsafe</span> {
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">busy</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
@@ -1882,7 +1840,7 @@
         }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_range</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> (::<span class="ident">Format</span>, <span class="ident">i64</span>, <span class="ident">i64</span>, <span class="ident">i64</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_range</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> (::<span class="ident">FormatValue</span>, ::<span class="ident">FormatValue</span>, <span class="ident">i64</span>) {
         <span class="kw">unsafe</span> {
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">fmt</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">start</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
@@ -1896,7 +1854,11 @@
                 <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">stop</span>,
                 <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">estimated_total</span>,
             );
-            (<span class="ident">from_glib</span>(<span class="ident">fmt</span>), <span class="ident">start</span>, <span class="ident">stop</span>, <span class="ident">estimated_total</span>)
+            (
+                ::<span class="ident">FormatValue</span>::<span class="ident">new</span>(<span class="ident">from_glib</span>(<span class="ident">fmt</span>), <span class="ident">start</span>),
+                ::<span class="ident">FormatValue</span>::<span class="ident">new</span>(<span class="ident">from_glib</span>(<span class="ident">fmt</span>), <span class="ident">stop</span>),
+                <span class="ident">estimated_total</span>,
+            )
         }
     }
 
@@ -1919,8 +1881,18 @@
         }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_ranges</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">Vec</span><span class="op">&lt;</span>(<span class="ident">i64</span>, <span class="ident">i64</span>)<span class="op">&gt;</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_ranges</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">Vec</span><span class="op">&lt;</span>(::<span class="ident">FormatValue</span>, ::<span class="ident">FormatValue</span>)<span class="op">&gt;</span> {
         <span class="kw">unsafe</span> {
+            <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">fmt</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
+            <span class="ident">ffi</span>::<span class="ident">gst_query_parse_buffering_range</span>(
+                <span class="self">self</span>.<span class="number">0</span>.<span class="ident">as_mut_ptr</span>(),
+                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt</span>,
+                <span class="ident">ptr</span>::<span class="ident">null_mut</span>(),
+                <span class="ident">ptr</span>::<span class="ident">null_mut</span>(),
+                <span class="ident">ptr</span>::<span class="ident">null_mut</span>(),
+            );
+            <span class="kw">let</span> <span class="ident">fmt</span> <span class="op">=</span> <span class="ident">from_glib</span>(<span class="ident">fmt</span>);
+
             <span class="kw">let</span> <span class="ident">n</span> <span class="op">=</span> <span class="ident">ffi</span>::<span class="ident">gst_query_get_n_buffering_ranges</span>(<span class="self">self</span>.<span class="number">0</span>.<span class="ident">as_mut_ptr</span>());
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">res</span> <span class="op">=</span> <span class="ident">Vec</span>::<span class="ident">with_capacity</span>(<span class="ident">n</span> <span class="kw">as</span> <span class="ident">usize</span>);
             <span class="kw">for</span> <span class="ident">i</span> <span class="kw">in</span> <span class="number">0</span>..<span class="ident">n</span> {
@@ -1933,7 +1905,10 @@
                     <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">stop</span>,
                 ));
                 <span class="kw">if</span> <span class="ident">s</span> {
-                    <span class="ident">res</span>.<span class="ident">push</span>((<span class="ident">start</span>, <span class="ident">stop</span>));
+                    <span class="ident">res</span>.<span class="ident">push</span>((
+                        ::<span class="ident">FormatValue</span>::<span class="ident">new</span>(<span class="ident">fmt</span>, <span class="ident">start</span>),
+                        ::<span class="ident">FormatValue</span>::<span class="ident">new</span>(<span class="ident">fmt</span>, <span class="ident">stop</span>),
+                    ));
                 }
             }
 
@@ -1953,13 +1928,19 @@
         }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_range</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">fmt</span>: ::<span class="ident">Format</span>, <span class="ident">start</span>: <span class="ident">i64</span>, <span class="ident">stop</span>: <span class="ident">i64</span>, <span class="ident">estimated_total</span>: <span class="ident">i64</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_range</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span>::<span class="ident">FormatValue</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">start</span>: <span class="ident">V</span>, <span class="ident">stop</span>: <span class="ident">V</span>, <span class="ident">estimated_total</span>: <span class="ident">i64</span>) {
+        <span class="kw">let</span> <span class="ident">start</span> <span class="op">=</span> <span class="ident">start</span>.<span class="ident">into</span>();
+        <span class="kw">let</span> <span class="ident">stop</span> <span class="op">=</span> <span class="ident">stop</span>.<span class="ident">into</span>();
+
+        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">start</span>.<span class="ident">to_format</span>());
+        <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">start</span>.<span class="ident">to_format</span>(), <span class="ident">stop</span>.<span class="ident">to_format</span>());
+
         <span class="kw">unsafe</span> {
             <span class="ident">ffi</span>::<span class="ident">gst_query_set_buffering_range</span>(
                 <span class="self">self</span>.<span class="number">0</span>.<span class="ident">as_mut_ptr</span>(),
-                <span class="ident">fmt</span>.<span class="ident">to_glib</span>(),
-                <span class="ident">start</span>,
-                <span class="ident">stop</span>,
+                <span class="ident">start</span>.<span class="ident">to_format</span>().<span class="ident">to_glib</span>(),
+                <span class="ident">start</span>.<span class="ident">to_value</span>(),
+                <span class="ident">stop</span>.<span class="ident">to_value</span>(),
                 <span class="ident">estimated_total</span>,
             );
         }
@@ -1984,10 +1965,20 @@
         }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">add_buffering_ranges</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">ranges</span>: <span class="kw-2">&amp;</span>[(<span class="ident">i64</span>, <span class="ident">i64</span>)]) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">add_buffering_ranges</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span>::<span class="ident">FormatValue</span><span class="op">&gt;</span> <span class="op">+</span> <span class="ident">Copy</span><span class="op">&gt;</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">ranges</span>: <span class="kw-2">&amp;</span>[(<span class="ident">V</span>, <span class="ident">V</span>)]) {
         <span class="kw">unsafe</span> {
+            <span class="kw">let</span> <span class="ident">fmt</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">get_format</span>();
+
             <span class="kw">for</span> <span class="kw-2">&amp;</span>(<span class="ident">start</span>, <span class="ident">stop</span>) <span class="kw">in</span> <span class="ident">ranges</span> {
-                <span class="ident">ffi</span>::<span class="ident">gst_query_add_buffering_range</span>(<span class="self">self</span>.<span class="number">0</span>.<span class="ident">as_mut_ptr</span>(), <span class="ident">start</span>, <span class="ident">stop</span>);
+                <span class="kw">let</span> <span class="ident">start</span> <span class="op">=</span> <span class="ident">start</span>.<span class="ident">into</span>();
+                <span class="kw">let</span> <span class="ident">stop</span> <span class="op">=</span> <span class="ident">stop</span>.<span class="ident">into</span>();
+                <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">start</span>.<span class="ident">to_format</span>(), <span class="ident">fmt</span>);
+                <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">stop</span>.<span class="ident">to_format</span>(), <span class="ident">fmt</span>);
+                <span class="ident">ffi</span>::<span class="ident">gst_query_add_buffering_range</span>(
+                    <span class="self">self</span>.<span class="number">0</span>.<span class="ident">as_mut_ptr</span>(),
+                    <span class="ident">start</span>.<span class="ident">to_value</span>(),
+                    <span class="ident">stop</span>.<span class="ident">to_value</span>(),
+                );
             }
         }
     }
@@ -2112,7 +2103,7 @@
         }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> (::<span class="ident">SchedulingFlags</span>, <span class="ident">i32</span>, <span class="ident">i32</span>, <span class="ident">i32</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_result</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> (::<span class="ident">SchedulingFlags</span>, <span class="ident">i32</span>, <span class="ident">i32</span>, <span class="ident">i32</span>) {
         <span class="kw">unsafe</span> {
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">flags</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">minsize</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
@@ -2164,7 +2155,7 @@
 
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">AcceptCaps</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>(<span class="ident">T</span>);
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">AcceptCaps</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">QueryRef</span><span class="op">&gt;</span> {
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span>::<span class="ident">CapsRef</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_caps</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span>::<span class="ident">CapsRef</span> {
         <span class="kw">unsafe</span> {
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">caps</span> <span class="op">=</span> <span class="ident">ptr</span>::<span class="ident">null_mut</span>();
             <span class="ident">ffi</span>::<span class="ident">gst_query_parse_accept_caps</span>(<span class="self">self</span>.<span class="number">0</span>.<span class="ident">as_mut_ptr</span>(), <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">caps</span>);
@@ -2371,28 +2362,25 @@
 
         <span class="kw">match</span> <span class="ident">q</span>.<span class="ident">view</span>() {
             <span class="ident">QueryView</span>::<span class="ident">Position</span>(<span class="kw-2">ref</span> <span class="ident">p</span>) <span class="op">=&gt;</span> {
-                <span class="kw">let</span> (<span class="ident">fmt</span>, <span class="ident">pos</span>) <span class="op">=</span> <span class="ident">p</span>.<span class="ident">get</span>();
+                <span class="kw">let</span> <span class="ident">fmt</span> <span class="op">=</span> <span class="ident">p</span>.<span class="ident">get_format</span>();
                 <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">fmt</span>, ::<span class="ident">Format</span>::<span class="ident">Time</span>);
-                <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">pos</span>, <span class="op">-</span><span class="number">1</span>);
             }
             _ <span class="op">=&gt;</span> (),
         }
 
         <span class="kw">match</span> <span class="ident">q</span>.<span class="ident">get_mut</span>().<span class="ident">unwrap</span>().<span class="ident">view_mut</span>() {
             <span class="ident">QueryView</span>::<span class="ident">Position</span>(<span class="kw-2">ref</span> <span class="kw-2">mut</span> <span class="ident">p</span>) <span class="op">=&gt;</span> {
-                <span class="kw">let</span> (<span class="ident">fmt</span>, <span class="ident">pos</span>) <span class="op">=</span> <span class="ident">p</span>.<span class="ident">get</span>();
-                <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">fmt</span>, ::<span class="ident">Format</span>::<span class="ident">Time</span>);
-                <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">pos</span>, <span class="op">-</span><span class="number">1</span>);
-                <span class="ident">p</span>.<span class="ident">set</span>(::<span class="ident">Format</span>::<span class="ident">Time</span>, <span class="number">2</span>);
+                <span class="kw">let</span> <span class="ident">pos</span> <span class="op">=</span> <span class="ident">p</span>.<span class="ident">get_result</span>();
+                <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">pos</span>.<span class="ident">try_to_time</span>(), <span class="prelude-val">Some</span>(::<span class="ident">CLOCK_TIME_NONE</span>));
+                <span class="ident">p</span>.<span class="ident">set</span>(<span class="number">2</span> <span class="op">*</span> ::<span class="ident">SECOND</span>);
             }
             _ <span class="op">=&gt;</span> (),
         }
 
         <span class="kw">match</span> <span class="ident">q</span>.<span class="ident">view</span>() {
             <span class="ident">QueryView</span>::<span class="ident">Position</span>(<span class="kw-2">ref</span> <span class="ident">p</span>) <span class="op">=&gt;</span> {
-                <span class="kw">let</span> (<span class="ident">fmt</span>, <span class="ident">pos</span>) <span class="op">=</span> <span class="ident">p</span>.<span class="ident">get</span>();
-                <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">fmt</span>, ::<span class="ident">Format</span>::<span class="ident">Time</span>);
-                <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">pos</span>, <span class="number">2</span>);
+                <span class="kw">let</span> <span class="ident">pos</span> <span class="op">=</span> <span class="ident">p</span>.<span class="ident">get_result</span>();
+                <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">pos</span>.<span class="ident">try_to_time</span>(), <span class="prelude-val">Some</span>(<span class="number">2</span> <span class="op">*</span> ::<span class="ident">SECOND</span>));
             }
             _ <span class="op">=&gt;</span> (),
         }
@@ -2416,13 +2404,15 @@
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
