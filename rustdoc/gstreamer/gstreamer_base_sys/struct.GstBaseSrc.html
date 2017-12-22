@@ -28,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'>Struct GstBaseSrc</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.element">element</a><a href="#structfield.srcpad">srcpad</a><a href="#structfield.live_lock">live_lock</a><a href="#structfield.live_cond">live_cond</a><a href="#structfield.is_live">is_live</a><a href="#structfield.live_running">live_running</a><a href="#structfield.blocksize">blocksize</a><a href="#structfield.can_activate_push">can_activate_push</a><a href="#structfield.random_access">random_access</a><a href="#structfield.clock_id">clock_id</a><a href="#structfield.segment">segment</a><a href="#structfield.need_newsegment">need_newsegment</a><a href="#structfield.num_buffers">num_buffers</a><a href="#structfield.num_buffers_left">num_buffers_left</a><a href="#structfield.typefind">typefind</a><a href="#structfield.running">running</a><a href="#structfield.pending_seek">pending_seek</a><a href="#structfield.priv_">priv_</a><a href="#structfield._gst_reserved">_gst_reserved</a></div></div><p class='location'><a href='index.html'>gstreamer_base_sys</a></p><script>window.sidebarCurrent = {name: 'GstBaseSrc', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct GstBaseSrc</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.element">element</a><a href="#structfield.srcpad">srcpad</a><a href="#structfield.live_lock">live_lock</a><a href="#structfield.live_cond">live_cond</a><a href="#structfield.is_live">is_live</a><a href="#structfield.live_running">live_running</a><a href="#structfield.blocksize">blocksize</a><a href="#structfield.can_activate_push">can_activate_push</a><a href="#structfield.random_access">random_access</a><a href="#structfield.clock_id">clock_id</a><a href="#structfield.segment">segment</a><a href="#structfield.need_newsegment">need_newsegment</a><a href="#structfield.num_buffers">num_buffers</a><a href="#structfield.num_buffers_left">num_buffers_left</a><a href="#structfield.typefind">typefind</a><a href="#structfield.running">running</a><a href="#structfield.pending_seek">pending_seek</a><a href="#structfield.priv_">priv_</a><a href="#structfield._gst_reserved">_gst_reserved</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Debug">Debug</a></div></div><p class='location'><a href='index.html'>gstreamer_base_sys</a></p><script>window.sidebarCurrent = {name: 'GstBaseSrc', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -48,7 +49,7 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/gstreamer_base_sys/lib.rs.html#347-367' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/gstreamer_base_sys/lib.rs.html#539-559' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'><div class="docblock attributes">#[repr(C)]
 </div>pub struct GstBaseSrc {
     pub element: <a class="struct" href="../gstreamer_sys/struct.GstElement.html" title="struct gstreamer_sys::GstElement">GstElement</a>,
@@ -147,7 +148,14 @@
                            <a href="#structfield._gst_reserved" class="anchor field"></a>
                            <span id="_gst_reserved.v" class='invisible'>
                            <code>_gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 20]</a></code>
-                           </span></span></section>
+                           </span></span>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../gstreamer_base_sys/struct.GstBaseSrc.html" title="struct gstreamer_base_sys::GstBaseSrc">GstBaseSrc</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_base_sys/lib.rs.html#561-585' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_base_sys/lib.rs.html#562-584' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

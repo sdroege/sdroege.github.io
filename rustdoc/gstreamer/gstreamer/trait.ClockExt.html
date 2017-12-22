@@ -28,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'>Trait ClockExt</p><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.add_observation">add_observation</a><a href="#tymethod.add_observation_unapplied">add_observation_unapplied</a><a href="#tymethod.adjust_unlocked">adjust_unlocked</a><a href="#tymethod.adjust_with_calibration">adjust_with_calibration</a><a href="#tymethod.get_calibration">get_calibration</a><a href="#tymethod.get_internal_time">get_internal_time</a><a href="#tymethod.get_master">get_master</a><a href="#tymethod.get_resolution">get_resolution</a><a href="#tymethod.get_time">get_time</a><a href="#tymethod.get_timeout">get_timeout</a><a href="#tymethod.is_synced">is_synced</a><a href="#tymethod.set_calibration">set_calibration</a><a href="#tymethod.set_master">set_master</a><a href="#tymethod.set_resolution">set_resolution</a><a href="#tymethod.set_synced">set_synced</a><a href="#tymethod.set_timeout">set_timeout</a><a href="#tymethod.unadjust_unlocked">unadjust_unlocked</a><a href="#tymethod.unadjust_with_calibration">unadjust_with_calibration</a><a href="#tymethod.wait_for_sync">wait_for_sync</a><a href="#tymethod.get_property_window_size">get_property_window_size</a><a href="#tymethod.set_property_window_size">set_property_window_size</a><a href="#tymethod.get_property_window_threshold">get_property_window_threshold</a><a href="#tymethod.set_property_window_threshold">set_property_window_threshold</a><a href="#tymethod.connect_synced">connect_synced</a><a href="#tymethod.connect_property_timeout_notify">connect_property_timeout_notify</a><a href="#tymethod.connect_property_window_size_notify">connect_property_window_size_notify</a><a href="#tymethod.connect_property_window_threshold_notify">connect_property_window_threshold_notify</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='index.html'>gstreamer</a></p><script>window.sidebarCurrent = {name: 'ClockExt', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Trait ClockExt</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.add_observation">add_observation</a><a href="#tymethod.add_observation_unapplied">add_observation_unapplied</a><a href="#tymethod.adjust_unlocked">adjust_unlocked</a><a href="#tymethod.get_calibration">get_calibration</a><a href="#tymethod.get_internal_time">get_internal_time</a><a href="#tymethod.get_master">get_master</a><a href="#tymethod.get_resolution">get_resolution</a><a href="#tymethod.get_time">get_time</a><a href="#tymethod.get_timeout">get_timeout</a><a href="#tymethod.is_synced">is_synced</a><a href="#tymethod.set_calibration">set_calibration</a><a href="#tymethod.set_master">set_master</a><a href="#tymethod.set_resolution">set_resolution</a><a href="#tymethod.set_synced">set_synced</a><a href="#tymethod.set_timeout">set_timeout</a><a href="#tymethod.unadjust_unlocked">unadjust_unlocked</a><a href="#tymethod.wait_for_sync">wait_for_sync</a><a href="#tymethod.get_property_window_size">get_property_window_size</a><a href="#tymethod.set_property_window_size">set_property_window_size</a><a href="#tymethod.get_property_window_threshold">get_property_window_threshold</a><a href="#tymethod.set_property_window_threshold">set_property_window_threshold</a><a href="#tymethod.connect_synced">connect_synced</a><a href="#tymethod.connect_property_timeout_notify">connect_property_timeout_notify</a><a href="#tymethod.connect_property_window_size_notify">connect_property_window_size_notify</a><a href="#tymethod.connect_property_window_threshold_notify">connect_property_window_threshold_notify</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='index.html'>gstreamer</a></p><script>window.sidebarCurrent = {name: 'ClockExt', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -48,12 +49,11 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/gstreamer/auto/clock.rs.html#143-476' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/gstreamer/auto/clock.rs.html#144-430' title='goto source code'>[src]</a></span></h1>
 <pre class='rust trait'>pub trait ClockExt {
     fn <a href='#tymethod.add_observation' class='fnname'>add_observation</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;slave: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;master: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a><br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>&gt;;
 <div class='item-spacer'></div>    fn <a href='#tymethod.add_observation_unapplied' class='fnname'>add_observation_unapplied</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;slave: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;master: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a><br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>, <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>&gt;;
 <div class='item-spacer'></div>    fn <a href='#tymethod.adjust_unlocked' class='fnname'>adjust_unlocked</a>(&amp;self, internal: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>) -&gt; <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>;
-<div class='item-spacer'></div>    fn <a href='#tymethod.adjust_with_calibration' class='fnname'>adjust_with_calibration</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;internal_target: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cinternal: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cexternal: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cnum: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cdenom: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a><br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>;
 <div class='item-spacer'></div>    fn <a href='#tymethod.get_calibration' class='fnname'>get_calibration</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>;
 <div class='item-spacer'></div>    fn <a href='#tymethod.get_internal_time' class='fnname'>get_internal_time</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>;
 <div class='item-spacer'></div>    fn <a href='#tymethod.get_master' class='fnname'>get_master</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Clock.html" title="struct gstreamer::Clock">Clock</a>&gt;;
@@ -67,7 +67,6 @@
 <div class='item-spacer'></div>    fn <a href='#tymethod.set_synced' class='fnname'>set_synced</a>(&amp;self, synced: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
 <div class='item-spacer'></div>    fn <a href='#tymethod.set_timeout' class='fnname'>set_timeout</a>(&amp;self, timeout: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>);
 <div class='item-spacer'></div>    fn <a href='#tymethod.unadjust_unlocked' class='fnname'>unadjust_unlocked</a>(&amp;self, external: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>) -&gt; <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>;
-<div class='item-spacer'></div>    fn <a href='#tymethod.unadjust_with_calibration' class='fnname'>unadjust_with_calibration</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;external_target: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cinternal: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cexternal: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cnum: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cdenom: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a><br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>;
 <div class='item-spacer'></div>    fn <a href='#tymethod.wait_for_sync' class='fnname'>wait_for_sync</a>(&amp;self, timeout: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="struct" href="../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;;
 <div class='item-spacer'></div>    fn <a href='#tymethod.get_property_window_size' class='fnname'>get_property_window_size</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>;
 <div class='item-spacer'></div>    fn <a href='#tymethod.set_property_window_size' class='fnname'>set_property_window_size</a>(&amp;self, window_size: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>);
@@ -150,32 +149,6 @@ clock&#39;s OBJECT_LOCK held and is mainly used by clock subclasses.</p>
 
 <h1 id='returns-1' class='section-header'><a href='#returns-1'>Returns</a></h1>
 <p>the converted time of the clock.</p>
-</div><h3 id='tymethod.adjust_with_calibration' class='method'><span id='adjust_with_calibration.v' class='invisible'><code>fn <a href='#tymethod.adjust_with_calibration' class='fnname'>adjust_with_calibration</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;internal_target: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;cinternal: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;cexternal: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;cnum: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;cdenom: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a><br>) -&gt; <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a></code></span></h3><div class='docblock'><p>Converts the given <code>internal_target</code> clock time to the external time,
-using the passed calibration parameters. This function performs the
-same calculation as <code>ClockExt::adjust_unlocked</code> when called using the
-current calibration parameters, but doesn&#39;t ensure a monotonically
-increasing result as <code>ClockExt::adjust_unlocked</code> does.</p>
-
-<p>Note: The <code>self</code> parameter is unused and can be NULL</p>
-
-<h2 id='internal_target' class='section-header'><a href='#internal_target'><code>internal_target</code></a></h2>
-<p>a clock time</p>
-
-<h2 id='cinternal' class='section-header'><a href='#cinternal'><code>cinternal</code></a></h2>
-<p>a reference internal time</p>
-
-<h2 id='cexternal' class='section-header'><a href='#cexternal'><code>cexternal</code></a></h2>
-<p>a reference external time</p>
-
-<h2 id='cnum' class='section-header'><a href='#cnum'><code>cnum</code></a></h2>
-<p>the numerator of the rate of the clock relative to its
- internal time</p>
-
-<h2 id='cdenom' class='section-header'><a href='#cdenom'><code>cdenom</code></a></h2>
-<p>the denominator of the rate of the clock</p>
-
-<h1 id='returns-2' class='section-header'><a href='#returns-2'>Returns</a></h1>
-<p>the converted time of the clock.</p>
 </div><h3 id='tymethod.get_calibration' class='method'><span id='get_calibration.v' class='invisible'><code>fn <a href='#tymethod.get_calibration' class='fnname'>get_calibration</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a></code></span></h3><div class='docblock'><p>Gets the internal rate and reference time of <code>self</code>. See
 <code>ClockExt::set_calibration</code> for more information.</p>
 
@@ -198,7 +171,7 @@ caller is not interested in the values.</p>
 </div><h3 id='tymethod.get_internal_time' class='method'><span id='get_internal_time.v' class='invisible'><code>fn <a href='#tymethod.get_internal_time' class='fnname'>get_internal_time</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a></code></span></h3><div class='docblock'><p>Gets the current internal time of the given clock. The time is returned
 unadjusted for the offset and the rate.</p>
 
-<h1 id='returns-3' class='section-header'><a href='#returns-3'>Returns</a></h1>
+<h1 id='returns-2' class='section-header'><a href='#returns-2'>Returns</a></h1>
 <p>the internal time of the clock. Or GST_CLOCK_TIME_NONE when
 given invalid input.</p>
 
@@ -206,7 +179,7 @@ given invalid input.</p>
 </div><h3 id='tymethod.get_master' class='method'><span id='get_master.v' class='invisible'><code>fn <a href='#tymethod.get_master' class='fnname'>get_master</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Clock.html" title="struct gstreamer::Clock">Clock</a>&gt;</code></span></h3><div class='docblock'><p>Get the master clock that <code>self</code> is slaved to or <code>None</code> when the clock is
 not slaved to any master clock.</p>
 
-<h1 id='returns-4' class='section-header'><a href='#returns-4'>Returns</a></h1>
+<h1 id='returns-3' class='section-header'><a href='#returns-3'>Returns</a></h1>
 <p>a master <code>Clock</code> or <code>None</code>
  when this clock is not slaved to a master clock. Unref after
  usage.</p>
@@ -215,7 +188,7 @@ not slaved to any master clock.</p>
 </div><h3 id='tymethod.get_resolution' class='method'><span id='get_resolution.v' class='invisible'><code>fn <a href='#tymethod.get_resolution' class='fnname'>get_resolution</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a></code></span></h3><div class='docblock'><p>Get the accuracy of the clock. The accuracy of the clock is the granularity
 of the values returned by <code>ClockExt::get_time</code>.</p>
 
-<h1 id='returns-5' class='section-header'><a href='#returns-5'>Returns</a></h1>
+<h1 id='returns-4' class='section-header'><a href='#returns-4'>Returns</a></h1>
 <p>the resolution of the clock in units of <code>ClockTime</code>.</p>
 
 <p>MT safe.</p>
@@ -223,20 +196,20 @@ of the values returned by <code>ClockExt::get_time</code>.</p>
 monotonically increasing and adjusted according to the current
 offset and rate.</p>
 
-<h1 id='returns-6' class='section-header'><a href='#returns-6'>Returns</a></h1>
+<h1 id='returns-5' class='section-header'><a href='#returns-5'>Returns</a></h1>
 <p>the time of the clock. Or GST_CLOCK_TIME_NONE when
 given invalid input.</p>
 
 <p>MT safe.</p>
 </div><h3 id='tymethod.get_timeout' class='method'><span id='get_timeout.v' class='invisible'><code>fn <a href='#tymethod.get_timeout' class='fnname'>get_timeout</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a></code></span></h3><div class='docblock'><p>Get the amount of time that master and slave clocks are sampled.</p>
 
-<h1 id='returns-7' class='section-header'><a href='#returns-7'>Returns</a></h1>
+<h1 id='returns-6' class='section-header'><a href='#returns-6'>Returns</a></h1>
 <p>the interval between samples.</p>
 </div><h3 id='tymethod.is_synced' class='method'><span id='is_synced.v' class='invisible'><code>fn <a href='#tymethod.is_synced' class='fnname'>is_synced</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Checks if the clock is currently synced.</p>
 
 <p>This returns if GST_CLOCK_FLAG_NEEDS_STARTUP_SYNC is not set on the clock.</p>
 
-<h1 id='returns-8' class='section-header'><a href='#returns-8'>Returns</a></h1>
+<h1 id='returns-7' class='section-header'><a href='#returns-7'>Returns</a></h1>
 <p><code>true</code> if the clock is currently synced</p>
 </div><h3 id='tymethod.set_calibration' class='method'><span id='set_calibration.v' class='invisible'><code>fn <a href='#tymethod.set_calibration' class='fnname'>set_calibration</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;internal: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;external: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;rate_num: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;rate_denom: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a><br>)</code></span></h3><div class='docblock'><p>Adjusts the rate and time of <code>self</code>. A rate of 1/1 is the normal speed of
 the clock. Values bigger than 1/1 make the clock go faster.</p>
@@ -287,7 +260,7 @@ and time offsets.</p>
 <h2 id='master-2' class='section-header'><a href='#master-2'><code>master</code></a></h2>
 <p>a master <code>Clock</code></p>
 
-<h1 id='returns-9' class='section-header'><a href='#returns-9'>Returns</a></h1>
+<h1 id='returns-8' class='section-header'><a href='#returns-8'>Returns</a></h1>
 <p><code>true</code> if the clock is capable of being slaved to a master clock.
 Trying to set a master on a clock without the
 <code>ClockFlags::CanSetMaster</code> flag will make this function return <code>false</code>.</p>
@@ -302,7 +275,7 @@ of a clock can only be changed if the clock has the
 <h2 id='resolution' class='section-header'><a href='#resolution'><code>resolution</code></a></h2>
 <p>The resolution to set</p>
 
-<h1 id='returns-10' class='section-header'><a href='#returns-10'>Returns</a></h1>
+<h1 id='returns-9' class='section-header'><a href='#returns-9'>Returns</a></h1>
 <p>the new resolution of the clock.</p>
 </div><h3 id='tymethod.set_synced' class='method'><span id='set_synced.v' class='invisible'><code>fn <a href='#tymethod.set_synced' class='fnname'>set_synced</a>(&amp;self, synced: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><div class='docblock'><p>Sets <code>self</code> to synced and emits the GstClock::synced signal, and wakes up any
 thread waiting in <code>ClockExt::wait_for_sync</code>.</p>
@@ -327,33 +300,8 @@ is mainly used by clock subclasses.</p>
 <h2 id='external-3' class='section-header'><a href='#external-3'><code>external</code></a></h2>
 <p>an external clock time</p>
 
-<h1 id='returns-11' class='section-header'><a href='#returns-11'>Returns</a></h1>
+<h1 id='returns-10' class='section-header'><a href='#returns-10'>Returns</a></h1>
 <p>the internal time of the clock corresponding to <code>external</code>.</p>
-</div><h3 id='tymethod.unadjust_with_calibration' class='method'><span id='unadjust_with_calibration.v' class='invisible'><code>fn <a href='#tymethod.unadjust_with_calibration' class='fnname'>unadjust_with_calibration</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;external_target: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;cinternal: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;cexternal: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;cnum: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;cdenom: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a><br>) -&gt; <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a></code></span></h3><div class='docblock'><p>Converts the given <code>external_target</code> clock time to the internal time,
-using the passed calibration parameters. This function performs the
-same calculation as <code>ClockExt::unadjust_unlocked</code> when called using the
-current calibration parameters.</p>
-
-<p>Note: The <code>self</code> parameter is unused and can be NULL</p>
-
-<h2 id='external_target' class='section-header'><a href='#external_target'><code>external_target</code></a></h2>
-<p>a clock time</p>
-
-<h2 id='cinternal-1' class='section-header'><a href='#cinternal-1'><code>cinternal</code></a></h2>
-<p>a reference internal time</p>
-
-<h2 id='cexternal-1' class='section-header'><a href='#cexternal-1'><code>cexternal</code></a></h2>
-<p>a reference external time</p>
-
-<h2 id='cnum-1' class='section-header'><a href='#cnum-1'><code>cnum</code></a></h2>
-<p>the numerator of the rate of the clock relative to its
- internal time</p>
-
-<h2 id='cdenom-1' class='section-header'><a href='#cdenom-1'><code>cdenom</code></a></h2>
-<p>the denominator of the rate of the clock</p>
-
-<h1 id='returns-12' class='section-header'><a href='#returns-12'>Returns</a></h1>
-<p>the converted time of the clock.</p>
 </div><h3 id='tymethod.wait_for_sync' class='method'><span id='wait_for_sync.v' class='invisible'><code>fn <a href='#tymethod.wait_for_sync' class='fnname'>wait_for_sync</a>(&amp;self, timeout: <a class="struct" href="../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="struct" href="../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;</code></span></h3><div class='docblock'><p>Waits until <code>self</code> is synced for reporting the current time. If <code>timeout</code>
 is <code>GST_CLOCK_TIME_NONE</code> it will wait forever, otherwise it will time out
 after <code>timeout</code> nanoseconds.</p>
@@ -366,7 +314,7 @@ is not set on the clock, or if the clock is already synced.</p>
 <h2 id='timeout-1' class='section-header'><a href='#timeout-1'><code>timeout</code></a></h2>
 <p>timeout for waiting or <code>GST_CLOCK_TIME_NONE</code></p>
 
-<h1 id='returns-13' class='section-header'><a href='#returns-13'>Returns</a></h1>
+<h1 id='returns-11' class='section-header'><a href='#returns-11'>Returns</a></h1>
 <p><code>true</code> if waiting was successful, or <code>false</code> on timeout</p>
 </div><h3 id='tymethod.get_property_window_size' class='method'><span id='get_property_window_size.v' class='invisible'><code>fn <a href='#tymethod.get_property_window_size' class='fnname'>get_property_window_size</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code></span></h3><h3 id='tymethod.set_property_window_size' class='method'><span id='set_property_window_size.v' class='invisible'><code>fn <a href='#tymethod.set_property_window_size' class='fnname'>set_property_window_size</a>(&amp;self, window_size: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>)</code></span></h3><h3 id='tymethod.get_property_window_threshold' class='method'><span id='get_property_window_threshold.v' class='invisible'><code>fn <a href='#tymethod.get_property_window_threshold' class='fnname'>get_property_window_threshold</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code></span></h3><h3 id='tymethod.set_property_window_threshold' class='method'><span id='set_property_window_threshold.v' class='invisible'><code>fn <a href='#tymethod.set_property_window_threshold' class='fnname'>set_property_window_threshold</a>(&amp;self, window_threshold: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>)</code></span></h3><h3 id='tymethod.connect_synced' class='method'><span id='connect_synced.v' class='invisible'><code>fn <a href='#tymethod.connect_synced' class='fnname'>connect_synced</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><div class='docblock'><p>Signaled on clocks with GST_CLOCK_FLAG_NEEDS_STARTUP_SYNC set once
 the clock is synchronized, or when it completely lost synchronization.

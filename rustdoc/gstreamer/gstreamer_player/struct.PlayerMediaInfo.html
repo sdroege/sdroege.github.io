@@ -28,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'>Struct PlayerMediaInfo</p><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.get_audio_streams">get_audio_streams</a><a href="#method.get_container_format">get_container_format</a><a href="#method.get_duration">get_duration</a><a href="#method.get_image_sample">get_image_sample</a><a href="#method.get_number_of_audio_streams">get_number_of_audio_streams</a><a href="#method.get_number_of_streams">get_number_of_streams</a><a href="#method.get_number_of_subtitle_streams">get_number_of_subtitle_streams</a><a href="#method.get_number_of_video_streams">get_number_of_video_streams</a><a href="#method.get_stream_list">get_stream_list</a><a href="#method.get_subtitle_streams">get_subtitle_streams</a><a href="#method.get_tags">get_tags</a><a href="#method.get_title">get_title</a><a href="#method.get_uri">get_uri</a><a href="#method.get_video_streams">get_video_streams</a><a href="#method.is_live">is_live</a><a href="#method.is_seekable">is_seekable</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a><a href="#impl-Hash">Hash</a><a href="#impl-StaticType">StaticType</a><a href="#impl-PartialEq%3CT%3E">PartialEq&lt;T&gt;</a><a href="#impl-Eq">Eq</a><a href="#impl-IsA%3CObject%3E">IsA&lt;Object&gt;</a><a href="#impl-Send">Send</a><a href="#impl-Sync">Sync</a></div></div><p class='location'><a href='index.html'>gstreamer_player</a></p><script>window.sidebarCurrent = {name: 'PlayerMediaInfo', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct PlayerMediaInfo</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.get_audio_streams">get_audio_streams</a><a href="#method.get_container_format">get_container_format</a><a href="#method.get_duration">get_duration</a><a href="#method.get_image_sample">get_image_sample</a><a href="#method.get_number_of_audio_streams">get_number_of_audio_streams</a><a href="#method.get_number_of_streams">get_number_of_streams</a><a href="#method.get_number_of_subtitle_streams">get_number_of_subtitle_streams</a><a href="#method.get_number_of_video_streams">get_number_of_video_streams</a><a href="#method.get_stream_list">get_stream_list</a><a href="#method.get_subtitle_streams">get_subtitle_streams</a><a href="#method.get_tags">get_tags</a><a href="#method.get_title">get_title</a><a href="#method.get_uri">get_uri</a><a href="#method.get_video_streams">get_video_streams</a><a href="#method.is_live">is_live</a><a href="#method.is_seekable">is_seekable</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a><a href="#impl-Hash">Hash</a><a href="#impl-StaticType">StaticType</a><a href="#impl-PartialEq%3CT%3E">PartialEq&lt;T&gt;</a><a href="#impl-Eq">Eq</a><a href="#impl-IsA%3CObject%3E">IsA&lt;Object&gt;</a><a href="#impl-Send">Send</a><a href="#impl-Sync">Sync</a></div></div><p class='location'><a href='index.html'>gstreamer_player</a></p><script>window.sidebarCurrent = {name: 'PlayerMediaInfo', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -52,7 +53,7 @@
 <pre class='rust struct'>pub struct PlayerMediaInfo(_, _);</pre><div class='docblock'><p>Structure containing the media information of a URI.</p>
 
 <h1 id='implements' class='section-header'><a href='#implements'>Implements</a></h1>
-<p><a href="trait.ObjectExt.html"><code>ObjectExt</code></a></p>
+<p><a href="../glib/object/trait.ObjectExt.html"><code>glib::object::ObjectExt</code></a></p>
 </div>
                     <h2 id='methods' class='small-section-header'>
                       Methods<a href='#methods' class='anchor'></a>
@@ -111,7 +112,7 @@ matching <code>PlayerSubtitleInfo</code>.</p>
 <div class='docblock'>
 <h1 id='returns-11' class='section-header'><a href='#returns-11'>Returns</a></h1>
 <p>the media title.</p>
-</div><h4 id='method.get_uri' class="method"><span id='get_uri.v' class='invisible'><code>pub fn <a href='#method.get_uri' class='fnname'>get_uri</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_player/auto/player_media_info.rs.html#159-163' title='goto source code'>[src]</a></span></h4>
+</div><h4 id='method.get_uri' class="method"><span id='get_uri.v' class='invisible'><code>pub fn <a href='#method.get_uri' class='fnname'>get_uri</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_player/auto/player_media_info.rs.html#159-163' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'>
 <h1 id='returns-12' class='section-header'><a href='#returns-12'>Returns</a></h1>
 <p>the URI associated with <code>PlayerMediaInfo</code>.</p>

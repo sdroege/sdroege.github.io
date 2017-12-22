@@ -28,6 +28,7 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
         
     </nav>
@@ -105,6 +106,8 @@
 <span id="60">60</span>
 <span id="61">61</span>
 <span id="62">62</span>
+<span id="63">63</span>
+<span id="64">64</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -158,6 +161,8 @@
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">video_frame</span>::<span class="ident">VideoFrame</span>;
 <span class="kw">mod</span> <span class="ident">video_overlay</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">video_overlay</span>::<span class="ident">VideoOverlayExtManual</span>;
+<span class="kw">mod</span> <span class="ident">video_event</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">video_event</span>::<span class="kw-2">*</span>;
 
 <span class="comment">// Re-export all the traits in a prelude module, so that applications</span>
 <span class="comment">// can always &quot;use gst::prelude::*&quot; without getting conflicts</span>

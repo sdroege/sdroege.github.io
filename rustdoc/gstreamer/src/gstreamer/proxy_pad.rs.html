@@ -28,6 +28,7 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
         
     </nav>
@@ -218,7 +219,7 @@
     <span class="doccomment">/// # Returns</span>
     <span class="doccomment">///</span>
     <span class="doccomment">/// a `FlowReturn` from the pad.</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">chain_default</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">Pad</span><span class="op">&gt;</span>, <span class="ident">Q</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">Object</span><span class="op">&gt;</span> <span class="op">+</span> <span class="lifetime">&#39;a</span>, <span class="ident">R</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">Q</span><span class="op">&gt;&gt;</span><span class="op">&gt;</span>(
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">chain_default</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">ProxyPad</span><span class="op">&gt;</span>, <span class="ident">Q</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">Object</span><span class="op">&gt;</span> <span class="op">+</span> <span class="lifetime">&#39;a</span>, <span class="ident">R</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">Q</span><span class="op">&gt;&gt;</span><span class="op">&gt;</span>(
         <span class="ident">pad</span>: <span class="kw-2">&amp;</span><span class="ident">P</span>,
         <span class="ident">parent</span>: <span class="ident">R</span>,
         <span class="ident">buffer</span>: <span class="ident">Buffer</span>,
@@ -228,7 +229,7 @@
         <span class="kw">let</span> <span class="ident">parent</span> <span class="op">=</span> <span class="ident">parent</span>.<span class="ident">to_glib_none</span>();
         <span class="kw">unsafe</span> {
             <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_proxy_pad_chain_default</span>(
-                <span class="ident">pad</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
+                <span class="ident">pad</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi</span>::<span class="ident">GstPad</span>,
                 <span class="ident">parent</span>.<span class="number">0</span>,
                 <span class="ident">buffer</span>.<span class="ident">into_ptr</span>(),
             ))
@@ -247,7 +248,7 @@
     <span class="doccomment">/// # Returns</span>
     <span class="doccomment">///</span>
     <span class="doccomment">/// a `FlowReturn` from the pad.</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">chain_list_default</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">Pad</span><span class="op">&gt;</span>, <span class="ident">Q</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">Object</span><span class="op">&gt;</span> <span class="op">+</span> <span class="lifetime">&#39;a</span>, <span class="ident">R</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">Q</span><span class="op">&gt;&gt;</span><span class="op">&gt;</span>(
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">chain_list_default</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">ProxyPad</span><span class="op">&gt;</span>, <span class="ident">Q</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">Object</span><span class="op">&gt;</span> <span class="op">+</span> <span class="lifetime">&#39;a</span>, <span class="ident">R</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">Q</span><span class="op">&gt;&gt;</span><span class="op">&gt;</span>(
         <span class="ident">pad</span>: <span class="kw-2">&amp;</span><span class="ident">P</span>,
         <span class="ident">parent</span>: <span class="ident">R</span>,
         <span class="ident">list</span>: <span class="ident">BufferList</span>,
@@ -257,7 +258,7 @@
         <span class="kw">let</span> <span class="ident">parent</span> <span class="op">=</span> <span class="ident">parent</span>.<span class="ident">to_glib_none</span>();
         <span class="kw">unsafe</span> {
             <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_proxy_pad_chain_list_default</span>(
-                <span class="ident">pad</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
+                <span class="ident">pad</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi</span>::<span class="ident">GstPad</span>,
                 <span class="ident">parent</span>.<span class="number">0</span>,
                 <span class="ident">list</span>.<span class="ident">into_ptr</span>(),
             ))
@@ -280,7 +281,7 @@
     <span class="doccomment">/// # Returns</span>
     <span class="doccomment">///</span>
     <span class="doccomment">/// a `FlowReturn` from the pad.</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">getrange_default</span><span class="op">&lt;</span><span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">Pad</span><span class="op">&gt;</span>, <span class="ident">Q</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">Object</span><span class="op">&gt;&gt;</span>(
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">getrange_default</span><span class="op">&lt;</span><span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">ProxyPad</span><span class="op">&gt;</span>, <span class="ident">Q</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">Object</span><span class="op">&gt;&gt;</span>(
         <span class="ident">pad</span>: <span class="kw-2">&amp;</span><span class="ident">P</span>,
         <span class="ident">parent</span>: <span class="kw-2">&amp;</span><span class="ident">Q</span>,
         <span class="ident">offset</span>: <span class="ident">u64</span>,
@@ -290,7 +291,7 @@
         <span class="kw">unsafe</span> {
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">buffer</span> <span class="op">=</span> <span class="ident">ptr</span>::<span class="ident">null_mut</span>();
             <span class="kw">let</span> <span class="ident">ret</span> <span class="op">=</span> <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_proxy_pad_getrange_default</span>(
-                <span class="ident">pad</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
+                <span class="ident">pad</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi</span>::<span class="ident">GstPad</span>,
                 <span class="ident">parent</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
                 <span class="ident">offset</span>,
                 <span class="ident">size</span>,
@@ -306,7 +307,7 @@
 
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">iterate_internal_links_default</span><span class="op">&lt;</span>
         <span class="lifetime">&#39;a</span>,
-        <span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">Pad</span><span class="op">&gt;</span>,
+        <span class="ident">P</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">ProxyPad</span><span class="op">&gt;</span>,
         <span class="ident">Q</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">Object</span><span class="op">&gt;</span> <span class="op">+</span> <span class="lifetime">&#39;a</span>,
         <span class="ident">R</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">Q</span><span class="op">&gt;&gt;</span>,
     <span class="op">&gt;</span>(
@@ -318,7 +319,7 @@
         <span class="kw">let</span> <span class="ident">parent</span> <span class="op">=</span> <span class="ident">parent</span>.<span class="ident">to_glib_none</span>();
         <span class="kw">unsafe</span> {
             <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_proxy_pad_iterate_internal_links_default</span>(
-                <span class="ident">pad</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
+                <span class="ident">pad</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi</span>::<span class="ident">GstPad</span>,
                 <span class="ident">parent</span>.<span class="number">0</span>,
             ))
         }

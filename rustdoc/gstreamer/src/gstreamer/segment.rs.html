@@ -28,6 +28,7 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
         
     </nav>
@@ -557,6 +558,151 @@
 <span id="512">512</span>
 <span id="513">513</span>
 <span id="514">514</span>
+<span id="515">515</span>
+<span id="516">516</span>
+<span id="517">517</span>
+<span id="518">518</span>
+<span id="519">519</span>
+<span id="520">520</span>
+<span id="521">521</span>
+<span id="522">522</span>
+<span id="523">523</span>
+<span id="524">524</span>
+<span id="525">525</span>
+<span id="526">526</span>
+<span id="527">527</span>
+<span id="528">528</span>
+<span id="529">529</span>
+<span id="530">530</span>
+<span id="531">531</span>
+<span id="532">532</span>
+<span id="533">533</span>
+<span id="534">534</span>
+<span id="535">535</span>
+<span id="536">536</span>
+<span id="537">537</span>
+<span id="538">538</span>
+<span id="539">539</span>
+<span id="540">540</span>
+<span id="541">541</span>
+<span id="542">542</span>
+<span id="543">543</span>
+<span id="544">544</span>
+<span id="545">545</span>
+<span id="546">546</span>
+<span id="547">547</span>
+<span id="548">548</span>
+<span id="549">549</span>
+<span id="550">550</span>
+<span id="551">551</span>
+<span id="552">552</span>
+<span id="553">553</span>
+<span id="554">554</span>
+<span id="555">555</span>
+<span id="556">556</span>
+<span id="557">557</span>
+<span id="558">558</span>
+<span id="559">559</span>
+<span id="560">560</span>
+<span id="561">561</span>
+<span id="562">562</span>
+<span id="563">563</span>
+<span id="564">564</span>
+<span id="565">565</span>
+<span id="566">566</span>
+<span id="567">567</span>
+<span id="568">568</span>
+<span id="569">569</span>
+<span id="570">570</span>
+<span id="571">571</span>
+<span id="572">572</span>
+<span id="573">573</span>
+<span id="574">574</span>
+<span id="575">575</span>
+<span id="576">576</span>
+<span id="577">577</span>
+<span id="578">578</span>
+<span id="579">579</span>
+<span id="580">580</span>
+<span id="581">581</span>
+<span id="582">582</span>
+<span id="583">583</span>
+<span id="584">584</span>
+<span id="585">585</span>
+<span id="586">586</span>
+<span id="587">587</span>
+<span id="588">588</span>
+<span id="589">589</span>
+<span id="590">590</span>
+<span id="591">591</span>
+<span id="592">592</span>
+<span id="593">593</span>
+<span id="594">594</span>
+<span id="595">595</span>
+<span id="596">596</span>
+<span id="597">597</span>
+<span id="598">598</span>
+<span id="599">599</span>
+<span id="600">600</span>
+<span id="601">601</span>
+<span id="602">602</span>
+<span id="603">603</span>
+<span id="604">604</span>
+<span id="605">605</span>
+<span id="606">606</span>
+<span id="607">607</span>
+<span id="608">608</span>
+<span id="609">609</span>
+<span id="610">610</span>
+<span id="611">611</span>
+<span id="612">612</span>
+<span id="613">613</span>
+<span id="614">614</span>
+<span id="615">615</span>
+<span id="616">616</span>
+<span id="617">617</span>
+<span id="618">618</span>
+<span id="619">619</span>
+<span id="620">620</span>
+<span id="621">621</span>
+<span id="622">622</span>
+<span id="623">623</span>
+<span id="624">624</span>
+<span id="625">625</span>
+<span id="626">626</span>
+<span id="627">627</span>
+<span id="628">628</span>
+<span id="629">629</span>
+<span id="630">630</span>
+<span id="631">631</span>
+<span id="632">632</span>
+<span id="633">633</span>
+<span id="634">634</span>
+<span id="635">635</span>
+<span id="636">636</span>
+<span id="637">637</span>
+<span id="638">638</span>
+<span id="639">639</span>
+<span id="640">640</span>
+<span id="641">641</span>
+<span id="642">642</span>
+<span id="643">643</span>
+<span id="644">644</span>
+<span id="645">645</span>
+<span id="646">646</span>
+<span id="647">647</span>
+<span id="648">648</span>
+<span id="649">649</span>
+<span id="650">650</span>
+<span id="651">651</span>
+<span id="652">652</span>
+<span id="653">653</span>
+<span id="654">654</span>
+<span id="655">655</span>
+<span id="656">656</span>
+<span id="657">657</span>
+<span id="658">658</span>
+<span id="659">659</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -567,6 +713,8 @@
 <span class="comment">// except according to those terms.</span>
 
 <span class="kw">use</span> <span class="ident">Format</span>;
+<span class="kw">use</span> <span class="ident">GenericFormattedValue</span>;
+<span class="kw">use</span> <span class="ident">FormattedValue</span>;
 <span class="kw">use</span> <span class="ident">SeekFlags</span>;
 <span class="kw">use</span> <span class="ident">SeekType</span>;
 <span class="kw">use</span> <span class="ident">ffi</span>;
@@ -576,151 +724,141 @@
 <span class="kw">use</span> <span class="ident">glib</span>;
 <span class="kw">use</span> <span class="ident">std</span>::<span class="ident">mem</span>;
 <span class="kw">use</span> <span class="ident">std</span>::<span class="ident">ptr</span>;
+<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">fmt</span>;
+<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">marker</span>::<span class="ident">PhantomData</span>;
 
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">Segment</span>(<span class="ident">ffi</span>::<span class="ident">GstSegment</span>);
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">Segment</span> <span class="op">=</span> <span class="ident">FormattedSegment</span><span class="op">&lt;</span><span class="ident">GenericFormattedValue</span><span class="op">&gt;</span>;
+<span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">FormattedSegment</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">FormattedValue</span><span class="op">&gt;</span>(<span class="ident">ffi</span>::<span class="ident">GstSegment</span>, <span class="ident">PhantomData</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
 
 <span class="kw">impl</span> <span class="ident">Segment</span> {
-    <span class="doccomment">/// Allocate a new `Segment` structure and initialize it using</span>
-    <span class="doccomment">/// `Segment::init`.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// Free-function: gst_segment_free</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// # Returns</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// a new `Segment`, free with `Segment::free`.</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-&gt;</span> <span class="ident">Segment</span> {
-        <span class="macro">assert_initialized_main_thread</span><span class="macro">!</span>();
-        <span class="kw">unsafe</span> { <span class="self">Self</span>::<span class="ident">uninitialized</span>() }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">reset_with_format</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">format</span>: <span class="ident">Format</span>) {
+        <span class="kw">unsafe</span> {
+            <span class="ident">ffi</span>::<span class="ident">gst_segment_init</span>(<span class="self">self</span>.<span class="ident">to_glib_none_mut</span>().<span class="number">0</span>, <span class="ident">format</span>.<span class="ident">to_glib</span>());
+        }
     }
 
-    <span class="doccomment">/// Clip the given `start` and `stop` values to the segment boundaries given</span>
-    <span class="doccomment">/// in `self`. `start` and `stop` are compared and clipped to `self`</span>
-    <span class="doccomment">/// start and stop values.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// If the function returns `false`, `start` and `stop` are known to fall</span>
-    <span class="doccomment">/// outside of `self` and `clip_start` and `clip_stop` are not updated.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// When the function returns `true`, `clip_start` and `clip_stop` will be</span>
-    <span class="doccomment">/// updated. If `clip_start` or `clip_stop` are different from `start` or `stop`</span>
-    <span class="doccomment">/// respectively, the region fell partially in the segment.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// Note that when `stop` is -1, `clip_stop` will be set to the end of the</span>
-    <span class="doccomment">/// segment. Depending on the use case, this may or may not be what you want.</span>
-    <span class="doccomment">/// ## `format`</span>
-    <span class="doccomment">/// the format of the segment.</span>
-    <span class="doccomment">/// ## `start`</span>
-    <span class="doccomment">/// the start position in the segment</span>
-    <span class="doccomment">/// ## `stop`</span>
-    <span class="doccomment">/// the stop position in the segment</span>
-    <span class="doccomment">/// ## `clip_start`</span>
-    <span class="doccomment">/// the clipped start position in the segment</span>
-    <span class="doccomment">/// ## `clip_stop`</span>
-    <span class="doccomment">/// the clipped stop position in the segment</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// # Returns</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// `true` if the given `start` and `stop` times fall partially or</span>
-    <span class="doccomment">///  completely in `self`, `false` if the values are completely outside</span>
-    <span class="doccomment">///  of the segment.</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">clip</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">format</span>: <span class="ident">Format</span>, <span class="ident">start</span>: <span class="ident">u64</span>, <span class="ident">stop</span>: <span class="ident">u64</span>) <span class="op">-&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span>(<span class="ident">u64</span>, <span class="ident">u64</span>)<span class="op">&gt;</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_format</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">format</span>: <span class="ident">Format</span>) {
+        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">format</span> <span class="op">=</span> <span class="ident">format</span>.<span class="ident">to_glib</span>();
+    }
+
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">downcast</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">FormattedValue</span><span class="op">&gt;</span>(<span class="self">self</span>) <span class="op">-&gt;</span> <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">FormattedSegment</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>, <span class="self">Self</span><span class="op">&gt;</span> {
+        <span class="kw">if</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="ident">Format</span>::<span class="ident">Undefined</span>
+            <span class="op">||</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="self">self</span>.<span class="ident">get_format</span>()
+        {
+            <span class="prelude-val">Ok</span>(<span class="ident">FormattedSegment</span>(<span class="self">self</span>.<span class="number">0</span>, <span class="ident">PhantomData</span>))
+        } <span class="kw">else</span> {
+            <span class="prelude-val">Err</span>(<span class="self">self</span>)
+        }
+    }
+
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">downcast_ref</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">FormattedValue</span><span class="op">&gt;</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">FormattedSegment</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span> {
+        <span class="kw">if</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="ident">Format</span>::<span class="ident">Undefined</span>
+            <span class="op">||</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="self">self</span>.<span class="ident">get_format</span>()
+        {
+            <span class="prelude-val">Some</span>(<span class="kw">unsafe</span> { <span class="ident">mem</span>::<span class="ident">transmute</span>(<span class="self">self</span>) })
+        } <span class="kw">else</span> {
+            <span class="prelude-val">None</span>
+        }
+    }
+
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">downcast_mut</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">FormattedValue</span><span class="op">&gt;</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>) <span class="op">-&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">FormattedSegment</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span> {
+        <span class="kw">if</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="ident">Format</span>::<span class="ident">Undefined</span>
+            <span class="op">||</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="self">self</span>.<span class="ident">get_format</span>()
+        {
+            <span class="prelude-val">Some</span>(<span class="kw">unsafe</span> { <span class="ident">mem</span>::<span class="ident">transmute</span>(<span class="self">self</span>) })
+        } <span class="kw">else</span> {
+            <span class="prelude-val">None</span>
+        }
+    }
+}
+
+<span class="kw">impl</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">FormattedValue</span><span class="op">&gt;</span> <span class="ident">FormattedSegment</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-&gt;</span> <span class="self">Self</span> {
+        <span class="macro">assert_initialized_main_thread</span><span class="macro">!</span>();
+        <span class="kw">let</span> <span class="ident">segment</span> <span class="op">=</span> <span class="kw">unsafe</span> {
+            <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">segment</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">zeroed</span>();
+            <span class="ident">ffi</span>::<span class="ident">gst_segment_init</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">segment</span>, <span class="ident">T</span>::<span class="ident">get_default_format</span>().<span class="ident">to_glib</span>());
+            <span class="ident">segment</span>
+        };
+        <span class="ident">FormattedSegment</span>(<span class="ident">segment</span>, <span class="ident">PhantomData</span>)
+    }
+
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">upcast</span>(<span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">Segment</span> {
+        <span class="ident">FormattedSegment</span>(<span class="self">self</span>.<span class="number">0</span>, <span class="ident">PhantomData</span>)
+    }
+
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">upcast_ref</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="ident">Segment</span> {
+        <span class="kw">unsafe</span> { <span class="ident">mem</span>::<span class="ident">transmute</span>(<span class="self">self</span>) }
+    }
+
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">reset</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>) {
+        <span class="kw">unsafe</span> {
+            <span class="ident">ffi</span>::<span class="ident">gst_segment_init</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>.<span class="number">0</span>, <span class="ident">T</span>::<span class="ident">get_default_format</span>().<span class="ident">to_glib</span>());
+        }
+    }
+
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">clip</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">start</span>: <span class="ident">V</span>, <span class="ident">stop</span>: <span class="ident">V</span>) <span class="op">-&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span>(<span class="ident">T</span>, <span class="ident">T</span>)<span class="op">&gt;</span> {
+        <span class="kw">let</span> <span class="ident">start</span> <span class="op">=</span> <span class="ident">start</span>.<span class="ident">into</span>();
+        <span class="kw">let</span> <span class="ident">stop</span> <span class="op">=</span> <span class="ident">stop</span>.<span class="ident">into</span>();
+
+        <span class="kw">if</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="ident">Format</span>::<span class="ident">Undefined</span> {
+            <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">start</span>.<span class="ident">get_format</span>());
+            <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">stop</span>.<span class="ident">get_format</span>());
+        }
+
         <span class="kw">unsafe</span> {
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">clip_start</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">clip_stop</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
             <span class="kw">let</span> <span class="ident">ret</span> <span class="op">=</span> <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_segment_clip</span>(
-                <span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
-                <span class="ident">format</span>.<span class="ident">to_glib</span>(),
-                <span class="ident">start</span>,
-                <span class="ident">stop</span>,
+                <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0</span>,
+                <span class="ident">start</span>.<span class="ident">get_format</span>().<span class="ident">to_glib</span>(),
+                <span class="ident">start</span>.<span class="ident">to_raw_value</span>() <span class="kw">as</span> <span class="ident">u64</span>,
+                <span class="ident">stop</span>.<span class="ident">to_raw_value</span>() <span class="kw">as</span> <span class="ident">u64</span>,
                 <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">clip_start</span>,
                 <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">clip_stop</span>,
             ));
             <span class="kw">if</span> <span class="ident">ret</span> {
-                <span class="prelude-val">Some</span>((<span class="ident">clip_start</span>, <span class="ident">clip_stop</span>))
+                <span class="prelude-val">Some</span>((
+                    <span class="ident">T</span>::<span class="ident">from_raw</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">clip_start</span> <span class="kw">as</span> <span class="ident">i64</span>),
+                    <span class="ident">T</span>::<span class="ident">from_raw</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">clip_stop</span> <span class="kw">as</span> <span class="ident">i64</span>),
+                ))
             } <span class="kw">else</span> {
                 <span class="prelude-val">None</span>
             }
         }
     }
 
-    <span class="doccomment">/// Copy the contents of `self` into `dest`.</span>
-    <span class="doccomment">/// ## `dest`</span>
-    <span class="doccomment">/// a `Segment`</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">copy_into</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">dest</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">Segment</span>) {
-        <span class="kw">unsafe</span> {
-            <span class="ident">ffi</span>::<span class="ident">gst_segment_copy_into</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="ident">dest</span>.<span class="ident">to_glib_none_mut</span>().<span class="number">0</span>);
-        }
-    }
-
-    <span class="doccomment">/// Update the segment structure with the field values of a seek event (see</span>
-    <span class="doccomment">/// `Event::new_seek`).</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// After calling this method, the segment field position and time will</span>
-    <span class="doccomment">/// contain the requested new position in the segment. The new requested</span>
-    <span class="doccomment">/// position in the segment depends on `rate` and `start_type` and `stop_type`.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// For positive `rate`, the new position in the segment is the new `self`</span>
-    <span class="doccomment">/// start field when it was updated with a `start_type` different from</span>
-    <span class="doccomment">/// `SeekType::None`. If no update was performed on `self` start position</span>
-    <span class="doccomment">/// (`SeekType::None`), `start` is ignored and `self` position is</span>
-    <span class="doccomment">/// unmodified.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// For negative `rate`, the new position in the segment is the new `self`</span>
-    <span class="doccomment">/// stop field when it was updated with a `stop_type` different from</span>
-    <span class="doccomment">/// `SeekType::None`. If no stop was previously configured in the segment, the</span>
-    <span class="doccomment">/// duration of the segment will be used to update the stop position.</span>
-    <span class="doccomment">/// If no update was performed on `self` stop position (`SeekType::None`),</span>
-    <span class="doccomment">/// `stop` is ignored and `self` position is unmodified.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// The applied rate of the segment will be set to 1.0 by default.</span>
-    <span class="doccomment">/// If the caller can apply a rate change, it should update `self`</span>
-    <span class="doccomment">/// rate and applied_rate after calling this function.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// `update` will be set to `true` if a seek should be performed to the segment</span>
-    <span class="doccomment">/// position field. This field can be `false` if, for example, only the `rate`</span>
-    <span class="doccomment">/// has been changed but not the playback position.</span>
-    <span class="doccomment">/// ## `rate`</span>
-    <span class="doccomment">/// the rate of the segment.</span>
-    <span class="doccomment">/// ## `format`</span>
-    <span class="doccomment">/// the format of the segment.</span>
-    <span class="doccomment">/// ## `flags`</span>
-    <span class="doccomment">/// the segment flags for the segment</span>
-    <span class="doccomment">/// ## `start_type`</span>
-    <span class="doccomment">/// the seek method</span>
-    <span class="doccomment">/// ## `start`</span>
-    <span class="doccomment">/// the seek start value</span>
-    <span class="doccomment">/// ## `stop_type`</span>
-    <span class="doccomment">/// the seek method</span>
-    <span class="doccomment">/// ## `stop`</span>
-    <span class="doccomment">/// the seek stop value</span>
-    <span class="doccomment">/// ## `update`</span>
-    <span class="doccomment">/// boolean holding whether position was updated.</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// # Returns</span>
-    <span class="doccomment">///</span>
-    <span class="doccomment">/// `true` if the seek could be performed.</span>
     <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;cargo-clippy&quot;</span>, <span class="ident">allow</span>(<span class="ident">too_many_arguments</span>))]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">do_seek</span>(
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">do_seek</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span>(
         <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>,
         <span class="ident">rate</span>: <span class="ident">f64</span>,
-        <span class="ident">format</span>: <span class="ident">Format</span>,
         <span class="ident">flags</span>: <span class="ident">SeekFlags</span>,
         <span class="ident">start_type</span>: <span class="ident">SeekType</span>,
-        <span class="ident">start</span>: <span class="ident">u64</span>,
+        <span class="ident">start</span>: <span class="ident">V</span>,
         <span class="ident">stop_type</span>: <span class="ident">SeekType</span>,
-        <span class="ident">stop</span>: <span class="ident">u64</span>,
+        <span class="ident">stop</span>: <span class="ident">V</span>,
     ) <span class="op">-&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">bool</span><span class="op">&gt;</span> {
         <span class="macro">skip_assert_initialized</span><span class="macro">!</span>();
+        <span class="kw">let</span> <span class="ident">start</span> <span class="op">=</span> <span class="ident">start</span>.<span class="ident">into</span>();
+        <span class="kw">let</span> <span class="ident">stop</span> <span class="op">=</span> <span class="ident">stop</span>.<span class="ident">into</span>();
+
+        <span class="kw">if</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="ident">Format</span>::<span class="ident">Undefined</span> {
+            <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">start</span>.<span class="ident">get_format</span>());
+            <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">stop</span>.<span class="ident">get_format</span>());
+        }
+
         <span class="kw">unsafe</span> {
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">update</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
             <span class="kw">let</span> <span class="ident">ret</span> <span class="op">=</span> <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_segment_do_seek</span>(
-                <span class="self">self</span>.<span class="ident">to_glib_none_mut</span>().<span class="number">0</span>,
+                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>.<span class="number">0</span>,
                 <span class="ident">rate</span>,
-                <span class="ident">format</span>.<span class="ident">to_glib</span>(),
+                <span class="self">self</span>.<span class="ident">get_format</span>().<span class="ident">to_glib</span>(),
                 <span class="ident">flags</span>.<span class="ident">to_glib</span>(),
                 <span class="ident">start_type</span>.<span class="ident">to_glib</span>(),
-                <span class="ident">start</span>,
+                <span class="ident">start</span>.<span class="ident">to_raw_value</span>() <span class="kw">as</span> <span class="ident">u64</span>,
                 <span class="ident">stop_type</span>.<span class="ident">to_glib</span>(),
-                <span class="ident">stop</span>,
+                <span class="ident">stop</span>.<span class="ident">to_raw_value</span>() <span class="kw">as</span> <span class="ident">u64</span>,
                 <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">update</span>,
             ));
             <span class="kw">if</span> <span class="ident">ret</span> {
@@ -731,128 +869,200 @@
         }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">init</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">format</span>: <span class="ident">Format</span>) {
-        <span class="kw">unsafe</span> {
-            <span class="ident">ffi</span>::<span class="ident">gst_segment_init</span>(<span class="self">self</span>.<span class="ident">to_glib_none_mut</span>().<span class="number">0</span>, <span class="ident">format</span>.<span class="ident">to_glib</span>());
-        }
-    }
-
-    <span class="kw">fn</span> <span class="ident">is_equal</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">s1</span>: <span class="kw-2">&amp;</span><span class="ident">Segment</span>) <span class="op">-&gt;</span> <span class="ident">bool</span> {
-        <span class="kw">unsafe</span> {
-            <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_segment_is_equal</span>(
-                <span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
-                <span class="ident">s1</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
-            ))
-        }
-    }
-
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">offset_running_time</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">format</span>: <span class="ident">Format</span>, <span class="ident">offset</span>: <span class="ident">i64</span>) <span class="op">-&gt;</span> <span class="ident">bool</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">offset_running_time</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">offset</span>: <span class="ident">i64</span>) <span class="op">-&gt;</span> <span class="ident">bool</span> {
         <span class="kw">unsafe</span> {
             <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_segment_offset_running_time</span>(
-                <span class="self">self</span>.<span class="ident">to_glib_none_mut</span>().<span class="number">0</span>,
-                <span class="ident">format</span>.<span class="ident">to_glib</span>(),
+                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>.<span class="number">0</span>,
+                <span class="self">self</span>.<span class="ident">get_format</span>().<span class="ident">to_glib</span>(),
                 <span class="ident">offset</span>,
             ))
         }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">position_from_running_time</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">format</span>: <span class="ident">Format</span>, <span class="ident">running_time</span>: <span class="ident">u64</span>) <span class="op">-&gt;</span> <span class="ident">u64</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">position_from_running_time</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">running_time</span>: <span class="ident">V</span>) <span class="op">-&gt;</span> <span class="ident">T</span> {
+        <span class="kw">let</span> <span class="ident">running_time</span> <span class="op">=</span> <span class="ident">running_time</span>.<span class="ident">into</span>();
+
+        <span class="kw">if</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="ident">Format</span>::<span class="ident">Undefined</span> {
+            <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">running_time</span>.<span class="ident">get_format</span>());
+        }
+
         <span class="kw">unsafe</span> {
-            <span class="ident">ffi</span>::<span class="ident">gst_segment_position_from_running_time</span>(
-                <span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
-                <span class="ident">format</span>.<span class="ident">to_glib</span>(),
-                <span class="ident">running_time</span>,
+            <span class="ident">T</span>::<span class="ident">from_raw</span>(
+                <span class="self">self</span>.<span class="ident">get_format</span>(),
+                <span class="ident">ffi</span>::<span class="ident">gst_segment_position_from_running_time</span>(
+                    <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0</span>,
+                    <span class="self">self</span>.<span class="ident">get_format</span>().<span class="ident">to_glib</span>(),
+                    <span class="ident">running_time</span>.<span class="ident">to_raw_value</span>() <span class="kw">as</span> <span class="ident">u64</span>,
+                ) <span class="kw">as</span> <span class="ident">i64</span>,
             )
         }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">position_from_running_time_full</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">format</span>: <span class="ident">Format</span>, <span class="ident">running_time</span>: <span class="ident">u64</span>) <span class="op">-&gt;</span> (<span class="ident">i32</span>, <span class="ident">u64</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">position_from_running_time_full</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">running_time</span>: <span class="ident">V</span>) <span class="op">-&gt;</span> (<span class="ident">i32</span>, <span class="ident">T</span>) {
+        <span class="kw">let</span> <span class="ident">running_time</span> <span class="op">=</span> <span class="ident">running_time</span>.<span class="ident">into</span>();
+
+        <span class="kw">if</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="ident">Format</span>::<span class="ident">Undefined</span> {
+            <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">running_time</span>.<span class="ident">get_format</span>());
+        }
+
         <span class="kw">unsafe</span> {
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">position</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
             <span class="kw">let</span> <span class="ident">ret</span> <span class="op">=</span> <span class="ident">ffi</span>::<span class="ident">gst_segment_position_from_running_time_full</span>(
-                <span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
-                <span class="ident">format</span>.<span class="ident">to_glib</span>(),
-                <span class="ident">running_time</span>,
+                <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0</span>,
+                <span class="self">self</span>.<span class="ident">get_format</span>().<span class="ident">to_glib</span>(),
+                <span class="ident">running_time</span>.<span class="ident">to_raw_value</span>() <span class="kw">as</span> <span class="ident">u64</span>,
                 <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">position</span>,
             );
-            (<span class="ident">ret</span>, <span class="ident">position</span>)
+            (<span class="ident">ret</span>, <span class="ident">T</span>::<span class="ident">from_raw</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">position</span> <span class="kw">as</span> <span class="ident">i64</span>))
         }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">position_from_stream_time</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">format</span>: <span class="ident">Format</span>, <span class="ident">stream_time</span>: <span class="ident">u64</span>) <span class="op">-&gt;</span> <span class="ident">u64</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">position_from_stream_time</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">stream_time</span>: <span class="ident">V</span>) <span class="op">-&gt;</span> <span class="ident">T</span> {
+        <span class="kw">let</span> <span class="ident">stream_time</span> <span class="op">=</span> <span class="ident">stream_time</span>.<span class="ident">into</span>();
+
+        <span class="kw">if</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="ident">Format</span>::<span class="ident">Undefined</span> {
+            <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">stream_time</span>.<span class="ident">get_format</span>());
+        }
+
         <span class="kw">unsafe</span> {
-            <span class="ident">ffi</span>::<span class="ident">gst_segment_position_from_stream_time</span>(
-                <span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
-                <span class="ident">format</span>.<span class="ident">to_glib</span>(),
-                <span class="ident">stream_time</span>,
+            <span class="ident">T</span>::<span class="ident">from_raw</span>(
+                <span class="self">self</span>.<span class="ident">get_format</span>(),
+                <span class="ident">ffi</span>::<span class="ident">gst_segment_position_from_stream_time</span>(
+                    <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0</span>,
+                    <span class="self">self</span>.<span class="ident">get_format</span>().<span class="ident">to_glib</span>(),
+                    <span class="ident">stream_time</span>.<span class="ident">to_raw_value</span>() <span class="kw">as</span> <span class="ident">u64</span>,
+                ) <span class="kw">as</span> <span class="ident">i64</span>,
             )
         }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">position_from_stream_time_full</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">format</span>: <span class="ident">Format</span>, <span class="ident">stream_time</span>: <span class="ident">u64</span>) <span class="op">-&gt;</span> (<span class="ident">i32</span>, <span class="ident">u64</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">position_from_stream_time_full</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">stream_time</span>: <span class="ident">V</span>) <span class="op">-&gt;</span> (<span class="ident">i32</span>, <span class="ident">T</span>) {
+        <span class="kw">let</span> <span class="ident">stream_time</span> <span class="op">=</span> <span class="ident">stream_time</span>.<span class="ident">into</span>();
+
+        <span class="kw">if</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="ident">Format</span>::<span class="ident">Undefined</span> {
+            <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">stream_time</span>.<span class="ident">get_format</span>());
+        }
+
         <span class="kw">unsafe</span> {
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">position</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
             <span class="kw">let</span> <span class="ident">ret</span> <span class="op">=</span> <span class="ident">ffi</span>::<span class="ident">gst_segment_position_from_stream_time_full</span>(
-                <span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
-                <span class="ident">format</span>.<span class="ident">to_glib</span>(),
-                <span class="ident">stream_time</span>,
+                <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0</span>,
+                <span class="self">self</span>.<span class="ident">get_format</span>().<span class="ident">to_glib</span>(),
+                <span class="ident">stream_time</span>.<span class="ident">to_raw_value</span>() <span class="kw">as</span> <span class="ident">u64</span>,
                 <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">position</span>,
             );
-            (<span class="ident">ret</span>, <span class="ident">position</span>)
+            (<span class="ident">ret</span>, <span class="ident">T</span>::<span class="ident">from_raw</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">position</span> <span class="kw">as</span> <span class="ident">i64</span>))
         }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_running_time</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">format</span>: <span class="ident">Format</span>, <span class="ident">running_time</span>: <span class="ident">u64</span>) <span class="op">-&gt;</span> <span class="ident">bool</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_running_time</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">running_time</span>: <span class="ident">V</span>) <span class="op">-&gt;</span> <span class="ident">bool</span> {
+        <span class="kw">let</span> <span class="ident">running_time</span> <span class="op">=</span> <span class="ident">running_time</span>.<span class="ident">into</span>();
+
+        <span class="kw">if</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="ident">Format</span>::<span class="ident">Undefined</span> {
+            <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">running_time</span>.<span class="ident">get_format</span>());
+        }
+
         <span class="kw">unsafe</span> {
             <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_segment_set_running_time</span>(
-                <span class="self">self</span>.<span class="ident">to_glib_none_mut</span>().<span class="number">0</span>,
-                <span class="ident">format</span>.<span class="ident">to_glib</span>(),
-                <span class="ident">running_time</span>,
+                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>.<span class="number">0</span>,
+                <span class="self">self</span>.<span class="ident">get_format</span>().<span class="ident">to_glib</span>(),
+                <span class="ident">running_time</span>.<span class="ident">to_raw_value</span>() <span class="kw">as</span> <span class="ident">u64</span>,
             ))
         }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">to_position</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">format</span>: <span class="ident">Format</span>, <span class="ident">running_time</span>: <span class="ident">u64</span>) <span class="op">-&gt;</span> <span class="ident">u64</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">to_position</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">running_time</span>: <span class="ident">V</span>) <span class="op">-&gt;</span> <span class="ident">T</span> {
+        <span class="kw">let</span> <span class="ident">running_time</span> <span class="op">=</span> <span class="ident">running_time</span>.<span class="ident">into</span>();
+
+        <span class="kw">if</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="ident">Format</span>::<span class="ident">Undefined</span> {
+            <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">running_time</span>.<span class="ident">get_format</span>());
+        }
+
         <span class="kw">unsafe</span> {
-            <span class="ident">ffi</span>::<span class="ident">gst_segment_to_position</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="ident">format</span>.<span class="ident">to_glib</span>(), <span class="ident">running_time</span>)
+            <span class="ident">T</span>::<span class="ident">from_raw</span>(
+                <span class="self">self</span>.<span class="ident">get_format</span>(),
+                <span class="ident">ffi</span>::<span class="ident">gst_segment_to_position</span>(
+                    <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0</span>,
+                    <span class="self">self</span>.<span class="ident">get_format</span>().<span class="ident">to_glib</span>(),
+                    <span class="ident">running_time</span>.<span class="ident">to_raw_value</span>() <span class="kw">as</span> <span class="ident">u64</span>,
+                ) <span class="kw">as</span> <span class="ident">i64</span>,
+            )
         }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">to_running_time</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">format</span>: <span class="ident">Format</span>, <span class="ident">position</span>: <span class="ident">u64</span>) <span class="op">-&gt;</span> <span class="ident">u64</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">to_running_time</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">position</span>: <span class="ident">V</span>) <span class="op">-&gt;</span> <span class="ident">T</span> {
+        <span class="kw">let</span> <span class="ident">position</span> <span class="op">=</span> <span class="ident">position</span>.<span class="ident">into</span>();
+
+        <span class="kw">if</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="ident">Format</span>::<span class="ident">Undefined</span> {
+            <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">position</span>.<span class="ident">get_format</span>());
+        }
+
         <span class="kw">unsafe</span> {
-            <span class="ident">ffi</span>::<span class="ident">gst_segment_to_running_time</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="ident">format</span>.<span class="ident">to_glib</span>(), <span class="ident">position</span>)
+            <span class="ident">T</span>::<span class="ident">from_raw</span>(
+                <span class="self">self</span>.<span class="ident">get_format</span>(),
+                <span class="ident">ffi</span>::<span class="ident">gst_segment_to_running_time</span>(
+                    <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0</span>,
+                    <span class="self">self</span>.<span class="ident">get_format</span>().<span class="ident">to_glib</span>(),
+                    <span class="ident">position</span>.<span class="ident">to_raw_value</span>() <span class="kw">as</span> <span class="ident">u64</span>,
+                ) <span class="kw">as</span> <span class="ident">i64</span>,
+            )
         }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">to_running_time_full</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">format</span>: <span class="ident">Format</span>, <span class="ident">position</span>: <span class="ident">u64</span>) <span class="op">-&gt;</span> (<span class="ident">i32</span>, <span class="ident">u64</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">to_running_time_full</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">position</span>: <span class="ident">V</span>) <span class="op">-&gt;</span> (<span class="ident">i32</span>, <span class="ident">T</span>) {
+        <span class="kw">let</span> <span class="ident">position</span> <span class="op">=</span> <span class="ident">position</span>.<span class="ident">into</span>();
+
+        <span class="kw">if</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="ident">Format</span>::<span class="ident">Undefined</span> {
+            <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">position</span>.<span class="ident">get_format</span>());
+        }
+
         <span class="kw">unsafe</span> {
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">running_time</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
             <span class="kw">let</span> <span class="ident">ret</span> <span class="op">=</span> <span class="ident">ffi</span>::<span class="ident">gst_segment_to_running_time_full</span>(
-                <span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
-                <span class="ident">format</span>.<span class="ident">to_glib</span>(),
-                <span class="ident">position</span>,
+                <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0</span>,
+                <span class="self">self</span>.<span class="ident">get_format</span>().<span class="ident">to_glib</span>(),
+                <span class="ident">position</span>.<span class="ident">to_raw_value</span>() <span class="kw">as</span> <span class="ident">u64</span>,
                 <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">running_time</span>,
             );
-            (<span class="ident">ret</span>, <span class="ident">running_time</span>)
+            (<span class="ident">ret</span>, <span class="ident">T</span>::<span class="ident">from_raw</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">running_time</span> <span class="kw">as</span> <span class="ident">i64</span>))
         }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">to_stream_time</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">format</span>: <span class="ident">Format</span>, <span class="ident">position</span>: <span class="ident">u64</span>) <span class="op">-&gt;</span> <span class="ident">u64</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">to_stream_time</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">position</span>: <span class="ident">V</span>) <span class="op">-&gt;</span> <span class="ident">T</span> {
+        <span class="kw">let</span> <span class="ident">position</span> <span class="op">=</span> <span class="ident">position</span>.<span class="ident">into</span>();
+
+        <span class="kw">if</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="ident">Format</span>::<span class="ident">Undefined</span> {
+            <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">position</span>.<span class="ident">get_format</span>());
+        }
+
         <span class="kw">unsafe</span> {
-            <span class="ident">ffi</span>::<span class="ident">gst_segment_to_stream_time</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="ident">format</span>.<span class="ident">to_glib</span>(), <span class="ident">position</span>)
+            <span class="ident">T</span>::<span class="ident">from_raw</span>(
+                <span class="self">self</span>.<span class="ident">get_format</span>(),
+                <span class="ident">ffi</span>::<span class="ident">gst_segment_to_stream_time</span>(
+                    <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0</span>,
+                    <span class="self">self</span>.<span class="ident">get_format</span>().<span class="ident">to_glib</span>(),
+                    <span class="ident">position</span>.<span class="ident">to_raw_value</span>() <span class="kw">as</span> <span class="ident">u64</span>,
+                ) <span class="kw">as</span> <span class="ident">i64</span>,
+            )
         }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">to_stream_time_full</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">format</span>: <span class="ident">Format</span>, <span class="ident">position</span>: <span class="ident">u64</span>) <span class="op">-&gt;</span> (<span class="ident">i32</span>, <span class="ident">u64</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">to_stream_time_full</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">position</span>: <span class="ident">V</span>) <span class="op">-&gt;</span> (<span class="ident">i32</span>, <span class="ident">T</span>) {
+        <span class="kw">let</span> <span class="ident">position</span> <span class="op">=</span> <span class="ident">position</span>.<span class="ident">into</span>();
+
+        <span class="kw">if</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="ident">Format</span>::<span class="ident">Undefined</span> {
+            <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">position</span>.<span class="ident">get_format</span>());
+        }
+
         <span class="kw">unsafe</span> {
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">stream_time</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();
             <span class="kw">let</span> <span class="ident">ret</span> <span class="op">=</span> <span class="ident">ffi</span>::<span class="ident">gst_segment_to_stream_time_full</span>(
-                <span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
-                <span class="ident">format</span>.<span class="ident">to_glib</span>(),
-                <span class="ident">position</span>,
+                <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0</span>,
+                <span class="self">self</span>.<span class="ident">get_format</span>().<span class="ident">to_glib</span>(),
+                <span class="ident">position</span>.<span class="ident">to_raw_value</span>() <span class="kw">as</span> <span class="ident">u64</span>,
                 <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">stream_time</span>,
             );
-            (<span class="ident">ret</span>, <span class="ident">stream_time</span>)
+            (<span class="ident">ret</span>, <span class="ident">T</span>::<span class="ident">from_raw</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">stream_time</span> <span class="kw">as</span> <span class="ident">i64</span>))
         }
     }
 
@@ -869,6 +1079,7 @@
     }
 
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_rate</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">rate</span>: <span class="ident">f64</span>) {
+        <span class="macro">assert_ne</span><span class="macro">!</span>(<span class="ident">rate</span>, <span class="number">0.0</span>);
         <span class="self">self</span>.<span class="number">0</span>.<span class="ident">rate</span> <span class="op">=</span> <span class="ident">rate</span>;
     }
 
@@ -877,100 +1088,185 @@
     }
 
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_applied_rate</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">applied_rate</span>: <span class="ident">f64</span>) {
+        <span class="macro">assert_ne</span><span class="macro">!</span>(<span class="ident">applied_rate</span>, <span class="number">0.0</span>);
         <span class="self">self</span>.<span class="number">0</span>.<span class="ident">applied_rate</span> <span class="op">=</span> <span class="ident">applied_rate</span>;
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_format</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> ::<span class="ident">Format</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_format</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">Format</span> {
         <span class="ident">from_glib</span>(<span class="self">self</span>.<span class="number">0</span>.<span class="ident">format</span>)
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_format</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">format</span>: ::<span class="ident">Format</span>) {
-        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">format</span> <span class="op">=</span> <span class="ident">format</span>.<span class="ident">to_glib</span>();
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_base</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">T</span> {
+        <span class="kw">unsafe</span> { <span class="ident">T</span>::<span class="ident">from_raw</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="self">self</span>.<span class="number">0</span>.<span class="ident">base</span> <span class="kw">as</span> <span class="ident">i64</span>) }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_base</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">u64</span> {
-        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">base</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_base</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">base</span>: <span class="ident">V</span>) {
+        <span class="kw">let</span> <span class="ident">base</span> <span class="op">=</span> <span class="ident">base</span>.<span class="ident">into</span>();
+
+        <span class="kw">if</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="ident">Format</span>::<span class="ident">Undefined</span> {
+            <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">base</span>.<span class="ident">get_format</span>());
+        }
+
+        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">base</span> <span class="op">=</span> <span class="kw">unsafe</span> { <span class="ident">base</span>.<span class="ident">to_raw_value</span>() } <span class="kw">as</span> <span class="ident">u64</span>;
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_base</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">base</span>: <span class="ident">u64</span>) {
-        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">base</span> <span class="op">=</span> <span class="ident">base</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_offset</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">T</span> {
+        <span class="kw">unsafe</span> { <span class="ident">T</span>::<span class="ident">from_raw</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="self">self</span>.<span class="number">0</span>.<span class="ident">offset</span> <span class="kw">as</span> <span class="ident">i64</span>) }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_offset</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">u64</span> {
-        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">offset</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_offset</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">offset</span>: <span class="ident">V</span>) {
+        <span class="kw">let</span> <span class="ident">offset</span> <span class="op">=</span> <span class="ident">offset</span>.<span class="ident">into</span>();
+
+        <span class="kw">if</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="ident">Format</span>::<span class="ident">Undefined</span> {
+            <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">offset</span>.<span class="ident">get_format</span>());
+        }
+
+        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">offset</span> <span class="op">=</span> <span class="kw">unsafe</span> { <span class="ident">offset</span>.<span class="ident">to_raw_value</span>() } <span class="kw">as</span> <span class="ident">u64</span>;
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_offset</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">offset</span>: <span class="ident">u64</span>) {
-        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">offset</span> <span class="op">=</span> <span class="ident">offset</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_start</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">T</span> {
+        <span class="kw">unsafe</span> { <span class="ident">T</span>::<span class="ident">from_raw</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="self">self</span>.<span class="number">0</span>.<span class="ident">start</span> <span class="kw">as</span> <span class="ident">i64</span>) }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_start</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">u64</span> {
-        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">start</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_start</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">start</span>: <span class="ident">V</span>) {
+        <span class="kw">let</span> <span class="ident">start</span> <span class="op">=</span> <span class="ident">start</span>.<span class="ident">into</span>();
+
+        <span class="kw">if</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="ident">Format</span>::<span class="ident">Undefined</span> {
+            <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">start</span>.<span class="ident">get_format</span>());
+        }
+
+        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">start</span> <span class="op">=</span> <span class="kw">unsafe</span> { <span class="ident">start</span>.<span class="ident">to_raw_value</span>() } <span class="kw">as</span> <span class="ident">u64</span>;
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_start</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">start</span>: <span class="ident">u64</span>) {
-        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">start</span> <span class="op">=</span> <span class="ident">start</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_stop</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">T</span> {
+        <span class="kw">unsafe</span> { <span class="ident">T</span>::<span class="ident">from_raw</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="self">self</span>.<span class="number">0</span>.<span class="ident">stop</span> <span class="kw">as</span> <span class="ident">i64</span>) }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_stop</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">u64</span> {
-        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">stop</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_stop</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">stop</span>: <span class="ident">V</span>) {
+        <span class="kw">let</span> <span class="ident">stop</span> <span class="op">=</span> <span class="ident">stop</span>.<span class="ident">into</span>();
+
+        <span class="kw">if</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="ident">Format</span>::<span class="ident">Undefined</span> {
+            <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">stop</span>.<span class="ident">get_format</span>());
+        }
+
+        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">stop</span> <span class="op">=</span> <span class="kw">unsafe</span> { <span class="ident">stop</span>.<span class="ident">to_raw_value</span>() } <span class="kw">as</span> <span class="ident">u64</span>;
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_stop</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">stop</span>: <span class="ident">u64</span>) {
-        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">stop</span> <span class="op">=</span> <span class="ident">stop</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_time</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">T</span> {
+        <span class="kw">unsafe</span> { <span class="ident">T</span>::<span class="ident">from_raw</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="self">self</span>.<span class="number">0</span>.<span class="ident">time</span> <span class="kw">as</span> <span class="ident">i64</span>) }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_time</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">u64</span> {
-        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">time</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_time</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">time</span>: <span class="ident">V</span>) {
+        <span class="kw">let</span> <span class="ident">time</span> <span class="op">=</span> <span class="ident">time</span>.<span class="ident">into</span>();
+
+        <span class="kw">if</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="ident">Format</span>::<span class="ident">Undefined</span> {
+            <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">time</span>.<span class="ident">get_format</span>());
+        }
+
+        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">time</span> <span class="op">=</span> <span class="kw">unsafe</span> { <span class="ident">time</span>.<span class="ident">to_raw_value</span>() } <span class="kw">as</span> <span class="ident">u64</span>;
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_time</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">time</span>: <span class="ident">u64</span>) {
-        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">time</span> <span class="op">=</span> <span class="ident">time</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_position</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">T</span> {
+        <span class="kw">unsafe</span> { <span class="ident">T</span>::<span class="ident">from_raw</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="self">self</span>.<span class="number">0</span>.<span class="ident">position</span> <span class="kw">as</span> <span class="ident">i64</span>) }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_position</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">u64</span> {
-        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">position</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_position</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">position</span>: <span class="ident">V</span>) {
+        <span class="kw">let</span> <span class="ident">position</span> <span class="op">=</span> <span class="ident">position</span>.<span class="ident">into</span>();
+
+        <span class="kw">if</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="ident">Format</span>::<span class="ident">Undefined</span> {
+            <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">position</span>.<span class="ident">get_format</span>());
+        }
+
+        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">position</span> <span class="op">=</span> <span class="kw">unsafe</span> { <span class="ident">position</span>.<span class="ident">to_raw_value</span>() } <span class="kw">as</span> <span class="ident">u64</span>;
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_position</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">position</span>: <span class="ident">u64</span>) {
-        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">position</span> <span class="op">=</span> <span class="ident">position</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_duration</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">T</span> {
+        <span class="kw">unsafe</span> { <span class="ident">T</span>::<span class="ident">from_raw</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="self">self</span>.<span class="number">0</span>.<span class="ident">duration</span> <span class="kw">as</span> <span class="ident">i64</span>) }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_duration</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">u64</span> {
-        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">duration</span>
-    }
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_duration</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">duration</span>: <span class="ident">V</span>) {
+        <span class="kw">let</span> <span class="ident">duration</span> <span class="op">=</span> <span class="ident">duration</span>.<span class="ident">into</span>();
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_duration</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">duration</span>: <span class="ident">u64</span>) {
-        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">duration</span> <span class="op">=</span> <span class="ident">duration</span>;
+        <span class="kw">if</span> <span class="ident">T</span>::<span class="ident">get_default_format</span>() <span class="op">==</span> <span class="ident">Format</span>::<span class="ident">Undefined</span> {
+            <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">get_format</span>(), <span class="ident">duration</span>.<span class="ident">get_format</span>());
+        }
+
+        <span class="self">self</span>.<span class="number">0</span>.<span class="ident">duration</span> <span class="op">=</span> <span class="kw">unsafe</span> { <span class="ident">duration</span>.<span class="ident">to_raw_value</span>() } <span class="kw">as</span> <span class="ident">u64</span>;
     }
 }
 
-<span class="kw">impl</span> <span class="ident">PartialEq</span> <span class="kw">for</span> <span class="ident">Segment</span> {
+<span class="kw">impl</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">FormattedValue</span><span class="op">&gt;</span> <span class="ident">PartialEq</span> <span class="kw">for</span> <span class="ident">FormattedSegment</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> {
     <span class="attribute">#[<span class="ident">inline</span>]</span>
     <span class="kw">fn</span> <span class="ident">eq</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">other</span>: <span class="kw-2">&amp;</span><span class="self">Self</span>) <span class="op">-&gt;</span> <span class="ident">bool</span> {
-        <span class="self">self</span>.<span class="ident">is_equal</span>(<span class="ident">other</span>)
+        <span class="kw">unsafe</span> { <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_segment_is_equal</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0</span>, <span class="kw-2">&amp;</span><span class="ident">other</span>.<span class="number">0</span>)) }
     }
 }
 
-<span class="kw">impl</span> <span class="ident">Eq</span> <span class="kw">for</span> <span class="ident">Segment</span> {}
+<span class="kw">impl</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">FormattedValue</span><span class="op">&gt;</span> <span class="ident">Eq</span> <span class="kw">for</span> <span class="ident">FormattedSegment</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> {}
 
-<span class="kw">unsafe</span> <span class="kw">impl</span> <span class="ident">Send</span> <span class="kw">for</span> <span class="ident">Segment</span> {}
+<span class="kw">unsafe</span> <span class="kw">impl</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">FormattedValue</span><span class="op">&gt;</span> <span class="ident">Send</span> <span class="kw">for</span> <span class="ident">FormattedSegment</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> {}
 
-<span class="kw">impl</span> <span class="ident">Clone</span> <span class="kw">for</span> <span class="ident">Segment</span> {
+<span class="kw">impl</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">FormattedValue</span><span class="op">&gt;</span> <span class="ident">Clone</span> <span class="kw">for</span> <span class="ident">FormattedSegment</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> {
     <span class="kw">fn</span> <span class="ident">clone</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
-        <span class="kw">unsafe</span> { <span class="ident">Segment</span>(<span class="ident">ptr</span>::<span class="ident">read</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0</span>)) }
+        <span class="kw">unsafe</span> { <span class="ident">FormattedSegment</span>(<span class="ident">ptr</span>::<span class="ident">read</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0</span>), <span class="ident">PhantomData</span>) }
     }
 }
 
-<span class="kw">impl</span> <span class="ident">glib</span>::<span class="ident">types</span>::<span class="ident">StaticType</span> <span class="kw">for</span> <span class="ident">Segment</span> {
-    <span class="kw">fn</span> <span class="ident">static_type</span>() <span class="op">-&gt;</span> <span class="ident">glib</span>::<span class="ident">types</span>::<span class="ident">Type</span> {
-        <span class="kw">unsafe</span> { <span class="ident">glib</span>::<span class="ident">translate</span>::<span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_segment_get_type</span>()) }
+<span class="kw">impl</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">FormattedValue</span><span class="op">&gt;</span> <span class="ident">AsRef</span><span class="op">&lt;</span><span class="ident">Segment</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">FormattedSegment</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> {
+    <span class="kw">fn</span> <span class="ident">as_ref</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="ident">Segment</span> {
+        <span class="kw">unsafe</span> { <span class="ident">mem</span>::<span class="ident">transmute</span>(<span class="self">self</span>) }
     }
 }
 
-<span class="kw">impl</span> <span class="ident">Default</span> <span class="kw">for</span> <span class="ident">Segment</span> {
+<span class="kw">impl</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">FormattedValue</span><span class="op">&gt;</span> <span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">FormattedSegment</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> <span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
+        <span class="kw">let</span> <span class="ident">segment</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">as_ref</span>();
+        <span class="kw">match</span> <span class="ident">segment</span>.<span class="ident">get_format</span>() {
+            <span class="ident">Format</span>::<span class="ident">Undefined</span> <span class="op">=&gt;</span> <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="string">&quot;Segment&quot;</span>)
+                .<span class="ident">field</span>(<span class="string">&quot;format&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">Format</span>::<span class="ident">Undefined</span>)
+                .<span class="ident">finish</span>(),
+            <span class="ident">Format</span>::<span class="ident">Time</span> <span class="op">=&gt;</span> {
+                <span class="kw">let</span> <span class="ident">segment</span> <span class="op">=</span> <span class="ident">segment</span>.<span class="ident">downcast_ref</span>::<span class="op">&lt;</span>::<span class="ident">ClockTime</span><span class="op">&gt;</span>().<span class="ident">unwrap</span>();
+                <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="string">&quot;Segment&quot;</span>)
+                    .<span class="ident">field</span>(<span class="string">&quot;format&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">Format</span>::<span class="ident">Time</span>)
+                    .<span class="ident">field</span>(<span class="string">&quot;start&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">segment</span>.<span class="ident">get_start</span>().<span class="ident">to_string</span>())
+                    .<span class="ident">field</span>(<span class="string">&quot;offset&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">segment</span>.<span class="ident">get_offset</span>().<span class="ident">to_string</span>())
+                    .<span class="ident">field</span>(<span class="string">&quot;stop&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">segment</span>.<span class="ident">get_stop</span>().<span class="ident">to_string</span>())
+                    .<span class="ident">field</span>(<span class="string">&quot;rate&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">segment</span>.<span class="ident">get_rate</span>())
+                    .<span class="ident">field</span>(<span class="string">&quot;applied_rate&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">segment</span>.<span class="ident">get_applied_rate</span>())
+                    .<span class="ident">field</span>(<span class="string">&quot;flags&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">segment</span>.<span class="ident">get_flags</span>())
+                    .<span class="ident">field</span>(<span class="string">&quot;time&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">segment</span>.<span class="ident">get_time</span>().<span class="ident">to_string</span>())
+                    .<span class="ident">field</span>(<span class="string">&quot;base&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">segment</span>.<span class="ident">get_base</span>().<span class="ident">to_string</span>())
+                    .<span class="ident">field</span>(<span class="string">&quot;position&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">segment</span>.<span class="ident">get_position</span>().<span class="ident">to_string</span>())
+                    .<span class="ident">field</span>(<span class="string">&quot;duration&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">segment</span>.<span class="ident">get_duration</span>().<span class="ident">to_string</span>())
+                    .<span class="ident">finish</span>()
+            }
+            _ <span class="op">=&gt;</span> <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="string">&quot;Segment&quot;</span>)
+                .<span class="ident">field</span>(<span class="string">&quot;format&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">segment</span>.<span class="ident">get_format</span>())
+                .<span class="ident">field</span>(<span class="string">&quot;start&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">segment</span>.<span class="ident">get_start</span>())
+                .<span class="ident">field</span>(<span class="string">&quot;offset&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">segment</span>.<span class="ident">get_offset</span>())
+                .<span class="ident">field</span>(<span class="string">&quot;stop&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">segment</span>.<span class="ident">get_stop</span>())
+                .<span class="ident">field</span>(<span class="string">&quot;rate&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">segment</span>.<span class="ident">get_rate</span>())
+                .<span class="ident">field</span>(<span class="string">&quot;applied_rate&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">segment</span>.<span class="ident">get_applied_rate</span>())
+                .<span class="ident">field</span>(<span class="string">&quot;flags&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">segment</span>.<span class="ident">get_flags</span>())
+                .<span class="ident">field</span>(<span class="string">&quot;time&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">segment</span>.<span class="ident">get_time</span>())
+                .<span class="ident">field</span>(<span class="string">&quot;base&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">segment</span>.<span class="ident">get_base</span>())
+                .<span class="ident">field</span>(<span class="string">&quot;position&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">segment</span>.<span class="ident">get_position</span>())
+                .<span class="ident">field</span>(<span class="string">&quot;duration&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">segment</span>.<span class="ident">get_duration</span>())
+                .<span class="ident">finish</span>(),
+        }
+    }
+}
+
+<span class="kw">impl</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">FormattedValue</span><span class="op">&gt;</span> <span class="ident">Default</span> <span class="kw">for</span> <span class="ident">FormattedSegment</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> {
     <span class="kw">fn</span> <span class="ident">default</span>() <span class="op">-&gt;</span> <span class="self">Self</span> {
         <span class="self">Self</span>::<span class="ident">new</span>()
+    }
+}
+
+<span class="kw">impl</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">FormattedValue</span><span class="op">&gt;</span> <span class="ident">glib</span>::<span class="ident">types</span>::<span class="ident">StaticType</span> <span class="kw">for</span> <span class="ident">FormattedSegment</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> {
+    <span class="kw">fn</span> <span class="ident">static_type</span>() <span class="op">-&gt;</span> <span class="ident">glib</span>::<span class="ident">types</span>::<span class="ident">Type</span> {
+        <span class="kw">unsafe</span> { <span class="ident">glib</span>::<span class="ident">translate</span>::<span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_segment_get_type</span>()) }
     }
 }
 
@@ -983,7 +1279,7 @@
 }
 
 <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
-<span class="kw">impl</span> <span class="ident">glib</span>::<span class="ident">value</span>::<span class="ident">SetValue</span> <span class="kw">for</span> <span class="ident">Segment</span> {
+<span class="kw">impl</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">FormattedValue</span><span class="op">&gt;</span> <span class="ident">glib</span>::<span class="ident">value</span>::<span class="ident">SetValue</span> <span class="kw">for</span> <span class="ident">FormattedSegment</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> {
     <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">set_value</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">glib</span>::<span class="ident">Value</span>, <span class="ident">this</span>: <span class="kw-2">&amp;</span><span class="self">Self</span>) {
         <span class="ident">gobject_ffi</span>::<span class="ident">g_value_set_boxed</span>(
             <span class="ident">value</span>.<span class="ident">to_glib_none_mut</span>().<span class="number">0</span>,
@@ -994,7 +1290,7 @@
 }
 
 <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
-<span class="kw">impl</span> <span class="ident">glib</span>::<span class="ident">value</span>::<span class="ident">SetValueOptional</span> <span class="kw">for</span> <span class="ident">Segment</span> {
+<span class="kw">impl</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">FormattedValue</span><span class="op">&gt;</span> <span class="ident">glib</span>::<span class="ident">value</span>::<span class="ident">SetValueOptional</span> <span class="kw">for</span> <span class="ident">FormattedSegment</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> {
     <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">set_value_optional</span>(<span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">glib</span>::<span class="ident">Value</span>, <span class="ident">this</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="self">Self</span><span class="op">&gt;</span>) {
         <span class="ident">gobject_ffi</span>::<span class="ident">g_value_set_boxed</span>(
             <span class="ident">value</span>.<span class="ident">to_glib_none_mut</span>().<span class="number">0</span>,
@@ -1005,20 +1301,14 @@
 }
 
 <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
-<span class="kw">impl</span> <span class="ident">glib</span>::<span class="ident">translate</span>::<span class="ident">Uninitialized</span> <span class="kw">for</span> <span class="ident">Segment</span> {
-    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">uninitialized</span>() <span class="op">-&gt;</span> <span class="self">Self</span> {
-        <span class="ident">mem</span>::<span class="ident">zeroed</span>()
-    }
-}
-
-<span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
-<span class="kw">impl</span> <span class="ident">glib</span>::<span class="ident">translate</span>::<span class="ident">GlibPtrDefault</span> <span class="kw">for</span> <span class="ident">Segment</span> {
+<span class="kw">impl</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">FormattedValue</span><span class="op">&gt;</span> <span class="ident">glib</span>::<span class="ident">translate</span>::<span class="ident">GlibPtrDefault</span> <span class="kw">for</span> <span class="ident">FormattedSegment</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> {
     <span class="kw">type</span> <span class="ident">GlibType</span> <span class="op">=</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi</span>::<span class="ident">GstSegment</span>;
 }
 
 <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
-<span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">glib</span>::<span class="ident">translate</span>::<span class="ident">ToGlibPtr</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">ffi</span>::<span class="ident">GstSegment</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">Segment</span> {
-    <span class="kw">type</span> <span class="ident">Storage</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">Segment</span>;
+<span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="ident">T</span>: <span class="ident">FormattedValue</span><span class="op">&gt;</span> <span class="ident">glib</span>::<span class="ident">translate</span>::<span class="ident">ToGlibPtr</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">ffi</span>::<span class="ident">GstSegment</span><span class="op">&gt;</span>
+    <span class="kw">for</span> <span class="ident">FormattedSegment</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> {
+    <span class="kw">type</span> <span class="ident">Storage</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">FormattedSegment</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>;
 
     <span class="kw">fn</span> <span class="ident">to_glib_none</span>(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">glib</span>::<span class="ident">translate</span>::<span class="ident">Stash</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">ffi</span>::<span class="ident">GstSegment</span>, <span class="self">Self</span><span class="op">&gt;</span> {
         <span class="ident">glib</span>::<span class="ident">translate</span>::<span class="ident">Stash</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0</span>, <span class="self">self</span>)
@@ -1030,8 +1320,9 @@
 }
 
 <span class="attribute">#[<span class="ident">doc</span>(<span class="ident">hidden</span>)]</span>
-<span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">glib</span>::<span class="ident">translate</span>::<span class="ident">ToGlibPtrMut</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi</span>::<span class="ident">GstSegment</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">Segment</span> {
-    <span class="kw">type</span> <span class="ident">Storage</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="kw-2">mut</span> <span class="ident">Segment</span>;
+<span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="ident">T</span>: <span class="ident">FormattedValue</span><span class="op">&gt;</span> <span class="ident">glib</span>::<span class="ident">translate</span>::<span class="ident">ToGlibPtrMut</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi</span>::<span class="ident">GstSegment</span><span class="op">&gt;</span>
+    <span class="kw">for</span> <span class="ident">FormattedSegment</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> {
+    <span class="kw">type</span> <span class="ident">Storage</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="kw-2">mut</span> <span class="ident">FormattedSegment</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>;
 
     <span class="attribute">#[<span class="ident">inline</span>]</span>
     <span class="kw">fn</span> <span class="ident">to_glib_none_mut</span>(<span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="kw-2">mut</span> <span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">glib</span>::<span class="ident">translate</span>::<span class="ident">StashMut</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi</span>::<span class="ident">GstSegment</span>, <span class="self">Self</span><span class="op">&gt;</span> {
@@ -1043,7 +1334,7 @@
 <span class="kw">impl</span> <span class="ident">glib</span>::<span class="ident">translate</span>::<span class="ident">FromGlibPtrNone</span><span class="op">&lt;</span><span class="kw-2">*</span><span class="kw">const</span> <span class="ident">ffi</span>::<span class="ident">GstSegment</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">Segment</span> {
     <span class="attribute">#[<span class="ident">inline</span>]</span>
     <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib_none</span>(<span class="ident">ptr</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">ffi</span>::<span class="ident">GstSegment</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
-        <span class="ident">Segment</span>(<span class="ident">ptr</span>::<span class="ident">read</span>(<span class="ident">ptr</span>))
+        <span class="ident">FormattedSegment</span>(<span class="ident">ptr</span>::<span class="ident">read</span>(<span class="ident">ptr</span>), <span class="ident">PhantomData</span>)
     }
 }
 
@@ -1051,7 +1342,7 @@
 <span class="kw">impl</span> <span class="ident">glib</span>::<span class="ident">translate</span>::<span class="ident">FromGlibPtrNone</span><span class="op">&lt;</span><span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi</span>::<span class="ident">GstSegment</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">Segment</span> {
     <span class="attribute">#[<span class="ident">inline</span>]</span>
     <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib_none</span>(<span class="ident">ptr</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi</span>::<span class="ident">GstSegment</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
-        <span class="ident">Segment</span>(<span class="ident">ptr</span>::<span class="ident">read</span>(<span class="ident">ptr</span>))
+        <span class="ident">FormattedSegment</span>(<span class="ident">ptr</span>::<span class="ident">read</span>(<span class="ident">ptr</span>), <span class="ident">PhantomData</span>)
     }
 }
 
@@ -1059,7 +1350,7 @@
 <span class="kw">impl</span> <span class="ident">glib</span>::<span class="ident">translate</span>::<span class="ident">FromGlibPtrBorrow</span><span class="op">&lt;</span><span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi</span>::<span class="ident">GstSegment</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">Segment</span> {
     <span class="attribute">#[<span class="ident">inline</span>]</span>
     <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi</span>::<span class="ident">GstSegment</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
-        <span class="ident">Segment</span>(<span class="ident">ptr</span>::<span class="ident">read</span>(<span class="ident">ptr</span>))
+        <span class="ident">FormattedSegment</span>(<span class="ident">ptr</span>::<span class="ident">read</span>(<span class="ident">ptr</span>), <span class="ident">PhantomData</span>)
     }
 }
 

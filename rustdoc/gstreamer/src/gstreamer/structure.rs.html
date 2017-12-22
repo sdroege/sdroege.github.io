@@ -28,6 +28,7 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
         
     </nav>
@@ -787,6 +788,14 @@
 <span id="742">742</span>
 <span id="743">743</span>
 <span id="744">744</span>
+<span id="745">745</span>
+<span id="746">746</span>
+<span id="747">747</span>
+<span id="748">748</span>
+<span id="749">749</span>
+<span id="750">750</span>
+<span id="751">751</span>
+<span id="752">752</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2016-2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -872,7 +881,9 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new_empty</span>(<span class="ident">name</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>) <span class="op">-&gt;</span> <span class="ident">Structure</span> {
         <span class="macro">assert_initialized_main_thread</span><span class="macro">!</span>();
         <span class="ident">Structure</span>(
-            <span class="kw">unsafe</span> { <span class="ident">ffi</span>::<span class="ident">gst_structure_new_empty</span>(<span class="ident">name</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>) <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">StructureRef</span> },
+            <span class="kw">unsafe</span> {
+                <span class="ident">ffi</span>::<span class="ident">gst_structure_new_empty</span>(<span class="ident">name</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>) <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">StructureRef</span>
+            },
             <span class="ident">PhantomData</span>,
         )
     }
@@ -979,6 +990,12 @@
 }
 
 <span class="kw">impl</span> <span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">Structure</span> {
+    <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> <span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
+        <span class="ident">f</span>.<span class="ident">debug_tuple</span>(<span class="string">&quot;Structure&quot;</span>).<span class="ident">field</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">to_string</span>()).<span class="ident">finish</span>()
+    }
+}
+
+<span class="kw">impl</span> <span class="ident">fmt</span>::<span class="ident">Display</span> <span class="kw">for</span> <span class="ident">Structure</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> <span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
         <span class="ident">f</span>.<span class="ident">write_str</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">to_string</span>())
     }
@@ -1169,7 +1186,7 @@
         }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">ToSendValue</span><span class="op">&gt;</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">name</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="ident">value</span>: <span class="ident">T</span>) {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">ToSendValue</span><span class="op">&gt;</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">name</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="ident">T</span>) {
         <span class="kw">let</span> <span class="ident">value</span> <span class="op">=</span> <span class="ident">value</span>.<span class="ident">to_send_value</span>();
         <span class="self">self</span>.<span class="ident">set_value</span>(<span class="ident">name</span>, <span class="ident">value</span>);
     }
@@ -1261,7 +1278,7 @@
         <span class="kw">unsafe</span> { <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_structure_can_intersect</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0</span>, <span class="kw-2">&amp;</span><span class="ident">other</span>.<span class="number">0</span>)) }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">intersect</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">other</span>: <span class="kw-2">&amp;</span><span class="ident">StructureRef</span>) <span class="op">-&gt;</span> <span class="ident">Structure</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">intersect</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">other</span>: <span class="kw-2">&amp;</span><span class="ident">StructureRef</span>) <span class="op">-&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Structure</span><span class="op">&gt;</span> {
         <span class="kw">unsafe</span> { <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_structure_intersect</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="number">0</span>, <span class="kw-2">&amp;</span><span class="ident">other</span>.<span class="number">0</span>)) }
     }
 
@@ -1472,7 +1489,7 @@
         }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">field</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">ToSendValue</span><span class="op">&gt;</span>(<span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">name</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="ident">value</span>: <span class="ident">V</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">field</span><span class="op">&lt;</span><span class="ident">V</span>: <span class="ident">ToSendValue</span><span class="op">&gt;</span>(<span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">name</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="ident">value</span>: <span class="kw-2">&amp;</span><span class="ident">V</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
         <span class="self">self</span>.<span class="ident">s</span>.<span class="ident">set</span>(<span class="ident">name</span>, <span class="ident">value</span>);
         <span class="self">self</span>
     }
@@ -1493,9 +1510,9 @@
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">s</span> <span class="op">=</span> <span class="ident">Structure</span>::<span class="ident">new_empty</span>(<span class="string">&quot;test&quot;</span>);
         <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">s</span>.<span class="ident">get_name</span>(), <span class="string">&quot;test&quot;</span>);
 
-        <span class="ident">s</span>.<span class="ident">set</span>(<span class="string">&quot;f1&quot;</span>, <span class="string">&quot;abc&quot;</span>);
-        <span class="ident">s</span>.<span class="ident">set</span>(<span class="string">&quot;f2&quot;</span>, <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;bcd&quot;</span>));
-        <span class="ident">s</span>.<span class="ident">set</span>(<span class="string">&quot;f3&quot;</span>, <span class="number">123i32</span>);
+        <span class="ident">s</span>.<span class="ident">set</span>(<span class="string">&quot;f1&quot;</span>, <span class="kw-2">&amp;</span><span class="string">&quot;abc&quot;</span>);
+        <span class="ident">s</span>.<span class="ident">set</span>(<span class="string">&quot;f2&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;bcd&quot;</span>));
+        <span class="ident">s</span>.<span class="ident">set</span>(<span class="string">&quot;f3&quot;</span>, <span class="kw-2">&amp;</span><span class="number">123i32</span>);
 
         <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">s</span>.<span class="ident">get</span>::<span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>(<span class="string">&quot;f1&quot;</span>).<span class="ident">unwrap</span>(), <span class="string">&quot;abc&quot;</span>);
         <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">s</span>.<span class="ident">get</span>::<span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">str</span><span class="op">&gt;</span>(<span class="string">&quot;f2&quot;</span>).<span class="ident">unwrap</span>(), <span class="string">&quot;bcd&quot;</span>);
@@ -1521,9 +1538,9 @@
         ::<span class="ident">init</span>().<span class="ident">unwrap</span>();
 
         <span class="kw">let</span> <span class="ident">s</span> <span class="op">=</span> <span class="ident">Structure</span>::<span class="ident">builder</span>(<span class="string">&quot;test&quot;</span>)
-            .<span class="ident">field</span>(<span class="string">&quot;f1&quot;</span>, <span class="string">&quot;abc&quot;</span>)
-            .<span class="ident">field</span>(<span class="string">&quot;f2&quot;</span>, <span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;bcd&quot;</span>))
-            .<span class="ident">field</span>(<span class="string">&quot;f3&quot;</span>, <span class="number">123i32</span>)
+            .<span class="ident">field</span>(<span class="string">&quot;f1&quot;</span>, <span class="kw-2">&amp;</span><span class="string">&quot;abc&quot;</span>)
+            .<span class="ident">field</span>(<span class="string">&quot;f2&quot;</span>, <span class="kw-2">&amp;</span><span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;bcd&quot;</span>))
+            .<span class="ident">field</span>(<span class="string">&quot;f3&quot;</span>, <span class="kw-2">&amp;</span><span class="number">123i32</span>)
             .<span class="ident">build</span>();
 
         <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">s</span>.<span class="ident">get_name</span>(), <span class="string">&quot;test&quot;</span>);

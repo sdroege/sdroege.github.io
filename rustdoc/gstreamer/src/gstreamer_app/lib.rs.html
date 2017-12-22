@@ -28,6 +28,7 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
         
     </nav>
@@ -141,8 +142,8 @@
 
 <span class="kw">mod</span> <span class="ident">app_src</span>;
 <span class="kw">mod</span> <span class="ident">app_sink</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">app_src</span>::<span class="ident">AppSrcCallbacks</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">app_sink</span>::<span class="ident">AppSinkCallbacks</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">app_src</span>::<span class="kw-2">*</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">app_sink</span>::<span class="kw-2">*</span>;
 
 <span class="comment">// Re-export all the traits in a prelude module, so that applications</span>
 <span class="comment">// can always &quot;use gst::prelude::*&quot; without getting conflicts</span>

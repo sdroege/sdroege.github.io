@@ -28,6 +28,7 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
         
     </nav>
@@ -116,6 +117,11 @@
 <span id="71">71</span>
 <span id="72">72</span>
 <span id="73">73</span>
+<span id="74">74</span>
+<span id="75">75</span>
+<span id="76">76</span>
+<span id="77">77</span>
+<span id="78">78</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -126,10 +132,10 @@
 <span class="comment">// except according to those terms.</span>
 
 <span class="kw">use</span> <span class="ident">glib</span>;
-<span class="kw">use</span> <span class="ident">glib</span>::{<span class="ident">Cast</span>, <span class="ident">IsA</span>};
+<span class="kw">use</span> <span class="ident">glib</span>::<span class="ident">IsA</span>;
 <span class="kw">use</span> <span class="ident">glib</span>::<span class="ident">translate</span>::<span class="ident">ToGlibPtr</span>;
 <span class="kw">use</span> <span class="ident">glib</span>::<span class="ident">signal</span>::<span class="ident">SignalHandlerId</span>;
-<span class="kw">use</span> <span class="ident">glib</span>::<span class="ident">object</span>::<span class="ident">ObjectExt</span>;
+<span class="kw">use</span> <span class="ident">glib</span>::<span class="ident">object</span>::{<span class="ident">Downcast</span>, <span class="ident">ObjectExt</span>};
 
 <span class="kw">use</span> <span class="ident">gobject_ffi</span>;
 
@@ -148,7 +154,12 @@
         <span class="ident">f</span>: <span class="ident">F</span>,
     ) <span class="op">-&gt;</span> <span class="ident">SignalHandlerId</span> {
         <span class="self">self</span>.<span class="ident">connect</span>(<span class="string">&quot;deep-notify&quot;</span>, <span class="bool-val">false</span>, <span class="kw">move</span> <span class="op">|</span><span class="ident">values</span><span class="op">|</span> {
-            <span class="kw">let</span> <span class="ident">obj</span>: <span class="ident">O</span> <span class="op">=</span> <span class="ident">values</span>[<span class="number">0</span>].<span class="ident">get</span>::<span class="op">&lt;</span><span class="ident">glib</span>::<span class="ident">Object</span><span class="op">&gt;</span>().<span class="ident">unwrap</span>().<span class="ident">downcast</span>().<span class="ident">unwrap</span>();
+            <span class="kw">let</span> <span class="ident">obj</span>: <span class="ident">O</span> <span class="op">=</span> <span class="kw">unsafe</span> {
+                <span class="ident">values</span>[<span class="number">0</span>]
+                    .<span class="ident">get</span>::<span class="op">&lt;</span><span class="ident">glib</span>::<span class="ident">Object</span><span class="op">&gt;</span>()
+                    .<span class="ident">unwrap</span>()
+                    .<span class="ident">downcast_unchecked</span>()
+            };
             <span class="kw">let</span> <span class="ident">prop_obj</span>: ::<span class="ident">Object</span> <span class="op">=</span> <span class="ident">values</span>[<span class="number">1</span>].<span class="ident">get</span>().<span class="ident">unwrap</span>();
 
             <span class="kw">let</span> <span class="ident">prop_name</span> <span class="op">=</span> <span class="kw">unsafe</span> {

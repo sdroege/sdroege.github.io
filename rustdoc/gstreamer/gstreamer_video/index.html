@@ -28,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'>Crate gstreamer_video</p><div class="block items"><ul><li><a href="#modules">Modules</a></li><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#traits">Traits</a></li></ul></div><p class='location'></p><script>window.sidebarCurrent = {name: 'gstreamer_video', ty: 'mod', relpath: '../'};</script>
+        <p class='location'>Crate gstreamer_video</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#modules">Modules</a></li><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#traits">Traits</a></li><li><a href="#functions">Functions</a></li></ul></div><p class='location'></p><script>window.sidebarCurrent = {name: 'gstreamer_video', ty: 'mod', relpath: '../'};</script></div>
     </nav>
 
     <nav class="sub">
@@ -48,7 +49,7 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/gstreamer_video/lib.rs.html#9-62' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/gstreamer_video/lib.rs.html#9-64' title='goto source code'>[src]</a></span></h1>
 <h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
 <table>
                        <tr class=' module-item'>
@@ -67,6 +68,20 @@
                            </td>
                        </tr>
                        <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DownstreamForceKeyUnitEvent.html"
+                                  title='struct gstreamer_video::DownstreamForceKeyUnitEvent'>DownstreamForceKeyUnitEvent</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DownstreamForceKeyUnitEventBuilder.html"
+                                  title='struct gstreamer_video::DownstreamForceKeyUnitEventBuilder'>DownstreamForceKeyUnitEventBuilder</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
                            <td><a class="struct" href="struct.Error.html"
                                   title='struct gstreamer_video::Error'>Error</a></td>
                            <td class='docblock-short'>
@@ -74,10 +89,38 @@
                            </td>
                        </tr>
                        <tr class=' module-item'>
+                           <td><a class="struct" href="struct.StillFrameEvent.html"
+                                  title='struct gstreamer_video::StillFrameEvent'>StillFrameEvent</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.StillFrameEventBuilder.html"
+                                  title='struct gstreamer_video::StillFrameEventBuilder'>StillFrameEventBuilder</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
                            <td><a class="struct" href="struct.TypedValue.html"
                                   title='struct gstreamer_video::TypedValue'>TypedValue</a></td>
                            <td class='docblock-short'>
                                 <p>A statically typed <a href="struct.Value.html"><code>Value</code></a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.UpstreamForceKeyUnitEvent.html"
+                                  title='struct gstreamer_video::UpstreamForceKeyUnitEvent'>UpstreamForceKeyUnitEvent</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.UpstreamForceKeyUnitEventBuilder.html"
+                                  title='struct gstreamer_video::UpstreamForceKeyUnitEventBuilder'>UpstreamForceKeyUnitEventBuilder</a></td>
+                           <td class='docblock-short'>
+                                
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -169,6 +212,13 @@ to store the specific video info when mapping a video frame with
                        </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
 <table>
                        <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ForceKeyUnitEvent.html"
+                                  title='enum gstreamer_video::ForceKeyUnitEvent'>ForceKeyUnitEvent</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
                            <td><a class="enum" href="enum.Type.html"
                                   title='enum gstreamer_video::Type'>Type</a></td>
                            <td class='docblock-short'>
@@ -229,6 +279,17 @@ buffer flags.</p>
                            <td class='docblock-short'>
                                 <p>The possible values of the <code>VideoInterlaceMode</code> describing the interlace
 mode of the stream.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.VideoMultiviewFramePacking.html"
+                                  title='enum gstreamer_video::VideoMultiviewFramePacking'>VideoMultiviewFramePacking</a></td>
+                           <td class='docblock-short'>
+                                <p><code>VideoMultiviewFramePacking</code> represents the subset of <code>VideoMultiviewMode</code>
+values that can be applied to any video frame without needing extra metadata.
+It can be used by elements that provide a property to override the
+multiview interpretation of a video stream when the video doesn&#39;t contain
+any markers.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -294,6 +355,63 @@ non-linear RGB (R&#39;G&#39;B&#39;) and linear RGB</p>
                        <tr class=' module-item'>
                            <td><a class="trait" href="trait.VideoOverlayExtManual.html"
                                   title='trait gstreamer_video::VideoOverlayExtManual'>VideoOverlayExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.is_force_key_unit_event.html"
+                                  title='fn gstreamer_video::is_force_key_unit_event'>is_force_key_unit_event</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.new_downstream_force_key_unit_event.html"
+                                  title='fn gstreamer_video::new_downstream_force_key_unit_event'>new_downstream_force_key_unit_event</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.new_still_frame_event.html"
+                                  title='fn gstreamer_video::new_still_frame_event'>new_still_frame_event</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.new_upstream_force_key_unit_event.html"
+                                  title='fn gstreamer_video::new_upstream_force_key_unit_event'>new_upstream_force_key_unit_event</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.parse_downstream_force_key_unit_event.html"
+                                  title='fn gstreamer_video::parse_downstream_force_key_unit_event'>parse_downstream_force_key_unit_event</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.parse_force_key_unit_event.html"
+                                  title='fn gstreamer_video::parse_force_key_unit_event'>parse_force_key_unit_event</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.parse_still_frame_event.html"
+                                  title='fn gstreamer_video::parse_still_frame_event'>parse_still_frame_event</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.parse_upstream_force_key_unit_event.html"
+                                  title='fn gstreamer_video::parse_upstream_force_key_unit_event'>parse_upstream_force_key_unit_event</a></td>
                            <td class='docblock-short'>
                                 
                            </td>

@@ -28,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'>Struct Plugin</p><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.get_cache_data">get_cache_data</a><a href="#method.get_description">get_description</a><a href="#method.get_filename">get_filename</a><a href="#method.get_license">get_license</a><a href="#method.get_origin">get_origin</a><a href="#method.get_package">get_package</a><a href="#method.get_release_date_string">get_release_date_string</a><a href="#method.get_source">get_source</a><a href="#method.get_version">get_version</a><a href="#method.is_loaded">is_loaded</a><a href="#method.load">load</a><a href="#method.set_cache_data">set_cache_data</a><a href="#method.list_free">list_free</a><a href="#method.load_by_name">load_by_name</a><a href="#method.load_file">load_file</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a><a href="#impl-Hash">Hash</a><a href="#impl-StaticType">StaticType</a><a href="#impl-PartialEq%3CT%3E">PartialEq&lt;T&gt;</a><a href="#impl-Eq">Eq</a><a href="#impl-IsA%3CObject%3E">IsA&lt;Object&gt;</a><a href="#impl-Send">Send</a><a href="#impl-Sync">Sync</a></div></div><p class='location'><a href='index.html'>gstreamer</a></p><script>window.sidebarCurrent = {name: 'Plugin', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct Plugin</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.add_dependency">add_dependency</a><a href="#method.add_dependency_simple">add_dependency_simple</a><a href="#method.get_description">get_description</a><a href="#method.get_filename">get_filename</a><a href="#method.get_license">get_license</a><a href="#method.get_origin">get_origin</a><a href="#method.get_package">get_package</a><a href="#method.get_release_date_string">get_release_date_string</a><a href="#method.get_source">get_source</a><a href="#method.get_version">get_version</a><a href="#method.is_loaded">is_loaded</a><a href="#method.load">load</a><a href="#method.load_by_name">load_by_name</a><a href="#method.load_file">load_file</a><a href="#method.get_cache_data">get_cache_data</a><a href="#method.set_cache_data">set_cache_data</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a><a href="#impl-Hash">Hash</a><a href="#impl-StaticType">StaticType</a><a href="#impl-PartialEq%3CT%3E">PartialEq&lt;T&gt;</a><a href="#impl-Eq">Eq</a><a href="#impl-IsA%3CObject%3E">IsA&lt;Object&gt;</a><a href="#impl-Send">Send</a><a href="#impl-Sync">Sync</a></div></div><p class='location'><a href='index.html'>gstreamer</a></p><script>window.sidebarCurrent = {name: 'Plugin', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -70,45 +71,100 @@ repository in which case <code>Plugin::load</code> can be needed to bring the pl
 into memory.</p>
 
 <h1 id='implements' class='section-header'><a href='#implements'>Implements</a></h1>
-<p><a href="trait.ObjectExt.html"><code>ObjectExt</code></a>, <a href="trait.ObjectExt.html"><code>ObjectExt</code></a></p>
+<p><a href="trait.GstObjectExt.html"><code>GstObjectExt</code></a>, <a href="../glib/object/trait.ObjectExt.html"><code>glib::object::ObjectExt</code></a></p>
 </div>
                     <h2 id='methods' class='small-section-header'>
                       Methods<a href='#methods' class='anchor'></a>
                     </h2>
-                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../gstreamer/struct.Plugin.html" title="struct gstreamer::Plugin">Plugin</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#45-255' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.get_cache_data' class="method"><span id='get_cache_data.v' class='invisible'><code>pub fn <a href='#method.get_cache_data' class='fnname'>get_cache_data</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/structure/struct.Structure.html" title="struct gstreamer::structure::Structure">Structure</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#61-65' title='goto source code'>[src]</a></span></h4>
-<div class='docblock'><p>Gets the plugin specific data cache. If it is <code>None</code> there is no cached data
-stored. This is the case when the registry is getting rebuilt.</p>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../gstreamer/struct.Plugin.html" title="struct gstreamer::Plugin">Plugin</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#46-283' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.add_dependency' class="method"><span id='add_dependency.v' class='invisible'><code>pub fn <a href='#method.add_dependency' class='fnname'>add_dependency</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;env_vars: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a>&amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;paths: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a>&amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;names: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a>&amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;flags: <a class="struct" href="../gstreamer/struct.PluginDependencyFlags.html" title="struct gstreamer::PluginDependencyFlags">PluginDependencyFlags</a><br>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#73-77' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Make GStreamer aware of external dependencies which affect the feature
+set of this plugin (ie. the elements or typefinders associated with it).</p>
 
-<h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
-<p>The cached data as a
-<code>Structure</code> or <code>None</code>.</p>
-</div><h4 id='method.get_description' class="method"><span id='get_description.v' class='invisible'><code>pub fn <a href='#method.get_description' class='fnname'>get_description</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#72-76' title='goto source code'>[src]</a></span></h4>
+<p>GStreamer will re-inspect plugins with external dependencies whenever any
+of the external dependencies change. This is useful for plugins which wrap
+other plugin systems, e.g. a plugin which wraps a plugin-based visualisation
+library and makes visualisations available as GStreamer elements, or a
+codec loader which exposes elements and/or caps dependent on what external
+codec libraries are currently installed.</p>
+
+<h2 id='env_vars' class='section-header'><a href='#env_vars'><code>env_vars</code></a></h2>
+<p><code>None</code>-terminated array of environment variables affecting the
+ feature set of the plugin (e.g. an environment variable containing
+ paths where to look for additional modules/plugins of a library),
+ or <code>None</code>. Environment variable names may be followed by a path component
+ which will be added to the content of the environment variable, e.g.
+ &quot;HOME/.mystuff/plugins&quot;.</p>
+
+<h2 id='paths' class='section-header'><a href='#paths'><code>paths</code></a></h2>
+<p><code>None</code>-terminated array of directories/paths where dependent files
+ may be, or <code>None</code>.</p>
+
+<h2 id='names' class='section-header'><a href='#names'><code>names</code></a></h2>
+<p><code>None</code>-terminated array of file names (or file name suffixes,
+ depending on <code>flags</code>) to be used in combination with the paths from
+ <code>paths</code> and/or the paths extracted from the environment variables in
+ <code>env_vars</code>, or <code>None</code>.</p>
+
+<h2 id='flags' class='section-header'><a href='#flags'><code>flags</code></a></h2>
+<p>optional flags, or <code>PluginDependencyFlags::None</code></p>
+</div><h4 id='method.add_dependency_simple' class="method"><span id='add_dependency_simple.v' class='invisible'><code>pub fn <a href='#method.add_dependency_simple' class='fnname'>add_dependency_simple</a>&lt;'a, 'b, 'c, P:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;&gt;, Q:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'b <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;&gt;, R:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'c <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;env_vars: P, <br>&nbsp;&nbsp;&nbsp;&nbsp;paths: Q, <br>&nbsp;&nbsp;&nbsp;&nbsp;names: R, <br>&nbsp;&nbsp;&nbsp;&nbsp;flags: <a class="struct" href="../gstreamer/struct.PluginDependencyFlags.html" title="struct gstreamer::PluginDependencyFlags">PluginDependencyFlags</a><br>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#105-115' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Make GStreamer aware of external dependencies which affect the feature
+set of this plugin (ie. the elements or typefinders associated with it).</p>
+
+<p>GStreamer will re-inspect plugins with external dependencies whenever any
+of the external dependencies change. This is useful for plugins which wrap
+other plugin systems, e.g. a plugin which wraps a plugin-based visualisation
+library and makes visualisations available as GStreamer elements, or a
+codec loader which exposes elements and/or caps dependent on what external
+codec libraries are currently installed.</p>
+
+<p>Convenience wrapper function for <code>Plugin::add_dependency</code> which
+takes simple strings as arguments instead of string arrays, with multiple
+arguments separated by predefined delimiters (see above).</p>
+
+<h2 id='env_vars-1' class='section-header'><a href='#env_vars-1'><code>env_vars</code></a></h2>
+<p>one or more environment variables (separated by &#39;:&#39;, &#39;;&#39; or &#39;,&#39;),
+ or <code>None</code>. Environment variable names may be followed by a path component
+ which will be added to the content of the environment variable, e.g.
+ &quot;HOME/.mystuff/plugins:MYSTUFF_PLUGINS_PATH&quot;</p>
+
+<h2 id='paths-1' class='section-header'><a href='#paths-1'><code>paths</code></a></h2>
+<p>one ore more directory paths (separated by &#39;:&#39; or &#39;;&#39; or &#39;,&#39;),
+ or <code>None</code>. Example: &quot;/usr/lib/mystuff/plugins&quot;</p>
+
+<h2 id='names-1' class='section-header'><a href='#names-1'><code>names</code></a></h2>
+<p>one or more file names or file name suffixes (separated by commas),
+ or <code>None</code></p>
+
+<h2 id='flags-1' class='section-header'><a href='#flags-1'><code>flags</code></a></h2>
+<p>optional flags, or <code>PluginDependencyFlags::None</code></p>
+</div><h4 id='method.get_description' class="method"><span id='get_description.v' class='invisible'><code>pub fn <a href='#method.get_description' class='fnname'>get_description</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#122-126' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Get the long descriptive name of the plugin</p>
 
-<h1 id='returns-1' class='section-header'><a href='#returns-1'>Returns</a></h1>
+<h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
 <p>the long name of the plugin</p>
-</div><h4 id='method.get_filename' class="method"><span id='get_filename.v' class='invisible'><code>pub fn <a href='#method.get_filename' class='fnname'>get_filename</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#83-87' title='goto source code'>[src]</a></span></h4>
+</div><h4 id='method.get_filename' class="method"><span id='get_filename.v' class='invisible'><code>pub fn <a href='#method.get_filename' class='fnname'>get_filename</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html" title="struct std::path::PathBuf">PathBuf</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#133-137' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>get the filename of the plugin</p>
 
-<h1 id='returns-2' class='section-header'><a href='#returns-2'>Returns</a></h1>
+<h1 id='returns-1' class='section-header'><a href='#returns-1'>Returns</a></h1>
 <p>the filename of the plugin</p>
-</div><h4 id='method.get_license' class="method"><span id='get_license.v' class='invisible'><code>pub fn <a href='#method.get_license' class='fnname'>get_license</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#94-98' title='goto source code'>[src]</a></span></h4>
+</div><h4 id='method.get_license' class="method"><span id='get_license.v' class='invisible'><code>pub fn <a href='#method.get_license' class='fnname'>get_license</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#144-148' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>get the license of the plugin</p>
 
-<h1 id='returns-3' class='section-header'><a href='#returns-3'>Returns</a></h1>
+<h1 id='returns-2' class='section-header'><a href='#returns-2'>Returns</a></h1>
 <p>the license of the plugin</p>
-</div><h4 id='method.get_origin' class="method"><span id='get_origin.v' class='invisible'><code>pub fn <a href='#method.get_origin' class='fnname'>get_origin</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#105-109' title='goto source code'>[src]</a></span></h4>
+</div><h4 id='method.get_origin' class="method"><span id='get_origin.v' class='invisible'><code>pub fn <a href='#method.get_origin' class='fnname'>get_origin</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#155-159' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>get the URL where the plugin comes from</p>
 
-<h1 id='returns-4' class='section-header'><a href='#returns-4'>Returns</a></h1>
+<h1 id='returns-3' class='section-header'><a href='#returns-3'>Returns</a></h1>
 <p>the origin of the plugin</p>
-</div><h4 id='method.get_package' class="method"><span id='get_package.v' class='invisible'><code>pub fn <a href='#method.get_package' class='fnname'>get_package</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#116-120' title='goto source code'>[src]</a></span></h4>
+</div><h4 id='method.get_package' class="method"><span id='get_package.v' class='invisible'><code>pub fn <a href='#method.get_package' class='fnname'>get_package</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#166-170' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>get the package the plugin belongs to.</p>
 
-<h1 id='returns-5' class='section-header'><a href='#returns-5'>Returns</a></h1>
+<h1 id='returns-4' class='section-header'><a href='#returns-4'>Returns</a></h1>
 <p>the package of the plugin</p>
-</div><h4 id='method.get_release_date_string' class="method"><span id='get_release_date_string.v' class='invisible'><code>pub fn <a href='#method.get_release_date_string' class='fnname'>get_release_date_string</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#135-139' title='goto source code'>[src]</a></span></h4>
+</div><h4 id='method.get_release_date_string' class="method"><span id='get_release_date_string.v' class='invisible'><code>pub fn <a href='#method.get_release_date_string' class='fnname'>get_release_date_string</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#185-189' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Get the release date (and possibly time) in form of a string, if available.</p>
 
 <p>For normal GStreamer plugin releases this will usually just be a date in
@@ -118,25 +174,25 @@ formatted like &quot;YYYY-MM-DDTHH:MMZ&quot; (e.g. &quot;2012-04-30T09:30Z&quot;
 
 <p>There may be plugins that do not have a valid release date set on them.</p>
 
-<h1 id='returns-6' class='section-header'><a href='#returns-6'>Returns</a></h1>
+<h1 id='returns-5' class='section-header'><a href='#returns-5'>Returns</a></h1>
 <p>the date string of the plugin, or <code>None</code> if not
 available.</p>
-</div><h4 id='method.get_source' class="method"><span id='get_source.v' class='invisible'><code>pub fn <a href='#method.get_source' class='fnname'>get_source</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#146-150' title='goto source code'>[src]</a></span></h4>
+</div><h4 id='method.get_source' class="method"><span id='get_source.v' class='invisible'><code>pub fn <a href='#method.get_source' class='fnname'>get_source</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#196-200' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>get the source module the plugin belongs to.</p>
 
-<h1 id='returns-7' class='section-header'><a href='#returns-7'>Returns</a></h1>
+<h1 id='returns-6' class='section-header'><a href='#returns-6'>Returns</a></h1>
 <p>the source of the plugin</p>
-</div><h4 id='method.get_version' class="method"><span id='get_version.v' class='invisible'><code>pub fn <a href='#method.get_version' class='fnname'>get_version</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#157-161' title='goto source code'>[src]</a></span></h4>
+</div><h4 id='method.get_version' class="method"><span id='get_version.v' class='invisible'><code>pub fn <a href='#method.get_version' class='fnname'>get_version</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#207-211' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>get the version of the plugin</p>
 
-<h1 id='returns-8' class='section-header'><a href='#returns-8'>Returns</a></h1>
+<h1 id='returns-7' class='section-header'><a href='#returns-7'>Returns</a></h1>
 <p>the version of the plugin</p>
-</div><h4 id='method.is_loaded' class="method"><span id='is_loaded.v' class='invisible'><code>pub fn <a href='#method.is_loaded' class='fnname'>is_loaded</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#168-172' title='goto source code'>[src]</a></span></h4>
+</div><h4 id='method.is_loaded' class="method"><span id='is_loaded.v' class='invisible'><code>pub fn <a href='#method.is_loaded' class='fnname'>is_loaded</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#218-222' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>queries if the plugin is loaded into memory</p>
 
-<h1 id='returns-9' class='section-header'><a href='#returns-9'>Returns</a></h1>
+<h1 id='returns-8' class='section-header'><a href='#returns-8'>Returns</a></h1>
 <p><code>true</code> is loaded, <code>false</code> otherwise</p>
-</div><h4 id='method.load' class="method"><span id='load.v' class='invisible'><code>pub fn <a href='#method.load' class='fnname'>load</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Plugin.html" title="struct gstreamer::Plugin">Plugin</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#189-193' title='goto source code'>[src]</a></span></h4>
+</div><h4 id='method.load' class="method"><span id='load.v' class='invisible'><code>pub fn <a href='#method.load' class='fnname'>load</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Plugin.html" title="struct gstreamer::Plugin">Plugin</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#239-243' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Loads <code>self</code>. Note that the <em>return value</em> is the loaded plugin; <code>self</code> is
 untouched. The normal use pattern of this function goes like this:</p>
 
@@ -147,9 +203,34 @@ gst_object_unref (plugin);
 plugin = loaded_plugin;
 </code></pre>
 
+<h1 id='returns-9' class='section-header'><a href='#returns-9'>Returns</a></h1>
+<p>a reference to a loaded plugin, or <code>None</code> on error.</p>
+</div><h4 id='method.load_by_name' class="method"><span id='load_by_name.v' class='invisible'><code>pub fn <a href='#method.load_by_name' class='fnname'>load_by_name</a>(name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Plugin.html" title="struct gstreamer::Plugin">Plugin</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#252-257' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Load the named plugin. Refs the plugin.</p>
+
+<h2 id='name' class='section-header'><a href='#name'><code>name</code></a></h2>
+<p>name of plugin to load</p>
+
 <h1 id='returns-10' class='section-header'><a href='#returns-10'>Returns</a></h1>
 <p>a reference to a loaded plugin, or <code>None</code> on error.</p>
-</div><h4 id='method.set_cache_data' class="method"><span id='set_cache_data.v' class='invisible'><code>pub fn <a href='#method.set_cache_data' class='fnname'>set_cache_data</a>(&amp;self, cache_data: &amp;mut <a class="struct" href="../gstreamer/structure/struct.Structure.html" title="struct gstreamer::structure::Structure">Structure</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#201-205' title='goto source code'>[src]</a></span></h4>
+</div><h4 id='method.load_file' class="method"><span id='load_file.v' class='invisible'><code>pub fn <a href='#method.load_file' class='fnname'>load_file</a>&lt;P:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html" title="trait core::convert::AsRef">AsRef</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/std/path/struct.Path.html" title="struct std::path::Path">Path</a>&gt;&gt;(filename: P) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../gstreamer/struct.Plugin.html" title="struct gstreamer::Plugin">Plugin</a>, <a class="struct" href="../gstreamer/struct.Error.html" title="struct gstreamer::Error">Error</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#267-274' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Loads the given plugin and refs it. Caller needs to unref after use.</p>
+
+<h2 id='filename' class='section-header'><a href='#filename'><code>filename</code></a></h2>
+<p>the plugin filename to load</p>
+
+<h1 id='returns-11' class='section-header'><a href='#returns-11'>Returns</a></h1>
+<p>a reference to the existing loaded GstPlugin, a
+reference to the newly-loaded GstPlugin, or <code>None</code> if an error occurred.</p>
+</div></div><h3 id='impl-1' class='impl'><span class='in-band'><code>impl <a class="struct" href="../gstreamer/struct.Plugin.html" title="struct gstreamer::Plugin">Plugin</a></code><a href='#impl-1' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/plugin.rs.html#16-46' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.get_cache_data' class="method"><span id='get_cache_data.v' class='invisible'><code>pub fn <a href='#method.get_cache_data' class='fnname'>get_cache_data</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../gstreamer/structure/struct.StructureRef.html" title="struct gstreamer::structure::StructureRef">StructureRef</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/plugin.rs.html#24-33' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Gets the plugin specific data cache. If it is <code>None</code> there is no cached data
+stored. This is the case when the registry is getting rebuilt.</p>
+
+<h1 id='returns-12' class='section-header'><a href='#returns-12'>Returns</a></h1>
+<p>The cached data as a
+<code>Structure</code> or <code>None</code>.</p>
+</div><h4 id='method.set_cache_data' class="method"><span id='set_cache_data.v' class='invisible'><code>pub fn <a href='#method.set_cache_data' class='fnname'>set_cache_data</a>(&amp;self, cache_data: <a class="struct" href="../gstreamer/structure/struct.Structure.html" title="struct gstreamer::structure::Structure">Structure</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/plugin.rs.html#41-45' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Adds plugin specific data to cache. Passes the ownership of the structure to
 the <code>self</code>.</p>
 
@@ -157,28 +238,6 @@ the <code>self</code>.</p>
 
 <h2 id='cache_data' class='section-header'><a href='#cache_data'><code>cache_data</code></a></h2>
 <p>a structure containing the data to cache</p>
-</div><h4 id='method.list_free' class="method"><span id='list_free.v' class='invisible'><code>pub fn <a href='#method.list_free' class='fnname'>list_free</a>(list: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="struct" href="../gstreamer/struct.Plugin.html" title="struct gstreamer::Plugin">Plugin</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#210-215' title='goto source code'>[src]</a></span></h4>
-<div class='docblock'><p>Unrefs each member of <code>list</code>, then frees the list.</p>
-
-<h2 id='list' class='section-header'><a href='#list'><code>list</code></a></h2>
-<p>list of <code>Plugin</code></p>
-</div><h4 id='method.load_by_name' class="method"><span id='load_by_name.v' class='invisible'><code>pub fn <a href='#method.load_by_name' class='fnname'>load_by_name</a>(name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/struct.Plugin.html" title="struct gstreamer::Plugin">Plugin</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#224-229' title='goto source code'>[src]</a></span></h4>
-<div class='docblock'><p>Load the named plugin. Refs the plugin.</p>
-
-<h2 id='name' class='section-header'><a href='#name'><code>name</code></a></h2>
-<p>name of plugin to load</p>
-
-<h1 id='returns-11' class='section-header'><a href='#returns-11'>Returns</a></h1>
-<p>a reference to a loaded plugin, or <code>None</code> on error.</p>
-</div><h4 id='method.load_file' class="method"><span id='load_file.v' class='invisible'><code>pub fn <a href='#method.load_file' class='fnname'>load_file</a>(filename: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../gstreamer/struct.Plugin.html" title="struct gstreamer::Plugin">Plugin</a>, <a class="struct" href="../gstreamer/struct.Error.html" title="struct gstreamer::Error">Error</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#239-246' title='goto source code'>[src]</a></span></h4>
-<div class='docblock'><p>Loads the given plugin and refs it. Caller needs to unref after use.</p>
-
-<h2 id='filename' class='section-header'><a href='#filename'><code>filename</code></a></h2>
-<p>the plugin filename to load</p>
-
-<h1 id='returns-12' class='section-header'><a href='#returns-12'>Returns</a></h1>
-<p>a reference to the existing loaded GstPlugin, a
-reference to the newly-loaded GstPlugin, or <code>None</code> if an error occurred.</p>
 </div></div>
             <h2 id='implementations' class='small-section-header'>
               Trait Implementations<a href='#implementations' class='anchor'></a>
@@ -207,8 +266,8 @@ reference to the newly-loaded GstPlugin, or <code>None</code> if an error occurr
 </div></div><h3 id='impl-Eq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="struct" href="../gstreamer/struct.Plugin.html" title="struct gstreamer::Plugin">Plugin</a></code><a href='#impl-Eq' class='anchor'></a></span><span class='out-of-band'></span></h3>
 <div class='impl-items'></div><h3 id='impl-IsA%3CObject%3E' class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer/struct.Object.html" title="struct gstreamer::Object">Object</a>&gt; for <a class="struct" href="../gstreamer/struct.Plugin.html" title="struct gstreamer::Plugin">Plugin</a></code><a href='#impl-IsA%3CObject%3E' class='anchor'></a></span><span class='out-of-band'></span></h3>
 <div class='impl-items'></div><h3 id='impl-IsA%3CObject%3E-1' class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt; for <a class="struct" href="../gstreamer/struct.Plugin.html" title="struct gstreamer::Plugin">Plugin</a></code><a href='#impl-IsA%3CObject%3E-1' class='anchor'></a></span><span class='out-of-band'></span></h3>
-<div class='impl-items'></div><h3 id='impl-Send' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> for <a class="struct" href="../gstreamer/struct.Plugin.html" title="struct gstreamer::Plugin">Plugin</a></code><a href='#impl-Send' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#257' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'></div><h3 id='impl-Sync' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> for <a class="struct" href="../gstreamer/struct.Plugin.html" title="struct gstreamer::Plugin">Plugin</a></code><a href='#impl-Sync' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#258' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Send' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> for <a class="struct" href="../gstreamer/struct.Plugin.html" title="struct gstreamer::Plugin">Plugin</a></code><a href='#impl-Send' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#285' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Sync' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> for <a class="struct" href="../gstreamer/struct.Plugin.html" title="struct gstreamer::Plugin">Plugin</a></code><a href='#impl-Sync' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/plugin.rs.html#286' title='goto source code'>[src]</a></span></h3>
 <div class='impl-items'></div></section>
     <section id='search' class="content hidden"></section>
 

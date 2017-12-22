@@ -28,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'>Struct GstVideoFormatInfo</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.format">format</a><a href="#structfield.name">name</a><a href="#structfield.description">description</a><a href="#structfield.flags">flags</a><a href="#structfield.bits">bits</a><a href="#structfield.n_components">n_components</a><a href="#structfield.shift">shift</a><a href="#structfield.depth">depth</a><a href="#structfield.pixel_stride">pixel_stride</a><a href="#structfield.n_planes">n_planes</a><a href="#structfield.plane">plane</a><a href="#structfield.poffset">poffset</a><a href="#structfield.w_sub">w_sub</a><a href="#structfield.h_sub">h_sub</a><a href="#structfield.unpack_format">unpack_format</a><a href="#structfield.unpack_func">unpack_func</a><a href="#structfield.pack_lines">pack_lines</a><a href="#structfield.pack_func">pack_func</a><a href="#structfield.tile_mode">tile_mode</a><a href="#structfield.tile_ws">tile_ws</a><a href="#structfield.tile_hs">tile_hs</a><a href="#structfield._gst_reserved">_gst_reserved</a></div></div><p class='location'><a href='index.html'>gstreamer_video_sys</a></p><script>window.sidebarCurrent = {name: 'GstVideoFormatInfo', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct GstVideoFormatInfo</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.format">format</a><a href="#structfield.name">name</a><a href="#structfield.description">description</a><a href="#structfield.flags">flags</a><a href="#structfield.bits">bits</a><a href="#structfield.n_components">n_components</a><a href="#structfield.shift">shift</a><a href="#structfield.depth">depth</a><a href="#structfield.pixel_stride">pixel_stride</a><a href="#structfield.n_planes">n_planes</a><a href="#structfield.plane">plane</a><a href="#structfield.poffset">poffset</a><a href="#structfield.w_sub">w_sub</a><a href="#structfield.h_sub">h_sub</a><a href="#structfield.unpack_format">unpack_format</a><a href="#structfield.unpack_func">unpack_func</a><a href="#structfield.pack_lines">pack_lines</a><a href="#structfield.pack_func">pack_func</a><a href="#structfield.tile_mode">tile_mode</a><a href="#structfield.tile_ws">tile_ws</a><a href="#structfield.tile_hs">tile_hs</a><a href="#structfield._gst_reserved">_gst_reserved</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Debug">Debug</a></div></div><p class='location'><a href='index.html'>gstreamer_video_sys</a></p><script>window.sidebarCurrent = {name: 'GstVideoFormatInfo', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -48,7 +49,7 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/gstreamer_video_sys/lib.rs.html#787-810' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/gstreamer_video_sys/lib.rs.html#913-936' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'><div class="docblock attributes">#[repr(C)]
 </div>pub struct GstVideoFormatInfo {
     pub format: <a class="type" href="../gstreamer_video_sys/type.GstVideoFormat.html" title="type gstreamer_video_sys::GstVideoFormat">GstVideoFormat</a>,
@@ -162,7 +163,14 @@
                            <a href="#structfield._gst_reserved" class="anchor field"></a>
                            <span id="_gst_reserved.v" class='invisible'>
                            <code>_gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a></code>
-                           </span></span></section>
+                           </span></span>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../gstreamer_video_sys/struct.GstVideoFormatInfo.html" title="struct gstreamer_video_sys::GstVideoFormatInfo">GstVideoFormatInfo</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_video_sys/lib.rs.html#938-942' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_video_sys/lib.rs.html#939-941' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

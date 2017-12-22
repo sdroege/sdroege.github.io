@@ -28,6 +28,7 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
         
     </nav>
@@ -126,8 +127,6 @@
 <span id="81">81</span>
 <span id="82">82</span>
 <span id="83">83</span>
-<span id="84">84</span>
-<span id="85">85</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -139,7 +138,6 @@
 
 <span class="kw">use</span> <span class="ident">PlayerVideoOverlayVideoRenderer</span>;
 <span class="kw">use</span> <span class="ident">ffi</span>;
-<span class="kw">use</span> <span class="ident">glib</span>;
 <span class="kw">use</span> <span class="ident">glib</span>::<span class="ident">IsA</span>;
 <span class="kw">use</span> <span class="ident">glib</span>::<span class="ident">translate</span>::<span class="kw-2">*</span>;
 <span class="kw">use</span> <span class="ident">gst</span>;
@@ -191,23 +189,22 @@
             ) <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> _)
         }
     }
-}
 
-<span class="kw">pub</span> <span class="kw">trait</span> <span class="ident">PlayerVideoOverlayVideoRendererExtManual</span> {
-    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">get_window_handle</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">uintptr_t</span>;
-
-    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">set_window_handle</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">window_handle</span>: <span class="ident">uintptr_t</span>);
-}
-
-<span class="kw">impl</span><span class="op">&lt;</span>
-    <span class="ident">O</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">PlayerVideoOverlayVideoRenderer</span><span class="op">&gt;</span> <span class="op">+</span> <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">glib</span>::<span class="ident">object</span>::<span class="ident">Object</span><span class="op">&gt;</span>,
-<span class="op">&gt;</span> <span class="ident">PlayerVideoOverlayVideoRendererExtManual</span> <span class="kw">for</span> <span class="ident">O</span> {
-    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">get_window_handle</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">uintptr_t</span> {
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// The currently set, platform specific window</span>
+    <span class="doccomment">/// handle</span>
+    <span class="kw">pub</span> <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">get_window_handle</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">uintptr_t</span> {
         <span class="ident">ffi</span>::<span class="ident">gst_player_video_overlay_video_renderer_get_window_handle</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>)
             <span class="kw">as</span> <span class="ident">uintptr_t</span>
     }
 
-    <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">set_window_handle</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">window_handle</span>: <span class="ident">uintptr_t</span>) {
+    <span class="doccomment">/// Sets the platform specific window handle into which the video</span>
+    <span class="doccomment">/// should be rendered</span>
+    <span class="doccomment">/// ## `window_handle`</span>
+    <span class="doccomment">/// handle referencing to the platform specific window</span>
+    <span class="kw">pub</span> <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">set_window_handle</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">window_handle</span>: <span class="ident">uintptr_t</span>) {
         <span class="ident">ffi</span>::<span class="ident">gst_player_video_overlay_video_renderer_set_window_handle</span>(
             <span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
             <span class="ident">window_handle</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> _,

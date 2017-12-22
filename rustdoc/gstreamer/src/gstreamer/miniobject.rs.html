@@ -28,6 +28,7 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
         
     </nav>
@@ -512,9 +513,6 @@
 <span id="467">467</span>
 <span id="468">468</span>
 <span id="469">469</span>
-<span id="470">470</span>
-<span id="471">471</span>
-<span id="472">472</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2016-2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -584,10 +582,9 @@
                 <span class="kw">return</span> <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="self">self</span>.<span class="ident">obj</span>;
             }
 
-            <span class="self">self</span>.<span class="ident">obj</span> <span class="op">=</span> <span class="ident">T</span>::<span class="ident">from_mut_ptr</span>(
-                <span class="ident">ffi</span>::<span class="ident">gst_mini_object_make_writable</span>(<span class="self">self</span>.<span class="ident">as_mut_ptr</span>() <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi</span>::<span class="ident">GstMiniObject</span>)
-                    <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span>,
-            );
+            <span class="self">self</span>.<span class="ident">obj</span> <span class="op">=</span> <span class="ident">T</span>::<span class="ident">from_mut_ptr</span>(<span class="ident">ffi</span>::<span class="ident">gst_mini_object_make_writable</span>(<span class="self">self</span>.<span class="ident">as_mut_ptr</span>()
+                <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi</span>::<span class="ident">GstMiniObject</span>)
+                <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span>);
             <span class="macro">assert</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">is_writable</span>());
 
             <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="self">self</span>.<span class="ident">obj</span>
@@ -604,9 +601,8 @@
 
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">is_writable</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">bool</span> {
         <span class="kw">unsafe</span> {
-            <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_mini_object_is_writable</span>(
-                <span class="self">self</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">ffi</span>::<span class="ident">GstMiniObject</span>,
-            ))
+            <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_mini_object_is_writable</span>(<span class="self">self</span>.<span class="ident">as_ptr</span>()
+                <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">ffi</span>::<span class="ident">GstMiniObject</span>))
         }
     }
 
@@ -711,10 +707,9 @@
 
     <span class="kw">fn</span> <span class="ident">copy</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">GstRc</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span> {
         <span class="kw">unsafe</span> {
-            <span class="ident">GstRc</span>::<span class="ident">from_glib_full</span>(
-                <span class="ident">ffi</span>::<span class="ident">gst_mini_object_copy</span>(<span class="self">self</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">ffi</span>::<span class="ident">GstMiniObject</span>)
-                    <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="self">Self</span>::<span class="ident">GstType</span>,
-            )
+            <span class="ident">GstRc</span>::<span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_mini_object_copy</span>(<span class="self">self</span>.<span class="ident">as_ptr</span>()
+                <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">ffi</span>::<span class="ident">GstMiniObject</span>)
+                <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="self">Self</span>::<span class="ident">GstType</span>)
         }
     }
 }

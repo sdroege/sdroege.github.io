@@ -28,8 +28,9 @@
     
 
     <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'>Struct GstVideoOrientationInterface</p><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.iface">iface</a><a href="#structfield.get_hflip">get_hflip</a><a href="#structfield.get_vflip">get_vflip</a><a href="#structfield.get_hcenter">get_hcenter</a><a href="#structfield.get_vcenter">get_vcenter</a><a href="#structfield.set_hflip">set_hflip</a><a href="#structfield.set_vflip">set_vflip</a><a href="#structfield.set_hcenter">set_hcenter</a><a href="#structfield.set_vcenter">set_vcenter</a></div></div><p class='location'><a href='index.html'>gstreamer_video_sys</a></p><script>window.sidebarCurrent = {name: 'GstVideoOrientationInterface', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Struct GstVideoOrientationInterface</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.iface">iface</a><a href="#structfield.get_hflip">get_hflip</a><a href="#structfield.get_vflip">get_vflip</a><a href="#structfield.get_hcenter">get_hcenter</a><a href="#structfield.get_vcenter">get_vcenter</a><a href="#structfield.set_hflip">set_hflip</a><a href="#structfield.set_vflip">set_vflip</a><a href="#structfield.set_hcenter">set_hcenter</a><a href="#structfield.set_vcenter">set_vcenter</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Debug">Debug</a></div></div><p class='location'><a href='index.html'>gstreamer_video_sys</a></p><script>window.sidebarCurrent = {name: 'GstVideoOrientationInterface', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -48,7 +49,7 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/gstreamer_video_sys/lib.rs.html#880-890' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/gstreamer_video_sys/lib.rs.html#1042-1052' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'><div class="docblock attributes">#[repr(C)]
 </div>pub struct GstVideoOrientationInterface {
     pub iface: <a class="struct" href="../gobject_sys/struct.GTypeInterface.html" title="struct gobject_sys::GTypeInterface">GTypeInterface</a>,
@@ -97,7 +98,14 @@
                            <a href="#structfield.set_vcenter" class="anchor field"></a>
                            <span id="set_vcenter.v" class='invisible'>
                            <code>set_vcenter: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;unsafe extern &quot;C&quot; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.fn.html">fn</a>(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_video_sys/struct.GstVideoOrientation.html" title="struct gstreamer_video_sys::GstVideoOrientation">GstVideoOrientation</a>, _: <a class="type" href="../libc/type.c_int.html" title="type libc::c_int">c_int</a>) -&gt; <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>&gt;</code>
-                           </span></span></section>
+                           </span></span>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../gstreamer_video_sys/struct.GstVideoOrientationInterface.html" title="struct gstreamer_video_sys::GstVideoOrientationInterface">GstVideoOrientationInterface</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_video_sys/lib.rs.html#1054-1058' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_video_sys/lib.rs.html#1055-1057' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
