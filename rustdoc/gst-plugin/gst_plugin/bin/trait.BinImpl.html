@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `BinImpl` trait in crate `gst_plugin`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, BinImpl">
+
+    <title>gst_plugin::bin::BinImpl - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Trait BinImpl</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#provided-methods">Provided Methods</a><div class="sidebar-links"><a href="#method.add_element">add_element</a><a href="#method.remove_element">remove_element</a><a href="#method.handle_message">handle_message</a></div><a class="sidebar-title" href="#foreign-impls">Implementations on Foreign Types</a><div class="sidebar-links"><a href="#impl-BinImpl%3CT%3E">Box&lt;BinImpl&lt;T&gt;&gt;</a><a href="#impl-BinImpl%3CT%3E">Box&lt;PipelineImpl&lt;T&gt;&gt;</a></div><a class="sidebar-title" href="#implementors">Implementors</a><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.downcast_ref">downcast_ref</a><a href="#method.downcast_ref_unchecked">downcast_ref_unchecked</a><a href="#method.is">is</a></div></div><p class='location'><a href='../index.html'>gst_plugin</a>::<wbr><a href='index.html'>bin</a></p><script>window.sidebarCurrent = {name: 'BinImpl', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='../index.html'>gst_plugin</a>::<wbr><a href='index.html'>bin</a>::<wbr><a class="trait" href=''>BinImpl</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/gst_plugin/bin.rs.html#25-38' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait BinImpl&lt;T:&nbsp;<a class="trait" href="../../gst_plugin/bin/trait.BinBase.html" title="trait gst_plugin::bin::BinBase">BinBase</a>&gt;: <a class="trait" href="../../gst_plugin/anyimpl/trait.AnyImpl.html" title="trait gst_plugin::anyimpl::AnyImpl">AnyImpl</a> + <a class="trait" href="../../gst_plugin/object/trait.ObjectImpl.html" title="trait gst_plugin::object::ObjectImpl">ObjectImpl</a>&lt;T&gt; + <a class="trait" href="../../gst_plugin/element/trait.ElementImpl.html" title="trait gst_plugin::element::ElementImpl">ElementImpl</a>&lt;T&gt; + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static {
+    fn <a href='#method.add_element' class='fnname'>add_element</a>(&amp;self, bin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>T, element: &amp;<a class="struct" href="../../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> { ... }
+<div class='item-spacer'></div>    fn <a href='#method.remove_element' class='fnname'>remove_element</a>(&amp;self, bin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>T, element: &amp;<a class="struct" href="../../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> { ... }
+<div class='item-spacer'></div>    fn <a href='#method.handle_message' class='fnname'>handle_message</a>(&amp;self, bin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>T, message: <a class="type" href="../../gstreamer/message/type.Message.html" title="type gstreamer::message::Message">Message</a>) { ... }
+}</pre>
+            <h2 id='provided-methods' class='small-section-header'>
+              Provided Methods<a href='#provided-methods' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='method.add_element' class='method'><span id='add_element.v' class='invisible'><code>fn <a href='#method.add_element' class='fnname'>add_element</a>(&amp;self, bin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>T, element: &amp;<a class="struct" href="../../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><h3 id='method.remove_element' class='method'><span id='remove_element.v' class='invisible'><code>fn <a href='#method.remove_element' class='fnname'>remove_element</a>(&amp;self, bin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>T, element: &amp;<a class="struct" href="../../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><h3 id='method.handle_message' class='method'><span id='handle_message.v' class='invisible'><code>fn <a href='#method.handle_message' class='fnname'>handle_message</a>(&amp;self, bin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>T, message: <a class="type" href="../../gstreamer/message/type.Message.html" title="type gstreamer::message::Message">Message</a>)</code></span></h3></div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="../../gst_plugin/bin/trait.BinBase.html" title="trait gst_plugin::bin::BinBase">BinBase</a>&gt; <a class="trait" href="../../gst_plugin/bin/trait.BinImpl.html" title="trait gst_plugin::bin::BinImpl">BinImpl</a>&lt;T&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gst_plugin/anyimpl.rs.html#25-47' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.downcast_ref' class="method"><span id='downcast_ref.v' class='invisible'><code>pub fn <a href='#method.downcast_ref' class='fnname'>downcast_ref</a>&lt;U:&nbsp;<a class="trait" href="../../gst_plugin/bin/trait.BinImpl.html" title="trait gst_plugin::bin::BinImpl">BinImpl</a>&lt;T&gt;&gt;(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>U&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gst_plugin/anyimpl.rs.html#27-35' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.downcast_ref_unchecked' class="method"><div class="important-traits"><div class='tooltip'>ⓘ<span class='tooltiptext'>Important traits for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a mut </a>R</span></div><div class="content hidden"><h3 class="important">Important traits for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a mut </a>R</h3><code class="content"><span class="where fmt-newline">impl&lt;'a, R&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/std/io/trait.Read.html" title="trait std::io::Read">Read</a> for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a mut </a>R <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;R: <a class="trait" href="https://doc.rust-lang.org/nightly/std/io/trait.Read.html" title="trait std::io::Read">Read</a> + ?<a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,&nbsp;</span></span></code></div></div><span id='downcast_ref_unchecked.v' class='invisible'><code>pub unsafe fn <a href='#method.downcast_ref_unchecked' class='fnname'>downcast_ref_unchecked</a>&lt;U:&nbsp;<a class="trait" href="../../gst_plugin/bin/trait.BinImpl.html" title="trait gst_plugin::bin::BinImpl">BinImpl</a>&lt;T&gt;&gt;(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>U</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gst_plugin/anyimpl.rs.html#38-40' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.is' class="method"><span id='is.v' class='invisible'><code>pub fn <a href='#method.is' class='fnname'>is</a>&lt;U:&nbsp;<a class="trait" href="../../gst_plugin/bin/trait.BinImpl.html" title="trait gst_plugin::bin::BinImpl">BinImpl</a>&lt;T&gt;&gt;(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gst_plugin/anyimpl.rs.html#43-46' title='goto source code'>[src]</a></span></h4>
+</div>
+                <h2 id='foreign-impls' class='small-section-header'>
+                  Implementations on Foreign Types<a href='#foreign-impls' class='anchor'></a>
+                </h2>
+            <h3 id='impl-BinImpl%3CT%3E' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="../../gst_plugin/bin/trait.BinBase.html" title="trait gst_plugin::bin::BinBase">BinBase</a>&gt; <a class="trait" href="../../gst_plugin/bin/trait.BinImpl.html" title="trait gst_plugin::bin::BinImpl">BinImpl</a>&lt;T&gt; for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="trait" href="../../gst_plugin/bin/trait.BinImpl.html" title="trait gst_plugin::bin::BinImpl">BinImpl</a>&lt;T&gt;&gt;</code><a href='#impl-BinImpl%3CT%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gst_plugin/bin.rs.html#113-128' title='goto source code'>[src]</a></span></h3>
+<span class='docblock autohide'><div class='impl-items'><h4 id='method.add_element-1' class="method"><span id='add_element.v-1' class='invisible'><code>fn <a href='#method.add_element' class='fnname'>add_element</a>(&amp;self, bin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>T, element: &amp;<a class="struct" href="../../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gst_plugin/bin.rs.html#114-117' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.remove_element-1' class="method"><span id='remove_element.v-1' class='invisible'><code>fn <a href='#method.remove_element' class='fnname'>remove_element</a>(&amp;self, bin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>T, element: &amp;<a class="struct" href="../../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gst_plugin/bin.rs.html#119-122' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.handle_message-1' class="method"><span id='handle_message.v-1' class='invisible'><code>fn <a href='#method.handle_message' class='fnname'>handle_message</a>(&amp;self, bin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>T, message: <a class="type" href="../../gstreamer/message/type.Message.html" title="type gstreamer::message::Message">Message</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gst_plugin/bin.rs.html#124-127' title='goto source code'>[src]</a></span></h4>
+</div></span><h3 id='impl-BinImpl%3CT%3E-1' class='impl'><span class='in-band'><code>impl&lt;T:&nbsp;<a class="trait" href="../../gst_plugin/bin/trait.BinBase.html" title="trait gst_plugin::bin::BinBase">BinBase</a>&gt; <a class="trait" href="../../gst_plugin/bin/trait.BinImpl.html" title="trait gst_plugin::bin::BinImpl">BinImpl</a>&lt;T&gt; for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="trait" href="../../gst_plugin/pipeline/trait.PipelineImpl.html" title="trait gst_plugin::pipeline::PipelineImpl">PipelineImpl</a>&lt;T&gt;&gt;</code><a href='#impl-BinImpl%3CT%3E-1' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gst_plugin/bin.rs.html#113-128' title='goto source code'>[src]</a></span></h3>
+<span class='docblock autohide'><div class='impl-items'><h4 id='method.add_element-2' class="method"><span id='add_element.v-2' class='invisible'><code>fn <a href='#method.add_element' class='fnname'>add_element</a>(&amp;self, bin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>T, element: &amp;<a class="struct" href="../../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gst_plugin/bin.rs.html#114-117' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.remove_element-2' class="method"><span id='remove_element.v-2' class='invisible'><code>fn <a href='#method.remove_element' class='fnname'>remove_element</a>(&amp;self, bin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>T, element: &amp;<a class="struct" href="../../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gst_plugin/bin.rs.html#119-122' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.handle_message-2' class="method"><span id='handle_message.v-2' class='invisible'><code>fn <a href='#method.handle_message' class='fnname'>handle_message</a>(&amp;self, bin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>T, message: <a class="type" href="../../gstreamer/message/type.Message.html" title="type gstreamer::message::Message">Message</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gst_plugin/bin.rs.html#124-127' title='goto source code'>[src]</a></span></h4>
+</div></span>
+        <h2 id='implementors' class='small-section-header'>
+          Implementors<a href='#implementors' class='anchor'></a>
+        </h2>
+        <ul class='item-list' id='implementors-list'>
+    </ul><script type="text/javascript" async
+                         src="../../implementors/gst_plugin/bin/trait.BinImpl.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "gst_plugin";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

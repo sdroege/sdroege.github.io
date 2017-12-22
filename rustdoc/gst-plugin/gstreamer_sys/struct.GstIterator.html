@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `GstIterator` struct in crate `gstreamer_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, GstIterator">
+
+    <title>gstreamer_sys::GstIterator - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Struct GstIterator</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.copy">copy</a><a href="#structfield.next">next</a><a href="#structfield.item">item</a><a href="#structfield.resync">resync</a><a href="#structfield.free">free</a><a href="#structfield.pushed">pushed</a><a href="#structfield.type_">type_</a><a href="#structfield.lock">lock</a><a href="#structfield.cookie">cookie</a><a href="#structfield.master_cookie">master_cookie</a><a href="#structfield.size">size</a><a href="#structfield._gst_reserved">_gst_reserved</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Debug">Debug</a></div></div><p class='location'><a href='index.html'>gstreamer_sys</a></p><script>window.sidebarCurrent = {name: 'GstIterator', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>gstreamer_sys</a>::<wbr><a class="struct" href=''>GstIterator</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/gstreamer_sys/lib.rs.html#1853-1866' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct GstIterator {
+    pub copy: <a class="type" href="../gstreamer_sys/type.GstIteratorCopyFunction.html" title="type gstreamer_sys::GstIteratorCopyFunction">GstIteratorCopyFunction</a>,
+    pub next: <a class="type" href="../gstreamer_sys/type.GstIteratorNextFunction.html" title="type gstreamer_sys::GstIteratorNextFunction">GstIteratorNextFunction</a>,
+    pub item: <a class="type" href="../gstreamer_sys/type.GstIteratorItemFunction.html" title="type gstreamer_sys::GstIteratorItemFunction">GstIteratorItemFunction</a>,
+    pub resync: <a class="type" href="../gstreamer_sys/type.GstIteratorResyncFunction.html" title="type gstreamer_sys::GstIteratorResyncFunction">GstIteratorResyncFunction</a>,
+    pub free: <a class="type" href="../gstreamer_sys/type.GstIteratorFreeFunction.html" title="type gstreamer_sys::GstIteratorFreeFunction">GstIteratorFreeFunction</a>,
+    pub pushed: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstIterator.html" title="struct gstreamer_sys::GstIterator">GstIterator</a>,
+    pub type_: <a class="type" href="../glib_sys/type.GType.html" title="type glib_sys::GType">GType</a>,
+    pub lock: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../glib_sys/struct.GMutex.html" title="struct glib_sys::GMutex">GMutex</a>,
+    pub cookie: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub master_cookie: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
+    pub size: <a class="type" href="../libc/type.c_uint.html" title="type libc::c_uint">c_uint</a>,
+    pub _gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a>,
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.copy" class="structfield small-section-header">
+                           <a href="#structfield.copy" class="anchor field"></a>
+                           <span id="copy.v" class='invisible'>
+                           <code>copy: <a class="type" href="../gstreamer_sys/type.GstIteratorCopyFunction.html" title="type gstreamer_sys::GstIteratorCopyFunction">GstIteratorCopyFunction</a></code>
+                           </span></span><span id="structfield.next" class="structfield small-section-header">
+                           <a href="#structfield.next" class="anchor field"></a>
+                           <span id="next.v" class='invisible'>
+                           <code>next: <a class="type" href="../gstreamer_sys/type.GstIteratorNextFunction.html" title="type gstreamer_sys::GstIteratorNextFunction">GstIteratorNextFunction</a></code>
+                           </span></span><span id="structfield.item" class="structfield small-section-header">
+                           <a href="#structfield.item" class="anchor field"></a>
+                           <span id="item.v" class='invisible'>
+                           <code>item: <a class="type" href="../gstreamer_sys/type.GstIteratorItemFunction.html" title="type gstreamer_sys::GstIteratorItemFunction">GstIteratorItemFunction</a></code>
+                           </span></span><span id="structfield.resync" class="structfield small-section-header">
+                           <a href="#structfield.resync" class="anchor field"></a>
+                           <span id="resync.v" class='invisible'>
+                           <code>resync: <a class="type" href="../gstreamer_sys/type.GstIteratorResyncFunction.html" title="type gstreamer_sys::GstIteratorResyncFunction">GstIteratorResyncFunction</a></code>
+                           </span></span><span id="structfield.free" class="structfield small-section-header">
+                           <a href="#structfield.free" class="anchor field"></a>
+                           <span id="free.v" class='invisible'>
+                           <code>free: <a class="type" href="../gstreamer_sys/type.GstIteratorFreeFunction.html" title="type gstreamer_sys::GstIteratorFreeFunction">GstIteratorFreeFunction</a></code>
+                           </span></span><span id="structfield.pushed" class="structfield small-section-header">
+                           <a href="#structfield.pushed" class="anchor field"></a>
+                           <span id="pushed.v" class='invisible'>
+                           <code>pushed: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstIterator.html" title="struct gstreamer_sys::GstIterator">GstIterator</a></code>
+                           </span></span><span id="structfield.type_" class="structfield small-section-header">
+                           <a href="#structfield.type_" class="anchor field"></a>
+                           <span id="type_.v" class='invisible'>
+                           <code>type_: <a class="type" href="../glib_sys/type.GType.html" title="type glib_sys::GType">GType</a></code>
+                           </span></span><span id="structfield.lock" class="structfield small-section-header">
+                           <a href="#structfield.lock" class="anchor field"></a>
+                           <span id="lock.v" class='invisible'>
+                           <code>lock: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../glib_sys/struct.GMutex.html" title="struct glib_sys::GMutex">GMutex</a></code>
+                           </span></span><span id="structfield.cookie" class="structfield small-section-header">
+                           <a href="#structfield.cookie" class="anchor field"></a>
+                           <span id="cookie.v" class='invisible'>
+                           <code>cookie: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><span id="structfield.master_cookie" class="structfield small-section-header">
+                           <a href="#structfield.master_cookie" class="anchor field"></a>
+                           <span id="master_cookie.v" class='invisible'>
+                           <code>master_cookie: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
+                           </span></span><span id="structfield.size" class="structfield small-section-header">
+                           <a href="#structfield.size" class="anchor field"></a>
+                           <span id="size.v" class='invisible'>
+                           <code>size: <a class="type" href="../libc/type.c_uint.html" title="type libc::c_uint">c_uint</a></code>
+                           </span></span><span id="structfield._gst_reserved" class="structfield small-section-header">
+                           <a href="#structfield._gst_reserved" class="anchor field"></a>
+                           <span id="_gst_reserved.v" class='invisible'>
+                           <code>_gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a></code>
+                           </span></span>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../gstreamer_sys/struct.GstIterator.html" title="struct gstreamer_sys::GstIterator">GstIterator</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_sys/lib.rs.html#1868-1872' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_sys/lib.rs.html#1869-1871' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer_sys";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

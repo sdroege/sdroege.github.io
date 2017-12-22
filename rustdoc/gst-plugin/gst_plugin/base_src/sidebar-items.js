@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["BaseSrc",""]],"trait":[["BaseSrcBase",""],["BaseSrcClassExt",""],["BaseSrcImpl",""]],"type":[["BaseSrcClass",""]]});

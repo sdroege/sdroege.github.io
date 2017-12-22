@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Bin",""]],"trait":[["BinBase",""],["BinClassExt",""],["BinImpl",""]],"type":[["BinClass",""]]});

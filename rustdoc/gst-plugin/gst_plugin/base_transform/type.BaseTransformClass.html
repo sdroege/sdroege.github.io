@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `BaseTransformClass` type in crate `gst_plugin`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, BaseTransformClass">
+
+    <title>gst_plugin::base_transform::BaseTransformClass - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc type">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Type Definition BaseTransformClass</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-BaseTransformClassExt%3CBaseTransform%3E">BaseTransformClassExt&lt;BaseTransform&gt;</a><a href="#impl-ElementClassExt%3CBaseTransform%3E">ElementClassExt&lt;BaseTransform&gt;</a></div></div><p class='location'><a href='../index.html'>gst_plugin</a>::<wbr><a href='index.html'>base_transform</a></p><script>window.sidebarCurrent = {name: 'BaseTransformClass', ty: 'type', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Type Definition <a href='../index.html'>gst_plugin</a>::<wbr><a href='index.html'>base_transform</a>::<wbr><a class="type" href=''>BaseTransformClass</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/gst_plugin/base_transform.rs.html#316' title='goto source code'>[src]</a></span></h1>
+<pre class='rust typedef'>type BaseTransformClass = <a class="struct" href="../../gst_plugin/object/struct.ClassStruct.html" title="struct gst_plugin::object::ClassStruct">ClassStruct</a>&lt;<a class="struct" href="../../gst_plugin/base_transform/struct.BaseTransform.html" title="struct gst_plugin::base_transform::BaseTransform">BaseTransform</a>&gt;;</pre>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-BaseTransformClassExt%3CBaseTransform%3E' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../gst_plugin/base_transform/trait.BaseTransformClassExt.html" title="trait gst_plugin::base_transform::BaseTransformClassExt">BaseTransformClassExt</a>&lt;<a class="struct" href="../../gst_plugin/base_transform/struct.BaseTransform.html" title="struct gst_plugin::base_transform::BaseTransform">BaseTransform</a>&gt; for <a class="type" href="../../gst_plugin/base_transform/type.BaseTransformClass.html" title="type gst_plugin::base_transform::BaseTransformClass">BaseTransformClass</a></code><a href='#impl-BaseTransformClassExt%3CBaseTransform%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gst_plugin/base_transform.rs.html#319' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.configure' class="method"><span id='configure.v' class='invisible'><code>fn <a href='../../gst_plugin/base_transform/trait.BaseTransformClassExt.html#method.configure' class='fnname'>configure</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;mode: <a class="enum" href="../../gst_plugin/base_transform/enum.BaseTransformMode.html" title="enum gst_plugin::base_transform::BaseTransformMode">BaseTransformMode</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;passthrough_on_same_caps: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;transform_ip_on_passthrough: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a><br>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gst_plugin/base_transform.rs.html#258-283' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.override_vfuncs' class="method"><span id='override_vfuncs.v' class='invisible'><code>fn <a href='../../gst_plugin/base_transform/trait.BaseTransformClassExt.html#method.override_vfuncs' class='fnname'>override_vfuncs</a>(&amp;mut self, _: &amp;<a class="struct" href="../../gst_plugin/object/struct.ClassInitToken.html" title="struct gst_plugin::object::ClassInitToken">ClassInitToken</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gst_plugin/base_transform.rs.html#285-300' title='goto source code'>[src]</a></span></h4>
+</div><h3 id='impl-ElementClassExt%3CBaseTransform%3E' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../gst_plugin/element/trait.ElementClassExt.html" title="trait gst_plugin::element::ElementClassExt">ElementClassExt</a>&lt;<a class="struct" href="../../gst_plugin/base_transform/struct.BaseTransform.html" title="struct gst_plugin::base_transform::BaseTransform">BaseTransform</a>&gt; for <a class="type" href="../../gst_plugin/base_transform/type.BaseTransformClass.html" title="type gst_plugin::base_transform::BaseTransformClass">BaseTransformClass</a></code><a href='#impl-ElementClassExt%3CBaseTransform%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gst_plugin/base_transform.rs.html#320' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.add_pad_template' class="method"><span id='add_pad_template.v' class='invisible'><code>fn <a href='../../gst_plugin/element/trait.ElementClassExt.html#method.add_pad_template' class='fnname'>add_pad_template</a>(&amp;mut self, pad_template: <a class="struct" href="../../gstreamer/auto/pad_template/struct.PadTemplate.html" title="struct gstreamer::auto::pad_template::PadTemplate">PadTemplate</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gst_plugin/element.rs.html#114-121' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.set_metadata' class="method"><span id='set_metadata.v' class='invisible'><code>fn <a href='../../gst_plugin/element/trait.ElementClassExt.html#method.set_metadata' class='fnname'>set_metadata</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;long_name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;classification: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;description: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;author: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a><br>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gst_plugin/element.rs.html#123-139' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.override_vfuncs-1' class="method"><span id='override_vfuncs.v-1' class='invisible'><code>fn <a href='../../gst_plugin/element/trait.ElementClassExt.html#method.override_vfuncs' class='fnname'>override_vfuncs</a>(&amp;mut self, _: &amp;<a class="struct" href="../../gst_plugin/object/struct.ClassInitToken.html" title="struct gst_plugin::object::ClassInitToken">ClassInitToken</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gst_plugin/element.rs.html#141-151' title='goto source code'>[src]</a></span></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "gst_plugin";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

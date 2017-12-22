@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `MiniObject` trait in crate `gstreamer`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, MiniObject">
+
+    <title>gstreamer::miniobject::MiniObject - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Trait MiniObject</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#associated-types">Associated Types</a><div class="sidebar-links"><a href="#associatedtype.GstType">GstType</a></div><a class="sidebar-title" href="#provided-methods">Provided Methods</a><div class="sidebar-links"><a href="#method.as_ptr">as_ptr</a><a href="#method.as_mut_ptr">as_mut_ptr</a><a href="#method.from_ptr">from_ptr</a><a href="#method.from_mut_ptr">from_mut_ptr</a><a href="#method.copy">copy</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>miniobject</a></p><script>window.sidebarCurrent = {name: 'MiniObject', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>miniobject</a>::<wbr><a class="trait" href=''>MiniObject</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/gstreamer/miniobject.rs.html#168-199' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub unsafe trait MiniObject <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,&nbsp;</span>{
+    type <a href='#associatedtype.GstType' class="type">GstType</a>;
+    unsafe fn <a href='#method.as_ptr' class='fnname'>as_ptr</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a>Self::<a class="type" href="../../gstreamer/miniobject/trait.MiniObject.html#associatedtype.GstType" title="type gstreamer::miniobject::MiniObject::GstType">GstType</a> { ... }
+<div class='item-spacer'></div>    unsafe fn <a href='#method.as_mut_ptr' class='fnname'>as_mut_ptr</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a>Self::<a class="type" href="../../gstreamer/miniobject/trait.MiniObject.html#associatedtype.GstType" title="type gstreamer::miniobject::MiniObject::GstType">GstType</a> { ... }
+<div class='item-spacer'></div>    unsafe fn <a href='#method.from_ptr' class='fnname'>from_ptr</a>&lt;'a&gt;(ptr: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a>Self::<a class="type" href="../../gstreamer/miniobject/trait.MiniObject.html#associatedtype.GstType" title="type gstreamer::miniobject::MiniObject::GstType">GstType</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a </a>Self { ... }
+<div class='item-spacer'></div>    unsafe fn <a href='#method.from_mut_ptr' class='fnname'>from_mut_ptr</a>&lt;'a&gt;(ptr: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a>Self::<a class="type" href="../../gstreamer/miniobject/trait.MiniObject.html#associatedtype.GstType" title="type gstreamer::miniobject::MiniObject::GstType">GstType</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a mut </a>Self { ... }
+<div class='item-spacer'></div>    fn <a href='#method.copy' class='fnname'>copy</a>(&amp;self) -&gt; <a class="struct" href="../../gstreamer/miniobject/struct.GstRc.html" title="struct gstreamer::miniobject::GstRc">GstRc</a>&lt;Self&gt; { ... }
+}</pre>
+            <h2 id='associated-types' class='small-section-header'>
+              Associated Types<a href='#associated-types' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='associatedtype.GstType' class='method'><span id='GstType.t' class='invisible'><code>type <a href='#associatedtype.GstType' class="type">GstType</a></code></span></h3></div>
+            <h2 id='provided-methods' class='small-section-header'>
+              Provided Methods<a href='#provided-methods' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='method.as_ptr' class='method'><span id='as_ptr.v' class='invisible'><code>unsafe fn <a href='#method.as_ptr' class='fnname'>as_ptr</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a>Self::<a class="type" href="../../gstreamer/miniobject/trait.MiniObject.html#associatedtype.GstType" title="type gstreamer::miniobject::MiniObject::GstType">GstType</a></code></span></h3><h3 id='method.as_mut_ptr' class='method'><span id='as_mut_ptr.v' class='invisible'><code>unsafe fn <a href='#method.as_mut_ptr' class='fnname'>as_mut_ptr</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a>Self::<a class="type" href="../../gstreamer/miniobject/trait.MiniObject.html#associatedtype.GstType" title="type gstreamer::miniobject::MiniObject::GstType">GstType</a></code></span></h3><div class="important-traits"><div class='tooltip'>ⓘ<span class='tooltiptext'>Important traits for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a mut </a>I</span></div><div class="content hidden"><h3 class="important">Important traits for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a mut </a>I</h3><code class="content"><span class="where fmt-newline">impl&lt;'a, I&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a> for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a mut </a>I <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;I: <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a> + ?<a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,&nbsp;</span></span><span class="where fmt-newline">    type <a href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html#associatedtype.Item' class="type">Item</a> = &lt;I as <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a>&gt;::<a class="type" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html#associatedtype.Item" title="type core::iter::iterator::Iterator::Item">Item</a>;</span></code></div></div><h3 id='method.from_ptr' class='method'><span id='from_ptr.v' class='invisible'><code>unsafe fn <a href='#method.from_ptr' class='fnname'>from_ptr</a>&lt;'a&gt;(ptr: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a>Self::<a class="type" href="../../gstreamer/miniobject/trait.MiniObject.html#associatedtype.GstType" title="type gstreamer::miniobject::MiniObject::GstType">GstType</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a </a>Self</code></span></h3><div class="important-traits"><div class='tooltip'>ⓘ<span class='tooltiptext'>Important traits for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a mut </a>I</span></div><div class="content hidden"><h3 class="important">Important traits for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a mut </a>I</h3><code class="content"><span class="where fmt-newline">impl&lt;'a, I&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a> for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a mut </a>I <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;I: <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a> + ?<a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,&nbsp;</span></span><span class="where fmt-newline">    type <a href='https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html#associatedtype.Item' class="type">Item</a> = &lt;I as <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html" title="trait core::iter::iterator::Iterator">Iterator</a>&gt;::<a class="type" href="https://doc.rust-lang.org/nightly/core/iter/iterator/trait.Iterator.html#associatedtype.Item" title="type core::iter::iterator::Iterator::Item">Item</a>;</span></code></div></div><h3 id='method.from_mut_ptr' class='method'><span id='from_mut_ptr.v' class='invisible'><code>unsafe fn <a href='#method.from_mut_ptr' class='fnname'>from_mut_ptr</a>&lt;'a&gt;(ptr: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a>Self::<a class="type" href="../../gstreamer/miniobject/trait.MiniObject.html#associatedtype.GstType" title="type gstreamer::miniobject::MiniObject::GstType">GstType</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a mut </a>Self</code></span></h3><h3 id='method.copy' class='method'><span id='copy.v' class='invisible'><code>fn <a href='#method.copy' class='fnname'>copy</a>(&amp;self) -&gt; <a class="struct" href="../../gstreamer/miniobject/struct.GstRc.html" title="struct gstreamer::miniobject::GstRc">GstRc</a>&lt;Self&gt;</code></span></h3></div>
+        <h2 id='implementors' class='small-section-header'>
+          Implementors<a href='#implementors' class='anchor'></a>
+        </h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><div class='out-of-band'><a class='srclink' href='../../src/gstreamer/message.rs.html#38-40' title='goto source code'>[src]</a></div><code>impl MiniObject for <a class="struct" href="../../gstreamer/message/struct.MessageRef.html" title="struct gstreamer::message::MessageRef">MessageRef</a><span class="where fmt-newline">  type <a href='#associatedtype.GstType' class="type">GstType</a> = <a class="struct" href="../../gstreamer_sys/struct.GstMessage.html" title="struct gstreamer_sys::GstMessage">GstMessage</a>;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/gstreamer/caps.rs.html#26-28' title='goto source code'>[src]</a></div><code>impl MiniObject for <a class="struct" href="../../gstreamer/caps/struct.CapsRef.html" title="struct gstreamer::caps::CapsRef">CapsRef</a><span class="where fmt-newline">  type <a href='#associatedtype.GstType' class="type">GstType</a> = <a class="struct" href="../../gstreamer_sys/struct.GstCaps.html" title="struct gstreamer_sys::GstCaps">GstCaps</a>;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/gstreamer/tags.rs.html#240-242' title='goto source code'>[src]</a></div><code>impl MiniObject for <a class="struct" href="../../gstreamer/tags/struct.TagListRef.html" title="struct gstreamer::tags::TagListRef">TagListRef</a><span class="where fmt-newline">  type <a href='#associatedtype.GstType' class="type">GstType</a> = <a class="struct" href="../../gstreamer_sys/struct.GstTagList.html" title="struct gstreamer_sys::GstTagList">GstTagList</a>;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/gstreamer/buffer.rs.html#34-36' title='goto source code'>[src]</a></div><code>impl MiniObject for <a class="struct" href="../../gstreamer/buffer/struct.BufferRef.html" title="struct gstreamer::buffer::BufferRef">BufferRef</a><span class="where fmt-newline">  type <a href='#associatedtype.GstType' class="type">GstType</a> = <a class="struct" href="../../gstreamer_sys/struct.GstBuffer.html" title="struct gstreamer_sys::GstBuffer">GstBuffer</a>;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/gstreamer/sample.rs.html#29-31' title='goto source code'>[src]</a></div><code>impl MiniObject for <a class="struct" href="../../gstreamer/sample/struct.SampleRef.html" title="struct gstreamer::sample::SampleRef">SampleRef</a><span class="where fmt-newline">  type <a href='#associatedtype.GstType' class="type">GstType</a> = <a class="struct" href="../../gstreamer_sys/struct.GstSample.html" title="struct gstreamer_sys::GstSample">GstSample</a>;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/gstreamer/bufferlist.rs.html#22-24' title='goto source code'>[src]</a></div><code>impl MiniObject for <a class="struct" href="../../gstreamer/bufferlist/struct.BufferListRef.html" title="struct gstreamer::bufferlist::BufferListRef">BufferListRef</a><span class="where fmt-newline">  type <a href='#associatedtype.GstType' class="type">GstType</a> = <a class="struct" href="../../gstreamer_sys/struct.GstBufferList.html" title="struct gstreamer_sys::GstBufferList">GstBufferList</a>;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/gstreamer/query.rs.html#31-33' title='goto source code'>[src]</a></div><code>impl MiniObject for <a class="struct" href="../../gstreamer/query/struct.QueryRef.html" title="struct gstreamer::query::QueryRef">QueryRef</a><span class="where fmt-newline">  type <a href='#associatedtype.GstType' class="type">GstType</a> = <a class="struct" href="../../gstreamer_sys/struct.GstQuery.html" title="struct gstreamer_sys::GstQuery">GstQuery</a>;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/gstreamer/event.rs.html#99-101' title='goto source code'>[src]</a></div><code>impl MiniObject for <a class="struct" href="../../gstreamer/event/struct.EventRef.html" title="struct gstreamer::event::EventRef">EventRef</a><span class="where fmt-newline">  type <a href='#associatedtype.GstType' class="type">GstType</a> = <a class="struct" href="../../gstreamer_sys/struct.GstEvent.html" title="struct gstreamer_sys::GstEvent">GstEvent</a>;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/gstreamer/context.rs.html#24-26' title='goto source code'>[src]</a></div><code>impl MiniObject for <a class="struct" href="../../gstreamer/context/struct.ContextRef.html" title="struct gstreamer::context::ContextRef">ContextRef</a><span class="where fmt-newline">  type <a href='#associatedtype.GstType' class="type">GstType</a> = <a class="struct" href="../../gstreamer_sys/struct.GstContext.html" title="struct gstreamer_sys::GstContext">GstContext</a>;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/gstreamer/toc.rs.html#28-30' title='goto source code'>[src]</a></div><code>impl MiniObject for <a class="struct" href="../../gstreamer/toc/struct.TocRef.html" title="struct gstreamer::toc::TocRef">TocRef</a><span class="where fmt-newline">  type <a href='#associatedtype.GstType' class="type">GstType</a> = <a class="struct" href="../../gstreamer_sys/struct.GstToc.html" title="struct gstreamer_sys::GstToc">GstToc</a>;</span></code></li>
+<li><div class='out-of-band'><a class='srclink' href='../../src/gstreamer/toc.rs.html#108-110' title='goto source code'>[src]</a></div><code>impl MiniObject for <a class="struct" href="../../gstreamer/toc/struct.TocEntryRef.html" title="struct gstreamer::toc::TocEntryRef">TocEntryRef</a><span class="where fmt-newline">  type <a href='#associatedtype.GstType' class="type">GstType</a> = <a class="struct" href="../../gstreamer_sys/struct.GstTocEntry.html" title="struct gstreamer_sys::GstTocEntry">GstTocEntry</a>;</span></code></li>
+</ul><script type="text/javascript" async
+                         src="../../implementors/gstreamer/miniobject/trait.MiniObject.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "gstreamer";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `FlowReturn` enum in crate `gstreamer`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, FlowReturn">
+
+    <title>gstreamer::FlowReturn - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Enum FlowReturn</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.CustomSuccess2">CustomSuccess2</a><a href="#variant.CustomSuccess1">CustomSuccess1</a><a href="#variant.CustomSuccess">CustomSuccess</a><a href="#variant.Ok">Ok</a><a href="#variant.NotLinked">NotLinked</a><a href="#variant.Flushing">Flushing</a><a href="#variant.Eos">Eos</a><a href="#variant.NotNegotiated">NotNegotiated</a><a href="#variant.Error">Error</a><a href="#variant.NotSupported">NotSupported</a><a href="#variant.CustomError">CustomError</a><a href="#variant.CustomError1">CustomError1</a><a href="#variant.CustomError2">CustomError2</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.into_result">into_result</a><a href="#method.from_error">from_error</a><a href="#method.from_ok">from_ok</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Copy">Copy</a><a href="#impl-Debug">Debug</a><a href="#impl-Eq">Eq</a><a href="#impl-PartialEq">PartialEq</a><a href="#impl-Hash">Hash</a><a href="#impl-StaticType">StaticType</a><a href="#impl-FromValueOptional%3C%27a%3E">FromValueOptional&lt;&#39;a&gt;</a><a href="#impl-FromValue%3C%27a%3E">FromValue&lt;&#39;a&gt;</a><a href="#impl-SetValue">SetValue</a></div></div><p class='location'><a href='index.html'>gstreamer</a></p><script>window.sidebarCurrent = {name: 'FlowReturn', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='index.html'>gstreamer</a>::<wbr><a class="enum" href=''>FlowReturn</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/gstreamer/auto/enums.rs.html#682-698' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'><div class="docblock attributes">#[must_use]
+</div>pub enum FlowReturn {
+    CustomSuccess2,
+    CustomSuccess1,
+    CustomSuccess,
+    Ok,
+    NotLinked,
+    Flushing,
+    Eos,
+    NotNegotiated,
+    Error,
+    NotSupported,
+    CustomError,
+    CustomError1,
+    CustomError2,
+    // some variants omitted
+}</pre><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.CustomSuccess2" class="variant small-section-header"><a href="#variant.CustomSuccess2" class="anchor field"></a><span id='CustomSuccess2.v' class='invisible'><code>CustomSuccess2</code></span></span><span id="variant.CustomSuccess1" class="variant small-section-header"><a href="#variant.CustomSuccess1" class="anchor field"></a><span id='CustomSuccess1.v' class='invisible'><code>CustomSuccess1</code></span></span><span id="variant.CustomSuccess" class="variant small-section-header"><a href="#variant.CustomSuccess" class="anchor field"></a><span id='CustomSuccess.v' class='invisible'><code>CustomSuccess</code></span></span><span id="variant.Ok" class="variant small-section-header"><a href="#variant.Ok" class="anchor field"></a><span id='Ok.v' class='invisible'><code>Ok</code></span></span><span id="variant.NotLinked" class="variant small-section-header"><a href="#variant.NotLinked" class="anchor field"></a><span id='NotLinked.v' class='invisible'><code>NotLinked</code></span></span><span id="variant.Flushing" class="variant small-section-header"><a href="#variant.Flushing" class="anchor field"></a><span id='Flushing.v' class='invisible'><code>Flushing</code></span></span><span id="variant.Eos" class="variant small-section-header"><a href="#variant.Eos" class="anchor field"></a><span id='Eos.v' class='invisible'><code>Eos</code></span></span><span id="variant.NotNegotiated" class="variant small-section-header"><a href="#variant.NotNegotiated" class="anchor field"></a><span id='NotNegotiated.v' class='invisible'><code>NotNegotiated</code></span></span><span id="variant.Error" class="variant small-section-header"><a href="#variant.Error" class="anchor field"></a><span id='Error.v' class='invisible'><code>Error</code></span></span><span id="variant.NotSupported" class="variant small-section-header"><a href="#variant.NotSupported" class="anchor field"></a><span id='NotSupported.v' class='invisible'><code>NotSupported</code></span></span><span id="variant.CustomError" class="variant small-section-header"><a href="#variant.CustomError" class="anchor field"></a><span id='CustomError.v' class='invisible'><code>CustomError</code></span></span><span id="variant.CustomError1" class="variant small-section-header"><a href="#variant.CustomError1" class="anchor field"></a><span id='CustomError1.v' class='invisible'><code>CustomError1</code></span></span><span id="variant.CustomError2" class="variant small-section-header"><a href="#variant.CustomError2" class="anchor field"></a><span id='CustomError2.v' class='invisible'><code>CustomError2</code></span></span>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="enum" href="../gstreamer/enum.FlowReturn.html" title="enum gstreamer::FlowReturn">FlowReturn</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/enums.rs.html#66-108' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.into_result' class="method"><span id='into_result.v' class='invisible'><code>pub fn <a href='#method.into_result' class='fnname'>into_result</a>(self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="enum" href="../gstreamer/enum.FlowSuccess.html" title="enum gstreamer::FlowSuccess">FlowSuccess</a>, <a class="enum" href="../gstreamer/enum.FlowError.html" title="enum gstreamer::FlowError">FlowError</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/enums.rs.html#67-84' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.from_error' class="method"><span id='from_error.v' class='invisible'><code>pub fn <a href='#method.from_error' class='fnname'>from_error</a>(v: <a class="enum" href="../gstreamer/enum.FlowError.html" title="enum gstreamer::FlowError">FlowError</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/enums.rs.html#86-98' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.from_ok' class="method"><span id='from_ok.v' class='invisible'><code>pub fn <a href='#method.from_ok' class='fnname'>from_ok</a>(v: <a class="enum" href="../gstreamer/enum.FlowSuccess.html" title="enum gstreamer::FlowSuccess">FlowSuccess</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/enums.rs.html#100-107' title='goto source code'>[src]</a></span></h4>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="enum" href="../gstreamer/enum.FlowReturn.html" title="enum gstreamer::FlowReturn">FlowReturn</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/enums.rs.html#680' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="enum" href="../gstreamer/enum.FlowReturn.html" title="enum gstreamer::FlowReturn">FlowReturn</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/enums.rs.html#680' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Copy' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="enum" href="../gstreamer/enum.FlowReturn.html" title="enum gstreamer::FlowReturn">FlowReturn</a></code><a href='#impl-Copy' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/enums.rs.html#680' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../gstreamer/enum.FlowReturn.html" title="enum gstreamer::FlowReturn">FlowReturn</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/enums.rs.html#680' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/enums.rs.html#680' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-Eq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="enum" href="../gstreamer/enum.FlowReturn.html" title="enum gstreamer::FlowReturn">FlowReturn</a></code><a href='#impl-Eq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/enums.rs.html#680' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="enum" href="../gstreamer/enum.FlowReturn.html" title="enum gstreamer::FlowReturn">FlowReturn</a></code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/enums.rs.html#680' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../gstreamer/enum.FlowReturn.html" title="enum gstreamer::FlowReturn">FlowReturn</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/enums.rs.html#680' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../gstreamer/enum.FlowReturn.html" title="enum gstreamer::FlowReturn">FlowReturn</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/enums.rs.html#680' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-Hash' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html" title="trait core::hash::Hash">Hash</a> for <a class="enum" href="../gstreamer/enum.FlowReturn.html" title="enum gstreamer::FlowReturn">FlowReturn</a></code><a href='#impl-Hash' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/enums.rs.html#680' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.hash' class="method"><span id='hash.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash' class='fnname'>hash</a>&lt;__H:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>&gt;(&amp;self, __arg_0: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>__H)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/enums.rs.html#680' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Feeds this value into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash">Read more</a></p>
+</div><h4 id='method.hash_slice' class="method"><span id='hash_slice.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice' class='fnname'>hash_slice</a>&lt;H&gt;(data: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[Self]</a>, state: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>H) <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;H: <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.3.0'>1.3.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/hash/mod.rs.html#202-208' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Feeds a slice of this type into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice">Read more</a></p>
+</div></div><h3 id='impl-StaticType' class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer/trait.StaticType.html" title="trait gstreamer::StaticType">StaticType</a> for <a class="enum" href="../gstreamer/enum.FlowReturn.html" title="enum gstreamer::FlowReturn">FlowReturn</a></code><a href='#impl-StaticType' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/enums.rs.html#747-751' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.static_type' class="method"><span id='static_type.v' class='invisible'><code>fn <a href='../gstreamer/trait.StaticType.html#tymethod.static_type' class='fnname'>static_type</a>() -&gt; <a class="enum" href="../gstreamer/enum.Type.html" title="enum gstreamer::Type">Type</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/enums.rs.html#748-750' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the type identifier of <code>Self</code>.</p>
+</div></div><h3 id='impl-FromValueOptional%3C%27a%3E' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="trait" href="../glib/value/trait.FromValueOptional.html" title="trait glib::value::FromValueOptional">FromValueOptional</a>&lt;'a&gt; for <a class="enum" href="../gstreamer/enum.FlowReturn.html" title="enum gstreamer::FlowReturn">FlowReturn</a></code><a href='#impl-FromValueOptional%3C%27a%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/enums.rs.html#753-757' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from_value_optional' class="method"><span id='from_value_optional.v' class='invisible'><code>unsafe fn <a href='../glib/value/trait.FromValueOptional.html#tymethod.from_value_optional' class='fnname'>from_value_optional</a>(value: &amp;<a class="struct" href="../gstreamer/struct.Value.html" title="struct gstreamer::Value">Value</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;Self&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/enums.rs.html#754-756' title='goto source code'>[src]</a></span></h4>
+</div><h3 id='impl-FromValue%3C%27a%3E' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="trait" href="../glib/value/trait.FromValue.html" title="trait glib::value::FromValue">FromValue</a>&lt;'a&gt; for <a class="enum" href="../gstreamer/enum.FlowReturn.html" title="enum gstreamer::FlowReturn">FlowReturn</a></code><a href='#impl-FromValue%3C%27a%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/enums.rs.html#759-763' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from_value' class="method"><span id='from_value.v' class='invisible'><code>unsafe fn <a href='../glib/value/trait.FromValue.html#tymethod.from_value' class='fnname'>from_value</a>(value: &amp;<a class="struct" href="../gstreamer/struct.Value.html" title="struct gstreamer::Value">Value</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/enums.rs.html#760-762' title='goto source code'>[src]</a></span></h4>
+</div><h3 id='impl-SetValue' class='impl'><span class='in-band'><code>impl <a class="trait" href="../glib/value/trait.SetValue.html" title="trait glib::value::SetValue">SetValue</a> for <a class="enum" href="../gstreamer/enum.FlowReturn.html" title="enum gstreamer::FlowReturn">FlowReturn</a></code><a href='#impl-SetValue' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/enums.rs.html#765-769' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.set_value' class="method"><span id='set_value.v' class='invisible'><code>unsafe fn <a href='../glib/value/trait.SetValue.html#tymethod.set_value' class='fnname'>set_value</a>(value: &amp;mut <a class="struct" href="../gstreamer/struct.Value.html" title="struct gstreamer::Value">Value</a>, this: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/auto/enums.rs.html#766-768' title='goto source code'>[src]</a></span></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

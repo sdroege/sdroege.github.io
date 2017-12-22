@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `GstBaseSink` struct in crate `gstreamer_base_sys`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, GstBaseSink">
+
+    <title>gstreamer_base_sys::GstBaseSink - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Struct GstBaseSink</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#fields">Fields</a><div class="sidebar-links"><a href="#structfield.element">element</a><a href="#structfield.sinkpad">sinkpad</a><a href="#structfield.pad_mode">pad_mode</a><a href="#structfield.offset">offset</a><a href="#structfield.can_activate_pull">can_activate_pull</a><a href="#structfield.can_activate_push">can_activate_push</a><a href="#structfield.preroll_lock">preroll_lock</a><a href="#structfield.preroll_cond">preroll_cond</a><a href="#structfield.eos">eos</a><a href="#structfield.need_preroll">need_preroll</a><a href="#structfield.have_preroll">have_preroll</a><a href="#structfield.playing_async">playing_async</a><a href="#structfield.have_newsegment">have_newsegment</a><a href="#structfield.segment">segment</a><a href="#structfield.clock_id">clock_id</a><a href="#structfield.sync">sync</a><a href="#structfield.flushing">flushing</a><a href="#structfield.running">running</a><a href="#structfield.max_lateness">max_lateness</a><a href="#structfield.priv_">priv_</a><a href="#structfield._gst_reserved">_gst_reserved</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Debug">Debug</a></div></div><p class='location'><a href='index.html'>gstreamer_base_sys</a></p><script>window.sidebarCurrent = {name: 'GstBaseSink', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>gstreamer_base_sys</a>::<wbr><a class="struct" href=''>GstBaseSink</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/gstreamer_base_sys/lib.rs.html#486-508' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'><div class="docblock attributes">#[repr(C)]
+</div>pub struct GstBaseSink {
+    pub element: <a class="struct" href="../gstreamer_sys/struct.GstElement.html" title="struct gstreamer_sys::GstElement">GstElement</a>,
+    pub sinkpad: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstPad.html" title="struct gstreamer_sys::GstPad">GstPad</a>,
+    pub pad_mode: <a class="type" href="../gstreamer_sys/type.GstPadMode.html" title="type gstreamer_sys::GstPadMode">GstPadMode</a>,
+    pub offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>,
+    pub can_activate_pull: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>,
+    pub can_activate_push: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>,
+    pub preroll_lock: <a class="struct" href="../glib_sys/struct.GMutex.html" title="struct glib_sys::GMutex">GMutex</a>,
+    pub preroll_cond: <a class="struct" href="../glib_sys/struct.GCond.html" title="struct glib_sys::GCond">GCond</a>,
+    pub eos: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>,
+    pub need_preroll: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>,
+    pub have_preroll: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>,
+    pub playing_async: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>,
+    pub have_newsegment: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>,
+    pub segment: <a class="struct" href="../gstreamer_sys/struct.GstSegment.html" title="struct gstreamer_sys::GstSegment">GstSegment</a>,
+    pub clock_id: <a class="type" href="../gstreamer_sys/type.GstClockID.html" title="type gstreamer_sys::GstClockID">GstClockID</a>,
+    pub sync: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>,
+    pub flushing: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>,
+    pub running: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a>,
+    pub max_lateness: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a>,
+    pub priv_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_base_sys/struct.GstBaseSinkPrivate.html" title="struct gstreamer_base_sys::GstBaseSinkPrivate">GstBaseSinkPrivate</a>,
+    pub _gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 20]</a>,
+}</pre><h2 id='fields' class='fields small-section-header'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.element" class="structfield small-section-header">
+                           <a href="#structfield.element" class="anchor field"></a>
+                           <span id="element.v" class='invisible'>
+                           <code>element: <a class="struct" href="../gstreamer_sys/struct.GstElement.html" title="struct gstreamer_sys::GstElement">GstElement</a></code>
+                           </span></span><span id="structfield.sinkpad" class="structfield small-section-header">
+                           <a href="#structfield.sinkpad" class="anchor field"></a>
+                           <span id="sinkpad.v" class='invisible'>
+                           <code>sinkpad: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_sys/struct.GstPad.html" title="struct gstreamer_sys::GstPad">GstPad</a></code>
+                           </span></span><span id="structfield.pad_mode" class="structfield small-section-header">
+                           <a href="#structfield.pad_mode" class="anchor field"></a>
+                           <span id="pad_mode.v" class='invisible'>
+                           <code>pad_mode: <a class="type" href="../gstreamer_sys/type.GstPadMode.html" title="type gstreamer_sys::GstPadMode">GstPadMode</a></code>
+                           </span></span><span id="structfield.offset" class="structfield small-section-header">
+                           <a href="#structfield.offset" class="anchor field"></a>
+                           <span id="offset.v" class='invisible'>
+                           <code>offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a></code>
+                           </span></span><span id="structfield.can_activate_pull" class="structfield small-section-header">
+                           <a href="#structfield.can_activate_pull" class="anchor field"></a>
+                           <span id="can_activate_pull.v" class='invisible'>
+                           <code>can_activate_pull: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a></code>
+                           </span></span><span id="structfield.can_activate_push" class="structfield small-section-header">
+                           <a href="#structfield.can_activate_push" class="anchor field"></a>
+                           <span id="can_activate_push.v" class='invisible'>
+                           <code>can_activate_push: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a></code>
+                           </span></span><span id="structfield.preroll_lock" class="structfield small-section-header">
+                           <a href="#structfield.preroll_lock" class="anchor field"></a>
+                           <span id="preroll_lock.v" class='invisible'>
+                           <code>preroll_lock: <a class="struct" href="../glib_sys/struct.GMutex.html" title="struct glib_sys::GMutex">GMutex</a></code>
+                           </span></span><span id="structfield.preroll_cond" class="structfield small-section-header">
+                           <a href="#structfield.preroll_cond" class="anchor field"></a>
+                           <span id="preroll_cond.v" class='invisible'>
+                           <code>preroll_cond: <a class="struct" href="../glib_sys/struct.GCond.html" title="struct glib_sys::GCond">GCond</a></code>
+                           </span></span><span id="structfield.eos" class="structfield small-section-header">
+                           <a href="#structfield.eos" class="anchor field"></a>
+                           <span id="eos.v" class='invisible'>
+                           <code>eos: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a></code>
+                           </span></span><span id="structfield.need_preroll" class="structfield small-section-header">
+                           <a href="#structfield.need_preroll" class="anchor field"></a>
+                           <span id="need_preroll.v" class='invisible'>
+                           <code>need_preroll: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a></code>
+                           </span></span><span id="structfield.have_preroll" class="structfield small-section-header">
+                           <a href="#structfield.have_preroll" class="anchor field"></a>
+                           <span id="have_preroll.v" class='invisible'>
+                           <code>have_preroll: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a></code>
+                           </span></span><span id="structfield.playing_async" class="structfield small-section-header">
+                           <a href="#structfield.playing_async" class="anchor field"></a>
+                           <span id="playing_async.v" class='invisible'>
+                           <code>playing_async: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a></code>
+                           </span></span><span id="structfield.have_newsegment" class="structfield small-section-header">
+                           <a href="#structfield.have_newsegment" class="anchor field"></a>
+                           <span id="have_newsegment.v" class='invisible'>
+                           <code>have_newsegment: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a></code>
+                           </span></span><span id="structfield.segment" class="structfield small-section-header">
+                           <a href="#structfield.segment" class="anchor field"></a>
+                           <span id="segment.v" class='invisible'>
+                           <code>segment: <a class="struct" href="../gstreamer_sys/struct.GstSegment.html" title="struct gstreamer_sys::GstSegment">GstSegment</a></code>
+                           </span></span><span id="structfield.clock_id" class="structfield small-section-header">
+                           <a href="#structfield.clock_id" class="anchor field"></a>
+                           <span id="clock_id.v" class='invisible'>
+                           <code>clock_id: <a class="type" href="../gstreamer_sys/type.GstClockID.html" title="type gstreamer_sys::GstClockID">GstClockID</a></code>
+                           </span></span><span id="structfield.sync" class="structfield small-section-header">
+                           <a href="#structfield.sync" class="anchor field"></a>
+                           <span id="sync.v" class='invisible'>
+                           <code>sync: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a></code>
+                           </span></span><span id="structfield.flushing" class="structfield small-section-header">
+                           <a href="#structfield.flushing" class="anchor field"></a>
+                           <span id="flushing.v" class='invisible'>
+                           <code>flushing: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a></code>
+                           </span></span><span id="structfield.running" class="structfield small-section-header">
+                           <a href="#structfield.running" class="anchor field"></a>
+                           <span id="running.v" class='invisible'>
+                           <code>running: <a class="type" href="../glib_sys/type.gboolean.html" title="type glib_sys::gboolean">gboolean</a></code>
+                           </span></span><span id="structfield.max_lateness" class="structfield small-section-header">
+                           <a href="#structfield.max_lateness" class="anchor field"></a>
+                           <span id="max_lateness.v" class='invisible'>
+                           <code>max_lateness: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a></code>
+                           </span></span><span id="structfield.priv_" class="structfield small-section-header">
+                           <a href="#structfield.priv_" class="anchor field"></a>
+                           <span id="priv_.v" class='invisible'>
+                           <code>priv_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="struct" href="../gstreamer_base_sys/struct.GstBaseSinkPrivate.html" title="struct gstreamer_base_sys::GstBaseSinkPrivate">GstBaseSinkPrivate</a></code>
+                           </span></span><span id="structfield._gst_reserved" class="structfield small-section-header">
+                           <a href="#structfield._gst_reserved" class="anchor field"></a>
+                           <span id="_gst_reserved.v" class='invisible'>
+                           <code>_gst_reserved: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="type" href="../glib_sys/type.gpointer.html" title="type glib_sys::gpointer">gpointer</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 20]</a></code>
+                           </span></span>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../gstreamer_base_sys/struct.GstBaseSink.html" title="struct gstreamer_base_sys::GstBaseSink">GstBaseSink</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_base_sys/lib.rs.html#510-536' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_base_sys/lib.rs.html#511-535' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer_base_sys";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>
