@@ -109,24 +109,32 @@
     function showSidebar() {
         var elems = document.getElementsByClassName("sidebar-elems")[0];
         if (elems) {
-            elems.style.display = "block";
+            addClass(elems, "show-it");
         }
         var sidebar = document.getElementsByClassName('sidebar')[0];
-        sidebar.style.position = 'fixed';
-        sidebar.style.width = '100%';
-        sidebar.style.marginLeft = '0';
+        if (sidebar) {
+            addClass(sidebar, 'mobile');
+            var filler = document.getElementById("sidebar-filler");
+            if (!filler) {
+                var div = document.createElement("div");
+                div.id = "sidebar-filler";
+                sidebar.appendChild(div);
+            }
+        }
         document.getElementsByTagName("body")[0].style.marginTop = '45px';
     }
 
     function hideSidebar() {
         var elems = document.getElementsByClassName("sidebar-elems")[0];
         if (elems) {
-            elems.style.display = "";
+            removeClass(elems, "show-it");
         }
         var sidebar = document.getElementsByClassName('sidebar')[0];
-        sidebar.style.position = '';
-        sidebar.style.width = '';
-        sidebar.style.marginLeft = '';
+        removeClass(sidebar, 'mobile');
+        var filler = document.getElementById("sidebar-filler");
+        if (filler) {
+            filler.remove();
+        }
         document.getElementsByTagName("body")[0].style.marginTop = '';
     }
 
@@ -250,6 +258,7 @@
                 addClass(search, "hidden");
                 removeClass(document.getElementById("main"), "hidden");
             }
+            defocusSearchBar();
             break;
 
         case "s":
@@ -1859,7 +1868,7 @@
     if (sidebar_menu) {
         sidebar_menu.onclick = function() {
             var sidebar = document.getElementsByClassName('sidebar')[0];
-            if (sidebar.style.position === "fixed") {
+            if (hasClass(sidebar, "mobile") === true) {
                 hideSidebar();
             } else {
                 showSidebar();
@@ -1875,4 +1884,9 @@
 // Sets the focus on the search bar at the top of the page
 function focusSearchBar() {
     document.getElementsByClassName('search-input')[0].focus();
+}
+
+// Removes the focus from the search bar
+function defocusSearchBar() {
+    document.getElementsByClassName('search-input')[0].blur();
 }

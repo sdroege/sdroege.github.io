@@ -30,7 +30,7 @@
     <nav class="sidebar">
         <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'>Crate gstreamer_video</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#modules">Modules</a></li><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#traits">Traits</a></li><li><a href="#functions">Functions</a></li></ul></div><p class='location'></p><script>window.sidebarCurrent = {name: 'gstreamer_video', ty: 'mod', relpath: '../'};</script></div>
+        <p class='location'>Crate gstreamer_video</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#reexports">Reexports</a></li><li><a href="#modules">Modules</a></li><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#traits">Traits</a></li><li><a href="#functions">Functions</a></li></ul></div><p class='location'></p><script>window.sidebarCurrent = {name: 'gstreamer_video', ty: 'mod', relpath: '../'};</script></div>
     </nav>
 
     <nav class="sub">
@@ -49,12 +49,20 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/gstreamer_video/lib.rs.html#9-64' title='goto source code'>[src]</a></span></h1>
-<h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+               </span><a class='srclink' href='../src/gstreamer_video/lib.rs.html#9-76' title='goto source code'>[src]</a></span></h1>
+<h2 id='reexports' class='section-header'><a href="#reexports">Reexports</a></h2>
+<table><tr><td><code>pub use video_frame::<a class="struct" href="../gstreamer_video/video_frame/struct.VideoFrame.html" title="struct gstreamer_video::video_frame::VideoFrame">VideoFrame</a>;</code></td></tr><tr><td><code>pub use video_frame::<a class="struct" href="../gstreamer_video/video_frame/struct.VideoFrameRef.html" title="struct gstreamer_video::video_frame::VideoFrameRef">VideoFrameRef</a>;</code></td></tr></table><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
 <table>
                        <tr class=' module-item'>
                            <td><a class="mod" href="prelude/index.html"
                                   title='mod gstreamer_video::prelude'>prelude</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="video_frame/index.html"
+                                  title='mod gstreamer_video::video_frame'>video_frame</a></td>
                            <td class='docblock-short'>
                                 
                            </td>
@@ -145,6 +153,13 @@
                            </td>
                        </tr>
                        <tr class=' module-item'>
+                           <td><a class="struct" href="struct.VideoFilter.html"
+                                  title='struct gstreamer_video::VideoFilter'>VideoFilter</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
                            <td><a class="struct" href="struct.VideoFlags.html"
                                   title='struct gstreamer_video::VideoFlags'>VideoFlags</a></td>
                            <td class='docblock-short'>
@@ -163,13 +178,6 @@
                                   title='struct gstreamer_video::VideoFormatInfo'>VideoFormatInfo</a></td>
                            <td class='docblock-short'>
                                 <p>Information for a video format.</p>
-                           </td>
-                       </tr>
-                       <tr class=' module-item'>
-                           <td><a class="struct" href="struct.VideoFrame.html"
-                                  title='struct gstreamer_video::VideoFrame'>VideoFrame</a></td>
-                           <td class='docblock-short'>
-                                <p>A video frame obtained from <code>VideoFrame::map</code></p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -208,6 +216,13 @@ to store the specific video info when mapping a video frame with
                                   title='struct gstreamer_video::VideoOverlay'>VideoOverlay</a></td>
                            <td class='docblock-short'>
                                 <p>The <code>VideoOverlay</code> interface is used for 2 main purposes :</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.VideoRectangle.html"
+                                  title='struct gstreamer_video::VideoRectangle'>VideoRectangle</a></td>
+                           <td class='docblock-short'>
+                                
                            </td>
                        </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
 <table>
@@ -360,6 +375,27 @@ non-linear RGB (R&#39;G&#39;B&#39;) and linear RGB</p>
                            </td>
                        </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
 <table>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.center_video_rectangle.html"
+                                  title='fn gstreamer_video::center_video_rectangle'>center_video_rectangle</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.convert_sample.html"
+                                  title='fn gstreamer_video::convert_sample'>convert_sample</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.convert_sample_async.html"
+                                  title='fn gstreamer_video::convert_sample_async'>convert_sample_async</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
                        <tr class=' module-item'>
                            <td><a class="fn" href="fn.is_force_key_unit_event.html"
                                   title='fn gstreamer_video::is_force_key_unit_event'>is_force_key_unit_event</a></td>

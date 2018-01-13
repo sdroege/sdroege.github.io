@@ -218,14 +218,14 @@ to be reallocated, which would also make any pointers to it invalid.</p>
 <span class="kw">let</span> <span class="ident">slice</span> <span class="op">=</span> [<span class="string">&#39;f&#39;</span>, <span class="string">&#39;o&#39;</span>, <span class="string">&#39;o&#39;</span>];
 <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">iter</span> <span class="op">=</span> <span class="ident">slice</span>.<span class="ident">windows</span>(<span class="number">4</span>);
 <span class="macro">assert</span><span class="macro">!</span>(<span class="ident">iter</span>.<span class="ident">next</span>().<span class="ident">is_none</span>());</pre>
-</div><h4 id='method.chunks' class="method"><span id='chunks.v' class='invisible'><code>pub fn <a href='#method.chunks' class='fnname'>chunks</a>(&amp;self, size: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/core/slice/struct.Chunks.html" title="struct core::slice::Chunks">Chunks</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/alloc/slice.rs.html#630-632' title='goto source code'>[src]</a></span></h4>
-<div class='docblock'><p>Returns an iterator over <code>size</code> elements of the slice at a
-time. The chunks are slices and do not overlap. If <code>size</code> does
+</div><h4 id='method.chunks' class="method"><span id='chunks.v' class='invisible'><code>pub fn <a href='#method.chunks' class='fnname'>chunks</a>(&amp;self, chunk_size: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/core/slice/struct.Chunks.html" title="struct core::slice::Chunks">Chunks</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/alloc/slice.rs.html#630-632' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns an iterator over <code>chunk_size</code> elements of the slice at a
+time. The chunks are slices and do not overlap. If <code>chunk_size</code> does
 not divide the length of the slice, then the last chunk will
-not have length <code>size</code>.</p>
+not have length <code>chunk_size</code>.</p>
 
 <h1 id='panics-1' class='section-header'><a href='#panics-1'>Panics</a></h1>
-<p>Panics if <code>size</code> is 0.</p>
+<p>Panics if <code>chunk_size</code> is 0.</p>
 
 <h1 id='examples-11' class='section-header'><a href='#examples-11'>Examples</a></h1>
 <pre class="rust rust-example-rendered">
