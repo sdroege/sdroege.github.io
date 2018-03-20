@@ -63,8 +63,8 @@
 <p>Free-function: gst_parse_context_free</p>
 
 <h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
-<p>a newly-allocated parse context. Free with
- <code>ParseContext::free</code> when no longer needed.</p>
+<p>a newly-allocated parse context. Free
+ with <code>ParseContext::free</code> when no longer needed.</p>
 </div><h4 id='method.get_missing_elements' class="method"><span id='get_missing_elements.v' class='invisible'><code>pub fn <a href='#method.get_missing_elements' class='fnname'>get_missing_elements</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/parse_context.rs.html#55-61' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Retrieve missing elements from a previous run of <code>gst_parse_launch_full</code>
 or <code>gst_parse_launchv_full</code>. Will only return results if an error code

@@ -152,8 +152,8 @@
     <span class="doccomment">///</span>
     <span class="doccomment">/// # Returns</span>
     <span class="doccomment">///</span>
-    <span class="doccomment">/// a newly-allocated parse context. Free with</span>
-    <span class="doccomment">///  `ParseContext::free` when no longer needed.</span>
+    <span class="doccomment">/// a newly-allocated parse context. Free</span>
+    <span class="doccomment">///  with `ParseContext::free` when no longer needed.</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-&gt;</span> <span class="self">Self</span> {
         <span class="kw">unsafe</span> { <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_parse_context_new</span>()) }
     }

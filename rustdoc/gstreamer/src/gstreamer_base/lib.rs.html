@@ -100,6 +100,14 @@
 <span id="54">54</span>
 <span id="55">55</span>
 <span id="56">56</span>
+<span id="57">57</span>
+<span id="58">58</span>
+<span id="59">59</span>
+<span id="60">60</span>
+<span id="61">61</span>
+<span id="62">62</span>
+<span id="63">63</span>
+<span id="64">64</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -148,6 +156,9 @@
 <span class="kw">mod</span> <span class="ident">adapter</span>;
 <span class="kw">mod</span> <span class="ident">flow_combiner</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">flow_combiner</span>::<span class="kw-2">*</span>;
+<span class="kw">mod</span> <span class="ident">base_src</span>;
+<span class="kw">mod</span> <span class="ident">base_sink</span>;
+<span class="kw">mod</span> <span class="ident">base_transform</span>;
 
 <span class="comment">// Re-export all the traits in a prelude module, so that applications</span>
 <span class="comment">// can always &quot;use gst::prelude::*&quot; without getting conflicts</span>
@@ -156,7 +167,12 @@
     <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">gst</span>::<span class="ident">prelude</span>::<span class="kw-2">*</span>;
 
     <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">auto</span>::<span class="ident">traits</span>::<span class="kw-2">*</span>;
+    <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">base_src</span>::<span class="ident">BaseSrcExtManual</span>;
+    <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">base_sink</span>::<span class="ident">BaseSinkExtManual</span>;
+    <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">base_transform</span>::<span class="ident">BaseTransformExtManual</span>;
 }
+
+<span class="kw">mod</span> <span class="ident">utils</span>;
 </pre>
 </section>
     <section id='search' class="content hidden"></section>

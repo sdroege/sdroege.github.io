@@ -152,8 +152,6 @@
 <span id="106">106</span>
 <span id="107">107</span>
 <span id="108">108</span>
-<span id="109">109</span>
-<span id="110">110</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -203,9 +201,7 @@
 <span class="kw">impl</span> <span class="ident">PlayerConfig</span> {
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_position_update_interval</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">u32</span> {
         <span class="macro">assert_initialized_main_thread</span><span class="macro">!</span>();
-        <span class="kw">unsafe</span> {
-            <span class="ident">ffi</span>::<span class="ident">gst_player_config_get_position_update_interval</span>(<span class="self">self</span>.<span class="number">0</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>)
-        }
+        <span class="kw">unsafe</span> { <span class="ident">ffi</span>::<span class="ident">gst_player_config_get_position_update_interval</span>(<span class="self">self</span>.<span class="number">0</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>) }
     }
 
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_seek_accurate</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">bool</span> {

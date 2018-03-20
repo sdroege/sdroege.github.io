@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `gstreamer_rtsp_server` crate.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, gstreamer_rtsp_server">
+
+    <title>gstreamer_rtsp_server - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Crate gstreamer_rtsp_server</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#modules">Modules</a></li><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#traits">Traits</a></li><li><a href="#types">Type Definitions</a></li></ul></div><p class='location'></p><script>window.sidebarCurrent = {name: 'gstreamer_rtsp_server', ty: 'mod', relpath: '../'};</script></div>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Crate <a class="mod" href=''>gstreamer_rtsp_server</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/gstreamer_rtsp_server/lib.rs.html#9-106' title='goto source code'>[src]</a></span></h1>
+<h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="mod" href="prelude/index.html"
+                                  title='mod gstreamer_rtsp_server::prelude'>prelude</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Continue.html"
+                                  title='struct gstreamer_rtsp_server::Continue'>Continue</a></td>
+                           <td class='docblock-short'>
+                                <p>Continue calling the closure in the future iterations or drop it.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Error.html"
+                                  title='struct gstreamer_rtsp_server::Error'>Error</a></td>
+                           <td class='docblock-short'>
+                                <p>A generic error capable of representing various error domains (types).</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSPAddress.html"
+                                  title='struct gstreamer_rtsp_server::RTSPAddress'>RTSPAddress</a></td>
+                           <td class='docblock-short'>
+                                <p>An address</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSPAddressFlags.html"
+                                  title='struct gstreamer_rtsp_server::RTSPAddressFlags'>RTSPAddressFlags</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSPAddressPool.html"
+                                  title='struct gstreamer_rtsp_server::RTSPAddressPool'>RTSPAddressPool</a></td>
+                           <td class='docblock-short'>
+                                <p>An address pool, all member are private</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSPAuth.html"
+                                  title='struct gstreamer_rtsp_server::RTSPAuth'>RTSPAuth</a></td>
+                           <td class='docblock-short'>
+                                <p>The authentication structure.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSPClient.html"
+                                  title='struct gstreamer_rtsp_server::RTSPClient'>RTSPClient</a></td>
+                           <td class='docblock-short'>
+                                <p>The client object represents the connection and its state with a client.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSPContext.html"
+                                  title='struct gstreamer_rtsp_server::RTSPContext'>RTSPContext</a></td>
+                           <td class='docblock-short'>
+                                <p>Information passed around containing the context of a request.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSPMedia.html"
+                                  title='struct gstreamer_rtsp_server::RTSPMedia'>RTSPMedia</a></td>
+                           <td class='docblock-short'>
+                                <p>A class that contains the GStreamer element along with a list of
+<code>RTSPStream</code> objects that can produce data.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSPMediaFactory.html"
+                                  title='struct gstreamer_rtsp_server::RTSPMediaFactory'>RTSPMediaFactory</a></td>
+                           <td class='docblock-short'>
+                                <p>The definition and logic for constructing the pipeline for a media. The media
+can contain multiple streams like audio and video.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSPMediaFactoryURI.html"
+                                  title='struct gstreamer_rtsp_server::RTSPMediaFactoryURI'>RTSPMediaFactoryURI</a></td>
+                           <td class='docblock-short'>
+                                <p>A media factory that creates a pipeline to play and uri.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSPMountPoints.html"
+                                  title='struct gstreamer_rtsp_server::RTSPMountPoints'>RTSPMountPoints</a></td>
+                           <td class='docblock-short'>
+                                <p>Creates a <code>RTSPMediaFactory</code> object for a given url.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSPServer.html"
+                                  title='struct gstreamer_rtsp_server::RTSPServer'>RTSPServer</a></td>
+                           <td class='docblock-short'>
+                                <p>This object listens on a port, creates and manages the clients connected to
+it.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSPSession.html"
+                                  title='struct gstreamer_rtsp_server::RTSPSession'>RTSPSession</a></td>
+                           <td class='docblock-short'>
+                                <p>Session information kept by the server for a specific client.
+One client session, identified with a session id, can handle multiple medias
+identified with the url of a media.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSPSessionMedia.html"
+                                  title='struct gstreamer_rtsp_server::RTSPSessionMedia'>RTSPSessionMedia</a></td>
+                           <td class='docblock-short'>
+                                <p>State of a client session regarding a specific media identified by path.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSPSessionPool.html"
+                                  title='struct gstreamer_rtsp_server::RTSPSessionPool'>RTSPSessionPool</a></td>
+                           <td class='docblock-short'>
+                                <p>An object that keeps track of the active sessions. This object is usually
+attached to a <code>RTSPServer</code> object to manage the sessions in that server.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSPStream.html"
+                                  title='struct gstreamer_rtsp_server::RTSPStream'>RTSPStream</a></td>
+                           <td class='docblock-short'>
+                                <p>The definition of a media stream.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSPStreamTransport.html"
+                                  title='struct gstreamer_rtsp_server::RTSPStreamTransport'>RTSPStreamTransport</a></td>
+                           <td class='docblock-short'>
+                                <p>A Transport description for a stream</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSPThreadPool.html"
+                                  title='struct gstreamer_rtsp_server::RTSPThreadPool'>RTSPThreadPool</a></td>
+                           <td class='docblock-short'>
+                                <p>The thread pool structure.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSPTokenRef.html"
+                                  title='struct gstreamer_rtsp_server::RTSPTokenRef'>RTSPTokenRef</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSPTransportMode.html"
+                                  title='struct gstreamer_rtsp_server::RTSPTransportMode'>RTSPTransportMode</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSP_ADDRESS_POOL_ANY_IPV4.html"
+                                  title='struct gstreamer_rtsp_server::RTSP_ADDRESS_POOL_ANY_IPV4'>RTSP_ADDRESS_POOL_ANY_IPV4</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSP_ADDRESS_POOL_ANY_IPV6.html"
+                                  title='struct gstreamer_rtsp_server::RTSP_ADDRESS_POOL_ANY_IPV6'>RTSP_ADDRESS_POOL_ANY_IPV6</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSP_AUTH_CHECK_CONNECT.html"
+                                  title='struct gstreamer_rtsp_server::RTSP_AUTH_CHECK_CONNECT'>RTSP_AUTH_CHECK_CONNECT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSP_AUTH_CHECK_MEDIA_FACTORY_ACCESS.html"
+                                  title='struct gstreamer_rtsp_server::RTSP_AUTH_CHECK_MEDIA_FACTORY_ACCESS'>RTSP_AUTH_CHECK_MEDIA_FACTORY_ACCESS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSP_AUTH_CHECK_MEDIA_FACTORY_CONSTRUCT.html"
+                                  title='struct gstreamer_rtsp_server::RTSP_AUTH_CHECK_MEDIA_FACTORY_CONSTRUCT'>RTSP_AUTH_CHECK_MEDIA_FACTORY_CONSTRUCT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSP_AUTH_CHECK_TRANSPORT_CLIENT_SETTINGS.html"
+                                  title='struct gstreamer_rtsp_server::RTSP_AUTH_CHECK_TRANSPORT_CLIENT_SETTINGS'>RTSP_AUTH_CHECK_TRANSPORT_CLIENT_SETTINGS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSP_AUTH_CHECK_URL.html"
+                                  title='struct gstreamer_rtsp_server::RTSP_AUTH_CHECK_URL'>RTSP_AUTH_CHECK_URL</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSP_PERM_MEDIA_FACTORY_ACCESS.html"
+                                  title='struct gstreamer_rtsp_server::RTSP_PERM_MEDIA_FACTORY_ACCESS'>RTSP_PERM_MEDIA_FACTORY_ACCESS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSP_PERM_MEDIA_FACTORY_CONSTRUCT.html"
+                                  title='struct gstreamer_rtsp_server::RTSP_PERM_MEDIA_FACTORY_CONSTRUCT'>RTSP_PERM_MEDIA_FACTORY_CONSTRUCT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSP_TOKEN_MEDIA_FACTORY_ROLE.html"
+                                  title='struct gstreamer_rtsp_server::RTSP_TOKEN_MEDIA_FACTORY_ROLE'>RTSP_TOKEN_MEDIA_FACTORY_ROLE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RTSP_TOKEN_TRANSPORT_CLIENT_SETTINGS.html"
+                                  title='struct gstreamer_rtsp_server::RTSP_TOKEN_TRANSPORT_CLIENT_SETTINGS'>RTSP_TOKEN_TRANSPORT_CLIENT_SETTINGS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TypedValue.html"
+                                  title='struct gstreamer_rtsp_server::TypedValue'>TypedValue</a></td>
+                           <td class='docblock-short'>
+                                <p>A statically typed <a href="struct.Value.html"><code>Value</code></a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Value.html"
+                                  title='struct gstreamer_rtsp_server::Value'>Value</a></td>
+                           <td class='docblock-short'>
+                                <p>A generic value capable of carrying various types.</p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.RTSPAddressPoolResult.html"
+                                  title='enum gstreamer_rtsp_server::RTSPAddressPoolResult'>RTSPAddressPoolResult</a></td>
+                           <td class='docblock-short'>
+                                <p>Result codes from RTSP address pool functions.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.RTSPMediaStatus.html"
+                                  title='enum gstreamer_rtsp_server::RTSPMediaStatus'>RTSPMediaStatus</a></td>
+                           <td class='docblock-short'>
+                                <p>The state of the media pipeline.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.RTSPPublishClockMode.html"
+                                  title='enum gstreamer_rtsp_server::RTSPPublishClockMode'>RTSPPublishClockMode</a></td>
+                           <td class='docblock-short'>
+                                <p>Whether the clock and possibly RTP/clock offset should be published according to RFC7273.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.RTSPSuspendMode.html"
+                                  title='enum gstreamer_rtsp_server::RTSPSuspendMode'>RTSPSuspendMode</a></td>
+                           <td class='docblock-short'>
+                                <p>The suspend mode of the media pipeline. A media pipeline is suspended right
+after creating the SDP and when the client performs a PAUSED request.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.RTSPThreadType.html"
+                                  title='enum gstreamer_rtsp_server::RTSPThreadType'>RTSPThreadType</a></td>
+                           <td class='docblock-short'>
+                                <p>Different thread types</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.Type.html"
+                                  title='enum gstreamer_rtsp_server::Type'>Type</a></td>
+                           <td class='docblock-short'>
+                                <p>A GLib or GLib-based library type</p>
+                           </td>
+                       </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.Cast.html"
+                                  title='trait gstreamer_rtsp_server::Cast'>Cast</a></td>
+                           <td class='docblock-short'>
+                                <p>Upcasting and downcasting support.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.GstRcRTSPTokenExt.html"
+                                  title='trait gstreamer_rtsp_server::GstRcRTSPTokenExt'>GstRcRTSPTokenExt</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.IsA.html"
+                                  title='trait gstreamer_rtsp_server::IsA'>IsA</a></td>
+                           <td class='docblock-short'>
+                                <p>Declares the &quot;is a&quot; relationship.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.RTSPAddressPoolExt.html"
+                                  title='trait gstreamer_rtsp_server::RTSPAddressPoolExt'>RTSPAddressPoolExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>RTSPAddressPool</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.RTSPAddressPoolExtManual.html"
+                                  title='trait gstreamer_rtsp_server::RTSPAddressPoolExtManual'>RTSPAddressPoolExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.RTSPAuthExt.html"
+                                  title='trait gstreamer_rtsp_server::RTSPAuthExt'>RTSPAuthExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>RTSPAuth</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.RTSPAuthExtManual.html"
+                                  title='trait gstreamer_rtsp_server::RTSPAuthExtManual'>RTSPAuthExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.RTSPClientExt.html"
+                                  title='trait gstreamer_rtsp_server::RTSPClientExt'>RTSPClientExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>RTSPClient</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.RTSPClientExtManual.html"
+                                  title='trait gstreamer_rtsp_server::RTSPClientExtManual'>RTSPClientExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.RTSPMediaExt.html"
+                                  title='trait gstreamer_rtsp_server::RTSPMediaExt'>RTSPMediaExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>RTSPMedia</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.RTSPMediaFactoryExt.html"
+                                  title='trait gstreamer_rtsp_server::RTSPMediaFactoryExt'>RTSPMediaFactoryExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>RTSPMediaFactory</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.RTSPMediaFactoryExtManual.html"
+                                  title='trait gstreamer_rtsp_server::RTSPMediaFactoryExtManual'>RTSPMediaFactoryExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.RTSPMediaFactoryURIExt.html"
+                                  title='trait gstreamer_rtsp_server::RTSPMediaFactoryURIExt'>RTSPMediaFactoryURIExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>RTSPMediaFactoryURI</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.RTSPMountPointsExt.html"
+                                  title='trait gstreamer_rtsp_server::RTSPMountPointsExt'>RTSPMountPointsExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>RTSPMountPoints</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.RTSPServerExt.html"
+                                  title='trait gstreamer_rtsp_server::RTSPServerExt'>RTSPServerExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>RTSPServer</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.RTSPServerExtManual.html"
+                                  title='trait gstreamer_rtsp_server::RTSPServerExtManual'>RTSPServerExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.RTSPSessionExt.html"
+                                  title='trait gstreamer_rtsp_server::RTSPSessionExt'>RTSPSessionExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>RTSPSession</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.RTSPSessionMediaExt.html"
+                                  title='trait gstreamer_rtsp_server::RTSPSessionMediaExt'>RTSPSessionMediaExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>RTSPSessionMedia</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.RTSPSessionPoolExt.html"
+                                  title='trait gstreamer_rtsp_server::RTSPSessionPoolExt'>RTSPSessionPoolExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>RTSPSessionPool</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.RTSPSessionPoolExtManual.html"
+                                  title='trait gstreamer_rtsp_server::RTSPSessionPoolExtManual'>RTSPSessionPoolExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.RTSPStreamExt.html"
+                                  title='trait gstreamer_rtsp_server::RTSPStreamExt'>RTSPStreamExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>RTSPStream</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.RTSPStreamTransportExt.html"
+                                  title='trait gstreamer_rtsp_server::RTSPStreamTransportExt'>RTSPStreamTransportExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>RTSPStreamTransport</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.RTSPThreadPoolExt.html"
+                                  title='trait gstreamer_rtsp_server::RTSPThreadPoolExt'>RTSPThreadPoolExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>RTSPThreadPool</code> methods.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.StaticType.html"
+                                  title='trait gstreamer_rtsp_server::StaticType'>StaticType</a></td>
+                           <td class='docblock-short'>
+                                <p>Types that are supported by GLib dynamic typing.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ToValue.html"
+                                  title='trait gstreamer_rtsp_server::ToValue'>ToValue</a></td>
+                           <td class='docblock-short'>
+                                <p>Converts to <code>Value</code>.</p>
+                           </td>
+                       </tr></table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="type" href="type.RTSPToken.html"
+                                  title='type gstreamer_rtsp_server::RTSPToken'>RTSPToken</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer_rtsp_server";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

@@ -695,15 +695,6 @@
 <span id="649">649</span>
 <span id="650">650</span>
 <span id="651">651</span>
-<span id="652">652</span>
-<span id="653">653</span>
-<span id="654">654</span>
-<span id="655">655</span>
-<span id="656">656</span>
-<span id="657">657</span>
-<span id="658">658</span>
-<span id="659">659</span>
-<span id="660">660</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2016-2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -774,6 +765,7 @@
     }
 
     <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">drop_box</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>(<span class="ident">vec</span>: <span class="ident">glib_ffi</span>::<span class="ident">gpointer</span>) {
+        <span class="macro">callback_guard</span><span class="macro">!</span>();
         <span class="kw">let</span> <span class="ident">slice</span>: <span class="ident">Box</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> <span class="op">=</span> <span class="ident">Box</span>::<span class="ident">from_raw</span>(<span class="ident">vec</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>);
         <span class="ident">drop</span>(<span class="ident">slice</span>);
     }
@@ -864,9 +856,7 @@
 
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">append</span>(<span class="ident">buffer</span>: <span class="self">Self</span>, <span class="ident">other</span>: <span class="self">Self</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
         <span class="macro">skip_assert_initialized</span><span class="macro">!</span>();
-        <span class="kw">unsafe</span> {
-            <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_buffer_append</span>(<span class="ident">buffer</span>.<span class="ident">into_ptr</span>(), <span class="ident">other</span>.<span class="ident">into_ptr</span>()))
-        }
+        <span class="kw">unsafe</span> { <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_buffer_append</span>(<span class="ident">buffer</span>.<span class="ident">into_ptr</span>(), <span class="ident">other</span>.<span class="ident">into_ptr</span>())) }
     }
 }
 
@@ -879,9 +869,8 @@
 <span class="kw">impl</span> <span class="ident">BufferRef</span> {
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">map_readable</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">BufferMap</span><span class="op">&lt;</span><span class="ident">Readable</span><span class="op">&gt;&gt;</span> {
         <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">map_info</span>: <span class="ident">ffi</span>::<span class="ident">GstMapInfo</span> <span class="op">=</span> <span class="kw">unsafe</span> { <span class="ident">mem</span>::<span class="ident">zeroed</span>() };
-        <span class="kw">let</span> <span class="ident">res</span> <span class="op">=</span> <span class="kw">unsafe</span> {
-            <span class="ident">ffi</span>::<span class="ident">gst_buffer_map</span>(<span class="self">self</span>.<span class="ident">as_mut_ptr</span>(), <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">map_info</span>, <span class="ident">ffi</span>::<span class="ident">GST_MAP_READ</span>)
-        };
+        <span class="kw">let</span> <span class="ident">res</span> <span class="op">=</span>
+            <span class="kw">unsafe</span> { <span class="ident">ffi</span>::<span class="ident">gst_buffer_map</span>(<span class="self">self</span>.<span class="ident">as_mut_ptr</span>(), <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">map_info</span>, <span class="ident">ffi</span>::<span class="ident">GST_MAP_READ</span>) };
         <span class="kw">if</span> <span class="ident">res</span> <span class="op">==</span> <span class="ident">glib_ffi</span>::<span class="ident">GTRUE</span> {
             <span class="prelude-val">Some</span>(<span class="ident">BufferMap</span> {
                 <span class="ident">buffer</span>: <span class="self">self</span>,
@@ -1092,10 +1081,7 @@
     <span class="kw">type</span> <span class="ident">Owned</span> <span class="op">=</span> <span class="ident">GstRc</span><span class="op">&lt;</span><span class="ident">BufferRef</span><span class="op">&gt;</span>;
 
     <span class="kw">fn</span> <span class="ident">to_owned</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">GstRc</span><span class="op">&lt;</span><span class="ident">BufferRef</span><span class="op">&gt;</span> {
-        <span class="kw">unsafe</span> {
-            <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_mini_object_copy</span>(<span class="self">self</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _)
-                <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> _)
-        }
+        <span class="kw">unsafe</span> { <span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_mini_object_copy</span>(<span class="self">self</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _) <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> _) }
     }
 }
 
@@ -1147,9 +1133,7 @@
 
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">BufferMap</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="ident">Writable</span><span class="op">&gt;</span> {
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">as_mut_slice</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="kw-2">mut</span> [<span class="ident">u8</span>] {
-        <span class="kw">unsafe</span> {
-            <span class="ident">slice</span>::<span class="ident">from_raw_parts_mut</span>(<span class="self">self</span>.<span class="ident">map_info</span>.<span class="ident">data</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">u8</span>, <span class="self">self</span>.<span class="ident">map_info</span>.<span class="ident">size</span>)
-        }
+        <span class="kw">unsafe</span> { <span class="ident">slice</span>::<span class="ident">from_raw_parts_mut</span>(<span class="self">self</span>.<span class="ident">map_info</span>.<span class="ident">data</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">u8</span>, <span class="self">self</span>.<span class="ident">map_info</span>.<span class="ident">size</span>) }
     }
 }
 
@@ -1228,9 +1212,7 @@
 
 <span class="kw">impl</span> <span class="ident">MappedBuffer</span><span class="op">&lt;</span><span class="ident">Writable</span><span class="op">&gt;</span> {
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">as_mut_slice</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="kw-2">mut</span> [<span class="ident">u8</span>] {
-        <span class="kw">unsafe</span> {
-            <span class="ident">slice</span>::<span class="ident">from_raw_parts_mut</span>(<span class="self">self</span>.<span class="ident">map_info</span>.<span class="ident">data</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">u8</span>, <span class="self">self</span>.<span class="ident">map_info</span>.<span class="ident">size</span>)
-        }
+        <span class="kw">unsafe</span> { <span class="ident">slice</span>::<span class="ident">from_raw_parts_mut</span>(<span class="self">self</span>.<span class="ident">map_info</span>.<span class="ident">data</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">u8</span>, <span class="self">self</span>.<span class="ident">map_info</span>.<span class="ident">size</span>) }
     }
 }
 

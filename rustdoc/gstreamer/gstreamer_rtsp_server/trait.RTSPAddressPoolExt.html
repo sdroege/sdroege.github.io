@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `RTSPAddressPoolExt` trait in crate `gstreamer_rtsp_server`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, RTSPAddressPoolExt">
+
+    <title>gstreamer_rtsp_server::RTSPAddressPoolExt - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Trait RTSPAddressPoolExt</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.acquire_address">acquire_address</a><a href="#tymethod.add_range">add_range</a><a href="#tymethod.clear">clear</a><a href="#tymethod.dump">dump</a><a href="#tymethod.has_unicast_addresses">has_unicast_addresses</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='index.html'>gstreamer_rtsp_server</a></p><script>window.sidebarCurrent = {name: 'RTSPAddressPoolExt', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='index.html'>gstreamer_rtsp_server</a>::<wbr><a class="trait" href=''>RTSPAddressPoolExt</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/gstreamer_rtsp_server/auto/r_t_s_p_address_pool.rs.html#57-112' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait RTSPAddressPoolExt {
+    fn <a href='#tymethod.acquire_address' class='fnname'>acquire_address</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flags: <a class="struct" href="../gstreamer_rtsp_server/struct.RTSPAddressFlags.html" title="struct gstreamer_rtsp_server::RTSPAddressFlags">RTSPAddressFlags</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n_ports: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a><br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer_rtsp_server/struct.RTSPAddress.html" title="struct gstreamer_rtsp_server::RTSPAddress">RTSPAddress</a>&gt;;
+<div class='item-spacer'></div>    fn <a href='#tymethod.add_range' class='fnname'>add_range</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min_address: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max_address: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min_port: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max_port: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ttl: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="struct" href="../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;;
+<div class='item-spacer'></div>    fn <a href='#tymethod.clear' class='fnname'>clear</a>(&amp;self);
+<div class='item-spacer'></div>    fn <a href='#tymethod.dump' class='fnname'>dump</a>(&amp;self);
+<div class='item-spacer'></div>    fn <a href='#tymethod.has_unicast_addresses' class='fnname'>has_unicast_addresses</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+}</pre><div class='docblock'><p>Trait containing all <code>RTSPAddressPool</code> methods.</p>
+
+<h1 id='implementors-1' class='section-header'><a href='#implementors-1'>Implementors</a></h1>
+<p><a href="struct.RTSPAddressPool.html"><code>RTSPAddressPool</code></a></p>
+</div>
+            <h2 id='required-methods' class='small-section-header'>
+              Required Methods<a href='#required-methods' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='tymethod.acquire_address' class='method'><span id='acquire_address.v' class='invisible'><code>fn <a href='#tymethod.acquire_address' class='fnname'>acquire_address</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;flags: <a class="struct" href="../gstreamer_rtsp_server/struct.RTSPAddressFlags.html" title="struct gstreamer_rtsp_server::RTSPAddressFlags">RTSPAddressFlags</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;n_ports: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer_rtsp_server/struct.RTSPAddress.html" title="struct gstreamer_rtsp_server::RTSPAddress">RTSPAddress</a>&gt;</code></span></h3><div class='docblock'><p>Take an address and ports from <code>self</code>. <code>flags</code> can be used to control the
+allocation. <code>n_ports</code> consecutive ports will be allocated of which the first
+one can be found in <code>port</code>.</p>
+
+<h2 id='flags' class='section-header'><a href='#flags'><code>flags</code></a></h2>
+<p>flags</p>
+
+<h2 id='n_ports' class='section-header'><a href='#n_ports'><code>n_ports</code></a></h2>
+<p>the amount of ports</p>
+
+<h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
+<p>a <code>RTSPAddress</code> that should be freed with
+gst_rtsp_address_free after use or <code>None</code> when no address could be
+acquired.</p>
+</div><h3 id='tymethod.add_range' class='method'><span id='add_range.v' class='invisible'><code>fn <a href='#tymethod.add_range' class='fnname'>add_range</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;min_address: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;max_address: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;min_port: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;max_port: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;ttl: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="struct" href="../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;</code></span></h3><div class='docblock'><p>Adds the addresses from <code>min_addess</code> to <code>max_address</code> (inclusive)
+to <code>self</code>. The valid port range for the addresses will be from <code>min_port</code> to
+<code>max_port</code> inclusive.</p>
+
+<p>When <code>ttl</code> is 0, <code>min_address</code> and <code>max_address</code> should be unicast addresses.
+<code>min_address</code> and <code>max_address</code> can be set to
+<code>GST_RTSP_ADDRESS_POOL_ANY_IPV4</code> or <code>GST_RTSP_ADDRESS_POOL_ANY_IPV6</code> to bind
+to all available IPv4 or IPv6 addresses.</p>
+
+<p>When <code>ttl</code> &gt; 0, <code>min_address</code> and <code>max_address</code> should be multicast addresses.</p>
+
+<h2 id='min_address' class='section-header'><a href='#min_address'><code>min_address</code></a></h2>
+<p>a minimum address to add</p>
+
+<h2 id='max_address' class='section-header'><a href='#max_address'><code>max_address</code></a></h2>
+<p>a maximum address to add</p>
+
+<h2 id='min_port' class='section-header'><a href='#min_port'><code>min_port</code></a></h2>
+<p>the minimum port</p>
+
+<h2 id='max_port' class='section-header'><a href='#max_port'><code>max_port</code></a></h2>
+<p>the maximum port</p>
+
+<h2 id='ttl' class='section-header'><a href='#ttl'><code>ttl</code></a></h2>
+<p>a TTL or 0 for unicast addresses</p>
+
+<h1 id='returns-1' class='section-header'><a href='#returns-1'>Returns</a></h1>
+<p><code>true</code> if the addresses could be added.</p>
+</div><h3 id='tymethod.clear' class='method'><span id='clear.v' class='invisible'><code>fn <a href='#tymethod.clear' class='fnname'>clear</a>(&amp;self)</code></span></h3><div class='docblock'><p>Clear all addresses in <code>self</code>. There should be no outstanding
+allocations.</p>
+</div><h3 id='tymethod.dump' class='method'><span id='dump.v' class='invisible'><code>fn <a href='#tymethod.dump' class='fnname'>dump</a>(&amp;self)</code></span></h3><div class='docblock'><p>Dump the free and allocated addresses to stdout.</p>
+</div><h3 id='tymethod.has_unicast_addresses' class='method'><span id='has_unicast_addresses.v' class='invisible'><code>fn <a href='#tymethod.has_unicast_addresses' class='fnname'>has_unicast_addresses</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Used to know if the pool includes any unicast addresses.</p>
+
+<h1 id='returns-2' class='section-header'><a href='#returns-2'>Returns</a></h1>
+<p><code>true</code> if the pool includes any unicast addresses, <code>false</code> otherwise</p>
+</div></div>
+        <h2 id='implementors' class='small-section-header'>
+          Implementors<a href='#implementors' class='anchor'></a>
+        </h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><code>impl&lt;O:&nbsp;<a class="trait" href="../gstreamer_rtsp_server/trait.IsA.html" title="trait gstreamer_rtsp_server::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer_rtsp_server/struct.RTSPAddressPool.html" title="struct gstreamer_rtsp_server::RTSPAddressPool">RTSPAddressPool</a>&gt;&gt; RTSPAddressPoolExt for O</code></li>
+</ul><script type="text/javascript" async
+                         src="../implementors/gstreamer_rtsp_server/trait.RTSPAddressPoolExt.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer_rtsp_server";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

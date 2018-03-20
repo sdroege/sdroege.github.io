@@ -49,9 +49,72 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/gstreamer_audio_sys/lib.rs.html#4-1364' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/gstreamer_audio_sys/lib.rs.html#5-1707' title='goto source code'>[src]</a></span></h1>
 <h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
 <table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GstAudioAggregator.html"
+                                  title='struct gstreamer_audio_sys::GstAudioAggregator'>GstAudioAggregator</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GstAudioAggregatorClass.html"
+                                  title='struct gstreamer_audio_sys::GstAudioAggregatorClass'>GstAudioAggregatorClass</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GstAudioAggregatorConvertPad.html"
+                                  title='struct gstreamer_audio_sys::GstAudioAggregatorConvertPad'>GstAudioAggregatorConvertPad</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GstAudioAggregatorConvertPadClass.html"
+                                  title='struct gstreamer_audio_sys::GstAudioAggregatorConvertPadClass'>GstAudioAggregatorConvertPadClass</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GstAudioAggregatorConvertPadPrivate.html"
+                                  title='struct gstreamer_audio_sys::GstAudioAggregatorConvertPadPrivate'>GstAudioAggregatorConvertPadPrivate</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GstAudioAggregatorPad.html"
+                                  title='struct gstreamer_audio_sys::GstAudioAggregatorPad'>GstAudioAggregatorPad</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GstAudioAggregatorPadClass.html"
+                                  title='struct gstreamer_audio_sys::GstAudioAggregatorPadClass'>GstAudioAggregatorPadClass</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GstAudioAggregatorPadPrivate.html"
+                                  title='struct gstreamer_audio_sys::GstAudioAggregatorPadPrivate'>GstAudioAggregatorPadPrivate</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GstAudioAggregatorPrivate.html"
+                                  title='struct gstreamer_audio_sys::GstAudioAggregatorPrivate'>GstAudioAggregatorPrivate</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
                        <tr class=' module-item'>
                            <td><a class="struct" href="struct.GstAudioBaseSink.html"
                                   title='struct gstreamer_audio_sys::GstAudioBaseSink'>GstAudioBaseSink</a></td>
@@ -342,6 +405,13 @@
                        <tr class=' module-item'>
                            <td><a class="struct" href="struct.GstAudioSrcClass.html"
                                   title='struct gstreamer_audio_sys::GstAudioSrcClass'>GstAudioSrcClass</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GstAudioStreamAlign.html"
+                                  title='struct gstreamer_audio_sys::GstAudioStreamAlign'>GstAudioStreamAlign</a></td>
                            <td class='docblock-short'>
                                 
                            </td>
@@ -756,6 +826,13 @@
                        <tr class=' module-item'>
                            <td><a class="constant" href="constant.GST_AUDIO_CONVERTER_OPT_DITHER_METHOD.html"
                                   title='constant gstreamer_audio_sys::GST_AUDIO_CONVERTER_OPT_DITHER_METHOD'>GST_AUDIO_CONVERTER_OPT_DITHER_METHOD</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.GST_AUDIO_CONVERTER_OPT_MIX_MATRIX.html"
+                                  title='constant gstreamer_audio_sys::GST_AUDIO_CONVERTER_OPT_MIX_MATRIX'>GST_AUDIO_CONVERTER_OPT_MIX_MATRIX</a></td>
                            <td class='docblock-short'>
                                 
                            </td>
@@ -1609,6 +1686,34 @@
                        </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
 <table>
                        <tr class=' module-item'>
+                           <td><a class="fn" href="fn.gst_audio_aggregator_convert_pad_get_type.html"
+                                  title='fn gstreamer_audio_sys::gst_audio_aggregator_convert_pad_get_type'>gst_audio_aggregator_convert_pad_get_type</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.gst_audio_aggregator_get_type.html"
+                                  title='fn gstreamer_audio_sys::gst_audio_aggregator_get_type'>gst_audio_aggregator_get_type</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.gst_audio_aggregator_pad_get_type.html"
+                                  title='fn gstreamer_audio_sys::gst_audio_aggregator_pad_get_type'>gst_audio_aggregator_pad_get_type</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.gst_audio_aggregator_set_sink_caps.html"
+                                  title='fn gstreamer_audio_sys::gst_audio_aggregator_set_sink_caps'>gst_audio_aggregator_set_sink_caps</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
                            <td><a class="fn" href="fn.gst_audio_base_sink_create_ringbuffer.html"
                                   title='fn gstreamer_audio_sys::gst_audio_base_sink_create_ringbuffer'>gst_audio_base_sink_create_ringbuffer</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
                            <td class='docblock-short'>
@@ -1840,6 +1945,13 @@
                            </td>
                        </tr>
                        <tr class=' module-item'>
+                           <td><a class="fn" href="fn.gst_audio_channel_mixer_new_with_matrix.html"
+                                  title='fn gstreamer_audio_sys::gst_audio_channel_mixer_new_with_matrix'>gst_audio_channel_mixer_new_with_matrix</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
                            <td><a class="fn" href="fn.gst_audio_channel_mixer_samples.html"
                                   title='fn gstreamer_audio_sys::gst_audio_channel_mixer_samples'>gst_audio_channel_mixer_samples</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
                            <td class='docblock-short'>
@@ -1945,6 +2057,13 @@
                            </td>
                        </tr>
                        <tr class=' module-item'>
+                           <td><a class="fn" href="fn.gst_audio_converter_convert.html"
+                                  title='fn gstreamer_audio_sys::gst_audio_converter_convert'>gst_audio_converter_convert</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
                            <td><a class="fn" href="fn.gst_audio_converter_flags_get_type.html"
                                   title='fn gstreamer_audio_sys::gst_audio_converter_flags_get_type'>gst_audio_converter_flags_get_type</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
                            <td class='docblock-short'>
@@ -1982,6 +2101,13 @@
                        <tr class=' module-item'>
                            <td><a class="fn" href="fn.gst_audio_converter_get_out_frames.html"
                                   title='fn gstreamer_audio_sys::gst_audio_converter_get_out_frames'>gst_audio_converter_get_out_frames</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.gst_audio_converter_get_type.html"
+                                  title='fn gstreamer_audio_sys::gst_audio_converter_get_type'>gst_audio_converter_get_type</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
                            <td class='docblock-short'>
                                 
                            </td>
@@ -3060,6 +3186,104 @@
                        <tr class=' module-item'>
                            <td><a class="fn" href="fn.gst_audio_src_get_type.html"
                                   title='fn gstreamer_audio_sys::gst_audio_src_get_type'>gst_audio_src_get_type</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.gst_audio_stream_align_copy.html"
+                                  title='fn gstreamer_audio_sys::gst_audio_stream_align_copy'>gst_audio_stream_align_copy</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.gst_audio_stream_align_free.html"
+                                  title='fn gstreamer_audio_sys::gst_audio_stream_align_free'>gst_audio_stream_align_free</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.gst_audio_stream_align_get_alignment_threshold.html"
+                                  title='fn gstreamer_audio_sys::gst_audio_stream_align_get_alignment_threshold'>gst_audio_stream_align_get_alignment_threshold</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.gst_audio_stream_align_get_discont_wait.html"
+                                  title='fn gstreamer_audio_sys::gst_audio_stream_align_get_discont_wait'>gst_audio_stream_align_get_discont_wait</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.gst_audio_stream_align_get_rate.html"
+                                  title='fn gstreamer_audio_sys::gst_audio_stream_align_get_rate'>gst_audio_stream_align_get_rate</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.gst_audio_stream_align_get_samples_since_discont.html"
+                                  title='fn gstreamer_audio_sys::gst_audio_stream_align_get_samples_since_discont'>gst_audio_stream_align_get_samples_since_discont</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.gst_audio_stream_align_get_timestamp_at_discont.html"
+                                  title='fn gstreamer_audio_sys::gst_audio_stream_align_get_timestamp_at_discont'>gst_audio_stream_align_get_timestamp_at_discont</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.gst_audio_stream_align_get_type.html"
+                                  title='fn gstreamer_audio_sys::gst_audio_stream_align_get_type'>gst_audio_stream_align_get_type</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.gst_audio_stream_align_mark_discont.html"
+                                  title='fn gstreamer_audio_sys::gst_audio_stream_align_mark_discont'>gst_audio_stream_align_mark_discont</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.gst_audio_stream_align_new.html"
+                                  title='fn gstreamer_audio_sys::gst_audio_stream_align_new'>gst_audio_stream_align_new</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.gst_audio_stream_align_process.html"
+                                  title='fn gstreamer_audio_sys::gst_audio_stream_align_process'>gst_audio_stream_align_process</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.gst_audio_stream_align_set_alignment_threshold.html"
+                                  title='fn gstreamer_audio_sys::gst_audio_stream_align_set_alignment_threshold'>gst_audio_stream_align_set_alignment_threshold</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.gst_audio_stream_align_set_discont_wait.html"
+                                  title='fn gstreamer_audio_sys::gst_audio_stream_align_set_discont_wait'>gst_audio_stream_align_set_discont_wait</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="fn" href="fn.gst_audio_stream_align_set_rate.html"
+                                  title='fn gstreamer_audio_sys::gst_audio_stream_align_set_rate'>gst_audio_stream_align_set_rate</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
                            <td class='docblock-short'>
                                 
                            </td>

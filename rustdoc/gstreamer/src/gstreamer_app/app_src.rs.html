@@ -268,6 +268,33 @@
 <span id="222">222</span>
 <span id="223">223</span>
 <span id="224">224</span>
+<span id="225">225</span>
+<span id="226">226</span>
+<span id="227">227</span>
+<span id="228">228</span>
+<span id="229">229</span>
+<span id="230">230</span>
+<span id="231">231</span>
+<span id="232">232</span>
+<span id="233">233</span>
+<span id="234">234</span>
+<span id="235">235</span>
+<span id="236">236</span>
+<span id="237">237</span>
+<span id="238">238</span>
+<span id="239">239</span>
+<span id="240">240</span>
+<span id="241">241</span>
+<span id="242">242</span>
+<span id="243">243</span>
+<span id="244">244</span>
+<span id="245">245</span>
+<span id="246">246</span>
+<span id="247">247</span>
+<span id="248">248</span>
+<span id="249">249</span>
+<span id="250">250</span>
+<span id="251">251</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -443,6 +470,33 @@
         }
     }
 
+    <span class="doccomment">/// Adds a buffer list to the queue of buffers and buffer lists that the</span>
+    <span class="doccomment">/// appsrc element will push to its source pad. This function takes ownership</span>
+    <span class="doccomment">/// of `buffer_list`.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// When the block property is TRUE, this function can block until free</span>
+    <span class="doccomment">/// space becomes available in the queue.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// Feature: `v1_14`</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// ## `buffer_list`</span>
+    <span class="doccomment">/// a `gst::BufferList` to push</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # Returns</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// `gst::FlowReturn::Ok` when the buffer list was successfuly queued.</span>
+    <span class="doccomment">/// `gst::FlowReturn::Flushing` when `self` is not PAUSED or PLAYING.</span>
+    <span class="doccomment">/// `gst::FlowReturn::Eos` when EOS occured.</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_14&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">push_buffer_list</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">list</span>: <span class="ident">gst</span>::<span class="ident">BufferList</span>) <span class="op">-&gt;</span> <span class="ident">gst</span>::<span class="ident">FlowReturn</span> {
+        <span class="kw">unsafe</span> {
+            <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_app_src_push_buffer_list</span>(
+                <span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
+                <span class="ident">list</span>.<span class="ident">into_ptr</span>(),
+            ))
+        }
+    }
+
     <span class="doccomment">/// Set callbacks which will be executed when data is needed, enough data has</span>
     <span class="doccomment">/// been collected or when a seek should be performed.</span>
     <span class="doccomment">/// This is an alternative to using the signals, it has lower overhead and is thus</span>
@@ -472,7 +526,7 @@
     <span class="doccomment">/// ## `min`</span>
     <span class="doccomment">/// the min latency</span>
     <span class="doccomment">/// ## `max`</span>
-    <span class="doccomment">/// the min latency</span>
+    <span class="doccomment">/// the max latency</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">set_latency</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">min</span>: <span class="ident">gst</span>::<span class="ident">ClockTime</span>, <span class="ident">max</span>: <span class="ident">gst</span>::<span class="ident">ClockTime</span>) {
         <span class="kw">unsafe</span> {
             <span class="ident">ffi</span>::<span class="ident">gst_app_src_set_latency</span>(<span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>, <span class="ident">min</span>.<span class="ident">to_glib</span>(), <span class="ident">max</span>.<span class="ident">to_glib</span>());
@@ -483,7 +537,7 @@
     <span class="doccomment">/// ## `min`</span>
     <span class="doccomment">/// the min latency</span>
     <span class="doccomment">/// ## `max`</span>
-    <span class="doccomment">/// the min latency</span>
+    <span class="doccomment">/// the max latency</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get_latency</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> (<span class="ident">gst</span>::<span class="ident">ClockTime</span>, <span class="ident">gst</span>::<span class="ident">ClockTime</span>) {
         <span class="kw">unsafe</span> {
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">min</span> <span class="op">=</span> <span class="ident">mem</span>::<span class="ident">uninitialized</span>();

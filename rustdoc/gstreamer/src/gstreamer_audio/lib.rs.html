@@ -128,6 +128,8 @@
 <span id="82">82</span>
 <span id="83">83</span>
 <span id="84">84</span>
+<span id="85">85</span>
+<span id="86">86</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -185,6 +187,8 @@
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">audio_info</span>::<span class="kw-2">*</span>;
 <span class="kw">mod</span> <span class="ident">audio_channel_position</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">audio_channel_position</span>::<span class="kw-2">*</span>;
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_14&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="kw">mod</span> <span class="ident">audio_stream_align</span>;
 
 <span class="kw">use</span> <span class="ident">glib</span>::<span class="ident">translate</span>::{<span class="ident">from_glib_full</span>, <span class="ident">ToGlibPtr</span>};
 <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">audio_buffer_clip</span>(

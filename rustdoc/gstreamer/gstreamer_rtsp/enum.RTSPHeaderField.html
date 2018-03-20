@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `RTSPHeaderField` enum in crate `gstreamer_rtsp`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, RTSPHeaderField">
+
+    <title>gstreamer_rtsp::RTSPHeaderField - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Enum RTSPHeaderField</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.Invalid">Invalid</a><a href="#variant.Accept">Accept</a><a href="#variant.AcceptEncoding">AcceptEncoding</a><a href="#variant.AcceptLanguage">AcceptLanguage</a><a href="#variant.Allow">Allow</a><a href="#variant.Authorization">Authorization</a><a href="#variant.Bandwidth">Bandwidth</a><a href="#variant.Blocksize">Blocksize</a><a href="#variant.CacheControl">CacheControl</a><a href="#variant.Conference">Conference</a><a href="#variant.Connection">Connection</a><a href="#variant.ContentBase">ContentBase</a><a href="#variant.ContentEncoding">ContentEncoding</a><a href="#variant.ContentLanguage">ContentLanguage</a><a href="#variant.ContentLength">ContentLength</a><a href="#variant.ContentLocation">ContentLocation</a><a href="#variant.ContentType">ContentType</a><a href="#variant.Cseq">Cseq</a><a href="#variant.Date">Date</a><a href="#variant.Expires">Expires</a><a href="#variant.From">From</a><a href="#variant.IfModifiedSince">IfModifiedSince</a><a href="#variant.LastModified">LastModified</a><a href="#variant.ProxyAuthenticate">ProxyAuthenticate</a><a href="#variant.ProxyRequire">ProxyRequire</a><a href="#variant.Public">Public</a><a href="#variant.Range">Range</a><a href="#variant.Referer">Referer</a><a href="#variant.Require">Require</a><a href="#variant.RetryAfter">RetryAfter</a><a href="#variant.RtpInfo">RtpInfo</a><a href="#variant.Scale">Scale</a><a href="#variant.Session">Session</a><a href="#variant.Server">Server</a><a href="#variant.Speed">Speed</a><a href="#variant.Transport">Transport</a><a href="#variant.Unsupported">Unsupported</a><a href="#variant.UserAgent">UserAgent</a><a href="#variant.Via">Via</a><a href="#variant.WwwAuthenticate">WwwAuthenticate</a><a href="#variant.ClientChallenge">ClientChallenge</a><a href="#variant.RealChallenge1">RealChallenge1</a><a href="#variant.RealChallenge2">RealChallenge2</a><a href="#variant.RealChallenge3">RealChallenge3</a><a href="#variant.Subscribe">Subscribe</a><a href="#variant.Alert">Alert</a><a href="#variant.ClientId">ClientId</a><a href="#variant.CompanyId">CompanyId</a><a href="#variant.Guid">Guid</a><a href="#variant.RegionData">RegionData</a><a href="#variant.MaxAsmWidth">MaxAsmWidth</a><a href="#variant.Language">Language</a><a href="#variant.PlayerStartTime">PlayerStartTime</a><a href="#variant.Location">Location</a><a href="#variant.Etag">Etag</a><a href="#variant.IfMatch">IfMatch</a><a href="#variant.AcceptCharset">AcceptCharset</a><a href="#variant.Supported">Supported</a><a href="#variant.Vary">Vary</a><a href="#variant.XAccelerateStreaming">XAccelerateStreaming</a><a href="#variant.XAcceptAuthent">XAcceptAuthent</a><a href="#variant.XAcceptProxyAuthent">XAcceptProxyAuthent</a><a href="#variant.XBroadcastId">XBroadcastId</a><a href="#variant.XBurstStreaming">XBurstStreaming</a><a href="#variant.XNotice">XNotice</a><a href="#variant.XPlayerLagTime">XPlayerLagTime</a><a href="#variant.XPlaylist">XPlaylist</a><a href="#variant.XPlaylistChangeNotice">XPlaylistChangeNotice</a><a href="#variant.XPlaylistGenId">XPlaylistGenId</a><a href="#variant.XPlaylistSeekId">XPlaylistSeekId</a><a href="#variant.XProxyClientAgent">XProxyClientAgent</a><a href="#variant.XProxyClientVerb">XProxyClientVerb</a><a href="#variant.XRecedingPlaylistchange">XRecedingPlaylistchange</a><a href="#variant.XRtpInfo">XRtpInfo</a><a href="#variant.XStartupprofile">XStartupprofile</a><a href="#variant.Timestamp">Timestamp</a><a href="#variant.AuthenticationInfo">AuthenticationInfo</a><a href="#variant.Host">Host</a><a href="#variant.Pragma">Pragma</a><a href="#variant.XServerIpAddress">XServerIpAddress</a><a href="#variant.XSessioncookie">XSessioncookie</a><a href="#variant.RtcpInterval">RtcpInterval</a><a href="#variant.Keymgmt">Keymgmt</a><a href="#variant.PipelinedRequests">PipelinedRequests</a><a href="#variant.MediaProperties">MediaProperties</a><a href="#variant.SeekStyle">SeekStyle</a><a href="#variant.AcceptRanges">AcceptRanges</a><a href="#variant.Last">Last</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Copy">Copy</a><a href="#impl-Debug">Debug</a><a href="#impl-Eq">Eq</a><a href="#impl-PartialEq">PartialEq</a><a href="#impl-Hash">Hash</a><a href="#impl-StaticType">StaticType</a><a href="#impl-FromValueOptional%3C%27a%3E">FromValueOptional&lt;&#39;a&gt;</a><a href="#impl-FromValue%3C%27a%3E">FromValue&lt;&#39;a&gt;</a><a href="#impl-SetValue">SetValue</a></div></div><p class='location'><a href='index.html'>gstreamer_rtsp</a></p><script>window.sidebarCurrent = {name: 'RTSPHeaderField', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='index.html'>gstreamer_rtsp</a>::<wbr><a class="enum" href=''>RTSPHeaderField</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/gstreamer_rtsp/auto/enums.rs.html#139-230' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum RTSPHeaderField {
+    Invalid,
+    Accept,
+    AcceptEncoding,
+    AcceptLanguage,
+    Allow,
+    Authorization,
+    Bandwidth,
+    Blocksize,
+    CacheControl,
+    Conference,
+    Connection,
+    ContentBase,
+    ContentEncoding,
+    ContentLanguage,
+    ContentLength,
+    ContentLocation,
+    ContentType,
+    Cseq,
+    Date,
+    Expires,
+    From,
+    IfModifiedSince,
+    LastModified,
+    ProxyAuthenticate,
+    ProxyRequire,
+    Public,
+    Range,
+    Referer,
+    Require,
+    RetryAfter,
+    RtpInfo,
+    Scale,
+    Session,
+    Server,
+    Speed,
+    Transport,
+    Unsupported,
+    UserAgent,
+    Via,
+    WwwAuthenticate,
+    ClientChallenge,
+    RealChallenge1,
+    RealChallenge2,
+    RealChallenge3,
+    Subscribe,
+    Alert,
+    ClientId,
+    CompanyId,
+    Guid,
+    RegionData,
+    MaxAsmWidth,
+    Language,
+    PlayerStartTime,
+    Location,
+    Etag,
+    IfMatch,
+    AcceptCharset,
+    Supported,
+    Vary,
+    XAccelerateStreaming,
+    XAcceptAuthent,
+    XAcceptProxyAuthent,
+    XBroadcastId,
+    XBurstStreaming,
+    XNotice,
+    XPlayerLagTime,
+    XPlaylist,
+    XPlaylistChangeNotice,
+    XPlaylistGenId,
+    XPlaylistSeekId,
+    XProxyClientAgent,
+    XProxyClientVerb,
+    XRecedingPlaylistchange,
+    XRtpInfo,
+    XStartupprofile,
+    Timestamp,
+    AuthenticationInfo,
+    Host,
+    Pragma,
+    XServerIpAddress,
+    XSessioncookie,
+    RtcpInterval,
+    Keymgmt,
+    PipelinedRequests,
+    MediaProperties,
+    SeekStyle,
+    AcceptRanges,
+    Last,
+    // some variants omitted
+}</pre><div class='docblock'><p>Enumeration of rtsp header fields</p>
+</div><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.Invalid" class="variant small-section-header"><a href="#variant.Invalid" class="anchor field"></a><span id='Invalid.v' class='invisible'><code>Invalid</code></span></span><span id="variant.Accept" class="variant small-section-header"><a href="#variant.Accept" class="anchor field"></a><span id='Accept.v' class='invisible'><code>Accept</code></span></span><span id="variant.AcceptEncoding" class="variant small-section-header"><a href="#variant.AcceptEncoding" class="anchor field"></a><span id='AcceptEncoding.v' class='invisible'><code>AcceptEncoding</code></span></span><span id="variant.AcceptLanguage" class="variant small-section-header"><a href="#variant.AcceptLanguage" class="anchor field"></a><span id='AcceptLanguage.v' class='invisible'><code>AcceptLanguage</code></span></span><span id="variant.Allow" class="variant small-section-header"><a href="#variant.Allow" class="anchor field"></a><span id='Allow.v' class='invisible'><code>Allow</code></span></span><span id="variant.Authorization" class="variant small-section-header"><a href="#variant.Authorization" class="anchor field"></a><span id='Authorization.v' class='invisible'><code>Authorization</code></span></span><span id="variant.Bandwidth" class="variant small-section-header"><a href="#variant.Bandwidth" class="anchor field"></a><span id='Bandwidth.v' class='invisible'><code>Bandwidth</code></span></span><span id="variant.Blocksize" class="variant small-section-header"><a href="#variant.Blocksize" class="anchor field"></a><span id='Blocksize.v' class='invisible'><code>Blocksize</code></span></span><span id="variant.CacheControl" class="variant small-section-header"><a href="#variant.CacheControl" class="anchor field"></a><span id='CacheControl.v' class='invisible'><code>CacheControl</code></span></span><span id="variant.Conference" class="variant small-section-header"><a href="#variant.Conference" class="anchor field"></a><span id='Conference.v' class='invisible'><code>Conference</code></span></span><span id="variant.Connection" class="variant small-section-header"><a href="#variant.Connection" class="anchor field"></a><span id='Connection.v' class='invisible'><code>Connection</code></span></span><span id="variant.ContentBase" class="variant small-section-header"><a href="#variant.ContentBase" class="anchor field"></a><span id='ContentBase.v' class='invisible'><code>ContentBase</code></span></span><span id="variant.ContentEncoding" class="variant small-section-header"><a href="#variant.ContentEncoding" class="anchor field"></a><span id='ContentEncoding.v' class='invisible'><code>ContentEncoding</code></span></span><span id="variant.ContentLanguage" class="variant small-section-header"><a href="#variant.ContentLanguage" class="anchor field"></a><span id='ContentLanguage.v' class='invisible'><code>ContentLanguage</code></span></span><span id="variant.ContentLength" class="variant small-section-header"><a href="#variant.ContentLength" class="anchor field"></a><span id='ContentLength.v' class='invisible'><code>ContentLength</code></span></span><span id="variant.ContentLocation" class="variant small-section-header"><a href="#variant.ContentLocation" class="anchor field"></a><span id='ContentLocation.v' class='invisible'><code>ContentLocation</code></span></span><span id="variant.ContentType" class="variant small-section-header"><a href="#variant.ContentType" class="anchor field"></a><span id='ContentType.v' class='invisible'><code>ContentType</code></span></span><span id="variant.Cseq" class="variant small-section-header"><a href="#variant.Cseq" class="anchor field"></a><span id='Cseq.v' class='invisible'><code>Cseq</code></span></span><span id="variant.Date" class="variant small-section-header"><a href="#variant.Date" class="anchor field"></a><span id='Date.v' class='invisible'><code>Date</code></span></span><span id="variant.Expires" class="variant small-section-header"><a href="#variant.Expires" class="anchor field"></a><span id='Expires.v' class='invisible'><code>Expires</code></span></span><span id="variant.From" class="variant small-section-header"><a href="#variant.From" class="anchor field"></a><span id='From.v' class='invisible'><code>From</code></span></span><span id="variant.IfModifiedSince" class="variant small-section-header"><a href="#variant.IfModifiedSince" class="anchor field"></a><span id='IfModifiedSince.v' class='invisible'><code>IfModifiedSince</code></span></span><span id="variant.LastModified" class="variant small-section-header"><a href="#variant.LastModified" class="anchor field"></a><span id='LastModified.v' class='invisible'><code>LastModified</code></span></span><span id="variant.ProxyAuthenticate" class="variant small-section-header"><a href="#variant.ProxyAuthenticate" class="anchor field"></a><span id='ProxyAuthenticate.v' class='invisible'><code>ProxyAuthenticate</code></span></span><span id="variant.ProxyRequire" class="variant small-section-header"><a href="#variant.ProxyRequire" class="anchor field"></a><span id='ProxyRequire.v' class='invisible'><code>ProxyRequire</code></span></span><span id="variant.Public" class="variant small-section-header"><a href="#variant.Public" class="anchor field"></a><span id='Public.v' class='invisible'><code>Public</code></span></span><span id="variant.Range" class="variant small-section-header"><a href="#variant.Range" class="anchor field"></a><span id='Range.v' class='invisible'><code>Range</code></span></span><span id="variant.Referer" class="variant small-section-header"><a href="#variant.Referer" class="anchor field"></a><span id='Referer.v' class='invisible'><code>Referer</code></span></span><span id="variant.Require" class="variant small-section-header"><a href="#variant.Require" class="anchor field"></a><span id='Require.v' class='invisible'><code>Require</code></span></span><span id="variant.RetryAfter" class="variant small-section-header"><a href="#variant.RetryAfter" class="anchor field"></a><span id='RetryAfter.v' class='invisible'><code>RetryAfter</code></span></span><span id="variant.RtpInfo" class="variant small-section-header"><a href="#variant.RtpInfo" class="anchor field"></a><span id='RtpInfo.v' class='invisible'><code>RtpInfo</code></span></span><span id="variant.Scale" class="variant small-section-header"><a href="#variant.Scale" class="anchor field"></a><span id='Scale.v' class='invisible'><code>Scale</code></span></span><span id="variant.Session" class="variant small-section-header"><a href="#variant.Session" class="anchor field"></a><span id='Session.v' class='invisible'><code>Session</code></span></span><span id="variant.Server" class="variant small-section-header"><a href="#variant.Server" class="anchor field"></a><span id='Server.v' class='invisible'><code>Server</code></span></span><span id="variant.Speed" class="variant small-section-header"><a href="#variant.Speed" class="anchor field"></a><span id='Speed.v' class='invisible'><code>Speed</code></span></span><span id="variant.Transport" class="variant small-section-header"><a href="#variant.Transport" class="anchor field"></a><span id='Transport.v' class='invisible'><code>Transport</code></span></span><span id="variant.Unsupported" class="variant small-section-header"><a href="#variant.Unsupported" class="anchor field"></a><span id='Unsupported.v' class='invisible'><code>Unsupported</code></span></span><span id="variant.UserAgent" class="variant small-section-header"><a href="#variant.UserAgent" class="anchor field"></a><span id='UserAgent.v' class='invisible'><code>UserAgent</code></span></span><span id="variant.Via" class="variant small-section-header"><a href="#variant.Via" class="anchor field"></a><span id='Via.v' class='invisible'><code>Via</code></span></span><span id="variant.WwwAuthenticate" class="variant small-section-header"><a href="#variant.WwwAuthenticate" class="anchor field"></a><span id='WwwAuthenticate.v' class='invisible'><code>WwwAuthenticate</code></span></span><span id="variant.ClientChallenge" class="variant small-section-header"><a href="#variant.ClientChallenge" class="anchor field"></a><span id='ClientChallenge.v' class='invisible'><code>ClientChallenge</code></span></span><span id="variant.RealChallenge1" class="variant small-section-header"><a href="#variant.RealChallenge1" class="anchor field"></a><span id='RealChallenge1.v' class='invisible'><code>RealChallenge1</code></span></span><span id="variant.RealChallenge2" class="variant small-section-header"><a href="#variant.RealChallenge2" class="anchor field"></a><span id='RealChallenge2.v' class='invisible'><code>RealChallenge2</code></span></span><span id="variant.RealChallenge3" class="variant small-section-header"><a href="#variant.RealChallenge3" class="anchor field"></a><span id='RealChallenge3.v' class='invisible'><code>RealChallenge3</code></span></span><span id="variant.Subscribe" class="variant small-section-header"><a href="#variant.Subscribe" class="anchor field"></a><span id='Subscribe.v' class='invisible'><code>Subscribe</code></span></span><span id="variant.Alert" class="variant small-section-header"><a href="#variant.Alert" class="anchor field"></a><span id='Alert.v' class='invisible'><code>Alert</code></span></span><span id="variant.ClientId" class="variant small-section-header"><a href="#variant.ClientId" class="anchor field"></a><span id='ClientId.v' class='invisible'><code>ClientId</code></span></span><span id="variant.CompanyId" class="variant small-section-header"><a href="#variant.CompanyId" class="anchor field"></a><span id='CompanyId.v' class='invisible'><code>CompanyId</code></span></span><span id="variant.Guid" class="variant small-section-header"><a href="#variant.Guid" class="anchor field"></a><span id='Guid.v' class='invisible'><code>Guid</code></span></span><span id="variant.RegionData" class="variant small-section-header"><a href="#variant.RegionData" class="anchor field"></a><span id='RegionData.v' class='invisible'><code>RegionData</code></span></span><span id="variant.MaxAsmWidth" class="variant small-section-header"><a href="#variant.MaxAsmWidth" class="anchor field"></a><span id='MaxAsmWidth.v' class='invisible'><code>MaxAsmWidth</code></span></span><span id="variant.Language" class="variant small-section-header"><a href="#variant.Language" class="anchor field"></a><span id='Language.v' class='invisible'><code>Language</code></span></span><span id="variant.PlayerStartTime" class="variant small-section-header"><a href="#variant.PlayerStartTime" class="anchor field"></a><span id='PlayerStartTime.v' class='invisible'><code>PlayerStartTime</code></span></span><span id="variant.Location" class="variant small-section-header"><a href="#variant.Location" class="anchor field"></a><span id='Location.v' class='invisible'><code>Location</code></span></span><span id="variant.Etag" class="variant small-section-header"><a href="#variant.Etag" class="anchor field"></a><span id='Etag.v' class='invisible'><code>Etag</code></span></span><span id="variant.IfMatch" class="variant small-section-header"><a href="#variant.IfMatch" class="anchor field"></a><span id='IfMatch.v' class='invisible'><code>IfMatch</code></span></span><span id="variant.AcceptCharset" class="variant small-section-header"><a href="#variant.AcceptCharset" class="anchor field"></a><span id='AcceptCharset.v' class='invisible'><code>AcceptCharset</code></span></span><span id="variant.Supported" class="variant small-section-header"><a href="#variant.Supported" class="anchor field"></a><span id='Supported.v' class='invisible'><code>Supported</code></span></span><span id="variant.Vary" class="variant small-section-header"><a href="#variant.Vary" class="anchor field"></a><span id='Vary.v' class='invisible'><code>Vary</code></span></span><span id="variant.XAccelerateStreaming" class="variant small-section-header"><a href="#variant.XAccelerateStreaming" class="anchor field"></a><span id='XAccelerateStreaming.v' class='invisible'><code>XAccelerateStreaming</code></span></span><span id="variant.XAcceptAuthent" class="variant small-section-header"><a href="#variant.XAcceptAuthent" class="anchor field"></a><span id='XAcceptAuthent.v' class='invisible'><code>XAcceptAuthent</code></span></span><span id="variant.XAcceptProxyAuthent" class="variant small-section-header"><a href="#variant.XAcceptProxyAuthent" class="anchor field"></a><span id='XAcceptProxyAuthent.v' class='invisible'><code>XAcceptProxyAuthent</code></span></span><span id="variant.XBroadcastId" class="variant small-section-header"><a href="#variant.XBroadcastId" class="anchor field"></a><span id='XBroadcastId.v' class='invisible'><code>XBroadcastId</code></span></span><span id="variant.XBurstStreaming" class="variant small-section-header"><a href="#variant.XBurstStreaming" class="anchor field"></a><span id='XBurstStreaming.v' class='invisible'><code>XBurstStreaming</code></span></span><span id="variant.XNotice" class="variant small-section-header"><a href="#variant.XNotice" class="anchor field"></a><span id='XNotice.v' class='invisible'><code>XNotice</code></span></span><span id="variant.XPlayerLagTime" class="variant small-section-header"><a href="#variant.XPlayerLagTime" class="anchor field"></a><span id='XPlayerLagTime.v' class='invisible'><code>XPlayerLagTime</code></span></span><span id="variant.XPlaylist" class="variant small-section-header"><a href="#variant.XPlaylist" class="anchor field"></a><span id='XPlaylist.v' class='invisible'><code>XPlaylist</code></span></span><span id="variant.XPlaylistChangeNotice" class="variant small-section-header"><a href="#variant.XPlaylistChangeNotice" class="anchor field"></a><span id='XPlaylistChangeNotice.v' class='invisible'><code>XPlaylistChangeNotice</code></span></span><span id="variant.XPlaylistGenId" class="variant small-section-header"><a href="#variant.XPlaylistGenId" class="anchor field"></a><span id='XPlaylistGenId.v' class='invisible'><code>XPlaylistGenId</code></span></span><span id="variant.XPlaylistSeekId" class="variant small-section-header"><a href="#variant.XPlaylistSeekId" class="anchor field"></a><span id='XPlaylistSeekId.v' class='invisible'><code>XPlaylistSeekId</code></span></span><span id="variant.XProxyClientAgent" class="variant small-section-header"><a href="#variant.XProxyClientAgent" class="anchor field"></a><span id='XProxyClientAgent.v' class='invisible'><code>XProxyClientAgent</code></span></span><span id="variant.XProxyClientVerb" class="variant small-section-header"><a href="#variant.XProxyClientVerb" class="anchor field"></a><span id='XProxyClientVerb.v' class='invisible'><code>XProxyClientVerb</code></span></span><span id="variant.XRecedingPlaylistchange" class="variant small-section-header"><a href="#variant.XRecedingPlaylistchange" class="anchor field"></a><span id='XRecedingPlaylistchange.v' class='invisible'><code>XRecedingPlaylistchange</code></span></span><span id="variant.XRtpInfo" class="variant small-section-header"><a href="#variant.XRtpInfo" class="anchor field"></a><span id='XRtpInfo.v' class='invisible'><code>XRtpInfo</code></span></span><span id="variant.XStartupprofile" class="variant small-section-header"><a href="#variant.XStartupprofile" class="anchor field"></a><span id='XStartupprofile.v' class='invisible'><code>XStartupprofile</code></span></span><span id="variant.Timestamp" class="variant small-section-header"><a href="#variant.Timestamp" class="anchor field"></a><span id='Timestamp.v' class='invisible'><code>Timestamp</code></span></span><span id="variant.AuthenticationInfo" class="variant small-section-header"><a href="#variant.AuthenticationInfo" class="anchor field"></a><span id='AuthenticationInfo.v' class='invisible'><code>AuthenticationInfo</code></span></span><span id="variant.Host" class="variant small-section-header"><a href="#variant.Host" class="anchor field"></a><span id='Host.v' class='invisible'><code>Host</code></span></span><span id="variant.Pragma" class="variant small-section-header"><a href="#variant.Pragma" class="anchor field"></a><span id='Pragma.v' class='invisible'><code>Pragma</code></span></span><span id="variant.XServerIpAddress" class="variant small-section-header"><a href="#variant.XServerIpAddress" class="anchor field"></a><span id='XServerIpAddress.v' class='invisible'><code>XServerIpAddress</code></span></span><span id="variant.XSessioncookie" class="variant small-section-header"><a href="#variant.XSessioncookie" class="anchor field"></a><span id='XSessioncookie.v' class='invisible'><code>XSessioncookie</code></span></span><span id="variant.RtcpInterval" class="variant small-section-header"><a href="#variant.RtcpInterval" class="anchor field"></a><span id='RtcpInterval.v' class='invisible'><code>RtcpInterval</code></span></span><span id="variant.Keymgmt" class="variant small-section-header"><a href="#variant.Keymgmt" class="anchor field"></a><span id='Keymgmt.v' class='invisible'><code>Keymgmt</code></span></span><span id="variant.PipelinedRequests" class="variant small-section-header"><a href="#variant.PipelinedRequests" class="anchor field"></a><span id='PipelinedRequests.v' class='invisible'><code>PipelinedRequests</code></span></span><span id="variant.MediaProperties" class="variant small-section-header"><a href="#variant.MediaProperties" class="anchor field"></a><span id='MediaProperties.v' class='invisible'><code>MediaProperties</code></span></span><span id="variant.SeekStyle" class="variant small-section-header"><a href="#variant.SeekStyle" class="anchor field"></a><span id='SeekStyle.v' class='invisible'><code>SeekStyle</code></span></span><span id="variant.AcceptRanges" class="variant small-section-header"><a href="#variant.AcceptRanges" class="anchor field"></a><span id='AcceptRanges.v' class='invisible'><code>AcceptRanges</code></span></span><span id="variant.Last" class="variant small-section-header"><a href="#variant.Last" class="anchor field"></a><span id='Last.v' class='invisible'><code>Last</code></span></span>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="enum" href="../gstreamer_rtsp/enum.RTSPHeaderField.html" title="enum gstreamer_rtsp::RTSPHeaderField">RTSPHeaderField</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_rtsp/auto/enums.rs.html#138' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="enum" href="../gstreamer_rtsp/enum.RTSPHeaderField.html" title="enum gstreamer_rtsp::RTSPHeaderField">RTSPHeaderField</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_rtsp/auto/enums.rs.html#138' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Copy' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="enum" href="../gstreamer_rtsp/enum.RTSPHeaderField.html" title="enum gstreamer_rtsp::RTSPHeaderField">RTSPHeaderField</a></code><a href='#impl-Copy' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_rtsp/auto/enums.rs.html#138' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../gstreamer_rtsp/enum.RTSPHeaderField.html" title="enum gstreamer_rtsp::RTSPHeaderField">RTSPHeaderField</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_rtsp/auto/enums.rs.html#138' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_rtsp/auto/enums.rs.html#138' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-Eq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="enum" href="../gstreamer_rtsp/enum.RTSPHeaderField.html" title="enum gstreamer_rtsp::RTSPHeaderField">RTSPHeaderField</a></code><a href='#impl-Eq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_rtsp/auto/enums.rs.html#138' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="enum" href="../gstreamer_rtsp/enum.RTSPHeaderField.html" title="enum gstreamer_rtsp::RTSPHeaderField">RTSPHeaderField</a></code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_rtsp/auto/enums.rs.html#138' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../gstreamer_rtsp/enum.RTSPHeaderField.html" title="enum gstreamer_rtsp::RTSPHeaderField">RTSPHeaderField</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_rtsp/auto/enums.rs.html#138' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../gstreamer_rtsp/enum.RTSPHeaderField.html" title="enum gstreamer_rtsp::RTSPHeaderField">RTSPHeaderField</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_rtsp/auto/enums.rs.html#138' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-Hash' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html" title="trait core::hash::Hash">Hash</a> for <a class="enum" href="../gstreamer_rtsp/enum.RTSPHeaderField.html" title="enum gstreamer_rtsp::RTSPHeaderField">RTSPHeaderField</a></code><a href='#impl-Hash' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_rtsp/auto/enums.rs.html#138' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.hash' class="method"><span id='hash.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash' class='fnname'>hash</a>&lt;__H:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>&gt;(&amp;self, __arg_0: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>__H)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_rtsp/auto/enums.rs.html#138' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Feeds this value into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash">Read more</a></p>
+</div><h4 id='method.hash_slice' class="method"><span id='hash_slice.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice' class='fnname'>hash_slice</a>&lt;H&gt;(data: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[Self]</a>, state: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>H) <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;H: <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.3.0'>1.3.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/hash/mod.rs.html#202-208' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Feeds a slice of this type into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice">Read more</a></p>
+</div></div><h3 id='impl-StaticType' class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer_rtsp/trait.StaticType.html" title="trait gstreamer_rtsp::StaticType">StaticType</a> for <a class="enum" href="../gstreamer_rtsp/enum.RTSPHeaderField.html" title="enum gstreamer_rtsp::RTSPHeaderField">RTSPHeaderField</a></code><a href='#impl-StaticType' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_rtsp/auto/enums.rs.html#429-433' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.static_type' class="method"><span id='static_type.v' class='invisible'><code>fn <a href='../gstreamer_rtsp/trait.StaticType.html#tymethod.static_type' class='fnname'>static_type</a>() -&gt; <a class="enum" href="../gstreamer_rtsp/enum.Type.html" title="enum gstreamer_rtsp::Type">Type</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_rtsp/auto/enums.rs.html#430-432' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the type identifier of <code>Self</code>.</p>
+</div></div><h3 id='impl-FromValueOptional%3C%27a%3E' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="trait" href="../glib/value/trait.FromValueOptional.html" title="trait glib::value::FromValueOptional">FromValueOptional</a>&lt;'a&gt; for <a class="enum" href="../gstreamer_rtsp/enum.RTSPHeaderField.html" title="enum gstreamer_rtsp::RTSPHeaderField">RTSPHeaderField</a></code><a href='#impl-FromValueOptional%3C%27a%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_rtsp/auto/enums.rs.html#435-439' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from_value_optional' class="method"><span id='from_value_optional.v' class='invisible'><code>unsafe fn <a href='../glib/value/trait.FromValueOptional.html#tymethod.from_value_optional' class='fnname'>from_value_optional</a>(value: &amp;<a class="struct" href="../gstreamer_rtsp/struct.Value.html" title="struct gstreamer_rtsp::Value">Value</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;Self&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_rtsp/auto/enums.rs.html#436-438' title='goto source code'>[src]</a></span></h4>
+</div><h3 id='impl-FromValue%3C%27a%3E' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="trait" href="../glib/value/trait.FromValue.html" title="trait glib::value::FromValue">FromValue</a>&lt;'a&gt; for <a class="enum" href="../gstreamer_rtsp/enum.RTSPHeaderField.html" title="enum gstreamer_rtsp::RTSPHeaderField">RTSPHeaderField</a></code><a href='#impl-FromValue%3C%27a%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_rtsp/auto/enums.rs.html#441-445' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from_value' class="method"><span id='from_value.v' class='invisible'><code>unsafe fn <a href='../glib/value/trait.FromValue.html#tymethod.from_value' class='fnname'>from_value</a>(value: &amp;<a class="struct" href="../gstreamer_rtsp/struct.Value.html" title="struct gstreamer_rtsp::Value">Value</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_rtsp/auto/enums.rs.html#442-444' title='goto source code'>[src]</a></span></h4>
+</div><h3 id='impl-SetValue' class='impl'><span class='in-band'><code>impl <a class="trait" href="../glib/value/trait.SetValue.html" title="trait glib::value::SetValue">SetValue</a> for <a class="enum" href="../gstreamer_rtsp/enum.RTSPHeaderField.html" title="enum gstreamer_rtsp::RTSPHeaderField">RTSPHeaderField</a></code><a href='#impl-SetValue' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_rtsp/auto/enums.rs.html#447-451' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.set_value' class="method"><span id='set_value.v' class='invisible'><code>unsafe fn <a href='../glib/value/trait.SetValue.html#tymethod.set_value' class='fnname'>set_value</a>(value: &amp;mut <a class="struct" href="../gstreamer_rtsp/struct.Value.html" title="struct gstreamer_rtsp::Value">Value</a>, this: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer_rtsp/auto/enums.rs.html#448-450' title='goto source code'>[src]</a></span></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer_rtsp";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

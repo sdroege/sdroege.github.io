@@ -30,7 +30,7 @@
     <nav class="sidebar">
         <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'>Struct NeedContext</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.get_context_type">get_context_type</a></div></div><p class='location'><a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>message</a></p><script>window.sidebarCurrent = {name: 'NeedContext', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+        <p class='location'>Struct NeedContext</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.get_context_type">get_context_type</a></div><a class="sidebar-title" href="#deref-methods">Methods from Deref&lt;Target=MessageRef&gt;</a><div class="sidebar-links"><a href="#method.get_src">get_src</a><a href="#method.get_seqnum">get_seqnum</a><a href="#method.get_structure">get_structure</a><a href="#method.view">view</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Deref">Deref</a></div></div><p class='location'><a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>message</a></p><script>window.sidebarCurrent = {name: 'NeedContext', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
     <nav class="sub">
@@ -49,14 +49,31 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../../src/gstreamer/message.rs.html#989' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../../src/gstreamer/message.rs.html#423' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct NeedContext&lt;'a&gt;(_);</pre>
                     <h2 id='methods' class='small-section-header'>
                       Methods<a href='#methods' class='anchor'></a>
                     </h2>
-                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="struct" href="../../gstreamer/message/struct.NeedContext.html" title="struct gstreamer::message::NeedContext">NeedContext</a>&lt;'a&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gstreamer/message.rs.html#990-1000' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.get_context_type' class="method"><span id='get_context_type.v' class='invisible'><code>pub fn <a href='#method.get_context_type' class='fnname'>get_context_type</a>(&amp;self) -&gt; &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gstreamer/message.rs.html#991-999' title='goto source code'>[src]</a></span></h4>
-</div></section>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="struct" href="../../gstreamer/message/struct.NeedContext.html" title="struct gstreamer::message::NeedContext">NeedContext</a>&lt;'a&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gstreamer/message.rs.html#1000-1010' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.get_context_type' class="method"><span id='get_context_type.v' class='invisible'><code>pub fn <a href='#method.get_context_type' class='fnname'>get_context_type</a>(&amp;self) -&gt; &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gstreamer/message.rs.html#1001-1009' title='goto source code'>[src]</a></span></h4>
+</div>
+                    <h2 id='deref-methods' class='small-section-header'>
+                      Methods from <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/deref/trait.Deref.html" title="trait core::ops::deref::Deref">Deref</a>&lt;Target = <a class="struct" href="../../gstreamer/message/struct.MessageRef.html" title="struct gstreamer::message::MessageRef">MessageRef</a>&gt;<a href='#deref-methods' class='anchor'></a>
+                    </h2>
+                <div class='impl-items'><h4 id='method.get_src' class="method"><span id='get_src.v' class='invisible'><code>pub fn <a href='#method.get_src' class='fnname'>get_src</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../gstreamer/struct.Object.html" title="struct gstreamer::Object">Object</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gstreamer/message.rs.html#44-46' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_seqnum' class="method"><span id='get_seqnum.v' class='invisible'><code>pub fn <a href='#method.get_seqnum' class='fnname'>get_seqnum</a>(&amp;self) -&gt; <a class="struct" href="../../gstreamer/event/struct.Seqnum.html" title="struct gstreamer::event::Seqnum">Seqnum</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gstreamer/message.rs.html#48-50' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.get_structure' class="method"><span id='get_structure.v' class='invisible'><code>pub fn <a href='#method.get_structure' class='fnname'>get_structure</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../gstreamer/structure/struct.StructureRef.html" title="struct gstreamer::structure::StructureRef">StructureRef</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gstreamer/message.rs.html#52-61' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.view' class="method"><span id='view.v' class='invisible'><code>pub fn <a href='#method.view' class='fnname'>view</a>(&amp;self) -&gt; <a class="enum" href="../../gstreamer/message/enum.MessageView.html" title="enum gstreamer::message::MessageView">MessageView</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gstreamer/message.rs.html#63-113' title='goto source code'>[src]</a></span></h4>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Deref' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/deref/trait.Deref.html" title="trait core::ops::deref::Deref">Deref</a> for <a class="struct" href="../../gstreamer/message/struct.NeedContext.html" title="struct gstreamer::message::NeedContext">NeedContext</a>&lt;'a&gt;</code><a href='#impl-Deref' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gstreamer/message.rs.html#425-431' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Target' class="type"><span id='Target.t' class='invisible'><code>type <a href='https://doc.rust-lang.org/nightly/core/ops/deref/trait.Deref.html#associatedtype.Target' class="type">Target</a> = <a class="struct" href="../../gstreamer/message/struct.MessageRef.html" title="struct gstreamer::message::MessageRef">MessageRef</a></code></span></h4>
+<div class='docblock'><p>The resulting type after dereferencing.</p>
+</div><h4 id='method.deref' class="method"><span id='deref.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/deref/trait.Deref.html#tymethod.deref' class='fnname'>deref</a>(&amp;self) -&gt; &amp;Self::<a class="type" href="https://doc.rust-lang.org/nightly/core/ops/deref/trait.Deref.html#associatedtype.Target" title="type core::ops::deref::Deref::Target">Target</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/gstreamer/message.rs.html#428-430' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Dereferences the value.</p>
+</div></div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

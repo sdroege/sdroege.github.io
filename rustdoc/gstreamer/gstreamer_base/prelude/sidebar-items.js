@@ -1,1 +1,1 @@
-initSidebarItems({"trait":[["BaseSinkExt","Trait containing all `BaseSink` methods."],["BaseSrcExt","Trait containing all `BaseSrc` methods."],["BaseTransformExt","Trait containing all `BaseTransform` methods."]]});
+initSidebarItems({"trait":[["BaseSinkExt","Trait containing all `BaseSink` methods."],["BaseSinkExtManual",""],["BaseSrcExt","Trait containing all `BaseSrc` methods."],["BaseSrcExtManual",""],["BaseTransformExt","Trait containing all `BaseTransform` methods."],["BaseTransformExtManual",""]]});

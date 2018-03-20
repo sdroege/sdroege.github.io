@@ -513,6 +513,13 @@
 <span id="467">467</span>
 <span id="468">468</span>
 <span id="469">469</span>
+<span id="470">470</span>
+<span id="471">471</span>
+<span id="472">472</span>
+<span id="473">473</span>
+<span id="474">474</span>
+<span id="475">475</span>
+<span id="476">476</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2016-2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -582,9 +589,10 @@
                 <span class="kw">return</span> <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="self">self</span>.<span class="ident">obj</span>;
             }
 
-            <span class="self">self</span>.<span class="ident">obj</span> <span class="op">=</span> <span class="ident">T</span>::<span class="ident">from_mut_ptr</span>(<span class="ident">ffi</span>::<span class="ident">gst_mini_object_make_writable</span>(<span class="self">self</span>.<span class="ident">as_mut_ptr</span>()
-                <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi</span>::<span class="ident">GstMiniObject</span>)
-                <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span>);
+            <span class="self">self</span>.<span class="ident">obj</span> <span class="op">=</span> <span class="ident">T</span>::<span class="ident">from_mut_ptr</span>(
+                <span class="ident">ffi</span>::<span class="ident">gst_mini_object_make_writable</span>(<span class="self">self</span>.<span class="ident">as_mut_ptr</span>() <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">ffi</span>::<span class="ident">GstMiniObject</span>)
+                    <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span>,
+            );
             <span class="macro">assert</span><span class="macro">!</span>(<span class="self">self</span>.<span class="ident">is_writable</span>());
 
             <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="self">self</span>.<span class="ident">obj</span>
@@ -601,8 +609,7 @@
 
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">is_writable</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">bool</span> {
         <span class="kw">unsafe</span> {
-            <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_mini_object_is_writable</span>(<span class="self">self</span>.<span class="ident">as_ptr</span>()
-                <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">ffi</span>::<span class="ident">GstMiniObject</span>))
+            <span class="ident">from_glib</span>(<span class="ident">ffi</span>::<span class="ident">gst_mini_object_is_writable</span>(<span class="self">self</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">ffi</span>::<span class="ident">GstMiniObject</span>))
         }
     }
 
@@ -707,9 +714,10 @@
 
     <span class="kw">fn</span> <span class="ident">copy</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">GstRc</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span> {
         <span class="kw">unsafe</span> {
-            <span class="ident">GstRc</span>::<span class="ident">from_glib_full</span>(<span class="ident">ffi</span>::<span class="ident">gst_mini_object_copy</span>(<span class="self">self</span>.<span class="ident">as_ptr</span>()
-                <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">ffi</span>::<span class="ident">GstMiniObject</span>)
-                <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="self">Self</span>::<span class="ident">GstType</span>)
+            <span class="ident">GstRc</span>::<span class="ident">from_glib_full</span>(
+                <span class="ident">ffi</span>::<span class="ident">gst_mini_object_copy</span>(<span class="self">self</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">ffi</span>::<span class="ident">GstMiniObject</span>)
+                    <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="self">Self</span>::<span class="ident">GstType</span>,
+            )
         }
     }
 }
@@ -803,7 +811,8 @@
 }
 
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="ident">T</span>: <span class="ident">MiniObject</span> <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span> <span class="ident">ToGlibContainerFromSlice</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="kw-2">*</span><span class="kw">const</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span><span class="op">&gt;</span>
-    <span class="kw">for</span> <span class="ident">GstRc</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> {
+    <span class="kw">for</span> <span class="ident">GstRc</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>
+{
     <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;cargo-clippy&quot;</span>, <span class="ident">allow</span>(<span class="ident">type_complexity</span>))]</span>
     <span class="kw">type</span> <span class="ident">Storage</span> <span class="op">=</span> (
         <span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">Stash</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span>, <span class="ident">GstRc</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span><span class="op">&gt;</span>,
@@ -867,7 +876,8 @@
 }
 
 <span class="kw">impl</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">MiniObject</span> <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span> <span class="ident">FromGlibContainerAsVec</span><span class="op">&lt;</span><span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span>, <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span><span class="op">&gt;</span>
-    <span class="kw">for</span> <span class="ident">GstRc</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> {
+    <span class="kw">for</span> <span class="ident">GstRc</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>
+{
     <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib_none_num_as_vec</span>(<span class="ident">ptr</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span>, <span class="ident">num</span>: <span class="ident">usize</span>) <span class="op">-&gt;</span> <span class="ident">Vec</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span> {
         <span class="kw">if</span> <span class="ident">num</span> <span class="op">==</span> <span class="number">0</span> <span class="op">||</span> <span class="ident">ptr</span>.<span class="ident">is_null</span>() {
             <span class="kw">return</span> <span class="ident">Vec</span>::<span class="ident">new</span>();
@@ -901,7 +911,8 @@
 }
 
 <span class="kw">impl</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">MiniObject</span> <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span> <span class="ident">FromGlibPtrArrayContainerAsVec</span><span class="op">&lt;</span><span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span>, <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span><span class="op">&gt;</span>
-    <span class="kw">for</span> <span class="ident">GstRc</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> {
+    <span class="kw">for</span> <span class="ident">GstRc</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>
+{
     <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib_none_as_vec</span>(<span class="ident">ptr</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span>) <span class="op">-&gt;</span> <span class="ident">Vec</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span> {
         <span class="ident">FromGlibContainerAsVec</span>::<span class="ident">from_glib_none_num_as_vec</span>(<span class="ident">ptr</span>, <span class="ident">c_ptr_array_len</span>(<span class="ident">ptr</span>))
     }
@@ -916,7 +927,8 @@
 }
 
 <span class="kw">impl</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">MiniObject</span> <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span> <span class="ident">FromGlibContainerAsVec</span><span class="op">&lt;</span><span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span>, <span class="kw-2">*</span><span class="kw">const</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span><span class="op">&gt;</span>
-    <span class="kw">for</span> <span class="ident">GstRc</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> {
+    <span class="kw">for</span> <span class="ident">GstRc</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>
+{
     <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib_none_num_as_vec</span>(<span class="ident">ptr</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span>, <span class="ident">num</span>: <span class="ident">usize</span>) <span class="op">-&gt;</span> <span class="ident">Vec</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span> {
         <span class="ident">FromGlibContainerAsVec</span>::<span class="ident">from_glib_none_num_as_vec</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw-2">mut</span> _, <span class="ident">num</span>)
     }
@@ -934,7 +946,8 @@
 
 <span class="kw">impl</span><span class="op">&lt;</span>
     <span class="ident">T</span>: <span class="ident">MiniObject</span> <span class="op">+</span> <span class="lifetime">&#39;static</span>,
-<span class="op">&gt;</span> <span class="ident">FromGlibPtrArrayContainerAsVec</span><span class="op">&lt;</span><span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span>, <span class="kw-2">*</span><span class="kw">const</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">GstRc</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> {
+<span class="op">&gt;</span> <span class="ident">FromGlibPtrArrayContainerAsVec</span><span class="op">&lt;</span><span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span>, <span class="kw-2">*</span><span class="kw">const</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">GstRc</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>
+{
     <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_glib_none_as_vec</span>(<span class="ident">ptr</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">GstType</span>) <span class="op">-&gt;</span> <span class="ident">Vec</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span> {
         <span class="ident">FromGlibPtrArrayContainerAsVec</span>::<span class="ident">from_glib_none_as_vec</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw-2">mut</span> _)
     }
@@ -957,7 +970,8 @@
 }
 
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="ident">T</span>: <span class="ident">MiniObject</span> <span class="op">+</span> <span class="ident">glib</span>::<span class="ident">StaticType</span> <span class="op">+</span> <span class="lifetime">&#39;static</span><span class="op">&gt;</span> <span class="ident">glib</span>::<span class="ident">value</span>::<span class="ident">FromValueOptional</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span>
-    <span class="kw">for</span> <span class="ident">GstRc</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> {
+    <span class="kw">for</span> <span class="ident">GstRc</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>
+{
     <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value_optional</span>(<span class="ident">v</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">glib</span>::<span class="ident">Value</span>) <span class="op">-&gt;</span> <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span> {
         <span class="kw">let</span> <span class="ident">ptr</span> <span class="op">=</span> <span class="ident">gobject_ffi</span>::<span class="ident">g_value_get_boxed</span>(<span class="ident">v</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>);
         <span class="ident">from_glib_none</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">T</span>::<span class="ident">GstType</span>)

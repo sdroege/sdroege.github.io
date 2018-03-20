@@ -92,6 +92,9 @@
 <span id="46">46</span>
 <span id="47">47</span>
 <span id="48">48</span>
+<span id="49">49</span>
+<span id="50">50</span>
+<span id="51">51</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -132,6 +135,9 @@
 <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;cargo-clippy&quot;</span>, <span class="ident">allow</span>(<span class="ident">match_same_arms</span>))]</span>
 <span class="kw">mod</span> <span class="ident">auto</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">auto</span>::<span class="kw-2">*</span>;
+<span class="kw">mod</span> <span class="ident">net_client_clock</span>;
+<span class="kw">mod</span> <span class="ident">ntp_clock</span>;
+<span class="kw">mod</span> <span class="ident">ptp_clock</span>;
 
 <span class="comment">// Re-export all the traits in a prelude module, so that applications</span>
 <span class="comment">// can always &quot;use gst::prelude::*&quot; without getting conflicts</span>

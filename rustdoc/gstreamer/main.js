@@ -258,7 +258,6 @@
                 addClass(search, "hidden");
                 removeClass(document.getElementById("main"), "hidden");
             }
-            defocusSearchBar();
             break;
 
         case "s":
@@ -1884,9 +1883,4 @@
 // Sets the focus on the search bar at the top of the page
 function focusSearchBar() {
     document.getElementsByClassName('search-input')[0].focus();
-}
-
-// Removes the focus from the search bar
-function defocusSearchBar() {
-    document.getElementsByClassName('search-input')[0].blur();
 }

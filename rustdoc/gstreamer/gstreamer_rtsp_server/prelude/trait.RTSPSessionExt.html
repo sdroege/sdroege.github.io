@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `RTSPSessionExt` trait in crate `gstreamer_rtsp_server`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, RTSPSessionExt">
+
+    <title>gstreamer_rtsp_server::prelude::RTSPSessionExt - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Trait RTSPSessionExt</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.allow_expire">allow_expire</a><a href="#tymethod.get_header">get_header</a><a href="#tymethod.get_media">get_media</a><a href="#tymethod.get_sessionid">get_sessionid</a><a href="#tymethod.get_timeout">get_timeout</a><a href="#tymethod.is_expired_usec">is_expired_usec</a><a href="#tymethod.manage_media">manage_media</a><a href="#tymethod.next_timeout_usec">next_timeout_usec</a><a href="#tymethod.prevent_expire">prevent_expire</a><a href="#tymethod.release_media">release_media</a><a href="#tymethod.set_timeout">set_timeout</a><a href="#tymethod.touch">touch</a><a href="#tymethod.get_property_timeout_always_visible">get_property_timeout_always_visible</a><a href="#tymethod.set_property_timeout_always_visible">set_property_timeout_always_visible</a><a href="#tymethod.connect_property_sessionid_notify">connect_property_sessionid_notify</a><a href="#tymethod.connect_property_timeout_notify">connect_property_timeout_notify</a><a href="#tymethod.connect_property_timeout_always_visible_notify">connect_property_timeout_always_visible_notify</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='../index.html'>gstreamer_rtsp_server</a>::<wbr><a href='index.html'>prelude</a></p><script>window.sidebarCurrent = {name: 'RTSPSessionExt', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='../index.html'>gstreamer_rtsp_server</a>::<wbr><a href='index.html'>prelude</a>::<wbr><a class="trait" href=''>RTSPSessionExt</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/gstreamer_rtsp_server/auto/r_t_s_p_session.rs.html#62-170' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait RTSPSessionExt {
+    fn <a href='#tymethod.allow_expire' class='fnname'>allow_expire</a>(&amp;self);
+<div class='item-spacer'></div>    fn <a href='#tymethod.get_header' class='fnname'>get_header</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;;
+<div class='item-spacer'></div>    fn <a href='#tymethod.get_media' class='fnname'>get_media</a>(&amp;self, path: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../gstreamer_rtsp_server/struct.RTSPSessionMedia.html" title="struct gstreamer_rtsp_server::RTSPSessionMedia">RTSPSessionMedia</a>&gt;, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.get_sessionid' class='fnname'>get_sessionid</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;;
+<div class='item-spacer'></div>    fn <a href='#tymethod.get_timeout' class='fnname'>get_timeout</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.is_expired_usec' class='fnname'>is_expired_usec</a>(&amp;self, now: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.manage_media' class='fnname'>manage_media</a>&lt;P:&nbsp;<a class="trait" href="../../gstreamer_rtsp_server/trait.IsA.html" title="trait gstreamer_rtsp_server::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer_rtsp_server/struct.RTSPMedia.html" title="struct gstreamer_rtsp_server::RTSPMedia">RTSPMedia</a>&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;media: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>P<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../gstreamer_rtsp_server/struct.RTSPSessionMedia.html" title="struct gstreamer_rtsp_server::RTSPSessionMedia">RTSPSessionMedia</a>&gt;;
+<div class='item-spacer'></div>    fn <a href='#tymethod.next_timeout_usec' class='fnname'>next_timeout_usec</a>(&amp;self, now: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.prevent_expire' class='fnname'>prevent_expire</a>(&amp;self);
+<div class='item-spacer'></div>    fn <a href='#tymethod.release_media' class='fnname'>release_media</a>(&amp;self, media: &amp;<a class="struct" href="../../gstreamer_rtsp_server/struct.RTSPSessionMedia.html" title="struct gstreamer_rtsp_server::RTSPSessionMedia">RTSPSessionMedia</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_timeout' class='fnname'>set_timeout</a>(&amp;self, timeout: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>);
+<div class='item-spacer'></div>    fn <a href='#tymethod.touch' class='fnname'>touch</a>(&amp;self);
+<div class='item-spacer'></div>    fn <a href='#tymethod.get_property_timeout_always_visible' class='fnname'>get_property_timeout_always_visible</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.set_property_timeout_always_visible' class='fnname'>set_property_timeout_always_visible</a>(&amp;self, timeout_always_visible: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
+<div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_sessionid_notify' class='fnname'>connect_property_sessionid_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_timeout_notify' class='fnname'>connect_property_timeout_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
+<div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_timeout_always_visible_notify' class='fnname'>connect_property_timeout_always_visible_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
+}</pre><div class='docblock'><p>Trait containing all <code>RTSPSession</code> methods.</p>
+
+<h1 id='implementors-1' class='section-header'><a href='#implementors-1'>Implementors</a></h1>
+<p><a href="struct.RTSPSession.html"><code>RTSPSession</code></a></p>
+</div>
+            <h2 id='required-methods' class='small-section-header'>
+              Required Methods<a href='#required-methods' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='tymethod.allow_expire' class='method'><span id='allow_expire.v' class='invisible'><code>fn <a href='#tymethod.allow_expire' class='fnname'>allow_expire</a>(&amp;self)</code></span></h3><div class='docblock'><p>Allow <code>self</code> to expire. This method must be called an equal
+amount of time as <code>RTSPSessionExt::prevent_expire</code>.</p>
+</div><h3 id='tymethod.get_header' class='method'><span id='get_header.v' class='invisible'><code>fn <a href='#tymethod.get_header' class='fnname'>get_header</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span></h3><div class='docblock'><p>Get the string that can be placed in the Session header field.</p>
+
+<h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
+<p>the Session header of <code>self</code>.
+<code>g_free</code> after usage.</p>
+</div><h3 id='tymethod.get_media' class='method'><span id='get_media.v' class='invisible'><code>fn <a href='#tymethod.get_media' class='fnname'>get_media</a>(&amp;self, path: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../gstreamer_rtsp_server/struct.RTSPSessionMedia.html" title="struct gstreamer_rtsp_server::RTSPSessionMedia">RTSPSessionMedia</a>&gt;, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a></code></span></h3><div class='docblock'><p>Get the session media for <code>path</code>. <code>matched</code> will contain the number of matched
+characters of <code>path</code>.</p>
+
+<h2 id='path' class='section-header'><a href='#path'><code>path</code></a></h2>
+<p>the path for the media</p>
+
+<h2 id='matched' class='section-header'><a href='#matched'><code>matched</code></a></h2>
+<p>the amount of matched characters</p>
+
+<h1 id='returns-1' class='section-header'><a href='#returns-1'>Returns</a></h1>
+<p>the configuration for <code>path</code> in <code>self</code>.</p>
+</div><h3 id='tymethod.get_sessionid' class='method'><span id='get_sessionid.v' class='invisible'><code>fn <a href='#tymethod.get_sessionid' class='fnname'>get_sessionid</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span></h3><div class='docblock'><p>Get the sessionid of <code>self</code>.</p>
+
+<h1 id='returns-2' class='section-header'><a href='#returns-2'>Returns</a></h1>
+<p>the sessionid of <code>self</code>.
+The value remains valid as long as <code>self</code> is alive.</p>
+</div><h3 id='tymethod.get_timeout' class='method'><span id='get_timeout.v' class='invisible'><code>fn <a href='#tymethod.get_timeout' class='fnname'>get_timeout</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span></h3><div class='docblock'><p>Get the timeout value of <code>self</code>.</p>
+
+<h1 id='returns-3' class='section-header'><a href='#returns-3'>Returns</a></h1>
+<p>the timeout of <code>self</code> in seconds.</p>
+</div><h3 id='tymethod.is_expired_usec' class='method'><span id='is_expired_usec.v' class='invisible'><code>fn <a href='#tymethod.is_expired_usec' class='fnname'>is_expired_usec</a>(&amp;self, now: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Check if <code>self</code> timeout out.</p>
+
+<h2 id='now' class='section-header'><a href='#now'><code>now</code></a></h2>
+<p>the current monotonic time</p>
+
+<h1 id='returns-4' class='section-header'><a href='#returns-4'>Returns</a></h1>
+<p><code>true</code> if <code>self</code> timed out</p>
+</div><h3 id='tymethod.manage_media' class='method'><span id='manage_media.v' class='invisible'><code>fn <a href='#tymethod.manage_media' class='fnname'>manage_media</a>&lt;P:&nbsp;<a class="trait" href="../../gstreamer_rtsp_server/trait.IsA.html" title="trait gstreamer_rtsp_server::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer_rtsp_server/struct.RTSPMedia.html" title="struct gstreamer_rtsp_server::RTSPMedia">RTSPMedia</a>&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;path: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;media: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>P<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../gstreamer_rtsp_server/struct.RTSPSessionMedia.html" title="struct gstreamer_rtsp_server::RTSPSessionMedia">RTSPSessionMedia</a>&gt;</code></span></h3><div class='docblock'><p>Manage the media object <code>obj</code> in <code>self</code>. <code>path</code> will be used to retrieve this
+media from the session with <code>RTSPSessionExt::get_media</code>.</p>
+
+<p>Ownership is taken from <code>media</code>.</p>
+
+<h2 id='path-1' class='section-header'><a href='#path-1'><code>path</code></a></h2>
+<p>the path for the media</p>
+
+<h2 id='media' class='section-header'><a href='#media'><code>media</code></a></h2>
+<p>a <code>RTSPMedia</code></p>
+
+<h1 id='returns-5' class='section-header'><a href='#returns-5'>Returns</a></h1>
+<p>a new <code>RTSPSessionMedia</code> object.</p>
+</div><h3 id='tymethod.next_timeout_usec' class='method'><span id='next_timeout_usec.v' class='invisible'><code>fn <a href='#tymethod.next_timeout_usec' class='fnname'>next_timeout_usec</a>(&amp;self, now: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code></span></h3><div class='docblock'><p>Get the amount of milliseconds till the session will expire.</p>
+
+<h2 id='now-1' class='section-header'><a href='#now-1'><code>now</code></a></h2>
+<p>the current monotonic time</p>
+
+<h1 id='returns-6' class='section-header'><a href='#returns-6'>Returns</a></h1>
+<p>the amount of milliseconds since the session will time out.</p>
+</div><h3 id='tymethod.prevent_expire' class='method'><span id='prevent_expire.v' class='invisible'><code>fn <a href='#tymethod.prevent_expire' class='fnname'>prevent_expire</a>(&amp;self)</code></span></h3><div class='docblock'><p>Prevent <code>self</code> from expiring.</p>
+</div><h3 id='tymethod.release_media' class='method'><span id='release_media.v' class='invisible'><code>fn <a href='#tymethod.release_media' class='fnname'>release_media</a>(&amp;self, media: &amp;<a class="struct" href="../../gstreamer_rtsp_server/struct.RTSPSessionMedia.html" title="struct gstreamer_rtsp_server::RTSPSessionMedia">RTSPSessionMedia</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Release the managed <code>media</code> in <code>self</code>, freeing the memory allocated by it.</p>
+
+<h2 id='media-1' class='section-header'><a href='#media-1'><code>media</code></a></h2>
+<p>a <code>RTSPMedia</code></p>
+
+<h1 id='returns-7' class='section-header'><a href='#returns-7'>Returns</a></h1>
+<p><code>true</code> if there are more media session left in <code>self</code>.</p>
+</div><h3 id='tymethod.set_timeout' class='method'><span id='set_timeout.v' class='invisible'><code>fn <a href='#tymethod.set_timeout' class='fnname'>set_timeout</a>(&amp;self, timeout: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></h3><div class='docblock'><p>Configure <code>self</code> for a timeout of <code>timeout</code> seconds. The session will be
+cleaned up when there is no activity for <code>timeout</code> seconds.</p>
+
+<h2 id='timeout' class='section-header'><a href='#timeout'><code>timeout</code></a></h2>
+<p>the new timeout</p>
+</div><h3 id='tymethod.touch' class='method'><span id='touch.v' class='invisible'><code>fn <a href='#tymethod.touch' class='fnname'>touch</a>(&amp;self)</code></span></h3><div class='docblock'><p>Update the last_access time of the session to the current time.</p>
+</div><h3 id='tymethod.get_property_timeout_always_visible' class='method'><span id='get_property_timeout_always_visible.v' class='invisible'><code>fn <a href='#tymethod.get_property_timeout_always_visible' class='fnname'>get_property_timeout_always_visible</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><h3 id='tymethod.set_property_timeout_always_visible' class='method'><span id='set_property_timeout_always_visible.v' class='invisible'><code>fn <a href='#tymethod.set_property_timeout_always_visible' class='fnname'>set_property_timeout_always_visible</a>(&amp;self, timeout_always_visible: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><h3 id='tymethod.connect_property_sessionid_notify' class='method'><span id='connect_property_sessionid_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_sessionid_notify' class='fnname'>connect_property_sessionid_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_property_timeout_notify' class='method'><span id='connect_property_timeout_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_timeout_notify' class='fnname'>connect_property_timeout_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_property_timeout_always_visible_notify' class='method'><span id='connect_property_timeout_always_visible_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_timeout_always_visible_notify' class='fnname'>connect_property_timeout_always_visible_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3></div>
+        <h2 id='implementors' class='small-section-header'>
+          Implementors<a href='#implementors' class='anchor'></a>
+        </h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><code>impl&lt;O:&nbsp;<a class="trait" href="../../gstreamer_rtsp_server/trait.IsA.html" title="trait gstreamer_rtsp_server::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer_rtsp_server/struct.RTSPSession.html" title="struct gstreamer_rtsp_server::RTSPSession">RTSPSession</a>&gt; + <a class="trait" href="../../gstreamer_rtsp_server/trait.IsA.html" title="trait gstreamer_rtsp_server::IsA">IsA</a>&lt;<a class="struct" href="../../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt;&gt; RTSPSessionExt for O</code></li>
+</ul><script type="text/javascript" async
+                         src="../../implementors/gstreamer_rtsp_server/prelude/trait.RTSPSessionExt.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "gstreamer_rtsp_server";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

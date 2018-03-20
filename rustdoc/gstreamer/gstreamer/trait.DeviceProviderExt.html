@@ -49,7 +49,7 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../src/gstreamer/auto/device_provider.rs.html#79-173' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../src/gstreamer/auto/device_provider.rs.html#80-177' title='goto source code'>[src]</a></span></h1>
 <pre class='rust trait'>pub trait DeviceProviderExt {
     fn <a href='#tymethod.can_monitor' class='fnname'>can_monitor</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
 <div class='item-spacer'></div>    fn <a href='#tymethod.device_add' class='fnname'>device_add</a>(&amp;self, device: &amp;<a class="struct" href="../gstreamer/struct.Device.html" title="struct gstreamer::Device">Device</a>);
@@ -77,6 +77,9 @@
 a new device has been added.</p>
 
 <p>This is for use by subclasses.</p>
+
+<p><code>device</code>&#39;s reference count will be incremented, and any floating reference
+will be removed (see <code>Object::ref_sink</code>).</p>
 
 <h2 id='device' class='section-header'><a href='#device'><code>device</code></a></h2>
 <p>a <code>Device</code> that has been added</p>

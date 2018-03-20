@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Promise` struct in crate `gstreamer`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Promise">
+
+    <title>gstreamer::Promise - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Struct Promise</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.new">new</a><a href="#method.new_with_change_func">new_with_change_func</a><a href="#method.expire">expire</a><a href="#method.get_reply">get_reply</a><a href="#method.interrupt">interrupt</a><a href="#method.reply">reply</a><a href="#method.wait">wait</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-StaticType">StaticType</a><a href="#impl-Default">Default</a><a href="#impl-Send">Send</a><a href="#impl-Sync">Sync</a></div></div><p class='location'><a href='index.html'>gstreamer</a></p><script>window.sidebarCurrent = {name: 'Promise', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>gstreamer</a>::<wbr><a class="struct" href=''>Promise</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span></span></h1>
+<pre class='rust struct'>pub struct Promise(_);</pre><div class='docblock'><p>The <code>Promise</code> object implements the container for values that may
+be available later. i.e. a Future or a Promise in
+<ulink url="https://en.wikipedia.org/wiki/Futures_and_promises"><a href="https://en.wikipedia.org/wiki/Futures_and_promises%60">https://en.wikipedia.org/wiki/Futures_and_promises`</a></ulink>`
+As with all Future/Promise-like functionality, there is the concept of the
+producer of the value and the consumer of the value.</p>
+
+<p>A <code>Promise</code> is created with <code>Promise::new</code> by the consumer and passed
+to the producer to avoid thread safety issues with the change callback.
+A <code>Promise</code> can be replied to with a value (or an error) by the producer
+with <code>Promise::reply</code>. <code>Promise::interrupt</code> is for the consumer to
+indicate to the producer that the value is not needed anymore and producing
+that value can stop. The <code>PromiseResult::Expired</code> state set by a call
+to <code>Promise::expire</code> indicates to the consumer that a value will never
+be produced and is intended to be called by a third party that implements
+some notion of message handling such as <code>Bus</code>.
+A callback can also be installed at <code>Promise</code> creation for
+result changes with <code>Promise::new_with_change_func</code>.
+The change callback can be used to chain <code>GstPromises</code>&#39;s together as in the
+following example.</p>
+
+<pre><code class="language-C">const GstStructure *reply;
+GstPromise *p;
+if (gst_promise_wait (promise) != GST_PROMISE_RESULT_REPLIED)
+  return; // interrupted or expired value
+reply = gst_promise_get_reply (promise);
+if (error in reply)
+  return; // propagate error
+p = gst_promise_new_with_change_func (another_promise_change_func, user_data, notify);
+pass p to promise-using API
+</code></pre>
+
+<p>Each <code>Promise</code> starts out with a <code>PromiseResult</code> of
+<code>PromiseResult::Pending</code> and only ever transitions once
+into one of the other <code>PromiseResult</code>&#39;s.</p>
+
+<p>In order to support multi-threaded code, <code>Promise::reply</code>,
+<code>Promise::interrupt</code> and <code>Promise::expire</code> may all be from
+different threads with some restrictions and the final result of the promise
+is whichever call is made first. There are two restrictions on ordering:</p>
+
+<ol>
+<li>That <code>Promise::reply</code> and <code>Promise::interrupt</code> cannot be called
+after <code>Promise::expire</code></li>
+<li>That <code>Promise::reply</code> and <code>Promise::interrupt</code>
+cannot be called twice.</li>
+</ol>
+
+<p>The change function set with <code>Promise::new_with_change_func</code> is
+called directly from either the <code>Promise::reply</code>,
+<code>Promise::interrupt</code> or <code>Promise::expire</code> and can be called
+from an arbitrary thread. <code>Promise</code> using APIs can restrict this to
+a single thread or a subset of threads but that is entirely up to the API
+that uses <code>Promise</code>.</p>
+
+<p>Feature: <code>v1_14</code></p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl <a class="struct" href="../gstreamer/struct.Promise.html" title="struct gstreamer::Promise">Promise</a></code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/promise.rs.html#83-229' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>() -&gt; <a class="struct" href="../gstreamer/struct.Promise.html" title="struct gstreamer::Promise">Promise</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/promise.rs.html#92-97' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Feature: <code>v1_14</code></p>
+
+<h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
+<p>a new <code>Promise</code></p>
+</div><h4 id='method.new_with_change_func' class="method"><span id='new_with_change_func.v' class='invisible'><code>pub fn <a href='#method.new_with_change_func' class='fnname'>new_with_change_func</a>&lt;F&gt;(func: F) -&gt; <a class="struct" href="../gstreamer/struct.Promise.html" title="struct gstreamer::Promise">Promise</a> <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;F: <a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.FnOnce.html" title="trait core::ops::function::FnOnce">FnOnce</a>(&amp;<a class="struct" href="../gstreamer/struct.Promise.html" title="struct gstreamer::Promise">Promise</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + 'static,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/promise.rs.html#116-146' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p><code>func</code> will be called exactly once when transitioning out of
+<code>PromiseResult::Pending</code> into any of the other <code>PromiseResult</code>
+states.</p>
+
+<p>Feature: <code>v1_14</code></p>
+
+<h2 id='func' class='section-header'><a href='#func'><code>func</code></a></h2>
+<p>a <code>GstPromiseChangeFunc</code> to call</p>
+
+<h2 id='user_data' class='section-header'><a href='#user_data'><code>user_data</code></a></h2>
+<p>argument to call <code>func</code> with</p>
+
+<h2 id='notify' class='section-header'><a href='#notify'><code>notify</code></a></h2>
+<p>notification function that <code>user_data</code> is no longer needed</p>
+
+<h1 id='returns-1' class='section-header'><a href='#returns-1'>Returns</a></h1>
+<p>a new <code>Promise</code></p>
+</div><h4 id='method.expire' class="method"><span id='expire.v' class='invisible'><code>pub fn <a href='#method.expire' class='fnname'>expire</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/promise.rs.html#155-159' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Expire a <code>self</code>. This will wake up any waiters with
+<code>PromiseResult::Expired</code>. Called by a message loop when the parent
+message is handled and/or destroyed (possibly unanswered).</p>
+
+<p>Feature: <code>v1_14</code></p>
+</div><h4 id='method.get_reply' class="method"><span id='get_reply.v' class='invisible'><code>pub fn <a href='#method.get_reply' class='fnname'>get_reply</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../gstreamer/structure/struct.StructureRef.html" title="struct gstreamer::structure::StructureRef">StructureRef</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/promise.rs.html#171-180' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Retrieve the reply set on <code>self</code>. <code>self</code> must be in
+<code>PromiseResult::Replied</code> and the returned structure is owned by <code>self</code></p>
+
+<p>Feature: <code>v1_14</code></p>
+
+<h1 id='returns-2' class='section-header'><a href='#returns-2'>Returns</a></h1>
+<p>The reply set on <code>self</code></p>
+</div><h4 id='method.interrupt' class="method"><span id='interrupt.v' class='invisible'><code>pub fn <a href='#method.interrupt' class='fnname'>interrupt</a>(&amp;self)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/promise.rs.html#189-193' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Interrupt waiting for a <code>self</code>. This will wake up any waiters with
+<code>PromiseResult::Interrupted</code>. Called when the consumer does not want
+the value produced anymore.</p>
+
+<p>Feature: <code>v1_14</code></p>
+</div><h4 id='method.reply' class="method"><span id='reply.v' class='invisible'><code>pub fn <a href='#method.reply' class='fnname'>reply</a>(&amp;self, s: <a class="struct" href="../gstreamer/structure/struct.Structure.html" title="struct gstreamer::structure::Structure">Structure</a>)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/promise.rs.html#207-211' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Set a reply on <code>self</code>. This will wake up any waiters with
+<code>PromiseResult::Replied</code>. Called by the producer of the value to
+indicate success (or failure).</p>
+
+<p>If <code>self</code> has already been interrupted by the consumer, then this reply
+is not visible to the consumer.</p>
+
+<p>Feature: <code>v1_14</code></p>
+
+<h2 id='s' class='section-header'><a href='#s'><code>s</code></a></h2>
+<p>a <code>Structure</code> with the the reply contents</p>
+</div><h4 id='method.wait' class="method"><span id='wait.v' class='invisible'><code>pub fn <a href='#method.wait' class='fnname'>wait</a>(&amp;self) -&gt; <a class="enum" href="../gstreamer/enum.PromiseResult.html" title="enum gstreamer::PromiseResult">PromiseResult</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/promise.rs.html#224-228' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Wait for <code>self</code> to move out of the <code>PromiseResult::Pending</code> state.
+If <code>self</code> is not in <code>PromiseResult::Pending</code> then it will return
+immediately with the current result.</p>
+
+<p>Feature: <code>v1_14</code></p>
+
+<h1 id='returns-3' class='section-header'><a href='#returns-3'>Returns</a></h1>
+<p>the result of the promise</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../gstreamer/struct.Promise.html" title="struct gstreamer::Promise">Promise</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer/struct.Promise.html" title="struct gstreamer::Promise">Promise</a></code></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-StaticType' class='impl'><span class='in-band'><code>impl <a class="trait" href="../gstreamer/trait.StaticType.html" title="trait gstreamer::StaticType">StaticType</a> for <a class="struct" href="../gstreamer/struct.Promise.html" title="struct gstreamer::Promise">Promise</a></code><a href='#impl-StaticType' class='anchor'></a></span><span class='out-of-band'></span></h3>
+<div class='impl-items'><h4 id='method.static_type' class="method"><span id='static_type.v' class='invisible'><code>fn <a href='../gstreamer/trait.StaticType.html#tymethod.static_type' class='fnname'>static_type</a>() -&gt; <a class="enum" href="../gstreamer/enum.Type.html" title="enum gstreamer::Type">Type</a></code></span></h4>
+<div class='docblock'><p>Returns the type identifier of <code>Self</code>.</p>
+</div></div><h3 id='impl-Default' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html" title="trait core::default::Default">Default</a> for <a class="struct" href="../gstreamer/struct.Promise.html" title="struct gstreamer::Promise">Promise</a></code><a href='#impl-Default' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/promise.rs.html#232-236' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.default' class="method"><span id='default.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default' class='fnname'>default</a>() -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/promise.rs.html#233-235' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the &quot;default value&quot; for a type. <a href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default">Read more</a></p>
+</div></div><h3 id='impl-Send' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> for <a class="struct" href="../gstreamer/struct.Promise.html" title="struct gstreamer::Promise">Promise</a></code><a href='#impl-Send' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/promise.rs.html#238' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Sync' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> for <a class="struct" href="../gstreamer/struct.Promise.html" title="struct gstreamer::Promise">Promise</a></code><a href='#impl-Sync' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/gstreamer/promise.rs.html#239' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "gstreamer";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>
