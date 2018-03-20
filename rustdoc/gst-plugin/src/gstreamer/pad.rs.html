@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="rustdoc">
-    <meta name="description" content="Source to the Rust file `/home/slomo/.cargo/registry/src/github.com-1ecc6299db9ec823/gstreamer-0.10.0/src/pad.rs`.">
+    <meta name="description" content="Source to the Rust file `/home/slomo/.cargo/registry/src/github.com-1ecc6299db9ec823/gstreamer-0.11.0/src/pad.rs`.">
     <meta name="keywords" content="rust, rustlang, rust-lang">
 
     <title>pad.rs.html -- source</title>
@@ -1340,9 +1340,8 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Default</span>, <span class="ident">PartialEq</span>, <span class="ident">Eq</span>)]</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">PartialEq</span>, <span class="ident">Eq</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">PadProbeId</span>(<span class="ident">libc</span>::<span class="ident">c_ulong</span>);
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">PAD_PROBE_ID_INVALID</span>: <span class="ident">PadProbeId</span> <span class="op">=</span> <span class="ident">PadProbeId</span>(<span class="number">0</span>);
 
 <span class="kw">impl</span> <span class="ident">ToGlib</span> <span class="kw">for</span> <span class="ident">PadProbeId</span> {
     <span class="kw">type</span> <span class="ident">GlibType</span> <span class="op">=</span> <span class="ident">libc</span>::<span class="ident">c_ulong</span>;
@@ -1355,6 +1354,7 @@
 <span class="kw">impl</span> <span class="ident">FromGlib</span><span class="op">&lt;</span><span class="ident">libc</span>::<span class="ident">c_ulong</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">PadProbeId</span> {
     <span class="kw">fn</span> <span class="ident">from_glib</span>(<span class="ident">val</span>: <span class="ident">libc</span>::<span class="ident">c_ulong</span>) <span class="op">-&gt;</span> <span class="ident">PadProbeId</span> {
         <span class="macro">skip_assert_initialized</span><span class="macro">!</span>();
+        <span class="macro">assert_ne</span><span class="macro">!</span>(<span class="ident">val</span>, <span class="number">0</span>);
         <span class="ident">PadProbeId</span>(<span class="ident">val</span>)
     }
 }

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="rustdoc">
-    <meta name="description" content="Source to the Rust file `src/bin.rs`.">
+    <meta name="description" content="Source to the Rust file `gst-plugin/src/bin.rs`.">
     <meta name="keywords" content="rust, rustlang, rust-lang">
 
     <title>bin.rs.html -- source</title>
@@ -246,6 +246,9 @@
 <span id="200">200</span>
 <span id="201">201</span>
 <span id="202">202</span>
+<span id="203">203</span>
+<span id="204">204</span>
+<span id="205">205</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -353,6 +356,9 @@
 <span class="comment">// FIXME: Boilerplate</span>
 <span class="kw">unsafe</span> <span class="kw">impl</span> <span class="ident">BinClassExt</span><span class="op">&lt;</span><span class="ident">Bin</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">BinClass</span> {}
 <span class="kw">unsafe</span> <span class="kw">impl</span> <span class="ident">ElementClassExt</span><span class="op">&lt;</span><span class="ident">Bin</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">BinClass</span> {}
+
+<span class="kw">unsafe</span> <span class="kw">impl</span> <span class="ident">Send</span> <span class="kw">for</span> <span class="ident">Bin</span> {}
+<span class="kw">unsafe</span> <span class="kw">impl</span> <span class="ident">Sync</span> <span class="kw">for</span> <span class="ident">Bin</span> {}
 
 <span class="attribute">#[<span class="ident">macro_export</span>]</span>
 <span class="macro">macro_rules</span><span class="macro">!</span> <span class="ident">box_bin_impl</span>(

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="rustdoc">
-    <meta name="description" content="Source to the Rust file `/home/slomo/.cargo/registry/src/github.com-1ecc6299db9ec823/gstreamer-0.10.0/src/lib.rs`.">
+    <meta name="description" content="Source to the Rust file `/home/slomo/.cargo/registry/src/github.com-1ecc6299db9ec823/gstreamer-0.11.0/src/lib.rs`.">
     <meta name="keywords" content="rust, rustlang, rust-lang">
 
     <title>lib.rs.html -- source</title>
@@ -259,6 +259,65 @@
 <span id="213">213</span>
 <span id="214">214</span>
 <span id="215">215</span>
+<span id="216">216</span>
+<span id="217">217</span>
+<span id="218">218</span>
+<span id="219">219</span>
+<span id="220">220</span>
+<span id="221">221</span>
+<span id="222">222</span>
+<span id="223">223</span>
+<span id="224">224</span>
+<span id="225">225</span>
+<span id="226">226</span>
+<span id="227">227</span>
+<span id="228">228</span>
+<span id="229">229</span>
+<span id="230">230</span>
+<span id="231">231</span>
+<span id="232">232</span>
+<span id="233">233</span>
+<span id="234">234</span>
+<span id="235">235</span>
+<span id="236">236</span>
+<span id="237">237</span>
+<span id="238">238</span>
+<span id="239">239</span>
+<span id="240">240</span>
+<span id="241">241</span>
+<span id="242">242</span>
+<span id="243">243</span>
+<span id="244">244</span>
+<span id="245">245</span>
+<span id="246">246</span>
+<span id="247">247</span>
+<span id="248">248</span>
+<span id="249">249</span>
+<span id="250">250</span>
+<span id="251">251</span>
+<span id="252">252</span>
+<span id="253">253</span>
+<span id="254">254</span>
+<span id="255">255</span>
+<span id="256">256</span>
+<span id="257">257</span>
+<span id="258">258</span>
+<span id="259">259</span>
+<span id="260">260</span>
+<span id="261">261</span>
+<span id="262">262</span>
+<span id="263">263</span>
+<span id="264">264</span>
+<span id="265">265</span>
+<span id="266">266</span>
+<span id="267">267</span>
+<span id="268">268</span>
+<span id="269">269</span>
+<span id="270">270</span>
+<span id="271">271</span>
+<span id="272">272</span>
+<span id="273">273</span>
+<span id="274">274</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -271,6 +330,9 @@
 <span class="attribute">#![<span class="ident">recursion_limit</span> <span class="op">=</span> <span class="string">&quot;256&quot;</span>]</span>
 <span class="attribute">#[<span class="ident">macro_use</span>]</span>
 <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">bitflags</span>;
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_14&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="attribute">#[<span class="ident">macro_use</span>]</span>
+<span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">cfg_if</span>;
 <span class="attribute">#[<span class="ident">macro_use</span>]</span>
 <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">lazy_static</span>;
 <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">libc</span>;
@@ -356,9 +418,29 @@
 <span class="kw">mod</span> <span class="ident">static_pad_template</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">static_pad_template</span>::<span class="kw-2">*</span>;
 
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_14&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="kw">mod</span> <span class="ident">promise</span>;
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_14&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">promise</span>::<span class="kw-2">*</span>;
+
 <span class="kw">mod</span> <span class="ident">element</span>;
 <span class="kw">mod</span> <span class="ident">bin</span>;
 <span class="kw">mod</span> <span class="ident">bus</span>;
+
+<span class="comment">// OS dependent Bus extensions (also import the other plateform mod for doc)</span>
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_14&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="macro">cfg_if</span><span class="macro">!</span> {
+    <span class="kw">if</span> <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">unix</span>)]</span> {
+        <span class="kw">mod</span> <span class="ident">bus_unix</span>;
+        <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>)]</span>
+        <span class="kw">mod</span> <span class="ident">bus_windows</span>;
+    } <span class="kw">else</span> {
+        <span class="kw">mod</span> <span class="ident">bus_windows</span>;
+        <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>)]</span>
+        <span class="kw">mod</span> <span class="ident">bus_unix</span>;
+    }
+}
+
 <span class="kw">mod</span> <span class="ident">pad</span>;
 <span class="kw">mod</span> <span class="ident">object</span>;
 <span class="kw">mod</span> <span class="ident">gobject</span>;
@@ -377,7 +459,22 @@
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">element</span>::{<span class="ident">ELEMENT_METADATA_AUTHOR</span>, <span class="ident">ELEMENT_METADATA_DESCRIPTION</span>, <span class="ident">ELEMENT_METADATA_DOC_URI</span>,
                   <span class="ident">ELEMENT_METADATA_ICON_NAME</span>, <span class="ident">ELEMENT_METADATA_KLASS</span>, <span class="ident">ELEMENT_METADATA_LONGNAME</span>};
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">bin</span>::<span class="ident">BinExtManual</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">pad</span>::{<span class="ident">PadExtManual</span>, <span class="ident">PadProbeData</span>, <span class="ident">PadProbeId</span>, <span class="ident">PadProbeInfo</span>, <span class="ident">PAD_PROBE_ID_INVALID</span>};
+
+<span class="comment">// OS dependent Bus extensions (also import the other plateform trait for doc)</span>
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_14&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+<span class="macro">cfg_if</span><span class="macro">!</span> {
+    <span class="kw">if</span> <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">unix</span>)]</span> {
+        <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">bus_unix</span>::<span class="ident">UnixBusExtManual</span>;
+        <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>)]</span>
+        <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">bus_windows</span>::<span class="ident">WindowsBusExtManual</span>;
+    } <span class="kw">else</span> {
+        <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">bus_windows</span>::<span class="ident">WindowsBusExtManual</span>;
+        <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>)]</span>
+        <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">bus_unix</span>::<span class="ident">UnixBusExtManual</span>;
+    }
+}
+
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">pad</span>::{<span class="ident">PadExtManual</span>, <span class="ident">PadProbeData</span>, <span class="ident">PadProbeId</span>, <span class="ident">PadProbeInfo</span>};
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">gobject</span>::<span class="ident">GObjectExtManualGst</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">child_proxy</span>::<span class="ident">ChildProxyExtManual</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">tag_setter</span>::<span class="ident">TagSetterExtManual</span>;
@@ -411,6 +508,11 @@
 
 <span class="kw">mod</span> <span class="ident">clock</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">clock</span>::{<span class="ident">ClockExtManual</span>, <span class="ident">ClockId</span>};
+
+<span class="kw">mod</span> <span class="ident">buffer_pool</span>;
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">buffer_pool</span>::<span class="kw-2">*</span>;
+
+<span class="kw">mod</span> <span class="ident">pad_template</span>;
 
 <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">functions</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">functions</span>::<span class="kw-2">*</span>;
@@ -457,6 +559,21 @@
 
     <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">element</span>::<span class="ident">ElementExtManual</span>;
     <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">bin</span>::<span class="ident">BinExtManual</span>;
+
+    <span class="comment">// OS dependent Bus extensions (also import the other plateform trait for doc)</span>
+    <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v1_14&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
+    <span class="macro">cfg_if</span><span class="macro">!</span> {
+        <span class="kw">if</span> <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">unix</span>)]</span> {
+            <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">bus_unix</span>::<span class="ident">UnixBusExtManual</span>;
+            <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>)]</span>
+            <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">bus_windows</span>::<span class="ident">WindowsBusExtManual</span>;
+        } <span class="kw">else</span> {
+            <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">bus_windows</span>::<span class="ident">WindowsBusExtManual</span>;
+            <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>)]</span>
+            <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">bus_unix</span>::<span class="ident">UnixBusExtManual</span>;
+        }
+    }
+
     <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">pad</span>::<span class="ident">PadExtManual</span>;
     <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">object</span>::<span class="ident">GstObjectExtManual</span>;
     <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">gobject</span>::<span class="ident">GObjectExtManualGst</span>;
@@ -465,6 +582,7 @@
     <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">device_provider</span>::<span class="ident">DeviceProviderExtManual</span>;
     <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">clock</span>::<span class="ident">ClockExtManual</span>;
     <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">value</span>::<span class="ident">GstValueExt</span>;
+    <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">buffer_pool</span>::<span class="ident">BufferPoolExtManual</span>;
 
     <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">tags</span>::<span class="ident">Tag</span>;
     <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">miniobject</span>::<span class="ident">MiniObject</span>;

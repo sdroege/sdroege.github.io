@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="rustdoc">
-    <meta name="description" content="Source to the Rust file `/home/slomo/.cargo/registry/src/github.com-1ecc6299db9ec823/gstreamer-0.10.0/src/value.rs`.">
+    <meta name="description" content="Source to the Rust file `/home/slomo/.cargo/registry/src/github.com-1ecc6299db9ec823/gstreamer-0.11.0/src/value.rs`.">
     <meta name="keywords" content="rust, rustlang, rust-lang">
 
     <title>value.rs.html -- source</title>
@@ -1468,7 +1468,7 @@
 
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">FromValue</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">Array</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> {
     <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">v</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">Value</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
-        <span class="kw">let</span> <span class="ident">arr</span> <span class="op">=</span> (<span class="kw-2">*</span><span class="ident">v</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>).<span class="ident">data</span>[<span class="number">0</span>] <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">glib_ffi</span>::<span class="ident">GArray</span>;
+        <span class="kw">let</span> <span class="ident">arr</span> <span class="op">=</span> (<span class="kw-2">*</span><span class="ident">v</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>).<span class="ident">data</span>[<span class="number">0</span>].<span class="ident">v_pointer</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">glib_ffi</span>::<span class="ident">GArray</span>;
         <span class="kw">if</span> <span class="ident">arr</span>.<span class="ident">is_null</span>() {
             <span class="ident">Array</span>(<span class="ident">Cow</span>::<span class="ident">Borrowed</span>(<span class="kw-2">&amp;</span>[]))
         } <span class="kw">else</span> {
@@ -1539,7 +1539,7 @@
 
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">FromValue</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">List</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> {
     <span class="kw">unsafe</span> <span class="kw">fn</span> <span class="ident">from_value</span>(<span class="ident">v</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;a</span> <span class="ident">Value</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
-        <span class="kw">let</span> <span class="ident">arr</span> <span class="op">=</span> (<span class="kw-2">*</span><span class="ident">v</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>).<span class="ident">data</span>[<span class="number">0</span>] <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">glib_ffi</span>::<span class="ident">GArray</span>;
+        <span class="kw">let</span> <span class="ident">arr</span> <span class="op">=</span> (<span class="kw-2">*</span><span class="ident">v</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>).<span class="ident">data</span>[<span class="number">0</span>].<span class="ident">v_pointer</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">glib_ffi</span>::<span class="ident">GArray</span>;
         <span class="kw">if</span> <span class="ident">arr</span>.<span class="ident">is_null</span>() {
             <span class="ident">List</span>(<span class="ident">Cow</span>::<span class="ident">Borrowed</span>(<span class="kw-2">&amp;</span>[]))
         } <span class="kw">else</span> {

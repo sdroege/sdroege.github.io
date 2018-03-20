@@ -1,1 +1,1 @@
-initSidebarItems({"trait":[["BaseSinkExt",""],["BaseSrcExt",""],["BaseTransformExt",""]]});
+initSidebarItems({"trait":[["BaseSinkExt",""],["BaseSinkExtManual",""],["BaseSrcExt",""],["BaseSrcExtManual",""],["BaseTransformExt",""],["BaseTransformExtManual",""]]});

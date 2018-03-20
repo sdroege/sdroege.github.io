@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="rustdoc">
-    <meta name="description" content="Source to the Rust file `src/base_transform.rs`.">
+    <meta name="description" content="Source to the Rust file `gst-plugin/src/base_transform.rs`.">
     <meta name="keywords" content="rust, rustlang, rust-lang">
 
     <title>base_transform.rs.html -- source</title>
@@ -748,6 +748,19 @@
 <span id="702">702</span>
 <span id="703">703</span>
 <span id="704">704</span>
+<span id="705">705</span>
+<span id="706">706</span>
+<span id="707">707</span>
+<span id="708">708</span>
+<span id="709">709</span>
+<span id="710">710</span>
+<span id="711">711</span>
+<span id="712">712</span>
+<span id="713">713</span>
+<span id="714">714</span>
+<span id="715">715</span>
+<span id="716">716</span>
+<span id="717">717</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -789,7 +802,7 @@
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         <span class="ident">element</span>: <span class="kw-2">&amp;</span><span class="ident">T</span>,
         <span class="ident">direction</span>: <span class="ident">gst</span>::<span class="ident">PadDirection</span>,
-        <span class="ident">caps</span>: <span class="ident">gst</span>::<span class="ident">Caps</span>,
+        <span class="ident">caps</span>: <span class="kw-2">&amp;</span><span class="ident">gst</span>::<span class="ident">Caps</span>,
         <span class="ident">filter</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">gst</span>::<span class="ident">Caps</span><span class="op">&gt;</span>,
     ) <span class="op">-&gt;</span> <span class="ident">gst</span>::<span class="ident">Caps</span> {
         <span class="ident">element</span>.<span class="ident">parent_transform_caps</span>(<span class="ident">direction</span>, <span class="ident">caps</span>, <span class="ident">filter</span>)
@@ -852,6 +865,10 @@
     <span class="kw">fn</span> <span class="ident">transform_ip</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">_element</span>: <span class="kw-2">&amp;</span><span class="ident">T</span>, <span class="ident">_buf</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">gst</span>::<span class="ident">BufferRef</span>) <span class="op">-&gt;</span> <span class="ident">gst</span>::<span class="ident">FlowReturn</span> {
         <span class="macro">unimplemented</span><span class="macro">!</span>();
     }
+
+    <span class="kw">fn</span> <span class="ident">transform_ip_passthrough</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">_element</span>: <span class="kw-2">&amp;</span><span class="ident">T</span>, <span class="ident">_buf</span>: <span class="kw-2">&amp;</span><span class="ident">gst</span>::<span class="ident">BufferRef</span>) <span class="op">-&gt;</span> <span class="ident">gst</span>::<span class="ident">FlowReturn</span> {
+        <span class="macro">unimplemented</span><span class="macro">!</span>();
+    }
 }
 
 <span class="macro">any_impl</span><span class="macro">!</span>(<span class="ident">BaseTransformBase</span>, <span class="ident">BaseTransformImpl</span>);
@@ -861,7 +878,7 @@
     <span class="kw">fn</span> <span class="ident">parent_transform_caps</span>(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         <span class="ident">direction</span>: <span class="ident">gst</span>::<span class="ident">PadDirection</span>,
-        <span class="ident">caps</span>: <span class="ident">gst</span>::<span class="ident">Caps</span>,
+        <span class="ident">caps</span>: <span class="kw-2">&amp;</span><span class="ident">gst</span>::<span class="ident">Caps</span>,
         <span class="ident">filter</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">gst</span>::<span class="ident">Caps</span><span class="op">&gt;</span>,
     ) <span class="op">-&gt;</span> <span class="ident">gst</span>::<span class="ident">Caps</span> {
         <span class="kw">unsafe</span> {
@@ -872,10 +889,10 @@
                 <span class="prelude-val">Some</span>(<span class="ident">f</span>) <span class="op">=&gt;</span> <span class="ident">from_glib_full</span>(<span class="ident">f</span>(
                     <span class="self">self</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
                     <span class="ident">direction</span>.<span class="ident">to_glib</span>(),
-                    <span class="ident">caps</span>.<span class="ident">into_ptr</span>(),
+                    <span class="ident">caps</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
                     <span class="ident">filter</span>.<span class="ident">to_glib_none</span>().<span class="number">0</span>,
                 )),
-                <span class="prelude-val">None</span> <span class="op">=&gt;</span> <span class="ident">caps</span>,
+                <span class="prelude-val">None</span> <span class="op">=&gt;</span> <span class="ident">caps</span>.<span class="ident">clone</span>(),
             }
         }
     }
@@ -1062,13 +1079,17 @@
 }
 
 <span class="kw">unsafe</span> <span class="kw">impl</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">gst</span>::<span class="ident">Element</span><span class="op">&gt;</span> <span class="op">+</span> <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">gst_base</span>::<span class="ident">BaseTransform</span><span class="op">&gt;</span> <span class="op">+</span> <span class="ident">ObjectType</span><span class="op">&gt;</span> <span class="ident">BaseTransformBase</span>
-    <span class="kw">for</span> <span class="ident">T</span> {
+    <span class="kw">for</span> <span class="ident">T</span>
+{
 }
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">BaseTransformClass</span> <span class="op">=</span> <span class="ident">ClassStruct</span><span class="op">&lt;</span><span class="ident">BaseTransform</span><span class="op">&gt;</span>;
 
 <span class="comment">// FIXME: Boilerplate</span>
 <span class="kw">unsafe</span> <span class="kw">impl</span> <span class="ident">BaseTransformClassExt</span><span class="op">&lt;</span><span class="ident">BaseTransform</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">BaseTransformClass</span> {}
 <span class="kw">unsafe</span> <span class="kw">impl</span> <span class="ident">ElementClassExt</span><span class="op">&lt;</span><span class="ident">BaseTransform</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">BaseTransformClass</span> {}
+
+<span class="kw">unsafe</span> <span class="kw">impl</span> <span class="ident">Send</span> <span class="kw">for</span> <span class="ident">BaseTransform</span> {}
+<span class="kw">unsafe</span> <span class="kw">impl</span> <span class="ident">Sync</span> <span class="kw">for</span> <span class="ident">BaseTransform</span> {}
 
 <span class="attribute">#[<span class="ident">macro_export</span>]</span>
 <span class="macro">macro_rules</span><span class="macro">!</span> <span class="ident">box_base_transform_impl</span>(
@@ -1086,7 +1107,7 @@
                 <span class="ident">imp</span>.<span class="ident">stop</span>(<span class="ident">element</span>)
             }
 
-            <span class="kw">fn</span> <span class="ident">transform_caps</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">element</span>: <span class="kw-2">&amp;</span><span class="ident">T</span>, <span class="ident">direction</span>: <span class="ident">gst</span>::<span class="ident">PadDirection</span>, <span class="ident">caps</span>: <span class="ident">gst</span>::<span class="ident">Caps</span>, <span class="ident">filter</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">gst</span>::<span class="ident">Caps</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="ident">gst</span>::<span class="ident">Caps</span> {
+            <span class="kw">fn</span> <span class="ident">transform_caps</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">element</span>: <span class="kw-2">&amp;</span><span class="ident">T</span>, <span class="ident">direction</span>: <span class="ident">gst</span>::<span class="ident">PadDirection</span>, <span class="ident">caps</span>: <span class="kw-2">&amp;</span><span class="ident">gst</span>::<span class="ident">Caps</span>, <span class="ident">filter</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">gst</span>::<span class="ident">Caps</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="ident">gst</span>::<span class="ident">Caps</span> {
                 <span class="kw">let</span> <span class="ident">imp</span>: <span class="kw-2">&amp;</span><span class="macro-nonterminal">$</span><span class="macro-nonterminal">name</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">as_ref</span>();
                 <span class="ident">imp</span>.<span class="ident">transform_caps</span>(<span class="ident">element</span>, <span class="ident">direction</span>, <span class="ident">caps</span>, <span class="ident">filter</span>)
             }
@@ -1140,6 +1161,11 @@
                 <span class="kw">let</span> <span class="ident">imp</span>: <span class="kw-2">&amp;</span><span class="macro-nonterminal">$</span><span class="macro-nonterminal">name</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">as_ref</span>();
                 <span class="ident">imp</span>.<span class="ident">transform_ip</span>(<span class="ident">element</span>, <span class="ident">buf</span>)
             }
+
+            <span class="kw">fn</span> <span class="ident">transform_ip_passthrough</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">element</span>: <span class="kw-2">&amp;</span><span class="ident">T</span>, <span class="ident">buf</span>: <span class="kw-2">&amp;</span><span class="ident">gst</span>::<span class="ident">BufferRef</span>) <span class="op">-&gt;</span> <span class="ident">gst</span>::<span class="ident">FlowReturn</span> {
+                <span class="kw">let</span> <span class="ident">imp</span>: <span class="kw-2">&amp;</span><span class="macro-nonterminal">$</span><span class="macro-nonterminal">name</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">as_ref</span>();
+                <span class="ident">imp</span>.<span class="ident">transform_ip_passthrough</span>(<span class="ident">element</span>, <span class="ident">buf</span>)
+            }
         }
     };
 );
@@ -1175,9 +1201,7 @@
     <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
     <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span><span class="ident">element</span>.<span class="ident">imp</span>;
 
-    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>, <span class="bool-val">false</span>, {
-        <span class="ident">imp</span>.<span class="ident">start</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>)
-    }).<span class="ident">to_glib</span>()
+    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>, <span class="bool-val">false</span>, { <span class="ident">imp</span>.<span class="ident">start</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>) }).<span class="ident">to_glib</span>()
 }
 
 <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">base_transform_stop</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">BaseTransformBase</span><span class="op">&gt;</span>(
@@ -1192,9 +1216,7 @@
     <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
     <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span><span class="ident">element</span>.<span class="ident">imp</span>;
 
-    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>, <span class="bool-val">false</span>, {
-        <span class="ident">imp</span>.<span class="ident">stop</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>)
-    }).<span class="ident">to_glib</span>()
+    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>, <span class="bool-val">false</span>, { <span class="ident">imp</span>.<span class="ident">stop</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>) }).<span class="ident">to_glib</span>()
 }
 
 <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">base_transform_transform_caps</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">BaseTransformBase</span><span class="op">&gt;</span>(
@@ -1222,7 +1244,7 @@
         <span class="ident">imp</span>.<span class="ident">transform_caps</span>(
             <span class="kw-2">&amp;</span><span class="ident">wrap</span>,
             <span class="ident">from_glib</span>(<span class="ident">direction</span>),
-            <span class="ident">from_glib_full</span>(<span class="ident">caps</span>),
+            <span class="kw-2">&amp;</span><span class="ident">from_glib_borrow</span>(<span class="ident">caps</span>),
             <span class="ident">filter</span>.<span class="ident">as_ref</span>(),
         )
     }).<span class="ident">into_ptr</span>()
@@ -1450,7 +1472,11 @@
     <span class="kw">let</span> <span class="ident">buf</span> <span class="op">=</span> <span class="ident">buf</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gst_ffi</span>::<span class="ident">GstBuffer</span>;
 
     <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>, <span class="ident">gst</span>::<span class="ident">FlowReturn</span>::<span class="ident">Error</span>, {
-        <span class="ident">imp</span>.<span class="ident">transform_ip</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="ident">gst</span>::<span class="ident">BufferRef</span>::<span class="ident">from_mut_ptr</span>(<span class="ident">buf</span>))
+        <span class="kw">if</span> <span class="ident">from_glib</span>(<span class="ident">gst_base_ffi</span>::<span class="ident">gst_base_transform_is_passthrough</span>(<span class="ident">ptr</span>)) {
+            <span class="ident">imp</span>.<span class="ident">transform_ip_passthrough</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="ident">gst</span>::<span class="ident">BufferRef</span>::<span class="ident">from_ptr</span>(<span class="ident">buf</span>))
+        } <span class="kw">else</span> {
+            <span class="ident">imp</span>.<span class="ident">transform_ip</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="ident">gst</span>::<span class="ident">BufferRef</span>::<span class="ident">from_mut_ptr</span>(<span class="ident">buf</span>))
+        }
     }).<span class="ident">to_glib</span>()
 }
 </pre>

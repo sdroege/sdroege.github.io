@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="rustdoc">
-    <meta name="description" content="Source to the Rust file `src/lib.rs`.">
+    <meta name="description" content="Source to the Rust file `gst-plugin/src/lib.rs`.">
     <meta name="keywords" content="rust, rustlang, rust-lang">
 
     <title>lib.rs.html -- source</title>
@@ -138,19 +138,19 @@
 <span class="comment">// except according to those terms.</span>
 
 <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">byteorder</span>;
+<span class="kw">pub</span> <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">glib_sys</span> <span class="kw">as</span> <span class="ident">glib_ffi</span>;
+<span class="kw">pub</span> <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">gobject_sys</span> <span class="kw">as</span> <span class="ident">gobject_ffi</span>;
 <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">gstreamer_base_sys</span> <span class="kw">as</span> <span class="ident">gst_base_ffi</span>;
+<span class="kw">pub</span> <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">gstreamer_sys</span> <span class="kw">as</span> <span class="ident">gst_ffi</span>;
 <span class="attribute">#[<span class="ident">macro_use</span>]</span>
 <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">lazy_static</span>;
 <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">libc</span>;
-<span class="kw">pub</span> <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">glib_sys</span> <span class="kw">as</span> <span class="ident">glib_ffi</span>;
-<span class="kw">pub</span> <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">gobject_sys</span> <span class="kw">as</span> <span class="ident">gobject_ffi</span>;
-<span class="kw">pub</span> <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">gstreamer_sys</span> <span class="kw">as</span> <span class="ident">gst_ffi</span>;
 
-<span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">gstreamer_base</span> <span class="kw">as</span> <span class="ident">gst_base</span>;
 <span class="attribute">#[<span class="ident">macro_use</span>]</span>
 <span class="kw">pub</span> <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">glib</span>;
 <span class="attribute">#[<span class="ident">macro_use</span>]</span>
 <span class="kw">pub</span> <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">gstreamer</span> <span class="kw">as</span> <span class="ident">gst</span>;
+<span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">gstreamer_base</span> <span class="kw">as</span> <span class="ident">gst_base</span>;
 
 <span class="macro">macro_rules</span><span class="macro">!</span> <span class="ident">callback_guard</span> {
     () <span class="op">=&gt;</span> (
