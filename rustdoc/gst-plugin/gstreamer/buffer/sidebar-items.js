@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["BUFFER_COPY_ALL",""],["BUFFER_COPY_METADATA",""],["BufferMap",""],["BufferRef",""],["MappedBuffer",""],["Readable",""],["Writable",""]],"type":[["Buffer",""]]});
+initSidebarItems({"enum":[["Readable",""],["Writable",""]],"struct":[["BUFFER_COPY_ALL",""],["BUFFER_COPY_METADATA",""],["BufferMap",""],["BufferRef",""],["MappedBuffer",""]],"type":[["Buffer",""]]});

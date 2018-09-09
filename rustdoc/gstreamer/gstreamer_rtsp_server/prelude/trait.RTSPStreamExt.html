@@ -1,56 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="rustdoc">
-    <meta name="description" content="API documentation for the Rust `RTSPStreamExt` trait in crate `gstreamer_rtsp_server`.">
-    <meta name="keywords" content="rust, rustlang, rust-lang, RTSPStreamExt">
-
-    <title>gstreamer_rtsp_server::prelude::RTSPStreamExt - Rust</title>
-
-    <link rel="stylesheet" type="text/css" href="../../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
-    <link rel="stylesheet" type="text/css" href="../../main.css">
-    
-
-    
-    
-</head>
-<body class="rustdoc trait">
-    <!--[if lte IE 8]>
-    <div class="warning">
-        This old browser is unsupported and will most likely display funky
-        things.
-    </div>
-    <![endif]-->
-
-    
-
-    <nav class="sidebar">
-        <div class="sidebar-menu">&#9776;</div>
-        
-        <p class='location'>Trait RTSPStreamExt</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.add_transport">add_transport</a><a href="#tymethod.get_address_pool">get_address_pool</a><a href="#tymethod.get_buffer_size">get_buffer_size</a><a href="#tymethod.get_caps">get_caps</a><a href="#tymethod.get_control">get_control</a><a href="#tymethod.get_current_seqnum">get_current_seqnum</a><a href="#tymethod.get_dscp_qos">get_dscp_qos</a><a href="#tymethod.get_index">get_index</a><a href="#tymethod.get_joined_bin">get_joined_bin</a><a href="#tymethod.get_mtu">get_mtu</a><a href="#tymethod.get_multicast_address">get_multicast_address</a><a href="#tymethod.get_multicast_iface">get_multicast_iface</a><a href="#tymethod.get_profiles">get_profiles</a><a href="#tymethod.get_protocols">get_protocols</a><a href="#tymethod.get_pt">get_pt</a><a href="#tymethod.get_publish_clock_mode">get_publish_clock_mode</a><a href="#tymethod.get_retransmission_pt">get_retransmission_pt</a><a href="#tymethod.get_retransmission_time">get_retransmission_time</a><a href="#tymethod.get_rtcp_multicast_socket">get_rtcp_multicast_socket</a><a href="#tymethod.get_rtcp_socket">get_rtcp_socket</a><a href="#tymethod.get_rtp_multicast_socket">get_rtp_multicast_socket</a><a href="#tymethod.get_rtp_socket">get_rtp_socket</a><a href="#tymethod.get_rtpinfo">get_rtpinfo</a><a href="#tymethod.get_rtpsession">get_rtpsession</a><a href="#tymethod.get_sinkpad">get_sinkpad</a><a href="#tymethod.get_srcpad">get_srcpad</a><a href="#tymethod.get_srtp_encoder">get_srtp_encoder</a><a href="#tymethod.get_ssrc">get_ssrc</a><a href="#tymethod.has_control">has_control</a><a href="#tymethod.is_blocking">is_blocking</a><a href="#tymethod.is_client_side">is_client_side</a><a href="#tymethod.is_complete">is_complete</a><a href="#tymethod.is_receiver">is_receiver</a><a href="#tymethod.is_sender">is_sender</a><a href="#tymethod.join_bin">join_bin</a><a href="#tymethod.leave_bin">leave_bin</a><a href="#tymethod.recv_rtcp">recv_rtcp</a><a href="#tymethod.recv_rtp">recv_rtp</a><a href="#tymethod.remove_transport">remove_transport</a><a href="#tymethod.request_aux_sender">request_aux_sender</a><a href="#tymethod.reserve_address">reserve_address</a><a href="#tymethod.seekable">seekable</a><a href="#tymethod.set_address_pool">set_address_pool</a><a href="#tymethod.set_blocked">set_blocked</a><a href="#tymethod.set_buffer_size">set_buffer_size</a><a href="#tymethod.set_client_side">set_client_side</a><a href="#tymethod.set_control">set_control</a><a href="#tymethod.set_dscp_qos">set_dscp_qos</a><a href="#tymethod.set_mtu">set_mtu</a><a href="#tymethod.set_multicast_iface">set_multicast_iface</a><a href="#tymethod.set_profiles">set_profiles</a><a href="#tymethod.set_protocols">set_protocols</a><a href="#tymethod.set_pt_map">set_pt_map</a><a href="#tymethod.set_publish_clock_mode">set_publish_clock_mode</a><a href="#tymethod.set_retransmission_pt">set_retransmission_pt</a><a href="#tymethod.set_retransmission_time">set_retransmission_time</a><a href="#tymethod.set_seqnum_offset">set_seqnum_offset</a><a href="#tymethod.unblock_linked">unblock_linked</a><a href="#tymethod.update_crypto">update_crypto</a><a href="#tymethod.connect_new_rtcp_encoder">connect_new_rtcp_encoder</a><a href="#tymethod.connect_new_rtp_encoder">connect_new_rtp_encoder</a><a href="#tymethod.connect_property_control_notify">connect_property_control_notify</a><a href="#tymethod.connect_property_profiles_notify">connect_property_profiles_notify</a><a href="#tymethod.connect_property_protocols_notify">connect_property_protocols_notify</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='../index.html'>gstreamer_rtsp_server</a>::<wbr><a href='index.html'>prelude</a></p><script>window.sidebarCurrent = {name: 'RTSPStreamExt', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
-    </nav>
-
-    <nav class="sub">
-        <form class="search-form js-only">
-            <div class="search-container">
-                <input class="search-input" name="search"
-                       autocomplete="off"
-                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
-                       type="search">
-            </div>
-        </form>
-    </nav>
-
-    <section id='main' class="content">
-<h1 class='fqn'><span class='in-band'>Trait <a href='../index.html'>gstreamer_rtsp_server</a>::<wbr><a href='index.html'>prelude</a>::<wbr><a class="trait" href=''>RTSPStreamExt</a></span><span class='out-of-band'><span id='render-detail'>
-                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                       [<span class='inner'>&#x2212;</span>]
-                   </a>
-               </span><a class='srclink' href='../../src/gstreamer_rtsp_server/auto/r_t_s_p_stream.rs.html#70-566' title='goto source code'>[src]</a></span></h1>
-<pre class='rust trait'>pub trait RTSPStreamExt {
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="API documentation for the Rust `RTSPStreamExt` trait in crate `gstreamer_rtsp_server`."><meta name="keywords" content="rust, rustlang, rust-lang, RTSPStreamExt"><title>gstreamer_rtsp_server::prelude::RTSPStreamExt - Rust</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css"><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script src="../../storage.js"></script></head><body class="rustdoc trait"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><p class='location'>Trait RTSPStreamExt</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.add_transport">add_transport</a><a href="#tymethod.get_address_pool">get_address_pool</a><a href="#tymethod.get_buffer_size">get_buffer_size</a><a href="#tymethod.get_caps">get_caps</a><a href="#tymethod.get_control">get_control</a><a href="#tymethod.get_current_seqnum">get_current_seqnum</a><a href="#tymethod.get_dscp_qos">get_dscp_qos</a><a href="#tymethod.get_index">get_index</a><a href="#tymethod.get_joined_bin">get_joined_bin</a><a href="#tymethod.get_mtu">get_mtu</a><a href="#tymethod.get_multicast_address">get_multicast_address</a><a href="#tymethod.get_multicast_iface">get_multicast_iface</a><a href="#tymethod.get_profiles">get_profiles</a><a href="#tymethod.get_protocols">get_protocols</a><a href="#tymethod.get_pt">get_pt</a><a href="#tymethod.get_publish_clock_mode">get_publish_clock_mode</a><a href="#tymethod.get_retransmission_pt">get_retransmission_pt</a><a href="#tymethod.get_retransmission_time">get_retransmission_time</a><a href="#tymethod.get_rtcp_multicast_socket">get_rtcp_multicast_socket</a><a href="#tymethod.get_rtcp_socket">get_rtcp_socket</a><a href="#tymethod.get_rtp_multicast_socket">get_rtp_multicast_socket</a><a href="#tymethod.get_rtp_socket">get_rtp_socket</a><a href="#tymethod.get_rtpinfo">get_rtpinfo</a><a href="#tymethod.get_rtpsession">get_rtpsession</a><a href="#tymethod.get_sinkpad">get_sinkpad</a><a href="#tymethod.get_srcpad">get_srcpad</a><a href="#tymethod.get_srtp_encoder">get_srtp_encoder</a><a href="#tymethod.get_ssrc">get_ssrc</a><a href="#tymethod.has_control">has_control</a><a href="#tymethod.is_blocking">is_blocking</a><a href="#tymethod.is_client_side">is_client_side</a><a href="#tymethod.is_complete">is_complete</a><a href="#tymethod.is_receiver">is_receiver</a><a href="#tymethod.is_sender">is_sender</a><a href="#tymethod.join_bin">join_bin</a><a href="#tymethod.leave_bin">leave_bin</a><a href="#tymethod.recv_rtcp">recv_rtcp</a><a href="#tymethod.recv_rtp">recv_rtp</a><a href="#tymethod.remove_transport">remove_transport</a><a href="#tymethod.request_aux_sender">request_aux_sender</a><a href="#tymethod.reserve_address">reserve_address</a><a href="#tymethod.seekable">seekable</a><a href="#tymethod.set_address_pool">set_address_pool</a><a href="#tymethod.set_blocked">set_blocked</a><a href="#tymethod.set_buffer_size">set_buffer_size</a><a href="#tymethod.set_client_side">set_client_side</a><a href="#tymethod.set_control">set_control</a><a href="#tymethod.set_dscp_qos">set_dscp_qos</a><a href="#tymethod.set_mtu">set_mtu</a><a href="#tymethod.set_multicast_iface">set_multicast_iface</a><a href="#tymethod.set_profiles">set_profiles</a><a href="#tymethod.set_protocols">set_protocols</a><a href="#tymethod.set_pt_map">set_pt_map</a><a href="#tymethod.set_publish_clock_mode">set_publish_clock_mode</a><a href="#tymethod.set_retransmission_pt">set_retransmission_pt</a><a href="#tymethod.set_retransmission_time">set_retransmission_time</a><a href="#tymethod.set_seqnum_offset">set_seqnum_offset</a><a href="#tymethod.unblock_linked">unblock_linked</a><a href="#tymethod.update_crypto">update_crypto</a><a href="#tymethod.connect_new_rtcp_encoder">connect_new_rtcp_encoder</a><a href="#tymethod.connect_new_rtp_encoder">connect_new_rtp_encoder</a><a href="#tymethod.connect_property_control_notify">connect_property_control_notify</a><a href="#tymethod.connect_property_profiles_notify">connect_property_profiles_notify</a><a href="#tymethod.connect_property_protocols_notify">connect_property_protocols_notify</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='../index.html'>gstreamer_rtsp_server</a>::<wbr><a href='index.html'>prelude</a></p><script>window.sidebarCurrent = {name: 'RTSPStreamExt', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script></div></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!"><img src="../../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices"></div></div><script src="../../theme.js"></script><nav class="sub"><form class="search-form js-only"><div class="search-container"><input class="search-input" name="search" autocomplete="off" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><a id="settings-menu" href="../../settings.html"><img src="../../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><h1 class='fqn'><span class='in-band'>Trait <a href='../index.html'>gstreamer_rtsp_server</a>::<wbr><a href='index.html'>prelude</a>::<wbr><a class="trait" href=''>RTSPStreamExt</a></span><span class='out-of-band'><span id='render-detail'><a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">[<span class='inner'>&#x2212;</span>]</a></span><a class='srclink' href='../../src/gstreamer_rtsp_server/auto/rtsp_stream.rs.html#70-566' title='goto source code'>[src]</a></span></h1><div class="docblock type-decl"><pre class='rust trait'>pub trait RTSPStreamExt {
     fn <a href='#tymethod.add_transport' class='fnname'>add_transport</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trans: &amp;<a class="struct" href="../../gstreamer_rtsp_server/struct.RTSPStreamTransport.html" title="struct gstreamer_rtsp_server::RTSPStreamTransport">RTSPStreamTransport</a><br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="struct" href="../../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;;
 <div class='item-spacer'></div>    fn <a href='#tymethod.get_address_pool' class='fnname'>get_address_pool</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../gstreamer_rtsp_server/struct.RTSPAddressPool.html" title="struct gstreamer_rtsp_server::RTSPAddressPool">RTSPAddressPool</a>&gt;;
 <div class='item-spacer'></div>    fn <a href='#tymethod.get_buffer_size' class='fnname'>get_buffer_size</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>;
@@ -85,8 +33,8 @@
 <div class='item-spacer'></div>    fn <a href='#tymethod.is_complete' class='fnname'>is_complete</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
 <div class='item-spacer'></div>    fn <a href='#tymethod.is_receiver' class='fnname'>is_receiver</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
 <div class='item-spacer'></div>    fn <a href='#tymethod.is_sender' class='fnname'>is_sender</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
-<div class='item-spacer'></div>    fn <a href='#tymethod.join_bin' class='fnname'>join_bin</a>&lt;P:&nbsp;<a class="trait" href="../../gstreamer_rtsp_server/trait.IsA.html" title="trait gstreamer_rtsp_server::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/auto/bin/struct.Bin.html" title="struct gstreamer::auto::bin::Bin">Bin</a>&gt;, Q:&nbsp;<a class="trait" href="../../gstreamer_rtsp_server/trait.IsA.html" title="trait gstreamer_rtsp_server::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>P, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rtpbin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Q, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state: <a class="enum" href="../../gstreamer/auto/enums/enum.State.html" title="enum gstreamer::auto::enums::State">State</a><br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="struct" href="../../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;;
-<div class='item-spacer'></div>    fn <a href='#tymethod.leave_bin' class='fnname'>leave_bin</a>&lt;P:&nbsp;<a class="trait" href="../../gstreamer_rtsp_server/trait.IsA.html" title="trait gstreamer_rtsp_server::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/auto/bin/struct.Bin.html" title="struct gstreamer::auto::bin::Bin">Bin</a>&gt;, Q:&nbsp;<a class="trait" href="../../gstreamer_rtsp_server/trait.IsA.html" title="trait gstreamer_rtsp_server::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>P, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rtpbin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Q<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="struct" href="../../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;;
+<div class='item-spacer'></div>    fn <a href='#tymethod.join_bin' class='fnname'>join_bin</a>&lt;P:&nbsp;<a class="trait" href="../../gstreamer_rtsp_server/prelude/trait.IsA.html" title="trait gstreamer_rtsp_server::prelude::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/auto/bin/struct.Bin.html" title="struct gstreamer::auto::bin::Bin">Bin</a>&gt;, Q:&nbsp;<a class="trait" href="../../gstreamer_rtsp_server/prelude/trait.IsA.html" title="trait gstreamer_rtsp_server::prelude::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>P, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rtpbin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Q, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state: <a class="enum" href="../../gstreamer/auto/enums/enum.State.html" title="enum gstreamer::auto::enums::State">State</a><br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="struct" href="../../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;;
+<div class='item-spacer'></div>    fn <a href='#tymethod.leave_bin' class='fnname'>leave_bin</a>&lt;P:&nbsp;<a class="trait" href="../../gstreamer_rtsp_server/prelude/trait.IsA.html" title="trait gstreamer_rtsp_server::prelude::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/auto/bin/struct.Bin.html" title="struct gstreamer::auto::bin::Bin">Bin</a>&gt;, Q:&nbsp;<a class="trait" href="../../gstreamer_rtsp_server/prelude/trait.IsA.html" title="trait gstreamer_rtsp_server::prelude::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>P, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rtpbin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Q<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="struct" href="../../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;;
 <div class='item-spacer'></div>    fn <a href='#tymethod.recv_rtcp' class='fnname'>recv_rtcp</a>(&amp;self, buffer: &amp;<a class="type" href="../../gstreamer/buffer/type.Buffer.html" title="type gstreamer::buffer::Buffer">Buffer</a>) -&gt; <a class="enum" href="../../gstreamer/auto/enums/enum.FlowReturn.html" title="enum gstreamer::auto::enums::FlowReturn">FlowReturn</a>;
 <div class='item-spacer'></div>    fn <a href='#tymethod.recv_rtp' class='fnname'>recv_rtp</a>(&amp;self, buffer: &amp;<a class="type" href="../../gstreamer/buffer/type.Buffer.html" title="type gstreamer::buffer::Buffer">Buffer</a>) -&gt; <a class="enum" href="../../gstreamer/auto/enums/enum.FlowReturn.html" title="enum gstreamer::auto::enums::FlowReturn">FlowReturn</a>;
 <div class='item-spacer'></div>    fn <a href='#tymethod.remove_transport' class='fnname'>remove_transport</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trans: &amp;<a class="struct" href="../../gstreamer_rtsp_server/struct.RTSPStreamTransport.html" title="struct gstreamer_rtsp_server::RTSPStreamTransport">RTSPStreamTransport</a><br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="struct" href="../../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;;
@@ -115,9 +63,8 @@
 <div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_control_notify' class='fnname'>connect_property_control_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
 <div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_profiles_notify' class='fnname'>connect_property_profiles_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
 <div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_protocols_notify' class='fnname'>connect_property_protocols_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
-}</pre><div class='docblock'><p>Trait containing all <code>RTSPStream</code> methods.</p>
-
-<h1 id='implementors-1' class='section-header'><a href='#implementors-1'>Implementors</a></h1>
+}</pre></div><div class='docblock'><p>Trait containing all <code>RTSPStream</code> methods.</p>
+<h1 id="implementors-1" class="section-header"><a href="#implementors-1">Implementors</a></h1>
 <p><a href="struct.RTSPStream.html"><code>RTSPStream</code></a></p>
 </div>
             <h2 id='required-methods' class='small-section-header'>
@@ -126,430 +73,275 @@
             <div class='methods'>
         <h3 id='tymethod.add_transport' class='method'><span id='add_transport.v' class='invisible'><code>fn <a href='#tymethod.add_transport' class='fnname'>add_transport</a>(&amp;self, trans: &amp;<a class="struct" href="../../gstreamer_rtsp_server/struct.RTSPStreamTransport.html" title="struct gstreamer_rtsp_server::RTSPStreamTransport">RTSPStreamTransport</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="struct" href="../../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;</code></span></h3><div class='docblock'><p>Add the transport in <code>trans</code> to <code>self</code>. The media of <code>self</code> will
 then also be send to the values configured in <code>trans</code>.</p>
-
 <p><code>self</code> must be joined to a bin.</p>
-
 <p><code>trans</code> must contain a valid <code>gst_rtsp::RTSPTransport</code>.</p>
-
-<h2 id='trans' class='section-header'><a href='#trans'><code>trans</code></a></h2>
+<h2 id="trans" class="section-header"><a href="#trans"><code>trans</code></a></h2>
 <p>a <code>RTSPStreamTransport</code></p>
-
-<h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
+<h1 id="returns" class="section-header"><a href="#returns">Returns</a></h1>
 <p><code>true</code> if <code>trans</code> was added</p>
 </div><h3 id='tymethod.get_address_pool' class='method'><span id='get_address_pool.v' class='invisible'><code>fn <a href='#tymethod.get_address_pool' class='fnname'>get_address_pool</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../gstreamer_rtsp_server/struct.RTSPAddressPool.html" title="struct gstreamer_rtsp_server::RTSPAddressPool">RTSPAddressPool</a>&gt;</code></span></h3><div class='docblock'><p>Get the <code>RTSPAddressPool</code> used as the address pool of <code>self</code>.</p>
-
-<h1 id='returns-1' class='section-header'><a href='#returns-1'>Returns</a></h1>
+<h1 id="returns-1" class="section-header"><a href="#returns-1">Returns</a></h1>
 <p>the <code>RTSPAddressPool</code> of <code>self</code>.
 <code>gobject::ObjectExt::unref</code> after usage.</p>
 </div><h3 id='tymethod.get_buffer_size' class='method'><span id='get_buffer_size.v' class='invisible'><code>fn <a href='#tymethod.get_buffer_size' class='fnname'>get_buffer_size</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span></h3><div class='docblock'><p>Get the size of the UDP transmission buffer (in bytes)</p>
-
-<h1 id='returns-2' class='section-header'><a href='#returns-2'>Returns</a></h1>
+<h1 id="returns-2" class="section-header"><a href="#returns-2">Returns</a></h1>
 <p>the size of the UDP TX buffer</p>
 </div><h3 id='tymethod.get_caps' class='method'><span id='get_caps.v' class='invisible'><code>fn <a href='#tymethod.get_caps' class='fnname'>get_caps</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../../gstreamer/caps/type.Caps.html" title="type gstreamer::caps::Caps">Caps</a>&gt;</code></span></h3><div class='docblock'><p>Retrieve the current caps of <code>self</code>.</p>
-
-<h1 id='returns-3' class='section-header'><a href='#returns-3'>Returns</a></h1>
+<h1 id="returns-3" class="section-header"><a href="#returns-3">Returns</a></h1>
 <p>the <code>gst::Caps</code> of <code>self</code>.
 use <code>gst_caps_unref</code> after usage.</p>
 </div><h3 id='tymethod.get_control' class='method'><span id='get_control.v' class='invisible'><code>fn <a href='#tymethod.get_control' class='fnname'>get_control</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span></h3><div class='docblock'><p>Get the control string to identify this stream.</p>
-
-<h1 id='returns-4' class='section-header'><a href='#returns-4'>Returns</a></h1>
+<h1 id="returns-4" class="section-header"><a href="#returns-4">Returns</a></h1>
 <p>the control string. <code>g_free</code> after usage.</p>
 </div><h3 id='tymethod.get_current_seqnum' class='method'><span id='get_current_seqnum.v' class='invisible'><code>fn <a href='#tymethod.get_current_seqnum' class='fnname'>get_current_seqnum</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a></code></span></h3><h3 id='tymethod.get_dscp_qos' class='method'><span id='get_dscp_qos.v' class='invisible'><code>fn <a href='#tymethod.get_dscp_qos' class='fnname'>get_dscp_qos</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code></span></h3><div class='docblock'><p>Get the configured DSCP QoS in of the outgoing sockets.</p>
-
-<h1 id='returns-5' class='section-header'><a href='#returns-5'>Returns</a></h1>
+<h1 id="returns-5" class="section-header"><a href="#returns-5">Returns</a></h1>
 <p>the DSCP QoS value of the outgoing sockets, or -1 if disbled.</p>
 </div><h3 id='tymethod.get_index' class='method'><span id='get_index.v' class='invisible'><code>fn <a href='#tymethod.get_index' class='fnname'>get_index</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span></h3><div class='docblock'><p>Get the stream index.</p>
-
-<h1 id='returns-6' class='section-header'><a href='#returns-6'>Returns</a></h1>
+<h1 id="returns-6" class="section-header"><a href="#returns-6">Returns</a></h1>
 <p>the stream index.</p>
 </div><h3 id='tymethod.get_joined_bin' class='method'><span id='get_joined_bin.v' class='invisible'><code>fn <a href='#tymethod.get_joined_bin' class='fnname'>get_joined_bin</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../gstreamer/auto/bin/struct.Bin.html" title="struct gstreamer::auto::bin::Bin">Bin</a>&gt;</code></span></h3><div class='docblock'><p>Get the previous joined bin with <code>RTSPStreamExt::join_bin</code> or NULL.</p>
-
-<h1 id='returns-7' class='section-header'><a href='#returns-7'>Returns</a></h1>
+<h1 id="returns-7" class="section-header"><a href="#returns-7">Returns</a></h1>
 <p>the joined bin or NULL.</p>
 </div><h3 id='tymethod.get_mtu' class='method'><span id='get_mtu.v' class='invisible'><code>fn <a href='#tymethod.get_mtu' class='fnname'>get_mtu</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span></h3><div class='docblock'><p>Get the configured MTU in the payloader of <code>self</code>.</p>
-
-<h1 id='returns-8' class='section-header'><a href='#returns-8'>Returns</a></h1>
+<h1 id="returns-8" class="section-header"><a href="#returns-8">Returns</a></h1>
 <p>the MTU of the payloader.</p>
 </div><h3 id='tymethod.get_multicast_address' class='method'><span id='get_multicast_address.v' class='invisible'><code>fn <a href='#tymethod.get_multicast_address' class='fnname'>get_multicast_address</a>(&amp;self, family: <a class="enum" href="../../gio/auto/enums/enum.SocketFamily.html" title="enum gio::auto::enums::SocketFamily">SocketFamily</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../gstreamer_rtsp_server/struct.RTSPAddress.html" title="struct gstreamer_rtsp_server::RTSPAddress">RTSPAddress</a>&gt;</code></span></h3><div class='docblock'><p>Get the multicast address of <code>self</code> for <code>family</code>. The original
 <code>RTSPAddress</code> is cached and copy is returned, so freeing the return value
-won&#39;t release the address from the pool.</p>
-
-<h2 id='family' class='section-header'><a href='#family'><code>family</code></a></h2>
+won't release the address from the pool.</p>
+<h2 id="family" class="section-header"><a href="#family"><code>family</code></a></h2>
 <p>the <code>gio::SocketFamily</code></p>
-
-<h1 id='returns-9' class='section-header'><a href='#returns-9'>Returns</a></h1>
+<h1 id="returns-9" class="section-header"><a href="#returns-9">Returns</a></h1>
 <p>the <code>RTSPAddress</code> of <code>self</code>
 or <code>None</code> when no address could be allocated. <code>RTSPAddress::free</code>
 after usage.</p>
 </div><h3 id='tymethod.get_multicast_iface' class='method'><span id='get_multicast_iface.v' class='invisible'><code>fn <a href='#tymethod.get_multicast_iface' class='fnname'>get_multicast_iface</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span></h3><div class='docblock'><p>Get the multicast interface used for <code>self</code>.</p>
-
-<h1 id='returns-10' class='section-header'><a href='#returns-10'>Returns</a></h1>
+<h1 id="returns-10" class="section-header"><a href="#returns-10">Returns</a></h1>
 <p>the multicast interface for <code>self</code>.
 <code>g_free</code> after usage.</p>
 </div><h3 id='tymethod.get_profiles' class='method'><span id='get_profiles.v' class='invisible'><code>fn <a href='#tymethod.get_profiles' class='fnname'>get_profiles</a>(&amp;self) -&gt; <a class="struct" href="../../gstreamer_rtsp/auto/flags/struct.RTSPProfile.html" title="struct gstreamer_rtsp::auto::flags::RTSPProfile">RTSPProfile</a></code></span></h3><div class='docblock'><p>Get the allowed profiles of <code>self</code>.</p>
-
-<h1 id='returns-11' class='section-header'><a href='#returns-11'>Returns</a></h1>
+<h1 id="returns-11" class="section-header"><a href="#returns-11">Returns</a></h1>
 <p>a <code>gst_rtsp::RTSPProfile</code></p>
 </div><h3 id='tymethod.get_protocols' class='method'><span id='get_protocols.v' class='invisible'><code>fn <a href='#tymethod.get_protocols' class='fnname'>get_protocols</a>(&amp;self) -&gt; <a class="struct" href="../../gstreamer_rtsp/auto/flags/struct.RTSPLowerTrans.html" title="struct gstreamer_rtsp::auto::flags::RTSPLowerTrans">RTSPLowerTrans</a></code></span></h3><div class='docblock'><p>Get the allowed protocols of <code>self</code>.</p>
-
-<h1 id='returns-12' class='section-header'><a href='#returns-12'>Returns</a></h1>
+<h1 id="returns-12" class="section-header"><a href="#returns-12">Returns</a></h1>
 <p>a <code>gst_rtsp::RTSPLowerTrans</code></p>
 </div><h3 id='tymethod.get_pt' class='method'><span id='get_pt.v' class='invisible'><code>fn <a href='#tymethod.get_pt' class='fnname'>get_pt</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span></h3><div class='docblock'><p>Get the stream payload type.</p>
-
-<h1 id='returns-13' class='section-header'><a href='#returns-13'>Returns</a></h1>
+<h1 id="returns-13" class="section-header"><a href="#returns-13">Returns</a></h1>
 <p>the stream payload type.</p>
 </div><h3 id='tymethod.get_publish_clock_mode' class='method'><span id='get_publish_clock_mode.v' class='invisible'><code>fn <a href='#tymethod.get_publish_clock_mode' class='fnname'>get_publish_clock_mode</a>(&amp;self) -&gt; <a class="enum" href="../../gstreamer_rtsp_server/enum.RTSPPublishClockMode.html" title="enum gstreamer_rtsp_server::RTSPPublishClockMode">RTSPPublishClockMode</a></code></span></h3><div class='docblock'><p>Gets if and how the stream clock should be published according to RFC7273.</p>
-
-<h1 id='returns-14' class='section-header'><a href='#returns-14'>Returns</a></h1>
+<h1 id="returns-14" class="section-header"><a href="#returns-14">Returns</a></h1>
 <p>The GstRTSPPublishClockMode</p>
 </div><h3 id='tymethod.get_retransmission_pt' class='method'><span id='get_retransmission_pt.v' class='invisible'><code>fn <a href='#tymethod.get_retransmission_pt' class='fnname'>get_retransmission_pt</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span></h3><div class='docblock'><p>Get the payload-type used for retransmission of this stream</p>
-
-<h1 id='returns-15' class='section-header'><a href='#returns-15'>Returns</a></h1>
+<h1 id="returns-15" class="section-header"><a href="#returns-15">Returns</a></h1>
 <p>The retransmission PT.</p>
 </div><h3 id='tymethod.get_retransmission_time' class='method'><span id='get_retransmission_time.v' class='invisible'><code>fn <a href='#tymethod.get_retransmission_time' class='fnname'>get_retransmission_time</a>(&amp;self) -&gt; <a class="struct" href="../../gstreamer/clock_time/struct.ClockTime.html" title="struct gstreamer::clock_time::ClockTime">ClockTime</a></code></span></h3><div class='docblock'><p>Get the amount of time to store retransmission data.</p>
-
-<h1 id='returns-16' class='section-header'><a href='#returns-16'>Returns</a></h1>
+<h1 id="returns-16" class="section-header"><a href="#returns-16">Returns</a></h1>
 <p>the amount of time to store retransmission data.</p>
 </div><h3 id='tymethod.get_rtcp_multicast_socket' class='method'><span id='get_rtcp_multicast_socket.v' class='invisible'><code>fn <a href='#tymethod.get_rtcp_multicast_socket' class='fnname'>get_rtcp_multicast_socket</a>(&amp;self, family: <a class="enum" href="../../gio/auto/enums/enum.SocketFamily.html" title="enum gio::auto::enums::SocketFamily">SocketFamily</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../gio/auto/socket/struct.Socket.html" title="struct gio::auto::socket::Socket">Socket</a>&gt;</code></span></h3><div class='docblock'><p>Get the multicast RTCP socket from <code>self</code> for a <code>family</code>.</p>
-
-<h2 id='family-1' class='section-header'><a href='#family-1'><code>family</code></a></h2>
+<h2 id="family-1" class="section-header"><a href="#family-1"><code>family</code></a></h2>
 <p>the socket family</p>
-
-<h1 id='returns-17' class='section-header'><a href='#returns-17'>Returns</a></h1>
+<h1 id="returns-17" class="section-header"><a href="#returns-17">Returns</a></h1>
 <p>the multicast RTCP socket or <code>None</code> if no
 socket could be allocated for <code>family</code>. Unref after usage</p>
 </div><h3 id='tymethod.get_rtcp_socket' class='method'><span id='get_rtcp_socket.v' class='invisible'><code>fn <a href='#tymethod.get_rtcp_socket' class='fnname'>get_rtcp_socket</a>(&amp;self, family: <a class="enum" href="../../gio/auto/enums/enum.SocketFamily.html" title="enum gio::auto::enums::SocketFamily">SocketFamily</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../gio/auto/socket/struct.Socket.html" title="struct gio::auto::socket::Socket">Socket</a>&gt;</code></span></h3><div class='docblock'><p>Get the RTCP socket from <code>self</code> for a <code>family</code>.</p>
-
 <p><code>self</code> must be joined to a bin.</p>
-
-<h2 id='family-2' class='section-header'><a href='#family-2'><code>family</code></a></h2>
+<h2 id="family-2" class="section-header"><a href="#family-2"><code>family</code></a></h2>
 <p>the socket family</p>
-
-<h1 id='returns-18' class='section-header'><a href='#returns-18'>Returns</a></h1>
+<h1 id="returns-18" class="section-header"><a href="#returns-18">Returns</a></h1>
 <p>the RTCP socket or <code>None</code> if no
 socket could be allocated for <code>family</code>. Unref after usage</p>
 </div><h3 id='tymethod.get_rtp_multicast_socket' class='method'><span id='get_rtp_multicast_socket.v' class='invisible'><code>fn <a href='#tymethod.get_rtp_multicast_socket' class='fnname'>get_rtp_multicast_socket</a>(&amp;self, family: <a class="enum" href="../../gio/auto/enums/enum.SocketFamily.html" title="enum gio::auto::enums::SocketFamily">SocketFamily</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../gio/auto/socket/struct.Socket.html" title="struct gio::auto::socket::Socket">Socket</a>&gt;</code></span></h3><div class='docblock'><p>Get the multicast RTP socket from <code>self</code> for a <code>family</code>.</p>
-
-<h2 id='family-3' class='section-header'><a href='#family-3'><code>family</code></a></h2>
+<h2 id="family-3" class="section-header"><a href="#family-3"><code>family</code></a></h2>
 <p>the socket family</p>
-
-<h1 id='returns-19' class='section-header'><a href='#returns-19'>Returns</a></h1>
+<h1 id="returns-19" class="section-header"><a href="#returns-19">Returns</a></h1>
 <p>the multicast RTP socket or <code>None</code> if no
 socket could be allocated for <code>family</code>. Unref after usage</p>
 </div><h3 id='tymethod.get_rtp_socket' class='method'><span id='get_rtp_socket.v' class='invisible'><code>fn <a href='#tymethod.get_rtp_socket' class='fnname'>get_rtp_socket</a>(&amp;self, family: <a class="enum" href="../../gio/auto/enums/enum.SocketFamily.html" title="enum gio::auto::enums::SocketFamily">SocketFamily</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../gio/auto/socket/struct.Socket.html" title="struct gio::auto::socket::Socket">Socket</a>&gt;</code></span></h3><div class='docblock'><p>Get the RTP socket from <code>self</code> for a <code>family</code>.</p>
-
 <p><code>self</code> must be joined to a bin.</p>
-
-<h2 id='family-4' class='section-header'><a href='#family-4'><code>family</code></a></h2>
+<h2 id="family-4" class="section-header"><a href="#family-4"><code>family</code></a></h2>
 <p>the socket family</p>
-
-<h1 id='returns-20' class='section-header'><a href='#returns-20'>Returns</a></h1>
+<h1 id="returns-20" class="section-header"><a href="#returns-20">Returns</a></h1>
 <p>the RTP socket or <code>None</code> if no
 socket could be allocated for <code>family</code>. Unref after usage</p>
 </div><h3 id='tymethod.get_rtpinfo' class='method'><span id='get_rtpinfo.v' class='invisible'><code>fn <a href='#tymethod.get_rtpinfo' class='fnname'>get_rtpinfo</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <a class="struct" href="../../gstreamer/clock_time/struct.ClockTime.html" title="struct gstreamer::clock_time::ClockTime">ClockTime</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a>&gt;</code></span></h3><div class='docblock'><p>Retrieve the current rtptime, seq and running-time. This is used to
 construct a RTPInfo reply header.</p>
-
-<h2 id='rtptime' class='section-header'><a href='#rtptime'><code>rtptime</code></a></h2>
+<h2 id="rtptime" class="section-header"><a href="#rtptime"><code>rtptime</code></a></h2>
 <p>result RTP timestamp</p>
-
-<h2 id='seq' class='section-header'><a href='#seq'><code>seq</code></a></h2>
+<h2 id="seq" class="section-header"><a href="#seq"><code>seq</code></a></h2>
 <p>result RTP seqnum</p>
-
-<h2 id='clock_rate' class='section-header'><a href='#clock_rate'><code>clock_rate</code></a></h2>
+<h2 id="clock_rate" class="section-header"><a href="#clock_rate"><code>clock_rate</code></a></h2>
 <p>the clock rate</p>
-
-<h2 id='running_time' class='section-header'><a href='#running_time'><code>running_time</code></a></h2>
+<h2 id="running_time" class="section-header"><a href="#running_time"><code>running_time</code></a></h2>
 <p>result running-time</p>
-
-<h1 id='returns-21' class='section-header'><a href='#returns-21'>Returns</a></h1>
+<h1 id="returns-21" class="section-header"><a href="#returns-21">Returns</a></h1>
 <p><code>true</code> when rtptime, seq and running-time could be determined.</p>
 </div><h3 id='tymethod.get_rtpsession' class='method'><span id='get_rtpsession.v' class='invisible'><code>fn <a href='#tymethod.get_rtpsession' class='fnname'>get_rtpsession</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt;</code></span></h3><div class='docblock'><p>Get the RTP session of this stream.</p>
-
-<h1 id='returns-22' class='section-header'><a href='#returns-22'>Returns</a></h1>
+<h1 id="returns-22" class="section-header"><a href="#returns-22">Returns</a></h1>
 <p>The RTP session of this stream. Unref after usage.</p>
 </div><h3 id='tymethod.get_sinkpad' class='method'><span id='get_sinkpad.v' class='invisible'><code>fn <a href='#tymethod.get_sinkpad' class='fnname'>get_sinkpad</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../gstreamer/auto/pad/struct.Pad.html" title="struct gstreamer::auto::pad::Pad">Pad</a>&gt;</code></span></h3><div class='docblock'><p>Get the sinkpad associated with <code>self</code>.</p>
-
-<h1 id='returns-23' class='section-header'><a href='#returns-23'>Returns</a></h1>
+<h1 id="returns-23" class="section-header"><a href="#returns-23">Returns</a></h1>
 <p>the sinkpad. Unref after usage.</p>
 </div><h3 id='tymethod.get_srcpad' class='method'><span id='get_srcpad.v' class='invisible'><code>fn <a href='#tymethod.get_srcpad' class='fnname'>get_srcpad</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../gstreamer/auto/pad/struct.Pad.html" title="struct gstreamer::auto::pad::Pad">Pad</a>&gt;</code></span></h3><div class='docblock'><p>Get the srcpad associated with <code>self</code>.</p>
-
-<h1 id='returns-24' class='section-header'><a href='#returns-24'>Returns</a></h1>
+<h1 id="returns-24" class="section-header"><a href="#returns-24">Returns</a></h1>
 <p>the srcpad. Unref after usage.</p>
 </div><h3 id='tymethod.get_srtp_encoder' class='method'><span id='get_srtp_encoder.v' class='invisible'><code>fn <a href='#tymethod.get_srtp_encoder' class='fnname'>get_srtp_encoder</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>&gt;</code></span></h3><div class='docblock'><p>Get the SRTP encoder for this stream.</p>
-
-<h1 id='returns-25' class='section-header'><a href='#returns-25'>Returns</a></h1>
+<h1 id="returns-25" class="section-header"><a href="#returns-25">Returns</a></h1>
 <p>The SRTP encoder for this stream. Unref after usage.</p>
 </div><h3 id='tymethod.get_ssrc' class='method'><span id='get_ssrc.v' class='invisible'><code>fn <a href='#tymethod.get_ssrc' class='fnname'>get_ssrc</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span></h3><div class='docblock'><p>Get the SSRC used by the RTP session of this stream. This function can only
 be called when <code>self</code> has been joined.</p>
-
-<h2 id='ssrc' class='section-header'><a href='#ssrc'><code>ssrc</code></a></h2>
+<h2 id="ssrc" class="section-header"><a href="#ssrc"><code>ssrc</code></a></h2>
 <p>result ssrc</p>
 </div><h3 id='tymethod.has_control' class='method'><span id='has_control.v' class='invisible'><code>fn <a href='#tymethod.has_control' class='fnname'>has_control</a>&lt;'a, P:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;&gt;&gt;(&amp;self, control: P) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Check if <code>self</code> has the control string <code>control</code>.</p>
-
-<h2 id='control' class='section-header'><a href='#control'><code>control</code></a></h2>
+<h2 id="control" class="section-header"><a href="#control"><code>control</code></a></h2>
 <p>a control string</p>
-
-<h1 id='returns-26' class='section-header'><a href='#returns-26'>Returns</a></h1>
+<h1 id="returns-26" class="section-header"><a href="#returns-26">Returns</a></h1>
 <p><code>true</code> is <code>self</code> has <code>control</code> as the control string</p>
 </div><h3 id='tymethod.is_blocking' class='method'><span id='is_blocking.v' class='invisible'><code>fn <a href='#tymethod.is_blocking' class='fnname'>is_blocking</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Check if <code>self</code> is blocking on a <code>gst::Buffer</code>.</p>
-
-<h1 id='returns-27' class='section-header'><a href='#returns-27'>Returns</a></h1>
+<h1 id="returns-27" class="section-header"><a href="#returns-27">Returns</a></h1>
 <p><code>true</code> if <code>self</code> is blocking</p>
 </div><h3 id='tymethod.is_client_side' class='method'><span id='is_client_side.v' class='invisible'><code>fn <a href='#tymethod.is_client_side' class='fnname'>is_client_side</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>See <code>RTSPStreamExt::set_client_side</code></p>
-
-<h1 id='returns-28' class='section-header'><a href='#returns-28'>Returns</a></h1>
+<h1 id="returns-28" class="section-header"><a href="#returns-28">Returns</a></h1>
 <p>TRUE if this <code>RTSPStream</code> is client-side.</p>
 </div><h3 id='tymethod.is_complete' class='method'><span id='is_complete.v' class='invisible'><code>fn <a href='#tymethod.is_complete' class='fnname'>is_complete</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Checks whether the stream is complete, contains the receiver and the sender
-parts. As the stream contains sink(s) element(s), it&#39;s possible to perform
+parts. As the stream contains sink(s) element(s), it's possible to perform
 seek operations on it.</p>
-
-<h1 id='returns-29' class='section-header'><a href='#returns-29'>Returns</a></h1>
+<h1 id="returns-29" class="section-header"><a href="#returns-29">Returns</a></h1>
 <p><code>true</code> if the stream contains at least one sink element.</p>
 </div><h3 id='tymethod.is_receiver' class='method'><span id='is_receiver.v' class='invisible'><code>fn <a href='#tymethod.is_receiver' class='fnname'>is_receiver</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Checks whether the stream is a receiver.</p>
-
-<h1 id='returns-30' class='section-header'><a href='#returns-30'>Returns</a></h1>
+<h1 id="returns-30" class="section-header"><a href="#returns-30">Returns</a></h1>
 <p><code>true</code> if the stream is a receiver and <code>false</code> otherwise.</p>
 </div><h3 id='tymethod.is_sender' class='method'><span id='is_sender.v' class='invisible'><code>fn <a href='#tymethod.is_sender' class='fnname'>is_sender</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Checks whether the stream is a sender.</p>
-
-<h1 id='returns-31' class='section-header'><a href='#returns-31'>Returns</a></h1>
+<h1 id="returns-31" class="section-header"><a href="#returns-31">Returns</a></h1>
 <p><code>true</code> if the stream is a sender and <code>false</code> otherwise.</p>
-</div><h3 id='tymethod.join_bin' class='method'><span id='join_bin.v' class='invisible'><code>fn <a href='#tymethod.join_bin' class='fnname'>join_bin</a>&lt;P:&nbsp;<a class="trait" href="../../gstreamer_rtsp_server/trait.IsA.html" title="trait gstreamer_rtsp_server::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/auto/bin/struct.Bin.html" title="struct gstreamer::auto::bin::Bin">Bin</a>&gt;, Q:&nbsp;<a class="trait" href="../../gstreamer_rtsp_server/trait.IsA.html" title="trait gstreamer_rtsp_server::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;bin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>P, <br>&nbsp;&nbsp;&nbsp;&nbsp;rtpbin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Q, <br>&nbsp;&nbsp;&nbsp;&nbsp;state: <a class="enum" href="../../gstreamer/auto/enums/enum.State.html" title="enum gstreamer::auto::enums::State">State</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="struct" href="../../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;</code></span></h3><div class='docblock'><p>Join the <code>gst::Bin</code> <code>bin</code> that contains the element <code>rtpbin</code>.</p>
-
+</div><h3 id='tymethod.join_bin' class='method'><span id='join_bin.v' class='invisible'><code>fn <a href='#tymethod.join_bin' class='fnname'>join_bin</a>&lt;P:&nbsp;<a class="trait" href="../../gstreamer_rtsp_server/prelude/trait.IsA.html" title="trait gstreamer_rtsp_server::prelude::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/auto/bin/struct.Bin.html" title="struct gstreamer::auto::bin::Bin">Bin</a>&gt;, Q:&nbsp;<a class="trait" href="../../gstreamer_rtsp_server/prelude/trait.IsA.html" title="trait gstreamer_rtsp_server::prelude::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;bin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>P, <br>&nbsp;&nbsp;&nbsp;&nbsp;rtpbin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Q, <br>&nbsp;&nbsp;&nbsp;&nbsp;state: <a class="enum" href="../../gstreamer/auto/enums/enum.State.html" title="enum gstreamer::auto::enums::State">State</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="struct" href="../../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;</code></span></h3><div class='docblock'><p>Join the <code>gst::Bin</code> <code>bin</code> that contains the element <code>rtpbin</code>.</p>
 <p><code>self</code> will link to <code>rtpbin</code>, which must be inside <code>bin</code>. The elements
 added to <code>bin</code> will be set to the state given in <code>state</code>.</p>
-
-<h2 id='bin' class='section-header'><a href='#bin'><code>bin</code></a></h2>
+<h2 id="bin" class="section-header"><a href="#bin"><code>bin</code></a></h2>
 <p>a <code>gst::Bin</code> to join</p>
-
-<h2 id='rtpbin' class='section-header'><a href='#rtpbin'><code>rtpbin</code></a></h2>
+<h2 id="rtpbin" class="section-header"><a href="#rtpbin"><code>rtpbin</code></a></h2>
 <p>a rtpbin element in <code>bin</code></p>
-
-<h2 id='state' class='section-header'><a href='#state'><code>state</code></a></h2>
+<h2 id="state" class="section-header"><a href="#state"><code>state</code></a></h2>
 <p>the target state of the new elements</p>
-
-<h1 id='returns-32' class='section-header'><a href='#returns-32'>Returns</a></h1>
+<h1 id="returns-32" class="section-header"><a href="#returns-32">Returns</a></h1>
 <p><code>true</code> on success.</p>
-</div><h3 id='tymethod.leave_bin' class='method'><span id='leave_bin.v' class='invisible'><code>fn <a href='#tymethod.leave_bin' class='fnname'>leave_bin</a>&lt;P:&nbsp;<a class="trait" href="../../gstreamer_rtsp_server/trait.IsA.html" title="trait gstreamer_rtsp_server::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/auto/bin/struct.Bin.html" title="struct gstreamer::auto::bin::Bin">Bin</a>&gt;, Q:&nbsp;<a class="trait" href="../../gstreamer_rtsp_server/trait.IsA.html" title="trait gstreamer_rtsp_server::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;bin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>P, <br>&nbsp;&nbsp;&nbsp;&nbsp;rtpbin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Q<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="struct" href="../../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;</code></span></h3><div class='docblock'><p>Remove the elements of <code>self</code> from <code>bin</code>.</p>
-
-<h2 id='bin-1' class='section-header'><a href='#bin-1'><code>bin</code></a></h2>
+</div><h3 id='tymethod.leave_bin' class='method'><span id='leave_bin.v' class='invisible'><code>fn <a href='#tymethod.leave_bin' class='fnname'>leave_bin</a>&lt;P:&nbsp;<a class="trait" href="../../gstreamer_rtsp_server/prelude/trait.IsA.html" title="trait gstreamer_rtsp_server::prelude::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/auto/bin/struct.Bin.html" title="struct gstreamer::auto::bin::Bin">Bin</a>&gt;, Q:&nbsp;<a class="trait" href="../../gstreamer_rtsp_server/prelude/trait.IsA.html" title="trait gstreamer_rtsp_server::prelude::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;bin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>P, <br>&nbsp;&nbsp;&nbsp;&nbsp;rtpbin: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Q<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="struct" href="../../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;</code></span></h3><div class='docblock'><p>Remove the elements of <code>self</code> from <code>bin</code>.</p>
+<h2 id="bin-1" class="section-header"><a href="#bin-1"><code>bin</code></a></h2>
 <p>a <code>gst::Bin</code></p>
-
-<h2 id='rtpbin-1' class='section-header'><a href='#rtpbin-1'><code>rtpbin</code></a></h2>
+<h2 id="rtpbin-1" class="section-header"><a href="#rtpbin-1"><code>rtpbin</code></a></h2>
 <p>a rtpbin <code>gst::Element</code></p>
-
-<h1 id='returns-33' class='section-header'><a href='#returns-33'>Returns</a></h1>
+<h1 id="returns-33" class="section-header"><a href="#returns-33">Returns</a></h1>
 <p><code>true</code> on success.</p>
 </div><h3 id='tymethod.recv_rtcp' class='method'><span id='recv_rtcp.v' class='invisible'><code>fn <a href='#tymethod.recv_rtcp' class='fnname'>recv_rtcp</a>(&amp;self, buffer: &amp;<a class="type" href="../../gstreamer/buffer/type.Buffer.html" title="type gstreamer::buffer::Buffer">Buffer</a>) -&gt; <a class="enum" href="../../gstreamer/auto/enums/enum.FlowReturn.html" title="enum gstreamer::auto::enums::FlowReturn">FlowReturn</a></code></span></h3><div class='docblock'><p>Handle an RTCP buffer for the stream. This method is usually called when a
 message has been received from a client using the TCP transport.</p>
-
 <p>This function takes ownership of <code>buffer</code>.</p>
-
-<h2 id='buffer' class='section-header'><a href='#buffer'><code>buffer</code></a></h2>
+<h2 id="buffer" class="section-header"><a href="#buffer"><code>buffer</code></a></h2>
 <p>a <code>gst::Buffer</code></p>
-
-<h1 id='returns-34' class='section-header'><a href='#returns-34'>Returns</a></h1>
+<h1 id="returns-34" class="section-header"><a href="#returns-34">Returns</a></h1>
 <p>a GstFlowReturn.</p>
 </div><h3 id='tymethod.recv_rtp' class='method'><span id='recv_rtp.v' class='invisible'><code>fn <a href='#tymethod.recv_rtp' class='fnname'>recv_rtp</a>(&amp;self, buffer: &amp;<a class="type" href="../../gstreamer/buffer/type.Buffer.html" title="type gstreamer::buffer::Buffer">Buffer</a>) -&gt; <a class="enum" href="../../gstreamer/auto/enums/enum.FlowReturn.html" title="enum gstreamer::auto::enums::FlowReturn">FlowReturn</a></code></span></h3><div class='docblock'><p>Handle an RTP buffer for the stream. This method is usually called when a
 message has been received from a client using the TCP transport.</p>
-
 <p>This function takes ownership of <code>buffer</code>.</p>
-
-<h2 id='buffer-1' class='section-header'><a href='#buffer-1'><code>buffer</code></a></h2>
+<h2 id="buffer-1" class="section-header"><a href="#buffer-1"><code>buffer</code></a></h2>
 <p>a <code>gst::Buffer</code></p>
-
-<h1 id='returns-35' class='section-header'><a href='#returns-35'>Returns</a></h1>
+<h1 id="returns-35" class="section-header"><a href="#returns-35">Returns</a></h1>
 <p>a GstFlowReturn.</p>
 </div><h3 id='tymethod.remove_transport' class='method'><span id='remove_transport.v' class='invisible'><code>fn <a href='#tymethod.remove_transport' class='fnname'>remove_transport</a>(&amp;self, trans: &amp;<a class="struct" href="../../gstreamer_rtsp_server/struct.RTSPStreamTransport.html" title="struct gstreamer_rtsp_server::RTSPStreamTransport">RTSPStreamTransport</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="struct" href="../../glib/error/struct.BoolError.html" title="struct glib::error::BoolError">BoolError</a>&gt;</code></span></h3><div class='docblock'><p>Remove the transport in <code>trans</code> from <code>self</code>. The media of <code>self</code> will
 not be sent to the values configured in <code>trans</code>.</p>
-
 <p><code>self</code> must be joined to a bin.</p>
-
 <p><code>trans</code> must contain a valid <code>gst_rtsp::RTSPTransport</code>.</p>
-
-<h2 id='trans-1' class='section-header'><a href='#trans-1'><code>trans</code></a></h2>
+<h2 id="trans-1" class="section-header"><a href="#trans-1"><code>trans</code></a></h2>
 <p>a <code>RTSPStreamTransport</code></p>
-
-<h1 id='returns-36' class='section-header'><a href='#returns-36'>Returns</a></h1>
+<h1 id="returns-36" class="section-header"><a href="#returns-36">Returns</a></h1>
 <p><code>true</code> if <code>trans</code> was removed</p>
 </div><h3 id='tymethod.request_aux_sender' class='method'><span id='request_aux_sender.v' class='invisible'><code>fn <a href='#tymethod.request_aux_sender' class='fnname'>request_aux_sender</a>(&amp;self, sessid: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>&gt;</code></span></h3><div class='docblock'><p>Creating a rtxsend bin</p>
-
-<h2 id='sessid' class='section-header'><a href='#sessid'><code>sessid</code></a></h2>
+<h2 id="sessid" class="section-header"><a href="#sessid"><code>sessid</code></a></h2>
 <p>the session id</p>
-
-<h1 id='returns-37' class='section-header'><a href='#returns-37'>Returns</a></h1>
+<h1 id="returns-37" class="section-header"><a href="#returns-37">Returns</a></h1>
 <p>a <code>gst::Element</code>.</p>
 </div><h3 id='tymethod.reserve_address' class='method'><span id='reserve_address.v' class='invisible'><code>fn <a href='#tymethod.reserve_address' class='fnname'>reserve_address</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;address: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;port: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;n_ports: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;ttl: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../gstreamer_rtsp_server/struct.RTSPAddress.html" title="struct gstreamer_rtsp_server::RTSPAddress">RTSPAddress</a>&gt;</code></span></h3><div class='docblock'><p>Reserve <code>address</code> and <code>port</code> as the address and port of <code>self</code>. The original
 <code>RTSPAddress</code> is cached and copy is returned, so freeing the return value
-won&#39;t release the address from the pool.</p>
-
-<h2 id='address' class='section-header'><a href='#address'><code>address</code></a></h2>
+won't release the address from the pool.</p>
+<h2 id="address" class="section-header"><a href="#address"><code>address</code></a></h2>
 <p>an address</p>
-
-<h2 id='port' class='section-header'><a href='#port'><code>port</code></a></h2>
+<h2 id="port" class="section-header"><a href="#port"><code>port</code></a></h2>
 <p>a port</p>
-
-<h2 id='n_ports' class='section-header'><a href='#n_ports'><code>n_ports</code></a></h2>
+<h2 id="n_ports" class="section-header"><a href="#n_ports"><code>n_ports</code></a></h2>
 <p>n_ports</p>
-
-<h2 id='ttl' class='section-header'><a href='#ttl'><code>ttl</code></a></h2>
+<h2 id="ttl" class="section-header"><a href="#ttl"><code>ttl</code></a></h2>
 <p>a TTL</p>
-
-<h1 id='returns-38' class='section-header'><a href='#returns-38'>Returns</a></h1>
+<h1 id="returns-38" class="section-header"><a href="#returns-38">Returns</a></h1>
 <p>the <code>RTSPAddress</code> of <code>self</code> or <code>None</code> when
 the address could be reserved. <code>RTSPAddress::free</code> after usage.</p>
 </div><h3 id='tymethod.seekable' class='method'><span id='seekable.v' class='invisible'><code>fn <a href='#tymethod.seekable' class='fnname'>seekable</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Checks whether the individual <code>self</code> is seekable.</p>
-
-<h1 id='returns-39' class='section-header'><a href='#returns-39'>Returns</a></h1>
+<h1 id="returns-39" class="section-header"><a href="#returns-39">Returns</a></h1>
 <p><code>true</code> if <code>self</code> is seekable, else <code>false</code>.</p>
 </div><h3 id='tymethod.set_address_pool' class='method'><span id='set_address_pool.v' class='invisible'><code>fn <a href='#tymethod.set_address_pool' class='fnname'>set_address_pool</a>&lt;'a, P:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="struct" href="../../gstreamer_rtsp_server/struct.RTSPAddressPool.html" title="struct gstreamer_rtsp_server::RTSPAddressPool">RTSPAddressPool</a>&gt;&gt;&gt;(&amp;self, pool: P)</code></span></h3><div class='docblock'><p>configure <code>pool</code> to be used as the address pool of <code>self</code>.</p>
-
-<h2 id='pool' class='section-header'><a href='#pool'><code>pool</code></a></h2>
+<h2 id="pool" class="section-header"><a href="#pool"><code>pool</code></a></h2>
 <p>a <code>RTSPAddressPool</code></p>
 </div><h3 id='tymethod.set_blocked' class='method'><span id='set_blocked.v' class='invisible'><code>fn <a href='#tymethod.set_blocked' class='fnname'>set_blocked</a>(&amp;self, blocked: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Blocks or unblocks the dataflow on <code>self</code>.</p>
-
-<h2 id='blocked' class='section-header'><a href='#blocked'><code>blocked</code></a></h2>
+<h2 id="blocked" class="section-header"><a href="#blocked"><code>blocked</code></a></h2>
 <p>boolean indicating we should block or unblock</p>
-
-<h1 id='returns-40' class='section-header'><a href='#returns-40'>Returns</a></h1>
+<h1 id="returns-40" class="section-header"><a href="#returns-40">Returns</a></h1>
 <p><code>true</code> on success</p>
 </div><h3 id='tymethod.set_buffer_size' class='method'><span id='set_buffer_size.v' class='invisible'><code>fn <a href='#tymethod.set_buffer_size' class='fnname'>set_buffer_size</a>(&amp;self, size: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></h3><div class='docblock'><p>Set the size of the UDP transmission buffer (in bytes)
 Needs to be set before the stream is joined to a bin.</p>
-
-<h2 id='size' class='section-header'><a href='#size'><code>size</code></a></h2>
+<h2 id="size" class="section-header"><a href="#size"><code>size</code></a></h2>
 <p>the buffer size</p>
-</div><h3 id='tymethod.set_client_side' class='method'><span id='set_client_side.v' class='invisible'><code>fn <a href='#tymethod.set_client_side' class='fnname'>set_client_side</a>(&amp;self, client_side: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><div class='docblock'><p>Sets the <code>RTSPStream</code> as a &#39;client side&#39; stream - used for sending
+</div><h3 id='tymethod.set_client_side' class='method'><span id='set_client_side.v' class='invisible'><code>fn <a href='#tymethod.set_client_side' class='fnname'>set_client_side</a>(&amp;self, client_side: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><div class='docblock'><p>Sets the <code>RTSPStream</code> as a 'client side' stream - used for sending
 streams to an RTSP server via RECORD. This has the practical effect
 of changing which UDP port numbers are used when setting up the local
-side of the stream sending to be either the &#39;server&#39; or &#39;client&#39; pair
+side of the stream sending to be either the 'server' or 'client' pair
 of a configured UDP transport.</p>
-
-<h2 id='client_side' class='section-header'><a href='#client_side'><code>client_side</code></a></h2>
-<p>TRUE if this <code>RTSPStream</code> is running on the &#39;client&#39; side of
+<h2 id="client_side" class="section-header"><a href="#client_side"><code>client_side</code></a></h2>
+<p>TRUE if this <code>RTSPStream</code> is running on the 'client' side of
 an RTSP connection.</p>
 </div><h3 id='tymethod.set_control' class='method'><span id='set_control.v' class='invisible'><code>fn <a href='#tymethod.set_control' class='fnname'>set_control</a>&lt;'a, P:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;&gt;&gt;(&amp;self, control: P)</code></span></h3><div class='docblock'><p>Set the control string in <code>self</code>.</p>
-
-<h2 id='control-1' class='section-header'><a href='#control-1'><code>control</code></a></h2>
+<h2 id="control-1" class="section-header"><a href="#control-1"><code>control</code></a></h2>
 <p>a control string</p>
 </div><h3 id='tymethod.set_dscp_qos' class='method'><span id='set_dscp_qos.v' class='invisible'><code>fn <a href='#tymethod.set_dscp_qos' class='fnname'>set_dscp_qos</a>(&amp;self, dscp_qos: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>)</code></span></h3><div class='docblock'><p>Configure the dscp qos of the outgoing sockets to <code>dscp_qos</code>.</p>
-
-<h2 id='dscp_qos' class='section-header'><a href='#dscp_qos'><code>dscp_qos</code></a></h2>
+<h2 id="dscp_qos" class="section-header"><a href="#dscp_qos"><code>dscp_qos</code></a></h2>
 <p>a new dscp qos value (0-63, or -1 to disable)</p>
 </div><h3 id='tymethod.set_mtu' class='method'><span id='set_mtu.v' class='invisible'><code>fn <a href='#tymethod.set_mtu' class='fnname'>set_mtu</a>(&amp;self, mtu: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></h3><div class='docblock'><p>Configure the mtu in the payloader of <code>self</code> to <code>mtu</code>.</p>
-
-<h2 id='mtu' class='section-header'><a href='#mtu'><code>mtu</code></a></h2>
+<h2 id="mtu" class="section-header"><a href="#mtu"><code>mtu</code></a></h2>
 <p>a new MTU</p>
 </div><h3 id='tymethod.set_multicast_iface' class='method'><span id='set_multicast_iface.v' class='invisible'><code>fn <a href='#tymethod.set_multicast_iface' class='fnname'>set_multicast_iface</a>&lt;'a, P:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;&gt;&gt;(&amp;self, multicast_iface: P)</code></span></h3><div class='docblock'><p>configure <code>multicast_iface</code> to be used for <code>self</code>.</p>
-
-<h2 id='multicast_iface' class='section-header'><a href='#multicast_iface'><code>multicast_iface</code></a></h2>
+<h2 id="multicast_iface" class="section-header"><a href="#multicast_iface"><code>multicast_iface</code></a></h2>
 <p>a multicast interface name</p>
 </div><h3 id='tymethod.set_profiles' class='method'><span id='set_profiles.v' class='invisible'><code>fn <a href='#tymethod.set_profiles' class='fnname'>set_profiles</a>(&amp;self, profiles: <a class="struct" href="../../gstreamer_rtsp/auto/flags/struct.RTSPProfile.html" title="struct gstreamer_rtsp::auto::flags::RTSPProfile">RTSPProfile</a>)</code></span></h3><div class='docblock'><p>Configure the allowed profiles for <code>self</code>.</p>
-
-<h2 id='profiles' class='section-header'><a href='#profiles'><code>profiles</code></a></h2>
+<h2 id="profiles" class="section-header"><a href="#profiles"><code>profiles</code></a></h2>
 <p>the new profiles</p>
 </div><h3 id='tymethod.set_protocols' class='method'><span id='set_protocols.v' class='invisible'><code>fn <a href='#tymethod.set_protocols' class='fnname'>set_protocols</a>(&amp;self, protocols: <a class="struct" href="../../gstreamer_rtsp/auto/flags/struct.RTSPLowerTrans.html" title="struct gstreamer_rtsp::auto::flags::RTSPLowerTrans">RTSPLowerTrans</a>)</code></span></h3><div class='docblock'><p>Configure the allowed lower transport for <code>self</code>.</p>
-
-<h2 id='protocols' class='section-header'><a href='#protocols'><code>protocols</code></a></h2>
+<h2 id="protocols" class="section-header"><a href="#protocols"><code>protocols</code></a></h2>
 <p>the new flags</p>
 </div><h3 id='tymethod.set_pt_map' class='method'><span id='set_pt_map.v' class='invisible'><code>fn <a href='#tymethod.set_pt_map' class='fnname'>set_pt_map</a>(&amp;self, pt: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, caps: &amp;<a class="type" href="../../gstreamer/caps/type.Caps.html" title="type gstreamer::caps::Caps">Caps</a>)</code></span></h3><div class='docblock'><p>Configure a pt map between <code>pt</code> and <code>caps</code>.</p>
-
-<h2 id='pt' class='section-header'><a href='#pt'><code>pt</code></a></h2>
+<h2 id="pt" class="section-header"><a href="#pt"><code>pt</code></a></h2>
 <p>the pt</p>
-
-<h2 id='caps' class='section-header'><a href='#caps'><code>caps</code></a></h2>
+<h2 id="caps" class="section-header"><a href="#caps"><code>caps</code></a></h2>
 <p>a <code>gst::Caps</code></p>
 </div><h3 id='tymethod.set_publish_clock_mode' class='method'><span id='set_publish_clock_mode.v' class='invisible'><code>fn <a href='#tymethod.set_publish_clock_mode' class='fnname'>set_publish_clock_mode</a>(&amp;self, mode: <a class="enum" href="../../gstreamer_rtsp_server/enum.RTSPPublishClockMode.html" title="enum gstreamer_rtsp_server::RTSPPublishClockMode">RTSPPublishClockMode</a>)</code></span></h3><div class='docblock'><p>Sets if and how the stream clock should be published according to RFC7273.</p>
-
-<h2 id='mode' class='section-header'><a href='#mode'><code>mode</code></a></h2>
+<h2 id="mode" class="section-header"><a href="#mode"><code>mode</code></a></h2>
 <p>the clock publish mode</p>
 </div><h3 id='tymethod.set_retransmission_pt' class='method'><span id='set_retransmission_pt.v' class='invisible'><code>fn <a href='#tymethod.set_retransmission_pt' class='fnname'>set_retransmission_pt</a>(&amp;self, rtx_pt: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></h3><div class='docblock'><p>Set the payload type (pt) for retransmission of this stream.</p>
-
-<h2 id='rtx_pt' class='section-header'><a href='#rtx_pt'><code>rtx_pt</code></a></h2>
+<h2 id="rtx_pt" class="section-header"><a href="#rtx_pt"><code>rtx_pt</code></a></h2>
 <p>a <code>guint</code></p>
 </div><h3 id='tymethod.set_retransmission_time' class='method'><span id='set_retransmission_time.v' class='invisible'><code>fn <a href='#tymethod.set_retransmission_time' class='fnname'>set_retransmission_time</a>(&amp;self, time: <a class="struct" href="../../gstreamer/clock_time/struct.ClockTime.html" title="struct gstreamer::clock_time::ClockTime">ClockTime</a>)</code></span></h3><div class='docblock'><p>Set the amount of time to store retransmission packets.</p>
-
-<h2 id='time' class='section-header'><a href='#time'><code>time</code></a></h2>
+<h2 id="time" class="section-header"><a href="#time"><code>time</code></a></h2>
 <p>a <code>gst::ClockTime</code></p>
 </div><h3 id='tymethod.set_seqnum_offset' class='method'><span id='set_seqnum_offset.v' class='invisible'><code>fn <a href='#tymethod.set_seqnum_offset' class='fnname'>set_seqnum_offset</a>(&amp;self, seqnum: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u16.html">u16</a>)</code></span></h3><h3 id='tymethod.unblock_linked' class='method'><span id='unblock_linked.v' class='invisible'><code>fn <a href='#tymethod.unblock_linked' class='fnname'>unblock_linked</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><h3 id='tymethod.update_crypto' class='method'><span id='update_crypto.v' class='invisible'><code>fn <a href='#tymethod.update_crypto' class='fnname'>update_crypto</a>&lt;'a, P:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="type" href="../../gstreamer/caps/type.Caps.html" title="type gstreamer::caps::Caps">Caps</a>&gt;&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;ssrc: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;crypto: P<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Update the new crypto information for <code>ssrc</code> in <code>self</code>. If information
 for <code>ssrc</code> did not exist, it will be added. If information
 for <code>ssrc</code> existed, it will be replaced. If <code>crypto</code> is <code>None</code>, it will
 be removed from <code>self</code>.</p>
-
-<h2 id='ssrc-1' class='section-header'><a href='#ssrc-1'><code>ssrc</code></a></h2>
+<h2 id="ssrc-1" class="section-header"><a href="#ssrc-1"><code>ssrc</code></a></h2>
 <p>the SSRC</p>
-
-<h2 id='crypto' class='section-header'><a href='#crypto'><code>crypto</code></a></h2>
+<h2 id="crypto" class="section-header"><a href="#crypto"><code>crypto</code></a></h2>
 <p>a <code>gst::Caps</code> with crypto info</p>
-
-<h1 id='returns-41' class='section-header'><a href='#returns-41'>Returns</a></h1>
+<h1 id="returns-41" class="section-header"><a href="#returns-41">Returns</a></h1>
 <p><code>true</code> if <code>crypto</code> could be updated</p>
 </div><h3 id='tymethod.connect_new_rtcp_encoder' class='method'><span id='connect_new_rtcp_encoder.v' class='invisible'><code>fn <a href='#tymethod.connect_new_rtcp_encoder' class='fnname'>connect_new_rtcp_encoder</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self, &amp;<a class="struct" href="../../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_new_rtp_encoder' class='method'><span id='connect_new_rtp_encoder.v' class='invisible'><code>fn <a href='#tymethod.connect_new_rtp_encoder' class='fnname'>connect_new_rtp_encoder</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self, &amp;<a class="struct" href="../../gstreamer/auto/element/struct.Element.html" title="struct gstreamer::auto::element::Element">Element</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_property_control_notify' class='method'><span id='connect_property_control_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_control_notify' class='fnname'>connect_property_control_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_property_profiles_notify' class='method'><span id='connect_property_profiles_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_profiles_notify' class='fnname'>connect_property_profiles_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_property_protocols_notify' class='method'><span id='connect_property_protocols_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_protocols_notify' class='fnname'>connect_property_protocols_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3></div>
         <h2 id='implementors' class='small-section-header'>
           Implementors<a href='#implementors' class='anchor'></a>
         </h2>
         <ul class='item-list' id='implementors-list'>
-    <li><code>impl&lt;O:&nbsp;<a class="trait" href="../../gstreamer_rtsp_server/trait.IsA.html" title="trait gstreamer_rtsp_server::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer_rtsp_server/struct.RTSPStream.html" title="struct gstreamer_rtsp_server::RTSPStream">RTSPStream</a>&gt; + <a class="trait" href="../../gstreamer_rtsp_server/trait.IsA.html" title="trait gstreamer_rtsp_server::IsA">IsA</a>&lt;<a class="struct" href="../../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt;&gt; RTSPStreamExt for O</code></li>
-</ul><script type="text/javascript" async
+    <li><table class='table-display'><tbody><tr><td><code>impl&lt;O:&nbsp;<a class="trait" href="../../gstreamer_rtsp_server/prelude/trait.IsA.html" title="trait gstreamer_rtsp_server::prelude::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer_rtsp_server/struct.RTSPStream.html" title="struct gstreamer_rtsp_server::RTSPStream">RTSPStream</a>&gt; + <a class="trait" href="../../gstreamer_rtsp_server/prelude/trait.IsA.html" title="trait gstreamer_rtsp_server::prelude::IsA">IsA</a>&lt;<a class="struct" href="../../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt;&gt; RTSPStreamExt for O</code><td><div class='out-of-band'><a class='srclink' href='../../src/gstreamer_rtsp_server/auto/rtsp_stream.rs.html#568-999' title='goto source code'>[src]</a></div></td></tr></tbody></table></li>
+</ul><script type="text/javascript">window.inlined_types=new Set([]);</script><script type="text/javascript" async
                          src="../../implementors/gstreamer_rtsp_server/prelude/trait.RTSPStreamExt.js">
-                 </script></section>
-    <section id='search' class="content hidden"></section>
-
-    <section class="footer"></section>
-
-    <aside id="help" class="hidden">
-        <div>
-            <h1 class="hidden">Help</h1>
-
-            <div class="shortcuts">
-                <h2>Keyboard Shortcuts</h2>
-
-                <dl>
-                    <dt>?</dt>
-                    <dd>Show this help dialog</dd>
-                    <dt>S</dt>
-                    <dd>Focus the search field</dd>
-                    <dt>↑</dt>
-                    <dd>Move up in search results</dd>
-                    <dt>↓</dt>
-                    <dd>Move down in search results</dd>
-                    <dt>↹</dt>
-                    <dd>Switch tab</dd>
-                    <dt>&#9166;</dt>
-                    <dd>Go to active search result</dd>
-                    <dt style="width:31px;">+ / -</dt>
-                    <dd>Collapse/expand all sections</dd>
-                </dl>
-            </div>
-
-            <div class="infos">
-                <h2>Search Tricks</h2>
-
-                <p>
-                    Prefix searches with a type followed by a colon (e.g.
-                    <code>fn:</code>) to restrict the search to a given type.
-                </p>
-
-                <p>
-                    Accepted types are: <code>fn</code>, <code>mod</code>,
-                    <code>struct</code>, <code>enum</code>,
-                    <code>trait</code>, <code>type</code>, <code>macro</code>,
-                    and <code>const</code>.
-                </p>
-
-                <p>
-                    Search functions by type signature (e.g.
-                    <code>vec -> usize</code> or <code>* -> vec</code>)
-                </p>
-            </div>
-        </div>
-    </aside>
-
-    
-
-    <script>
-        window.rootPath = "../../";
-        window.currentCrate = "gstreamer_rtsp_server";
-    </script>
-    <script src="../../main.js"></script>
-    <script defer src="../../search-index.js"></script>
-</body>
-</html>
+                 </script></section><section id="search" class="content hidden"></section><section class="footer"></section><aside id="help" class="hidden"><div><h1 class="hidden">Help</h1><div class="shortcuts"><h2>Keyboard Shortcuts</h2><dl><dt><kbd>?</kbd></dt><dd>Show this help dialog</dd><dt><kbd>S</kbd></dt><dd>Focus the search field</dd><dt><kbd>↑</kbd></dt><dd>Move up in search results</dd><dt><kbd>↓</kbd></dt><dd>Move down in search results</dd><dt><kbd>↹</kbd></dt><dd>Switch tab</dd><dt><kbd>&#9166;</kbd></dt><dd>Go to active search result</dd><dt><kbd>+</kbd></dt><dd>Expand all sections</dd><dt><kbd>-</kbd></dt><dd>Collapse all sections</dd></dl></div><div class="infos"><h2>Search Tricks</h2><p>Prefix searches with a type followed by a colon (e.g. <code>fn:</code>) to restrict the search to a given type.</p><p>Accepted types are: <code>fn</code>, <code>mod</code>, <code>struct</code>, <code>enum</code>, <code>trait</code>, <code>type</code>, <code>macro</code>, and <code>const</code>.</p><p>Search functions by type signature (e.g. <code>vec -> usize</code> or <code>* -> vec</code>)</p><p>Search multiple things at once by splitting your query with comma (e.g. <code>str,u8</code> or <code>String,struct:Vec,test</code>)</p></div></div></aside><script>window.rootPath = "../../";window.currentCrate = "gstreamer_rtsp_server";</script><script src="../../aliases.js"></script><script src="../../main.js"></script><script defer src="../../search-index.js"></script></body></html>

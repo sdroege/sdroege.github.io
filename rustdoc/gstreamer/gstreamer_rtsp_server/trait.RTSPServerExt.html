@@ -1,56 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="rustdoc">
-    <meta name="description" content="API documentation for the Rust `RTSPServerExt` trait in crate `gstreamer_rtsp_server`.">
-    <meta name="keywords" content="rust, rustlang, rust-lang, RTSPServerExt">
-
-    <title>gstreamer_rtsp_server::RTSPServerExt - Rust</title>
-
-    <link rel="stylesheet" type="text/css" href="../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
-    <link rel="stylesheet" type="text/css" href="../main.css">
-    
-
-    
-    
-</head>
-<body class="rustdoc trait">
-    <!--[if lte IE 8]>
-    <div class="warning">
-        This old browser is unsupported and will most likely display funky
-        things.
-    </div>
-    <![endif]-->
-
-    
-
-    <nav class="sidebar">
-        <div class="sidebar-menu">&#9776;</div>
-        
-        <p class='location'>Trait RTSPServerExt</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.create_socket">create_socket</a><a href="#tymethod.create_source">create_source</a><a href="#tymethod.get_address">get_address</a><a href="#tymethod.get_auth">get_auth</a><a href="#tymethod.get_backlog">get_backlog</a><a href="#tymethod.get_bound_port">get_bound_port</a><a href="#tymethod.get_mount_points">get_mount_points</a><a href="#tymethod.get_service">get_service</a><a href="#tymethod.get_session_pool">get_session_pool</a><a href="#tymethod.get_thread_pool">get_thread_pool</a><a href="#tymethod.set_address">set_address</a><a href="#tymethod.set_auth">set_auth</a><a href="#tymethod.set_backlog">set_backlog</a><a href="#tymethod.set_mount_points">set_mount_points</a><a href="#tymethod.set_service">set_service</a><a href="#tymethod.set_session_pool">set_session_pool</a><a href="#tymethod.set_thread_pool">set_thread_pool</a><a href="#tymethod.transfer_connection">transfer_connection</a><a href="#tymethod.connect_client_connected">connect_client_connected</a><a href="#tymethod.connect_property_address_notify">connect_property_address_notify</a><a href="#tymethod.connect_property_backlog_notify">connect_property_backlog_notify</a><a href="#tymethod.connect_property_bound_port_notify">connect_property_bound_port_notify</a><a href="#tymethod.connect_property_mount_points_notify">connect_property_mount_points_notify</a><a href="#tymethod.connect_property_service_notify">connect_property_service_notify</a><a href="#tymethod.connect_property_session_pool_notify">connect_property_session_pool_notify</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='index.html'>gstreamer_rtsp_server</a></p><script>window.sidebarCurrent = {name: 'RTSPServerExt', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
-    </nav>
-
-    <nav class="sub">
-        <form class="search-form js-only">
-            <div class="search-container">
-                <input class="search-input" name="search"
-                       autocomplete="off"
-                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
-                       type="search">
-            </div>
-        </form>
-    </nav>
-
-    <section id='main' class="content">
-<h1 class='fqn'><span class='in-band'>Trait <a href='index.html'>gstreamer_rtsp_server</a>::<wbr><a class="trait" href=''>RTSPServerExt</a></span><span class='out-of-band'><span id='render-detail'>
-                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                       [<span class='inner'>&#x2212;</span>]
-                   </a>
-               </span><a class='srclink' href='../src/gstreamer_rtsp_server/auto/r_t_s_p_server.rs.html#87-258' title='goto source code'>[src]</a></span></h1>
-<pre class='rust trait'>pub trait RTSPServerExt {
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="API documentation for the Rust `RTSPServerExt` trait in crate `gstreamer_rtsp_server`."><meta name="keywords" content="rust, rustlang, rust-lang, RTSPServerExt"><title>gstreamer_rtsp_server::RTSPServerExt - Rust</title><link rel="stylesheet" type="text/css" href="../normalize.css"><link rel="stylesheet" type="text/css" href="../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../dark.css"><link rel="stylesheet" type="text/css" href="../light.css" id="themeStyle"><script src="../storage.js"></script></head><body class="rustdoc trait"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><p class='location'>Trait RTSPServerExt</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.create_socket">create_socket</a><a href="#tymethod.create_source">create_source</a><a href="#tymethod.get_address">get_address</a><a href="#tymethod.get_auth">get_auth</a><a href="#tymethod.get_backlog">get_backlog</a><a href="#tymethod.get_bound_port">get_bound_port</a><a href="#tymethod.get_mount_points">get_mount_points</a><a href="#tymethod.get_service">get_service</a><a href="#tymethod.get_session_pool">get_session_pool</a><a href="#tymethod.get_thread_pool">get_thread_pool</a><a href="#tymethod.set_address">set_address</a><a href="#tymethod.set_auth">set_auth</a><a href="#tymethod.set_backlog">set_backlog</a><a href="#tymethod.set_mount_points">set_mount_points</a><a href="#tymethod.set_service">set_service</a><a href="#tymethod.set_session_pool">set_session_pool</a><a href="#tymethod.set_thread_pool">set_thread_pool</a><a href="#tymethod.transfer_connection">transfer_connection</a><a href="#tymethod.connect_client_connected">connect_client_connected</a><a href="#tymethod.connect_property_address_notify">connect_property_address_notify</a><a href="#tymethod.connect_property_backlog_notify">connect_property_backlog_notify</a><a href="#tymethod.connect_property_bound_port_notify">connect_property_bound_port_notify</a><a href="#tymethod.connect_property_mount_points_notify">connect_property_mount_points_notify</a><a href="#tymethod.connect_property_service_notify">connect_property_service_notify</a><a href="#tymethod.connect_property_session_pool_notify">connect_property_session_pool_notify</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='index.html'>gstreamer_rtsp_server</a></p><script>window.sidebarCurrent = {name: 'RTSPServerExt', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script></div></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!"><img src="../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices"></div></div><script src="../theme.js"></script><nav class="sub"><form class="search-form js-only"><div class="search-container"><input class="search-input" name="search" autocomplete="off" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><a id="settings-menu" href="../settings.html"><img src="../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><h1 class='fqn'><span class='in-band'>Trait <a href='index.html'>gstreamer_rtsp_server</a>::<wbr><a class="trait" href=''>RTSPServerExt</a></span><span class='out-of-band'><span id='render-detail'><a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">[<span class='inner'>&#x2212;</span>]</a></span><a class='srclink' href='../src/gstreamer_rtsp_server/auto/rtsp_server.rs.html#87-258' title='goto source code'>[src]</a></span></h1><div class="docblock type-decl"><pre class='rust trait'>pub trait RTSPServerExt {
     fn <a href='#tymethod.create_socket' class='fnname'>create_socket</a>&lt;'a, P:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="struct" href="../gio/auto/cancellable/struct.Cancellable.html" title="struct gio::auto::cancellable::Cancellable">Cancellable</a>&gt;&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cancellable: P<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../gio/auto/socket/struct.Socket.html" title="struct gio::auto::socket::Socket">Socket</a>, <a class="struct" href="../gstreamer_rtsp_server/struct.Error.html" title="struct gstreamer_rtsp_server::Error">Error</a>&gt;;
 <div class='item-spacer'></div>    fn <a href='#tymethod.create_source' class='fnname'>create_source</a>&lt;'a, P:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="struct" href="../gio/auto/cancellable/struct.Cancellable.html" title="struct gio::auto::cancellable::Cancellable">Cancellable</a>&gt;&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cancellable: P<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../glib/auto/source/struct.Source.html" title="struct glib::auto::source::Source">Source</a>, <a class="struct" href="../gstreamer_rtsp_server/struct.Error.html" title="struct gstreamer_rtsp_server::Error">Error</a>&gt;;
 <div class='item-spacer'></div>    fn <a href='#tymethod.get_address' class='fnname'>get_address</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;;
@@ -76,9 +24,8 @@
 <div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_mount_points_notify' class='fnname'>connect_property_mount_points_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
 <div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_service_notify' class='fnname'>connect_property_service_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
 <div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_session_pool_notify' class='fnname'>connect_property_session_pool_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
-}</pre><div class='docblock'><p>Trait containing all <code>RTSPServer</code> methods.</p>
-
-<h1 id='implementors-1' class='section-header'><a href='#implementors-1'>Implementors</a></h1>
+}</pre></div><div class='docblock'><p>Trait containing all <code>RTSPServer</code> methods.</p>
+<h1 id="implementors-1" class="section-header"><a href="#implementors-1">Implementors</a></h1>
 <p><a href="struct.RTSPServer.html"><code>RTSPServer</code></a></p>
 </div>
             <h2 id='required-methods' class='small-section-header'>
@@ -87,193 +34,101 @@
             <div class='methods'>
         <h3 id='tymethod.create_socket' class='method'><span id='create_socket.v' class='invisible'><code>fn <a href='#tymethod.create_socket' class='fnname'>create_socket</a>&lt;'a, P:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="struct" href="../gio/auto/cancellable/struct.Cancellable.html" title="struct gio::auto::cancellable::Cancellable">Cancellable</a>&gt;&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;cancellable: P<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../gio/auto/socket/struct.Socket.html" title="struct gio::auto::socket::Socket">Socket</a>, <a class="struct" href="../gstreamer_rtsp_server/struct.Error.html" title="struct gstreamer_rtsp_server::Error">Error</a>&gt;</code></span></h3><div class='docblock'><p>Create a <code>gio::Socket</code> for <code>self</code>. The socket will listen on the
 configured service.</p>
-
-<h2 id='cancellable' class='section-header'><a href='#cancellable'><code>cancellable</code></a></h2>
+<h2 id="cancellable" class="section-header"><a href="#cancellable"><code>cancellable</code></a></h2>
 <p>a <code>gio::Cancellable</code></p>
-
-<h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
+<h1 id="returns" class="section-header"><a href="#returns">Returns</a></h1>
 <p>the <code>gio::Socket</code> for <code>self</code> or <code>None</code> when an error
 occurred.</p>
 </div><h3 id='tymethod.create_source' class='method'><span id='create_source.v' class='invisible'><code>fn <a href='#tymethod.create_source' class='fnname'>create_source</a>&lt;'a, P:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="struct" href="../gio/auto/cancellable/struct.Cancellable.html" title="struct gio::auto::cancellable::Cancellable">Cancellable</a>&gt;&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;cancellable: P<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../glib/auto/source/struct.Source.html" title="struct glib::auto::source::Source">Source</a>, <a class="struct" href="../gstreamer_rtsp_server/struct.Error.html" title="struct gstreamer_rtsp_server::Error">Error</a>&gt;</code></span></h3><div class='docblock'><p>Create a <code>glib::Source</code> for <code>self</code>. The new source will have a default
 <code>GSocketSourceFunc</code> of <code>RTSPServer::io_func</code>.</p>
-
 <p><code>cancellable</code> if not <code>None</code> can be used to cancel the source, which will cause
 the source to trigger, reporting the current condition (which is likely 0
 unless cancellation happened at the same time as a condition change). You can
 check for this in the callback using <code>gio::CancellableExt::is_cancelled</code>.</p>
-
 <p>This takes a reference on <code>self</code> until <code>source</code> is destroyed.</p>
-
-<h2 id='cancellable-1' class='section-header'><a href='#cancellable-1'><code>cancellable</code></a></h2>
+<h2 id="cancellable-1" class="section-header"><a href="#cancellable-1"><code>cancellable</code></a></h2>
 <p>a <code>gio::Cancellable</code> or <code>None</code>.</p>
-
-<h1 id='returns-1' class='section-header'><a href='#returns-1'>Returns</a></h1>
+<h1 id="returns-1" class="section-header"><a href="#returns-1">Returns</a></h1>
 <p>the <code>glib::Source</code> for <code>self</code> or <code>None</code> when an error
 occurred. Free with g_source_unref ()</p>
 </div><h3 id='tymethod.get_address' class='method'><span id='get_address.v' class='invisible'><code>fn <a href='#tymethod.get_address' class='fnname'>get_address</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span></h3><div class='docblock'><p>Get the address on which the server will accept connections.</p>
-
-<h1 id='returns-2' class='section-header'><a href='#returns-2'>Returns</a></h1>
+<h1 id="returns-2" class="section-header"><a href="#returns-2">Returns</a></h1>
 <p>the server address. <code>g_free</code> after usage.</p>
 </div><h3 id='tymethod.get_auth' class='method'><span id='get_auth.v' class='invisible'><code>fn <a href='#tymethod.get_auth' class='fnname'>get_auth</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer_rtsp_server/struct.RTSPAuth.html" title="struct gstreamer_rtsp_server::RTSPAuth">RTSPAuth</a>&gt;</code></span></h3><div class='docblock'><p>Get the <code>RTSPAuth</code> used as the authentication manager of <code>self</code>.</p>
-
-<h1 id='returns-3' class='section-header'><a href='#returns-3'>Returns</a></h1>
+<h1 id="returns-3" class="section-header"><a href="#returns-3">Returns</a></h1>
 <p>the <code>RTSPAuth</code> of <code>self</code>. <code>gobject::ObjectExt::unref</code> after
 usage.</p>
 </div><h3 id='tymethod.get_backlog' class='method'><span id='get_backlog.v' class='invisible'><code>fn <a href='#tymethod.get_backlog' class='fnname'>get_backlog</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code></span></h3><div class='docblock'><p>The maximum amount of queued requests for the server.</p>
-
-<h1 id='returns-4' class='section-header'><a href='#returns-4'>Returns</a></h1>
+<h1 id="returns-4" class="section-header"><a href="#returns-4">Returns</a></h1>
 <p>the server backlog.</p>
 </div><h3 id='tymethod.get_bound_port' class='method'><span id='get_bound_port.v' class='invisible'><code>fn <a href='#tymethod.get_bound_port' class='fnname'>get_bound_port</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a></code></span></h3><div class='docblock'><p>Get the port number where the server was bound to.</p>
-
-<h1 id='returns-5' class='section-header'><a href='#returns-5'>Returns</a></h1>
+<h1 id="returns-5" class="section-header"><a href="#returns-5">Returns</a></h1>
 <p>the port number</p>
 </div><h3 id='tymethod.get_mount_points' class='method'><span id='get_mount_points.v' class='invisible'><code>fn <a href='#tymethod.get_mount_points' class='fnname'>get_mount_points</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer_rtsp_server/struct.RTSPMountPoints.html" title="struct gstreamer_rtsp_server::RTSPMountPoints">RTSPMountPoints</a>&gt;</code></span></h3><div class='docblock'><p>Get the <code>RTSPMountPoints</code> used as the mount points of <code>self</code>.</p>
-
-<h1 id='returns-6' class='section-header'><a href='#returns-6'>Returns</a></h1>
+<h1 id="returns-6" class="section-header"><a href="#returns-6">Returns</a></h1>
 <p>the <code>RTSPMountPoints</code> of <code>self</code>. <code>gobject::ObjectExt::unref</code> after
 usage.</p>
 </div><h3 id='tymethod.get_service' class='method'><span id='get_service.v' class='invisible'><code>fn <a href='#tymethod.get_service' class='fnname'>get_service</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span></h3><div class='docblock'><p>Get the service on which the server will accept connections.</p>
-
-<h1 id='returns-7' class='section-header'><a href='#returns-7'>Returns</a></h1>
+<h1 id="returns-7" class="section-header"><a href="#returns-7">Returns</a></h1>
 <p>the service. use <code>g_free</code> after usage.</p>
 </div><h3 id='tymethod.get_session_pool' class='method'><span id='get_session_pool.v' class='invisible'><code>fn <a href='#tymethod.get_session_pool' class='fnname'>get_session_pool</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer_rtsp_server/struct.RTSPSessionPool.html" title="struct gstreamer_rtsp_server::RTSPSessionPool">RTSPSessionPool</a>&gt;</code></span></h3><div class='docblock'><p>Get the <code>RTSPSessionPool</code> used as the session pool of <code>self</code>.</p>
-
-<h1 id='returns-8' class='section-header'><a href='#returns-8'>Returns</a></h1>
+<h1 id="returns-8" class="section-header"><a href="#returns-8">Returns</a></h1>
 <p>the <code>RTSPSessionPool</code> used for sessions. <code>gobject::ObjectExt::unref</code> after
 usage.</p>
 </div><h3 id='tymethod.get_thread_pool' class='method'><span id='get_thread_pool.v' class='invisible'><code>fn <a href='#tymethod.get_thread_pool' class='fnname'>get_thread_pool</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer_rtsp_server/struct.RTSPThreadPool.html" title="struct gstreamer_rtsp_server::RTSPThreadPool">RTSPThreadPool</a>&gt;</code></span></h3><div class='docblock'><p>Get the <code>RTSPThreadPool</code> used as the thread pool of <code>self</code>.</p>
-
-<h1 id='returns-9' class='section-header'><a href='#returns-9'>Returns</a></h1>
+<h1 id="returns-9" class="section-header"><a href="#returns-9">Returns</a></h1>
 <p>the <code>RTSPThreadPool</code> of <code>self</code>. <code>gobject::ObjectExt::unref</code> after
 usage.</p>
 </div><h3 id='tymethod.set_address' class='method'><span id='set_address.v' class='invisible'><code>fn <a href='#tymethod.set_address' class='fnname'>set_address</a>(&amp;self, address: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></h3><div class='docblock'><p>Configure <code>self</code> to accept connections on the given address.</p>
-
 <p>This function must be called before the server is bound.</p>
-
-<h2 id='address' class='section-header'><a href='#address'><code>address</code></a></h2>
+<h2 id="address" class="section-header"><a href="#address"><code>address</code></a></h2>
 <p>the address</p>
 </div><h3 id='tymethod.set_auth' class='method'><span id='set_auth.v' class='invisible'><code>fn <a href='#tymethod.set_auth' class='fnname'>set_auth</a>&lt;'a, P:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="struct" href="../gstreamer_rtsp_server/struct.RTSPAuth.html" title="struct gstreamer_rtsp_server::RTSPAuth">RTSPAuth</a>&gt;&gt;&gt;(&amp;self, auth: P)</code></span></h3><div class='docblock'><p>configure <code>auth</code> to be used as the authentication manager of <code>self</code>.</p>
-
-<h2 id='auth' class='section-header'><a href='#auth'><code>auth</code></a></h2>
+<h2 id="auth" class="section-header"><a href="#auth"><code>auth</code></a></h2>
 <p>a <code>RTSPAuth</code></p>
 </div><h3 id='tymethod.set_backlog' class='method'><span id='set_backlog.v' class='invisible'><code>fn <a href='#tymethod.set_backlog' class='fnname'>set_backlog</a>(&amp;self, backlog: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>)</code></span></h3><div class='docblock'><p>configure the maximum amount of requests that may be queued for the
 server.</p>
-
 <p>This function must be called before the server is bound.</p>
-
-<h2 id='backlog' class='section-header'><a href='#backlog'><code>backlog</code></a></h2>
+<h2 id="backlog" class="section-header"><a href="#backlog"><code>backlog</code></a></h2>
 <p>the backlog</p>
 </div><h3 id='tymethod.set_mount_points' class='method'><span id='set_mount_points.v' class='invisible'><code>fn <a href='#tymethod.set_mount_points' class='fnname'>set_mount_points</a>&lt;'a, P:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="struct" href="../gstreamer_rtsp_server/struct.RTSPMountPoints.html" title="struct gstreamer_rtsp_server::RTSPMountPoints">RTSPMountPoints</a>&gt;&gt;&gt;(&amp;self, mounts: P)</code></span></h3><div class='docblock'><p>configure <code>mounts</code> to be used as the mount points of <code>self</code>.</p>
-
-<h2 id='mounts' class='section-header'><a href='#mounts'><code>mounts</code></a></h2>
+<h2 id="mounts" class="section-header"><a href="#mounts"><code>mounts</code></a></h2>
 <p>a <code>RTSPMountPoints</code></p>
 </div><h3 id='tymethod.set_service' class='method'><span id='set_service.v' class='invisible'><code>fn <a href='#tymethod.set_service' class='fnname'>set_service</a>(&amp;self, service: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></h3><div class='docblock'><p>Configure <code>self</code> to accept connections on the given service.
 <code>service</code> should be a string containing the service name (see services(5)) or
 a string containing a port number between 1 and 65535.</p>
-
 <p>When <code>service</code> is set to &quot;0&quot;, the server will listen on a random free
 port. The actual used port can be retrieved with
 <code>RTSPServerExt::get_bound_port</code>.</p>
-
 <p>This function must be called before the server is bound.</p>
-
-<h2 id='service' class='section-header'><a href='#service'><code>service</code></a></h2>
+<h2 id="service" class="section-header"><a href="#service"><code>service</code></a></h2>
 <p>the service</p>
 </div><h3 id='tymethod.set_session_pool' class='method'><span id='set_session_pool.v' class='invisible'><code>fn <a href='#tymethod.set_session_pool' class='fnname'>set_session_pool</a>&lt;'a, P:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="struct" href="../gstreamer_rtsp_server/struct.RTSPSessionPool.html" title="struct gstreamer_rtsp_server::RTSPSessionPool">RTSPSessionPool</a>&gt;&gt;&gt;(&amp;self, pool: P)</code></span></h3><div class='docblock'><p>configure <code>pool</code> to be used as the session pool of <code>self</code>.</p>
-
-<h2 id='pool' class='section-header'><a href='#pool'><code>pool</code></a></h2>
+<h2 id="pool" class="section-header"><a href="#pool"><code>pool</code></a></h2>
 <p>a <code>RTSPSessionPool</code></p>
 </div><h3 id='tymethod.set_thread_pool' class='method'><span id='set_thread_pool.v' class='invisible'><code>fn <a href='#tymethod.set_thread_pool' class='fnname'>set_thread_pool</a>&lt;'a, P:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="struct" href="../gstreamer_rtsp_server/struct.RTSPThreadPool.html" title="struct gstreamer_rtsp_server::RTSPThreadPool">RTSPThreadPool</a>&gt;&gt;&gt;(&amp;self, pool: P)</code></span></h3><div class='docblock'><p>configure <code>pool</code> to be used as the thread pool of <code>self</code>.</p>
-
-<h2 id='pool-1' class='section-header'><a href='#pool-1'><code>pool</code></a></h2>
+<h2 id="pool-1" class="section-header"><a href="#pool-1"><code>pool</code></a></h2>
 <p>a <code>RTSPThreadPool</code></p>
 </div><h3 id='tymethod.transfer_connection' class='method'><span id='transfer_connection.v' class='invisible'><code>fn <a href='#tymethod.transfer_connection' class='fnname'>transfer_connection</a>&lt;'a, P:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;'a <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;socket: &amp;<a class="struct" href="../gio/auto/socket/struct.Socket.html" title="struct gio::auto::socket::Socket">Socket</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;ip: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;port: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;initial_buffer: P<br>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Take an existing network socket and use it for an RTSP connection. This
 is used when transferring a socket from an HTTP server which should be used
 as an RTSP over HTTP tunnel. The <code>initial_buffer</code> contains any remaining data
 that the HTTP server read from the socket while parsing the HTTP header.</p>
-
-<h2 id='socket' class='section-header'><a href='#socket'><code>socket</code></a></h2>
+<h2 id="socket" class="section-header"><a href="#socket"><code>socket</code></a></h2>
 <p>a network socket</p>
-
-<h2 id='ip' class='section-header'><a href='#ip'><code>ip</code></a></h2>
+<h2 id="ip" class="section-header"><a href="#ip"><code>ip</code></a></h2>
 <p>the IP address of the remote client</p>
-
-<h2 id='port' class='section-header'><a href='#port'><code>port</code></a></h2>
+<h2 id="port" class="section-header"><a href="#port"><code>port</code></a></h2>
 <p>the port used by the other end</p>
-
-<h2 id='initial_buffer' class='section-header'><a href='#initial_buffer'><code>initial_buffer</code></a></h2>
+<h2 id="initial_buffer" class="section-header"><a href="#initial_buffer"><code>initial_buffer</code></a></h2>
 <p>any initial data that was already read from the socket</p>
-
-<h1 id='returns-10' class='section-header'><a href='#returns-10'>Returns</a></h1>
+<h1 id="returns-10" class="section-header"><a href="#returns-10">Returns</a></h1>
 <p>TRUE if all was ok, FALSE if an error occurred.</p>
 </div><h3 id='tymethod.connect_client_connected' class='method'><span id='connect_client_connected.v' class='invisible'><code>fn <a href='#tymethod.connect_client_connected' class='fnname'>connect_client_connected</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self, &amp;<a class="struct" href="../gstreamer_rtsp_server/struct.RTSPClient.html" title="struct gstreamer_rtsp_server::RTSPClient">RTSPClient</a>) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_property_address_notify' class='method'><span id='connect_property_address_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_address_notify' class='fnname'>connect_property_address_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_property_backlog_notify' class='method'><span id='connect_property_backlog_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_backlog_notify' class='fnname'>connect_property_backlog_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_property_bound_port_notify' class='method'><span id='connect_property_bound_port_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_bound_port_notify' class='fnname'>connect_property_bound_port_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_property_mount_points_notify' class='method'><span id='connect_property_mount_points_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_mount_points_notify' class='fnname'>connect_property_mount_points_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_property_service_notify' class='method'><span id='connect_property_service_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_service_notify' class='fnname'>connect_property_service_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_property_session_pool_notify' class='method'><span id='connect_property_session_pool_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_session_pool_notify' class='fnname'>connect_property_session_pool_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3></div>
         <h2 id='implementors' class='small-section-header'>
           Implementors<a href='#implementors' class='anchor'></a>
         </h2>
         <ul class='item-list' id='implementors-list'>
-    <li><code>impl&lt;O:&nbsp;<a class="trait" href="../gstreamer_rtsp_server/trait.IsA.html" title="trait gstreamer_rtsp_server::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer_rtsp_server/struct.RTSPServer.html" title="struct gstreamer_rtsp_server::RTSPServer">RTSPServer</a>&gt; + <a class="trait" href="../gstreamer_rtsp_server/trait.IsA.html" title="trait gstreamer_rtsp_server::IsA">IsA</a>&lt;<a class="struct" href="../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt;&gt; RTSPServerExt for O</code></li>
-</ul><script type="text/javascript" async
+    <li><table class='table-display'><tbody><tr><td><code>impl&lt;O:&nbsp;<a class="trait" href="../gstreamer_rtsp_server/prelude/trait.IsA.html" title="trait gstreamer_rtsp_server::prelude::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer_rtsp_server/struct.RTSPServer.html" title="struct gstreamer_rtsp_server::RTSPServer">RTSPServer</a>&gt; + <a class="trait" href="../gstreamer_rtsp_server/prelude/trait.IsA.html" title="trait gstreamer_rtsp_server::prelude::IsA">IsA</a>&lt;<a class="struct" href="../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt;&gt; RTSPServerExt for O</code><td><div class='out-of-band'><a class='srclink' href='../src/gstreamer_rtsp_server/auto/rtsp_server.rs.html#260-446' title='goto source code'>[src]</a></div></td></tr></tbody></table></li>
+</ul><script type="text/javascript">window.inlined_types=new Set([]);</script><script type="text/javascript" async
                          src="../implementors/gstreamer_rtsp_server/trait.RTSPServerExt.js">
-                 </script></section>
-    <section id='search' class="content hidden"></section>
-
-    <section class="footer"></section>
-
-    <aside id="help" class="hidden">
-        <div>
-            <h1 class="hidden">Help</h1>
-
-            <div class="shortcuts">
-                <h2>Keyboard Shortcuts</h2>
-
-                <dl>
-                    <dt>?</dt>
-                    <dd>Show this help dialog</dd>
-                    <dt>S</dt>
-                    <dd>Focus the search field</dd>
-                    <dt>↑</dt>
-                    <dd>Move up in search results</dd>
-                    <dt>↓</dt>
-                    <dd>Move down in search results</dd>
-                    <dt>↹</dt>
-                    <dd>Switch tab</dd>
-                    <dt>&#9166;</dt>
-                    <dd>Go to active search result</dd>
-                    <dt style="width:31px;">+ / -</dt>
-                    <dd>Collapse/expand all sections</dd>
-                </dl>
-            </div>
-
-            <div class="infos">
-                <h2>Search Tricks</h2>
-
-                <p>
-                    Prefix searches with a type followed by a colon (e.g.
-                    <code>fn:</code>) to restrict the search to a given type.
-                </p>
-
-                <p>
-                    Accepted types are: <code>fn</code>, <code>mod</code>,
-                    <code>struct</code>, <code>enum</code>,
-                    <code>trait</code>, <code>type</code>, <code>macro</code>,
-                    and <code>const</code>.
-                </p>
-
-                <p>
-                    Search functions by type signature (e.g.
-                    <code>vec -> usize</code> or <code>* -> vec</code>)
-                </p>
-            </div>
-        </div>
-    </aside>
-
-    
-
-    <script>
-        window.rootPath = "../";
-        window.currentCrate = "gstreamer_rtsp_server";
-    </script>
-    <script src="../main.js"></script>
-    <script defer src="../search-index.js"></script>
-</body>
-</html>
+                 </script></section><section id="search" class="content hidden"></section><section class="footer"></section><aside id="help" class="hidden"><div><h1 class="hidden">Help</h1><div class="shortcuts"><h2>Keyboard Shortcuts</h2><dl><dt><kbd>?</kbd></dt><dd>Show this help dialog</dd><dt><kbd>S</kbd></dt><dd>Focus the search field</dd><dt><kbd>↑</kbd></dt><dd>Move up in search results</dd><dt><kbd>↓</kbd></dt><dd>Move down in search results</dd><dt><kbd>↹</kbd></dt><dd>Switch tab</dd><dt><kbd>&#9166;</kbd></dt><dd>Go to active search result</dd><dt><kbd>+</kbd></dt><dd>Expand all sections</dd><dt><kbd>-</kbd></dt><dd>Collapse all sections</dd></dl></div><div class="infos"><h2>Search Tricks</h2><p>Prefix searches with a type followed by a colon (e.g. <code>fn:</code>) to restrict the search to a given type.</p><p>Accepted types are: <code>fn</code>, <code>mod</code>, <code>struct</code>, <code>enum</code>, <code>trait</code>, <code>type</code>, <code>macro</code>, and <code>const</code>.</p><p>Search functions by type signature (e.g. <code>vec -> usize</code> or <code>* -> vec</code>)</p><p>Search multiple things at once by splitting your query with comma (e.g. <code>str,u8</code> or <code>String,struct:Vec,test</code>)</p></div></div></aside><script>window.rootPath = "../";window.currentCrate = "gstreamer_rtsp_server";</script><script src="../aliases.js"></script><script src="../main.js"></script><script defer src="../search-index.js"></script></body></html>

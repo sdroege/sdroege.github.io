@@ -1,0 +1,10 @@
+(function() {var implementors = {};
+implementors["gstreamer_net"] = [{text:"impl <a class=\"trait\" href=\"gstreamer_net/prelude/trait.StaticType.html\" title=\"trait gstreamer_net::prelude::StaticType\">StaticType</a> for <a class=\"struct\" href=\"gstreamer_net/struct.NetClientClock.html\" title=\"struct gstreamer_net::NetClientClock\">NetClientClock</a>",synthetic:false,types:["gstreamer_net::auto::net_client_clock::NetClientClock"]},{text:"impl <a class=\"trait\" href=\"gstreamer_net/prelude/trait.StaticType.html\" title=\"trait gstreamer_net::prelude::StaticType\">StaticType</a> for <a class=\"struct\" href=\"gstreamer_net/struct.NetTimeProvider.html\" title=\"struct gstreamer_net::NetTimeProvider\">NetTimeProvider</a>",synthetic:false,types:["gstreamer_net::auto::net_time_provider::NetTimeProvider"]},{text:"impl <a class=\"trait\" href=\"gstreamer_net/prelude/trait.StaticType.html\" title=\"trait gstreamer_net::prelude::StaticType\">StaticType</a> for <a class=\"struct\" href=\"gstreamer_net/struct.NtpClock.html\" title=\"struct gstreamer_net::NtpClock\">NtpClock</a>",synthetic:false,types:["gstreamer_net::auto::ntp_clock::NtpClock"]},{text:"impl <a class=\"trait\" href=\"gstreamer_net/prelude/trait.StaticType.html\" title=\"trait gstreamer_net::prelude::StaticType\">StaticType</a> for <a class=\"struct\" href=\"gstreamer_net/struct.PtpClock.html\" title=\"struct gstreamer_net::PtpClock\">PtpClock</a>",synthetic:false,types:["gstreamer_net::auto::ptp_clock::PtpClock"]},];
+
+            if (window.register_implementors) {
+                window.register_implementors(implementors);
+            } else {
+                window.pending_implementors = implementors;
+            }
+        
+})()

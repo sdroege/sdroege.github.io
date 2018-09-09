@@ -1,50 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="rustdoc">
-    <meta name="description" content="Source to the Rust file `gst-plugin/src/base_sink.rs`.">
-    <meta name="keywords" content="rust, rustlang, rust-lang">
-
-    <title>base_sink.rs.html -- source</title>
-
-    <link rel="stylesheet" type="text/css" href="../../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
-    <link rel="stylesheet" type="text/css" href="../../main.css">
-    
-
-    
-    
-</head>
-<body class="rustdoc source">
-    <!--[if lte IE 8]>
-    <div class="warning">
-        This old browser is unsupported and will most likely display funky
-        things.
-    </div>
-    <![endif]-->
-
-    
-
-    <nav class="sidebar">
-        <div class="sidebar-menu">&#9776;</div>
-        
-        
-    </nav>
-
-    <nav class="sub">
-        <form class="search-form js-only">
-            <div class="search-container">
-                <input class="search-input" name="search"
-                       autocomplete="off"
-                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
-                       type="search">
-            </div>
-        </form>
-    </nav>
-
-    <section id='main' class="content"><pre class="line-numbers"><span id="1">  1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source to the Rust file `gst-plugin/src/base_sink.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>base_sink.rs.html -- source</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css"><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script src="../../storage.js"></script></head><body class="rustdoc source"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!"><img src="../../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices"></div></div><script src="../../theme.js"></script><nav class="sub"><form class="search-form js-only"><div class="search-container"><input class="search-input" name="search" autocomplete="off" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><a id="settings-menu" href="../../settings.html"><img src="../../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><pre class="line-numbers"><span id="1">  1</span>
 <span id="2">  2</span>
 <span id="3">  3</span>
 <span id="4">  4</span>
@@ -576,6 +530,16 @@
 <span id="530">530</span>
 <span id="531">531</span>
 <span id="532">532</span>
+<span id="533">533</span>
+<span id="534">534</span>
+<span id="535">535</span>
+<span id="536">536</span>
+<span id="537">537</span>
+<span id="538">538</span>
+<span id="539">539</span>
+<span id="540">540</span>
+<span id="541">541</span>
+<span id="542">542</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright (C) 2017 Sebastian Dröge &lt;sebastian@centricular.com&gt;</span>
 <span class="comment">//</span>
@@ -585,13 +549,13 @@
 <span class="comment">// option. This file may not be copied, modified, or distributed</span>
 <span class="comment">// except according to those terms.</span>
 
-<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">ptr</span>;
 <span class="kw">use</span> <span class="ident">std</span>::<span class="ident">mem</span>;
+<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">ptr</span>;
 
 <span class="kw">use</span> <span class="ident">glib_ffi</span>;
 <span class="kw">use</span> <span class="ident">gobject_ffi</span>;
-<span class="kw">use</span> <span class="ident">gst_ffi</span>;
 <span class="kw">use</span> <span class="ident">gst_base_ffi</span>;
+<span class="kw">use</span> <span class="ident">gst_ffi</span>;
 
 <span class="kw">use</span> <span class="ident">glib</span>;
 <span class="kw">use</span> <span class="ident">glib</span>::<span class="ident">translate</span>::<span class="kw-2">*</span>;
@@ -599,12 +563,17 @@
 <span class="kw">use</span> <span class="ident">gst</span>::<span class="ident">prelude</span>::<span class="kw-2">*</span>;
 <span class="kw">use</span> <span class="ident">gst_base</span>;
 
-<span class="kw">use</span> <span class="ident">object</span>::<span class="kw-2">*</span>;
-<span class="kw">use</span> <span class="ident">element</span>::<span class="kw-2">*</span>;
-<span class="kw">use</span> <span class="ident">anyimpl</span>::<span class="kw-2">*</span>;
+<span class="kw">use</span> <span class="ident">gobject_subclass</span>::<span class="ident">anyimpl</span>::<span class="kw-2">*</span>;
+<span class="kw">use</span> <span class="ident">gobject_subclass</span>::<span class="ident">object</span>::<span class="kw-2">*</span>;
 
-<span class="kw">pub</span> <span class="kw">trait</span> <span class="ident">BaseSinkImpl</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">BaseSinkBase</span><span class="op">&gt;</span>
-    : <span class="ident">AnyImpl</span> <span class="op">+</span> <span class="ident">ObjectImpl</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> <span class="op">+</span> <span class="ident">ElementImpl</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> <span class="op">+</span> <span class="ident">Send</span> <span class="op">+</span> <span class="ident">Sync</span> <span class="op">+</span> <span class="lifetime">&#39;static</span> {
+<span class="kw">use</span> <span class="ident">element</span>::<span class="kw-2">*</span>;
+<span class="kw">use</span> <span class="ident">object</span>::<span class="kw-2">*</span>;
+
+<span class="kw">pub</span> <span class="kw">trait</span> <span class="ident">BaseSinkImpl</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">BaseSinkBase</span><span class="op">&gt;</span>:
+    <span class="ident">AnyImpl</span> <span class="op">+</span> <span class="ident">ObjectImpl</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> <span class="op">+</span> <span class="ident">ElementImpl</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> <span class="op">+</span> <span class="ident">Send</span> <span class="op">+</span> <span class="ident">Sync</span> <span class="op">+</span> <span class="lifetime">&#39;static</span>
+<span class="kw">where</span>
+    <span class="ident">T</span>::<span class="ident">InstanceStructType</span>: <span class="ident">PanicPoison</span>,
+{
     <span class="kw">fn</span> <span class="ident">start</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">_element</span>: <span class="kw-2">&amp;</span><span class="ident">T</span>) <span class="op">-&gt;</span> <span class="ident">bool</span> {
         <span class="bool-val">true</span>
     }
@@ -670,10 +639,11 @@
     }
 }
 
-<span class="macro">any_impl</span><span class="macro">!</span>(<span class="ident">BaseSinkBase</span>, <span class="ident">BaseSinkImpl</span>);
+<span class="macro">any_impl</span><span class="macro">!</span>(<span class="ident">BaseSinkBase</span>, <span class="ident">BaseSinkImpl</span>, <span class="ident">PanicPoison</span>);
 
-<span class="kw">pub</span> <span class="kw">unsafe</span> <span class="kw">trait</span> <span class="ident">BaseSinkBase</span>
-    : <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">gst</span>::<span class="ident">Element</span><span class="op">&gt;</span> <span class="op">+</span> <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">gst_base</span>::<span class="ident">BaseSink</span><span class="op">&gt;</span> <span class="op">+</span> <span class="ident">ObjectType</span> {
+<span class="kw">pub</span> <span class="kw">unsafe</span> <span class="kw">trait</span> <span class="ident">BaseSinkBase</span>:
+    <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">gst</span>::<span class="ident">Element</span><span class="op">&gt;</span> <span class="op">+</span> <span class="ident">IsA</span><span class="op">&lt;</span><span class="ident">gst_base</span>::<span class="ident">BaseSink</span><span class="op">&gt;</span> <span class="op">+</span> <span class="ident">ObjectType</span>
+{
     <span class="kw">fn</span> <span class="ident">parent_query</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">query</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">gst</span>::<span class="ident">QueryRef</span>) <span class="op">-&gt;</span> <span class="ident">bool</span> {
         <span class="kw">unsafe</span> {
             <span class="kw">let</span> <span class="ident">klass</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">get_class</span>();
@@ -740,8 +710,9 @@
 <span class="kw">pub</span> <span class="kw">unsafe</span> <span class="kw">trait</span> <span class="ident">BaseSinkClassExt</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">BaseSinkBase</span><span class="op">&gt;</span>
 <span class="kw">where</span>
     <span class="ident">T</span>::<span class="ident">ImplType</span>: <span class="ident">BaseSinkImpl</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>,
+    <span class="ident">T</span>::<span class="ident">InstanceStructType</span>: <span class="ident">PanicPoison</span>,
 {
-    <span class="kw">fn</span> <span class="ident">override_vfuncs</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, _: <span class="kw-2">&amp;</span><span class="ident">ClassInitToken</span>) {
+    <span class="kw">fn</span> <span class="ident">override_vfuncs</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="kw">_</span>: <span class="kw-2">&amp;</span><span class="ident">ClassInitToken</span>) {
         <span class="kw">unsafe</span> {
             <span class="kw">let</span> <span class="ident">klass</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="kw-2">*</span>(<span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="self">Self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gst_base_ffi</span>::<span class="ident">GstBaseSinkClass</span>);
             <span class="ident">klass</span>.<span class="ident">start</span> <span class="op">=</span> <span class="prelude-val">Some</span>(<span class="ident">base_sink_start</span>::<span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
@@ -762,9 +733,10 @@
 }
 
 <span class="macro">glib_wrapper</span><span class="macro">!</span> {
-    <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">BaseSink</span>(<span class="ident">Object</span><span class="op">&lt;</span><span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">BaseSink</span><span class="op">&gt;&gt;</span>): [<span class="ident">gst_base</span>::<span class="ident">BaseSink</span> <span class="op">=&gt;</span> <span class="ident">gst_base_ffi</span>::<span class="ident">GstBaseSink</span>,
-                                                            <span class="ident">gst</span>::<span class="ident">Element</span> <span class="op">=&gt;</span> <span class="ident">gst_ffi</span>::<span class="ident">GstElement</span>,
-                                                            <span class="ident">gst</span>::<span class="ident">Object</span> <span class="op">=&gt;</span> <span class="ident">gst_ffi</span>::<span class="ident">GstObject</span>];
+    <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">BaseSink</span>(<span class="ident">Object</span><span class="op">&lt;</span><span class="ident">ElementInstanceStruct</span><span class="op">&lt;</span><span class="ident">BaseSink</span><span class="op">&gt;&gt;</span>):
+        [<span class="ident">gst_base</span>::<span class="ident">BaseSink</span> <span class="op">=&gt;</span> <span class="ident">gst_base_ffi</span>::<span class="ident">GstBaseSink</span>,
+         <span class="ident">gst</span>::<span class="ident">Element</span> <span class="op">=&gt;</span> <span class="ident">gst_ffi</span>::<span class="ident">GstElement</span>,
+         <span class="ident">gst</span>::<span class="ident">Object</span> <span class="op">=&gt;</span> <span class="ident">gst_ffi</span>::<span class="ident">GstObject</span>];
 
     <span class="kw">match</span> <span class="kw">fn</span> {
         <span class="ident">get_type</span> <span class="op">=&gt;</span> <span class="op">||</span> <span class="ident">get_type</span>::<span class="op">&lt;</span><span class="ident">BaseSink</span><span class="op">&gt;</span>(),
@@ -777,6 +749,7 @@
 <span class="comment">// FIXME: Boilerplate</span>
 <span class="kw">unsafe</span> <span class="kw">impl</span> <span class="ident">BaseSinkClassExt</span><span class="op">&lt;</span><span class="ident">BaseSink</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">BaseSinkClass</span> {}
 <span class="kw">unsafe</span> <span class="kw">impl</span> <span class="ident">ElementClassExt</span><span class="op">&lt;</span><span class="ident">BaseSink</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">BaseSinkClass</span> {}
+<span class="kw">unsafe</span> <span class="kw">impl</span> <span class="ident">ObjectClassExt</span><span class="op">&lt;</span><span class="ident">BaseSink</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">BaseSinkClass</span> {}
 
 <span class="kw">unsafe</span> <span class="kw">impl</span> <span class="ident">Send</span> <span class="kw">for</span> <span class="ident">BaseSink</span> {}
 <span class="kw">unsafe</span> <span class="kw">impl</span> <span class="ident">Sync</span> <span class="kw">for</span> <span class="ident">BaseSink</span> {}
@@ -786,7 +759,10 @@
     (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">name</span>:<span class="ident">ident</span>) <span class="op">=&gt;</span> {
         <span class="macro">box_element_impl</span><span class="macro">!</span>(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">name</span>);
 
-        <span class="kw">impl</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">BaseSinkBase</span><span class="op">&gt;</span> <span class="ident">BaseSinkImpl</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">Box</span><span class="op">&lt;</span><span class="macro-nonterminal">$</span><span class="macro-nonterminal">name</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span> {
+        <span class="kw">impl</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">BaseSinkBase</span><span class="op">&gt;</span> <span class="ident">BaseSinkImpl</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">Box</span><span class="op">&lt;</span><span class="macro-nonterminal">$</span><span class="macro-nonterminal">name</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;&gt;</span>
+        <span class="kw">where</span>
+            <span class="ident">T</span>::<span class="ident">InstanceStructType</span>: <span class="ident">PanicPoison</span>
+        {
             <span class="kw">fn</span> <span class="ident">start</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">element</span>: <span class="kw-2">&amp;</span><span class="ident">T</span>) <span class="op">-&gt;</span> <span class="ident">bool</span> {
                 <span class="kw">let</span> <span class="ident">imp</span>: <span class="kw-2">&amp;</span><span class="macro-nonterminal">$</span><span class="macro-nonterminal">name</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">as_ref</span>();
                 <span class="ident">imp</span>.<span class="ident">start</span>(<span class="ident">element</span>)
@@ -859,13 +835,9 @@
 
 <span class="kw">impl</span> <span class="ident">ObjectType</span> <span class="kw">for</span> <span class="ident">BaseSink</span> {
     <span class="kw">const</span> <span class="ident">NAME</span>: <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">str</span> <span class="op">=</span> <span class="string">&quot;RsBaseSink&quot;</span>;
-    <span class="kw">type</span> <span class="ident">GlibType</span> <span class="op">=</span> <span class="ident">gst_base_ffi</span>::<span class="ident">GstBaseSink</span>;
-    <span class="kw">type</span> <span class="ident">GlibClassType</span> <span class="op">=</span> <span class="ident">gst_base_ffi</span>::<span class="ident">GstBaseSinkClass</span>;
+    <span class="kw">type</span> <span class="ident">ParentType</span> <span class="op">=</span> <span class="ident">gst_base</span>::<span class="ident">BaseSink</span>;
     <span class="kw">type</span> <span class="ident">ImplType</span> <span class="op">=</span> <span class="ident">Box</span><span class="op">&lt;</span><span class="ident">BaseSinkImpl</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;&gt;</span>;
-
-    <span class="kw">fn</span> <span class="ident">glib_type</span>() <span class="op">-&gt;</span> <span class="ident">glib</span>::<span class="ident">Type</span> {
-        <span class="kw">unsafe</span> { <span class="ident">from_glib</span>(<span class="ident">gst_base_ffi</span>::<span class="ident">gst_base_sink_get_type</span>()) }
-    }
+    <span class="kw">type</span> <span class="ident">InstanceStructType</span> <span class="op">=</span> <span class="ident">ElementInstanceStruct</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>;
 
     <span class="kw">fn</span> <span class="ident">class_init</span>(<span class="ident">token</span>: <span class="kw-2">&amp;</span><span class="ident">ClassInitToken</span>, <span class="ident">klass</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">BaseSinkClass</span>) {
         <span class="ident">ElementClassExt</span>::<span class="ident">override_vfuncs</span>(<span class="ident">klass</span>, <span class="ident">token</span>);
@@ -880,14 +852,14 @@
 ) <span class="op">-&gt;</span> <span class="ident">glib_ffi</span>::<span class="ident">gboolean</span>
 <span class="kw">where</span>
     <span class="ident">T</span>::<span class="ident">ImplType</span>: <span class="ident">BaseSinkImpl</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>,
+    <span class="ident">T</span>::<span class="ident">InstanceStructType</span>: <span class="ident">PanicPoison</span>,
 {
-    <span class="macro">callback_guard</span><span class="macro">!</span>();
     <span class="macro">floating_reference_guard</span><span class="macro">!</span>(<span class="ident">ptr</span>);
-    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span><span class="ident">element</span>.<span class="ident">imp</span>;
+    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="ident">element</span>.<span class="ident">get_impl</span>();
 
-    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>, <span class="bool-val">false</span>, { <span class="ident">imp</span>.<span class="ident">start</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>) }).<span class="ident">to_glib</span>()
+    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>(), <span class="bool-val">false</span>, { <span class="ident">imp</span>.<span class="ident">start</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>) }).<span class="ident">to_glib</span>()
 }
 
 <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">base_sink_stop</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">BaseSinkBase</span><span class="op">&gt;</span>(
@@ -895,14 +867,14 @@
 ) <span class="op">-&gt;</span> <span class="ident">glib_ffi</span>::<span class="ident">gboolean</span>
 <span class="kw">where</span>
     <span class="ident">T</span>::<span class="ident">ImplType</span>: <span class="ident">BaseSinkImpl</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>,
+    <span class="ident">T</span>::<span class="ident">InstanceStructType</span>: <span class="ident">PanicPoison</span>,
 {
-    <span class="macro">callback_guard</span><span class="macro">!</span>();
     <span class="macro">floating_reference_guard</span><span class="macro">!</span>(<span class="ident">ptr</span>);
-    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span><span class="ident">element</span>.<span class="ident">imp</span>;
+    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="ident">element</span>.<span class="ident">get_impl</span>();
 
-    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>, <span class="bool-val">false</span>, { <span class="ident">imp</span>.<span class="ident">stop</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>) }).<span class="ident">to_glib</span>()
+    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>(), <span class="bool-val">false</span>, { <span class="ident">imp</span>.<span class="ident">stop</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>) }).<span class="ident">to_glib</span>()
 }
 
 <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">base_sink_render</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">BaseSinkBase</span><span class="op">&gt;</span>(
@@ -911,15 +883,15 @@
 ) <span class="op">-&gt;</span> <span class="ident">gst_ffi</span>::<span class="ident">GstFlowReturn</span>
 <span class="kw">where</span>
     <span class="ident">T</span>::<span class="ident">ImplType</span>: <span class="ident">BaseSinkImpl</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>,
+    <span class="ident">T</span>::<span class="ident">InstanceStructType</span>: <span class="ident">PanicPoison</span>,
 {
-    <span class="macro">callback_guard</span><span class="macro">!</span>();
     <span class="macro">floating_reference_guard</span><span class="macro">!</span>(<span class="ident">ptr</span>);
-    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span><span class="ident">element</span>.<span class="ident">imp</span>;
+    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="ident">element</span>.<span class="ident">get_impl</span>();
     <span class="kw">let</span> <span class="ident">buffer</span> <span class="op">=</span> <span class="ident">gst</span>::<span class="ident">BufferRef</span>::<span class="ident">from_ptr</span>(<span class="ident">buffer</span>);
 
-    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>, <span class="ident">gst</span>::<span class="ident">FlowReturn</span>::<span class="ident">Error</span>, {
+    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>(), <span class="ident">gst</span>::<span class="ident">FlowReturn</span>::<span class="ident">Error</span>, {
         <span class="ident">imp</span>.<span class="ident">render</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="ident">buffer</span>)
     }).<span class="ident">to_glib</span>()
 }
@@ -930,15 +902,15 @@
 ) <span class="op">-&gt;</span> <span class="ident">gst_ffi</span>::<span class="ident">GstFlowReturn</span>
 <span class="kw">where</span>
     <span class="ident">T</span>::<span class="ident">ImplType</span>: <span class="ident">BaseSinkImpl</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>,
+    <span class="ident">T</span>::<span class="ident">InstanceStructType</span>: <span class="ident">PanicPoison</span>,
 {
-    <span class="macro">callback_guard</span><span class="macro">!</span>();
     <span class="macro">floating_reference_guard</span><span class="macro">!</span>(<span class="ident">ptr</span>);
-    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span><span class="ident">element</span>.<span class="ident">imp</span>;
+    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="ident">element</span>.<span class="ident">get_impl</span>();
     <span class="kw">let</span> <span class="ident">buffer</span> <span class="op">=</span> <span class="ident">gst</span>::<span class="ident">BufferRef</span>::<span class="ident">from_ptr</span>(<span class="ident">buffer</span>);
 
-    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>, <span class="ident">gst</span>::<span class="ident">FlowReturn</span>::<span class="ident">Error</span>, {
+    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>(), <span class="ident">gst</span>::<span class="ident">FlowReturn</span>::<span class="ident">Error</span>, {
         <span class="ident">imp</span>.<span class="ident">prepare</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="ident">buffer</span>)
     }).<span class="ident">to_glib</span>()
 }
@@ -949,15 +921,15 @@
 ) <span class="op">-&gt;</span> <span class="ident">gst_ffi</span>::<span class="ident">GstFlowReturn</span>
 <span class="kw">where</span>
     <span class="ident">T</span>::<span class="ident">ImplType</span>: <span class="ident">BaseSinkImpl</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>,
+    <span class="ident">T</span>::<span class="ident">InstanceStructType</span>: <span class="ident">PanicPoison</span>,
 {
-    <span class="macro">callback_guard</span><span class="macro">!</span>();
     <span class="macro">floating_reference_guard</span><span class="macro">!</span>(<span class="ident">ptr</span>);
-    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span><span class="ident">element</span>.<span class="ident">imp</span>;
+    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="ident">element</span>.<span class="ident">get_impl</span>();
     <span class="kw">let</span> <span class="ident">list</span> <span class="op">=</span> <span class="ident">gst</span>::<span class="ident">BufferListRef</span>::<span class="ident">from_ptr</span>(<span class="ident">list</span>);
 
-    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>, <span class="ident">gst</span>::<span class="ident">FlowReturn</span>::<span class="ident">Error</span>, {
+    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>(), <span class="ident">gst</span>::<span class="ident">FlowReturn</span>::<span class="ident">Error</span>, {
         <span class="ident">imp</span>.<span class="ident">render_list</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="ident">list</span>)
     }).<span class="ident">to_glib</span>()
 }
@@ -968,15 +940,15 @@
 ) <span class="op">-&gt;</span> <span class="ident">gst_ffi</span>::<span class="ident">GstFlowReturn</span>
 <span class="kw">where</span>
     <span class="ident">T</span>::<span class="ident">ImplType</span>: <span class="ident">BaseSinkImpl</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>,
+    <span class="ident">T</span>::<span class="ident">InstanceStructType</span>: <span class="ident">PanicPoison</span>,
 {
-    <span class="macro">callback_guard</span><span class="macro">!</span>();
     <span class="macro">floating_reference_guard</span><span class="macro">!</span>(<span class="ident">ptr</span>);
-    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span><span class="ident">element</span>.<span class="ident">imp</span>;
+    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="ident">element</span>.<span class="ident">get_impl</span>();
     <span class="kw">let</span> <span class="ident">list</span> <span class="op">=</span> <span class="ident">gst</span>::<span class="ident">BufferListRef</span>::<span class="ident">from_ptr</span>(<span class="ident">list</span>);
 
-    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>, <span class="ident">gst</span>::<span class="ident">FlowReturn</span>::<span class="ident">Error</span>, {
+    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>(), <span class="ident">gst</span>::<span class="ident">FlowReturn</span>::<span class="ident">Error</span>, {
         <span class="ident">imp</span>.<span class="ident">prepare_list</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="ident">list</span>)
     }).<span class="ident">to_glib</span>()
 }
@@ -987,15 +959,15 @@
 ) <span class="op">-&gt;</span> <span class="ident">glib_ffi</span>::<span class="ident">gboolean</span>
 <span class="kw">where</span>
     <span class="ident">T</span>::<span class="ident">ImplType</span>: <span class="ident">BaseSinkImpl</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>,
+    <span class="ident">T</span>::<span class="ident">InstanceStructType</span>: <span class="ident">PanicPoison</span>,
 {
-    <span class="macro">callback_guard</span><span class="macro">!</span>();
     <span class="macro">floating_reference_guard</span><span class="macro">!</span>(<span class="ident">ptr</span>);
-    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span><span class="ident">element</span>.<span class="ident">imp</span>;
+    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="ident">element</span>.<span class="ident">get_impl</span>();
     <span class="kw">let</span> <span class="ident">query</span> <span class="op">=</span> <span class="ident">gst</span>::<span class="ident">QueryRef</span>::<span class="ident">from_mut_ptr</span>(<span class="ident">query_ptr</span>);
 
-    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>, <span class="bool-val">false</span>, {
+    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>(), <span class="bool-val">false</span>, {
         <span class="ident">BaseSinkImpl</span>::<span class="ident">query</span>(<span class="ident">imp</span>, <span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="ident">query</span>)
     }).<span class="ident">to_glib</span>()
 }
@@ -1006,14 +978,14 @@
 ) <span class="op">-&gt;</span> <span class="ident">glib_ffi</span>::<span class="ident">gboolean</span>
 <span class="kw">where</span>
     <span class="ident">T</span>::<span class="ident">ImplType</span>: <span class="ident">BaseSinkImpl</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>,
+    <span class="ident">T</span>::<span class="ident">InstanceStructType</span>: <span class="ident">PanicPoison</span>,
 {
-    <span class="macro">callback_guard</span><span class="macro">!</span>();
     <span class="macro">floating_reference_guard</span><span class="macro">!</span>(<span class="ident">ptr</span>);
-    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span><span class="ident">element</span>.<span class="ident">imp</span>;
+    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="ident">element</span>.<span class="ident">get_impl</span>();
 
-    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>, <span class="bool-val">false</span>, {
+    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>(), <span class="bool-val">false</span>, {
         <span class="ident">imp</span>.<span class="ident">event</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="ident">from_glib_full</span>(<span class="ident">event_ptr</span>))
     }).<span class="ident">to_glib</span>()
 }
@@ -1024,19 +996,19 @@
 ) <span class="op">-&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gst_ffi</span>::<span class="ident">GstCaps</span>
 <span class="kw">where</span>
     <span class="ident">T</span>::<span class="ident">ImplType</span>: <span class="ident">BaseSinkImpl</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>,
+    <span class="ident">T</span>::<span class="ident">InstanceStructType</span>: <span class="ident">PanicPoison</span>,
 {
-    <span class="macro">callback_guard</span><span class="macro">!</span>();
     <span class="macro">floating_reference_guard</span><span class="macro">!</span>(<span class="ident">ptr</span>);
-    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span><span class="ident">element</span>.<span class="ident">imp</span>;
+    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="ident">element</span>.<span class="ident">get_impl</span>();
     <span class="kw">let</span> <span class="ident">filter</span> <span class="op">=</span> <span class="kw">if</span> <span class="ident">filter</span>.<span class="ident">is_null</span>() {
         <span class="prelude-val">None</span>
     } <span class="kw">else</span> {
         <span class="prelude-val">Some</span>(<span class="ident">gst</span>::<span class="ident">CapsRef</span>::<span class="ident">from_ptr</span>(<span class="ident">filter</span>))
     };
 
-    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>, <span class="prelude-val">None</span>, {
+    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>(), <span class="prelude-val">None</span>, {
         <span class="ident">imp</span>.<span class="ident">get_caps</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="ident">filter</span>)
     }).<span class="ident">map</span>(<span class="op">|</span><span class="ident">caps</span><span class="op">|</span> <span class="ident">caps</span>.<span class="ident">into_ptr</span>())
         .<span class="ident">unwrap_or</span>(<span class="ident">ptr</span>::<span class="ident">null_mut</span>())
@@ -1048,15 +1020,15 @@
 ) <span class="op">-&gt;</span> <span class="ident">glib_ffi</span>::<span class="ident">gboolean</span>
 <span class="kw">where</span>
     <span class="ident">T</span>::<span class="ident">ImplType</span>: <span class="ident">BaseSinkImpl</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>,
+    <span class="ident">T</span>::<span class="ident">InstanceStructType</span>: <span class="ident">PanicPoison</span>,
 {
-    <span class="macro">callback_guard</span><span class="macro">!</span>();
     <span class="macro">floating_reference_guard</span><span class="macro">!</span>(<span class="ident">ptr</span>);
-    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span><span class="ident">element</span>.<span class="ident">imp</span>;
+    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="ident">element</span>.<span class="ident">get_impl</span>();
     <span class="kw">let</span> <span class="ident">caps</span> <span class="op">=</span> <span class="ident">gst</span>::<span class="ident">CapsRef</span>::<span class="ident">from_ptr</span>(<span class="ident">caps</span>);
 
-    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>, <span class="bool-val">false</span>, {
+    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>(), <span class="bool-val">false</span>, {
         <span class="ident">imp</span>.<span class="ident">set_caps</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="ident">caps</span>)
     }).<span class="ident">to_glib</span>()
 }
@@ -1067,15 +1039,15 @@
 ) <span class="op">-&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">gst_ffi</span>::<span class="ident">GstCaps</span>
 <span class="kw">where</span>
     <span class="ident">T</span>::<span class="ident">ImplType</span>: <span class="ident">BaseSinkImpl</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>,
+    <span class="ident">T</span>::<span class="ident">InstanceStructType</span>: <span class="ident">PanicPoison</span>,
 {
-    <span class="macro">callback_guard</span><span class="macro">!</span>();
     <span class="macro">floating_reference_guard</span><span class="macro">!</span>(<span class="ident">ptr</span>);
-    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span><span class="ident">element</span>.<span class="ident">imp</span>;
+    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="ident">element</span>.<span class="ident">get_impl</span>();
     <span class="kw">let</span> <span class="ident">caps</span> <span class="op">=</span> <span class="ident">from_glib_full</span>(<span class="ident">caps</span>);
 
-    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>, <span class="ident">gst</span>::<span class="ident">Caps</span>::<span class="ident">new_empty</span>(), {
+    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>(), <span class="ident">gst</span>::<span class="ident">Caps</span>::<span class="ident">new_empty</span>(), {
         <span class="ident">imp</span>.<span class="ident">fixate</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="ident">caps</span>)
     }).<span class="ident">into_ptr</span>()
 }
@@ -1085,14 +1057,14 @@
 ) <span class="op">-&gt;</span> <span class="ident">glib_ffi</span>::<span class="ident">gboolean</span>
 <span class="kw">where</span>
     <span class="ident">T</span>::<span class="ident">ImplType</span>: <span class="ident">BaseSinkImpl</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>,
+    <span class="ident">T</span>::<span class="ident">InstanceStructType</span>: <span class="ident">PanicPoison</span>,
 {
-    <span class="macro">callback_guard</span><span class="macro">!</span>();
     <span class="macro">floating_reference_guard</span><span class="macro">!</span>(<span class="ident">ptr</span>);
-    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span><span class="ident">element</span>.<span class="ident">imp</span>;
+    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="ident">element</span>.<span class="ident">get_impl</span>();
 
-    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>, <span class="bool-val">false</span>, { <span class="ident">imp</span>.<span class="ident">unlock</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>) }).<span class="ident">to_glib</span>()
+    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>(), <span class="bool-val">false</span>, { <span class="ident">imp</span>.<span class="ident">unlock</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>) }).<span class="ident">to_glib</span>()
 }
 
 <span class="kw">unsafe</span> <span class="kw">extern</span> <span class="string">&quot;C&quot;</span> <span class="kw">fn</span> <span class="ident">base_sink_unlock_stop</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">BaseSinkBase</span><span class="op">&gt;</span>(
@@ -1100,76 +1072,16 @@
 ) <span class="op">-&gt;</span> <span class="ident">glib_ffi</span>::<span class="ident">gboolean</span>
 <span class="kw">where</span>
     <span class="ident">T</span>::<span class="ident">ImplType</span>: <span class="ident">BaseSinkImpl</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>,
+    <span class="ident">T</span>::<span class="ident">InstanceStructType</span>: <span class="ident">PanicPoison</span>,
 {
-    <span class="macro">callback_guard</span><span class="macro">!</span>();
     <span class="macro">floating_reference_guard</span><span class="macro">!</span>(<span class="ident">ptr</span>);
-    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">InstanceStruct</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>);
-    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span><span class="ident">element</span>.<span class="ident">imp</span>;
+    <span class="kw">let</span> <span class="ident">element</span> <span class="op">=</span> <span class="kw-2">&amp;</span><span class="kw-2">*</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">wrap</span>: <span class="ident">T</span> <span class="op">=</span> <span class="ident">from_glib_borrow</span>(<span class="ident">ptr</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">T</span>::<span class="ident">InstanceStructType</span>);
+    <span class="kw">let</span> <span class="ident">imp</span> <span class="op">=</span> <span class="ident">element</span>.<span class="ident">get_impl</span>();
 
-    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>, <span class="bool-val">false</span>, { <span class="ident">imp</span>.<span class="ident">unlock_stop</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>) }).<span class="ident">to_glib</span>()
+    <span class="macro">panic_to_error</span><span class="macro">!</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>, <span class="kw-2">&amp;</span><span class="ident">element</span>.<span class="ident">panicked</span>(), <span class="bool-val">false</span>, {
+        <span class="ident">imp</span>.<span class="ident">unlock_stop</span>(<span class="kw-2">&amp;</span><span class="ident">wrap</span>)
+    }).<span class="ident">to_glib</span>()
 }
 </pre>
-</section>
-    <section id='search' class="content hidden"></section>
-
-    <section class="footer"></section>
-
-    <aside id="help" class="hidden">
-        <div>
-            <h1 class="hidden">Help</h1>
-
-            <div class="shortcuts">
-                <h2>Keyboard Shortcuts</h2>
-
-                <dl>
-                    <dt>?</dt>
-                    <dd>Show this help dialog</dd>
-                    <dt>S</dt>
-                    <dd>Focus the search field</dd>
-                    <dt>↑</dt>
-                    <dd>Move up in search results</dd>
-                    <dt>↓</dt>
-                    <dd>Move down in search results</dd>
-                    <dt>↹</dt>
-                    <dd>Switch tab</dd>
-                    <dt>&#9166;</dt>
-                    <dd>Go to active search result</dd>
-                    <dt style="width:31px;">+ / -</dt>
-                    <dd>Collapse/expand all sections</dd>
-                </dl>
-            </div>
-
-            <div class="infos">
-                <h2>Search Tricks</h2>
-
-                <p>
-                    Prefix searches with a type followed by a colon (e.g.
-                    <code>fn:</code>) to restrict the search to a given type.
-                </p>
-
-                <p>
-                    Accepted types are: <code>fn</code>, <code>mod</code>,
-                    <code>struct</code>, <code>enum</code>,
-                    <code>trait</code>, <code>type</code>, <code>macro</code>,
-                    and <code>const</code>.
-                </p>
-
-                <p>
-                    Search functions by type signature (e.g.
-                    <code>vec -> usize</code> or <code>* -> vec</code>)
-                </p>
-            </div>
-        </div>
-    </aside>
-
-    
-
-    <script>
-        window.rootPath = "../../";
-        window.currentCrate = "gst_plugin";
-    </script>
-    <script src="../../main.js"></script>
-    <script defer src="../../search-index.js"></script>
-</body>
-</html>
+</section><section id="search" class="content hidden"></section><section class="footer"></section><aside id="help" class="hidden"><div><h1 class="hidden">Help</h1><div class="shortcuts"><h2>Keyboard Shortcuts</h2><dl><dt><kbd>?</kbd></dt><dd>Show this help dialog</dd><dt><kbd>S</kbd></dt><dd>Focus the search field</dd><dt><kbd>↑</kbd></dt><dd>Move up in search results</dd><dt><kbd>↓</kbd></dt><dd>Move down in search results</dd><dt><kbd>↹</kbd></dt><dd>Switch tab</dd><dt><kbd>&#9166;</kbd></dt><dd>Go to active search result</dd><dt><kbd>+</kbd></dt><dd>Expand all sections</dd><dt><kbd>-</kbd></dt><dd>Collapse all sections</dd></dl></div><div class="infos"><h2>Search Tricks</h2><p>Prefix searches with a type followed by a colon (e.g. <code>fn:</code>) to restrict the search to a given type.</p><p>Accepted types are: <code>fn</code>, <code>mod</code>, <code>struct</code>, <code>enum</code>, <code>trait</code>, <code>type</code>, <code>macro</code>, and <code>const</code>.</p><p>Search functions by type signature (e.g. <code>vec -> usize</code> or <code>* -> vec</code>)</p><p>Search multiple things at once by splitting your query with comma (e.g. <code>str,u8</code> or <code>String,struct:Vec,test</code>)</p></div></div></aside><script>window.rootPath = "../../";window.currentCrate = "gst_plugin";</script><script src="../../aliases.js"></script><script src="../../main.js"></script><script defer src="../../search-index.js"></script></body></html>

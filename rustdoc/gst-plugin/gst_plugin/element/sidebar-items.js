@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Element",""]],"trait":[["ElementBase",""],["ElementClassExt",""],["ElementImpl",""]],"type":[["ElementClass",""]]});
+initSidebarItems({"struct":[["Element",""]],"trait":[["ElementBase",""],["ElementClassExt",""],["ElementImpl",""],["ElementImplExt",""]],"type":[["ElementClass",""]]});

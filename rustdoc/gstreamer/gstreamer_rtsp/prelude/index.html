@@ -1,116 +1,354 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="rustdoc">
-    <meta name="description" content="API documentation for the Rust `prelude` mod in crate `gstreamer_rtsp`.">
-    <meta name="keywords" content="rust, rustlang, rust-lang, prelude">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="API documentation for the Rust `prelude` mod in crate `gstreamer_rtsp`."><meta name="keywords" content="rust, rustlang, rust-lang, prelude"><title>gstreamer_rtsp::prelude - Rust</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css"><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script src="../../storage.js"></script></head><body class="rustdoc mod"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><p class='location'>Module prelude</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#structs">Structs</a></li><li><a href="#traits">Traits</a></li></ul></div><p class='location'><a href='../index.html'>gstreamer_rtsp</a></p><script>window.sidebarCurrent = {name: 'prelude', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script></div></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!"><img src="../../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices"></div></div><script src="../../theme.js"></script><nav class="sub"><form class="search-form js-only"><div class="search-container"><input class="search-input" name="search" autocomplete="off" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><a id="settings-menu" href="../../settings.html"><img src="../../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>gstreamer_rtsp</a>::<wbr><a class="mod" href=''>prelude</a></span><span class='out-of-band'><span id='render-detail'><a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">[<span class='inner'>&#x2212;</span>]</a></span><a class='srclink' href='../../src/gstreamer_rtsp/lib.rs.html#46-51' title='goto source code'>[src]</a></span></h1><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Continue.html"
+                                  title='struct gstreamer_rtsp::prelude::Continue'>Continue</a></td>
+                           <td class='docblock-short'>
+                                <p>Continue calling the closure in the future iterations or drop it.</p>
 
-    <title>gstreamer_rtsp::prelude - Rust</title>
+                           </td>
+                       </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.BinExt.html"
+                                  title='trait gstreamer_rtsp::prelude::BinExt'>BinExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>Bin</code> methods.</p>
 
-    <link rel="stylesheet" type="text/css" href="../../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
-    <link rel="stylesheet" type="text/css" href="../../main.css">
-    
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.BinExtManual.html"
+                                  title='trait gstreamer_rtsp::prelude::BinExtManual'>BinExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.BufferPoolExt.html"
+                                  title='trait gstreamer_rtsp::prelude::BufferPoolExt'>BufferPoolExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>BufferPool</code> methods.</p>
 
-    
-    
-</head>
-<body class="rustdoc mod">
-    <!--[if lte IE 8]>
-    <div class="warning">
-        This old browser is unsupported and will most likely display funky
-        things.
-    </div>
-    <![endif]-->
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.BufferPoolExtManual.html"
+                                  title='trait gstreamer_rtsp::prelude::BufferPoolExtManual'>BufferPoolExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.Cast.html"
+                                  title='trait gstreamer_rtsp::prelude::Cast'>Cast</a></td>
+                           <td class='docblock-short'>
+                                <p>Upcasting and downcasting support.</p>
 
-    
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ChildProxyExt.html"
+                                  title='trait gstreamer_rtsp::prelude::ChildProxyExt'>ChildProxyExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>ChildProxy</code> methods.</p>
 
-    <nav class="sidebar">
-        <div class="sidebar-menu">&#9776;</div>
-        
-        <p class='location'>Module prelude</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#reexports">Reexports</a></li></ul></div><p class='location'><a href='../index.html'>gstreamer_rtsp</a></p><script>window.sidebarCurrent = {name: 'prelude', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script></div>
-    </nav>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ChildProxyExtManual.html"
+                                  title='trait gstreamer_rtsp::prelude::ChildProxyExtManual'>ChildProxyExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ClockExt.html"
+                                  title='trait gstreamer_rtsp::prelude::ClockExt'>ClockExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>Clock</code> methods.</p>
 
-    <nav class="sub">
-        <form class="search-form js-only">
-            <div class="search-container">
-                <input class="search-input" name="search"
-                       autocomplete="off"
-                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
-                       type="search">
-            </div>
-        </form>
-    </nav>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ClockExtManual.html"
+                                  title='trait gstreamer_rtsp::prelude::ClockExtManual'>ClockExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.DeviceExt.html"
+                                  title='trait gstreamer_rtsp::prelude::DeviceExt'>DeviceExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>Device</code> methods.</p>
 
-    <section id='main' class="content">
-<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>gstreamer_rtsp</a>::<wbr><a class="mod" href=''>prelude</a></span><span class='out-of-band'><span id='render-detail'>
-                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                       [<span class='inner'>&#x2212;</span>]
-                   </a>
-               </span><a class='srclink' href='../../src/gstreamer_rtsp/lib.rs.html#47-52' title='goto source code'>[src]</a></span></h1>
-<h2 id='reexports' class='section-header'><a href="#reexports">Reexports</a></h2>
-<table><tr><td><code>pub use glib::<a class="mod" href="../../glib/prelude/index.html" title="mod glib::prelude">prelude</a>::*;</code></td></tr><tr><td><code>pub use gst::<a class="mod" href="../../gstreamer/prelude/index.html" title="mod gstreamer::prelude">prelude</a>::*;</code></td></tr></table></section>
-    <section id='search' class="content hidden"></section>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.DeviceMonitorExt.html"
+                                  title='trait gstreamer_rtsp::prelude::DeviceMonitorExt'>DeviceMonitorExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>DeviceMonitor</code> methods.</p>
 
-    <section class="footer"></section>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.DeviceProviderExt.html"
+                                  title='trait gstreamer_rtsp::prelude::DeviceProviderExt'>DeviceProviderExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>DeviceProvider</code> methods.</p>
 
-    <aside id="help" class="hidden">
-        <div>
-            <h1 class="hidden">Help</h1>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.DeviceProviderExtManual.html"
+                                  title='trait gstreamer_rtsp::prelude::DeviceProviderExtManual'>DeviceProviderExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ElementExt.html"
+                                  title='trait gstreamer_rtsp::prelude::ElementExt'>ElementExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>Element</code> methods.</p>
 
-            <div class="shortcuts">
-                <h2>Keyboard Shortcuts</h2>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ElementExtManual.html"
+                                  title='trait gstreamer_rtsp::prelude::ElementExtManual'>ElementExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.FormattedValue.html"
+                                  title='trait gstreamer_rtsp::prelude::FormattedValue'>FormattedValue</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.GObjectExtManualGst.html"
+                                  title='trait gstreamer_rtsp::prelude::GObjectExtManualGst'>GObjectExtManualGst</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.GhostPadExt.html"
+                                  title='trait gstreamer_rtsp::prelude::GhostPadExt'>GhostPadExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>GhostPad</code> methods.</p>
 
-                <dl>
-                    <dt>?</dt>
-                    <dd>Show this help dialog</dd>
-                    <dt>S</dt>
-                    <dd>Focus the search field</dd>
-                    <dt>↑</dt>
-                    <dd>Move up in search results</dd>
-                    <dt>↓</dt>
-                    <dd>Move down in search results</dd>
-                    <dt>↹</dt>
-                    <dd>Switch tab</dd>
-                    <dt>&#9166;</dt>
-                    <dd>Go to active search result</dd>
-                    <dt style="width:31px;">+ / -</dt>
-                    <dd>Collapse/expand all sections</dd>
-                </dl>
-            </div>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.GstObjectExt.html"
+                                  title='trait gstreamer_rtsp::prelude::GstObjectExt'>GstObjectExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>Object</code> methods.</p>
 
-            <div class="infos">
-                <h2>Search Tricks</h2>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.GstObjectExtManual.html"
+                                  title='trait gstreamer_rtsp::prelude::GstObjectExtManual'>GstObjectExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.GstValueExt.html"
+                                  title='trait gstreamer_rtsp::prelude::GstValueExt'>GstValueExt</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.IsA.html"
+                                  title='trait gstreamer_rtsp::prelude::IsA'>IsA</a></td>
+                           <td class='docblock-short'>
+                                <p>Declares the &quot;is a&quot; relationship.</p>
 
-                <p>
-                    Prefix searches with a type followed by a colon (e.g.
-                    <code>fn:</code>) to restrict the search to a given type.
-                </p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.MiniObject.html"
+                                  title='trait gstreamer_rtsp::prelude::MiniObject'>MiniObject</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.MulDiv.html"
+                                  title='trait gstreamer_rtsp::prelude::MulDiv'>MulDiv</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait for calculating <code>val * num / denom</code> with different rounding modes and overflow
+protection.</p>
 
-                <p>
-                    Accepted types are: <code>fn</code>, <code>mod</code>,
-                    <code>struct</code>, <code>enum</code>,
-                    <code>trait</code>, <code>type</code>, <code>macro</code>,
-                    and <code>const</code>.
-                </p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ObjectExt.html"
+                                  title='trait gstreamer_rtsp::prelude::ObjectExt'>ObjectExt</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PadExt.html"
+                                  title='trait gstreamer_rtsp::prelude::PadExt'>PadExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>Pad</code> methods.</p>
 
-                <p>
-                    Search functions by type signature (e.g.
-                    <code>vec -> usize</code> or <code>* -> vec</code>)
-                </p>
-            </div>
-        </div>
-    </aside>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PadExtManual.html"
+                                  title='trait gstreamer_rtsp::prelude::PadExtManual'>PadExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PipelineExt.html"
+                                  title='trait gstreamer_rtsp::prelude::PipelineExt'>PipelineExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>Pipeline</code> methods.</p>
 
-    
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PluginFeatureExt.html"
+                                  title='trait gstreamer_rtsp::prelude::PluginFeatureExt'>PluginFeatureExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>PluginFeature</code> methods.</p>
 
-    <script>
-        window.rootPath = "../../";
-        window.currentCrate = "gstreamer_rtsp";
-    </script>
-    <script src="../../main.js"></script>
-    <script defer src="../../search-index.js"></script>
-</body>
-</html>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.PresetExt.html"
+                                  title='trait gstreamer_rtsp::prelude::PresetExt'>PresetExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>Preset</code> methods.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ProxyPadExt.html"
+                                  title='trait gstreamer_rtsp::prelude::ProxyPadExt'>ProxyPadExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>ProxyPad</code> methods.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.SpecificFormattedValue.html"
+                                  title='trait gstreamer_rtsp::prelude::SpecificFormattedValue'>SpecificFormattedValue</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.StaticType.html"
+                                  title='trait gstreamer_rtsp::prelude::StaticType'>StaticType</a></td>
+                           <td class='docblock-short'>
+                                <p>Types that are supported by GLib dynamic typing.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.StaticVariantType.html"
+                                  title='trait gstreamer_rtsp::prelude::StaticVariantType'>StaticVariantType</a></td>
+                           <td class='docblock-short'>
+                                <p>Returns <code>VariantType</code> of <code>Self</code>.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.SystemClockExt.html"
+                                  title='trait gstreamer_rtsp::prelude::SystemClockExt'>SystemClockExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>SystemClock</code> methods.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.Tag.html"
+                                  title='trait gstreamer_rtsp::prelude::Tag'>Tag</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.TagSetterExt.html"
+                                  title='trait gstreamer_rtsp::prelude::TagSetterExt'>TagSetterExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>TagSetter</code> methods.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.TagSetterExtManual.html"
+                                  title='trait gstreamer_rtsp::prelude::TagSetterExtManual'>TagSetterExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ToSendValue.html"
+                                  title='trait gstreamer_rtsp::prelude::ToSendValue'>ToSendValue</a></td>
+                           <td class='docblock-short'>
+                                <p>Converts to <code>SendValue</code>.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ToValue.html"
+                                  title='trait gstreamer_rtsp::prelude::ToValue'>ToValue</a></td>
+                           <td class='docblock-short'>
+                                <p>Converts to <code>Value</code>.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ToVariant.html"
+                                  title='trait gstreamer_rtsp::prelude::ToVariant'>ToVariant</a></td>
+                           <td class='docblock-short'>
+                                <p>Converts to <code>Variant</code>.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.TocSetterExt.html"
+                                  title='trait gstreamer_rtsp::prelude::TocSetterExt'>TocSetterExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>TocSetter</code> methods.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.URIHandlerExt.html"
+                                  title='trait gstreamer_rtsp::prelude::URIHandlerExt'>URIHandlerExt</a></td>
+                           <td class='docblock-short'>
+                                <p>Trait containing all <code>URIHandler</code> methods.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.UnixBusExtManual.html"
+                                  title='trait gstreamer_rtsp::prelude::UnixBusExtManual'>UnixBusExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.WindowsBusExtManual.html"
+                                  title='trait gstreamer_rtsp::prelude::WindowsBusExtManual'>WindowsBusExtManual</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table></section><section id="search" class="content hidden"></section><section class="footer"></section><aside id="help" class="hidden"><div><h1 class="hidden">Help</h1><div class="shortcuts"><h2>Keyboard Shortcuts</h2><dl><dt><kbd>?</kbd></dt><dd>Show this help dialog</dd><dt><kbd>S</kbd></dt><dd>Focus the search field</dd><dt><kbd>↑</kbd></dt><dd>Move up in search results</dd><dt><kbd>↓</kbd></dt><dd>Move down in search results</dd><dt><kbd>↹</kbd></dt><dd>Switch tab</dd><dt><kbd>&#9166;</kbd></dt><dd>Go to active search result</dd><dt><kbd>+</kbd></dt><dd>Expand all sections</dd><dt><kbd>-</kbd></dt><dd>Collapse all sections</dd></dl></div><div class="infos"><h2>Search Tricks</h2><p>Prefix searches with a type followed by a colon (e.g. <code>fn:</code>) to restrict the search to a given type.</p><p>Accepted types are: <code>fn</code>, <code>mod</code>, <code>struct</code>, <code>enum</code>, <code>trait</code>, <code>type</code>, <code>macro</code>, and <code>const</code>.</p><p>Search functions by type signature (e.g. <code>vec -> usize</code> or <code>* -> vec</code>)</p><p>Search multiple things at once by splitting your query with comma (e.g. <code>str,u8</code> or <code>String,struct:Vec,test</code>)</p></div></div></aside><script>window.rootPath = "../../";window.currentCrate = "gstreamer_rtsp";</script><script src="../../aliases.js"></script><script src="../../main.js"></script><script defer src="../../search-index.js"></script></body></html>

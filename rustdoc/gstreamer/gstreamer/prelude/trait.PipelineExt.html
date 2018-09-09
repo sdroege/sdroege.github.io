@@ -1,56 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="rustdoc">
-    <meta name="description" content="API documentation for the Rust `PipelineExt` trait in crate `gstreamer`.">
-    <meta name="keywords" content="rust, rustlang, rust-lang, PipelineExt">
-
-    <title>gstreamer::prelude::PipelineExt - Rust</title>
-
-    <link rel="stylesheet" type="text/css" href="../../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
-    <link rel="stylesheet" type="text/css" href="../../main.css">
-    
-
-    
-    
-</head>
-<body class="rustdoc trait">
-    <!--[if lte IE 8]>
-    <div class="warning">
-        This old browser is unsupported and will most likely display funky
-        things.
-    </div>
-    <![endif]-->
-
-    
-
-    <nav class="sidebar">
-        <div class="sidebar-menu">&#9776;</div>
-        
-        <p class='location'>Trait PipelineExt</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.auto_clock">auto_clock</a><a href="#tymethod.get_auto_flush_bus">get_auto_flush_bus</a><a href="#tymethod.get_delay">get_delay</a><a href="#tymethod.get_latency">get_latency</a><a href="#tymethod.get_pipeline_clock">get_pipeline_clock</a><a href="#tymethod.set_auto_flush_bus">set_auto_flush_bus</a><a href="#tymethod.set_delay">set_delay</a><a href="#tymethod.set_latency">set_latency</a><a href="#tymethod.use_clock">use_clock</a><a href="#tymethod.connect_property_auto_flush_bus_notify">connect_property_auto_flush_bus_notify</a><a href="#tymethod.connect_property_delay_notify">connect_property_delay_notify</a><a href="#tymethod.connect_property_latency_notify">connect_property_latency_notify</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>prelude</a></p><script>window.sidebarCurrent = {name: 'PipelineExt', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
-    </nav>
-
-    <nav class="sub">
-        <form class="search-form js-only">
-            <div class="search-container">
-                <input class="search-input" name="search"
-                       autocomplete="off"
-                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
-                       type="search">
-            </div>
-        </form>
-    </nav>
-
-    <section id='main' class="content">
-<h1 class='fqn'><span class='in-band'>Trait <a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>prelude</a>::<wbr><a class="trait" href=''>PipelineExt</a></span><span class='out-of-band'><span id='render-detail'>
-                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                       [<span class='inner'>&#x2212;</span>]
-                   </a>
-               </span><a class='srclink' href='../../src/gstreamer/auto/pipeline.rs.html#110-220' title='goto source code'>[src]</a></span></h1>
-<pre class='rust trait'>pub trait PipelineExt {
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="API documentation for the Rust `PipelineExt` trait in crate `gstreamer`."><meta name="keywords" content="rust, rustlang, rust-lang, PipelineExt"><title>gstreamer::prelude::PipelineExt - Rust</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css"><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script src="../../storage.js"></script></head><body class="rustdoc trait"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><p class='location'>Trait PipelineExt</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.auto_clock">auto_clock</a><a href="#tymethod.get_auto_flush_bus">get_auto_flush_bus</a><a href="#tymethod.get_delay">get_delay</a><a href="#tymethod.get_latency">get_latency</a><a href="#tymethod.get_pipeline_clock">get_pipeline_clock</a><a href="#tymethod.set_auto_flush_bus">set_auto_flush_bus</a><a href="#tymethod.set_delay">set_delay</a><a href="#tymethod.set_latency">set_latency</a><a href="#tymethod.use_clock">use_clock</a><a href="#tymethod.connect_property_auto_flush_bus_notify">connect_property_auto_flush_bus_notify</a><a href="#tymethod.connect_property_delay_notify">connect_property_delay_notify</a><a href="#tymethod.connect_property_latency_notify">connect_property_latency_notify</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>prelude</a></p><script>window.sidebarCurrent = {name: 'PipelineExt', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script></div></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!"><img src="../../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices"></div></div><script src="../../theme.js"></script><nav class="sub"><form class="search-form js-only"><div class="search-container"><input class="search-input" name="search" autocomplete="off" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><a id="settings-menu" href="../../settings.html"><img src="../../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><h1 class='fqn'><span class='in-band'>Trait <a href='../index.html'>gstreamer</a>::<wbr><a href='index.html'>prelude</a>::<wbr><a class="trait" href=''>PipelineExt</a></span><span class='out-of-band'><span id='render-detail'><a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">[<span class='inner'>&#x2212;</span>]</a></span><a class='srclink' href='../../src/gstreamer/auto/pipeline.rs.html#110-220' title='goto source code'>[src]</a></span></h1><div class="docblock type-decl"><pre class='rust trait'>pub trait PipelineExt {
     fn <a href='#tymethod.auto_clock' class='fnname'>auto_clock</a>(&amp;self);
 <div class='item-spacer'></div>    fn <a href='#tymethod.get_auto_flush_bus' class='fnname'>get_auto_flush_bus</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>;
 <div class='item-spacer'></div>    fn <a href='#tymethod.get_delay' class='fnname'>get_delay</a>(&amp;self) -&gt; <a class="struct" href="../../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>;
@@ -59,13 +7,12 @@
 <div class='item-spacer'></div>    fn <a href='#tymethod.set_auto_flush_bus' class='fnname'>set_auto_flush_bus</a>(&amp;self, auto_flush: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>);
 <div class='item-spacer'></div>    fn <a href='#tymethod.set_delay' class='fnname'>set_delay</a>(&amp;self, delay: <a class="struct" href="../../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>);
 <div class='item-spacer'></div>    fn <a href='#tymethod.set_latency' class='fnname'>set_latency</a>(&amp;self, latency: <a class="struct" href="../../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>);
-<div class='item-spacer'></div>    fn <a href='#tymethod.use_clock' class='fnname'>use_clock</a>&lt;'a, P:&nbsp;<a class="trait" href="../../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/struct.Clock.html" title="struct gstreamer::Clock">Clock</a>&gt; + 'a, Q:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a </a>P&gt;&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clock: Q<br>&nbsp;&nbsp;&nbsp;&nbsp;);
+<div class='item-spacer'></div>    fn <a href='#tymethod.use_clock' class='fnname'>use_clock</a>&lt;'a, P:&nbsp;<a class="trait" href="../../gstreamer/prelude/trait.IsA.html" title="trait gstreamer::prelude::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/struct.Clock.html" title="struct gstreamer::Clock">Clock</a>&gt; + 'a, Q:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a </a>P&gt;&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clock: Q<br>&nbsp;&nbsp;&nbsp;&nbsp;);
 <div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_auto_flush_bus_notify' class='fnname'>connect_property_auto_flush_bus_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
 <div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_delay_notify' class='fnname'>connect_property_delay_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
 <div class='item-spacer'></div>    fn <a href='#tymethod.connect_property_latency_notify' class='fnname'>connect_property_latency_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>&nbsp;&nbsp;&nbsp;&nbsp;) -&gt; <a class="struct" href="../../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a>;
-}</pre><div class='docblock'><p>Trait containing all <code>Pipeline</code> methods.</p>
-
-<h1 id='implementors-1' class='section-header'><a href='#implementors-1'>Implementors</a></h1>
+}</pre></div><div class='docblock'><p>Trait containing all <code>Pipeline</code> methods.</p>
+<h1 id="implementors-1" class="section-header"><a href="#implementors-1">Implementors</a></h1>
 <p><a href="struct.Pipeline.html"><code>Pipeline</code></a></p>
 </div>
             <h2 id='required-methods' class='small-section-header'>
@@ -74,54 +21,41 @@
             <div class='methods'>
         <h3 id='tymethod.auto_clock' class='method'><span id='auto_clock.v' class='invisible'><code>fn <a href='#tymethod.auto_clock' class='fnname'>auto_clock</a>(&amp;self)</code></span></h3><div class='docblock'><p>Let <code>self</code> select a clock automatically. This is the default
 behaviour.</p>
-
 <p>Use this function if you previous forced a fixed clock with
 <code>PipelineExt::use_clock</code> and want to restore the default
 pipeline clock selection algorithm.</p>
-
 <p>MT safe.</p>
 </div><h3 id='tymethod.get_auto_flush_bus' class='method'><span id='get_auto_flush_bus.v' class='invisible'><code>fn <a href='#tymethod.get_auto_flush_bus' class='fnname'>get_auto_flush_bus</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Check if <code>self</code> will automatically flush messages when going to
 the NULL state.</p>
-
-<h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
+<h1 id="returns" class="section-header"><a href="#returns">Returns</a></h1>
 <p>whether the pipeline will automatically flush its bus when
 going from READY to NULL state or not.</p>
-
 <p>MT safe.</p>
 </div><h3 id='tymethod.get_delay' class='method'><span id='get_delay.v' class='invisible'><code>fn <a href='#tymethod.get_delay' class='fnname'>get_delay</a>(&amp;self) -&gt; <a class="struct" href="../../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a></code></span></h3><div class='docblock'><p>Get the configured delay (see <code>PipelineExt::set_delay</code>).</p>
-
-<h1 id='returns-1' class='section-header'><a href='#returns-1'>Returns</a></h1>
+<h1 id="returns-1" class="section-header"><a href="#returns-1">Returns</a></h1>
 <p>The configured delay.</p>
-
 <p>MT safe.</p>
 </div><h3 id='tymethod.get_latency' class='method'><span id='get_latency.v' class='invisible'><code>fn <a href='#tymethod.get_latency' class='fnname'>get_latency</a>(&amp;self) -&gt; <a class="struct" href="../../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a></code></span></h3><div class='docblock'><p>Gets the latency that should be configured on the pipeline. See
 <code>PipelineExt::set_latency</code>.</p>
-
-<h1 id='returns-2' class='section-header'><a href='#returns-2'>Returns</a></h1>
+<h1 id="returns-2" class="section-header"><a href="#returns-2">Returns</a></h1>
 <p>Latency to configure on the pipeline or GST_CLOCK_TIME_NONE</p>
 </div><h3 id='tymethod.get_pipeline_clock' class='method'><span id='get_pipeline_clock.v' class='invisible'><code>fn <a href='#tymethod.get_pipeline_clock' class='fnname'>get_pipeline_clock</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../gstreamer/struct.Clock.html" title="struct gstreamer::Clock">Clock</a>&gt;</code></span></h3><div class='docblock'><p>Gets the current clock used by <code>self</code>.</p>
-
 <p>Unlike <code>ElementExt::get_clock</code>, this function will always return a
 clock, even if the pipeline is not in the PLAYING state.</p>
-
-<h1 id='returns-3' class='section-header'><a href='#returns-3'>Returns</a></h1>
+<h1 id="returns-3" class="section-header"><a href="#returns-3">Returns</a></h1>
 <p>a <code>Clock</code>, unref after usage.</p>
 </div><h3 id='tymethod.set_auto_flush_bus' class='method'><span id='set_auto_flush_bus.v' class='invisible'><code>fn <a href='#tymethod.set_auto_flush_bus' class='fnname'>set_auto_flush_bus</a>(&amp;self, auto_flush: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></h3><div class='docblock'><p>Usually, when a pipeline goes from READY to NULL state, it automatically
 flushes all pending messages on the bus, which is done for refcounting
 purposes, to break circular references.</p>
-
 <p>This means that applications that update state using (async) bus messages
 (e.g. do certain things when a pipeline goes from PAUSED to READY) might
 not get to see messages when the pipeline is shut down, because they might
 be flushed before they can be dispatched in the main thread. This behaviour
 can be disabled using this function.</p>
-
 <p>It is important that all messages on the bus are handled when the
 automatic flushing is disabled else memory leaks will be introduced.</p>
-
 <p>MT safe.</p>
-
-<h2 id='auto_flush' class='section-header'><a href='#auto_flush'><code>auto_flush</code></a></h2>
+<h2 id="auto_flush" class="section-header"><a href="#auto_flush"><code>auto_flush</code></a></h2>
 <p>whether or not to automatically flush the bus when
 the pipeline goes from READY to NULL state</p>
 </div><h3 id='tymethod.set_delay' class='method'><span id='set_delay.v' class='invisible'><code>fn <a href='#tymethod.set_delay' class='fnname'>set_delay</a>(&amp;self, delay: <a class="struct" href="../../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>)</code></span></h3><div class='docblock'><p>Set the expected delay needed for all elements to perform the
@@ -129,103 +63,33 @@ PAUSED to PLAYING state change. <code>delay</code> will be added to the
 base time of the elements so that they wait an additional <code>delay</code>
 amount of time before starting to process buffers and cannot be
 <code>GST_CLOCK_TIME_NONE</code>.</p>
-
 <p>This option is used for tuning purposes and should normally not be
 used.</p>
-
 <p>MT safe.</p>
-
-<h2 id='delay' class='section-header'><a href='#delay'><code>delay</code></a></h2>
+<h2 id="delay" class="section-header"><a href="#delay"><code>delay</code></a></h2>
 <p>the delay</p>
 </div><h3 id='tymethod.set_latency' class='method'><span id='set_latency.v' class='invisible'><code>fn <a href='#tymethod.set_latency' class='fnname'>set_latency</a>(&amp;self, latency: <a class="struct" href="../../gstreamer/struct.ClockTime.html" title="struct gstreamer::ClockTime">ClockTime</a>)</code></span></h3><div class='docblock'><p>Sets the latency that should be configured on the pipeline. Setting
 GST_CLOCK_TIME_NONE will restore the default behaviour of using the minimum
 latency from the LATENCY query. Setting this is usually not required and
 the pipeline will figure out an appropriate latency automatically.</p>
-
 <p>Setting a too low latency, especially lower than the minimum latency from
 the LATENCY query, will most likely cause the pipeline to fail.</p>
-
-<h2 id='latency' class='section-header'><a href='#latency'><code>latency</code></a></h2>
+<h2 id="latency" class="section-header"><a href="#latency"><code>latency</code></a></h2>
 <p>latency to configure</p>
-</div><h3 id='tymethod.use_clock' class='method'><span id='use_clock.v' class='invisible'><code>fn <a href='#tymethod.use_clock' class='fnname'>use_clock</a>&lt;'a, P:&nbsp;<a class="trait" href="../../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/struct.Clock.html" title="struct gstreamer::Clock">Clock</a>&gt; + 'a, Q:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a </a>P&gt;&gt;&gt;(&amp;self, clock: Q)</code></span></h3><div class='docblock'><p>Force <code>self</code> to use the given <code>clock</code>. The pipeline will
+</div><h3 id='tymethod.use_clock' class='method'><span id='use_clock.v' class='invisible'><code>fn <a href='#tymethod.use_clock' class='fnname'>use_clock</a>&lt;'a, P:&nbsp;<a class="trait" href="../../gstreamer/prelude/trait.IsA.html" title="trait gstreamer::prelude::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/struct.Clock.html" title="struct gstreamer::Clock">Clock</a>&gt; + 'a, Q:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a </a>P&gt;&gt;&gt;(&amp;self, clock: Q)</code></span></h3><div class='docblock'><p>Force <code>self</code> to use the given <code>clock</code>. The pipeline will
 always use the given clock even if new clock providers are added
 to this pipeline.</p>
-
 <p>If <code>clock</code> is <code>None</code> all clocking will be disabled which will make
 the pipeline run as fast as possible.</p>
-
 <p>MT safe.</p>
-
-<h2 id='clock' class='section-header'><a href='#clock'><code>clock</code></a></h2>
+<h2 id="clock" class="section-header"><a href="#clock"><code>clock</code></a></h2>
 <p>the clock to use</p>
 </div><h3 id='tymethod.connect_property_auto_flush_bus_notify' class='method'><span id='connect_property_auto_flush_bus_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_auto_flush_bus_notify' class='fnname'>connect_property_auto_flush_bus_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_property_delay_notify' class='method'><span id='connect_property_delay_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_delay_notify' class='fnname'>connect_property_delay_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3><h3 id='tymethod.connect_property_latency_notify' class='method'><span id='connect_property_latency_notify.v' class='invisible'><code>fn <a href='#tymethod.connect_property_latency_notify' class='fnname'>connect_property_latency_notify</a>&lt;F:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/ops/function/trait.Fn.html" title="trait core::ops::function::Fn">Fn</a>(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self) + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> + 'static&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;self, <br>&nbsp;&nbsp;&nbsp;&nbsp;f: F<br>) -&gt; <a class="struct" href="../../glib/signal/struct.SignalHandlerId.html" title="struct glib::signal::SignalHandlerId">SignalHandlerId</a></code></span></h3></div>
         <h2 id='implementors' class='small-section-header'>
           Implementors<a href='#implementors' class='anchor'></a>
         </h2>
         <ul class='item-list' id='implementors-list'>
-    <li><code>impl&lt;O:&nbsp;<a class="trait" href="../../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/struct.Pipeline.html" title="struct gstreamer::Pipeline">Pipeline</a>&gt; + <a class="trait" href="../../gstreamer/trait.IsA.html" title="trait gstreamer::IsA">IsA</a>&lt;<a class="struct" href="../../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt;&gt; PipelineExt for O</code></li>
-</ul><script type="text/javascript" async
+    <li><table class='table-display'><tbody><tr><td><code>impl&lt;O:&nbsp;<a class="trait" href="../../gstreamer/prelude/trait.IsA.html" title="trait gstreamer::prelude::IsA">IsA</a>&lt;<a class="struct" href="../../gstreamer/struct.Pipeline.html" title="struct gstreamer::Pipeline">Pipeline</a>&gt; + <a class="trait" href="../../gstreamer/prelude/trait.IsA.html" title="trait gstreamer::prelude::IsA">IsA</a>&lt;<a class="struct" href="../../glib/object/struct.Object.html" title="struct glib::object::Object">Object</a>&gt;&gt; PipelineExt for O</code><td><div class='out-of-band'><a class='srclink' href='../../src/gstreamer/auto/pipeline.rs.html#222-302' title='goto source code'>[src]</a></div></td></tr></tbody></table></li>
+</ul><script type="text/javascript">window.inlined_types=new Set([]);</script><script type="text/javascript" async
                          src="../../implementors/gstreamer/prelude/trait.PipelineExt.js">
-                 </script></section>
-    <section id='search' class="content hidden"></section>
-
-    <section class="footer"></section>
-
-    <aside id="help" class="hidden">
-        <div>
-            <h1 class="hidden">Help</h1>
-
-            <div class="shortcuts">
-                <h2>Keyboard Shortcuts</h2>
-
-                <dl>
-                    <dt>?</dt>
-                    <dd>Show this help dialog</dd>
-                    <dt>S</dt>
-                    <dd>Focus the search field</dd>
-                    <dt>↑</dt>
-                    <dd>Move up in search results</dd>
-                    <dt>↓</dt>
-                    <dd>Move down in search results</dd>
-                    <dt>↹</dt>
-                    <dd>Switch tab</dd>
-                    <dt>&#9166;</dt>
-                    <dd>Go to active search result</dd>
-                    <dt style="width:31px;">+ / -</dt>
-                    <dd>Collapse/expand all sections</dd>
-                </dl>
-            </div>
-
-            <div class="infos">
-                <h2>Search Tricks</h2>
-
-                <p>
-                    Prefix searches with a type followed by a colon (e.g.
-                    <code>fn:</code>) to restrict the search to a given type.
-                </p>
-
-                <p>
-                    Accepted types are: <code>fn</code>, <code>mod</code>,
-                    <code>struct</code>, <code>enum</code>,
-                    <code>trait</code>, <code>type</code>, <code>macro</code>,
-                    and <code>const</code>.
-                </p>
-
-                <p>
-                    Search functions by type signature (e.g.
-                    <code>vec -> usize</code> or <code>* -> vec</code>)
-                </p>
-            </div>
-        </div>
-    </aside>
-
-    
-
-    <script>
-        window.rootPath = "../../";
-        window.currentCrate = "gstreamer";
-    </script>
-    <script src="../../main.js"></script>
-    <script defer src="../../search-index.js"></script>
-</body>
-</html>
+                 </script></section><section id="search" class="content hidden"></section><section class="footer"></section><aside id="help" class="hidden"><div><h1 class="hidden">Help</h1><div class="shortcuts"><h2>Keyboard Shortcuts</h2><dl><dt><kbd>?</kbd></dt><dd>Show this help dialog</dd><dt><kbd>S</kbd></dt><dd>Focus the search field</dd><dt><kbd>↑</kbd></dt><dd>Move up in search results</dd><dt><kbd>↓</kbd></dt><dd>Move down in search results</dd><dt><kbd>↹</kbd></dt><dd>Switch tab</dd><dt><kbd>&#9166;</kbd></dt><dd>Go to active search result</dd><dt><kbd>+</kbd></dt><dd>Expand all sections</dd><dt><kbd>-</kbd></dt><dd>Collapse all sections</dd></dl></div><div class="infos"><h2>Search Tricks</h2><p>Prefix searches with a type followed by a colon (e.g. <code>fn:</code>) to restrict the search to a given type.</p><p>Accepted types are: <code>fn</code>, <code>mod</code>, <code>struct</code>, <code>enum</code>, <code>trait</code>, <code>type</code>, <code>macro</code>, and <code>const</code>.</p><p>Search functions by type signature (e.g. <code>vec -> usize</code> or <code>* -> vec</code>)</p><p>Search multiple things at once by splitting your query with comma (e.g. <code>str,u8</code> or <code>String,struct:Vec,test</code>)</p></div></div></aside><script>window.rootPath = "../../";window.currentCrate = "gstreamer";</script><script src="../../aliases.js"></script><script src="../../main.js"></script><script defer src="../../search-index.js"></script></body></html>

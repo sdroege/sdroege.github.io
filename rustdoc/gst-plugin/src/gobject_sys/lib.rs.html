@@ -1,50 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="rustdoc">
-    <meta name="description" content="Source to the Rust file `/home/slomo/.cargo/registry/src/github.com-1ecc6299db9ec823/gobject-sys-0.6.0/src/lib.rs`.">
-    <meta name="keywords" content="rust, rustlang, rust-lang">
-
-    <title>lib.rs.html -- source</title>
-
-    <link rel="stylesheet" type="text/css" href="../../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
-    <link rel="stylesheet" type="text/css" href="../../main.css">
-    
-
-    
-    
-</head>
-<body class="rustdoc source">
-    <!--[if lte IE 8]>
-    <div class="warning">
-        This old browser is unsupported and will most likely display funky
-        things.
-    </div>
-    <![endif]-->
-
-    
-
-    <nav class="sidebar">
-        <div class="sidebar-menu">&#9776;</div>
-        
-        
-    </nav>
-
-    <nav class="sub">
-        <form class="search-form js-only">
-            <div class="search-container">
-                <input class="search-input" name="search"
-                       autocomplete="off"
-                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
-                       type="search">
-            </div>
-        </form>
-    </nav>
-
-    <section id='main' class="content"><pre class="line-numbers"><span id="1">   1</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source to the Rust file `/home/slomo/.cargo/registry/src/github.com-1ecc6299db9ec823/gobject-sys-0.7.0/src/lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs.html -- source</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css"><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script src="../../storage.js"></script></head><body class="rustdoc source"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!"><img src="../../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices"></div></div><script src="../../theme.js"></script><nav class="sub"><form class="search-form js-only"><div class="search-container"><input class="search-input" name="search" autocomplete="off" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><a id="settings-menu" href="../../settings.html"><img src="../../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><pre class="line-numbers"><span id="1">   1</span>
 <span id="2">   2</span>
 <span id="3">   3</span>
 <span id="4">   4</span>
@@ -1857,91 +1811,15 @@
 <span id="1811">1811</span>
 <span id="1812">1812</span>
 <span id="1813">1813</span>
-<span id="1814">1814</span>
-<span id="1815">1815</span>
-<span id="1816">1816</span>
-<span id="1817">1817</span>
-<span id="1818">1818</span>
-<span id="1819">1819</span>
-<span id="1820">1820</span>
-<span id="1821">1821</span>
-<span id="1822">1822</span>
-<span id="1823">1823</span>
-<span id="1824">1824</span>
-<span id="1825">1825</span>
-<span id="1826">1826</span>
-<span id="1827">1827</span>
-<span id="1828">1828</span>
-<span id="1829">1829</span>
-<span id="1830">1830</span>
-<span id="1831">1831</span>
-<span id="1832">1832</span>
-<span id="1833">1833</span>
-<span id="1834">1834</span>
-<span id="1835">1835</span>
-<span id="1836">1836</span>
-<span id="1837">1837</span>
-<span id="1838">1838</span>
-<span id="1839">1839</span>
-<span id="1840">1840</span>
-<span id="1841">1841</span>
-<span id="1842">1842</span>
-<span id="1843">1843</span>
-<span id="1844">1844</span>
-<span id="1845">1845</span>
-<span id="1846">1846</span>
-<span id="1847">1847</span>
-<span id="1848">1848</span>
-<span id="1849">1849</span>
-<span id="1850">1850</span>
-<span id="1851">1851</span>
-<span id="1852">1852</span>
-<span id="1853">1853</span>
-<span id="1854">1854</span>
-<span id="1855">1855</span>
-<span id="1856">1856</span>
-<span id="1857">1857</span>
-<span id="1858">1858</span>
-<span id="1859">1859</span>
-<span id="1860">1860</span>
-<span id="1861">1861</span>
-<span id="1862">1862</span>
-<span id="1863">1863</span>
-<span id="1864">1864</span>
-<span id="1865">1865</span>
-<span id="1866">1866</span>
-<span id="1867">1867</span>
-<span id="1868">1868</span>
-<span id="1869">1869</span>
-<span id="1870">1870</span>
-<span id="1871">1871</span>
-<span id="1872">1872</span>
-<span id="1873">1873</span>
-<span id="1874">1874</span>
-<span id="1875">1875</span>
-<span id="1876">1876</span>
-<span id="1877">1877</span>
-<span id="1878">1878</span>
-<span id="1879">1879</span>
-<span id="1880">1880</span>
-<span id="1881">1881</span>
-<span id="1882">1882</span>
-<span id="1883">1883</span>
-<span id="1884">1884</span>
-<span id="1885">1885</span>
-<span id="1886">1886</span>
-<span id="1887">1887</span>
-<span id="1888">1888</span>
-<span id="1889">1889</span>
 </pre><pre class="rust ">
-<span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir @ 6704a1c)</span>
-<span class="comment">// from gir-files (https://github.com/gtk-rs/gir-files @ 4740f5e)</span>
+<span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)</span>
+<span class="comment">// from gir-files (https://github.com/gtk-rs/gir-files)</span>
 <span class="comment">// DO NOT EDIT</span>
 
 <span class="attribute">#![<span class="ident">allow</span>(<span class="ident">non_camel_case_types</span>, <span class="ident">non_upper_case_globals</span>, <span class="ident">non_snake_case</span>)]</span>
+<span class="attribute">#![<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;cargo-clippy&quot;</span>, <span class="ident">allow</span>(<span class="ident">approx_constant</span>, <span class="ident">type_complexity</span>, <span class="ident">unreadable_literal</span>))]</span>
 
 <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">libc</span>;
-<span class="attribute">#[<span class="ident">macro_use</span>]</span> <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">bitflags</span>;
 <span class="kw">extern</span> <span class="kw">crate</span> <span class="ident">glib_sys</span> <span class="kw">as</span> <span class="ident">glib</span>;
 
 <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_imports</span>)]</span>
@@ -1950,7 +1828,7 @@
     <span class="ident">c_void</span>, <span class="ident">size_t</span>, <span class="ident">ssize_t</span>, <span class="ident">intptr_t</span>, <span class="ident">uintptr_t</span>, <span class="ident">time_t</span>, <span class="ident">FILE</span>};
 
 <span class="attribute">#[<span class="ident">allow</span>(<span class="ident">unused_imports</span>)]</span>
-<span class="kw">use</span> <span class="ident">glib</span>::{<span class="ident">gboolean</span>, <span class="ident">gconstpointer</span>, <span class="ident">gpointer</span>, <span class="ident">GType</span>, <span class="ident">Volatile</span>};
+<span class="kw">use</span> <span class="ident">glib</span>::{<span class="ident">gboolean</span>, <span class="ident">gconstpointer</span>, <span class="ident">gpointer</span>, <span class="ident">GType</span>};
 
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_INVALID</span>: <span class="ident">GType</span> <span class="op">=</span> <span class="number">0</span> <span class="op">&lt;&lt;</span> <span class="ident">G_TYPE_FUNDAMENTAL_SHIFT</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_NONE</span>: <span class="ident">GType</span> <span class="op">=</span> <span class="number">1</span> <span class="op">&lt;&lt;</span> <span class="ident">G_TYPE_FUNDAMENTAL_SHIFT</span>;
@@ -1980,7 +1858,7 @@
 
 <span class="comment">// Constants</span>
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_MASK</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">255</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_STATIC_STRINGS</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_STATIC_STRINGS</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">224</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_USER_SHIFT</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">8</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_FLAGS_MASK</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">511</span>;
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_MATCH_MASK</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">63</span>;
@@ -1996,141 +1874,65 @@
 <span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_VALUE_NOCOPY_CONTENTS</span>: <span class="ident">c_int</span> <span class="op">=</span> <span class="number">134217728</span>;
 
 <span class="comment">// Flags</span>
-<span class="macro">bitflags</span><span class="macro">!</span> {
-    <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GBindingFlags</span>: <span class="ident">c_uint</span> {
-        <span class="kw">const</span> <span class="ident">DEFAULT</span> <span class="op">=</span> <span class="number">0</span>;
-        <span class="kw">const</span> <span class="ident">BIDIRECTIONAL</span> <span class="op">=</span> <span class="number">1</span>;
-        <span class="kw">const</span> <span class="ident">SYNC_CREATE</span> <span class="op">=</span> <span class="number">2</span>;
-        <span class="kw">const</span> <span class="ident">INVERT_BOOLEAN</span> <span class="op">=</span> <span class="number">4</span>;
-    }
-}
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_BINDING_DEFAULT</span>: <span class="ident">GBindingFlags</span> <span class="op">=</span> <span class="ident">GBindingFlags</span>::<span class="ident">DEFAULT</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_BINDING_BIDIRECTIONAL</span>: <span class="ident">GBindingFlags</span> <span class="op">=</span> <span class="ident">GBindingFlags</span>::<span class="ident">BIDIRECTIONAL</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_BINDING_SYNC_CREATE</span>: <span class="ident">GBindingFlags</span> <span class="op">=</span> <span class="ident">GBindingFlags</span>::<span class="ident">SYNC_CREATE</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_BINDING_INVERT_BOOLEAN</span>: <span class="ident">GBindingFlags</span> <span class="op">=</span> <span class="ident">GBindingFlags</span>::<span class="ident">INVERT_BOOLEAN</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GBindingFlags</span> <span class="op">=</span> <span class="ident">c_uint</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_BINDING_DEFAULT</span>: <span class="ident">GBindingFlags</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_BINDING_BIDIRECTIONAL</span>: <span class="ident">GBindingFlags</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_BINDING_SYNC_CREATE</span>: <span class="ident">GBindingFlags</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_BINDING_INVERT_BOOLEAN</span>: <span class="ident">GBindingFlags</span> <span class="op">=</span> <span class="number">4</span>;
 
-<span class="macro">bitflags</span><span class="macro">!</span> {
-    <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GConnectFlags</span>: <span class="ident">c_uint</span> {
-        <span class="kw">const</span> <span class="ident">AFTER</span> <span class="op">=</span> <span class="number">1</span>;
-        <span class="kw">const</span> <span class="ident">SWAPPED</span> <span class="op">=</span> <span class="number">2</span>;
-    }
-}
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_CONNECT_AFTER</span>: <span class="ident">GConnectFlags</span> <span class="op">=</span> <span class="ident">GConnectFlags</span>::<span class="ident">AFTER</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_CONNECT_SWAPPED</span>: <span class="ident">GConnectFlags</span> <span class="op">=</span> <span class="ident">GConnectFlags</span>::<span class="ident">SWAPPED</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GConnectFlags</span> <span class="op">=</span> <span class="ident">c_uint</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_CONNECT_AFTER</span>: <span class="ident">GConnectFlags</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_CONNECT_SWAPPED</span>: <span class="ident">GConnectFlags</span> <span class="op">=</span> <span class="number">2</span>;
 
-<span class="macro">bitflags</span><span class="macro">!</span> {
-    <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GParamFlags</span>: <span class="ident">c_uint</span> {
-        <span class="kw">const</span> <span class="ident">READABLE</span> <span class="op">=</span> <span class="number">1</span>;
-        <span class="kw">const</span> <span class="ident">WRITABLE</span> <span class="op">=</span> <span class="number">2</span>;
-        <span class="kw">const</span> <span class="ident">READWRITE</span> <span class="op">=</span> <span class="number">3</span>;
-        <span class="kw">const</span> <span class="ident">CONSTRUCT</span> <span class="op">=</span> <span class="number">4</span>;
-        <span class="kw">const</span> <span class="ident">CONSTRUCT_ONLY</span> <span class="op">=</span> <span class="number">8</span>;
-        <span class="kw">const</span> <span class="ident">LAX_VALIDATION</span> <span class="op">=</span> <span class="number">16</span>;
-        <span class="kw">const</span> <span class="ident">STATIC_NAME</span> <span class="op">=</span> <span class="number">32</span>;
-        <span class="kw">const</span> <span class="ident">PRIVATE</span> <span class="op">=</span> <span class="number">32</span>;
-        <span class="kw">const</span> <span class="ident">STATIC_NICK</span> <span class="op">=</span> <span class="number">64</span>;
-        <span class="kw">const</span> <span class="ident">STATIC_BLURB</span> <span class="op">=</span> <span class="number">128</span>;
-        <span class="kw">const</span> <span class="ident">EXPLICIT_NOTIFY</span> <span class="op">=</span> <span class="number">1073741824</span>;
-        <span class="kw">const</span> <span class="ident">DEPRECATED</span> <span class="op">=</span> <span class="number">2147483648</span>;
-    }
-}
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_READABLE</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="ident">GParamFlags</span>::<span class="ident">READABLE</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_WRITABLE</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="ident">GParamFlags</span>::<span class="ident">WRITABLE</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_READWRITE</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="ident">GParamFlags</span>::<span class="ident">READWRITE</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_CONSTRUCT</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="ident">GParamFlags</span>::<span class="ident">CONSTRUCT</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_CONSTRUCT_ONLY</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="ident">GParamFlags</span>::<span class="ident">CONSTRUCT_ONLY</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_LAX_VALIDATION</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="ident">GParamFlags</span>::<span class="ident">LAX_VALIDATION</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_STATIC_NAME</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="ident">GParamFlags</span>::<span class="ident">PRIVATE</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_PRIVATE</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="ident">GParamFlags</span>::<span class="ident">PRIVATE</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_STATIC_NICK</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="ident">GParamFlags</span>::<span class="ident">STATIC_NICK</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_STATIC_BLURB</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="ident">GParamFlags</span>::<span class="ident">STATIC_BLURB</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_EXPLICIT_NOTIFY</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="ident">GParamFlags</span>::<span class="ident">EXPLICIT_NOTIFY</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_DEPRECATED</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="ident">GParamFlags</span>::<span class="ident">DEPRECATED</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="ident">c_uint</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_READABLE</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_WRITABLE</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_READWRITE</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="number">3</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_CONSTRUCT</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="number">4</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_CONSTRUCT_ONLY</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="number">8</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_LAX_VALIDATION</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="number">16</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_STATIC_NAME</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="number">32</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_PRIVATE</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="number">32</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_STATIC_NICK</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="number">64</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_STATIC_BLURB</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="number">128</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_EXPLICIT_NOTIFY</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="number">1073741824</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_PARAM_DEPRECATED</span>: <span class="ident">GParamFlags</span> <span class="op">=</span> <span class="number">2147483648</span>;
 
-<span class="macro">bitflags</span><span class="macro">!</span> {
-    <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GSignalFlags</span>: <span class="ident">c_uint</span> {
-        <span class="kw">const</span> <span class="ident">RUN_FIRST</span> <span class="op">=</span> <span class="number">1</span>;
-        <span class="kw">const</span> <span class="ident">RUN_LAST</span> <span class="op">=</span> <span class="number">2</span>;
-        <span class="kw">const</span> <span class="ident">RUN_CLEANUP</span> <span class="op">=</span> <span class="number">4</span>;
-        <span class="kw">const</span> <span class="ident">NO_RECURSE</span> <span class="op">=</span> <span class="number">8</span>;
-        <span class="kw">const</span> <span class="ident">DETAILED</span> <span class="op">=</span> <span class="number">16</span>;
-        <span class="kw">const</span> <span class="ident">ACTION</span> <span class="op">=</span> <span class="number">32</span>;
-        <span class="kw">const</span> <span class="ident">NO_HOOKS</span> <span class="op">=</span> <span class="number">64</span>;
-        <span class="kw">const</span> <span class="ident">MUST_COLLECT</span> <span class="op">=</span> <span class="number">128</span>;
-        <span class="kw">const</span> <span class="ident">DEPRECATED</span> <span class="op">=</span> <span class="number">256</span>;
-    }
-}
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_RUN_FIRST</span>: <span class="ident">GSignalFlags</span> <span class="op">=</span> <span class="ident">GSignalFlags</span>::<span class="ident">RUN_FIRST</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_RUN_LAST</span>: <span class="ident">GSignalFlags</span> <span class="op">=</span> <span class="ident">GSignalFlags</span>::<span class="ident">RUN_LAST</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_RUN_CLEANUP</span>: <span class="ident">GSignalFlags</span> <span class="op">=</span> <span class="ident">GSignalFlags</span>::<span class="ident">RUN_CLEANUP</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_NO_RECURSE</span>: <span class="ident">GSignalFlags</span> <span class="op">=</span> <span class="ident">GSignalFlags</span>::<span class="ident">NO_RECURSE</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_DETAILED</span>: <span class="ident">GSignalFlags</span> <span class="op">=</span> <span class="ident">GSignalFlags</span>::<span class="ident">DETAILED</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_ACTION</span>: <span class="ident">GSignalFlags</span> <span class="op">=</span> <span class="ident">GSignalFlags</span>::<span class="ident">ACTION</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_NO_HOOKS</span>: <span class="ident">GSignalFlags</span> <span class="op">=</span> <span class="ident">GSignalFlags</span>::<span class="ident">NO_HOOKS</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_MUST_COLLECT</span>: <span class="ident">GSignalFlags</span> <span class="op">=</span> <span class="ident">GSignalFlags</span>::<span class="ident">MUST_COLLECT</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_DEPRECATED</span>: <span class="ident">GSignalFlags</span> <span class="op">=</span> <span class="ident">GSignalFlags</span>::<span class="ident">DEPRECATED</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GSignalFlags</span> <span class="op">=</span> <span class="ident">c_uint</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_RUN_FIRST</span>: <span class="ident">GSignalFlags</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_RUN_LAST</span>: <span class="ident">GSignalFlags</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_RUN_CLEANUP</span>: <span class="ident">GSignalFlags</span> <span class="op">=</span> <span class="number">4</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_NO_RECURSE</span>: <span class="ident">GSignalFlags</span> <span class="op">=</span> <span class="number">8</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_DETAILED</span>: <span class="ident">GSignalFlags</span> <span class="op">=</span> <span class="number">16</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_ACTION</span>: <span class="ident">GSignalFlags</span> <span class="op">=</span> <span class="number">32</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_NO_HOOKS</span>: <span class="ident">GSignalFlags</span> <span class="op">=</span> <span class="number">64</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_MUST_COLLECT</span>: <span class="ident">GSignalFlags</span> <span class="op">=</span> <span class="number">128</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_DEPRECATED</span>: <span class="ident">GSignalFlags</span> <span class="op">=</span> <span class="number">256</span>;
 
-<span class="macro">bitflags</span><span class="macro">!</span> {
-    <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GSignalMatchType</span>: <span class="ident">c_uint</span> {
-        <span class="kw">const</span> <span class="ident">ID</span> <span class="op">=</span> <span class="number">1</span>;
-        <span class="kw">const</span> <span class="ident">DETAIL</span> <span class="op">=</span> <span class="number">2</span>;
-        <span class="kw">const</span> <span class="ident">CLOSURE</span> <span class="op">=</span> <span class="number">4</span>;
-        <span class="kw">const</span> <span class="ident">FUNC</span> <span class="op">=</span> <span class="number">8</span>;
-        <span class="kw">const</span> <span class="ident">DATA</span> <span class="op">=</span> <span class="number">16</span>;
-        <span class="kw">const</span> <span class="ident">UNBLOCKED</span> <span class="op">=</span> <span class="number">32</span>;
-    }
-}
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_MATCH_ID</span>: <span class="ident">GSignalMatchType</span> <span class="op">=</span> <span class="ident">GSignalMatchType</span>::<span class="ident">ID</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_MATCH_DETAIL</span>: <span class="ident">GSignalMatchType</span> <span class="op">=</span> <span class="ident">GSignalMatchType</span>::<span class="ident">DETAIL</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_MATCH_CLOSURE</span>: <span class="ident">GSignalMatchType</span> <span class="op">=</span> <span class="ident">GSignalMatchType</span>::<span class="ident">CLOSURE</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_MATCH_FUNC</span>: <span class="ident">GSignalMatchType</span> <span class="op">=</span> <span class="ident">GSignalMatchType</span>::<span class="ident">FUNC</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_MATCH_DATA</span>: <span class="ident">GSignalMatchType</span> <span class="op">=</span> <span class="ident">GSignalMatchType</span>::<span class="ident">DATA</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_MATCH_UNBLOCKED</span>: <span class="ident">GSignalMatchType</span> <span class="op">=</span> <span class="ident">GSignalMatchType</span>::<span class="ident">UNBLOCKED</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GSignalMatchType</span> <span class="op">=</span> <span class="ident">c_uint</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_MATCH_ID</span>: <span class="ident">GSignalMatchType</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_MATCH_DETAIL</span>: <span class="ident">GSignalMatchType</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_MATCH_CLOSURE</span>: <span class="ident">GSignalMatchType</span> <span class="op">=</span> <span class="number">4</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_MATCH_FUNC</span>: <span class="ident">GSignalMatchType</span> <span class="op">=</span> <span class="number">8</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_MATCH_DATA</span>: <span class="ident">GSignalMatchType</span> <span class="op">=</span> <span class="number">16</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_SIGNAL_MATCH_UNBLOCKED</span>: <span class="ident">GSignalMatchType</span> <span class="op">=</span> <span class="number">32</span>;
 
-<span class="macro">bitflags</span><span class="macro">!</span> {
-    <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GTypeDebugFlags</span>: <span class="ident">c_uint</span> {
-        <span class="kw">const</span> <span class="ident">NONE</span> <span class="op">=</span> <span class="number">0</span>;
-        <span class="kw">const</span> <span class="ident">OBJECTS</span> <span class="op">=</span> <span class="number">1</span>;
-        <span class="kw">const</span> <span class="ident">SIGNALS</span> <span class="op">=</span> <span class="number">2</span>;
-        <span class="kw">const</span> <span class="ident">INSTANCE_COUNT</span> <span class="op">=</span> <span class="number">4</span>;
-        <span class="kw">const</span> <span class="ident">MASK</span> <span class="op">=</span> <span class="number">7</span>;
-    }
-}
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_DEBUG_NONE</span>: <span class="ident">GTypeDebugFlags</span> <span class="op">=</span> <span class="ident">GTypeDebugFlags</span>::<span class="ident">NONE</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_DEBUG_OBJECTS</span>: <span class="ident">GTypeDebugFlags</span> <span class="op">=</span> <span class="ident">GTypeDebugFlags</span>::<span class="ident">OBJECTS</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_DEBUG_SIGNALS</span>: <span class="ident">GTypeDebugFlags</span> <span class="op">=</span> <span class="ident">GTypeDebugFlags</span>::<span class="ident">SIGNALS</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_DEBUG_INSTANCE_COUNT</span>: <span class="ident">GTypeDebugFlags</span> <span class="op">=</span> <span class="ident">GTypeDebugFlags</span>::<span class="ident">INSTANCE_COUNT</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_DEBUG_MASK</span>: <span class="ident">GTypeDebugFlags</span> <span class="op">=</span> <span class="ident">GTypeDebugFlags</span>::<span class="ident">MASK</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GTypeDebugFlags</span> <span class="op">=</span> <span class="ident">c_uint</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_DEBUG_NONE</span>: <span class="ident">GTypeDebugFlags</span> <span class="op">=</span> <span class="number">0</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_DEBUG_OBJECTS</span>: <span class="ident">GTypeDebugFlags</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_DEBUG_SIGNALS</span>: <span class="ident">GTypeDebugFlags</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_DEBUG_INSTANCE_COUNT</span>: <span class="ident">GTypeDebugFlags</span> <span class="op">=</span> <span class="number">4</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_DEBUG_MASK</span>: <span class="ident">GTypeDebugFlags</span> <span class="op">=</span> <span class="number">7</span>;
 
-<span class="macro">bitflags</span><span class="macro">!</span> {
-    <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GTypeFlags</span>: <span class="ident">c_uint</span> {
-        <span class="kw">const</span> <span class="ident">ABSTRACT</span> <span class="op">=</span> <span class="number">16</span>;
-        <span class="kw">const</span> <span class="ident">VALUE_ABSTRACT</span> <span class="op">=</span> <span class="number">32</span>;
-    }
-}
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_FLAG_ABSTRACT</span>: <span class="ident">GTypeFlags</span> <span class="op">=</span> <span class="ident">GTypeFlags</span>::<span class="ident">ABSTRACT</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_FLAG_VALUE_ABSTRACT</span>: <span class="ident">GTypeFlags</span> <span class="op">=</span> <span class="ident">GTypeFlags</span>::<span class="ident">VALUE_ABSTRACT</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GTypeFlags</span> <span class="op">=</span> <span class="ident">c_uint</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_FLAG_ABSTRACT</span>: <span class="ident">GTypeFlags</span> <span class="op">=</span> <span class="number">16</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_FLAG_VALUE_ABSTRACT</span>: <span class="ident">GTypeFlags</span> <span class="op">=</span> <span class="number">32</span>;
 
-<span class="macro">bitflags</span><span class="macro">!</span> {
-    <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
-    <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GTypeFundamentalFlags</span>: <span class="ident">c_uint</span> {
-        <span class="kw">const</span> <span class="ident">CLASSED</span> <span class="op">=</span> <span class="number">1</span>;
-        <span class="kw">const</span> <span class="ident">INSTANTIATABLE</span> <span class="op">=</span> <span class="number">2</span>;
-        <span class="kw">const</span> <span class="ident">DERIVABLE</span> <span class="op">=</span> <span class="number">4</span>;
-        <span class="kw">const</span> <span class="ident">DEEP_DERIVABLE</span> <span class="op">=</span> <span class="number">8</span>;
-    }
-}
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_FLAG_CLASSED</span>: <span class="ident">GTypeFundamentalFlags</span> <span class="op">=</span> <span class="ident">GTypeFundamentalFlags</span>::<span class="ident">CLASSED</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_FLAG_INSTANTIATABLE</span>: <span class="ident">GTypeFundamentalFlags</span> <span class="op">=</span> <span class="ident">GTypeFundamentalFlags</span>::<span class="ident">INSTANTIATABLE</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_FLAG_DERIVABLE</span>: <span class="ident">GTypeFundamentalFlags</span> <span class="op">=</span> <span class="ident">GTypeFundamentalFlags</span>::<span class="ident">DERIVABLE</span>;
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_FLAG_DEEP_DERIVABLE</span>: <span class="ident">GTypeFundamentalFlags</span> <span class="op">=</span> <span class="ident">GTypeFundamentalFlags</span>::<span class="ident">DEEP_DERIVABLE</span>;
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">GTypeFundamentalFlags</span> <span class="op">=</span> <span class="ident">c_uint</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_FLAG_CLASSED</span>: <span class="ident">GTypeFundamentalFlags</span> <span class="op">=</span> <span class="number">1</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_FLAG_INSTANTIATABLE</span>: <span class="ident">GTypeFundamentalFlags</span> <span class="op">=</span> <span class="number">2</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_FLAG_DERIVABLE</span>: <span class="ident">GTypeFundamentalFlags</span> <span class="op">=</span> <span class="number">4</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">G_TYPE_FLAG_DEEP_DERIVABLE</span>: <span class="ident">GTypeFundamentalFlags</span> <span class="op">=</span> <span class="number">8</span>;
 
 <span class="comment">// Unions</span>
 <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
@@ -2145,7 +1947,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GTypeCValue</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GTypeCValue @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GTypeCValue @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;v_int&quot;</span>, <span class="kw">unsafe</span> { <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">v_int</span> })
          .<span class="ident">field</span>(<span class="string">&quot;v_long&quot;</span>, <span class="kw">unsafe</span> { <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">v_long</span> })
          .<span class="ident">field</span>(<span class="string">&quot;v_int64&quot;</span>, <span class="kw">unsafe</span> { <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">v_int64</span> })
@@ -2171,7 +1973,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GValue_data</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GValue_data @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GValue_data @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;v_int&quot;</span>, <span class="kw">unsafe</span> { <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">v_int</span> })
          .<span class="ident">field</span>(<span class="string">&quot;v_uint&quot;</span>, <span class="kw">unsafe</span> { <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">v_uint</span> })
          .<span class="ident">field</span>(<span class="string">&quot;v_long&quot;</span>, <span class="kw">unsafe</span> { <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">v_long</span> })
@@ -2193,7 +1995,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GWeakRef_priv</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GWeakRef_priv @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GWeakRef_priv @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;p&quot;</span>, <span class="kw">unsafe</span> { <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">p</span> })
          .<span class="ident">finish</span>()
     }
@@ -2238,7 +2040,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GCClosure</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GCClosure @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GCClosure @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">finish</span>()
     }
 }
@@ -2251,7 +2053,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GClosure</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GClosure @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GClosure @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">finish</span>()
     }
 }
@@ -2265,7 +2067,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GClosureNotifyData</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GClosureNotifyData @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GClosureNotifyData @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;data&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">data</span>)
          .<span class="ident">field</span>(<span class="string">&quot;notify&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">notify</span>)
          .<span class="ident">finish</span>()
@@ -2284,7 +2086,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GEnumClass</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GEnumClass @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GEnumClass @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;g_type_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">g_type_class</span>)
          .<span class="ident">field</span>(<span class="string">&quot;minimum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">minimum</span>)
          .<span class="ident">field</span>(<span class="string">&quot;maximum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">maximum</span>)
@@ -2304,7 +2106,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GEnumValue</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GEnumValue @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GEnumValue @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;value&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">value</span>)
          .<span class="ident">field</span>(<span class="string">&quot;value_name&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">value_name</span>)
          .<span class="ident">field</span>(<span class="string">&quot;value_nick&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">value_nick</span>)
@@ -2323,7 +2125,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GFlagsClass</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GFlagsClass @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GFlagsClass @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;g_type_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">g_type_class</span>)
          .<span class="ident">field</span>(<span class="string">&quot;mask&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">mask</span>)
          .<span class="ident">field</span>(<span class="string">&quot;n_values&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">n_values</span>)
@@ -2342,7 +2144,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GFlagsValue</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GFlagsValue @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GFlagsValue @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;value&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">value</span>)
          .<span class="ident">field</span>(<span class="string">&quot;value_name&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">value_name</span>)
          .<span class="ident">field</span>(<span class="string">&quot;value_nick&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">value_nick</span>)
@@ -2369,7 +2171,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GInitiallyUnownedClass</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GInitiallyUnownedClass @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GInitiallyUnownedClass @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;g_type_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">g_type_class</span>)
          .<span class="ident">field</span>(<span class="string">&quot;constructor&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">constructor</span>)
          .<span class="ident">field</span>(<span class="string">&quot;set_property&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">set_property</span>)
@@ -2393,7 +2195,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GInterfaceInfo</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GInterfaceInfo @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GInterfaceInfo @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;interface_init&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">interface_init</span>)
          .<span class="ident">field</span>(<span class="string">&quot;interface_finalize&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">interface_finalize</span>)
          .<span class="ident">field</span>(<span class="string">&quot;interface_data&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">interface_data</span>)
@@ -2420,7 +2222,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GObjectClass</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GObjectClass @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GObjectClass @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;g_type_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">g_type_class</span>)
          .<span class="ident">field</span>(<span class="string">&quot;constructor&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">constructor</span>)
          .<span class="ident">field</span>(<span class="string">&quot;set_property&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">set_property</span>)
@@ -2443,7 +2245,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GObjectConstructParam</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GObjectConstructParam @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GObjectConstructParam @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;pspec&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">pspec</span>)
          .<span class="ident">field</span>(<span class="string">&quot;value&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">value</span>)
          .<span class="ident">finish</span>()
@@ -2464,7 +2266,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecClass</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecClass @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecClass @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;g_type_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">g_type_class</span>)
          .<span class="ident">field</span>(<span class="string">&quot;value_type&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">value_type</span>)
          .<span class="ident">field</span>(<span class="string">&quot;finalize&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">finalize</span>)
@@ -2480,7 +2282,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecPool</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecPool @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecPool @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">finish</span>()
     }
 }
@@ -2500,7 +2302,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecTypeInfo</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecTypeInfo @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecTypeInfo @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;instance_size&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">instance_size</span>)
          .<span class="ident">field</span>(<span class="string">&quot;n_preallocs&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">n_preallocs</span>)
          .<span class="ident">field</span>(<span class="string">&quot;instance_init&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">instance_init</span>)
@@ -2522,7 +2324,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParameter</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParameter @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParameter @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">name</span>)
          .<span class="ident">field</span>(<span class="string">&quot;value&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">value</span>)
          .<span class="ident">finish</span>()
@@ -2539,7 +2341,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GSignalInvocationHint</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GSignalInvocationHint @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GSignalInvocationHint @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;signal_id&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">signal_id</span>)
          .<span class="ident">field</span>(<span class="string">&quot;detail&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">detail</span>)
          .<span class="ident">field</span>(<span class="string">&quot;run_type&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">run_type</span>)
@@ -2561,7 +2363,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GSignalQuery</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GSignalQuery @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GSignalQuery @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;signal_id&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">signal_id</span>)
          .<span class="ident">field</span>(<span class="string">&quot;signal_name&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">signal_name</span>)
          .<span class="ident">field</span>(<span class="string">&quot;itype&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">itype</span>)
@@ -2581,7 +2383,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GTypeClass</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GTypeClass @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GTypeClass @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">finish</span>()
     }
 }
@@ -2594,7 +2396,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GTypeFundamentalInfo</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GTypeFundamentalInfo @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GTypeFundamentalInfo @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;type_flags&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">type_flags</span>)
          .<span class="ident">finish</span>()
     }
@@ -2617,7 +2419,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GTypeInfo</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GTypeInfo @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GTypeInfo @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;class_size&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">class_size</span>)
          .<span class="ident">field</span>(<span class="string">&quot;base_init&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">base_init</span>)
          .<span class="ident">field</span>(<span class="string">&quot;base_finalize&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">base_finalize</span>)
@@ -2640,7 +2442,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GTypeInstance</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GTypeInstance @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GTypeInstance @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">finish</span>()
     }
 }
@@ -2654,7 +2456,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GTypeInterface</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GTypeInterface @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GTypeInterface @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">finish</span>()
     }
 }
@@ -2673,7 +2475,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GTypeModuleClass</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GTypeModuleClass @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GTypeModuleClass @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_class</span>)
          .<span class="ident">field</span>(<span class="string">&quot;load&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">load</span>)
          .<span class="ident">field</span>(<span class="string">&quot;unload&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">unload</span>)
@@ -2697,7 +2499,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GTypePluginClass</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GTypePluginClass @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GTypePluginClass @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;use_plugin&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">use_plugin</span>)
          .<span class="ident">field</span>(<span class="string">&quot;unuse_plugin&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">unuse_plugin</span>)
          .<span class="ident">field</span>(<span class="string">&quot;complete_type_info&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">complete_type_info</span>)
@@ -2717,7 +2519,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GTypeQuery</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GTypeQuery @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GTypeQuery @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;type_&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">type_</span>)
          .<span class="ident">field</span>(<span class="string">&quot;type_name&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">type_name</span>)
          .<span class="ident">field</span>(<span class="string">&quot;class_size&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">class_size</span>)
@@ -2741,7 +2543,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GTypeValueTable</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GTypeValueTable @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GTypeValueTable @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;value_init&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">value_init</span>)
          .<span class="ident">field</span>(<span class="string">&quot;value_free&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">value_free</span>)
          .<span class="ident">field</span>(<span class="string">&quot;value_copy&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">value_copy</span>)
@@ -2763,7 +2565,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GValue</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GValue @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GValue @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;data&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">data</span>)
          .<span class="ident">finish</span>()
     }
@@ -2779,7 +2581,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GValueArray</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GValueArray @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GValueArray @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;n_values&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">n_values</span>)
          .<span class="ident">field</span>(<span class="string">&quot;values&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">values</span>)
          .<span class="ident">finish</span>()
@@ -2794,7 +2596,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GWeakRef</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GWeakRef @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GWeakRef @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;priv_&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">priv_</span>)
          .<span class="ident">finish</span>()
     }
@@ -2806,7 +2608,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GBinding</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GBinding @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GBinding @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">finish</span>()
     }
 }
@@ -2815,13 +2617,13 @@
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GInitiallyUnowned</span> {
     <span class="kw">pub</span> <span class="ident">g_type_instance</span>: <span class="ident">GTypeInstance</span>,
-    <span class="kw">pub</span> <span class="ident">ref_count</span>: <span class="ident">Volatile</span><span class="op">&lt;</span><span class="ident">c_uint</span><span class="op">&gt;</span>,
+    <span class="kw">pub</span> <span class="ident">ref_count</span>: <span class="comment">/*volatile*/</span><span class="ident">c_uint</span>,
     <span class="kw">pub</span> <span class="ident">qdata</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">glib</span>::<span class="ident">GData</span>,
 }
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GInitiallyUnowned</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GInitiallyUnowned @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GInitiallyUnowned @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;g_type_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">g_type_instance</span>)
          .<span class="ident">finish</span>()
     }
@@ -2831,13 +2633,13 @@
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">GObject</span> {
     <span class="kw">pub</span> <span class="ident">g_type_instance</span>: <span class="ident">GTypeInstance</span>,
-    <span class="kw">pub</span> <span class="ident">ref_count</span>: <span class="ident">Volatile</span><span class="op">&lt;</span><span class="ident">c_uint</span><span class="op">&gt;</span>,
+    <span class="kw">pub</span> <span class="ident">ref_count</span>: <span class="comment">/*volatile*/</span><span class="ident">c_uint</span>,
     <span class="kw">pub</span> <span class="ident">qdata</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">glib</span>::<span class="ident">GData</span>,
 }
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GObject</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GObject @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GObject @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;g_type_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">g_type_instance</span>)
          .<span class="ident">finish</span>()
     }
@@ -2860,7 +2662,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpec</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpec @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpec @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;g_type_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">g_type_instance</span>)
          .<span class="ident">field</span>(<span class="string">&quot;name&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">name</span>)
          .<span class="ident">field</span>(<span class="string">&quot;flags&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">flags</span>)
@@ -2879,7 +2681,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecBoolean</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecBoolean @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecBoolean @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
          .<span class="ident">field</span>(<span class="string">&quot;default_value&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">default_value</span>)
          .<span class="ident">finish</span>()
@@ -2894,7 +2696,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecBoxed</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecBoxed @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecBoxed @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
          .<span class="ident">finish</span>()
     }
@@ -2911,7 +2713,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecChar</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecChar @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecChar @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
          .<span class="ident">field</span>(<span class="string">&quot;minimum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">minimum</span>)
          .<span class="ident">field</span>(<span class="string">&quot;maximum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">maximum</span>)
@@ -2932,7 +2734,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecDouble</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecDouble @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecDouble @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
          .<span class="ident">field</span>(<span class="string">&quot;minimum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">minimum</span>)
          .<span class="ident">field</span>(<span class="string">&quot;maximum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">maximum</span>)
@@ -2952,7 +2754,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecEnum</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecEnum @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecEnum @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
          .<span class="ident">field</span>(<span class="string">&quot;enum_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">enum_class</span>)
          .<span class="ident">field</span>(<span class="string">&quot;default_value&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">default_value</span>)
@@ -2970,7 +2772,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecFlags</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecFlags @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecFlags @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
          .<span class="ident">field</span>(<span class="string">&quot;flags_class&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">flags_class</span>)
          .<span class="ident">field</span>(<span class="string">&quot;default_value&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">default_value</span>)
@@ -2990,7 +2792,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecFloat</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecFloat @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecFloat @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
          .<span class="ident">field</span>(<span class="string">&quot;minimum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">minimum</span>)
          .<span class="ident">field</span>(<span class="string">&quot;maximum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">maximum</span>)
@@ -3009,7 +2811,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecGType</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecGType @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecGType @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
          .<span class="ident">field</span>(<span class="string">&quot;is_a_type&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">is_a_type</span>)
          .<span class="ident">finish</span>()
@@ -3027,7 +2829,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecInt</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecInt @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecInt @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
          .<span class="ident">field</span>(<span class="string">&quot;minimum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">minimum</span>)
          .<span class="ident">field</span>(<span class="string">&quot;maximum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">maximum</span>)
@@ -3047,7 +2849,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecInt64</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecInt64 @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecInt64 @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
          .<span class="ident">field</span>(<span class="string">&quot;minimum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">minimum</span>)
          .<span class="ident">field</span>(<span class="string">&quot;maximum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">maximum</span>)
@@ -3067,7 +2869,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecLong</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecLong @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecLong @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
          .<span class="ident">field</span>(<span class="string">&quot;minimum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">minimum</span>)
          .<span class="ident">field</span>(<span class="string">&quot;maximum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">maximum</span>)
@@ -3084,7 +2886,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecObject</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecObject @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecObject @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
          .<span class="ident">finish</span>()
     }
@@ -3099,7 +2901,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecOverride</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecOverride @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecOverride @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">finish</span>()
     }
 }
@@ -3112,7 +2914,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecParam</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecParam @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecParam @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
          .<span class="ident">finish</span>()
     }
@@ -3126,7 +2928,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecPointer</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecPointer @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecPointer @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
          .<span class="ident">finish</span>()
     }
@@ -3145,7 +2947,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecString</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecString @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecString @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
          .<span class="ident">field</span>(<span class="string">&quot;default_value&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">default_value</span>)
          .<span class="ident">field</span>(<span class="string">&quot;cset_first&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">cset_first</span>)
@@ -3166,7 +2968,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecUChar</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecUChar @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecUChar @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
          .<span class="ident">field</span>(<span class="string">&quot;minimum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">minimum</span>)
          .<span class="ident">field</span>(<span class="string">&quot;maximum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">maximum</span>)
@@ -3186,7 +2988,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecUInt</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecUInt @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecUInt @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
          .<span class="ident">field</span>(<span class="string">&quot;minimum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">minimum</span>)
          .<span class="ident">field</span>(<span class="string">&quot;maximum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">maximum</span>)
@@ -3206,7 +3008,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecUInt64</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecUInt64 @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecUInt64 @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
          .<span class="ident">field</span>(<span class="string">&quot;minimum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">minimum</span>)
          .<span class="ident">field</span>(<span class="string">&quot;maximum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">maximum</span>)
@@ -3226,7 +3028,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecULong</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecULong @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecULong @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
          .<span class="ident">field</span>(<span class="string">&quot;minimum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">minimum</span>)
          .<span class="ident">field</span>(<span class="string">&quot;maximum&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">maximum</span>)
@@ -3244,7 +3046,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecUnichar</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecUnichar @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecUnichar @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
          .<span class="ident">field</span>(<span class="string">&quot;default_value&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">default_value</span>)
          .<span class="ident">finish</span>()
@@ -3261,7 +3063,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecValueArray</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecValueArray @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecValueArray @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
          .<span class="ident">field</span>(<span class="string">&quot;element_spec&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">element_spec</span>)
          .<span class="ident">field</span>(<span class="string">&quot;fixed_n_elements&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">fixed_n_elements</span>)
@@ -3280,7 +3082,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GParamSpecVariant</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecVariant @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GParamSpecVariant @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
          .<span class="ident">field</span>(<span class="string">&quot;type_&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">type_</span>)
          .<span class="ident">field</span>(<span class="string">&quot;default_value&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">default_value</span>)
@@ -3300,7 +3102,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GTypeModule</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GTypeModule @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _))
+        <span class="ident">f</span>.<span class="ident">debug_struct</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;GTypeModule @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>))
          .<span class="ident">field</span>(<span class="string">&quot;parent_instance&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">parent_instance</span>)
          .<span class="ident">field</span>(<span class="string">&quot;use_count&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">use_count</span>)
          .<span class="ident">field</span>(<span class="string">&quot;type_infos&quot;</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">type_infos</span>)
@@ -3316,7 +3118,7 @@
 
 <span class="kw">impl</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Debug</span> <span class="kw">for</span> <span class="ident">GTypePlugin</span> {
     <span class="kw">fn</span> <span class="ident">fmt</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">f</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="ident">Formatter</span>) <span class="op">-&gt;</span> ::<span class="ident">std</span>::<span class="ident">fmt</span>::<span class="prelude-ty">Result</span> {
-        <span class="macro">write</span><span class="macro">!</span>(<span class="ident">f</span>, <span class="string">&quot;GTypePlugin @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _)
+        <span class="macro">write</span><span class="macro">!</span>(<span class="ident">f</span>, <span class="string">&quot;GTypePlugin @ {:?}&quot;</span>, <span class="self">self</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="kw">_</span>)
     }
 }
 
@@ -3577,7 +3379,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_new</span>(<span class="ident">object_type</span>: <span class="ident">GType</span>, <span class="ident">first_property_name</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>, ...) <span class="op">-&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GObject</span>;
     <span class="comment">//pub fn g_object_new_valist(object_type: GType, first_property_name: *const c_char, var_args: /*Unimplemented*/va_list) -&gt; *mut GObject;</span>
     <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_54&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_new_with_properties</span>(<span class="ident">object_type</span>: <span class="ident">GType</span>, <span class="ident">n_properties</span>: <span class="ident">c_uint</span>, <span class="ident">names</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">c_char</span>, <span class="ident">values</span>: <span class="ident">GValue</span>) <span class="op">-&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GObject</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_new_with_properties</span>(<span class="ident">object_type</span>: <span class="ident">GType</span>, <span class="ident">n_properties</span>: <span class="ident">c_uint</span>, <span class="ident">names</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>, <span class="ident">values</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">GValue</span>) <span class="op">-&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GObject</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_newv</span>(<span class="ident">object_type</span>: <span class="ident">GType</span>, <span class="ident">n_parameters</span>: <span class="ident">c_uint</span>, <span class="ident">parameters</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GParameter</span>) <span class="op">-&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GObject</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_compat_control</span>(<span class="ident">what</span>: <span class="ident">size_t</span>, <span class="ident">data</span>: <span class="ident">gpointer</span>) <span class="op">-&gt;</span> <span class="ident">size_t</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_interface_find_property</span>(<span class="ident">g_iface</span>: <span class="ident">gpointer</span>, <span class="ident">property_name</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>) <span class="op">-&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GParamSpec</span>;
@@ -3602,7 +3404,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_get_qdata</span>(<span class="ident">object</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GObject</span>, <span class="ident">quark</span>: <span class="ident">glib</span>::<span class="ident">GQuark</span>) <span class="op">-&gt;</span> <span class="ident">gpointer</span>;
     <span class="comment">//pub fn g_object_get_valist(object: *mut GObject, first_property_name: *const c_char, var_args: /*Unimplemented*/va_list);</span>
     <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_54&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_getv</span>(<span class="ident">object</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GObject</span>, <span class="ident">n_properties</span>: <span class="ident">c_uint</span>, <span class="ident">names</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">c_char</span>, <span class="ident">values</span>: <span class="ident">GValue</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_getv</span>(<span class="ident">object</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GObject</span>, <span class="ident">n_properties</span>: <span class="ident">c_uint</span>, <span class="ident">names</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>, <span class="ident">values</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GValue</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_is_floating</span>(<span class="ident">object</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GObject</span>) <span class="op">-&gt;</span> <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_notify</span>(<span class="ident">object</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GObject</span>, <span class="ident">property_name</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_notify_by_pspec</span>(<span class="ident">object</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GObject</span>, <span class="ident">pspec</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GParamSpec</span>);
@@ -3623,7 +3425,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_set_qdata_full</span>(<span class="ident">object</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GObject</span>, <span class="ident">quark</span>: <span class="ident">glib</span>::<span class="ident">GQuark</span>, <span class="ident">data</span>: <span class="ident">gpointer</span>, <span class="ident">destroy</span>: <span class="ident">glib</span>::<span class="ident">GDestroyNotify</span>);
     <span class="comment">//pub fn g_object_set_valist(object: *mut GObject, first_property_name: *const c_char, var_args: /*Unimplemented*/va_list);</span>
     <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;v2_54&quot;</span>, <span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;dox&quot;</span>))]</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_setv</span>(<span class="ident">object</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GObject</span>, <span class="ident">n_properties</span>: <span class="ident">c_uint</span>, <span class="ident">names</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">c_char</span>, <span class="ident">values</span>: <span class="ident">GValue</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_setv</span>(<span class="ident">object</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GObject</span>, <span class="ident">n_properties</span>: <span class="ident">c_uint</span>, <span class="ident">names</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>, <span class="ident">values</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">GValue</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_steal_data</span>(<span class="ident">object</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GObject</span>, <span class="ident">key</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>) <span class="op">-&gt;</span> <span class="ident">gpointer</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_steal_qdata</span>(<span class="ident">object</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GObject</span>, <span class="ident">quark</span>: <span class="ident">glib</span>::<span class="ident">GQuark</span>) <span class="op">-&gt;</span> <span class="ident">gpointer</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_object_thaw_notify</span>(<span class="ident">object</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GObject</span>);
@@ -3680,7 +3482,7 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_boxed_copy</span>(<span class="ident">boxed_type</span>: <span class="ident">GType</span>, <span class="ident">src_boxed</span>: <span class="ident">gconstpointer</span>) <span class="op">-&gt;</span> <span class="ident">gpointer</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_boxed_free</span>(<span class="ident">boxed_type</span>: <span class="ident">GType</span>, <span class="ident">boxed</span>: <span class="ident">gpointer</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_boxed_type_register_static</span>(<span class="ident">name</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>, <span class="ident">boxed_copy</span>: <span class="ident">GBoxedCopyFunc</span>, <span class="ident">boxed_free</span>: <span class="ident">GBoxedFreeFunc</span>) <span class="op">-&gt;</span> <span class="ident">GType</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_clear_object</span>(<span class="ident">object_ptr</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">Volatile</span><span class="op">&lt;</span><span class="ident">GObject</span><span class="op">&gt;</span>);
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_clear_object</span>(<span class="ident">object_ptr</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="comment">/*volatile*/</span><span class="ident">GObject</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_enum_complete_type_info</span>(<span class="ident">g_enum_type</span>: <span class="ident">GType</span>, <span class="ident">info</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GTypeInfo</span>, <span class="ident">const_values</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">GEnumValue</span>);
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_enum_get_value</span>(<span class="ident">enum_class</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GEnumClass</span>, <span class="ident">value</span>: <span class="ident">c_int</span>) <span class="op">-&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GEnumValue</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_enum_get_value_by_name</span>(<span class="ident">enum_class</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GEnumClass</span>, <span class="ident">name</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">c_char</span>) <span class="op">-&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GEnumValue</span>;
@@ -3782,8 +3584,8 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_type_check_instance_is_a</span>(<span class="ident">instance</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GTypeInstance</span>, <span class="ident">iface_type</span>: <span class="ident">GType</span>) <span class="op">-&gt;</span> <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_type_check_instance_is_fundamentally_a</span>(<span class="ident">instance</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GTypeInstance</span>, <span class="ident">fundamental_type</span>: <span class="ident">GType</span>) <span class="op">-&gt;</span> <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_type_check_is_value_type</span>(<span class="ident">type_</span>: <span class="ident">GType</span>) <span class="op">-&gt;</span> <span class="ident">gboolean</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_type_check_value</span>(<span class="ident">value</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GValue</span>) <span class="op">-&gt;</span> <span class="ident">gboolean</span>;
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_type_check_value_holds</span>(<span class="ident">value</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GValue</span>, <span class="ident">type_</span>: <span class="ident">GType</span>) <span class="op">-&gt;</span> <span class="ident">gboolean</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_type_check_value</span>(<span class="ident">value</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">GValue</span>) <span class="op">-&gt;</span> <span class="ident">gboolean</span>;
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_type_check_value_holds</span>(<span class="ident">value</span>: <span class="kw-2">*</span><span class="kw">const</span> <span class="ident">GValue</span>, <span class="ident">type_</span>: <span class="ident">GType</span>) <span class="op">-&gt;</span> <span class="ident">gboolean</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_type_children</span>(<span class="ident">type_</span>: <span class="ident">GType</span>, <span class="ident">n_children</span>: <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">c_uint</span>) <span class="op">-&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GType</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_type_create_instance</span>(<span class="ident">type_</span>: <span class="ident">GType</span>) <span class="op">-&gt;</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="ident">GTypeInstance</span>;
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">g_type_default_interface_peek</span>(<span class="ident">g_type</span>: <span class="ident">GType</span>) <span class="op">-&gt;</span> <span class="ident">gpointer</span>;
@@ -3824,66 +3626,4 @@
 
 }
 </pre>
-</section>
-    <section id='search' class="content hidden"></section>
-
-    <section class="footer"></section>
-
-    <aside id="help" class="hidden">
-        <div>
-            <h1 class="hidden">Help</h1>
-
-            <div class="shortcuts">
-                <h2>Keyboard Shortcuts</h2>
-
-                <dl>
-                    <dt>?</dt>
-                    <dd>Show this help dialog</dd>
-                    <dt>S</dt>
-                    <dd>Focus the search field</dd>
-                    <dt>↑</dt>
-                    <dd>Move up in search results</dd>
-                    <dt>↓</dt>
-                    <dd>Move down in search results</dd>
-                    <dt>↹</dt>
-                    <dd>Switch tab</dd>
-                    <dt>&#9166;</dt>
-                    <dd>Go to active search result</dd>
-                    <dt style="width:31px;">+ / -</dt>
-                    <dd>Collapse/expand all sections</dd>
-                </dl>
-            </div>
-
-            <div class="infos">
-                <h2>Search Tricks</h2>
-
-                <p>
-                    Prefix searches with a type followed by a colon (e.g.
-                    <code>fn:</code>) to restrict the search to a given type.
-                </p>
-
-                <p>
-                    Accepted types are: <code>fn</code>, <code>mod</code>,
-                    <code>struct</code>, <code>enum</code>,
-                    <code>trait</code>, <code>type</code>, <code>macro</code>,
-                    and <code>const</code>.
-                </p>
-
-                <p>
-                    Search functions by type signature (e.g.
-                    <code>vec -> usize</code> or <code>* -> vec</code>)
-                </p>
-            </div>
-        </div>
-    </aside>
-
-    
-
-    <script>
-        window.rootPath = "../../";
-        window.currentCrate = "gobject_sys";
-    </script>
-    <script src="../../main.js"></script>
-    <script defer src="../../search-index.js"></script>
-</body>
-</html>
+</section><section id="search" class="content hidden"></section><section class="footer"></section><aside id="help" class="hidden"><div><h1 class="hidden">Help</h1><div class="shortcuts"><h2>Keyboard Shortcuts</h2><dl><dt><kbd>?</kbd></dt><dd>Show this help dialog</dd><dt><kbd>S</kbd></dt><dd>Focus the search field</dd><dt><kbd>↑</kbd></dt><dd>Move up in search results</dd><dt><kbd>↓</kbd></dt><dd>Move down in search results</dd><dt><kbd>↹</kbd></dt><dd>Switch tab</dd><dt><kbd>&#9166;</kbd></dt><dd>Go to active search result</dd><dt><kbd>+</kbd></dt><dd>Expand all sections</dd><dt><kbd>-</kbd></dt><dd>Collapse all sections</dd></dl></div><div class="infos"><h2>Search Tricks</h2><p>Prefix searches with a type followed by a colon (e.g. <code>fn:</code>) to restrict the search to a given type.</p><p>Accepted types are: <code>fn</code>, <code>mod</code>, <code>struct</code>, <code>enum</code>, <code>trait</code>, <code>type</code>, <code>macro</code>, and <code>const</code>.</p><p>Search functions by type signature (e.g. <code>vec -> usize</code> or <code>* -> vec</code>)</p><p>Search multiple things at once by splitting your query with comma (e.g. <code>str,u8</code> or <code>String,struct:Vec,test</code>)</p></div></div></aside><script>window.rootPath = "../../";window.currentCrate = "gobject_sys";</script><script src="../../aliases.js"></script><script src="../../main.js"></script><script defer src="../../search-index.js"></script></body></html>

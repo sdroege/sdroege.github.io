@@ -1,1 +1,1 @@
-initSidebarItems({"fn":[["get_type",""],["register_type",""]],"struct":[["ClassInitToken",""],["ClassStruct",""],["InstanceStruct",""],["TypeInitToken",""]],"trait":[["ImplTypeStatic",""],["ObjectClass",""],["ObjectImpl",""],["ObjectType",""]]});
+initSidebarItems({"struct":[["ElementInstanceStruct",""]],"trait":[["PanicPoison",""]]});

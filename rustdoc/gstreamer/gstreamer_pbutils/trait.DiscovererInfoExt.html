@@ -1,56 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="rustdoc">
-    <meta name="description" content="API documentation for the Rust `DiscovererInfoExt` trait in crate `gstreamer_pbutils`.">
-    <meta name="keywords" content="rust, rustlang, rust-lang, DiscovererInfoExt">
-
-    <title>gstreamer_pbutils::DiscovererInfoExt - Rust</title>
-
-    <link rel="stylesheet" type="text/css" href="../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
-    <link rel="stylesheet" type="text/css" href="../main.css">
-    
-
-    
-    
-</head>
-<body class="rustdoc trait">
-    <!--[if lte IE 8]>
-    <div class="warning">
-        This old browser is unsupported and will most likely display funky
-        things.
-    </div>
-    <![endif]-->
-
-    
-
-    <nav class="sidebar">
-        <div class="sidebar-menu">&#9776;</div>
-        
-        <p class='location'>Trait DiscovererInfoExt</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.copy">copy</a><a href="#tymethod.get_audio_streams">get_audio_streams</a><a href="#tymethod.get_container_streams">get_container_streams</a><a href="#tymethod.get_duration">get_duration</a><a href="#tymethod.get_live">get_live</a><a href="#tymethod.get_misc">get_misc</a><a href="#tymethod.get_missing_elements_installer_details">get_missing_elements_installer_details</a><a href="#tymethod.get_result">get_result</a><a href="#tymethod.get_seekable">get_seekable</a><a href="#tymethod.get_stream_info">get_stream_info</a><a href="#tymethod.get_stream_list">get_stream_list</a><a href="#tymethod.get_streams">get_streams</a><a href="#tymethod.get_subtitle_streams">get_subtitle_streams</a><a href="#tymethod.get_tags">get_tags</a><a href="#tymethod.get_toc">get_toc</a><a href="#tymethod.get_uri">get_uri</a><a href="#tymethod.get_video_streams">get_video_streams</a><a href="#tymethod.to_variant">to_variant</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='index.html'>gstreamer_pbutils</a></p><script>window.sidebarCurrent = {name: 'DiscovererInfoExt', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
-    </nav>
-
-    <nav class="sub">
-        <form class="search-form js-only">
-            <div class="search-container">
-                <input class="search-input" name="search"
-                       autocomplete="off"
-                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
-                       type="search">
-            </div>
-        </form>
-    </nav>
-
-    <section id='main' class="content">
-<h1 class='fqn'><span class='in-band'>Trait <a href='index.html'>gstreamer_pbutils</a>::<wbr><a class="trait" href=''>DiscovererInfoExt</a></span><span class='out-of-band'><span id='render-detail'>
-                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                       [<span class='inner'>&#x2212;</span>]
-                   </a>
-               </span><a class='srclink' href='../src/gstreamer_pbutils/auto/discoverer_info.rs.html#56-213' title='goto source code'>[src]</a></span></h1>
-<pre class='rust trait'>pub trait DiscovererInfoExt {
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="API documentation for the Rust `DiscovererInfoExt` trait in crate `gstreamer_pbutils`."><meta name="keywords" content="rust, rustlang, rust-lang, DiscovererInfoExt"><title>gstreamer_pbutils::DiscovererInfoExt - Rust</title><link rel="stylesheet" type="text/css" href="../normalize.css"><link rel="stylesheet" type="text/css" href="../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../dark.css"><link rel="stylesheet" type="text/css" href="../light.css" id="themeStyle"><script src="../storage.js"></script></head><body class="rustdoc trait"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><p class='location'>Trait DiscovererInfoExt</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.copy">copy</a><a href="#tymethod.get_audio_streams">get_audio_streams</a><a href="#tymethod.get_container_streams">get_container_streams</a><a href="#tymethod.get_duration">get_duration</a><a href="#tymethod.get_live">get_live</a><a href="#tymethod.get_misc">get_misc</a><a href="#tymethod.get_missing_elements_installer_details">get_missing_elements_installer_details</a><a href="#tymethod.get_result">get_result</a><a href="#tymethod.get_seekable">get_seekable</a><a href="#tymethod.get_stream_info">get_stream_info</a><a href="#tymethod.get_stream_list">get_stream_list</a><a href="#tymethod.get_streams">get_streams</a><a href="#tymethod.get_subtitle_streams">get_subtitle_streams</a><a href="#tymethod.get_tags">get_tags</a><a href="#tymethod.get_toc">get_toc</a><a href="#tymethod.get_uri">get_uri</a><a href="#tymethod.get_video_streams">get_video_streams</a><a href="#tymethod.to_variant">to_variant</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='index.html'>gstreamer_pbutils</a></p><script>window.sidebarCurrent = {name: 'DiscovererInfoExt', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script></div></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!"><img src="../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices"></div></div><script src="../theme.js"></script><nav class="sub"><form class="search-form js-only"><div class="search-container"><input class="search-input" name="search" autocomplete="off" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><a id="settings-menu" href="../settings.html"><img src="../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><h1 class='fqn'><span class='in-band'>Trait <a href='index.html'>gstreamer_pbutils</a>::<wbr><a class="trait" href=''>DiscovererInfoExt</a></span><span class='out-of-band'><span id='render-detail'><a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">[<span class='inner'>&#x2212;</span>]</a></span><a class='srclink' href='../src/gstreamer_pbutils/auto/discoverer_info.rs.html#56-213' title='goto source code'>[src]</a></span></h1><div class="docblock type-decl"><pre class='rust trait'>pub trait DiscovererInfoExt {
     fn <a href='#tymethod.copy' class='fnname'>copy</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer_pbutils/struct.DiscovererInfo.html" title="struct gstreamer_pbutils::DiscovererInfo">DiscovererInfo</a>;
 <div class='item-spacer'></div>    fn <a href='#tymethod.get_audio_streams' class='fnname'>get_audio_streams</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer_pbutils/struct.DiscovererStreamInfo.html" title="struct gstreamer_pbutils::DiscovererStreamInfo">DiscovererStreamInfo</a>&gt;;
 <div class='item-spacer'></div>    fn <a href='#tymethod.get_container_streams' class='fnname'>get_container_streams</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer_pbutils/struct.DiscovererStreamInfo.html" title="struct gstreamer_pbutils::DiscovererStreamInfo">DiscovererStreamInfo</a>&gt;;
@@ -69,184 +17,99 @@
 <div class='item-spacer'></div>    fn <a href='#tymethod.get_uri' class='fnname'>get_uri</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;;
 <div class='item-spacer'></div>    fn <a href='#tymethod.get_video_streams' class='fnname'>get_video_streams</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer_pbutils/struct.DiscovererStreamInfo.html" title="struct gstreamer_pbutils::DiscovererStreamInfo">DiscovererStreamInfo</a>&gt;;
 <div class='item-spacer'></div>    fn <a href='#tymethod.to_variant' class='fnname'>to_variant</a>(&amp;self, flags: <a class="struct" href="../gstreamer_pbutils/struct.DiscovererSerializeFlags.html" title="struct gstreamer_pbutils::DiscovererSerializeFlags">DiscovererSerializeFlags</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../glib/variant/struct.Variant.html" title="struct glib::variant::Variant">Variant</a>&gt;;
-}</pre><div class='docblock'><p>Trait containing all <code>DiscovererInfo</code> methods.</p>
-
-<h1 id='implementors-1' class='section-header'><a href='#implementors-1'>Implementors</a></h1>
+}</pre></div><div class='docblock'><p>Trait containing all <code>DiscovererInfo</code> methods.</p>
+<h1 id="implementors-1" class="section-header"><a href="#implementors-1">Implementors</a></h1>
 <p><a href="struct.DiscovererInfo.html"><code>DiscovererInfo</code></a></p>
 </div>
             <h2 id='required-methods' class='small-section-header'>
               Required Methods<a href='#required-methods' class='anchor'></a>
             </h2>
             <div class='methods'>
-        <h3 id='tymethod.copy' class='method'><span id='copy.v' class='invisible'><code>fn <a href='#tymethod.copy' class='fnname'>copy</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer_pbutils/struct.DiscovererInfo.html" title="struct gstreamer_pbutils::DiscovererInfo">DiscovererInfo</a></code></span></h3><div class='docblock'>
-<h1 id='returns' class='section-header'><a href='#returns'>Returns</a></h1>
+        <h3 id='tymethod.copy' class='method'><span id='copy.v' class='invisible'><code>fn <a href='#tymethod.copy' class='fnname'>copy</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer_pbutils/struct.DiscovererInfo.html" title="struct gstreamer_pbutils::DiscovererInfo">DiscovererInfo</a></code></span></h3><div class='docblock'><h1 id="returns" class="section-header"><a href="#returns">Returns</a></h1>
 <p>A copy of the <code>DiscovererInfo</code></p>
-</div><h3 id='tymethod.get_audio_streams' class='method'><span id='get_audio_streams.v' class='invisible'><code>fn <a href='#tymethod.get_audio_streams' class='fnname'>get_audio_streams</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer_pbutils/struct.DiscovererStreamInfo.html" title="struct gstreamer_pbutils::DiscovererStreamInfo">DiscovererStreamInfo</a>&gt;</code></span></h3><div class='docblock'><p>Finds all the <code>DiscovererAudioInfo</code> contained in <code>self</code></p>
-
-<h1 id='returns-1' class='section-header'><a href='#returns-1'>Returns</a></h1>
+</div><div class="important-traits"><div class='tooltip'>ⓘ<span class='tooltiptext'>Important traits for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</span></div><div class="content hidden"><h3 class="important">Important traits for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</h3><code class="content"><span class="where fmt-newline">impl <a class="trait" href="https://doc.rust-lang.org/nightly/std/io/trait.Write.html" title="trait std::io::Write">Write</a> for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</span></code></div></div><h3 id='tymethod.get_audio_streams' class='method'><span id='get_audio_streams.v' class='invisible'><code>fn <a href='#tymethod.get_audio_streams' class='fnname'>get_audio_streams</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer_pbutils/struct.DiscovererStreamInfo.html" title="struct gstreamer_pbutils::DiscovererStreamInfo">DiscovererStreamInfo</a>&gt;</code></span></h3><div class='docblock'><p>Finds all the <code>DiscovererAudioInfo</code> contained in <code>self</code></p>
+<h1 id="returns-1" class="section-header"><a href="#returns-1">Returns</a></h1>
 <p>A <code>glib::List</code> of
 matching <code>DiscovererStreamInfo</code>. The caller should free it with
 <code>DiscovererStreamInfo::list_free</code>.</p>
-</div><h3 id='tymethod.get_container_streams' class='method'><span id='get_container_streams.v' class='invisible'><code>fn <a href='#tymethod.get_container_streams' class='fnname'>get_container_streams</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer_pbutils/struct.DiscovererStreamInfo.html" title="struct gstreamer_pbutils::DiscovererStreamInfo">DiscovererStreamInfo</a>&gt;</code></span></h3><div class='docblock'><p>Finds all the <code>DiscovererContainerInfo</code> contained in <code>self</code></p>
-
-<h1 id='returns-2' class='section-header'><a href='#returns-2'>Returns</a></h1>
+</div><div class="important-traits"><div class='tooltip'>ⓘ<span class='tooltiptext'>Important traits for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</span></div><div class="content hidden"><h3 class="important">Important traits for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</h3><code class="content"><span class="where fmt-newline">impl <a class="trait" href="https://doc.rust-lang.org/nightly/std/io/trait.Write.html" title="trait std::io::Write">Write</a> for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</span></code></div></div><h3 id='tymethod.get_container_streams' class='method'><span id='get_container_streams.v' class='invisible'><code>fn <a href='#tymethod.get_container_streams' class='fnname'>get_container_streams</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer_pbutils/struct.DiscovererStreamInfo.html" title="struct gstreamer_pbutils::DiscovererStreamInfo">DiscovererStreamInfo</a>&gt;</code></span></h3><div class='docblock'><p>Finds all the <code>DiscovererContainerInfo</code> contained in <code>self</code></p>
+<h1 id="returns-2" class="section-header"><a href="#returns-2">Returns</a></h1>
 <p>A <code>glib::List</code> of
 matching <code>DiscovererStreamInfo</code>. The caller should free it with
 <code>DiscovererStreamInfo::list_free</code>.</p>
-</div><h3 id='tymethod.get_duration' class='method'><span id='get_duration.v' class='invisible'><code>fn <a href='#tymethod.get_duration' class='fnname'>get_duration</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer/clock_time/struct.ClockTime.html" title="struct gstreamer::clock_time::ClockTime">ClockTime</a></code></span></h3><div class='docblock'>
-<h1 id='returns-3' class='section-header'><a href='#returns-3'>Returns</a></h1>
+</div><h3 id='tymethod.get_duration' class='method'><span id='get_duration.v' class='invisible'><code>fn <a href='#tymethod.get_duration' class='fnname'>get_duration</a>(&amp;self) -&gt; <a class="struct" href="../gstreamer/clock_time/struct.ClockTime.html" title="struct gstreamer::clock_time::ClockTime">ClockTime</a></code></span></h3><div class='docblock'><h1 id="returns-3" class="section-header"><a href="#returns-3">Returns</a></h1>
 <p>the duration of the URI in <code>gst::ClockTime</code> (nanoseconds).</p>
 </div><h3 id='tymethod.get_live' class='method'><span id='get_live.v' class='invisible'><code>fn <a href='#tymethod.get_live' class='fnname'>get_live</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><p>Feature: <code>v1_14</code></p>
-
-<h1 id='returns-4' class='section-header'><a href='#returns-4'>Returns</a></h1>
+<h1 id="returns-4" class="section-header"><a href="#returns-4">Returns</a></h1>
 <p>whether the URI is live.</p>
-</div><h3 id='tymethod.get_misc' class='method'><span id='get_misc.v' class='invisible'><code>fn <a href='#tymethod.get_misc' class='fnname'>get_misc</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/structure/struct.Structure.html" title="struct gstreamer::structure::Structure">Structure</a>&gt;</code></span></h3><div class='docblock'>
-<h1 id='deprecated' class='section-header'><a href='#deprecated'>Deprecated</a></h1>
+</div><h3 id='tymethod.get_misc' class='method'><span id='get_misc.v' class='invisible'><code>fn <a href='#tymethod.get_misc' class='fnname'>get_misc</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer/structure/struct.Structure.html" title="struct gstreamer::structure::Structure">Structure</a>&gt;</code></span></h3><div class='docblock'><h1 id="deprecated" class="section-header"><a href="#deprecated">Deprecated</a></h1>
 <p>This functions is deprecated since version 1.4, use
 <code>DiscovererInfoExt::get_missing_elements_installer_details</code></p>
-
-<h1 id='returns-5' class='section-header'><a href='#returns-5'>Returns</a></h1>
+<h1 id="returns-5" class="section-header"><a href="#returns-5">Returns</a></h1>
 <p>Miscellaneous information stored as a <code>gst::Structure</code>
 (for example: information about missing plugins). If you wish to use the
 <code>gst::Structure</code> after the life-time of <code>self</code>, you will need to copy it.</p>
-</div><h3 id='tymethod.get_missing_elements_installer_details' class='method'><span id='get_missing_elements_installer_details.v' class='invisible'><code>fn <a href='#tymethod.get_missing_elements_installer_details' class='fnname'>get_missing_elements_installer_details</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span></h3><div class='docblock'><p>Get the installer details for missing elements</p>
-
-<h1 id='returns-6' class='section-header'><a href='#returns-6'>Returns</a></h1>
+</div><div class="important-traits"><div class='tooltip'>ⓘ<span class='tooltiptext'>Important traits for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</span></div><div class="content hidden"><h3 class="important">Important traits for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</h3><code class="content"><span class="where fmt-newline">impl <a class="trait" href="https://doc.rust-lang.org/nightly/std/io/trait.Write.html" title="trait std::io::Write">Write</a> for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</span></code></div></div><h3 id='tymethod.get_missing_elements_installer_details' class='method'><span id='get_missing_elements_installer_details.v' class='invisible'><code>fn <a href='#tymethod.get_missing_elements_installer_details' class='fnname'>get_missing_elements_installer_details</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span></h3><div class='docblock'><p>Get the installer details for missing elements</p>
+<h1 id="returns-6" class="section-header"><a href="#returns-6">Returns</a></h1>
 <p>An array of strings
 containing informations about how to install the various missing elements
 for <code>self</code> to be usable. If you wish to use the strings after the life-time
 of <code>self</code>, you will need to copy them.</p>
-</div><h3 id='tymethod.get_result' class='method'><span id='get_result.v' class='invisible'><code>fn <a href='#tymethod.get_result' class='fnname'>get_result</a>(&amp;self) -&gt; <a class="enum" href="../gstreamer_pbutils/enum.DiscovererResult.html" title="enum gstreamer_pbutils::DiscovererResult">DiscovererResult</a></code></span></h3><div class='docblock'>
-<h1 id='returns-7' class='section-header'><a href='#returns-7'>Returns</a></h1>
+</div><h3 id='tymethod.get_result' class='method'><span id='get_result.v' class='invisible'><code>fn <a href='#tymethod.get_result' class='fnname'>get_result</a>(&amp;self) -&gt; <a class="enum" href="../gstreamer_pbutils/enum.DiscovererResult.html" title="enum gstreamer_pbutils::DiscovererResult">DiscovererResult</a></code></span></h3><div class='docblock'><h1 id="returns-7" class="section-header"><a href="#returns-7">Returns</a></h1>
 <p>the result of the discovery as a <code>DiscovererResult</code>.</p>
-</div><h3 id='tymethod.get_seekable' class='method'><span id='get_seekable.v' class='invisible'><code>fn <a href='#tymethod.get_seekable' class='fnname'>get_seekable</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'>
-<h1 id='returns-8' class='section-header'><a href='#returns-8'>Returns</a></h1>
+</div><h3 id='tymethod.get_seekable' class='method'><span id='get_seekable.v' class='invisible'><code>fn <a href='#tymethod.get_seekable' class='fnname'>get_seekable</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h3><div class='docblock'><h1 id="returns-8" class="section-header"><a href="#returns-8">Returns</a></h1>
 <p>the whether the URI is seekable.</p>
-</div><h3 id='tymethod.get_stream_info' class='method'><span id='get_stream_info.v' class='invisible'><code>fn <a href='#tymethod.get_stream_info' class='fnname'>get_stream_info</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer_pbutils/struct.DiscovererStreamInfo.html" title="struct gstreamer_pbutils::DiscovererStreamInfo">DiscovererStreamInfo</a>&gt;</code></span></h3><div class='docblock'>
-<h1 id='returns-9' class='section-header'><a href='#returns-9'>Returns</a></h1>
+</div><h3 id='tymethod.get_stream_info' class='method'><span id='get_stream_info.v' class='invisible'><code>fn <a href='#tymethod.get_stream_info' class='fnname'>get_stream_info</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../gstreamer_pbutils/struct.DiscovererStreamInfo.html" title="struct gstreamer_pbutils::DiscovererStreamInfo">DiscovererStreamInfo</a>&gt;</code></span></h3><div class='docblock'><h1 id="returns-9" class="section-header"><a href="#returns-9">Returns</a></h1>
 <p>the structure (or topology) of the URI as a
 <code>DiscovererStreamInfo</code>.
 This structure can be traversed to see the original hierarchy. Unref with
 <code>gst_discoverer_stream_info_unref</code> after usage.</p>
-</div><h3 id='tymethod.get_stream_list' class='method'><span id='get_stream_list.v' class='invisible'><code>fn <a href='#tymethod.get_stream_list' class='fnname'>get_stream_list</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer_pbutils/struct.DiscovererStreamInfo.html" title="struct gstreamer_pbutils::DiscovererStreamInfo">DiscovererStreamInfo</a>&gt;</code></span></h3><div class='docblock'>
-<h1 id='returns-10' class='section-header'><a href='#returns-10'>Returns</a></h1>
+</div><div class="important-traits"><div class='tooltip'>ⓘ<span class='tooltiptext'>Important traits for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</span></div><div class="content hidden"><h3 class="important">Important traits for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</h3><code class="content"><span class="where fmt-newline">impl <a class="trait" href="https://doc.rust-lang.org/nightly/std/io/trait.Write.html" title="trait std::io::Write">Write</a> for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</span></code></div></div><h3 id='tymethod.get_stream_list' class='method'><span id='get_stream_list.v' class='invisible'><code>fn <a href='#tymethod.get_stream_list' class='fnname'>get_stream_list</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer_pbutils/struct.DiscovererStreamInfo.html" title="struct gstreamer_pbutils::DiscovererStreamInfo">DiscovererStreamInfo</a>&gt;</code></span></h3><div class='docblock'><h1 id="returns-10" class="section-header"><a href="#returns-10">Returns</a></h1>
 <p>the list of
 all streams contained in the <code>info</code>. Free after usage
 with <code>DiscovererStreamInfo::list_free</code>.</p>
-</div><h3 id='tymethod.get_streams' class='method'><span id='get_streams.v' class='invisible'><code>fn <a href='#tymethod.get_streams' class='fnname'>get_streams</a>(&amp;self, streamtype: <a class="enum" href="../gstreamer_pbutils/enum.Type.html" title="enum gstreamer_pbutils::Type">Type</a>) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer_pbutils/struct.DiscovererStreamInfo.html" title="struct gstreamer_pbutils::DiscovererStreamInfo">DiscovererStreamInfo</a>&gt;</code></span></h3><div class='docblock'><p>Finds the <code>DiscovererStreamInfo</code> contained in <code>self</code> that match the
+</div><div class="important-traits"><div class='tooltip'>ⓘ<span class='tooltiptext'>Important traits for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</span></div><div class="content hidden"><h3 class="important">Important traits for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</h3><code class="content"><span class="where fmt-newline">impl <a class="trait" href="https://doc.rust-lang.org/nightly/std/io/trait.Write.html" title="trait std::io::Write">Write</a> for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</span></code></div></div><h3 id='tymethod.get_streams' class='method'><span id='get_streams.v' class='invisible'><code>fn <a href='#tymethod.get_streams' class='fnname'>get_streams</a>(&amp;self, streamtype: <a class="enum" href="../gstreamer_pbutils/enum.Type.html" title="enum gstreamer_pbutils::Type">Type</a>) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer_pbutils/struct.DiscovererStreamInfo.html" title="struct gstreamer_pbutils::DiscovererStreamInfo">DiscovererStreamInfo</a>&gt;</code></span></h3><div class='docblock'><p>Finds the <code>DiscovererStreamInfo</code> contained in <code>self</code> that match the
 given <code>streamtype</code>.</p>
-
-<h2 id='streamtype' class='section-header'><a href='#streamtype'><code>streamtype</code></a></h2>
+<h2 id="streamtype" class="section-header"><a href="#streamtype"><code>streamtype</code></a></h2>
 <p>a <code>glib::Type</code> derived from <code>DiscovererStreamInfo</code></p>
-
-<h1 id='returns-11' class='section-header'><a href='#returns-11'>Returns</a></h1>
+<h1 id="returns-11" class="section-header"><a href="#returns-11">Returns</a></h1>
 <p>A <code>glib::List</code> of
 matching <code>DiscovererStreamInfo</code>. The caller should free it with
 <code>DiscovererStreamInfo::list_free</code>.</p>
-</div><h3 id='tymethod.get_subtitle_streams' class='method'><span id='get_subtitle_streams.v' class='invisible'><code>fn <a href='#tymethod.get_subtitle_streams' class='fnname'>get_subtitle_streams</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer_pbutils/struct.DiscovererStreamInfo.html" title="struct gstreamer_pbutils::DiscovererStreamInfo">DiscovererStreamInfo</a>&gt;</code></span></h3><div class='docblock'><p>Finds all the <code>DiscovererSubtitleInfo</code> contained in <code>self</code></p>
-
-<h1 id='returns-12' class='section-header'><a href='#returns-12'>Returns</a></h1>
+</div><div class="important-traits"><div class='tooltip'>ⓘ<span class='tooltiptext'>Important traits for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</span></div><div class="content hidden"><h3 class="important">Important traits for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</h3><code class="content"><span class="where fmt-newline">impl <a class="trait" href="https://doc.rust-lang.org/nightly/std/io/trait.Write.html" title="trait std::io::Write">Write</a> for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</span></code></div></div><h3 id='tymethod.get_subtitle_streams' class='method'><span id='get_subtitle_streams.v' class='invisible'><code>fn <a href='#tymethod.get_subtitle_streams' class='fnname'>get_subtitle_streams</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer_pbutils/struct.DiscovererStreamInfo.html" title="struct gstreamer_pbutils::DiscovererStreamInfo">DiscovererStreamInfo</a>&gt;</code></span></h3><div class='docblock'><p>Finds all the <code>DiscovererSubtitleInfo</code> contained in <code>self</code></p>
+<h1 id="returns-12" class="section-header"><a href="#returns-12">Returns</a></h1>
 <p>A <code>glib::List</code> of
 matching <code>DiscovererStreamInfo</code>. The caller should free it with
 <code>DiscovererStreamInfo::list_free</code>.</p>
-</div><h3 id='tymethod.get_tags' class='method'><span id='get_tags.v' class='invisible'><code>fn <a href='#tymethod.get_tags' class='fnname'>get_tags</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../gstreamer/tags/type.TagList.html" title="type gstreamer::tags::TagList">TagList</a>&gt;</code></span></h3><div class='docblock'>
-<h1 id='returns-13' class='section-header'><a href='#returns-13'>Returns</a></h1>
+</div><h3 id='tymethod.get_tags' class='method'><span id='get_tags.v' class='invisible'><code>fn <a href='#tymethod.get_tags' class='fnname'>get_tags</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../gstreamer/tags/type.TagList.html" title="type gstreamer::tags::TagList">TagList</a>&gt;</code></span></h3><div class='docblock'><h1 id="returns-13" class="section-header"><a href="#returns-13">Returns</a></h1>
 <p>all tags contained in the URI. If you wish to use
 the tags after the life-time of <code>self</code>, you will need to copy them.</p>
-</div><h3 id='tymethod.get_toc' class='method'><span id='get_toc.v' class='invisible'><code>fn <a href='#tymethod.get_toc' class='fnname'>get_toc</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../gstreamer/toc/type.Toc.html" title="type gstreamer::toc::Toc">Toc</a>&gt;</code></span></h3><div class='docblock'>
-<h1 id='returns-14' class='section-header'><a href='#returns-14'>Returns</a></h1>
+</div><h3 id='tymethod.get_toc' class='method'><span id='get_toc.v' class='invisible'><code>fn <a href='#tymethod.get_toc' class='fnname'>get_toc</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="type" href="../gstreamer/toc/type.Toc.html" title="type gstreamer::toc::Toc">Toc</a>&gt;</code></span></h3><div class='docblock'><h1 id="returns-14" class="section-header"><a href="#returns-14">Returns</a></h1>
 <p>TOC contained in the URI. If you wish to use
 the TOC after the life-time of <code>self</code>, you will need to copy it.</p>
-</div><h3 id='tymethod.get_uri' class='method'><span id='get_uri.v' class='invisible'><code>fn <a href='#tymethod.get_uri' class='fnname'>get_uri</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span></h3><div class='docblock'>
-<h1 id='returns-15' class='section-header'><a href='#returns-15'>Returns</a></h1>
+</div><h3 id='tymethod.get_uri' class='method'><span id='get_uri.v' class='invisible'><code>fn <a href='#tymethod.get_uri' class='fnname'>get_uri</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span></h3><div class='docblock'><h1 id="returns-15" class="section-header"><a href="#returns-15">Returns</a></h1>
 <p>the URI to which this information corresponds to.
 Copy it if you wish to use it after the life-time of <code>self</code>.</p>
-</div><h3 id='tymethod.get_video_streams' class='method'><span id='get_video_streams.v' class='invisible'><code>fn <a href='#tymethod.get_video_streams' class='fnname'>get_video_streams</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer_pbutils/struct.DiscovererStreamInfo.html" title="struct gstreamer_pbutils::DiscovererStreamInfo">DiscovererStreamInfo</a>&gt;</code></span></h3><div class='docblock'><p>Finds all the <code>DiscovererVideoInfo</code> contained in <code>self</code></p>
-
-<h1 id='returns-16' class='section-header'><a href='#returns-16'>Returns</a></h1>
+</div><div class="important-traits"><div class='tooltip'>ⓘ<span class='tooltiptext'>Important traits for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</span></div><div class="content hidden"><h3 class="important">Important traits for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</h3><code class="content"><span class="where fmt-newline">impl <a class="trait" href="https://doc.rust-lang.org/nightly/std/io/trait.Write.html" title="trait std::io::Write">Write</a> for <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;</span></code></div></div><h3 id='tymethod.get_video_streams' class='method'><span id='get_video_streams.v' class='invisible'><code>fn <a href='#tymethod.get_video_streams' class='fnname'>get_video_streams</a>(&amp;self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../gstreamer_pbutils/struct.DiscovererStreamInfo.html" title="struct gstreamer_pbutils::DiscovererStreamInfo">DiscovererStreamInfo</a>&gt;</code></span></h3><div class='docblock'><p>Finds all the <code>DiscovererVideoInfo</code> contained in <code>self</code></p>
+<h1 id="returns-16" class="section-header"><a href="#returns-16">Returns</a></h1>
 <p>A <code>glib::List</code> of
 matching <code>DiscovererStreamInfo</code>. The caller should free it with
 <code>DiscovererStreamInfo::list_free</code>.</p>
 </div><h3 id='tymethod.to_variant' class='method'><span id='to_variant.v' class='invisible'><code>fn <a href='#tymethod.to_variant' class='fnname'>to_variant</a>(&amp;self, flags: <a class="struct" href="../gstreamer_pbutils/struct.DiscovererSerializeFlags.html" title="struct gstreamer_pbutils::DiscovererSerializeFlags">DiscovererSerializeFlags</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../glib/variant/struct.Variant.html" title="struct glib::variant::Variant">Variant</a>&gt;</code></span></h3><div class='docblock'><p>Serializes <code>self</code> to a <code>glib::Variant</code> that can be parsed again
 through <code>DiscovererInfo::from_variant</code>.</p>
-
 <p>Note that any <code>gst::Toc</code> (s) that might have been discovered will not be serialized
 for now.</p>
-
-<h2 id='flags' class='section-header'><a href='#flags'><code>flags</code></a></h2>
+<h2 id="flags" class="section-header"><a href="#flags"><code>flags</code></a></h2>
 <p>A combination of <code>DiscovererSerializeFlags</code> to specify
 what needs to be serialized.</p>
-
-<h1 id='returns-17' class='section-header'><a href='#returns-17'>Returns</a></h1>
+<h1 id="returns-17" class="section-header"><a href="#returns-17">Returns</a></h1>
 <p>A newly-allocated <code>glib::Variant</code> representing <code>self</code>.</p>
 </div></div>
         <h2 id='implementors' class='small-section-header'>
           Implementors<a href='#implementors' class='anchor'></a>
         </h2>
         <ul class='item-list' id='implementors-list'>
-    <li><code>impl&lt;O:&nbsp;<a class="trait" href="../gstreamer_pbutils/trait.IsA.html" title="trait gstreamer_pbutils::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer_pbutils/struct.DiscovererInfo.html" title="struct gstreamer_pbutils::DiscovererInfo">DiscovererInfo</a>&gt;&gt; DiscovererInfoExt for O</code></li>
-</ul><script type="text/javascript" async
+    <li><table class='table-display'><tbody><tr><td><code>impl&lt;O:&nbsp;<a class="trait" href="../gstreamer_pbutils/prelude/trait.IsA.html" title="trait gstreamer_pbutils::prelude::IsA">IsA</a>&lt;<a class="struct" href="../gstreamer_pbutils/struct.DiscovererInfo.html" title="struct gstreamer_pbutils::DiscovererInfo">DiscovererInfo</a>&gt;&gt; DiscovererInfoExt for O</code><td><div class='out-of-band'><a class='srclink' href='../src/gstreamer_pbutils/auto/discoverer_info.rs.html#215-324' title='goto source code'>[src]</a></div></td></tr></tbody></table></li>
+</ul><script type="text/javascript">window.inlined_types=new Set([]);</script><script type="text/javascript" async
                          src="../implementors/gstreamer_pbutils/trait.DiscovererInfoExt.js">
-                 </script></section>
-    <section id='search' class="content hidden"></section>
-
-    <section class="footer"></section>
-
-    <aside id="help" class="hidden">
-        <div>
-            <h1 class="hidden">Help</h1>
-
-            <div class="shortcuts">
-                <h2>Keyboard Shortcuts</h2>
-
-                <dl>
-                    <dt>?</dt>
-                    <dd>Show this help dialog</dd>
-                    <dt>S</dt>
-                    <dd>Focus the search field</dd>
-                    <dt>↑</dt>
-                    <dd>Move up in search results</dd>
-                    <dt>↓</dt>
-                    <dd>Move down in search results</dd>
-                    <dt>↹</dt>
-                    <dd>Switch tab</dd>
-                    <dt>&#9166;</dt>
-                    <dd>Go to active search result</dd>
-                    <dt style="width:31px;">+ / -</dt>
-                    <dd>Collapse/expand all sections</dd>
-                </dl>
-            </div>
-
-            <div class="infos">
-                <h2>Search Tricks</h2>
-
-                <p>
-                    Prefix searches with a type followed by a colon (e.g.
-                    <code>fn:</code>) to restrict the search to a given type.
-                </p>
-
-                <p>
-                    Accepted types are: <code>fn</code>, <code>mod</code>,
-                    <code>struct</code>, <code>enum</code>,
-                    <code>trait</code>, <code>type</code>, <code>macro</code>,
-                    and <code>const</code>.
-                </p>
-
-                <p>
-                    Search functions by type signature (e.g.
-                    <code>vec -> usize</code> or <code>* -> vec</code>)
-                </p>
-            </div>
-        </div>
-    </aside>
-
-    
-
-    <script>
-        window.rootPath = "../";
-        window.currentCrate = "gstreamer_pbutils";
-    </script>
-    <script src="../main.js"></script>
-    <script defer src="../search-index.js"></script>
-</body>
-</html>
+                 </script></section><section id="search" class="content hidden"></section><section class="footer"></section><aside id="help" class="hidden"><div><h1 class="hidden">Help</h1><div class="shortcuts"><h2>Keyboard Shortcuts</h2><dl><dt><kbd>?</kbd></dt><dd>Show this help dialog</dd><dt><kbd>S</kbd></dt><dd>Focus the search field</dd><dt><kbd>↑</kbd></dt><dd>Move up in search results</dd><dt><kbd>↓</kbd></dt><dd>Move down in search results</dd><dt><kbd>↹</kbd></dt><dd>Switch tab</dd><dt><kbd>&#9166;</kbd></dt><dd>Go to active search result</dd><dt><kbd>+</kbd></dt><dd>Expand all sections</dd><dt><kbd>-</kbd></dt><dd>Collapse all sections</dd></dl></div><div class="infos"><h2>Search Tricks</h2><p>Prefix searches with a type followed by a colon (e.g. <code>fn:</code>) to restrict the search to a given type.</p><p>Accepted types are: <code>fn</code>, <code>mod</code>, <code>struct</code>, <code>enum</code>, <code>trait</code>, <code>type</code>, <code>macro</code>, and <code>const</code>.</p><p>Search functions by type signature (e.g. <code>vec -> usize</code> or <code>* -> vec</code>)</p><p>Search multiple things at once by splitting your query with comma (e.g. <code>str,u8</code> or <code>String,struct:Vec,test</code>)</p></div></div></aside><script>window.rootPath = "../";window.currentCrate = "gstreamer_pbutils";</script><script src="../aliases.js"></script><script src="../main.js"></script><script defer src="../search-index.js"></script></body></html>

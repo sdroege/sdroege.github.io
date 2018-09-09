@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["get_type",""],["register_type",""]],"struct":[["ClassInitToken",""],["ClassStruct",""],["InstanceStruct",""],["Object",""],["TypeInitToken",""]],"trait":[["ImplTypeStatic",""],["Instance",""],["ObjectBase",""],["ObjectClassExt",""],["ObjectImpl",""],["ObjectType",""]],"type":[["ObjectClass",""]]});

@@ -1,57 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="rustdoc">
-    <meta name="description" content="API documentation for the Rust `gstreamer` crate.">
-    <meta name="keywords" content="rust, rustlang, rust-lang, gstreamer">
-
-    <title>gstreamer - Rust</title>
-
-    <link rel="stylesheet" type="text/css" href="../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
-    <link rel="stylesheet" type="text/css" href="../main.css">
-    
-
-    
-    
-</head>
-<body class="rustdoc mod">
-    <!--[if lte IE 8]>
-    <div class="warning">
-        This old browser is unsupported and will most likely display funky
-        things.
-    </div>
-    <![endif]-->
-
-    
-
-    <nav class="sidebar">
-        <div class="sidebar-menu">&#9776;</div>
-        
-        <p class='location'>Crate gstreamer</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#reexports">Reexports</a></li><li><a href="#modules">Modules</a></li><li><a href="#macros">Macros</a></li><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#constants">Constants</a></li><li><a href="#traits">Traits</a></li><li><a href="#functions">Functions</a></li><li><a href="#types">Type Definitions</a></li></ul></div><p class='location'></p><script>window.sidebarCurrent = {name: 'gstreamer', ty: 'mod', relpath: '../'};</script></div>
-    </nav>
-
-    <nav class="sub">
-        <form class="search-form js-only">
-            <div class="search-container">
-                <input class="search-input" name="search"
-                       autocomplete="off"
-                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
-                       type="search">
-            </div>
-        </form>
-    </nav>
-
-    <section id='main' class="content">
-<h1 class='fqn'><span class='in-band'>Crate <a class="mod" href=''>gstreamer</a></span><span class='out-of-band'><span id='render-detail'>
-                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                       [<span class='inner'>&#x2212;</span>]
-                   </a>
-               </span><a class='srclink' href='../src/gstreamer/lib.rs.html#9-274' title='goto source code'>[src]</a></span></h1>
-<h2 id='reexports' class='section-header'><a href="#reexports">Reexports</a></h2>
-<table><tr><td><code>pub use miniobject::<a class="struct" href="../gstreamer/miniobject/struct.GstRc.html" title="struct gstreamer::miniobject::GstRc">GstRc</a>;</code></td></tr><tr><td><code>pub use miniobject::<a class="trait" href="../gstreamer/miniobject/trait.MiniObject.html" title="trait gstreamer::miniobject::MiniObject">MiniObject</a>;</code></td></tr><tr><td><code>pub use message::<a class="type" href="../gstreamer/message/type.Message.html" title="type gstreamer::message::Message">Message</a>;</code></td></tr><tr><td><code>pub use message::<a class="trait" href="../gstreamer/message/trait.MessageErrorDomain.html" title="trait gstreamer::message::MessageErrorDomain">MessageErrorDomain</a>;</code></td></tr><tr><td><code>pub use message::<a class="struct" href="../gstreamer/message/struct.MessageRef.html" title="struct gstreamer::message::MessageRef">MessageRef</a>;</code></td></tr><tr><td><code>pub use message::<a class="enum" href="../gstreamer/message/enum.MessageView.html" title="enum gstreamer::message::MessageView">MessageView</a>;</code></td></tr><tr><td><code>pub use structure::<a class="struct" href="../gstreamer/structure/struct.Structure.html" title="struct gstreamer::structure::Structure">Structure</a>;</code></td></tr><tr><td><code>pub use structure::<a class="struct" href="../gstreamer/structure/struct.StructureRef.html" title="struct gstreamer::structure::StructureRef">StructureRef</a>;</code></td></tr><tr><td><code>pub use caps::<a class="type" href="../gstreamer/caps/type.Caps.html" title="type gstreamer::caps::Caps">Caps</a>;</code></td></tr><tr><td><code>pub use caps::<a class="struct" href="../gstreamer/caps/struct.CapsRef.html" title="struct gstreamer::caps::CapsRef">CapsRef</a>;</code></td></tr><tr><td><code>pub use tags::<a class="trait" href="../gstreamer/tags/trait.Tag.html" title="trait gstreamer::tags::Tag">Tag</a>;</code></td></tr><tr><td><code>pub use tags::<a class="type" href="../gstreamer/tags/type.TagList.html" title="type gstreamer::tags::TagList">TagList</a>;</code></td></tr><tr><td><code>pub use tags::<a class="struct" href="../gstreamer/tags/struct.TagListRef.html" title="struct gstreamer::tags::TagListRef">TagListRef</a>;</code></td></tr><tr><td><code>pub use buffer::<a class="type" href="../gstreamer/buffer/type.Buffer.html" title="type gstreamer::buffer::Buffer">Buffer</a>;</code></td></tr><tr><td><code>pub use buffer::<a class="struct" href="../gstreamer/buffer/struct.BufferMap.html" title="struct gstreamer::buffer::BufferMap">BufferMap</a>;</code></td></tr><tr><td><code>pub use buffer::<a class="struct" href="../gstreamer/buffer/struct.BufferRef.html" title="struct gstreamer::buffer::BufferRef">BufferRef</a>;</code></td></tr><tr><td><code>pub use buffer::<a class="struct" href="../gstreamer/buffer/struct.MappedBuffer.html" title="struct gstreamer::buffer::MappedBuffer">MappedBuffer</a>;</code></td></tr><tr><td><code>pub use buffer::<a class="struct" href="../gstreamer/buffer/struct.BUFFER_COPY_ALL.html" title="struct gstreamer::buffer::BUFFER_COPY_ALL">BUFFER_COPY_ALL</a>;</code></td></tr><tr><td><code>pub use buffer::<a class="struct" href="../gstreamer/buffer/struct.BUFFER_COPY_METADATA.html" title="struct gstreamer::buffer::BUFFER_COPY_METADATA">BUFFER_COPY_METADATA</a>;</code></td></tr><tr><td><code>pub use sample::<a class="type" href="../gstreamer/sample/type.Sample.html" title="type gstreamer::sample::Sample">Sample</a>;</code></td></tr><tr><td><code>pub use sample::<a class="struct" href="../gstreamer/sample/struct.SampleRef.html" title="struct gstreamer::sample::SampleRef">SampleRef</a>;</code></td></tr><tr><td><code>pub use bufferlist::<a class="type" href="../gstreamer/bufferlist/type.BufferList.html" title="type gstreamer::bufferlist::BufferList">BufferList</a>;</code></td></tr><tr><td><code>pub use bufferlist::<a class="struct" href="../gstreamer/bufferlist/struct.BufferListRef.html" title="struct gstreamer::bufferlist::BufferListRef">BufferListRef</a>;</code></td></tr><tr><td><code>pub use query::<a class="type" href="../gstreamer/query/type.Query.html" title="type gstreamer::query::Query">Query</a>;</code></td></tr><tr><td><code>pub use query::<a class="struct" href="../gstreamer/query/struct.QueryRef.html" title="struct gstreamer::query::QueryRef">QueryRef</a>;</code></td></tr><tr><td><code>pub use query::<a class="enum" href="../gstreamer/query/enum.QueryView.html" title="enum gstreamer::query::QueryView">QueryView</a>;</code></td></tr><tr><td><code>pub use event::<a class="type" href="../gstreamer/event/type.Event.html" title="type gstreamer::event::Event">Event</a>;</code></td></tr><tr><td><code>pub use event::<a class="struct" href="../gstreamer/event/struct.EventRef.html" title="struct gstreamer::event::EventRef">EventRef</a>;</code></td></tr><tr><td><code>pub use event::<a class="enum" href="../gstreamer/event/enum.EventView.html" title="enum gstreamer::event::EventView">EventView</a>;</code></td></tr><tr><td><code>pub use event::<a class="struct" href="../gstreamer/event/struct.GroupId.html" title="struct gstreamer::event::GroupId">GroupId</a>;</code></td></tr><tr><td><code>pub use event::<a class="struct" href="../gstreamer/event/struct.Seqnum.html" title="struct gstreamer::event::Seqnum">Seqnum</a>;</code></td></tr><tr><td><code>pub use event::<a class="constant" href="../gstreamer/event/constant.GROUP_ID_INVALID.html" title="constant gstreamer::event::GROUP_ID_INVALID">GROUP_ID_INVALID</a>;</code></td></tr><tr><td><code>pub use event::<a class="constant" href="../gstreamer/event/constant.SEQNUM_INVALID.html" title="constant gstreamer::event::SEQNUM_INVALID">SEQNUM_INVALID</a>;</code></td></tr><tr><td><code>pub use context::<a class="type" href="../gstreamer/context/type.Context.html" title="type gstreamer::context::Context">Context</a>;</code></td></tr><tr><td><code>pub use context::<a class="struct" href="../gstreamer/context/struct.ContextRef.html" title="struct gstreamer::context::ContextRef">ContextRef</a>;</code></td></tr><tr><td><code>pub use format::<a class="trait" href="../gstreamer/format/trait.FormattedValue.html" title="trait gstreamer::format::FormattedValue">FormattedValue</a>;</code></td></tr><tr><td><code>pub use format::<a class="enum" href="../gstreamer/format/enum.GenericFormattedValue.html" title="enum gstreamer::format::GenericFormattedValue">GenericFormattedValue</a>;</code></td></tr><tr><td><code>pub use format::<a class="trait" href="../gstreamer/format/trait.SpecificFormattedValue.html" title="trait gstreamer::format::SpecificFormattedValue">SpecificFormattedValue</a>;</code></td></tr><tr><td><code>pub use toc::<a class="type" href="../gstreamer/toc/type.Toc.html" title="type gstreamer::toc::Toc">Toc</a>;</code></td></tr><tr><td><code>pub use toc::<a class="type" href="../gstreamer/toc/type.TocEntry.html" title="type gstreamer::toc::TocEntry">TocEntry</a>;</code></td></tr><tr><td><code>pub use toc::<a class="struct" href="../gstreamer/toc/struct.TocEntryRef.html" title="struct gstreamer::toc::TocEntryRef">TocEntryRef</a>;</code></td></tr><tr><td><code>pub use toc::<a class="struct" href="../gstreamer/toc/struct.TocRef.html" title="struct gstreamer::toc::TocRef">TocRef</a>;</code></td></tr><tr><td><code>pub use <a class="mod" href="../gstreamer/functions/index.html" title="mod gstreamer::functions">functions</a>::*;</code></td></tr></table><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="API documentation for the Rust `gstreamer` crate."><meta name="keywords" content="rust, rustlang, rust-lang, gstreamer"><title>gstreamer - Rust</title><link rel="stylesheet" type="text/css" href="../normalize.css"><link rel="stylesheet" type="text/css" href="../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../dark.css"><link rel="stylesheet" type="text/css" href="../light.css" id="themeStyle"><script src="../storage.js"></script></head><body class="rustdoc mod"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><p class='location'>Crate gstreamer</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#reexports">Re-exports</a></li><li><a href="#modules">Modules</a></li><li><a href="#macros">Macros</a></li><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#constants">Constants</a></li><li><a href="#traits">Traits</a></li><li><a href="#functions">Functions</a></li><li><a href="#types">Type Definitions</a></li></ul></div><p class='location'></p><script>window.sidebarCurrent = {name: 'gstreamer', ty: 'mod', relpath: '../'};</script></div></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!"><img src="../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices"></div></div><script src="../theme.js"></script><nav class="sub"><form class="search-form js-only"><div class="search-container"><input class="search-input" name="search" autocomplete="off" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><a id="settings-menu" href="../settings.html"><img src="../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><h1 class='fqn'><span class='in-band'>Crate <a class="mod" href=''>gstreamer</a></span><span class='out-of-band'><span id='render-detail'><a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">[<span class='inner'>&#x2212;</span>]</a></span><a class='srclink' href='../src/gstreamer/lib.rs.html#9-320' title='goto source code'>[src]</a></span></h1><h2 id='reexports' class='section-header'><a href="#reexports">Re-exports</a></h2>
+<table><tr><td><code>pub use miniobject::<a class="struct" href="../gstreamer/miniobject/struct.GstRc.html" title="struct gstreamer::miniobject::GstRc">GstRc</a>;</code></td></tr><tr><td><code>pub use miniobject::<a class="trait" href="../gstreamer/miniobject/trait.MiniObject.html" title="trait gstreamer::miniobject::MiniObject">MiniObject</a>;</code></td></tr><tr><td><code>pub use message::<a class="type" href="../gstreamer/message/type.Message.html" title="type gstreamer::message::Message">Message</a>;</code></td></tr><tr><td><code>pub use message::<a class="trait" href="../gstreamer/message/trait.MessageErrorDomain.html" title="trait gstreamer::message::MessageErrorDomain">MessageErrorDomain</a>;</code></td></tr><tr><td><code>pub use message::<a class="struct" href="../gstreamer/message/struct.MessageRef.html" title="struct gstreamer::message::MessageRef">MessageRef</a>;</code></td></tr><tr><td><code>pub use message::<a class="enum" href="../gstreamer/message/enum.MessageView.html" title="enum gstreamer::message::MessageView">MessageView</a>;</code></td></tr><tr><td><code>pub use structure::<a class="struct" href="../gstreamer/structure/struct.Structure.html" title="struct gstreamer::structure::Structure">Structure</a>;</code></td></tr><tr><td><code>pub use structure::<a class="struct" href="../gstreamer/structure/struct.StructureRef.html" title="struct gstreamer::structure::StructureRef">StructureRef</a>;</code></td></tr><tr><td><code>pub use caps::<a class="type" href="../gstreamer/caps/type.Caps.html" title="type gstreamer::caps::Caps">Caps</a>;</code></td></tr><tr><td><code>pub use caps::<a class="struct" href="../gstreamer/caps/struct.CapsRef.html" title="struct gstreamer::caps::CapsRef">CapsRef</a>;</code></td></tr><tr><td><code>pub use tags::<a class="trait" href="../gstreamer/tags/trait.Tag.html" title="trait gstreamer::tags::Tag">Tag</a>;</code></td></tr><tr><td><code>pub use tags::<a class="type" href="../gstreamer/tags/type.TagList.html" title="type gstreamer::tags::TagList">TagList</a>;</code></td></tr><tr><td><code>pub use tags::<a class="struct" href="../gstreamer/tags/struct.TagListRef.html" title="struct gstreamer::tags::TagListRef">TagListRef</a>;</code></td></tr><tr><td><code>pub use buffer::<a class="type" href="../gstreamer/buffer/type.Buffer.html" title="type gstreamer::buffer::Buffer">Buffer</a>;</code></td></tr><tr><td><code>pub use buffer::<a class="struct" href="../gstreamer/buffer/struct.BufferMap.html" title="struct gstreamer::buffer::BufferMap">BufferMap</a>;</code></td></tr><tr><td><code>pub use buffer::<a class="struct" href="../gstreamer/buffer/struct.BufferRef.html" title="struct gstreamer::buffer::BufferRef">BufferRef</a>;</code></td></tr><tr><td><code>pub use buffer::<a class="struct" href="../gstreamer/buffer/struct.MappedBuffer.html" title="struct gstreamer::buffer::MappedBuffer">MappedBuffer</a>;</code></td></tr><tr><td><code>pub use buffer::<a class="struct" href="../gstreamer/buffer/struct.BUFFER_COPY_ALL.html" title="struct gstreamer::buffer::BUFFER_COPY_ALL">BUFFER_COPY_ALL</a>;</code></td></tr><tr><td><code>pub use buffer::BUFFER_COPY_ALL;</code></td></tr><tr><td><code>pub use buffer::<a class="struct" href="../gstreamer/buffer/struct.BUFFER_COPY_METADATA.html" title="struct gstreamer::buffer::BUFFER_COPY_METADATA">BUFFER_COPY_METADATA</a>;</code></td></tr><tr><td><code>pub use buffer::BUFFER_COPY_METADATA;</code></td></tr><tr><td><code>pub use sample::<a class="type" href="../gstreamer/sample/type.Sample.html" title="type gstreamer::sample::Sample">Sample</a>;</code></td></tr><tr><td><code>pub use sample::<a class="struct" href="../gstreamer/sample/struct.SampleRef.html" title="struct gstreamer::sample::SampleRef">SampleRef</a>;</code></td></tr><tr><td><code>pub use bufferlist::<a class="type" href="../gstreamer/bufferlist/type.BufferList.html" title="type gstreamer::bufferlist::BufferList">BufferList</a>;</code></td></tr><tr><td><code>pub use bufferlist::<a class="struct" href="../gstreamer/bufferlist/struct.BufferListRef.html" title="struct gstreamer::bufferlist::BufferListRef">BufferListRef</a>;</code></td></tr><tr><td><code>pub use query::<a class="type" href="../gstreamer/query/type.Query.html" title="type gstreamer::query::Query">Query</a>;</code></td></tr><tr><td><code>pub use query::<a class="struct" href="../gstreamer/query/struct.QueryRef.html" title="struct gstreamer::query::QueryRef">QueryRef</a>;</code></td></tr><tr><td><code>pub use query::<a class="enum" href="../gstreamer/query/enum.QueryView.html" title="enum gstreamer::query::QueryView">QueryView</a>;</code></td></tr><tr><td><code>pub use event::<a class="type" href="../gstreamer/event/type.Event.html" title="type gstreamer::event::Event">Event</a>;</code></td></tr><tr><td><code>pub use event::<a class="struct" href="../gstreamer/event/struct.EventRef.html" title="struct gstreamer::event::EventRef">EventRef</a>;</code></td></tr><tr><td><code>pub use event::<a class="enum" href="../gstreamer/event/enum.EventView.html" title="enum gstreamer::event::EventView">EventView</a>;</code></td></tr><tr><td><code>pub use event::<a class="struct" href="../gstreamer/event/struct.GroupId.html" title="struct gstreamer::event::GroupId">GroupId</a>;</code></td></tr><tr><td><code>pub use event::<a class="struct" href="../gstreamer/event/struct.Seqnum.html" title="struct gstreamer::event::Seqnum">Seqnum</a>;</code></td></tr><tr><td><code>pub use event::<a class="constant" href="../gstreamer/event/constant.GROUP_ID_INVALID.html" title="constant gstreamer::event::GROUP_ID_INVALID">GROUP_ID_INVALID</a>;</code></td></tr><tr><td><code>pub use event::<a class="constant" href="../gstreamer/event/constant.SEQNUM_INVALID.html" title="constant gstreamer::event::SEQNUM_INVALID">SEQNUM_INVALID</a>;</code></td></tr><tr><td><code>pub use context::<a class="type" href="../gstreamer/context/type.Context.html" title="type gstreamer::context::Context">Context</a>;</code></td></tr><tr><td><code>pub use context::<a class="struct" href="../gstreamer/context/struct.ContextRef.html" title="struct gstreamer::context::ContextRef">ContextRef</a>;</code></td></tr><tr><td><code>pub use format::<a class="trait" href="../gstreamer/format/trait.FormattedValue.html" title="trait gstreamer::format::FormattedValue">FormattedValue</a>;</code></td></tr><tr><td><code>pub use format::<a class="enum" href="../gstreamer/format/enum.GenericFormattedValue.html" title="enum gstreamer::format::GenericFormattedValue">GenericFormattedValue</a>;</code></td></tr><tr><td><code>pub use format::<a class="trait" href="../gstreamer/format/trait.SpecificFormattedValue.html" title="trait gstreamer::format::SpecificFormattedValue">SpecificFormattedValue</a>;</code></td></tr><tr><td><code>pub use toc::<a class="type" href="../gstreamer/toc/type.Toc.html" title="type gstreamer::toc::Toc">Toc</a>;</code></td></tr><tr><td><code>pub use toc::<a class="type" href="../gstreamer/toc/type.TocEntry.html" title="type gstreamer::toc::TocEntry">TocEntry</a>;</code></td></tr><tr><td><code>pub use toc::<a class="struct" href="../gstreamer/toc/struct.TocEntryRef.html" title="struct gstreamer::toc::TocEntryRef">TocEntryRef</a>;</code></td></tr><tr><td><code>pub use toc::<a class="struct" href="../gstreamer/toc/struct.TocRef.html" title="struct gstreamer::toc::TocRef">TocRef</a>;</code></td></tr><tr><td><code>pub use <a class="mod" href="../gstreamer/functions/index.html" title="mod gstreamer::functions">functions</a>::*;</code></td></tr></table><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
 <table>
                        <tr class=' module-item'>
                            <td><a class="mod" href="buffer/index.html"
@@ -281,6 +229,7 @@ managed as a group.
 Pads from the child elements can be ghosted to the bin, see <code>GhostPad</code>.
 This makes the bin look like any other elements and enables creation of
 higher-level abstraction elements.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -310,6 +259,7 @@ higher-level abstraction elements.</p>
                            <td class='docblock-short'>
                                 <p>A <code>BufferPool</code> is an object that can be used to pre-allocate and recycle
 buffers of the same size and with the same properties.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -340,6 +290,7 @@ buffers of the same size and with the same properties.</p>
                                 <p>The <code>Bus</code> is an object responsible for delivering <code>Message</code> packets in
 a first-in first-out way from the streaming threads (see <code>Task</code>) to the
 application.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -359,6 +310,7 @@ have multiple <code>Pad</code> or some kind of voice objects. Another use case a
 container elements like <code>Bin</code>.
 The element implementing the interface acts as a parent for those child
 objects.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -368,6 +320,7 @@ objects.</p>
                                 <p>GStreamer uses a global clock to synchronize the plugins in a pipeline.
 Different clock implementations are possible by implementing this abstract
 base class or, more conveniently, by subclassing <code>SystemClock</code>.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -389,6 +342,7 @@ base class or, more conveniently, by subclassing <code>SystemClock</code>.</p>
                                   title='struct gstreamer::Continue'>Continue</a></td>
                            <td class='docblock-short'>
                                 <p>Continue calling the closure in the future iterations or drop it.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -397,6 +351,7 @@ base class or, more conveniently, by subclassing <code>SystemClock</code>.</p>
                            <td class='docblock-short'>
                                 <p>Struct to store date, time and timezone information altogether.
 <code>DateTime</code> is refcounted and immutable.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -427,6 +382,7 @@ base class or, more conveniently, by subclassing <code>SystemClock</code>.</p>
                                 <p><code>Device</code> are objects representing a device, they contain
 relevant metadata about the device, such as its class and the <code>Caps</code>
 representing the media types it can produce or handle.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -439,6 +395,7 @@ to probe, list and monitor devices of a specific type. The
 <code>DeviceProvider</code> objects and manage them. It will then post
 messages on its <code>Bus</code> for devices that have been added and
 removed.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -448,6 +405,7 @@ removed.</p>
                                 <p>A <code>DeviceProvider</code> subclass is provided by a plugin that handles devices
 if there is a way to programatically list connected devices. It can also
 optionally provide updates to the list of connected devices.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -457,6 +415,7 @@ optionally provide updates to the list of connected devices.</p>
                                 <p><code>DeviceProviderFactory</code> is used to create instances of device providers. A
 GstDeviceProviderfactory can be added to a <code>Plugin</code> as it is also a
 <code>PluginFeature</code>.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -508,6 +467,7 @@ GstDeviceProviderfactory can be added to a <code>Plugin</code> as it is also a
                                 <p>GstElement is the abstract base class needed to construct an element that
 can be used in a GStreamer pipeline. Please refer to the plugin writers
 guide for more information on creating <code>Element</code> subclasses.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -517,6 +477,7 @@ guide for more information on creating <code>Element</code> subclasses.</p>
                                 <p><code>ElementFactory</code> is used to create instances of elements. A
 GstElementFactory can be added to a <code>Plugin</code> as it is also a
 <code>PluginFeature</code>.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -531,6 +492,7 @@ GstElementFactory can be added to a <code>Plugin</code> as it is also a
                                   title='struct gstreamer::Error'>Error</a></td>
                            <td class='docblock-short'>
                                 <p>A generic error capable of representing various error domains (types).</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -571,6 +533,7 @@ contains a sub-graph. Now one would like to treat the bin-element like any
 other <code>Element</code>. This is where GhostPads come into play. A GhostPad acts as
 a proxy for another pad. Thus the bin can have sink and source ghost-pads
 that are associated with sink and source pads of the child elements.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -608,6 +571,7 @@ that are associated with sink and source pads of the child elements.</p>
                                 <p><code>Object</code> provides a root for the object hierarchy tree filed in by the
 GStreamer library. It is currently a thin wrapper on top of
 <code>gobject::InitiallyUnowned</code>. It is an abstract class that is not very usable on its own.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -616,6 +580,7 @@ GStreamer library. It is currently a thin wrapper on top of
                            <td class='docblock-short'>
                                 <p>A <code>Element</code> is linked to other elements via &quot;pads&quot;, which are extremely
 light-weight generic link points.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -661,6 +626,7 @@ light-weight generic link points.</p>
 handle. This allows for both inspection of handled types before loading the
 element plugin as well as identifying pads on elements that are not yet
 created (request or sometimes pads).</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -668,6 +634,7 @@ created (request or sometimes pads).</p>
                                   title='struct gstreamer::ParseContext'>ParseContext</a></td>
                            <td class='docblock-short'>
                                 <p>Opaque structure.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -685,6 +652,7 @@ created (request or sometimes pads).</p>
 the filter graph. The <code>Pipeline</code> will manage the selection and
 distribution of a global <code>Clock</code> as well as provide a <code>Bus</code> to the
 application.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -694,6 +662,7 @@ application.</p>
                                 <p>GStreamer is extensible, so <code>Element</code> instances can be loaded at runtime.
 A plugin system can provide one or more of the basic
 <code>&lt;application&gt;</code>GStreamer<code>&lt;/application&gt;</code> <code>PluginFeature</code> subclasses.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -708,6 +677,7 @@ A plugin system can provide one or more of the basic
                                   title='struct gstreamer::PluginFeature'>PluginFeature</a></td>
                            <td class='docblock-short'>
                                 <p>This is a base class for anything that can be added to a <code>Plugin</code>.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -720,6 +690,7 @@ The name of a preset serves as key for subsequent method calls to manipulate
 single presets.
 All instances of one type will share the list of presets. The list is created
 on demand, if presets are not used, the list is not created.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -728,17 +699,18 @@ on demand, if presets are not used, the list is not created.</p>
                            <td class='docblock-short'>
                                 <p>The <code>Promise</code> object implements the container for values that may
 be available later. i.e. a Future or a Promise in
-<ulink url="https://en.wikipedia.org/wiki/Futures_and_promises"><a href="https://en.wikipedia.org/wiki/Futures_and_promises%60">https://en.wikipedia.org/wiki/Futures_and_promises`</a></ulink>`
+<ulink url="https://en.wikipedia.org/wiki/Futures_and_promises">https://en.wikipedia.org/wiki/Futures_and_promises<code>&lt;/ulink&gt;</code>
 As with all Future/Promise-like functionality, there is the concept of the
 producer of the value and the consumer of the value.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class="struct" href="struct.ProxyPad.html"
                                   title='struct gstreamer::ProxyPad'>ProxyPad</a></td>
                            <td class='docblock-short'>
-                                <h1 id='implements-19' class='section-header'><a href='#implements-19'>Implements</a></h1>
-<p><a href="trait.ProxyPadExt.html"><code>ProxyPadExt</code></a>, <a href="trait.PadExt.html"><code>PadExt</code></a>, <a href="trait.GstObjectExt.html"><code>GstObjectExt</code></a>, <a href="../glib/object/trait.ObjectExt.html"><code>glib::object::ObjectExt</code></a></p>
+                                <h1>Implements</h1>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -746,6 +718,7 @@ producer of the value and the consumer of the value.</p>
                                   title='struct gstreamer::Registry'>Registry</a></td>
                            <td class='docblock-short'>
                                 <p>One registry holds the metadata of a set of plugins.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -797,6 +770,7 @@ producer of the value and the consumer of the value.</p>
                                 <p>Datastructure to initialize <code>Caps</code> from a string description usually
 used in conjunction with GST_STATIC_CAPS() and <code>StaticCaps::get</code> to
 instantiate a <code>Caps</code>.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -804,6 +778,7 @@ instantiate a <code>Caps</code>.</p>
                                   title='struct gstreamer::StaticPadTemplate'>StaticPadTemplate</a></td>
                            <td class='docblock-short'>
                                 <p>Structure describing the <code>StaticPadTemplate</code>.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -812,6 +787,7 @@ instantiate a <code>Caps</code>.</p>
                            <td class='docblock-short'>
                                 <p>A high-level object representing a single stream. It might be backed, or
 not, by an actual flow of data in a pipeline (<code>Pad</code>).</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -819,6 +795,7 @@ not, by an actual flow of data in a pipeline (<code>Pad</code>).</p>
                                   title='struct gstreamer::StreamCollection'>StreamCollection</a></td>
                            <td class='docblock-short'>
                                 <p>A collection of <code>Stream</code> that are available.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -841,6 +818,7 @@ not, by an actual flow of data in a pipeline (<code>Pad</code>).</p>
                            <td class='docblock-short'>
                                 <p>The GStreamer core provides a GstSystemClock based on the system time.
 Asynchronous callbacks are scheduled from an internal thread.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -848,6 +826,7 @@ Asynchronous callbacks are scheduled from an internal thread.</p>
                                   title='struct gstreamer::TagSetter'>TagSetter</a></td>
                            <td class='docblock-short'>
                                 <p>Element interface that allows setting of media metadata.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -855,6 +834,7 @@ Asynchronous callbacks are scheduled from an internal thread.</p>
                                   title='struct gstreamer::TocSetter'>TocSetter</a></td>
                            <td class='docblock-short'>
                                 <p>Element interface that allows setting of the TOC.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -872,6 +852,7 @@ Asynchronous callbacks are scheduled from an internal thread.</p>
 functions. How to create and register these functions is described in
 the section <link linkend="gstreamer-Writing-typefind-functions">
 &quot;Writing typefind functions&quot;<code>&lt;/link&gt;</code>.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -879,6 +860,7 @@ the section <link linkend="gstreamer-Writing-typefind-functions">
                                   title='struct gstreamer::TypedValue'>TypedValue</a></td>
                            <td class='docblock-short'>
                                 <p>A statically typed <a href="struct.Value.html"><code>Value</code></a>.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -887,6 +869,7 @@ the section <link linkend="gstreamer-Writing-typefind-functions">
                            <td class='docblock-short'>
                                 <p>The <code>URIHandler</code> is an interface that is implemented by Source and Sink
 <code>Element</code> to unify handling of URI.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -894,6 +877,7 @@ the section <link linkend="gstreamer-Writing-typefind-functions">
                                   title='struct gstreamer::Value'>Value</a></td>
                            <td class='docblock-short'>
                                 <p>A generic value capable of carrying various types.</p>
+
                            </td>
                        </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
 <table>
@@ -902,6 +886,7 @@ the section <link linkend="gstreamer-Writing-typefind-functions">
                                   title='enum gstreamer::BufferingMode'>BufferingMode</a></td>
                            <td class='docblock-short'>
                                 <p>The different types of buffering methods.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -909,6 +894,7 @@ the section <link linkend="gstreamer-Writing-typefind-functions">
                                   title='enum gstreamer::BusSyncReply'>BusSyncReply</a></td>
                            <td class='docblock-short'>
                                 <p>The result values for a GstBusSyncHandler.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -916,6 +902,7 @@ the section <link linkend="gstreamer-Writing-typefind-functions">
                                   title='enum gstreamer::CapsIntersectMode'>CapsIntersectMode</a></td>
                            <td class='docblock-short'>
                                 <p>Modes of caps intersection</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -930,6 +917,7 @@ the section <link linkend="gstreamer-Writing-typefind-functions">
                                   title='enum gstreamer::ClockReturn'>ClockReturn</a></td>
                            <td class='docblock-short'>
                                 <p>The return value of a clock operation.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -944,6 +932,7 @@ the section <link linkend="gstreamer-Writing-typefind-functions">
                                   title='enum gstreamer::ClockType'>ClockType</a></td>
                            <td class='docblock-short'>
                                 <p>The different kind of clocks.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -951,6 +940,7 @@ the section <link linkend="gstreamer-Writing-typefind-functions">
                                   title='enum gstreamer::CoreError'>CoreError</a></td>
                            <td class='docblock-short'>
                                 <p>Core errors are errors inside the core GStreamer library.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -959,6 +949,7 @@ the section <link linkend="gstreamer-Writing-typefind-functions">
                            <td class='docblock-short'>
                                 <p>The level defines the importance of a debugging message. The more important a
 message is, the greater the probability that the debugging system outputs it.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -973,6 +964,7 @@ message is, the greater the probability that the debugging system outputs it.</p
                                   title='enum gstreamer::EventType'>EventType</a></td>
                            <td class='docblock-short'>
                                 <p><code>EventType</code> lists the standard event types that can be sent in a pipeline.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -987,6 +979,7 @@ message is, the greater the probability that the debugging system outputs it.</p
                                   title='enum gstreamer::FlowReturn'>FlowReturn</a></td>
                            <td class='docblock-short'>
                                 <p>The result of passing data to a pad.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1001,6 +994,7 @@ message is, the greater the probability that the debugging system outputs it.</p
                                   title='enum gstreamer::Format'>Format</a></td>
                            <td class='docblock-short'>
                                 <p>Standard predefined formats</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1016,6 +1010,7 @@ message is, the greater the probability that the debugging system outputs it.</p
                            <td class='docblock-short'>
                                 <p>Library errors are for errors from the library being used by elements
 (initializing, finalizing, settings, ...)</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1023,6 +1018,7 @@ message is, the greater the probability that the debugging system outputs it.</p
                                   title='enum gstreamer::PadDirection'>PadDirection</a></td>
                            <td class='docblock-short'>
                                 <p>The direction of a pad.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1037,6 +1033,7 @@ message is, the greater the probability that the debugging system outputs it.</p
                                   title='enum gstreamer::PadLinkReturn'>PadLinkReturn</a></td>
                            <td class='docblock-short'>
                                 <p>Result values from gst_pad_link and friends.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1046,6 +1043,7 @@ message is, the greater the probability that the debugging system outputs it.</p
                                 <p>The status of a GstPad. After activating a pad, which usually happens when the
 parent element goes from READY to PAUSED, the GstPadMode defines if the
 pad operates in push or pull mode.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1053,6 +1051,7 @@ pad operates in push or pull mode.</p>
                                   title='enum gstreamer::PadPresence'>PadPresence</a></td>
                            <td class='docblock-short'>
                                 <p>Indicates when this pad will become available.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1067,6 +1066,7 @@ pad operates in push or pull mode.</p>
                                   title='enum gstreamer::PadProbeReturn'>PadProbeReturn</a></td>
                            <td class='docblock-short'>
                                 <p>Different return values for the <code>GstPadProbeCallback</code>.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1074,6 +1074,7 @@ pad operates in push or pull mode.</p>
                                   title='enum gstreamer::ParseError'>ParseError</a></td>
                            <td class='docblock-short'>
                                 <p>The different parsing errors that can occur.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1081,6 +1082,7 @@ pad operates in push or pull mode.</p>
                                   title='enum gstreamer::PluginError'>PluginError</a></td>
                            <td class='docblock-short'>
                                 <p>The plugin loading errors</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1089,6 +1091,7 @@ pad operates in push or pull mode.</p>
                            <td class='docblock-short'>
                                 <p>The type of a <code>MessageType::Progress</code>. The progress messages inform the
 application of the status of asynchronous tasks.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1096,6 +1099,7 @@ application of the status of asynchronous tasks.</p>
                                   title='enum gstreamer::PromiseResult'>PromiseResult</a></td>
                            <td class='docblock-short'>
                                 <p>The result of a <code>Promise</code></p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1104,6 +1108,7 @@ application of the status of asynchronous tasks.</p>
                            <td class='docblock-short'>
                                 <p>The different types of QoS events that can be given to the
 <code>Event::new_qos</code> method.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1113,6 +1118,7 @@ application of the status of asynchronous tasks.</p>
                                 <p>Element priority ranks. Defines the order in which the autoplugger (or
 similar rank-picking mechanisms, such as e.g. <code>Element::make_from_uri</code>)
 will choose this element over an alternative one with the same function.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1121,7 +1127,8 @@ will choose this element over an alternative one with the same function.</p>
                            <td class='docblock-short'>
                                 <p>Resource errors are for any resource used by an element:
 memory, files, network connections, process space, ...
-They&#39;re typically used by source and sink elements.</p>
+They're typically used by source and sink elements.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1130,6 +1137,7 @@ They&#39;re typically used by source and sink elements.</p>
                            <td class='docblock-short'>
                                 <p>The different types of seek events. When constructing a seek event with
 <code>Event::new_seek</code> or when doing gst_segment_do_seek ().</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1138,6 +1146,7 @@ They&#39;re typically used by source and sink elements.</p>
                            <td class='docblock-short'>
                                 <p>The possible states an element can be in. States can be changed using
 <code>ElementExt::set_state</code> and checked using <code>ElementExt::get_state</code>.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1145,8 +1154,9 @@ They&#39;re typically used by source and sink elements.</p>
                                   title='enum gstreamer::StateChange'>StateChange</a></td>
                            <td class='docblock-short'>
                                 <p>These are the different state changes an element goes through.
-<code>State::Null</code> &rArr; <code>State::Playing</code> is called an upwards state change
-and <code>State::Playing</code> &rArr; <code>State::Null</code> a downwards state change.</p>
+<code>State::Null</code> ⇒ <code>State::Playing</code> is called an upwards state change
+and <code>State::Playing</code> ⇒ <code>State::Null</code> a downwards state change.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1155,6 +1165,7 @@ and <code>State::Playing</code> &rArr; <code>State::Null</code> a downwards stat
                            <td class='docblock-short'>
                                 <p>The possible return values from a state change function such as
 <code>ElementExt::set_state</code>. Only <code>StateChangeReturn::Failure</code> is a real failure.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1170,7 +1181,8 @@ and <code>State::Playing</code> &rArr; <code>State::Null</code> a downwards stat
                            <td class='docblock-short'>
                                 <p>Stream errors are for anything related to the stream being processed:
 format errors, media type errors, ...
-They&#39;re typically used by decoders, demuxers, converters, ...</p>
+They're typically used by decoders, demuxers, converters, ...</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1179,6 +1191,7 @@ They&#39;re typically used by decoders, demuxers, converters, ...</p>
                            <td class='docblock-short'>
                                 <p>The type of a <code>MessageType::StreamStatus</code>. The stream status messages inform the
 application of new streaming threads and their status.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1186,6 +1199,14 @@ application of new streaming threads and their status.</p>
                                   title='enum gstreamer::StructureChangeType'>StructureChangeType</a></td>
                            <td class='docblock-short'>
                                 <p>The type of a <code>MessageType::StructureChange</code>.</p>
+
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.TagError.html"
+                                  title='enum gstreamer::TagError'>TagError</a></td>
+                           <td class='docblock-short'>
+                                
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1199,6 +1220,7 @@ e.g. via <code>TagSetter::merge_tags</code> / <code>TagSetter::add_tags</code> o
 <code>EventType::Tag</code>), how are these tags merged?
 In the table below this is shown for the cases that a tag exists in the list
 (A) or does not exists (!A) and combinations thereof.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1206,6 +1228,7 @@ In the table below this is shown for the cases that a tag exists in the list
                                   title='enum gstreamer::TaskState'>TaskState</a></td>
                            <td class='docblock-short'>
                                 <p>The different states a task can be in</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1213,6 +1236,7 @@ In the table below this is shown for the cases that a tag exists in the list
                                   title='enum gstreamer::TocEntryType'>TocEntryType</a></td>
                            <td class='docblock-short'>
                                 <p>The different types of TOC entries (see <code>TocEntry</code>).</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1221,6 +1245,7 @@ In the table below this is shown for the cases that a tag exists in the list
                            <td class='docblock-short'>
                                 <p>How a <code>TocEntry</code> should be repeated. By default, entries are played a
 single time.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1228,6 +1253,7 @@ single time.</p>
                                   title='enum gstreamer::TocScope'>TocScope</a></td>
                            <td class='docblock-short'>
                                 <p>The scope of a TOC.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1235,6 +1261,7 @@ single time.</p>
                                   title='enum gstreamer::Type'>Type</a></td>
                            <td class='docblock-short'>
                                 <p>A GLib or GLib-based library type</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1243,6 +1270,7 @@ single time.</p>
                            <td class='docblock-short'>
                                 <p>The probability of the typefind function. Higher values have more certainty
 in doing a reliable typefind.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1250,6 +1278,7 @@ in doing a reliable typefind.</p>
                                   title='enum gstreamer::URIError'>URIError</a></td>
                            <td class='docblock-short'>
                                 <p>Different URI-related errors that can occur.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1257,13 +1286,7 @@ in doing a reliable typefind.</p>
                                   title='enum gstreamer::URIType'>URIType</a></td>
                            <td class='docblock-short'>
                                 <p>The different types of URI direction.</p>
-                           </td>
-                       </tr>
-                       <tr class=' module-item'>
-                           <td><a class="enum" href="enum.ValueOrder.html"
-                                  title='enum gstreamer::ValueOrder'>ValueOrder</a></td>
-                           <td class='docblock-short'>
-                                
+
                            </td>
                        </tr></table><h2 id='constants' class='section-header'><a href="#constants">Constants</a></h2>
 <table>
@@ -1357,6 +1380,7 @@ in doing a reliable typefind.</p>
                                   title='trait gstreamer::BinExt'>BinExt</a></td>
                            <td class='docblock-short'>
                                 <p>Trait containing all <code>Bin</code> methods.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1371,6 +1395,7 @@ in doing a reliable typefind.</p>
                                   title='trait gstreamer::BufferPoolExt'>BufferPoolExt</a></td>
                            <td class='docblock-short'>
                                 <p>Trait containing all <code>BufferPool</code> methods.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1385,6 +1410,7 @@ in doing a reliable typefind.</p>
                                   title='trait gstreamer::Cast'>Cast</a></td>
                            <td class='docblock-short'>
                                 <p>Upcasting and downcasting support.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1392,6 +1418,7 @@ in doing a reliable typefind.</p>
                                   title='trait gstreamer::ChildProxyExt'>ChildProxyExt</a></td>
                            <td class='docblock-short'>
                                 <p>Trait containing all <code>ChildProxy</code> methods.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1406,6 +1433,7 @@ in doing a reliable typefind.</p>
                                   title='trait gstreamer::ClockExt'>ClockExt</a></td>
                            <td class='docblock-short'>
                                 <p>Trait containing all <code>Clock</code> methods.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1420,6 +1448,7 @@ in doing a reliable typefind.</p>
                                   title='trait gstreamer::DeviceExt'>DeviceExt</a></td>
                            <td class='docblock-short'>
                                 <p>Trait containing all <code>Device</code> methods.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1427,6 +1456,7 @@ in doing a reliable typefind.</p>
                                   title='trait gstreamer::DeviceMonitorExt'>DeviceMonitorExt</a></td>
                            <td class='docblock-short'>
                                 <p>Trait containing all <code>DeviceMonitor</code> methods.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1434,6 +1464,7 @@ in doing a reliable typefind.</p>
                                   title='trait gstreamer::DeviceProviderExt'>DeviceProviderExt</a></td>
                            <td class='docblock-short'>
                                 <p>Trait containing all <code>DeviceProvider</code> methods.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1448,6 +1479,7 @@ in doing a reliable typefind.</p>
                                   title='trait gstreamer::ElementExt'>ElementExt</a></td>
                            <td class='docblock-short'>
                                 <p>Trait containing all <code>Element</code> methods.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1469,6 +1501,7 @@ in doing a reliable typefind.</p>
                                   title='trait gstreamer::GhostPadExt'>GhostPadExt</a></td>
                            <td class='docblock-short'>
                                 <p>Trait containing all <code>GhostPad</code> methods.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1476,6 +1509,7 @@ in doing a reliable typefind.</p>
                                   title='trait gstreamer::GstObjectExt'>GstObjectExt</a></td>
                            <td class='docblock-short'>
                                 <p>Trait containing all <code>Object</code> methods.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1497,6 +1531,7 @@ in doing a reliable typefind.</p>
                                   title='trait gstreamer::IsA'>IsA</a></td>
                            <td class='docblock-short'>
                                 <p>Declares the &quot;is a&quot; relationship.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1511,6 +1546,7 @@ in doing a reliable typefind.</p>
                                   title='trait gstreamer::PadExt'>PadExt</a></td>
                            <td class='docblock-short'>
                                 <p>Trait containing all <code>Pad</code> methods.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1525,6 +1561,7 @@ in doing a reliable typefind.</p>
                                   title='trait gstreamer::PipelineExt'>PipelineExt</a></td>
                            <td class='docblock-short'>
                                 <p>Trait containing all <code>Pipeline</code> methods.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1532,6 +1569,7 @@ in doing a reliable typefind.</p>
                                   title='trait gstreamer::PluginFeatureExt'>PluginFeatureExt</a></td>
                            <td class='docblock-short'>
                                 <p>Trait containing all <code>PluginFeature</code> methods.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1539,6 +1577,7 @@ in doing a reliable typefind.</p>
                                   title='trait gstreamer::PresetExt'>PresetExt</a></td>
                            <td class='docblock-short'>
                                 <p>Trait containing all <code>Preset</code> methods.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1546,6 +1585,7 @@ in doing a reliable typefind.</p>
                                   title='trait gstreamer::ProxyPadExt'>ProxyPadExt</a></td>
                            <td class='docblock-short'>
                                 <p>Trait containing all <code>ProxyPad</code> methods.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1553,6 +1593,7 @@ in doing a reliable typefind.</p>
                                   title='trait gstreamer::StaticType'>StaticType</a></td>
                            <td class='docblock-short'>
                                 <p>Types that are supported by GLib dynamic typing.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1560,6 +1601,7 @@ in doing a reliable typefind.</p>
                                   title='trait gstreamer::SystemClockExt'>SystemClockExt</a></td>
                            <td class='docblock-short'>
                                 <p>Trait containing all <code>SystemClock</code> methods.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1567,6 +1609,7 @@ in doing a reliable typefind.</p>
                                   title='trait gstreamer::TagSetterExt'>TagSetterExt</a></td>
                            <td class='docblock-short'>
                                 <p>Trait containing all <code>TagSetter</code> methods.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1581,6 +1624,7 @@ in doing a reliable typefind.</p>
                                   title='trait gstreamer::ToValue'>ToValue</a></td>
                            <td class='docblock-short'>
                                 <p>Converts to <code>Value</code>.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1588,6 +1632,7 @@ in doing a reliable typefind.</p>
                                   title='trait gstreamer::TocSetterExt'>TocSetterExt</a></td>
                            <td class='docblock-short'>
                                 <p>Trait containing all <code>TocSetter</code> methods.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1602,6 +1647,7 @@ in doing a reliable typefind.</p>
                                   title='trait gstreamer::URIHandlerExt'>URIHandlerExt</a></td>
                            <td class='docblock-short'>
                                 <p>Trait containing all <code>URIHandler</code> methods.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -1739,6 +1785,13 @@ in doing a reliable typefind.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
+                           <td><a class="fn" href="fn.deinit.html"
+                                  title='fn gstreamer::deinit'>deinit</a><a title='unsafe function' href='#'><sup>⚠</sup></a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
                            <td><a class="fn" href="fn.get_main_executable_path.html"
                                   title='fn gstreamer::get_main_executable_path'>get_main_executable_path</a></td>
                            <td class='docblock-short'>
@@ -1822,66 +1875,4 @@ in doing a reliable typefind.</p>
                            <td class='docblock-short'>
                                 
                            </td>
-                       </tr></table></section>
-    <section id='search' class="content hidden"></section>
-
-    <section class="footer"></section>
-
-    <aside id="help" class="hidden">
-        <div>
-            <h1 class="hidden">Help</h1>
-
-            <div class="shortcuts">
-                <h2>Keyboard Shortcuts</h2>
-
-                <dl>
-                    <dt>?</dt>
-                    <dd>Show this help dialog</dd>
-                    <dt>S</dt>
-                    <dd>Focus the search field</dd>
-                    <dt>↑</dt>
-                    <dd>Move up in search results</dd>
-                    <dt>↓</dt>
-                    <dd>Move down in search results</dd>
-                    <dt>↹</dt>
-                    <dd>Switch tab</dd>
-                    <dt>&#9166;</dt>
-                    <dd>Go to active search result</dd>
-                    <dt style="width:31px;">+ / -</dt>
-                    <dd>Collapse/expand all sections</dd>
-                </dl>
-            </div>
-
-            <div class="infos">
-                <h2>Search Tricks</h2>
-
-                <p>
-                    Prefix searches with a type followed by a colon (e.g.
-                    <code>fn:</code>) to restrict the search to a given type.
-                </p>
-
-                <p>
-                    Accepted types are: <code>fn</code>, <code>mod</code>,
-                    <code>struct</code>, <code>enum</code>,
-                    <code>trait</code>, <code>type</code>, <code>macro</code>,
-                    and <code>const</code>.
-                </p>
-
-                <p>
-                    Search functions by type signature (e.g.
-                    <code>vec -> usize</code> or <code>* -> vec</code>)
-                </p>
-            </div>
-        </div>
-    </aside>
-
-    
-
-    <script>
-        window.rootPath = "../";
-        window.currentCrate = "gstreamer";
-    </script>
-    <script src="../main.js"></script>
-    <script defer src="../search-index.js"></script>
-</body>
-</html>
+                       </tr></table></section><section id="search" class="content hidden"></section><section class="footer"></section><aside id="help" class="hidden"><div><h1 class="hidden">Help</h1><div class="shortcuts"><h2>Keyboard Shortcuts</h2><dl><dt><kbd>?</kbd></dt><dd>Show this help dialog</dd><dt><kbd>S</kbd></dt><dd>Focus the search field</dd><dt><kbd>↑</kbd></dt><dd>Move up in search results</dd><dt><kbd>↓</kbd></dt><dd>Move down in search results</dd><dt><kbd>↹</kbd></dt><dd>Switch tab</dd><dt><kbd>&#9166;</kbd></dt><dd>Go to active search result</dd><dt><kbd>+</kbd></dt><dd>Expand all sections</dd><dt><kbd>-</kbd></dt><dd>Collapse all sections</dd></dl></div><div class="infos"><h2>Search Tricks</h2><p>Prefix searches with a type followed by a colon (e.g. <code>fn:</code>) to restrict the search to a given type.</p><p>Accepted types are: <code>fn</code>, <code>mod</code>, <code>struct</code>, <code>enum</code>, <code>trait</code>, <code>type</code>, <code>macro</code>, and <code>const</code>.</p><p>Search functions by type signature (e.g. <code>vec -> usize</code> or <code>* -> vec</code>)</p><p>Search multiple things at once by splitting your query with comma (e.g. <code>str,u8</code> or <code>String,struct:Vec,test</code>)</p></div></div></aside><script>window.rootPath = "../";window.currentCrate = "gstreamer";</script><script src="../aliases.js"></script><script src="../main.js"></script><script defer src="../search-index.js"></script></body></html>

@@ -1,56 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="rustdoc">
-    <meta name="description" content="API documentation for the Rust `gstreamer_audio` crate.">
-    <meta name="keywords" content="rust, rustlang, rust-lang, gstreamer_audio">
-
-    <title>gstreamer_audio - Rust</title>
-
-    <link rel="stylesheet" type="text/css" href="../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
-    <link rel="stylesheet" type="text/css" href="../main.css">
-    
-
-    
-    
-</head>
-<body class="rustdoc mod">
-    <!--[if lte IE 8]>
-    <div class="warning">
-        This old browser is unsupported and will most likely display funky
-        things.
-    </div>
-    <![endif]-->
-
-    
-
-    <nav class="sidebar">
-        <div class="sidebar-menu">&#9776;</div>
-        
-        <p class='location'>Crate gstreamer_audio</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#modules">Modules</a></li><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#constants">Constants</a></li><li><a href="#traits">Traits</a></li><li><a href="#functions">Functions</a></li></ul></div><p class='location'></p><script>window.sidebarCurrent = {name: 'gstreamer_audio', ty: 'mod', relpath: '../'};</script></div>
-    </nav>
-
-    <nav class="sub">
-        <form class="search-form js-only">
-            <div class="search-container">
-                <input class="search-input" name="search"
-                       autocomplete="off"
-                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
-                       type="search">
-            </div>
-        </form>
-    </nav>
-
-    <section id='main' class="content">
-<h1 class='fqn'><span class='in-band'>Crate <a class="mod" href=''>gstreamer_audio</a></span><span class='out-of-band'><span id='render-detail'>
-                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
-                       [<span class='inner'>&#x2212;</span>]
-                   </a>
-               </span><a class='srclink' href='../src/gstreamer_audio/lib.rs.html#9-86' title='goto source code'>[src]</a></span></h1>
-<h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="API documentation for the Rust `gstreamer_audio` crate."><meta name="keywords" content="rust, rustlang, rust-lang, gstreamer_audio"><title>gstreamer_audio - Rust</title><link rel="stylesheet" type="text/css" href="../normalize.css"><link rel="stylesheet" type="text/css" href="../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../dark.css"><link rel="stylesheet" type="text/css" href="../light.css" id="themeStyle"><script src="../storage.js"></script></head><body class="rustdoc mod"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><p class='location'>Crate gstreamer_audio</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#modules">Modules</a></li><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#constants">Constants</a></li><li><a href="#traits">Traits</a></li><li><a href="#functions">Functions</a></li></ul></div><p class='location'></p><script>window.sidebarCurrent = {name: 'gstreamer_audio', ty: 'mod', relpath: '../'};</script></div></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!"><img src="../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices"></div></div><script src="../theme.js"></script><nav class="sub"><form class="search-form js-only"><div class="search-container"><input class="search-input" name="search" autocomplete="off" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><a id="settings-menu" href="../settings.html"><img src="../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><h1 class='fqn'><span class='in-band'>Crate <a class="mod" href=''>gstreamer_audio</a></span><span class='out-of-band'><span id='render-detail'><a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">[<span class='inner'>&#x2212;</span>]</a></span><a class='srclink' href='../src/gstreamer_audio/lib.rs.html#9-79' title='goto source code'>[src]</a></span></h1><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
 <table>
                        <tr class=' module-item'>
                            <td><a class="mod" href="prelude/index.html"
@@ -79,6 +27,7 @@
                                   title='struct gstreamer_audio::AudioFormatInfo'>AudioFormatInfo</a></td>
                            <td class='docblock-short'>
                                 <p>Information for an audio format.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -87,6 +36,7 @@
                            <td class='docblock-short'>
                                 <p>Information describing audio properties. This information can be filled
 in from GstCaps with <code>AudioInfo::from_caps</code>.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -110,6 +60,7 @@ in from GstCaps with <code>AudioInfo::from_caps</code>.</p>
                                 <p><code>AudioStreamAlign</code> provides a helper object that helps tracking audio
 stream alignment and discontinuities, and detects discontinuities if
 possible.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -117,6 +68,7 @@ possible.</p>
                                   title='struct gstreamer_audio::Continue'>Continue</a></td>
                            <td class='docblock-short'>
                                 <p>Continue calling the closure in the future iterations or drop it.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -124,6 +76,7 @@ possible.</p>
                                   title='struct gstreamer_audio::Error'>Error</a></td>
                            <td class='docblock-short'>
                                 <p>A generic error capable of representing various error domains (types).</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -132,6 +85,7 @@ possible.</p>
                            <td class='docblock-short'>
                                 <p>This interface is implemented by elements that provide a stream volume. Examples for
 such elements are <code>volume</code> and <code>playbin</code>.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -139,6 +93,7 @@ such elements are <code>volume</code> and <code>playbin</code>.</p>
                                   title='struct gstreamer_audio::TypedValue'>TypedValue</a></td>
                            <td class='docblock-short'>
                                 <p>A statically typed <a href="struct.Value.html"><code>Value</code></a>.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -146,6 +101,7 @@ such elements are <code>volume</code> and <code>playbin</code>.</p>
                                   title='struct gstreamer_audio::Value'>Value</a></td>
                            <td class='docblock-short'>
                                 <p>A generic value capable of carrying various types.</p>
+
                            </td>
                        </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
 <table>
@@ -154,6 +110,7 @@ such elements are <code>volume</code> and <code>playbin</code>.</p>
                                   title='enum gstreamer_audio::AudioChannelPosition'>AudioChannelPosition</a></td>
                            <td class='docblock-short'>
                                 <p>Audio channel positions.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -168,6 +125,7 @@ such elements are <code>volume</code> and <code>playbin</code>.</p>
                                   title='enum gstreamer_audio::AudioFormat'>AudioFormat</a></td>
                            <td class='docblock-short'>
                                 <p>Enum value describing the most common audio formats.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -175,6 +133,7 @@ such elements are <code>volume</code> and <code>playbin</code>.</p>
                                   title='enum gstreamer_audio::AudioLayout'>AudioLayout</a></td>
                            <td class='docblock-short'>
                                 <p>Layout of the audio samples for the different channels.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -183,6 +142,7 @@ such elements are <code>volume</code> and <code>playbin</code>.</p>
                            <td class='docblock-short'>
                                 <p>Different representations of a stream volume. <code>StreamVolume::convert_volume</code>
 allows to convert between the different representations.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -190,6 +150,7 @@ allows to convert between the different representations.</p>
                                   title='enum gstreamer_audio::Type'>Type</a></td>
                            <td class='docblock-short'>
                                 <p>A GLib or GLib-based library type</p>
+
                            </td>
                        </tr></table><h2 id='constants' class='section-header'><a href="#constants">Constants</a></h2>
 <table>
@@ -297,6 +258,7 @@ allows to convert between the different representations.</p>
                                   title='trait gstreamer_audio::Cast'>Cast</a></td>
                            <td class='docblock-short'>
                                 <p>Upcasting and downcasting support.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -304,6 +266,7 @@ allows to convert between the different representations.</p>
                                   title='trait gstreamer_audio::IsA'>IsA</a></td>
                            <td class='docblock-short'>
                                 <p>Declares the &quot;is a&quot; relationship.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -311,6 +274,7 @@ allows to convert between the different representations.</p>
                                   title='trait gstreamer_audio::StaticType'>StaticType</a></td>
                            <td class='docblock-short'>
                                 <p>Types that are supported by GLib dynamic typing.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -318,6 +282,7 @@ allows to convert between the different representations.</p>
                                   title='trait gstreamer_audio::StreamVolumeExt'>StreamVolumeExt</a></td>
                            <td class='docblock-short'>
                                 <p>Trait containing all <code>StreamVolume</code> methods.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -325,6 +290,7 @@ allows to convert between the different representations.</p>
                                   title='trait gstreamer_audio::ToValue'>ToValue</a></td>
                            <td class='docblock-short'>
                                 <p>Converts to <code>Value</code>.</p>
+
                            </td>
                        </tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
 <table>
@@ -355,66 +321,4 @@ allows to convert between the different representations.</p>
                            <td class='docblock-short'>
                                 
                            </td>
-                       </tr></table></section>
-    <section id='search' class="content hidden"></section>
-
-    <section class="footer"></section>
-
-    <aside id="help" class="hidden">
-        <div>
-            <h1 class="hidden">Help</h1>
-
-            <div class="shortcuts">
-                <h2>Keyboard Shortcuts</h2>
-
-                <dl>
-                    <dt>?</dt>
-                    <dd>Show this help dialog</dd>
-                    <dt>S</dt>
-                    <dd>Focus the search field</dd>
-                    <dt>↑</dt>
-                    <dd>Move up in search results</dd>
-                    <dt>↓</dt>
-                    <dd>Move down in search results</dd>
-                    <dt>↹</dt>
-                    <dd>Switch tab</dd>
-                    <dt>&#9166;</dt>
-                    <dd>Go to active search result</dd>
-                    <dt style="width:31px;">+ / -</dt>
-                    <dd>Collapse/expand all sections</dd>
-                </dl>
-            </div>
-
-            <div class="infos">
-                <h2>Search Tricks</h2>
-
-                <p>
-                    Prefix searches with a type followed by a colon (e.g.
-                    <code>fn:</code>) to restrict the search to a given type.
-                </p>
-
-                <p>
-                    Accepted types are: <code>fn</code>, <code>mod</code>,
-                    <code>struct</code>, <code>enum</code>,
-                    <code>trait</code>, <code>type</code>, <code>macro</code>,
-                    and <code>const</code>.
-                </p>
-
-                <p>
-                    Search functions by type signature (e.g.
-                    <code>vec -> usize</code> or <code>* -> vec</code>)
-                </p>
-            </div>
-        </div>
-    </aside>
-
-    
-
-    <script>
-        window.rootPath = "../";
-        window.currentCrate = "gstreamer_audio";
-    </script>
-    <script src="../main.js"></script>
-    <script defer src="../search-index.js"></script>
-</body>
-</html>
+                       </tr></table></section><section id="search" class="content hidden"></section><section class="footer"></section><aside id="help" class="hidden"><div><h1 class="hidden">Help</h1><div class="shortcuts"><h2>Keyboard Shortcuts</h2><dl><dt><kbd>?</kbd></dt><dd>Show this help dialog</dd><dt><kbd>S</kbd></dt><dd>Focus the search field</dd><dt><kbd>↑</kbd></dt><dd>Move up in search results</dd><dt><kbd>↓</kbd></dt><dd>Move down in search results</dd><dt><kbd>↹</kbd></dt><dd>Switch tab</dd><dt><kbd>&#9166;</kbd></dt><dd>Go to active search result</dd><dt><kbd>+</kbd></dt><dd>Expand all sections</dd><dt><kbd>-</kbd></dt><dd>Collapse all sections</dd></dl></div><div class="infos"><h2>Search Tricks</h2><p>Prefix searches with a type followed by a colon (e.g. <code>fn:</code>) to restrict the search to a given type.</p><p>Accepted types are: <code>fn</code>, <code>mod</code>, <code>struct</code>, <code>enum</code>, <code>trait</code>, <code>type</code>, <code>macro</code>, and <code>const</code>.</p><p>Search functions by type signature (e.g. <code>vec -> usize</code> or <code>* -> vec</code>)</p><p>Search multiple things at once by splitting your query with comma (e.g. <code>str,u8</code> or <code>String,struct:Vec,test</code>)</p></div></div></aside><script>window.rootPath = "../";window.currentCrate = "gstreamer_audio";</script><script src="../aliases.js"></script><script src="../main.js"></script><script defer src="../search-index.js"></script></body></html>

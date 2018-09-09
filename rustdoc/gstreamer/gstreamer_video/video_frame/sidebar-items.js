@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Readable",""],["VideoFrame","A video frame obtained from `VideoFrame::map`"],["VideoFrameRef",""],["Writable",""]]});
+initSidebarItems({"enum":[["Readable",""],["Writable",""]],"struct":[["VideoFrame","A video frame obtained from `VideoFrame::map`"],["VideoFrameRef",""]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GhostPad",""]],"trait":[["GhostPadBase",""],["GhostPadClassExt",""],["GhostPadImpl",""]],"type":[["GhostPadClass",""]]});

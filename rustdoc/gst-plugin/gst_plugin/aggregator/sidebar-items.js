@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Aggregator",""]],"trait":[["AggregatorBase",""],["AggregatorClassExt",""],["AggregatorImpl",""]],"type":[["AggregatorClass",""]]});

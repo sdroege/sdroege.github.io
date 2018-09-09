@@ -1,0 +1,1 @@
+initSidebarItems({"macro":[["any_impl",""],["box_object_impl",""],["floating_reference_guard",""],["gobject_subclass_deref",""],["object_type_fns",""]],"mod":[["anyimpl",""],["guard",""],["object",""],["properties",""]]});
